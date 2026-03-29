@@ -107,6 +107,7 @@ body {
   cursor: pointer;
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
   box-shadow: 0 2px 8px rgba(255,107,0,.3);
+  width: 146px;
 }
 .btn-add:hover { background: var(--accent2); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(255,107,0,.4); }
 
@@ -868,5 +869,6 @@ body {
   color: #fff; cursor: pointer;
   transition: all var(--transition);
   opacity: .9;
+  width: 166px;
 }
 .btn-save-file:hover { opacity: 1; transform: translateY(-1px); }
