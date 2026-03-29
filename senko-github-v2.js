@@ -4,8 +4,8 @@
    ───────────────────────────────────────────────────────────────────────
    DIFERENÇAS DA v1:
      - Token NÃO fica no código-fonte (evita revogação automática do GitHub)
-     - Token é pedido via prompt() e salvo no localStorage do navegador
-     - Botão para trocar/remover o token na barra GitHub
+     - Token é pedido via prompt e salvo no localStorage do navegador
+     - Botão de cadeado no header indica estado do token
 
    COMO USAR:
      Adicione no index.html APÓS o script.js:
@@ -52,31 +52,39 @@ function ghEnsureToken() {
     'Para salvar direto no repositório, informe seu Personal Access Token do GitHub.\n' +
     'O token precisa ter permissão "repo" (classic) ou "Contents read/write" (fine-grained).\n\n' +
     'Gere um token em: https://github.com/settings/tokens\n\n' +
-    'O token será salvo APENAS no seu navegador (localStorage).'
+    'O token será salvo APENAS no seu navegador (localStorage) — só precisa colar 1 vez.'
   );
 
   if (token && token.trim().length > 10) {
     ghSetToken(token);
-    ghUpdateBarStatus();
+    ghUpdateLockButton();
     return token.trim();
   }
 
   return '';
 }
 
-function ghUpdateBarStatus() {
-  var tokenIndicator = document.getElementById('ghTokenIndicator');
-  if (!tokenIndicator) return;
+
+/* ═══════════════════════════════════════════════════════════════════════
+   BOTÃO CADEADO — indica estado do token
+═══════════════════════════════════════════════════════════════════════ */
+
+var LOCK_CLOSED_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
+var LOCK_OPEN_SVG   = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>';
+
+function ghUpdateLockButton() {
+  var btn = document.getElementById('ghLockBtn');
+  if (!btn) return;
 
   var hasToken = !!ghGetToken();
-  tokenIndicator.textContent = hasToken ? '🔓 Token configurado' : '🔒 Sem token';
-  tokenIndicator.className = 'gh-status-text' + (hasToken ? ' gh-status-ok' : ' gh-status-error');
+  btn.innerHTML = hasToken ? LOCK_OPEN_SVG : LOCK_CLOSED_SVG;
+  btn.classList.toggle('gh-lock-active', hasToken);
+  btn.title = hasToken ? 'Token GitHub configurado' : 'Configurar token GitHub';
 }
 
 
 /* ═══════════════════════════════════════════════════════════════════════
    UTILITÁRIOS DE ENCODING UTF-8 SEGURO
-   Evita corrupção de caracteres acentuados com atob/btoa puro
 ═══════════════════════════════════════════════════════════════════════ */
 
 function ghEncodeBase64(str) {
@@ -89,15 +97,17 @@ function ghDecodeBase64(b64) {
 
 
 /* ═══════════════════════════════════════════════════════════════════════
-   STATUS — atualiza o span #ghStatus na barra injetada
+   STATUS — atualiza o span #ghStatus (agora só no console, sem barra)
 ═══════════════════════════════════════════════════════════════════════ */
 
 function ghSetStatus(msg, type) {
-  /* type: '' | 'saving' | 'ok' | 'error' */
   var el = document.getElementById('ghStatus');
-  if (!el) return;
-  el.textContent = msg;
-  el.className = 'gh-status-text' + (type ? ' gh-status-' + type : '');
+  if (el) {
+    el.textContent = msg;
+    el.className = 'gh-status-text' + (type ? ' gh-status-' + type : '');
+  }
+  if (type === 'error') console.warn('[senko-github]', msg);
+  if (type === 'ok') console.log('[senko-github]', msg);
 }
 
 
@@ -105,7 +115,6 @@ function ghSetStatus(msg, type) {
    API BASE — GitHub Contents API
 ═══════════════════════════════════════════════════════════════════════ */
 
-/* GET — retorna { content: string_decodificada, sha: string } */
 function githubGetFile(path) {
   var token = ghGetToken();
   var url = 'https://api.github.com/repos/'
@@ -121,8 +130,8 @@ function githubGetFile(path) {
   }).then(function (res) {
     if (res.status === 401) {
       ghSetToken('');
-      ghUpdateBarStatus();
-      throw new Error('Token inválido ou expirado. Clique em "🔑 Configurar token" para inserir um novo.');
+      ghUpdateLockButton();
+      throw new Error('Token inválido ou expirado. Clique no cadeado para inserir um novo.');
     }
     if (!res.ok) {
       return res.json().then(function (e) {
@@ -131,7 +140,6 @@ function githubGetFile(path) {
     }
     return res.json();
   }).then(function (data) {
-    /* O conteúdo vem em base64 com quebras de linha — remove-as antes de decodificar */
     var raw = (data.content || '').replace(/\n/g, '');
     return {
       content: ghDecodeBase64(raw),
@@ -140,7 +148,6 @@ function githubGetFile(path) {
   });
 }
 
-/* PUT — faz commit de criação ou atualização */
 function githubPutFile(path, content, sha, commitMsg) {
   var token = ghGetToken();
   var url = 'https://api.github.com/repos/'
@@ -166,8 +173,8 @@ function githubPutFile(path, content, sha, commitMsg) {
   }).then(function (res) {
     if (res.status === 401) {
       ghSetToken('');
-      ghUpdateBarStatus();
-      throw new Error('Token inválido ou expirado. Configure um novo token.');
+      ghUpdateLockButton();
+      throw new Error('Token inválido ou expirado. Clique no cadeado para configurar um novo.');
     }
     if (!res.ok) {
       return res.json().then(function (e) {
@@ -178,7 +185,6 @@ function githubPutFile(path, content, sha, commitMsg) {
   });
 }
 
-/* LIST DIR — retorna array de { name, path, sha, type } */
 function githubListDir(path) {
   var token = ghGetToken();
   var url = 'https://api.github.com/repos/'
@@ -194,8 +200,8 @@ function githubListDir(path) {
   }).then(function (res) {
     if (res.status === 401) {
       ghSetToken('');
-      ghUpdateBarStatus();
-      throw new Error('Token inválido ou expirado. Configure um novo token.');
+      ghUpdateLockButton();
+      throw new Error('Token inválido ou expirado. Clique no cadeado para configurar um novo.');
     }
     if (!res.ok) {
       return res.json().then(function (e) {
@@ -213,8 +219,6 @@ function githubListDir(path) {
 
 /* ═══════════════════════════════════════════════════════════════════════
    PARSER — localiza e substitui objetos de layout
-   Mesmo algoritmo do senko-fsa.js, aqui replicado para manter
-   o módulo 100% autocontido
 ═══════════════════════════════════════════════════════════════════════ */
 
 function ghFindObjectBounds(content, layoutId) {
@@ -235,7 +239,6 @@ function ghFindObjectBounds(content, layoutId) {
     var ch = content[i];
 
     if (ch === '`') {
-      /* Conta barras antes do backtick para saber se está escapado */
       var backslashes = 0;
       var j = i - 1;
       while (j >= 0 && content[j] === '\\') { backslashes++; j--; }
@@ -244,7 +247,6 @@ function ghFindObjectBounds(content, layoutId) {
     }
 
     if (inTemplate) { i++; continue; }
-
     if (ch === '{') { depth++; i++; continue; }
 
     if (ch === '}') {
@@ -264,7 +266,6 @@ function ghFindObjectBounds(content, layoutId) {
   return null;
 }
 
-/* Remove marcadores @@@@Senko duplicados — mantém só a última ocorrência */
 function ghDeduplicateMarkers(content, layoutId) {
   var marker    = '/*@@@@Senko - ' + layoutId.toLowerCase() + ' */';
   var positions = [];
@@ -279,7 +280,6 @@ function ghDeduplicateMarkers(content, layoutId) {
 
   if (positions.length <= 1) return content;
 
-  /* Remove todas exceto a última — de trás pra frente para não deslocar índices */
   for (var k = positions.length - 2; k >= 0; k--) {
     var start   = positions[k];
     var lineEnd = content.indexOf('\n', start);
@@ -311,7 +311,6 @@ function githubSaveLayout(layoutId, objectCode) {
 
     var marker = '/*@@@@Senko - ' + layoutId.toLowerCase() + ' */';
 
-    /* Busca paralela em todos os arquivos de layout */
     var promises = jsFiles.map(function (entry) {
       return githubGetFile(entry.path).then(function (data) {
         if (data.content.indexOf(marker) !== -1) {
@@ -363,7 +362,6 @@ function githubSaveLayout(layoutId, objectCode) {
         target.sha,
         '[SenkoLib] edit layout: ' + layoutId
       ).then(function () {
-        /* Atualiza memória */
         var layouts = SenkoLib.getAll();
         for (var i = 0; i < layouts.length; i++) {
           if (layouts[i].id === layoutId) {
@@ -408,7 +406,6 @@ function githubSaveNewLayout(fileName, objectCode, layoutId) {
     var content = data.content;
     var sha     = data.sha;
 
-    /* Verifica duplicata de ID */
     var marker = '/*@@@@Senko - ' + layoutId.toLowerCase() + ' */';
     if (content.indexOf(marker) !== -1) {
       ghSetStatus('ID já existe', 'error');
@@ -416,7 +413,6 @@ function githubSaveNewLayout(fileName, objectCode, layoutId) {
       return false;
     }
 
-    /* Acha o fechamento do array SenkoLib.register([...]) */
     var closePos = content.lastIndexOf(']);');
     if (closePos === -1) {
       ghSetStatus('Estrutura inválida', 'error');
@@ -437,7 +433,6 @@ function githubSaveNewLayout(fileName, objectCode, layoutId) {
       sha,
       '[SenkoLib] add layout: ' + layoutId
     ).then(function () {
-      /* Registra em memória */
       var addHtml = document.getElementById('addHtml');
       var addCss  = document.getElementById('addCss');
       var addName = document.getElementById('addName');
@@ -494,7 +489,6 @@ function githubSaveVariant(parentId, variantNome, objectCode) {
       return false;
     }
 
-    /* Acha o '{' de abertura do objeto voltando do 'nome:' */
     var objOpen = -1;
     var tmpScan = content.lastIndexOf('{', pos);
     while (tmpScan !== -1) {
@@ -512,7 +506,6 @@ function githubSaveVariant(parentId, variantNome, objectCode) {
       return false;
     }
 
-    /* Conta profundidade com suporte a template literals */
     var i          = objOpen;
     var depth      = 0;
     var inTemplate = false;
@@ -561,7 +554,6 @@ function githubSaveVariant(parentId, variantNome, objectCode) {
       sha,
       '[SenkoLib] edit variant: ' + variantNome + ' (' + parentId + ')'
     ).then(function () {
-      /* Atualiza memória */
       var html = document.getElementById('newVarHtml') ? document.getElementById('newVarHtml').value : '';
       var css  = document.getElementById('newVarCss')  ? document.getElementById('newVarCss').value  : '';
       var variants    = SenkoLib.getVariants(parentId);
@@ -590,55 +582,48 @@ function githubSaveVariant(parentId, variantNome, objectCode) {
 
 
 /* ═══════════════════════════════════════════════════════════════════════
-   UI — Injeta barra GitHub e botões nos modais
+   UI — Botão cadeado + botões GitHub nos modais
 ═══════════════════════════════════════════════════════════════════════ */
 
-/* Ícone do GitHub em SVG */
 var GH_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>';
-
-var SAVE_ICON_GH = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>';
-
-var KEY_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>';
 
 document.addEventListener('DOMContentLoaded', function () {
 
   /* ─── Injetar estilos ─────────────────────────────── */
   var style = document.createElement('style');
   style.textContent = [
-    '.gh-bar {',
-    '  display: flex;',
+    '.gh-lock-btn {',
+    '  display: inline-flex;',
     '  align-items: center;',
-    '  gap: .75rem;',
-    '  padding: .35rem 1.5rem;',
-    '  background: #0d1117;',
-    '  border-bottom: 1px solid #30363d;',
-    '  font-size: .78rem;',
-    '  font-family: var(--font-body, sans-serif);',
-    '  color: #8b949e;',
+    '  justify-content: center;',
+    '  width: 34px;',
+    '  height: 34px;',
+    '  padding: 0;',
+    '  background: var(--card, #fff);',
+    '  border: 1.5px solid var(--border, #e2e8f0);',
+    '  border-radius: var(--radius, 8px);',
+    '  color: var(--text3, #94a3b8);',
+    '  cursor: pointer;',
+    '  transition: all .2s ease;',
+    '  flex-shrink: 0;',
     '}',
-    '.gh-bar-label {',
-    '  display: flex;',
-    '  align-items: center;',
-    '  gap: .4rem;',
-    '  font-weight: 700;',
-    '  color: #c9d1d9;',
+    '.gh-lock-btn:hover {',
+    '  border-color: var(--text3, #94a3b8);',
+    '  background: var(--hover, #f8fafc);',
     '}',
-    '.gh-bar-repo {',
-    '  color: #58a6ff;',
-    '  font-weight: 700;',
+    '.gh-lock-btn.gh-lock-active {',
+    '  color: #22c55e;',
+    '  border-color: #22c55e40;',
+    '  background: #22c55e0a;',
+    '  cursor: default;',
     '}',
-    '.gh-bar-branch {',
-    '  background: #21262d;',
-    '  border: 1px solid #30363d;',
-    '  border-radius: 4px;',
-    '  padding: 0 .4rem;',
-    '  font-size: .72rem;',
-    '  color: #3fb950;',
+    '.gh-lock-btn.gh-lock-active:hover {',
+    '  border-color: #22c55e40;',
+    '  background: #22c55e0a;',
     '}',
-    '.gh-status-text { transition: color .2s; color: #8b949e; }',
-    '.gh-status-saving { color: #d29922; }',
-    '.gh-status-ok     { color: #3fb950; }',
-    '.gh-status-error  { color: #f85149; }',
+    /* Status text (hidden, only used internally) */
+    '.gh-status-text { display: none; }',
+    /* GitHub buttons in modals */
     '.btn-github {',
     '  display: inline-flex;',
     '  align-items: center;',
@@ -657,22 +642,6 @@ document.addEventListener('DOMContentLoaded', function () {
     '}',
     '.btn-github:hover { background: #30363d; border-color: #8b949e; }',
     '.btn-github:active { background: #161b22; }',
-    '.btn-gh-token {',
-    '  display: inline-flex;',
-    '  align-items: center;',
-    '  gap: .3rem;',
-    '  padding: .2rem .6rem;',
-    '  background: transparent;',
-    '  color: #8b949e;',
-    '  border: 1px solid #30363d;',
-    '  border-radius: 4px;',
-    '  font-size: .72rem;',
-    '  font-weight: 600;',
-    '  font-family: var(--font-body, sans-serif);',
-    '  cursor: pointer;',
-    '  transition: background .15s, color .15s;',
-    '}',
-    '.btn-gh-token:hover { background: #21262d; color: #c9d1d9; }',
     '.gh-file-select {',
     '  font-family: var(--font-body, sans-serif);',
     '  font-size: .85rem;',
@@ -694,44 +663,46 @@ document.addEventListener('DOMContentLoaded', function () {
   ].join('\n');
   document.head.appendChild(style);
 
-  /* ─── Barra GitHub — injetar abaixo da .fsa-bar ─── */
-  var fsaBar = document.querySelector('.fsa-bar');
-  if (fsaBar) {
-    var ghBar = document.createElement('div');
-    ghBar.className = 'gh-bar';
-    ghBar.innerHTML =
-      '<span class="gh-bar-label">' + GH_ICON + ' GitHub</span>' +
-      '<span class="gh-bar-repo">' + GITHUB_CONFIG.OWNER + '/' + GITHUB_CONFIG.REPO + '</span>' +
-      '<span class="gh-bar-branch">' + GITHUB_CONFIG.BRANCH + '</span>' +
-      '<span id="ghTokenIndicator" class="gh-status-text"></span>' +
-      '<button class="btn-gh-token" id="ghTokenBtn">' + KEY_ICON + ' Configurar token</button>' +
-      '<span id="ghStatus" class="gh-status-text">Pronto</span>';
-    fsaBar.parentNode.insertBefore(ghBar, fsaBar.nextSibling);
+  /* ─── Botão cadeado — à esquerda da barra de pesquisa ─── */
+  var searchWrap = document.querySelector('.search-wrap');
+  if (searchWrap) {
+    var lockBtn = document.createElement('button');
+    lockBtn.id        = 'ghLockBtn';
+    lockBtn.className = 'gh-lock-btn';
+    lockBtn.innerHTML = LOCK_CLOSED_SVG;
+    lockBtn.title     = 'Configurar token GitHub';
 
-    /* Botão de configurar/trocar token */
-    document.getElementById('ghTokenBtn').addEventListener('click', function () {
-      var current = ghGetToken();
-      var msg = current
-        ? '🔑 Token atual: ' + current.slice(0, 8) + '…' + current.slice(-4) + '\n\nDigite um novo token para substituir, ou deixe vazio para remover:'
-        : '🔑 Informe seu Personal Access Token do GitHub:\n\nGere em: https://github.com/settings/tokens\nPermissão necessária: "repo" (classic) ou "Contents read/write" (fine-grained)';
+    /* Insere antes do search-wrap */
+    searchWrap.parentNode.insertBefore(lockBtn, searchWrap);
 
-      var newToken = prompt(msg);
+    lockBtn.addEventListener('click', function () {
+      /* Se já tem token, não faz nada */
+      if (ghGetToken()) return;
 
-      if (newToken === null) return; /* cancelou */
+      /* Se não tem, pede o token */
+      var token = prompt(
+        '🔑 Token do GitHub\n\n' +
+        'Cole seu Personal Access Token do GitHub aqui.\n' +
+        'Permissão necessária: "repo" (classic) ou "Contents read/write" (fine-grained).\n\n' +
+        'Gere em: https://github.com/settings/tokens\n\n' +
+        'Você só precisa colar 1 vez — fica salvo no navegador.'
+      );
 
-      if (newToken.trim() === '') {
-        ghSetToken('');
-        ghSetStatus('Token removido', '');
-      } else {
-        ghSetToken(newToken);
-        ghSetStatus('Token atualizado ✓', 'ok');
+      if (token && token.trim().length > 10) {
+        ghSetToken(token);
+        ghUpdateLockButton();
       }
-      ghUpdateBarStatus();
     });
 
-    /* Atualiza indicador inicial */
-    ghUpdateBarStatus();
+    /* Estado inicial */
+    ghUpdateLockButton();
   }
+
+  /* ─── Span de status oculto (para uso interno) ─── */
+  var hiddenStatus = document.createElement('span');
+  hiddenStatus.id = 'ghStatus';
+  hiddenStatus.className = 'gh-status-text';
+  document.body.appendChild(hiddenStatus);
 
   /* ─── Modal edição — botão GitHub ─────────────────── */
   var saveToFileBtn = document.getElementById('saveToFileBtn');
@@ -832,21 +803,18 @@ document.addEventListener('DOMContentLoaded', function () {
   var copyGeneratedBtn = document.getElementById('copyGeneratedBtn');
   if (copyGeneratedBtn && !document.getElementById('ghNewLayoutGroup')) {
 
-    /* Select de arquivo */
     var ghSelect = document.createElement('select');
     ghSelect.id        = 'ghTargetFile';
     ghSelect.className = 'gh-file-select';
     ghSelect.disabled  = true;
     ghSelect.innerHTML = '<option value="">-- selecione o arquivo --</option>';
 
-    /* Botão salvar */
     var ghNewBtn = document.createElement('button');
     ghNewBtn.id        = 'ghSaveNewLayoutBtn';
     ghNewBtn.className = 'btn-github';
     ghNewBtn.innerHTML = GH_ICON + ' GitHub';
     ghNewBtn.title     = 'Salvar novo layout direto no repositório GitHub';
 
-    /* Wrapper */
     var ghGroup = document.createElement('div');
     ghGroup.id        = 'ghNewLayoutGroup';
     ghGroup.className = 'gh-auto-group';
@@ -854,9 +822,8 @@ document.addEventListener('DOMContentLoaded', function () {
     ghGroup.appendChild(ghNewBtn);
     copyGeneratedBtn.parentNode.insertBefore(ghGroup, copyGeneratedBtn.nextSibling);
 
-    /* Popula o select via API */
     function ghPopulateFileSelect() {
-      if (!ghGetToken()) return; /* sem token, não tenta */
+      if (!ghGetToken()) return;
 
       ghSelect.innerHTML = '<option value="">Carregando…</option>';
       ghSelect.disabled  = true;
@@ -881,7 +848,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    /* Popula ao abrir o modal */
     var openAddBtn = document.getElementById('openAddModal');
     if (openAddBtn) {
       openAddBtn.addEventListener('click', function () {
@@ -889,12 +855,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    /* Popula imediatamente se já tem token */
     if (ghGetToken()) {
       ghPopulateFileSelect();
     }
 
-    /* Clique no botão */
     ghNewBtn.addEventListener('click', function () {
       var code     = document.getElementById('generatedCode').textContent;
       var id       = document.getElementById('addId').value.trim().toLowerCase();
