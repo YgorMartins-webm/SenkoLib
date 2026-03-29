@@ -156,7 +156,7 @@ SenkoLib.register([
   {
     id: 'section-2',
     name: 'Section-2 (Header Vídeo)',
-    tags: ['Section-2', 'Section 2', '2', 'vídeo', 'header vídeo'],
+    tags: ['Section-2', 'Section 2', '2', 'vídeo', 'header vídeo', 'sexo'],
     html: `<section class="video-header" aria-label="Cabeçalho do produto">
   <header class="video-header__banner">
     <video class="video-header__banner-video" autoplay muted loop playsinline width="1200" height="250"
