@@ -237,6 +237,7 @@ function ghCreateDeleteModal() {
 
   var overlay = document.createElement('div');
   overlay.id = 'ghDeleteOverlay';
+  overlay.classList.add('gh-hidden');
 
   var modal = document.createElement('div');
   modal.id = 'ghDeleteModal';
@@ -252,21 +253,6 @@ function ghCreateDeleteModal() {
   var desc = document.createElement('p');
   desc.id = 'ghDeleteDesc';
 
-  var varWrap = document.createElement('div');
-  varWrap.id = 'ghDeleteVarWrap';
-
-  var varCheck = document.createElement('label');
-  varCheck.id = 'ghDeleteVarLabel';
-
-  var varInput = document.createElement('input');
-  varInput.type = 'checkbox';
-  varInput.id   = 'ghDeleteVarCheck';
-  varInput.checked = true;
-
-  varCheck.appendChild(varInput);
-  varCheck.appendChild(document.createTextNode(' Também excluir o arquivo de variantes'));
-  varWrap.appendChild(varCheck);
-
   var actions = document.createElement('div');
   actions.id = 'ghDeleteActions';
 
@@ -279,7 +265,7 @@ function ghCreateDeleteModal() {
   confirmBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg> Excluir';
 
   actions.append(cancelBtn, confirmBtn);
-  modal.append(icon, title, desc, varWrap, actions);
+  modal.append(icon, title, desc, actions);
   overlay.appendChild(modal);
   document.body.appendChild(overlay);
 
@@ -303,35 +289,20 @@ function ghOpenDeleteModal(layoutId, layoutName, variantCount) {
 
   var overlay    = document.getElementById('ghDeleteOverlay');
   var desc       = document.getElementById('ghDeleteDesc');
-  var varWrap    = document.getElementById('ghDeleteVarWrap');
-  var varCheck   = document.getElementById('ghDeleteVarCheck');
   var confirmBtn = document.getElementById('ghDeleteConfirmBtn');
 
   desc.innerHTML =
     'Você está prestes a excluir <strong>' + layoutName + '</strong> do repositório GitHub.<br>' +
+    (variantCount > 0
+      ? 'O arquivo de variantes (' + variantCount + ' variante' + (variantCount > 1 ? 's' : '') + ') também será excluído.<br>'
+      : '') +
     'Essa ação <strong>não pode ser desfeita</strong>.';
-
-  /* Exibe ou oculta a opção de variantes */
-  if (variantCount > 0) {
-    varWrap.style.display = 'flex';
-    varCheck.checked = true;
-    var varLabel = document.getElementById('ghDeleteVarLabel');
-    varLabel.innerHTML = '';
-    varLabel.appendChild(varCheck);
-    varLabel.appendChild(document.createTextNode(
-      ' Também excluir o arquivo de variantes (' + variantCount + ' variante' + (variantCount > 1 ? 's' : '') + ')'
-    ));
-  } else {
-    varWrap.style.display = 'none';
-    varCheck.checked = false;
-  }
 
   /* Limpa listener anterior e define novo */
   var newConfirmBtn = confirmBtn.cloneNode(true);
   confirmBtn.parentNode.replaceChild(newConfirmBtn, confirmBtn);
 
   newConfirmBtn.addEventListener('click', function () {
-    var deleteVariants = variantCount > 0 && document.getElementById('ghDeleteVarCheck').checked;
     ghCloseDeleteModal();
     closeEditModal();
 
@@ -343,7 +314,7 @@ function ghOpenDeleteModal(layoutId, layoutName, variantCount) {
         deleteBtn.disabled = true;
       }
 
-      githubDeleteLayout(layoutId, deleteVariants).then(function (result) {
+      githubDeleteLayout(layoutId, true).then(function (result) {
         if (deleteBtn) {
           deleteBtn.innerHTML = TRASH_ICON + ' Excluir';
           deleteBtn.disabled = false;
@@ -431,27 +402,6 @@ function ghInjectDeleteStyles() {
     '}',
     '#ghDeleteDesc strong { color: var(--text1, #0f172a); }',
 
-    /* Linha de variantes */
-    '#ghDeleteVarWrap {',
-    '  width: 100%;',
-    '  background: var(--bg, #f8fafc);',
-    '  border: 1.5px solid var(--border, #e2e8f0);',
-    '  border-radius: var(--radius, 8px);',
-    '  padding: .65rem .9rem;',
-    '}',
-    '#ghDeleteVarLabel {',
-    '  display: flex;',
-    '  align-items: center;',
-    '  gap: .55rem;',
-    '  font-family: var(--font-body, sans-serif);',
-    '  font-size: .83rem;',
-    '  font-weight: 700;',
-    '  color: var(--text2, #64748b);',
-    '  cursor: pointer;',
-    '  user-select: none;',
-    '}',
-    '#ghDeleteVarCheck { accent-color: #ef4444; cursor: pointer; width: 15px; height: 15px; flex-shrink: 0; }',
-
     /* Botões */
     '#ghDeleteActions {',
     '  display: flex;',
@@ -493,7 +443,7 @@ function ghInjectDeleteStyles() {
     '#ghDeleteConfirmBtn:hover { background: #dc2626; border-color: #dc2626; }',
     '#ghDeleteConfirmBtn:disabled { opacity: .6; cursor: not-allowed; }',
 
-    /* Botão excluir no modal de edição */
+    /* Botão excluir no modal de edição — mesmo tamanho do .btn-github */
     '.btn-delete-layout {',
     '  display: inline-flex;',
     '  align-items: center;',
@@ -501,14 +451,16 @@ function ghInjectDeleteStyles() {
     '  padding: .45rem .85rem;',
     '  background: transparent;',
     '  color: #ef4444;',
-    '  border: 1.5px solid #fca5a5;',
+    '  border: 1px solid #fca5a5;',
     '  border-radius: var(--radius, 6px);',
     '  font-size: .8rem;',
     '  font-weight: 700;',
     '  font-family: var(--font-body, sans-serif);',
     '  cursor: pointer;',
     '  height: 34px;',
+    '  white-space: nowrap;',
     '  transition: background .15s, border-color .15s, color .15s;',
+    '  box-sizing: border-box;',
     '}',
     '.btn-delete-layout:hover { background: #fee2e2; border-color: #ef4444; }',
     '.btn-delete-layout:disabled { opacity: .5; cursor: not-allowed; }',
