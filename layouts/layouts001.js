@@ -33,7 +33,7 @@ SenkoLib.register([
   <article class="product-header__body">
     <small class="product-header__brand">Marca</small>
     <h1 class="product-header__title">
-      TÍTULO DO PRODUTO GAMER (Nome, modelo, diferencial...)
+      TÍTULO DO PRODUTO GAMERs (Nome, modelo, diferencial...)
     </h1>
     <p class="product-header__subtitle">
       Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
