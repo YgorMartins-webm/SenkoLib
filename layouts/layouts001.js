@@ -2554,7 +2554,7 @@ SenkoLib.register([
     text-align: center;
     font-size: 2rem;
     color: #333;
-    margin-bottom: 50px;
+    margin: 10px 0 0 0;
   }
 
   .details-section-51 p {
