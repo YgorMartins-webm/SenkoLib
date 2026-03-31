@@ -2770,4 +2770,159 @@ SenkoLib.register([
   </style>`
   },
 
+
+/*@@@@Senko - testegamer */
+  /* variantes: variants/testegamer.js */
+  {
+    id: 'testegamer',
+    name: 'testegamer',
+    tags: ['testegamer'],
+    html: `<div class="details-section-51">
+  <h2>Pensado para o seu dia a dia</h2>
+  <div class="details-section-51">
+    <div class="detail-item-section-51">
+      <div class="detail-icon-section-51">
+        <img
+          src="Https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/section-51.png"
+          alt="">
+      </div>
+      <div class="detail-title-section-51">Formato Universitário</div>
+      <div class="detail-description-section-51">200mm x 275mm</div>
+    </div>
+    <div class="detail-item-section-51">
+      <div class="detail-icon-section-51">
+        <img
+          src="Https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/section-51.png"
+          alt="">
+      </div>
+      <div class="detail-title-section-51">Capa Dura com</div>
+      <div class="detail-description-section-51">Verniz Localizado</div>
+    </div>
+    <div class="detail-item-section-51">
+      <div class="detail-icon-section-51">
+        <img @type="product"
+          src="Https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/section-51.png"
+          alt="">
+      </div>
+      <div class="detail-title-section-51">Espiral Metálico</div>
+      <div class="detail-description-section-51">Resistente</div>
+    </div>
+    <div class="detail-item-section-51">
+      <div class="detail-icon-section-51">
+        <img
+          src="Https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/section-51.png"
+          alt="">
+      </div>
+      <div class="detail-title-section-51">80 Folhas Pautadas</div>
+      <div class="detail-description-section-51">Decoradas</div>
+    </div>
+    <div class="detail-item-section-51">
+      <div class="detail-icon-section-51">
+        <img
+          src="Https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/section-51.png"
+          alt="">
+      </div>
+      <div class="detail-title-section-51">Gramatura</div>
+      <div class="detail-description-section-51">56g/m²</div>
+    </div>
+  </div>
+</div>`,
+    css: `<style>
+  .details-section-51 {
+    width: 100%;
+    margin: 0 auto 25px auto;
+  }
+
+  .details-section-51 h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin: 10px 0 0 0;
+  }
+
+  .details-section-51 p {
+    margin: auto;
+    --tw-text-opacity: 1;
+    color: #333;
+    font-size: clamp(1.09rem, 1vw, 1.4rem);
+    line-height: 22px;
+    margin-top: 1rem;
+    max-width: 56rem;
+    text-align: center;
+    text-wrap: pretty;
+  }
+
+  .details-section-51 .details-section-51 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    margin: 0 auto;
+    padding: 28px;
+  }
+
+  .details-section-51 .detail-item-section-51 {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .details-section-51 .detail-item-section-51:hover {
+    transform: translateY(-5px);
+  }
+
+  .details-section-51 .detail-icon-section-51 {
+    font-size: 3rem;
+    color: #DAA520;
+    margin: 15px auto;
+  }
+
+  .details-section-51 .detail-icon-section-51 img {
+    width: 4.6rem;
+    margin: auto;
+  }
+
+  .details-section-51 .detail-title-section-51 {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #333;
+  }
+
+  .details-section-51 .detail-description-section-51 {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* Responsivo - Tablet */
+  @media (max-width: 1024px) {
+    .details-section-51 .details-section-51 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Responsivo - Mobile */
+  @media (max-width: 760px) {
+    .details-section-51 .details-section-51 {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .details-section-51 .detail-icon-section-51 {
+      font-size: 2.5rem;
+    }
+
+    .details-section-51 {
+      margin: 0 auto 25px auto;
+    }
+
+    .details-section-51 .detail-icon-section-51 img {
+      width: 4.3rem;
+    }
+  }
+</style>`
+  },
+
 ]);
