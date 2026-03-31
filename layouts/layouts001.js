@@ -161,14 +161,11 @@ SenkoLib.register([
   <header class="video-header__banner">
     <video class="video-header__banner-video" autoplay muted loop playsinline width="1200" height="250"
       aria-hidden="true">
-      <source src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/foroni/header-foroni.mov"
-        type="video/quicktime">
-      <source src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/foroni/header-foroni.mov"
-        type="video/mp4">
+      <source
+        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/header-cottonbaby.mov">
     </video>
     <div class="video-header__badge" role="img" aria-label="Logo da marca">
-      <img
-        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/logo.png"
+      <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/logo-cottonbaby2.png"
         alt="imagem png com ícone da marca" class="video-header__badge-img">
     </div>
   </header>
