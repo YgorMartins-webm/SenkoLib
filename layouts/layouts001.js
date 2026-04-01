@@ -2780,4 +2780,227 @@ SenkoLib.register([
     css: ``
   },
 
+
+/*@@@@Senko - tewst */
+  /* variantes: variants/tewst.js */
+  {
+    id: 'tewst',
+    name: 'test',
+    tags: ['TtT'],
+    html: `  <section class="section-32__container" aria-label="Seção de destaque do produto">
+    <figure class="section-32__groupimage-section">
+      <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/metalfrio/2223537_02.jpg"
+        alt="!!!!!COLOQUE O TEXTO ALT AQUI!!!!!" style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption class="section-32__grouptext-overlay left">
+        <p style="color: #faca95;">Isso é uma descrição. Isso é uma descrição.</p>
+        <h2 style="color: #faca95;"><strong>SUB-TÍTULO</strong></h2>
+        <p style="color: #faca95;">Isso é uma descrição. Isso é uma descrição. Isso é uma descrição. Isso é umadescrição.</p>
+      </figcaption>
+    </figure>
+  </section>`,
+    css: `  <style>
+    .section-32__container {
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .section-32__groupimage-section {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      contain: layout style;
+    }
+
+    .section-32__groupimage-section img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .section-32__grouptext-overlay {
+      position: absolute;
+      max-width: 40%;
+      width: 90%;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .section-32__grouptext-overlay.top {
+      top: 3%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .section-32__grouptext-overlay.bottom {
+      top: 84%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .section-32__grouptext-overlay.left {
+      top: 50%;
+      left: 25%;
+      transform: translate(-50%, -50%);
+      max-width: 41%;
+    }
+
+    .section-32__grouptext-overlay.right {
+      top: 50%;
+      left: 75%;
+      transform: translate(-50%, -50%);
+      max-width: 42%;
+    }
+
+    .section-32__grouptext-overlay h2 {
+      font-size: 2vw;
+      font-weight: bold;
+      margin-bottom: 1.5px;
+      line-height: 120%;
+    }
+
+    .section-32__grouptext-overlay p {
+      font-size: 1.1vw;
+      margin: 0;
+      line-height: 120%;
+    }
+
+    @media (max-width: 960px) {
+      .section-32__grouptext-overlay h2 {
+        font-size: 2.1vw;
+      }
+
+      .section-32__grouptext-overlay p {
+        font-size: 1.5vw;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-32__grouptext-overlay h2 {
+        font-size: 2.5vw;
+      }
+
+      .section-32__grouptext-overlay p {
+        font-size: 1.8vw;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .section-32__grouptext-overlay h2 {
+        font-size: 3vw;
+      }
+
+      .section-32__grouptext-overlay p {
+        font-size: 2.3vw;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-32__grouptext-overlay h2 {
+        font-size: 3vw;
+      }
+
+      .section-32__grouptext-overlay p {
+        font-size: 2.3vw;
+      }
+    }
+
+    @media (max-width: 1060px) {
+      .section-32__grouptext-overlay.top {
+        top: 3%;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .section-32__grouptext-overlay.top {
+        top: 3%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-32__grouptext-overlay.top {
+        top: 3%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .section-32__grouptext-overlay.top {
+        top: 3%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-32__grouptext-overlay.top {
+        top: 3%;
+      }
+    }
+
+    @media (max-width: 1060px) {
+      .section-32__grouptext-overlay.bottom {
+        top: 81%;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .section-32__grouptext-overlay.bottom {
+        top: 79%
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-32__grouptext-overlay.bottom {
+        top: 81%
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-32__grouptext-overlay.bottom {
+        top: 76%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .section-32__grouptext-overlay.bottom {
+        top: 67%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+
+      .section-32__grouptext-overlay.right {
+        top: 50%;
+        left: 73%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .section-32__grouptext-overlay.left {
+        top: 50%;
+        left: 27%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .grouptext-overlay-Background {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 4.5vw;
+        padding: 0.5rem;
+        backdrop-filter: blur(0.8vw);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        -webkit-backdrop-filter: blur(10px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        max-width: 70%;
+        z-index: 100;
+    }
+  </style>`
+  },
+
 ]);
