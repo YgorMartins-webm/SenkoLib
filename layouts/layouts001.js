@@ -2769,4 +2769,15 @@ SenkoLib.register([
 
 
 
+
+/*@@@@Senko - teste */
+  /* variantes: variants/teste.js */
+  {
+    id: 'teste',
+    name: 'teste',
+    tags: ['teste'],
+    html: `teste`,
+    css: ``
+  },
+
 ]);
