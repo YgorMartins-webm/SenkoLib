@@ -157,30 +157,33 @@ SenkoLib.register([
     id: 'section-2',
     name: 'Section-2 (Header Vídeo)',
     tags: ['Section-2', 'Section 2', '2', 'vídeo', 'header vídeo'],
-    html: `<section class="video-header" aria-label="Cabeçalho do produto">
-  <header class="video-header__banner">
-    <video class="video-header__banner-video" autoplay muted loop playsinline width="1200" height="250"
-      aria-hidden="true">
-      <source
-        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/header-cottonbaby.mov">
-    </video>
-    <div class="video-header__badge" role="img" aria-label="Logo da marca">
-      <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/logo-cottonbaby2.png"
-        alt="imagem png com ícone da marca" class="video-header__badge-img">
-    </div>
-  </header>
-  <article class="video-header__body">
-    <small class="video-header__brand">Marca</small>
-    <h1 class="video-header__title">
-      TÍTULO DO PRODUTO (Nome, modelo, diferencial...)
-    </h1>
-    <p class="video-header__subtitle">
-      Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
-      Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
-      Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
-    </p>
-  </article>
-</section>`,
+    html: `    <section class="video-header" aria-label="Cabeçalho do produto">
+      <header class="video-header__banner">
+        <video class="video-header__banner-video"
+          poster="C:\Users\ygorq\Downloads\Captura de tela 2026-04-02 161810.png" preload="none" autoplay muted loop
+          playsinline width="1200" height="250" aria-hidden="true">
+          <source
+            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/header-cottonbaby.mov"
+            loading="lazy">
+        </video>
+        <div class="video-header__badge" role="img" aria-label="Logo da marca">
+          <img
+            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/logo-cottonbaby2.png"
+            alt="imagem png com ícone da marca" class="video-header__badge-img">
+        </div>
+      </header>
+      <article class="video-header__body">
+        <small class="video-header__brand">Marca</small>
+        <h1 class="video-header__title">
+          TÍTULO DO PRODUTO (Nome, modelo, diferencial...)
+        </h1>
+        <p class="video-header__subtitle">
+          Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
+          Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
+          Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
+        </p>
+      </article>
+    </section>`,
     css: `<style>
   * {
     margin: 0;
