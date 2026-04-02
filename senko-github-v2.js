@@ -18,11 +18,54 @@
      - Funciona direto do GitHub Pages — sem Live Server necessário
 ═══════════════════════════════════════════════════════════════════════ */
 
-var GITHUB_CONFIG = {
-  OWNER:  'YgorMartins-webm',
-  REPO:   'SenkoLib',
-  BRANCH: 'main'
-};
+/* ═══════════════════════════════════════════════════════════════════════
+   CONFIG — detecção automática pelo GitHub Pages URL
+   ───────────────────────────────────────────────────────────────────────
+   GitHub Pages usa o padrão: [owner].github.io/[repo]
+   Ex: ygorMartins-webm.github.io/SenkoLib
+     → OWNER = 'ygorMartins-webm'
+     → REPO  = 'SenkoLib'
+
+   Fallback: localhost / Live Server
+     → lê do localStorage via modal de configuração estilizado
+     → botão de engrenagem ao lado do cadeado no header
+═══════════════════════════════════════════════════════════════════════ */
+
+var GH_CONFIG_KEY = 'senkolib_github_config';
+
+var GITHUB_CONFIG = (function () {
+  var hostname = window.location.hostname;
+  var pathname = window.location.pathname;
+
+  /* ── GitHub Pages: [owner].github.io ── */
+  var pagesMatch = hostname.match(/^([^.]+)\.github\.io$/i);
+  if (pagesMatch) {
+    var owner = pagesMatch[1];
+    var repo  = pathname.replace(/^\//, '').split('/')[0] || '';
+    if (owner && repo) {
+      return { OWNER: owner, REPO: repo, BRANCH: 'main', _auto: true };
+    }
+  }
+
+  /* ── Fallback: lê do localStorage ── */
+  try {
+    var saved = JSON.parse(localStorage.getItem(GH_CONFIG_KEY) || 'null');
+    if (saved && saved.OWNER && saved.REPO) return saved;
+  } catch (e) {}
+
+  /* Retorna vazio — modal de configuração pedirá os dados */
+  return { OWNER: '', REPO: '', BRANCH: 'main', _auto: false };
+})();
+
+/* Atualiza GITHUB_CONFIG em runtime após o usuário salvar pelo modal */
+function ghApplyConfig(owner, repo, token) {
+  GITHUB_CONFIG.OWNER  = owner;
+  GITHUB_CONFIG.REPO   = repo;
+  GITHUB_CONFIG.BRANCH = 'main';
+  var cfg = { OWNER: owner, REPO: repo, BRANCH: 'main' };
+  try { localStorage.setItem(GH_CONFIG_KEY, JSON.stringify(cfg)); } catch (e) {}
+  if (token) ghSetToken(token);
+}
 
 /* ═══════════════════════════════════════════════════════════════════════
    TOKEN — gerenciamento via localStorage
@@ -46,41 +89,15 @@ function ghSetToken(token) {
 function ghEnsureToken() {
   var token = ghGetToken();
   if (token) return token;
-
-  token = prompt(
-    '🔑 Token do GitHub necessário\n\n' +
-    'Para salvar direto no repositório, informe seu Personal Access Token do GitHub.\n' +
-    'O token precisa ter permissão "repo" (classic) ou "Contents read/write" (fine-grained).\n\n' +
-    'Gere um token em: https://github.com/settings/tokens\n\n' +
-    'O token será salvo APENAS no seu navegador (localStorage) — só precisa colar 1 vez.'
-  );
-
-  if (token && token.trim().length > 10) {
-    ghSetToken(token);
-    ghUpdateLockButton();
-    return token.trim();
-  }
-
+  /* Abre o modal de configuração estilizado em vez do prompt nativo */
+  setTimeout(function () {
+    if (typeof ghOpenConfigModal === 'function') ghOpenConfigModal();
+  }, 0);
   return '';
 }
 
 
-/* ═══════════════════════════════════════════════════════════════════════
-   BOTÃO CADEADO — indica estado do token
-═══════════════════════════════════════════════════════════════════════ */
 
-var LOCK_CLOSED_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
-var LOCK_OPEN_SVG   = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>';
-
-function ghUpdateLockButton() {
-  var btn = document.getElementById('ghLockBtn');
-  if (!btn) return;
-
-  var hasToken = !!ghGetToken();
-  btn.innerHTML = hasToken ? LOCK_OPEN_SVG : LOCK_CLOSED_SVG;
-  btn.classList.toggle('gh-lock-active', hasToken);
-  btn.title = hasToken ? 'Token GitHub configurado' : 'Configurar token GitHub';
-}
 
 
 /* ═══════════════════════════════════════════════════════════════════════
@@ -133,18 +150,16 @@ function githubGetFile(path) {
       ghUpdateLockButton();
       throw new Error('Token inválido ou expirado. Clique no cadeado para inserir um novo.');
     }
-    if (!res.ok) {
-      return res.json().then(function (e) {
-        throw new Error('GitHub GET falhou (' + res.status + '): ' + (e.message || path));
-      });
-    }
-    return res.json();
-  }).then(function (data) {
-    var raw = (data.content || '').replace(/\n/g, '');
-    return {
-      content: ghDecodeBase64(raw),
-      sha:     data.sha
-    };
+    return res.json().then(function (data) {
+      if (!res.ok) {
+        throw new Error('GitHub GET falhou (' + res.status + '): ' + (data.message || path));
+      }
+      var raw = (data.content || '').replace(/\n/g, '');
+      return {
+        content: ghDecodeBase64(raw),
+        sha:     data.sha
+      };
+    });
   });
 }
 
@@ -176,12 +191,12 @@ function githubPutFile(path, content, sha, commitMsg) {
       ghUpdateLockButton();
       throw new Error('Token inválido ou expirado. Clique no cadeado para configurar um novo.');
     }
-    if (!res.ok) {
-      return res.json().then(function (e) {
-        throw new Error('GitHub PUT falhou (' + res.status + '): ' + (e.message || path));
-      });
-    }
-    return res.json();
+    return res.json().then(function (data) {
+      if (!res.ok) {
+        throw new Error('GitHub PUT falhou (' + res.status + '): ' + (data.message || path));
+      }
+      return data;
+    });
   });
 }
 
@@ -203,15 +218,13 @@ function githubListDir(path) {
       ghUpdateLockButton();
       throw new Error('Token inválido ou expirado. Clique no cadeado para configurar um novo.');
     }
-    if (!res.ok) {
-      return res.json().then(function (e) {
-        throw new Error('GitHub LIST falhou (' + res.status + '): ' + (e.message || path));
+    return res.json().then(function (data) {
+      if (!res.ok) {
+        throw new Error('GitHub LIST falhou (' + res.status + '): ' + (data.message || path));
+      }
+      return data.map(function (item) {
+        return { name: item.name, path: item.path, sha: item.sha, type: item.type };
       });
-    }
-    return res.json();
-  }).then(function (data) {
-    return data.map(function (item) {
-      return { name: item.name, path: item.path, sha: item.sha, type: item.type };
     });
   });
 }
@@ -293,11 +306,43 @@ function ghDeduplicateMarkers(content, layoutId) {
 
 
 /* ═══════════════════════════════════════════════════════════════════════
+   RACE CONDITION GUARD
+   Impede que duas operações de escrita no GitHub ocorram simultaneamente.
+   Cada operação verifica e seta _ghSaving antes de prosseguir.
+═══════════════════════════════════════════════════════════════════════ */
+var _ghSaving = false;
+var _ghSavingTimeout = null;
+
+function ghLockSave() {
+  if (_ghSaving) {
+    alert('Já existe uma operação em andamento. Aguarde terminar antes de salvar novamente.');
+    return false;
+  }
+  _ghSaving = true;
+  _ghSavingTimeout = setTimeout(function () {
+    console.warn('[senko-github] Lock liberado por timeout de segurança.');
+    _ghSaving = false;
+  }, 30000);
+  return true;
+}
+
+function ghUnlockSave() {
+  _ghSaving = false;
+  if (_ghSavingTimeout) {
+    clearTimeout(_ghSavingTimeout);
+    _ghSavingTimeout = null;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
    CORE: Salvar layout existente
 ═══════════════════════════════════════════════════════════════════════ */
 
 function githubSaveLayout(layoutId, objectCode) {
+  if (!ghLockSave()) return Promise.resolve(false);
   if (!ghEnsureToken()) {
+    ghUnlockSave();
     ghSetStatus('Token não configurado', 'error');
     return Promise.resolve(false);
   }
@@ -377,6 +422,7 @@ function githubSaveLayout(layoutId, objectCode) {
           }
         }
         ghSetStatus('✓ Salvo em ' + target.entry.name, 'ok');
+        ghUnlockSave();
         renderGrid();
         return target.entry.name;
       });
@@ -384,6 +430,7 @@ function githubSaveLayout(layoutId, objectCode) {
   }).catch(function (e) {
     console.error('[senko-github] Erro ao salvar layout:', e);
     ghSetStatus('Erro: ' + e.message, 'error');
+    ghUnlockSave();
     alert('Erro ao salvar no GitHub:\n' + e.message);
     return false;
   });
@@ -395,7 +442,9 @@ function githubSaveLayout(layoutId, objectCode) {
 ═══════════════════════════════════════════════════════════════════════ */
 
 function githubSaveNewLayout(fileName, objectCode, layoutId) {
+  if (!ghLockSave()) return Promise.resolve(false);
   if (!ghEnsureToken()) {
+    ghUnlockSave();
     ghSetStatus('Token não configurado', 'error');
     return Promise.resolve(false);
   }
@@ -409,6 +458,7 @@ function githubSaveNewLayout(fileName, objectCode, layoutId) {
     var marker = '/*@@@@Senko - ' + layoutId.toLowerCase() + ' */';
     if (content.indexOf(marker) !== -1) {
       ghSetStatus('ID já existe', 'error');
+      ghUnlockSave();
       alert('O ID "' + layoutId + '" já existe em ' + fileName + '.\nUse o botão de editar no card para modificar layouts existentes.');
       return false;
     }
@@ -416,6 +466,7 @@ function githubSaveNewLayout(fileName, objectCode, layoutId) {
     var closePos = content.lastIndexOf(']);');
     if (closePos === -1) {
       ghSetStatus('Estrutura inválida', 'error');
+      ghUnlockSave();
       alert('Não foi possível encontrar o fechamento do array em ' + fileName + '.\nVerifique se o arquivo segue o padrão SenkoLib.register([...]);');
       return false;
     }
@@ -446,12 +497,14 @@ function githubSaveNewLayout(fileName, objectCode, layoutId) {
 
       SenkoLib.register([{ id: layoutId, name: name, tags: tags, html: html, css: css }]);
       ghSetStatus('✓ Salvo em layouts/' + fileName, 'ok');
+      ghUnlockSave();
       renderGrid();
       return fileName;
     });
   }).catch(function (e) {
     console.error('[senko-github] Erro ao salvar novo layout:', e);
     ghSetStatus('Erro: ' + e.message, 'error');
+    ghUnlockSave();
     alert('Erro ao salvar no GitHub:\n' + e.message);
     return false;
   });
@@ -463,7 +516,9 @@ function githubSaveNewLayout(fileName, objectCode, layoutId) {
 ═══════════════════════════════════════════════════════════════════════ */
 
 function githubSaveVariant(parentId, variantNome, objectCode) {
+  if (!ghLockSave()) return Promise.resolve(false);
   if (!ghEnsureToken()) {
+    ghUnlockSave();
     ghSetStatus('Token não configurado', 'error');
     return Promise.resolve(false);
   }
@@ -480,11 +535,13 @@ function githubSaveVariant(parentId, variantNome, objectCode) {
 
     if (pos === -1) {
       ghSetStatus('Variante não encontrada', 'error');
+      ghUnlockSave();
       alert('Variante "' + variantNome + '" não encontrada em ' + filePath);
       return false;
     }
     if (content.indexOf(marker, pos + 1) !== -1) {
       ghSetStatus('Variante duplicada', 'error');
+      ghUnlockSave();
       alert('A variante "' + variantNome + '" aparece mais de uma vez no arquivo.\nCorrija manualmente.');
       return false;
     }
@@ -502,6 +559,7 @@ function githubSaveVariant(parentId, variantNome, objectCode) {
 
     if (objOpen === -1) {
       ghSetStatus('Objeto da variante não encontrado', 'error');
+      ghUnlockSave();
       alert('Início do objeto da variante não encontrado.');
       return false;
     }
@@ -537,6 +595,7 @@ function githubSaveVariant(parentId, variantNome, objectCode) {
 
     if (objEnd === -1) {
       ghSetStatus('Fim da variante não encontrado', 'error');
+      ghUnlockSave();
       alert('Fim do objeto da variante não encontrado.');
       return false;
     }
@@ -569,12 +628,14 @@ function githubSaveVariant(parentId, variantNome, objectCode) {
       }
 
       ghSetStatus('✓ Salvo em ' + filePath, 'ok');
+      ghUnlockSave();
       renderGrid();
       return filePath;
     });
   }).catch(function (e) {
     console.error('[senko-github] Erro ao salvar variante:', e);
     ghSetStatus('Erro: ' + e.message, 'error');
+    ghUnlockSave();
     alert('Erro ao salvar variante no GitHub:\n' + e.message);
     return false;
   });
@@ -589,38 +650,16 @@ var GH_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" width="14" height="1
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* ─── Injetar estilos ─────────────────────────────── */
+  /* ─── Só executa no GitHub Pages ─────────────────────
+     Em qualquer outro ambiente (localhost, Live Server,
+     servidor externo, file://) este módulo inteiro fica
+     inativo — nenhum botão, engrenagem ou elemento GitHub
+     é criado na interface.
+  ──────────────────────────────────────────────────── */
+  if (!window.location.hostname.match(/^[^.]+\.github\.io$/i)) return;
+
   var style = document.createElement('style');
   style.textContent = [
-    '.gh-lock-btn {',
-    '  display: inline-flex;',
-    '  align-items: center;',
-    '  justify-content: center;',
-    '  width: 34px;',
-    '  height: 34px;',
-    '  padding: 0;',
-    '  background: var(--card, #fff);',
-    '  border: 1.5px solid var(--border, #e2e8f0);',
-    '  border-radius: var(--radius, 8px);',
-    '  color: var(--text3, #94a3b8);',
-    '  cursor: pointer;',
-    '  transition: all .2s ease;',
-    '  flex-shrink: 0;',
-    '}',
-    '.gh-lock-btn:hover {',
-    '  border-color: var(--text3, #94a3b8);',
-    '  background: var(--hover, #f8fafc);',
-    '}',
-    '.gh-lock-btn.gh-lock-active {',
-    '  color: #22c55e;',
-    '  border-color: #22c55e40;',
-    '  background: #22c55e0a;',
-    '  cursor: default;',
-    '}',
-    '.gh-lock-btn.gh-lock-active:hover {',
-    '  border-color: #22c55e40;',
-    '  background: #22c55e0a;',
-    '}',
     /* Status text (hidden, only used internally) */
     '.gh-status-text { display: none; }',
     /* GitHub buttons in modals */
@@ -663,39 +702,298 @@ document.addEventListener('DOMContentLoaded', function () {
   ].join('\n');
   document.head.appendChild(style);
 
-  /* ─── Botão cadeado — à esquerda da barra de pesquisa ─── */
-  var searchWrap = document.querySelector('.search-wrap');
-  if (searchWrap) {
-    var lockBtn = document.createElement('button');
-    lockBtn.id        = 'ghLockBtn';
-    lockBtn.className = 'gh-lock-btn';
-    lockBtn.innerHTML = LOCK_CLOSED_SVG;
-    lockBtn.title     = 'Configurar token GitHub';
+  /* ─── Modal de configuração (owner + repo + token) ─── */
+  (function () {
+    var overlay = document.createElement('div');
+    overlay.id        = 'ghConfigOverlay';
+    overlay.className = 'gh-config-hidden';
+    overlay.innerHTML = [
+      '<div id="ghConfigModal">',
+      '  <div id="ghConfigHeader">',
+      '    <div>',
+      '      <h3 id="ghConfigTitle">Configuração do GitHub</h3>',
+      '      <p id="ghConfigSubtitle">Preencha os dados do repositório onde o SenkoLib está hospedado.</p>',
+      '    </div>',
+      '    <button id="ghConfigCloseBtn" title="Fechar">✕</button>',
+      '  </div>',
+      '  <div class="gh-config-fields">',
+      '    <div class="gh-config-field">',
+      '      <label for="ghConfigOwner">Usuário / Organização <span class="gh-req">*</span></label>',
+      '      <input type="text" id="ghConfigOwner" placeholder="ex: meu-usuario" autocomplete="off" />',
+      '      <span class="gh-field-desc">Nome da conta GitHub dona do repositório</span>',
+      '    </div>',
+      '    <div class="gh-config-field">',
+      '      <label for="ghConfigRepo">Repositório <span class="gh-req">*</span></label>',
+      '      <input type="text" id="ghConfigRepo" placeholder="ex: SenkoLib" autocomplete="off" />',
+      '      <span class="gh-field-desc">Nome exato do repositório no GitHub</span>',
+      '    </div>',
+      '    <div class="gh-config-field">',
+      '      <label for="ghConfigToken">Personal Access Token <span class="gh-req">*</span></label>',
+      '      <input type="password" id="ghConfigToken" placeholder="ghp_…" autocomplete="off" />',
+      '      <span class="gh-field-desc">Token com permissão <code>repo</code> (classic) ou <code>Contents read/write</code> (fine-grained). <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">Gerar token ↗</a></span>',
+      '    </div>',
+      '  </div>',
+      '  <div id="ghConfigError" class="gh-config-error gh-config-hidden"></div>',
+      '  <div id="ghConfigActions">',
+      '    <button id="ghConfigResetBtn" class="gh-config-reset-btn" title="Limpar configuração salva">Redefinir</button>',
+      '    <button id="ghConfigSaveBtn" class="gh-config-save-btn">Verificar e salvar</button>',
+      '  </div>',
+      '</div>',
+    ].join('\n');
+    document.body.appendChild(overlay);
 
-    /* Insere antes do search-wrap */
-    searchWrap.parentNode.insertBefore(lockBtn, searchWrap);
+    /* Estilos do modal de configuração */
+    var cfgStyle = document.createElement('style');
+    cfgStyle.textContent = [
+      '#ghConfigOverlay {',
+      '  position: fixed; inset: 0;',
+      '  background: rgba(0,0,0,.55);',
+      '  backdrop-filter: blur(3px);',
+      '  display: flex; align-items: center; justify-content: center;',
+      '  z-index: 9999; padding: 1rem;',
+      '}',
+      '#ghConfigOverlay.gh-config-hidden { display: none; }',
+      '#ghConfigModal {',
+      '  background: var(--card, #fff);',
+      '  border: 1.5px solid var(--border, #e2e8f0);',
+      '  border-radius: calc(var(--radius, 8px) * 1.5);',
+      '  padding: 2rem;',
+      '  width: 100%; max-width: 460px;',
+      '  display: flex; flex-direction: column; gap: 1.25rem;',
+      '  box-shadow: 0 20px 60px rgba(0,0,0,.18);',
+      '}',
+      '#ghConfigHeader {',
+      '  display: flex; align-items: flex-start;',
+      '  justify-content: space-between; gap: 1rem;',
+      '}',
+      '#ghConfigTitle {',
+      '  font-family: var(--font-body, sans-serif);',
+      '  font-size: 1.1rem; font-weight: 800;',
+      '  color: var(--text1, #0f172a); margin: 0 0 .25rem;',
+      '}',
+      '#ghConfigSubtitle {',
+      '  font-family: var(--font-body, sans-serif);',
+      '  font-size: .82rem; color: var(--text2, #64748b); margin: 0;',
+      '}',
+      '#ghConfigCloseBtn {',
+      '  background: none; border: none;',
+      '  font-size: 1rem; color: var(--text3, #94a3b8);',
+      '  cursor: pointer; padding: .25rem; line-height: 1; flex-shrink: 0;',
+      '}',
+      '#ghConfigCloseBtn:hover { color: var(--text1, #0f172a); }',
+      '.gh-config-fields { display: flex; flex-direction: column; gap: .9rem; }',
+      '.gh-config-field { display: flex; flex-direction: column; gap: .3rem; }',
+      '.gh-config-field label {',
+      '  font-family: var(--font-body, sans-serif);',
+      '  font-size: .82rem; font-weight: 700;',
+      '  color: var(--text1, #0f172a);',
+      '}',
+      '.gh-req { color: #ef4444; }',
+      '.gh-config-field input {',
+      '  font-family: var(--font-mono, monospace);',
+      '  font-size: .85rem;',
+      '  padding: .5rem .75rem;',
+      '  border: 1.5px solid var(--border, #e2e8f0);',
+      '  border-radius: var(--radius, 6px);',
+      '  background: var(--bg, #f8fafc);',
+      '  color: var(--text1, #0f172a);',
+      '  outline: none;',
+      '  transition: border-color .15s;',
+      '}',
+      '.gh-config-field input:focus { border-color: #94a3b8; }',
+      '.gh-field-desc {',
+      '  font-family: var(--font-body, sans-serif);',
+      '  font-size: .76rem; color: var(--text3, #94a3b8); line-height: 1.4;',
+      '}',
+      '.gh-field-desc code {',
+      '  font-family: var(--font-mono, monospace);',
+      '  background: var(--hover, #f1f5f9);',
+      '  padding: .1rem .3rem; border-radius: 3px;',
+      '}',
+      '.gh-field-desc a { color: var(--text2, #64748b); }',
+      '.gh-config-error {',
+      '  font-family: var(--font-body, sans-serif);',
+      '  font-size: .83rem; font-weight: 600;',
+      '  color: #ef4444;',
+      '  background: #fee2e2;',
+      '  border: 1px solid #fca5a5;',
+      '  border-radius: var(--radius, 6px);',
+      '  padding: .6rem .85rem;',
+      '}',
+      '.gh-config-error.gh-config-hidden { display: none; }',
+      '#ghConfigActions {',
+      '  display: flex; align-items: center;',
+      '  justify-content: space-between; gap: .6rem;',
+      '}',
+      '.gh-config-reset-btn {',
+      '  font-family: var(--font-body, sans-serif);',
+      '  font-size: .8rem; font-weight: 700;',
+      '  color: var(--text3, #94a3b8);',
+      '  background: none; border: none; cursor: pointer; padding: .35rem .5rem;',
+      '  transition: color .15s;',
+      '}',
+      '.gh-config-reset-btn:hover { color: #ef4444; }',
+      '.gh-config-save-btn {',
+      '  font-family: var(--font-body, sans-serif);',
+      '  font-size: .85rem; font-weight: 700;',
+      '  padding: .55rem 1.25rem;',
+      '  background: #21262d; color: #c9d1d9;',
+      '  border: 1px solid #30363d;',
+      '  border-radius: var(--radius, 6px);',
+      '  cursor: pointer; transition: background .15s, border-color .15s;',
+      '}',
+      '.gh-config-save-btn:hover { background: #30363d; border-color: #8b949e; }',
+      '.gh-config-save-btn:disabled { opacity: .6; cursor: not-allowed; }',
+      /* Botão de engrenagem no header */
+      '.gh-config-gear-btn {',
+      '  display: inline-flex; align-items: center; justify-content: center;',
+      '  width: 34px; height: 34px; padding: 0;',
+      '  background: var(--card, #fff);',
+      '  border: 1.5px solid var(--border, #e2e8f0);',
+      '  border-radius: var(--radius, 8px);',
+      '  color: var(--text3, #94a3b8);',
+      '  cursor: pointer; transition: all .2s ease; flex-shrink: 0;',
+      '}',
+      '.gh-config-gear-btn:hover { border-color: var(--text3, #94a3b8); background: var(--hover, #f8fafc); }',
+      '.gh-config-gear-btn.gh-config-active {',
+      '  color: #22c55e; border-color: #22c55e40; background: #22c55e0a;',
+      '}',
+    ].join('\n');
+    document.head.appendChild(cfgStyle);
 
-    lockBtn.addEventListener('click', function () {
-      /* Se já tem token, não faz nada */
-      if (ghGetToken()) return;
+    /* Fechar overlay clicando fora */
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) ghCloseConfigModal();
+    });
+    document.getElementById('ghConfigCloseBtn').addEventListener('click', ghCloseConfigModal);
 
-      /* Se não tem, pede o token */
-      var token = prompt(
-        '🔑 Token do GitHub\n\n' +
-        'Cole seu Personal Access Token do GitHub aqui.\n' +
-        'Permissão necessária: "repo" (classic) ou "Contents read/write" (fine-grained).\n\n' +
-        'Gere em: https://github.com/settings/tokens\n\n' +
-        'Você só precisa colar 1 vez — fica salvo no navegador.'
-      );
-
-      if (token && token.trim().length > 10) {
-        ghSetToken(token);
-        ghUpdateLockButton();
-      }
+    /* Redefinir */
+    document.getElementById('ghConfigResetBtn').addEventListener('click', function () {
+      try { localStorage.removeItem(GH_CONFIG_KEY); } catch (e) {}
+      ghSetToken('');
+      GITHUB_CONFIG.OWNER = '';
+      GITHUB_CONFIG.REPO  = '';
+      document.getElementById('ghConfigOwner').value = '';
+      document.getElementById('ghConfigRepo').value  = '';
+      document.getElementById('ghConfigToken').value = '';
+      ghUpdateConfigButton();
+      ghHideConfigError();
     });
 
-    /* Estado inicial */
-    ghUpdateLockButton();
+    /* Salvar com validação */
+    document.getElementById('ghConfigSaveBtn').addEventListener('click', function () {
+      var owner = document.getElementById('ghConfigOwner').value.trim();
+      var repo  = document.getElementById('ghConfigRepo').value.trim();
+      var token = document.getElementById('ghConfigToken').value.trim();
+
+      if (!owner || !repo || !token) {
+        ghShowConfigError('Preencha todos os campos obrigatórios.');
+        return;
+      }
+
+      var saveBtn = this;
+      saveBtn.textContent = 'Verificando…';
+      saveBtn.disabled    = true;
+      ghHideConfigError();
+
+      /* Valida owner + repo + token fazendo um GET no repositório */
+      fetch('https://api.github.com/repos/' + owner + '/' + repo, {
+        headers: {
+          'Authorization': 'token ' + token,
+          'Accept': 'application/vnd.github+json'
+        }
+      }).then(function (res) {
+        if (res.status === 401) {
+          throw new Error('Token inválido ou sem permissão suficiente. Verifique e tente novamente.');
+        }
+        if (res.status === 404) {
+          throw new Error('Repositório "' + owner + '/' + repo + '" não encontrado. Verifique o usuário e o nome do repositório.');
+        }
+        if (!res.ok) {
+          throw new Error('Erro ao conectar com o GitHub (status ' + res.status + '). Tente novamente.');
+        }
+        return res.json();
+      }).then(function () {
+        /* Tudo certo — salva */
+        ghApplyConfig(owner, repo, token);
+        ghUpdateConfigButton();
+        saveBtn.textContent = '✓ Salvo!';
+        setTimeout(function () {
+          ghCloseConfigModal();
+          saveBtn.textContent = 'Verificar e salvar';
+          saveBtn.disabled    = false;
+        }, 1000);
+      }).catch(function (e) {
+        ghShowConfigError(e.message);
+        saveBtn.textContent = 'Verificar e salvar';
+        saveBtn.disabled    = false;
+      });
+    });
+  })();
+
+  function ghOpenConfigModal() {
+    var overlay = document.getElementById('ghConfigOverlay');
+    if (!overlay) return;
+    /* Preenche campos com valores atuais */
+    var ownerEl = document.getElementById('ghConfigOwner');
+    var repoEl  = document.getElementById('ghConfigRepo');
+    var tokenEl = document.getElementById('ghConfigToken');
+    if (ownerEl) ownerEl.value = GITHUB_CONFIG.OWNER || '';
+    if (repoEl)  repoEl.value  = GITHUB_CONFIG.REPO  || '';
+    if (tokenEl) tokenEl.value = ghGetToken() || '';
+    ghHideConfigError();
+    overlay.classList.remove('gh-config-hidden');
+    document.body.style.overflow = 'hidden';
+    if (ownerEl) ownerEl.focus();
+  }
+
+  function ghCloseConfigModal() {
+    var overlay = document.getElementById('ghConfigOverlay');
+    if (overlay) overlay.classList.add('gh-config-hidden');
+    document.body.style.overflow = '';
+  }
+
+  function ghShowConfigError(msg) {
+    var el = document.getElementById('ghConfigError');
+    if (!el) return;
+    el.textContent = msg;
+    el.classList.remove('gh-config-hidden');
+  }
+
+  function ghHideConfigError() {
+    var el = document.getElementById('ghConfigError');
+    if (el) el.classList.add('gh-config-hidden');
+  }
+
+  function ghUpdateConfigButton() {
+    var btn = document.getElementById('ghConfigGearBtn');
+    if (!btn) return;
+    var configured = !!(GITHUB_CONFIG.OWNER && GITHUB_CONFIG.REPO && ghGetToken());
+    btn.classList.toggle('gh-config-active', configured);
+    btn.title = configured
+      ? 'GitHub configurado: ' + GITHUB_CONFIG.OWNER + '/' + GITHUB_CONFIG.REPO
+      : 'Configurar repositório GitHub';
+  }
+
+  /* ─── Botões no header ─── */
+  var searchWrap = document.querySelector('.search-wrap');
+  if (searchWrap) {
+    var GEAR_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>';
+
+    /* Botão engrenagem — configuração do repositório */
+    var gearBtn = document.createElement('button');
+    gearBtn.id        = 'ghConfigGearBtn';
+    gearBtn.className = 'gh-config-gear-btn';
+    gearBtn.innerHTML = GEAR_SVG;
+    searchWrap.parentNode.insertBefore(gearBtn, searchWrap);
+    gearBtn.addEventListener('click', ghOpenConfigModal);
+    ghUpdateConfigButton();
+
+    /* Se estiver no GitHub Pages (config automática), mostra engrenagem como
+       info apenas — não precisa configurar owner/repo, só o token */
+    if (GITHUB_CONFIG._auto) {
+      gearBtn.title = 'GitHub Pages detectado: ' + GITHUB_CONFIG.OWNER + '/' + GITHUB_CONFIG.REPO + ' — clique para ver/editar';
+    }
   }
 
   /* ─── Span de status oculto (para uso interno) ─── */
@@ -738,6 +1036,9 @@ document.addEventListener('DOMContentLoaded', function () {
           ghEditBtn.innerHTML = GH_ICON + ' GitHub';
           ghEditBtn.disabled  = false;
         }
+      }).catch(function () {
+        ghEditBtn.innerHTML = GH_ICON + ' GitHub';
+        ghEditBtn.disabled  = false;
       });
     });
   }
@@ -753,8 +1054,12 @@ document.addEventListener('DOMContentLoaded', function () {
     newVarCopyBtn.parentNode.insertBefore(ghVarBtn, newVarCopyBtn.nextSibling);
 
     ghVarBtn.addEventListener('click', function () {
+      if (typeof githubCreateVariant !== 'function') {
+        alert('Módulo senko-github-variants.js não está carregado.\nVerifique se o arquivo está incluído no index.html após o senko-github-v2.js.');
+        return;
+      }
       var nome = document.getElementById('newVarName').value.trim().toLowerCase();
-      if (nome.length < 3) {
+      if (nome.length < 2) {
         alert('Preencha o nome da variante primeiro.');
         return;
       }
@@ -777,7 +1082,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ghVarBtn.textContent = 'Salvando…';
       ghVarBtn.disabled    = true;
 
-      githubSaveVariant(parentId, nome, objectCode).then(function (result) {
+      githubCreateVariant(parentId, nome, objectCode).then(function (result) {
         if (result) {
           ghVarBtn.innerHTML = GH_ICON + ' Salvo!';
           setTimeout(function () {
@@ -795,6 +1100,9 @@ document.addEventListener('DOMContentLoaded', function () {
           ghVarBtn.innerHTML = GH_ICON + ' GitHub';
           ghVarBtn.disabled  = false;
         }
+      }).catch(function () {
+        ghVarBtn.innerHTML = GH_ICON + ' GitHub';
+        ghVarBtn.disabled  = false;
       });
     });
   }
@@ -888,6 +1196,9 @@ document.addEventListener('DOMContentLoaded', function () {
           ghNewBtn.innerHTML = GH_ICON + ' GitHub';
           ghNewBtn.disabled  = false;
         }
+      }).catch(function () {
+        ghNewBtn.innerHTML = GH_ICON + ' GitHub';
+        ghNewBtn.disabled  = false;
       });
     });
   }

@@ -133,7 +133,9 @@ function ghRemoveLayoutFromMemory(layoutId) {
    deleteVariants = true  → também apaga o arquivo variants/[id].js
 ═══════════════════════════════════════════════════════════════════════ */
 function githubDeleteLayout(layoutId, deleteVariants) {
+  if (typeof ghLockSave === 'function' && !ghLockSave()) return Promise.resolve(false);
   if (!ghEnsureToken()) {
+    if (typeof ghUnlockSave === 'function') ghUnlockSave();
     ghSetStatus('Token não configurado', 'error');
     return Promise.resolve(false);
   }
@@ -208,9 +210,9 @@ function githubDeleteLayout(layoutId, deleteVariants) {
         return true;
 
       }).then(function () {
-        /* 4. Remove da memória e atualiza o grid */
         ghRemoveLayoutFromMemory(layoutId);
         ghSetStatus('✓ Layout excluído: ' + layoutId, 'ok');
+        if (typeof ghUnlockSave === 'function') ghUnlockSave();
         renderGrid();
         return true;
       });
@@ -220,6 +222,7 @@ function githubDeleteLayout(layoutId, deleteVariants) {
   }).catch(function (e) {
     console.error('[senko-github-delete] Erro ao excluir layout:', e);
     ghSetStatus('Erro: ' + e.message, 'error');
+    if (typeof ghUnlockSave === 'function') ghUnlockSave();
     alert('Erro ao excluir no GitHub:\n' + e.message);
     return false;
   });
@@ -476,6 +479,7 @@ function ghInjectDeleteStyles() {
 var TRASH_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>';
 
 document.addEventListener('DOMContentLoaded', function () {
+  if (!window.location.hostname.match(/^[^.]+\.github\.io$/i)) return;
   ghInjectDeleteStyles();
   ghCreateDeleteModal();
 
