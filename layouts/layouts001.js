@@ -1157,13 +1157,14 @@ SenkoLib.register([
     }
 
     .section-46-y-box-text h3 {
-      font-family: sans-serif
+      font-family: sans-serif;
       font-size: clamp(16px, 2vw, 32px);
       margin: 0 0 5px;
       line-height: 1.1;
     }
 
     .section-46-y-box-text p {
+      font-family: sans-serif;
       font-size: clamp(12px, 1.4vw, 22px);
       color: #555;
       margin: 0;
