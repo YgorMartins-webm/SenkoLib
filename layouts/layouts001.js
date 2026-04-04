@@ -1032,9 +1032,9 @@ SenkoLib.register([
         <div class="section-46-y-content">
 
           <!-- Título padrão-->
-          <h1>
+          <h2>
             Isso é um título. <br> Isso é um título.
-          </h1>
+          </h2>
           <!-- Descrição padrão-->
           <p class="section-46-y-desc">
             Isso é uma descrição gamer. Isso é uma descrição gamer.
