@@ -1109,7 +1109,7 @@ SenkoLib.register([
       flex: 1;
     }
 
-    .section-46-y-content h1 {
+    .section-46-y-content h2 {
       text-align: center;
     }
 
@@ -1118,7 +1118,7 @@ SenkoLib.register([
     }
 
     /* ===== TITULO ===== */
-    .section-46-y-content h1 {
+    .section-46-y-content h2 {
       font-family: sans-serif;
       font-size: clamp(22px, 3.2vw, 48px);
       font-weight: 700;
@@ -1157,6 +1157,7 @@ SenkoLib.register([
     }
 
     .section-46-y-box-text h3 {
+      font-family: sans-serif
       font-size: clamp(16px, 2vw, 32px);
       margin: 0 0 5px;
       line-height: 1.1;
