@@ -1589,6 +1589,7 @@ SenkoLib.register([
       width: 90%;
       line-height: 1.5;
       text-align: center;
+      font-family: sans-serif
     }
 
     .section-32__grouptext-overlay.top {
