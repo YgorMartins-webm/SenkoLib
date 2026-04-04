@@ -1021,7 +1021,7 @@ SenkoLib.register([
   {
     id: 'section-46',
     name: 'Section-46',
-    tags: ['Imagem quadrada', '', '', ''],
+    tags: ['Imagem quadrada'],
     html: `      <div class="section-46-y reverse-46 ">
         <!--    AQUI É POSSIVEL TROCAR SE A IMAGEM FICA EM CIMA OU EM BAIXO TIRANDO A CLASSE "TROCAR-ORDEM-730PX"-->
         <div class="section-46-y-img trocar-ordem-730px">
@@ -1119,6 +1119,7 @@ SenkoLib.register([
 
     /* ===== TITULO ===== */
     .section-46-y-content h1 {
+      font-family: sans-serif;
       font-size: clamp(22px, 3.2vw, 48px);
       font-weight: 700;
       margin-bottom: 20px;
@@ -1127,6 +1128,7 @@ SenkoLib.register([
 
     /* ===== DESCRIÇÃO ===== */
     .section-46-y-desc {
+      font-family: sans-serif;
       font-size: clamp(14px, 1.4vw, 26px);
       margin-bottom: 30px;
       color: #1b1b1b;
