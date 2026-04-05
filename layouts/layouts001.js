@@ -1,6 +1,6 @@
 // @ts-nocheck
-/* ═══════════════════════════════════════════════════════
-   layouts001.js — Primeiro pacote de layouts do SenkoLib
+
+ /*  layouts001.js — Primeiro pacote de layouts do SenkoLib
 
    RESPONSABILIDADE:
      Registra o array principal de layouts via SenkoLib.register().
@@ -177,30 +177,33 @@ SenkoLib.register([
     id: 'section-2',
     name: 'Section-2 (Header Vídeo)',
     tags: ['Section-2', 'Section 2', '2', 'vídeo', 'header vídeo'],
-    html: `<section class="video-header" aria-label="Cabeçalho do produto">
-  <header class="video-header__banner">
-    <video class="video-header__banner-video" autoplay muted loop playsinline width="1200" height="250"
-      aria-hidden="true">
-      <source
-        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/header-cottonbaby.mov">
-    </video>
-    <div class="video-header__badge" role="img" aria-label="Logo da marca">
-      <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/logo-cottonbaby2.png"
-        alt="imagem png com ícone da marca" class="video-header__badge-img">
-    </div>
-  </header>
-  <article class="video-header__body">
-    <small class="video-header__brand">Marca</small>
-    <h1 class="video-header__title">
-      TÍTULO DO PRODUTO (Nome, modelo, diferencial...)
-    </h1>
-    <p class="video-header__subtitle">
-      Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
-      Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
-      Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
-    </p>
-  </article>
-</section>`,
+    html: `    <section class="video-header" aria-label="Cabeçalho do produto">
+      <header class="video-header__banner">
+        <video class="video-header__banner-video"
+          poster="C:\Users\ygorq\Downloads\Captura de tela 2026-04-02 161810.png" preload="none" autoplay muted loop
+          playsinline width="1200" height="250" aria-hidden="true">
+          <source
+            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/header-cottonbaby.mov"
+            loading="lazy">
+        </video>
+        <div class="video-header__badge" role="img" aria-label="Logo da marca">
+          <img
+            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/logo-cottonbaby2.png"
+            alt="imagem png com ícone da marca" class="video-header__badge-img">
+        </div>
+      </header>
+      <article class="video-header__body">
+        <small class="video-header__brand">Marca</small>
+        <h1 class="video-header__title">
+          TÍTULO DO PRODUTO (Nome, modelo, diferencial...)
+        </h1>
+        <p class="video-header__subtitle">
+          Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
+          Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
+          Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
+        </p>
+      </article>
+    </section>`,
     css: `<style>
   * {
     margin: 0;
@@ -434,7 +437,171 @@ SenkoLib.register([
 </style>`
   },
 
-  
+  /*@@@@Senko - section-60 */
+  /* variantes: variants/section-60.js */
+  {
+    id: 'section-60',
+    name: 'section-60',
+    tags: ['60', 'section 60', 'split', 'metade'],
+    html: `<div class="wrapper-section-60">
+    <div class="text-col-section-60">
+        <img src="https://cdn-icons-png.flaticon.com/512/894/894565.png" class="brand-icon-section-60">
+        <h2 class="title-section-60">A Lenda dos Sete Mares</h2>
+        <p class="desc-section-60">
+            Capitan Cortez não é apenas um rum, é um convite à descoberta. Inspirado nos diários de bordo dos
+            grandes navegadores, nossa receita busca capturar a glória da tradição em cada garrafa. Uma homenagem
+            àqueles que ousam ir além do horizonte.
+        </p>
+        <a href="#" class="cta-link-section-60">
+            Conheça Nossa História
+            <span class="arrow-icon-section-60">&rarr;</span>
+        </a>
+    </div>
+    <div class="image-col-section-60">
+        <img src=""
+            class="bg-image-section-60" alt="Capitan Cortez Lifestyle">
+    </div>
+</div>`,
+    css: `        .wrapper-section-60 {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      background-color: #f8f8f8;
+      min-height: 28rem;
+      /* ~450px */
+    }
+
+    .text-col-section-60 {
+      flex: 1;
+      min-width: 18.75rem;
+      padding: 2.5rem 1.25rem;
+      /* Padding Mobile */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .image-col-section-60 {
+      flex: 1;
+      min-width: 18.75rem;
+      position: relative;
+    }
+
+    .bg-image-section-60 {
+      width: 95%;
+      height: 95%;
+      margin: 0.5rem;
+      border-radius: 15px;
+      object-fit: cover;
+      display: block;
+      min-height: 18.75rem;
+      /* Mobile Height */
+    }
+
+    .brand-icon-section-60 {
+      width: 3.75rem;
+      /* 60px */
+      height: auto;
+      margin-bottom: 1.5rem;
+      opacity: 0.8;
+    }
+
+    .title-section-60 {
+      color: #1a1a1a;
+      font-weight: 400;
+      letter-spacing: 0.125rem;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      line-height: 1.3;
+
+      /* Mobile Base */
+      font-size: 1.25rem;
+      /* ~20px */
+    }
+
+    .desc-section-60 {
+      color: #555;
+      line-height: 1.8;
+      max-width: 25rem;
+
+      /* Mobile Base */
+      font-size: 0.875rem;
+      /* ~14px */
+    }
+
+    .cta-link-section-60 {
+      text-decoration: none;
+      color: #1a1a1a;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.0625rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s;
+
+      /* Mobile Base */
+      font-size: 0.75rem;
+      /* ~12px */
+    }
+
+    .arrow-icon-section-60 {
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    /* Responsividade Exclusiva da Sessão 60 */
+    @media (min-width: 768px) {
+      .text-col-section-60 {
+        padding: 3.75rem 2.5rem;
+        /* Mais espaçamento no Desktop */
+      }
+
+      .title-section-60 {
+        font-size: 1.5rem;
+        /* ~24px Desktop */
+      }
+
+      .desc-section-60 {
+        font-size: 1rem;
+        /* 16px Desktop */
+      }
+
+      .cta-link-section-60 {
+        font-size: 0.875rem;
+        /* ~14px Desktop */
+      }
+
+      .reverse-desktop-60 {
+        flex-direction: row-reverse;
+      }
+
+    }
+
+    @media (max-width: 720px) {
+      .wrapper-section-60 {
+        flex-direction: column-reverse;
+      }
+
+      .reverse-mobile-60 {
+        flex-direction: column;
+      }
+
+      .bg-image-section-60 {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        min-height: 18.75rem;
+        max-width: 95%;
+        margin: 0.6rem auto;
+        border-radius: 10px;
+      }
+    }`
+  },
+
   
   /*@@@@Senko - section-49 */
   /* variantes: variants/section-49.js */
@@ -874,7 +1041,7 @@ SenkoLib.register([
   {
     id: 'section-46',
     name: 'Section-46',
-    tags: ['Imagem quadrada', '', '', ''],
+    tags: ['Imagem quadrada'],
     html: `      <div class="section-46-y reverse-46 ">
         <!--    AQUI É POSSIVEL TROCAR SE A IMAGEM FICA EM CIMA OU EM BAIXO TIRANDO A CLASSE "TROCAR-ORDEM-730PX"-->
         <div class="section-46-y-img trocar-ordem-730px">
@@ -885,9 +1052,9 @@ SenkoLib.register([
         <div class="section-46-y-content">
 
           <!-- Título padrão-->
-          <h1>
+          <h2>
             Isso é um título. <br> Isso é um título.
-          </h1>
+          </h2>
           <!-- Descrição padrão-->
           <p class="section-46-y-desc">
             Isso é uma descrição gamer. Isso é uma descrição gamer.
@@ -962,7 +1129,7 @@ SenkoLib.register([
       flex: 1;
     }
 
-    .section-46-y-content h1 {
+    .section-46-y-content h2 {
       text-align: center;
     }
 
@@ -971,7 +1138,8 @@ SenkoLib.register([
     }
 
     /* ===== TITULO ===== */
-    .section-46-y-content h1 {
+    .section-46-y-content h2 {
+      font-family: sans-serif;
       font-size: clamp(22px, 3.2vw, 48px);
       font-weight: 700;
       margin-bottom: 20px;
@@ -980,6 +1148,7 @@ SenkoLib.register([
 
     /* ===== DESCRIÇÃO ===== */
     .section-46-y-desc {
+      font-family: sans-serif;
       font-size: clamp(14px, 1.4vw, 26px);
       margin-bottom: 30px;
       color: #1b1b1b;
@@ -1008,12 +1177,14 @@ SenkoLib.register([
     }
 
     .section-46-y-box-text h3 {
+      font-family: sans-serif;
       font-size: clamp(16px, 2vw, 32px);
       margin: 0 0 5px;
       line-height: 1.1;
     }
 
     .section-46-y-box-text p {
+      font-family: sans-serif;
       font-size: clamp(12px, 1.4vw, 22px);
       color: #555;
       margin: 0;
@@ -1442,6 +1613,7 @@ SenkoLib.register([
       width: 90%;
       line-height: 1.5;
       text-align: center;
+      font-family: sans-serif
     }
 
     .section-32__grouptext-overlay.top {
