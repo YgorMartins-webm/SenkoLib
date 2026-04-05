@@ -203,105 +203,9 @@ var saveLayoutToFile = async function (layoutId, objectCode) {
 
 
 /* ═══════════════════════════════════════════════════════════════════════
-   CORE: Salvar variante — opera em /variants/[parentId].js
-═══════════════════════════════════════════════════════════════════════ */
-async function saveVariantToFile(parentId, variantNome, objectCode) {
-  if (!_projectDir) {
-    alert('Selecione a pasta do projeto primeiro.');
-    return false;
-  }
-
-  try {
-    var varDir  = await _projectDir.getDirectoryHandle('variants', { create: false });
-    var entry   = await varDir.getFileHandle(parentId + '.js', { create: false });
-    var file    = await entry.getFile();
-    var content = await file.text();
-
-    var marker  = "nome: '" + variantNome + "'";
-    var pos     = content.indexOf(marker);
-    if (pos === -1) {
-      alert('Variante "' + variantNome + '" nao encontrada em variants/' + parentId + '.js');
-      return false;
-    }
-    if (content.indexOf(marker, pos + 1) !== -1) {
-      alert('A variante "' + variantNome + '" aparece mais de uma vez no arquivo.\nCorrija manualmente.');
-      return false;
-    }
-
-    /* Busca o '{' que abre o objeto avançando a partir do marcador,
-       não voltando — evita pegar um '{' dentro de HTML/CSS de outro objeto */
-    var objOpen = -1;
-    var scanBack = pos;
-    /* Volta linha a linha até achar o '{' de abertura do objeto,
-       verificando que não estamos dentro de um template literal */
-    var tmpScan = content.lastIndexOf('{', pos);
-    /* Valida: o '{' encontrado deve ser o do objeto { nome: '...', não um de CSS/HTML.
-       Para isso, checa que entre ele e o 'nome:' só há espaços, newlines e nada mais */
-    while (tmpScan !== -1) {
-      var between = content.slice(tmpScan + 1, pos).trim();
-      /* Se entre o '{' e o 'nome:' só há espaços/newlines, é o '{' correto */
-      if (/^[\s]*$/.test(between)) {
-        objOpen = tmpScan;
-        break;
-      }
-      /* Senão, continua procurando mais para trás */
-      tmpScan = content.lastIndexOf('{', tmpScan - 1);
-    }
-    if (objOpen === -1) { alert('Inicio do objeto da variante nao encontrado.'); return false; }
-
-    var i          = objOpen;
-    var depth      = 0;
-    var inTemplate = false;
-    var len        = content.length;
-    var objEnd     = -1;
-
-    while (i < len) {
-      var ch = content[i];
-      if (ch === '`') {
-        var backslashes = 0; var j = i - 1;
-        while (j >= 0 && content[j] === '\\') { backslashes++; j--; }
-        if (backslashes % 2 === 0) inTemplate = !inTemplate;
-        i++; continue;
-      }
-      if (inTemplate) { i++; continue; }
-      if (ch === '{') { depth++; i++; continue; }
-      if (ch === '}') {
-        depth--;
-        if (depth === 0) {
-          objEnd = i + 1;
-          if (content[objEnd] === ',') objEnd++;
-          if (content[objEnd] === '\n') objEnd++;
-          break;
-        }
-        i++; continue;
-      }
-      i++;
-    }
-
-    if (objEnd === -1) { alert('Fim do objeto da variante nao encontrado.'); return false; }
-
-    await backupFile(_projectDir, entry.name, content);
-
-    var newContent =
-      content.slice(0, objOpen) +
-      objectCode + ',\n' +
-      content.slice(objEnd);
-
-    var writable = await entry.createWritable({ keepExistingData: false });
-    await writable.write(new Blob([newContent], { type: "text/plain" }));
-    await writable.close();
-    return entry.name;
-
-  } catch (e) {
-    console.error('[senko-fsa] Erro ao salvar variante:', e);
-    alert('Erro ao salvar variante: ' + e.message);
-    return false;
-  }
-}
-
-
-/* ═══════════════════════════════════════════════════════════════════════
-   UI: Patch saveToFileBtn + botao salvar variante
+   UI: Patch saveToFileBtn
+   Lógica de salvar variantes (edição e nova) está em:
+   modules/fsa/senko-fsa-variants.js
 ═══════════════════════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -347,66 +251,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* Botao salvar no modal de nova variante */
-  var newVarCopyBtn = document.getElementById('newVarCopyBtn');
-  if (newVarCopyBtn && !document.getElementById('saveVariantToFileBtn')) {
-    var saveVarBtn = document.createElement('button');
-    saveVarBtn.className = 'btn-save-file';
-    saveVarBtn.id = 'saveVariantToFileBtn';
-    saveVarBtn.innerHTML = SAVE_ICON + ' Salvar no arquivo';
-    newVarCopyBtn.parentNode.insertBefore(saveVarBtn, newVarCopyBtn.nextSibling);
-
-    saveVarBtn.addEventListener('click', async function () {
-      var nome = document.getElementById('newVarName').value.trim().toLowerCase();
-      if (nome.length < 3)          { alert('Preencha o nome da variante primeiro.'); return; }
-      if (!state.currentForVariant) { alert('Nenhum layout pai selecionado.'); return; }
-
-      var html     = document.getElementById('newVarHtml').value;
-      var css      = document.getElementById('newVarCss').value;
-      var safeHtml = html.replace(/`/g, '\\`');
-      var safeCss  = css.replace(/`/g, '\\`');
-      var parentId = state.currentForVariant.id;
-
-      var objectCode =
-        "  { nome: '" + nome + "',\n" +
-        '    html: `' + safeHtml + '`,\n' +
-        '    css: `'  + safeCss  + '` }';
-
-      this.textContent = 'Salvando...';
-      var self   = this;
-      var result = await saveVariantToFile(parentId, nome, objectCode);
-
-      if (result) {
-        var variants    = SenkoLib.getVariants(parentId);
-        var existingIdx = -1;
-        for (var i = 0; i < variants.length; i++) {
-          if ((variants[i].nome || variants[i].name) === nome) { existingIdx = i; break; }
-        }
-        if (existingIdx !== -1) {
-          variants[existingIdx].html = html;
-          variants[existingIdx].css  = css;
-        } else {
-          SenkoLib.registerVariant(parentId, [{ nome: nome, html: html, css: css }]);
-        }
-
-        self.textContent = 'Salvo em ' + result;
-        setTimeout(function () {
-          closeNewVariantModal();
-          if (state.currentForVariant) {
-            var updated = SenkoLib.getVariants(state.currentForVariant.id);
-            renderVariantBlocks(updated);
-            var countEl = document.getElementById('variantsCount');
-            if (countEl) countEl.textContent = updated.length + (updated.length === 1 ? ' variacao' : ' variacoes');
-          }
-          renderGrid();
-          var btn = document.getElementById('saveVariantToFileBtn');
-          if (btn) btn.innerHTML = SAVE_ICON + ' Salvar no arquivo';
-        }, 1200);
-      } else {
-        self.innerHTML = SAVE_ICON + ' Salvar no arquivo';
-      }
-    });
-  }
+  /* Lógica de salvar variantes — edição e nova variante —
+     foi movida para modules/fsa/senko-fsa-variants.js */
 
 });
 

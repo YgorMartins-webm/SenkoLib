@@ -217,7 +217,7 @@ body {
 
 .modal {
   background:var(--bg); border:1.5px solid var(--border);
-  border-radius:var(--radius-lg); width:100%; max-width:960px;
+  border-radius:var(--radius-lg); width:100%; max-width:1600px;
   box-shadow:var(--shadow-lg);
   animation:modalIn .25s cubic-bezier(.4,0,.2,1); overflow:visible;
 }
@@ -286,7 +286,7 @@ body {
 }
 
 /* ─── Modal Adicionar ────────────────────────────────── */
-.add-modal { max-width:1000px; position:relative; overflow:hidden; }
+.add-modal { max-width:1600px; position:relative; overflow:hidden; }
 
 /* Fundo do macaco - quase imperceptível */
 .add-modal::before {
@@ -514,29 +514,179 @@ body {
 
 .filters { flex: 1; }
 
+/* ─── Botão de tema ──────────────────────────────────── */
 .theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: .45rem;
+  display: inline-flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  background: transparent;
+  width: 36px; height: 36px; padding: 0;
+  background: var(--bg3);
   border: 1.5px solid var(--border);
-  border-radius: 99px;
-  padding: .28rem .85rem .28rem .6rem;
-  font-family: var(--font-body);
-  font-size: .8rem;
-  font-weight: 700;
+  border-radius: var(--radius);
   color: var(--text2);
   cursor: pointer;
-  transition: all var(--transition);
-  white-space: nowrap;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.theme-toggle svg { width: 18px; height: 18px; display: block; flex-shrink: 0; }
+.theme-toggle:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(255,107,0,.4); }
+
+/* ─── Botão favoritos do header ──────────────────────── */
+.btn-fav-header {
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  width: 36px; height: 36px; padding: 0;
+  background: var(--bg3);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text2);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.btn-fav-header svg { width: 18px; height: 18px; display: block; flex-shrink: 0; }
+.btn-fav-header:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(255,107,0,.4); }
+.btn-fav-header.active { border-color: #f5a623; color: #f5a623; background: rgba(245,166,35,.12); }
+.btn-fav-header.active svg { fill: #f5a623; }
+
+/* ─── Tema Escuro ────────────────────────────────────── */
+/*
+   Paleta extraída do DarkReader (dynamic mode):
+     body/fundo:    #1f2223
+     cards:         #1c1e1f
+     inputs/raised: #25282a
+     bordas:        #363b3d
+     border2:       #3c4144
+     code blocks:   #181a1b
+     texto1:        #d8d4cf
+     texto2:        #b2aca2
+     texto3:        #b2aca2
+     accent-bg:     #cc5600
+     accent-text:   #ff7a1a
+     accent-border: #b34b00
+*/
+
+[data-theme="dark"] {
+  --bg:        #1c1e1f;
+  --bg2:       #1f2223;
+  --bg3:       #25282a;
+  --border:    #363b3d;
+  --border2:   #3c4144;
+  --text:      #d8d4cf;
+  --text2:     #b2aca2;
+  --text3:     #b2aca2;
+  --accent:    #ff7a1a;
+  --accent2:   #aa4800;
+  --accent-bg: rgba(204,86,0,.08);
+  --red:       #a91919;
+  --green:     #157e42;
+  --shadow-card: 0 1px 6px rgba(0,0,0,.5), 0 4px 16px rgba(0,0,0,.4);
+  --shadow-lg:   0 8px 48px rgba(0,0,0,.6);
 }
 
-.theme-toggle:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-bg);
+[data-theme="dark"] body {
+  background: #1f2223;
+  color: #d8d4cf;
 }
+
+/* ── Header ── */
+[data-theme="dark"] .site-header {
+  background: rgba(31,34,35,.95);
+  border-bottom-color: #363b3d;
+}
+
+/* ── Cards ── */
+[data-theme="dark"] .card            { background: #1c1e1f; border-color: #363b3d; }
+[data-theme="dark"] .card-preview    { background: #25282a; border-bottom-color: #363b3d; }
+[data-theme="dark"] .card-actions    { border-top-color: #363b3d; }
+[data-theme="dark"] .card-name       { color: #d8d4cf; }
+
+/* ── Modais ── */
+[data-theme="dark"] .modal           { background: #1c1e1f; border-color: #363b3d; }
+[data-theme="dark"] .modal-header    { border-bottom-color: #363b3d; }
+[data-theme="dark"] .modal-title     { color: #d8d4cf; }
+[data-theme="dark"] .modal-close     { background: #25282a; border-color: #363b3d; color: #b2aca2; }
+[data-theme="dark"] .modal-close:hover { background: rgba(169,25,25,.15); }
+[data-theme="dark"] .modal-preview-wrap { border-bottom-color: #363b3d; }
+
+/* ── iframe de preview — SEMPRE fundo branco ── */
+[data-theme="dark"] .modal-iframe       { background: #ffffff; border-color: #363b3d; }
+[data-theme="dark"] .edit-preview-iframe { background: #ffffff; }
+[data-theme="dark"] .card-iframe        { background: #ffffff; }
+
+/* ── Código ── */
+[data-theme="dark"] .code-tabs       { border-bottom-color: #363b3d; }
+[data-theme="dark"] .code-toolbar    { background: #25282a; border-color: #363b3d; }
+[data-theme="dark"] .code-lang       { color: #b2aca2; }
+[data-theme="dark"] .code-block      { background: #181a1b; border-color: #363b3d; color: #b2aca2; }
+[data-theme="dark"] .copy-btn        { background: #1c1e1f; border-color: #363b3d; color: #b2aca2; }
+[data-theme="dark"] .code-textarea   { background: #25282a; border-color: #363b3d; color: #d8d4cf; }
+
+/* ── Formulários ── */
+[data-theme="dark"] .add-fields      { border-bottom-color: #363b3d; }
+[data-theme="dark"] .add-result-section { border-top-color: #363b3d; background: #1c1e1f; }
+[data-theme="dark"] .field-group label { color: #b2aca2; }
+[data-theme="dark"] .field-group input {
+  background: #25282a;
+  border-color: #363b3d;
+  color: #d8d4cf;
+}
+[data-theme="dark"] .field-group input::placeholder { color: #b2aca2; }
+[data-theme="dark"] .field-group input:focus { background: #181a1b; border-color: #b34b00; }
+[data-theme="dark"] .add-hint        { color: #b2aca2; }
+
+/* ── Busca ── */
+[data-theme="dark"] .search-input    { background: #25282a; border-color: #363b3d; color: #d8d4cf; }
+[data-theme="dark"] .search-input::placeholder { color: #b2aca2; }
+[data-theme="dark"] .search-input:focus { background: #181a1b; }
+
+/* ── Modos de visualização ── */
+[data-theme="dark"] .view-modes      { background: #25282a; border-color: #363b3d; }
+[data-theme="dark"] .view-btn        { color: #b2aca2; }
+[data-theme="dark"] .view-btn.active { background: #181a1b; color: var(--accent); box-shadow: none; }
+[data-theme="dark"] .view-btn:hover  { background: rgba(204,86,0,.08); color: var(--accent); }
+
+/* ── Botões ── */
+[data-theme="dark"] .btn-ghost       { border-color: #363b3d; color: #b2aca2; }
+[data-theme="dark"] .btn-ghost:hover { border-color: #b34b00; color: var(--accent); }
+[data-theme="dark"] .btn-fav         { border-color: #363b3d; color: #b2aca2; }
+[data-theme="dark"] .btn-fav-header  { border-color: #363b3d; color: #b2aca2; background: #25282a; }
+[data-theme="dark"] .btn-edit-icon   { border-color: #363b3d; color: #b2aca2; }
+[data-theme="dark"] .btn-variants    { border-color: #363b3d; color: #b2aca2; }
+[data-theme="dark"] .tab-btn         { border-color: #363b3d; color: #b2aca2; background: transparent; }
+[data-theme="dark"] .edit-mode-btn,
+[data-theme="dark"] .edit-var-mode-btn { border-color: #363b3d; color: #b2aca2; background: transparent; }
+[data-theme="dark"] .theme-toggle    { border-color: #363b3d; color: #b2aca2; }
+
+/* ── FSA bar ── */
+[data-theme="dark"] .fsa-bar         { background: rgba(255,200,0,.05); border-bottom-color: rgba(255,200,0,.2); }
+[data-theme="dark"] .fsa-btn         { color: #c49a00; }
+[data-theme="dark"] .fsa-label       { color: #b2aca2; }
+[data-theme="dark"] .fsa-status      { color: #b2aca2; }
+
+/* ── Modal variantes ── */
+[data-theme="dark"] .variants-modal         { background: #1c1e1f; }
+[data-theme="dark"] .variants-modal-header  { border-bottom-color: #363b3d; }
+[data-theme="dark"] .variant-block          { background: #1c1e1f; border-color: #363b3d; }
+[data-theme="dark"] .variant-preview        { background: #25282a; border-bottom-color: #363b3d; }
+[data-theme="dark"] .variant-footer         { border-top-color: #363b3d; }
+[data-theme="dark"] .variants-grid-wrap     { background: #1c1e1f; }
+[data-theme="dark"] .variants-search-input  { background: #25282a; border-color: #363b3d; color: #d8d4cf; }
+[data-theme="dark"] .variants-search-input::placeholder { color: #b2aca2; }
+[data-theme="dark"] .variant-name           { color: #d8d4cf; }
+[data-theme="dark"] .variant-add-card       { border-color: #363b3d; color: #b2aca2; }
+
+/* ── Modal edição ── */
+[data-theme="dark"] .edit-mode-bar    { border-bottom-color: #363b3d; }
+[data-theme="dark"] .edit-textarea    { background: #25282a; border-color: #363b3d; color: #d8d4cf; }
+
+/* ── Scrollbar ── */
+[data-theme="dark"] ::-webkit-scrollbar-track { background: #151718; }
+[data-theme="dark"] ::-webkit-scrollbar-thumb { background: #212425; }
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ── Stats bar ── */
+[data-theme="dark"] .stats-bar { color: #b2aca2; }
+
+/* ── Tags ── */
+[data-theme="dark"] .tag { background: rgba(204,86,0,.08); border-color: rgba(179,75,0,.18); color: var(--accent); }
 
 /* Alterna ícone conforme tema */
 /* ─── Botão variantes (+) ────────────────────────────── */
@@ -560,17 +710,112 @@ body {
 
 /* ─── Modal variantes ────────────────────────────────── */
 .variants-modal {
-  max-width: 1200px;
+  max-width: 1600px;
+  width: 95vw;
   display: flex;
   flex-direction: column;
   max-height: 90vh;
   overflow: hidden;
 }
 
+/* Cabeçalho do modal variantes — layout personalizado */
+.variants-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.5rem 1.75rem 1.25rem;
+  border-bottom: 1.5px solid var(--border);
+  background: linear-gradient(135deg, rgba(255,107,0,.04) 0%, transparent 60%);
+  flex-wrap: wrap;
+}
+
+.variants-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.variants-header-right {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+/* Badge de contagem — só border laranja, sem background */
+.variants-stats-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border: 1.5px solid var(--accent);
+  border-radius: 99px;
+  padding: .3rem .85rem;
+  font-family: var(--font-body);
+  font-size: .78rem;
+  font-weight: 800;
+  color: var(--text2);
+  white-space: nowrap;
+}
+
+.variants-stats-badge #variantsCount {
+  color: var(--accent);
+}
+
+.variants-stats-sep {
+  color: var(--text3);
+  font-weight: 400;
+}
+
+.variants-fav-count {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  color: #f5a623;
+  font-weight: 800;
+}
+
+/* Barra de pesquisa de variantes */
+.variants-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.variants-search-wrap .search-icon {
+  position: absolute;
+  left: .65rem;
+  width: 13px;
+  height: 13px;
+  color: var(--text3);
+  pointer-events: none;
+}
+
+.variants-search-input {
+  background: var(--bg3);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: .4rem .7rem .4rem 2rem;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: .82rem;
+  width: 200px;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.variants-search-input::placeholder { color: var(--text3); }
+.variants-search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+  background: #fff;
+}
+
 .variants-hint {
   font-size: .82rem;
   color: var(--text2);
-  margin-top: .2rem;
+  margin-top: .1rem;
 }
 .variants-hint code {
   background: var(--accent-bg); color: var(--accent);
@@ -584,10 +829,68 @@ body {
   padding: 1.5rem 1.75rem;
 }
 
+/* Grid 4 colunas — última posição sempre é o botão de adicionar */
 .variants-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1400px) {
+  .variants-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 1000px) {
+  .variants-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .variants-grid { grid-template-columns: 1fr; }
+}
+
+/* Botão "Adicionar Nova Variante" como card no grid */
+.variant-add-card {
+  border: 2px dashed var(--border2);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  min-height: 280px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text3);
+  font-family: var(--font-display);
+  font-size: .85rem;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  transition: all var(--transition);
+  animation: cardIn .3s cubic-bezier(.4,0,.2,1) both;
+}
+.variant-add-card:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 24px rgba(255,107,0,.1);
+}
+.variant-add-card:hover .variant-add-icon {
+  background: var(--accent);
+  color: #fff;
+}
+
+.variant-add-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 300;
+  transition: all var(--transition);
+  line-height: 1;
 }
 
 .variants-empty {
@@ -598,55 +901,75 @@ body {
   text-align: center;
 }
 
+/* Card de variante — idêntico ao .card do grid principal */
 .variant-block {
+  background: var(--bg);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--bg);
+  display: flex;
+  flex-direction: column;
   box-shadow: var(--shadow-card);
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  cursor: pointer;
+  animation: cardIn .3s cubic-bezier(.4,0,.2,1) both;
 }
 .variant-block:hover {
   border-color: var(--accent);
   box-shadow: 0 0 0 1.5px var(--accent), 0 4px 24px rgba(255,107,0,.10);
+  transform: translateY(-2px);
 }
 
 .variant-preview {
-  height: 320px;
+  position: relative;
+  height: 200px;
   background: var(--bg3);
   overflow: hidden;
   border-bottom: 1.5px solid var(--border);
-  position: relative;
 }
 .variant-preview iframe {
-  width: 100%; height: 100%; border: none; pointer-events: none;
+  width: 1280px;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+  transform-origin: top left;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.variant-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+}
+
+.variant-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  flex: 1;
+}
+.variant-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -.02em;
 }
 
 .variant-footer {
   display: flex;
-  align-items: center;
   gap: .5rem;
   padding: .75rem 1rem;
-}
-.variant-name {
-  font-family: var(--font-display);
-  font-size: .95rem;
-  font-weight: 800;
-  color: var(--text);
-  flex: 1;
-  letter-spacing: -.02em;
+  border-top: 1.5px solid var(--border);
 }
 
-.variants-footer-bar {
-  padding: 1rem 1.75rem;
-  border-top: 1.5px solid var(--border);
-  display: flex;
-  justify-content: flex-end;
-}
+/* .variants-footer-bar removido — botão agora é card no grid */
 
 /* ─── Modal nova variante ────────────────────────────── */
 .newvar-modal {
-  max-width: 900px;
+  max-width: 1600px;
 }
 
 /* ─── Correções modais variantes ─────────────────────── */
@@ -664,16 +987,6 @@ body {
   color: #fff !important;
   cursor: not-allowed !important;
   opacity: .85;
-}
-
-.btn-guide {
-  background: var(--accent-bg) !important;
-  border-color: var(--accent) !important;
-  color: var(--accent) !important;
-}
-.btn-guide:hover {
-  background: var(--accent) !important;
-  color: #fff !important;
 }
 
 /* ─── Barra de stats ─────────────────────────────────── */
@@ -706,13 +1019,7 @@ body {
   line-height: 1;
 }
 
-/* ─── Contagem no modal variantes ────────────────────── */
-.variants-count {
-  font-size: .82rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-top: -.2rem;
-}
+/* .variants-count substituído por .variants-stats-badge */
 
 /* ─── Botão favorito ─────────────────────────────────── */
 .btn-fav {
@@ -786,8 +1093,27 @@ body {
 
 /* ─── Modal de edição ────────────────────────────────── */
 .edit-modal {
-  max-width: 1100px;
+  max-width: 1600px;
 }
+
+/* Botão excluir variante dentro do modal de edição */
+.btn-delete-var-modal {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: transparent;
+  border: 1.5px solid #fca5a5;
+  border-radius: var(--radius);
+  padding: .5rem 1rem;
+  font-family: var(--font-body); font-size: .9rem; font-weight: 800;
+  color: var(--red); cursor: pointer;
+  transition: all var(--transition);
+}
+.btn-delete-var-modal:hover {
+  background: rgba(224,48,48,.08);
+  border-color: var(--red);
+}
+
+/* Sub-modal editar variante — sobrepõe modal de variantes */
+#editVarOverlay { z-index: 1100; }
 
 .edit-mode-bar {
   display: flex;
@@ -796,7 +1122,8 @@ body {
   border-bottom: 1.5px solid var(--border);
 }
 
-.edit-mode-btn {
+.edit-mode-btn,
+.edit-var-mode-btn {
   background: transparent;
   border: 1.5px solid var(--border);
   border-radius: var(--radius);
@@ -806,8 +1133,8 @@ body {
   color: var(--text2); cursor: pointer;
   transition: all var(--transition);
 }
-.edit-mode-btn:hover { border-color: var(--accent); color: var(--accent); }
-.edit-mode-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+.edit-mode-btn:hover, .edit-var-mode-btn:hover { border-color: var(--accent); color: var(--accent); }
+.edit-mode-btn.active, .edit-var-mode-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
 
 .edit-mode-panel { display: none; }
 .edit-mode-panel.active { display: block; }

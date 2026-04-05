@@ -4,13 +4,14 @@
 ═══════════════════════════════════════════════════════ */
 
 var state = {
-  search:            '',
-  current:           null,
-  currentEdit:       null,
-  currentForVariant: null,
-  _fromVariant:      false,
-  viewMode:          'normal',
-  favOnly:           false,
+  search:             '',
+  current:            null,
+  currentEdit:        null,
+  currentForVariant:  null,
+  currentEditVariant: null,
+  _fromVariant:       false,
+  viewMode:           'normal',
+  favOnly:            false,
 };
 
 /* ─── Utilitários ─────────────────────────────────── */
@@ -103,6 +104,28 @@ function toggleFav(id) {
   var idx  = favs.indexOf(id);
   if (idx === -1) favs.push(id); else favs.splice(idx, 1);
   saveFavs(favs);
+}
+
+
+/* ─── Favoritos de variantes (storage separado) ─────── */
+function getVarFavs() {
+  try { return JSON.parse(localStorage.getItem('senkolib_var_favs') || '{}'); }
+  catch(e) { return {}; }
+}
+function saveVarFavs(favs) {
+  localStorage.setItem('senkolib_var_favs', JSON.stringify(favs));
+}
+function isVarFav(parentId, variantName) {
+  var favs = getVarFavs();
+  return !!(favs[parentId] && favs[parentId].indexOf(variantName) !== -1);
+}
+function toggleVarFav(parentId, variantName) {
+  var favs = getVarFavs();
+  if (!favs[parentId]) favs[parentId] = [];
+  var idx = favs[parentId].indexOf(variantName);
+  if (idx === -1) favs[parentId].push(variantName);
+  else favs[parentId].splice(idx, 1);
+  saveVarFavs(favs);
 }
 
 
@@ -413,6 +436,29 @@ function updateGeneratedCode() {
 }
 
 /* ─── Modal variantes ───────────────────────────────── */
+function updateVariantsCount(parentId) {
+  var countEl  = document.getElementById('variantsCount');
+  var favSep   = document.getElementById('variantsFavSep');
+  var favBlock = document.getElementById('variantsFavCount');
+  var favNum   = document.getElementById('variantsFavNum');
+  if (!countEl) return;
+
+  var total    = SenkoLib.getVariants(parentId).length;
+  countEl.textContent = 'TOTAL: ' + total + (total === 1 ? ' VARIAÇÃO' : ' VARIAÇÕES');
+
+  /* Favoritos — só mostra se pelo menos 1 for favoritado */
+  var varFavs  = getVarFavs();
+  var favCount = (varFavs[parentId] && varFavs[parentId].length) || 0;
+  if (favCount > 0 && favBlock && favSep && favNum) {
+    favNum.textContent = favCount;
+    favBlock.classList.remove('hidden');
+    favSep.style.display = '';
+  } else if (favBlock && favSep) {
+    favBlock.classList.add('hidden');
+    favSep.style.display = 'none';
+  }
+}
+
 function openVariantsModal(layout) {
   state.currentForVariant = layout;
   var key = layout.id;
@@ -421,8 +467,7 @@ function openVariantsModal(layout) {
   document.getElementById('variantsLayoutId').textContent = key;
 
   var vlist = SenkoLib.getVariants(key);
-  var countEl = document.getElementById('variantsCount');
-  if (countEl) countEl.textContent = vlist.length + (vlist.length === 1 ? ' variação' : ' variações');
+  updateVariantsCount(key);
   renderVariantBlocks(vlist);
 
   var overlay = document.getElementById('variantsOverlay');
@@ -434,7 +479,10 @@ function openVariantsModal(layout) {
 function closeVariantsModal() {
   document.getElementById('variantsOverlay').classList.add('hidden');
   document.body.style.overflow = '';
-  state.currentForVariant = null;
+  /* Só zera currentForVariant se o modal de edição de variante também estiver fechado */
+  if (document.getElementById('editVarOverlay').classList.contains('hidden')) {
+    state.currentForVariant = null;
+  }
 }
 
 function renderVariantBlocks(variants) {
@@ -442,36 +490,114 @@ function renderVariantBlocks(variants) {
   grid.innerHTML = '';
 
   if (variants.length === 0) {
-    grid.innerHTML = '<p class="variants-empty">Nenhuma variante cadastrada ainda.<br>Crie a primeira usando o botão abaixo.</p>';
+    /* Mesmo sem variantes, exibe o card de adicionar */
+    grid.appendChild(_makeAddVariantCard());
     return;
   }
 
-  variants.forEach(function (v) {
+  variants.forEach(function (v, i) {
     var block = document.createElement('div');
     block.className = 'variant-block';
+    block.dataset.variantName = v.name || '';
+    block.style.animationDelay = (i * 40) + 'ms';
 
+    /* Preview */
     var previewWrap = document.createElement('div');
     previewWrap.className = 'variant-preview';
     var vIframe = document.createElement('iframe');
     vIframe.className = 'card-iframe';
     vIframe.sandbox = 'allow-scripts';
-    vIframe.srcdoc = buildSrcDoc(v.html, v.css);
-    previewWrap.appendChild(vIframe);
+    vIframe.title = v.name || '';
+    lazyIframe(vIframe, v.html, v.css);
+    vIframe.addEventListener('load', function () { scaleCardIframe(vIframe); });
+    var ov = document.createElement('div');
+    ov.className = 'variant-preview-overlay';
+    previewWrap.append(vIframe, ov);
 
-    var footer = document.createElement('div'); footer.className = 'variant-footer';
-    var vname  = document.createElement('span'); vname.className = 'variant-name'; vname.textContent = v.nome || v.name || '';
+    /* Body — nome */
+    var body = document.createElement('div');
+    body.className = 'variant-body';
+    var nameEl = document.createElement('div');
+    nameEl.className = 'variant-name';
+    nameEl.textContent = v.name || '';
+    body.appendChild(nameEl);
 
-    var bH = document.createElement('button'); bH.className = 'btn btn-ghost'; bH.innerHTML = HTML_ICON + ' HTML';
-    bH.addEventListener('click', function () { copyToClipboard(v.html, bH, HTML_ICON + ' HTML'); });
-    var bC = document.createElement('button'); bC.className = 'btn btn-ghost'; bC.innerHTML = HTML_ICON + ' CSS';
-    bC.addEventListener('click', function () { copyToClipboard(v.css, bC, HTML_ICON + ' CSS'); });
-    var bV = document.createElement('button'); bV.className = 'btn btn-primary'; bV.textContent = 'Visualizar';
-    bV.addEventListener('click', function () { openVariantPreview(v); });
+    /* Ações */
+    var actions = document.createElement('div');
+    actions.className = 'variant-footer';
 
-    footer.append(vname, bH, bC, bV);
-    block.append(previewWrap, footer);
+    var bH = document.createElement('button');
+    bH.className = 'btn btn-ghost';
+    bH.innerHTML = HTML_ICON + ' HTML';
+    bH.addEventListener('click', function (e) { e.stopPropagation(); copyToClipboard(v.html, bH, HTML_ICON + ' HTML'); });
+
+    var bC = document.createElement('button');
+    bC.className = 'btn btn-ghost';
+    bC.innerHTML = HTML_ICON + ' CSS';
+    bC.addEventListener('click', function (e) { e.stopPropagation(); copyToClipboard(v.css, bC, HTML_ICON + ' CSS'); });
+
+    /* Favorito */
+    var varParentId  = state.currentForVariant ? state.currentForVariant.id : '';
+    var variantName  = v.name || '';
+    var bFav = document.createElement('button');
+    bFav.className = 'btn btn-fav' + (isVarFav(varParentId, variantName) ? ' active' : '');
+    bFav.title = 'Favorito';
+    bFav.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+    bFav.addEventListener('click', function (e) {
+      e.stopPropagation();
+      toggleVarFav(varParentId, variantName);
+      bFav.classList.toggle('active');
+      updateVariantsCount(varParentId);
+    });
+
+    /* Editar */
+    var bEdit = document.createElement('button');
+    bEdit.className = 'btn btn-edit-icon';
+    bEdit.title = 'Editar variante';
+    bEdit.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>';
+    bEdit.addEventListener('click', function (e) { e.stopPropagation(); openEditVariantModal(v); });
+
+    /* Botão de excluir — mantido no DOM para os módulos GitHub, mas escondido visualmente */
+    var bDel = document.createElement('button');
+    bDel.className = 'btn btn-fav btn-delete-variant-card';
+    bDel.dataset.variantName = v.name || '';
+    bDel.title = 'Excluir variante';
+    bDel.style.cssText = 'display:none;'; /* oculto — gerenciado pelo senko-github-variants.js */
+    bDel.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>';
+    bDel.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var parentId = state.currentForVariant ? state.currentForVariant.id : null;
+      if (!parentId) return;
+      if (typeof ghvOpenDeleteModal === 'function') {
+        if (typeof ghEnsureToken === 'function' && !ghEnsureToken()) return;
+        ghvOpenDeleteModal(parentId, v.name || '');
+      }
+    });
+
+    actions.append(bH, bC, bFav, bEdit, bDel);
+    block.append(previewWrap, body, actions);
+
+    block.addEventListener('click', function () { openVariantPreview(v); });
+
     grid.appendChild(block);
   });
+
+  /* Card de adicionar sempre na última posição */
+  grid.appendChild(_makeAddVariantCard());
+}
+
+function _makeAddVariantCard() {
+  var card = document.createElement('button');
+  card.className = 'variant-add-card';
+  card.id = 'openNewVariantBtn';
+  card.innerHTML =
+    '<div class="variant-add-icon">+</div>' +
+    '<span>Adicionar Nova Variante</span>';
+  card.addEventListener('click', function (e) {
+    e.stopPropagation();
+    openNewVariantModal();
+  });
+  return card;
 }
 
 /* ─── Modal nova variante ───────────────────────────── */
@@ -497,21 +623,19 @@ function closeNewVariantModal() {
 }
 
 function updateNewVarCode() {
-  var nome      = document.getElementById('newVarName').value.trim().toLowerCase();
+  var name      = document.getElementById('newVarName').value.trim().toLowerCase();
   var html      = document.getElementById('newVarHtml').value;
   var css       = document.getElementById('newVarCss').value;
-  var layoutName = state.currentForVariant ? state.currentForVariant.id : '';
   var copyBtn   = document.getElementById('newVarCopyBtn');
 
-  /* Botão vermelho se nome tiver menos de 3 chars */
-  if (nome.length < 3) {
+  if (name.length < 3) {
     copyBtn.classList.add('btn-blocked');
     copyBtn.classList.remove('copied');
   } else {
     copyBtn.classList.remove('btn-blocked');
   }
 
-  if (!nome && !html) {
+  if (!name && !html) {
     document.getElementById('newVarGeneratedCode').textContent = '// Preencha os campos acima para gerar o objeto…';
     return;
   }
@@ -520,12 +644,115 @@ function updateNewVarCode() {
   var safeCss  = css.replace(/`/g, '\\`');
 
   document.getElementById('newVarGeneratedCode').textContent =
-    '// @ts-nocheck\n' +
-    "SenkoLib.registerVariant('" + layoutName + "', [\n" +
-    "  { nome: '" + nome + "',\n" +
+    '/*@@@@Senko - ' + name + ' */\n' +
+    '  {\n' +
+    "    name: '" + name + "',\n" +
     '    html: `' + safeHtml + '`,\n' +
-    '    css: `'  + safeCss  + '` },\n' +
-    ']);';
+    '    css: `'  + safeCss  + '`,\n' +
+    '  },';
+}
+
+
+/* ─── Modal editar variante ─────────────────────────── */
+function openEditVariantModal(v) {
+  /* Guarda referência ao objeto (é referência direta ao array em memória) */
+  state.currentEditVariant = v;
+
+  var parentId = state.currentForVariant ? state.currentForVariant.id   : '';
+  var parentNm = state.currentForVariant ? state.currentForVariant.name : '';
+
+  document.getElementById('editVarParentName').textContent  = parentNm;
+  document.getElementById('editVarFileHint').textContent    = parentId;
+  document.getElementById('editVarName').value              = v.name || '';
+  document.getElementById('editVarHtml').value              = v.html || '';
+  document.getElementById('editVarCss').value               = v.css  || '';
+
+  /* Configura o botão de excluir — mantém data-variant-name atualizado para o módulo GitHub */
+  var delBtn = document.getElementById('editVarDeleteBtn');
+  if (delBtn) {
+    delBtn.dataset.variantName = v.name || '';
+    delBtn.style.display = '';   /* sempre visível no modal de edição */
+    delBtn.onclick = function (e) {
+      e.stopPropagation();
+      if (typeof ghvOpenDeleteModal === 'function') {
+        if (typeof ghEnsureToken === 'function' && !ghEnsureToken()) return;
+        ghvOpenDeleteModal(parentId, v.name || '');
+      } else {
+        /* Exclusão local: remove da memória e re-renderiza */
+        var arr = SenkoLib.getVariants(parentId);
+        var idx = arr.indexOf(v);
+        if (idx !== -1) arr.splice(idx, 1);
+        closeEditVariantModal();
+        renderVariantBlocks(SenkoLib.getVariants(parentId));
+        updateVariantsCount(parentId);
+      }
+    };
+  }
+
+  var overlay = document.getElementById('editVarOverlay');
+  overlay.classList.remove('hidden');
+  overlay.scrollTop = 0;
+
+  /* Abre em preview por padrão */
+  setTimeout(function () { switchEditVarMode('preview'); updateEditVarCode(); }, 10);
+}
+
+function closeEditVariantModal() {
+  document.getElementById('editVarOverlay').classList.add('hidden');
+  /* Re-renderiza e reabre o modal de variantes (pode ter sido escondido por baixo) */
+  if (state.currentForVariant) {
+    var parentId = state.currentForVariant.id;
+    renderVariantBlocks(SenkoLib.getVariants(parentId));
+    updateVariantsCount(parentId);
+    document.getElementById('variantsOverlay').classList.remove('hidden');
+  }
+  state.currentEditVariant = null;
+}
+
+function switchEditVarMode(mode) {
+  document.querySelectorAll('.edit-var-mode-btn').forEach(function (b) { b.classList.remove('active'); });
+  document.querySelectorAll('#editVarModal .edit-mode-panel').forEach(function (p) { p.classList.remove('active'); });
+  document.querySelector('[data-evmode="' + mode + '"]').classList.add('active');
+  document.getElementById('editVarMode' + mode.charAt(0).toUpperCase() + mode.slice(1)).classList.add('active');
+
+  if (mode === 'preview') {
+    var h = document.getElementById('editVarHtml').value;
+    var c = document.getElementById('editVarCss').value;
+    var f = document.getElementById('editVarPreviewIframe');
+    f.srcdoc = '';
+    setTimeout(function () { if (h || c) f.srcdoc = buildSrcDoc(h, c); }, 50);
+  }
+}
+
+function updateEditVarCode() {
+  var name = document.getElementById('editVarName').value.trim().toLowerCase();
+  var html = document.getElementById('editVarHtml').value;
+  var css  = document.getElementById('editVarCss').value;
+
+  var copyBtn = document.getElementById('copyEditVarBtn');
+  var ok = name.length >= 3 && html.length >= 1;
+  if (copyBtn) {
+    if (ok) copyBtn.classList.remove('btn-blocked');
+    else    copyBtn.classList.add('btn-blocked');
+  }
+
+  var safeHtml = html.replace(/`/g, '\\`');
+  var safeCss  = css.replace(/`/g, '\\`');
+
+  document.getElementById('editVarGeneratedCode').textContent =
+    '/*@@@@Senko - ' + name + ' */\n' +
+    '  {\n' +
+    "    name: '" + name + "',\n" +
+    '    html: `' + safeHtml + '`,\n' +
+    '    css: `'  + safeCss  + '`,\n' +
+    '  },';
+
+  /*
+   * IMPORTANTE: não mutamos state.currentEditVariant aqui.
+   * O objeto em memória só é atualizado APÓS o usuário confirmar o save
+   * (via senko-fsa-variants.js ou senko-github-variants.js).
+   * Isso evita corromper dados se o usuário fechar o modal sem salvar.
+   */
 }
 
 
@@ -534,7 +761,7 @@ function openVariantPreview(v) {
   /* Fecha o modal de variantes temporariamente e abre o de visualização */
   document.getElementById('variantsOverlay').classList.add('hidden');
 
-  document.getElementById('modalTitle').textContent = v.nome || v.name || '';
+  document.getElementById('modalTitle').textContent = v.name || '';
 
   var tagsEl = document.getElementById('modalTags');
   tagsEl.innerHTML = '';
@@ -603,9 +830,9 @@ function openEditModal(layout) {
 }
 
 function switchEditMode(mode) {
-  document.querySelectorAll('.edit-mode-btn').forEach(function(b){ b.classList.remove('active'); });
-  document.querySelectorAll('.edit-mode-panel').forEach(function(p){ p.classList.remove('active'); });
-  document.querySelector('[data-editmode="' + mode + '"]').classList.add('active');
+  document.querySelectorAll('#editModal .edit-mode-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('#editModal .edit-mode-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelector('#editModal [data-editmode="' + mode + '"]').classList.add('active');
   document.getElementById('editMode' + mode.charAt(0).toUpperCase() + mode.slice(1)).classList.add('active');
 
   if (mode === 'preview') {
@@ -734,7 +961,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Modal variantes */
   document.getElementById('variantsClose').addEventListener('click', closeVariantsModal);
   document.getElementById('variantsOverlay').addEventListener('click', overlayClick('variants', closeVariantsModal));
-  document.getElementById('openNewVariantBtn').addEventListener('click', openNewVariantModal);
+  /* openNewVariantBtn — criado dinamicamente em _makeAddVariantCard(), listener atribuído lá */
 
   /* Modal nova variante */
   document.getElementById('newVarClose').addEventListener('click', closeNewVariantModal);
@@ -767,10 +994,28 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-  /* Modal editar */
+  /* Modal editar variante */
+  document.getElementById('editVarClose').addEventListener('click', closeEditVariantModal);
+  document.getElementById('editVarOverlay').addEventListener('click', overlayClick('editVar', closeEditVariantModal));
+  document.querySelectorAll('.edit-var-mode-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      switchEditVarMode(this.dataset.evmode);
+      updateEditVarCode();
+    });
+  });
+  ['editVarName','editVarHtml','editVarCss'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', updateEditVarCode);
+  });
+  document.getElementById('copyEditVarBtn').addEventListener('click', function () {
+    if (this.classList.contains('btn-blocked')) return;
+    var code = document.getElementById('editVarGeneratedCode').textContent;
+    if (code.indexOf('//') !== 0) copyToClipboard(code, this, COPY_ICON + ' Copiar objeto');
+  });
+
+  /* Modal editar layout */
   document.getElementById('editModalClose').addEventListener('click', closeEditModal);
   document.getElementById('editModalOverlay').addEventListener('click', overlayClick('editModal', closeEditModal));
-  document.querySelectorAll('.edit-mode-btn').forEach(function (btn) {
+  document.querySelectorAll('#editModal .edit-mode-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
       switchEditMode(this.dataset.editmode);
       updateEditCode();
@@ -789,7 +1034,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.getElementById('selectFolderBtn').addEventListener('click', selectProjectFolder);
 
-  /* Guia */
   /* Filtro favoritos */
   document.getElementById('favFilterBtn').addEventListener('click', function () {
     state.favOnly = !state.favOnly;
@@ -797,28 +1041,14 @@ document.addEventListener('DOMContentLoaded', function () {
     renderGrid();
   });
 
-  document.getElementById('openGuideBtn').addEventListener('click', function () {
-    document.getElementById('guideOverlay').classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  });
-  document.getElementById('guideClose').addEventListener('click', function () {
-    document.getElementById('guideOverlay').classList.add('hidden');
-    document.body.style.overflow = '';
-  });
-  document.getElementById('guideOverlay').addEventListener('click', function (e) {
-    overlayClick('guide', function() {
-      document.getElementById('guideOverlay').classList.add('hidden');
-      document.body.style.overflow = '';
-    }).call(this, e);
-  });
-
   /* Escape */
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
-    if (!document.getElementById('newVarOverlay').classList.contains('hidden'))        closeNewVariantModal();
-    else if (!document.getElementById('variantsOverlay').classList.contains('hidden')) closeVariantsModal();
-    else if (!document.getElementById('editModalOverlay').classList.contains('hidden')) closeEditModal();
-    else if (!document.getElementById('addModalOverlay').classList.contains('hidden')) closeAddModal();
+    if (!document.getElementById('editVarOverlay').classList.contains('hidden'))         closeEditVariantModal();
+    else if (!document.getElementById('newVarOverlay').classList.contains('hidden'))     closeNewVariantModal();
+    else if (!document.getElementById('variantsOverlay').classList.contains('hidden'))   closeVariantsModal();
+    else if (!document.getElementById('editModalOverlay').classList.contains('hidden'))  closeEditModal();
+    else if (!document.getElementById('addModalOverlay').classList.contains('hidden'))   closeAddModal();
     else closeModal();
   });
 

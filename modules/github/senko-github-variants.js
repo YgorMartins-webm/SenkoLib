@@ -1,53 +1,52 @@
 // @ts-nocheck
 /* ═══════════════════════════════════════════════════════════════════════
-   senko-github-variants.js — Módulo: criar e deletar variantes no GitHub
-   ───────────────────────────────────────────────────────────────────────
-   FUNCIONALIDADES:
-     - Criar nova variante: salva no arquivo variants/[parentId].js
-       Se o arquivo não existir no GitHub, cria do zero.
-     - Deletar variante específica: remove o objeto do array no arquivo.
-       Se era a última variante, deleta o arquivo inteiro.
-     - Validação de nome duplicado antes de salvar.
-     - Sincronização com memória (SenkoLib) sem precisar recarregar.
+   senko-github-variants.js — Módulo GitHub para variantes
 
-   DEPENDÊNCIAS:
-     - senko-github-v2.js carregado antes (usa ghGetToken, ghEnsureToken,
-       githubGetFile, githubPutFile, ghSetStatus, GH_ICON, GITHUB_CONFIG,
-       ghUpdateLockButton, state, SenkoLib, renderVariantBlocks, renderGrid,
-       closeNewVariantModal)
+   RESPONSABILIDADE:
+     Toda operação de variantes via GitHub API:
+       — Criar variante nova              (githubCreateVariant)
+       — Editar variante existente        (githubSaveVariant)
+       — Deletar variante específica      (githubDeleteVariant)
+     Injeta botões "GitHub" nos modais de nova variante e edição de variante.
+     Modal de confirmação de exclusão.
 
-   COMO USAR:
-     Adicione no index.html APÓS o senko-github-v2.js:
-       <script src="senko-github-variants.js"></script>
+   ESPELHA o padrão do senko-github-v2.js para layouts:
+     — Usa o nome ORIGINAL da variante para localizar o marcador no arquivo
+     — Atualiza a memória (SenkoLib) após salvar com sucesso
+     — Usa ghLockSave / ghUnlockSave para evitar race conditions
+
+   DEPENDÊNCIAS (devem ser carregadas antes):
+     - senko-github-v2.js   (ghGetToken, ghEnsureToken, ghLockSave,
+                             ghUnlockSave, ghSetStatus, ghUpdateLockButton,
+                             githubGetFile, githubPutFile, GH_ICON,
+                             GITHUB_CONFIG)
+     - core/script.js       (state, SenkoLib, renderVariantBlocks,
+                             updateVariantsCount, renderGrid,
+                             closeNewVariantModal, closeEditVariantModal)
+
+   ORDEM DE CARREGAMENTO no index.html (GitHub Pages only):
+     <script src="modules/github/senko-github-v2.js"></script>
+     <script src="modules/github/senko-github-variants.js"></script>
 ═══════════════════════════════════════════════════════════════════════ */
 
 
 /* ═══════════════════════════════════════════════════════════════════════
-   UTILITÁRIO: Parser de objeto de variante
-   Encontra o objeto { nome: '...', html: `...`, css: `...` } no arquivo
-   usando contagem de profundidade de chaves, ciente de template literals.
-   Retorna { start, end } ou null.
+   UTILITÁRIO: Localiza bounds de um objeto de variante no conteúdo do arquivo
+   Retorna { start, end } | { duplicate: true } | null
 ═══════════════════════════════════════════════════════════════════════ */
-function ghvFindVariantObjectBounds(content, variantNome) {
-  var marker    = "nome: '" + variantNome.toLowerCase() + "'";
-  var markerAlt = 'nome: "' + variantNome.toLowerCase() + '"';
-
-  /* Busca case-insensitive pelo nome */
-  var lowerContent = content.toLowerCase();
-  var markerPos    = lowerContent.indexOf(marker);
-  if (markerPos === -1) markerPos = lowerContent.indexOf(markerAlt);
+function ghvFindVariantObjectBounds(content, variantName) {
+  var marker    = '/*@@@@Senko - ' + variantName.toLowerCase() + ' */';
+  var markerPos = content.indexOf(marker);
   if (markerPos === -1) return null;
 
-  /* Verifica duplicata */
-  var secondOccurrence = lowerContent.indexOf(marker, markerPos + marker.length);
-  if (secondOccurrence === -1) secondOccurrence = lowerContent.indexOf(markerAlt, markerPos + markerAlt.length);
-  if (secondOccurrence !== -1) return { duplicate: true };
+  /* Detecta duplicata antes de tentar parsear */
+  if (content.indexOf(marker, markerPos + marker.length) !== -1) {
+    return { duplicate: true };
+  }
 
-  /* Retrocede do marcador até o '{' que abre o objeto desta variante */
-  var objOpen = content.lastIndexOf('{', markerPos);
+  var objOpen = content.indexOf('{', markerPos + marker.length);
   if (objOpen === -1) return null;
 
-  /* Conta profundidade de chaves, ciente de template literals */
   var i          = objOpen;
   var depth      = 0;
   var inTemplate = false;
@@ -65,17 +64,15 @@ function ghvFindVariantObjectBounds(content, variantNome) {
     }
 
     if (inTemplate) { i++; continue; }
-
-    if (ch === '{') { depth++; i++; continue; }
+    if (ch === '{')  { depth++; i++; continue; }
 
     if (ch === '}') {
       depth--;
       if (depth === 0) {
         var end = i + 1;
-        /* Consome vírgula e quebra de linha que seguem o objeto */
         if (content[end] === ',') end++;
         if (content[end] === '\n') end++;
-        return { start: objOpen, end: end };
+        return { start: markerPos, end: end };
       }
       i++; continue;
     }
@@ -88,18 +85,17 @@ function ghvFindVariantObjectBounds(content, variantNome) {
 
 
 /* ═══════════════════════════════════════════════════════════════════════
-   UTILITÁRIO: Conta quantos objetos de variante existem no conteúdo
-   (conta ocorrências de "nome:" no escopo do array registerVariant)
+   UTILITÁRIO: Conta objetos de variante no arquivo (via marcadores)
 ═══════════════════════════════════════════════════════════════════════ */
 function ghvCountVariants(content) {
-  var re      = /nome\s*:/gi;
+  var re      = /\/\*@@@@Senko - /g;
   var matches = content.match(re);
   return matches ? matches.length : 0;
 }
 
 
 /* ═══════════════════════════════════════════════════════════════════════
-   UTILITÁRIO: Monta o conteúdo inicial de um arquivo de variantes novo
+   UTILITÁRIO: Monta conteúdo inicial de um arquivo de variantes novo
 ═══════════════════════════════════════════════════════════════════════ */
 function ghvBuildNewVariantFile(parentId, objectCode) {
   return (
@@ -112,15 +108,14 @@ function ghvBuildNewVariantFile(parentId, objectCode) {
 
 
 /* ═══════════════════════════════════════════════════════════════════════
-   CORE: Verificar se arquivo de variantes existe no GitHub
-   Retorna { exists, sha, content } ou { exists: false }
+   UTILITÁRIO: Lê o arquivo de variantes do GitHub
+   Retorna { exists, sha, content, path } ou { exists: false, path }
 ═══════════════════════════════════════════════════════════════════════ */
 function ghvGetVariantFile(parentId) {
   var filePath = 'variants/' + parentId.toLowerCase() + '.js';
   return githubGetFile(filePath).then(function (data) {
     return { exists: true, sha: data.sha, content: data.content, path: filePath };
   }).catch(function (err) {
-    /* 404 = arquivo ainda não existe — tudo bem */
     if (err.message && err.message.indexOf('404') !== -1) {
       return { exists: false, path: filePath };
     }
@@ -130,9 +125,42 @@ function ghvGetVariantFile(parentId) {
 
 
 /* ═══════════════════════════════════════════════════════════════════════
-   CORE: Criar ou adicionar variante no GitHub
+   UTILITÁRIO: Atualiza variante na memória do SenkoLib após edição
 ═══════════════════════════════════════════════════════════════════════ */
-function githubCreateVariant(parentId, variantNome, objectCode) {
+function ghvUpdateVariantInMemory(parentId, originalName, newName, html, css) {
+  var variants  = SenkoLib.getVariants(parentId);
+  var origLower = originalName.toLowerCase();
+  for (var i = 0; i < variants.length; i++) {
+    if ((variants[i].name || '').toLowerCase() === origLower) {
+      variants[i].name = newName;
+      variants[i].html = html;
+      variants[i].css  = css;
+      return;
+    }
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   UTILITÁRIO: Remove variante da memória do SenkoLib após exclusão
+═══════════════════════════════════════════════════════════════════════ */
+function ghvRemoveVariantFromMemory(parentId, variantName) {
+  var variants  = SenkoLib.getVariants(parentId);
+  var nameLower = variantName.toLowerCase();
+  for (var i = 0; i < variants.length; i++) {
+    if ((variants[i].name || '').toLowerCase() === nameLower) {
+      variants.splice(i, 1);
+      return;
+    }
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   CORE: Criar variante nova no GitHub
+   Se o arquivo variants/[parentId].js não existir, cria do zero.
+═══════════════════════════════════════════════════════════════════════ */
+function githubCreateVariant(parentId, variantName, objectCode) {
   if (!ghLockSave()) return Promise.resolve(false);
   if (!ghEnsureToken()) {
     ghUnlockSave();
@@ -140,48 +168,43 @@ function githubCreateVariant(parentId, variantNome, objectCode) {
     return Promise.resolve(false);
   }
 
-  /* Valida parentId — não pode ter espaços ou caracteres inválidos para nome de arquivo */
   if (!/^[a-z0-9-]+$/.test(parentId.toLowerCase())) {
     ghUnlockSave();
     ghSetStatus('ID inválido', 'error');
-    alert(
-      'O ID do layout pai ("' + parentId + '") contém caracteres inválidos.\n\n' +
-      'IDs devem usar apenas letras minúsculas, números e hífen.\n' +
-      'Ex: "section-58" é válido, "section 58" não é.'
-    );
+    alert('O ID do layout pai ("' + parentId + '") contém caracteres inválidos.\nUse apenas letras minúsculas, números e hífen.');
     return Promise.resolve(false);
   }
 
-  var nomeLower = variantNome.toLowerCase();
+  var nameLower = variantName.toLowerCase();
   ghSetStatus('Verificando arquivo de variantes…', 'saving');
 
   return ghvGetVariantFile(parentId).then(function (fileInfo) {
 
-    /* ── Arquivo já existe: verifica duplicata e insere ── */
+    /* ── Arquivo existe: verifica duplicata e insere ── */
     if (fileInfo.exists) {
-      var content    = fileInfo.content;
-      var sha        = fileInfo.sha;
-      var markerCheck = "nome: '" + nomeLower + "'";
+      var content = fileInfo.content;
+      var sha     = fileInfo.sha;
 
-      if (content.toLowerCase().indexOf(markerCheck) !== -1) {
+      /* Checa duplicata pelo marcador */
+      var marker = '/*@@@@Senko - ' + nameLower + ' */';
+      if (content.indexOf(marker) !== -1) {
         ghSetStatus('Nome duplicado', 'error');
         ghUnlockSave();
-        alert('Já existe uma variante com o nome "' + variantNome + '" em ' + fileInfo.path + '.\nEscolha outro nome.');
+        alert('Já existe uma variante com o nome "' + variantName + '" em ' + fileInfo.path + '.\nEscolha outro nome.');
         return false;
       }
 
-      /* Insere antes do ]); final */
       var closePos = content.lastIndexOf(']);');
       if (closePos === -1) {
         ghSetStatus('Estrutura inválida', 'error');
         ghUnlockSave();
-        alert('Não foi possível encontrar o fechamento do array em ' + fileInfo.path + '.\nVerifique se o arquivo segue o padrão SenkoLib.registerVariant([...]);');
+        alert('Não foi possível encontrar o fechamento do array em ' + fileInfo.path + '.');
         return false;
       }
 
       var newContent =
         content.slice(0, closePos) +
-        objectCode + ',\n' +
+        objectCode + '\n' +
         content.slice(closePos);
 
       ghSetStatus('Salvando no GitHub…', 'saving');
@@ -190,51 +213,112 @@ function githubCreateVariant(parentId, variantNome, objectCode) {
         fileInfo.path,
         newContent,
         sha,
-        '[SenkoLib] add variant: ' + nomeLower + ' (' + parentId + ')'
+        '[SenkoLib] add variant: ' + nameLower + ' (' + parentId + ')'
       ).then(function () {
-        /* Atualiza memória */
         var html = document.getElementById('newVarHtml') ? document.getElementById('newVarHtml').value : '';
         var css  = document.getElementById('newVarCss')  ? document.getElementById('newVarCss').value  : '';
-        SenkoLib.registerVariant(parentId, [{ nome: variantNome, html: html, css: css }]);
+        SenkoLib.registerVariant(parentId, [{ name: variantName, html: html, css: css }]);
         ghSetStatus('✓ Variante salva em ' + fileInfo.path, 'ok');
         ghUnlockSave();
         return fileInfo.path;
       }).catch(function (e) {
         ghSetStatus('Erro ao salvar: ' + e.message, 'error');
         ghUnlockSave();
-        throw e; /* repassa para o .catch externo mostrar o alert */
+        throw e;
       });
     }
 
     /* ── Arquivo não existe: cria do zero ── */
     var newFileContent = ghvBuildNewVariantFile(parentId, objectCode);
-    var newFilePath    = 'variants/' + parentId.toLowerCase() + '.js';
 
     ghSetStatus('Criando arquivo de variantes…', 'saving');
 
     return githubPutFile(
-      newFilePath,
+      fileInfo.path,
       newFileContent,
       null,
       '[SenkoLib] create variants file: ' + parentId
     ).then(function () {
       var html = document.getElementById('newVarHtml') ? document.getElementById('newVarHtml').value : '';
       var css  = document.getElementById('newVarCss')  ? document.getElementById('newVarCss').value  : '';
-      SenkoLib.registerVariant(parentId, [{ nome: variantNome, html: html, css: css }]);
-      ghSetStatus('✓ Arquivo criado: ' + newFilePath, 'ok');
+      SenkoLib.registerVariant(parentId, [{ name: variantName, html: html, css: css }]);
+      ghSetStatus('✓ Arquivo criado: ' + fileInfo.path, 'ok');
       ghUnlockSave();
-      return newFilePath;
+      return fileInfo.path;
     }).catch(function (e) {
       ghSetStatus('Erro ao criar arquivo: ' + e.message, 'error');
       ghUnlockSave();
-      throw e; /* repassa para o .catch externo mostrar o alert */
+      throw e;
     });
 
   }).catch(function (e) {
     console.error('[senko-github-variants] Erro ao criar variante:', e);
     ghSetStatus('Erro: ' + e.message, 'error');
-    /* ghUnlockSave() já foi chamado nos .catch internos,
-       mas chamamos de novo por segurança (é idempotente) */
+    ghUnlockSave();
+    alert('Erro ao salvar variante no GitHub:\n' + e.message);
+    return false;
+  });
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   CORE: Editar variante existente no GitHub
+   ───────────────────────────────────────────────────────────────────────
+   Recebe o nome ORIGINAL da variante para localizar o marcador correto.
+   O objectCode já contém o nome novo dentro de si.
+═══════════════════════════════════════════════════════════════════════ */
+function githubSaveVariant(parentId, originalName, objectCode) {
+  if (!ghLockSave()) return Promise.resolve(false);
+  if (!ghEnsureToken()) {
+    ghUnlockSave();
+    ghSetStatus('Token não configurado', 'error');
+    return Promise.resolve(false);
+  }
+
+  var filePath = 'variants/' + parentId.toLowerCase() + '.js';
+  ghSetStatus('Lendo arquivo de variantes…', 'saving');
+
+  return githubGetFile(filePath).then(function (data) {
+    var content = data.content;
+    var sha     = data.sha;
+
+    var bounds = ghvFindVariantObjectBounds(content, originalName);
+
+    if (!bounds) {
+      ghSetStatus('Variante não encontrada', 'error');
+      ghUnlockSave();
+      alert('Variante "' + originalName + '" não encontrada em ' + filePath + '.\nVerifique se o arquivo está correto.');
+      return false;
+    }
+
+    if (bounds.duplicate) {
+      ghSetStatus('Variante duplicada no arquivo', 'error');
+      ghUnlockSave();
+      alert('A variante "' + originalName + '" aparece mais de uma vez em ' + filePath + '.\nCorrija manualmente antes de editar.');
+      return false;
+    }
+
+    var newContent =
+      content.slice(0, bounds.start) +
+      objectCode + '\n' +
+      content.slice(bounds.end);
+
+    ghSetStatus('Salvando no GitHub…', 'saving');
+
+    return githubPutFile(
+      filePath,
+      newContent,
+      sha,
+      '[SenkoLib] edit variant: ' + originalName.toLowerCase() + ' (' + parentId + ')'
+    ).then(function () {
+      ghSetStatus('✓ Salvo em ' + filePath, 'ok');
+      ghUnlockSave();
+      return filePath;
+    });
+
+  }).catch(function (e) {
+    console.error('[senko-github-variants] Erro ao editar variante:', e);
+    ghSetStatus('Erro: ' + e.message, 'error');
     ghUnlockSave();
     alert('Erro ao salvar variante no GitHub:\n' + e.message);
     return false;
@@ -244,6 +328,7 @@ function githubCreateVariant(parentId, variantNome, objectCode) {
 
 /* ═══════════════════════════════════════════════════════════════════════
    CORE: Deletar variante específica do GitHub
+   Se era a única variante do arquivo, deleta o arquivo inteiro.
 ═══════════════════════════════════════════════════════════════════════ */
 function githubDeleteVariant(parentId, variantNome) {
   if (!ghEnsureToken()) {
@@ -289,7 +374,7 @@ function githubDeleteVariant(parentId, variantNome) {
         + fileInfo.path;
 
       return fetch(url, {
-        method: 'DELETE',
+        method:  'DELETE',
         headers: {
           'Authorization': 'token ' + token,
           'Accept':        'application/vnd.github+json',
@@ -324,7 +409,6 @@ function githubDeleteVariant(parentId, variantNome) {
       content.slice(0, bounds.start) +
       content.slice(bounds.end);
 
-    /* Limpa linha em branco dupla que possa sobrar */
     newContent = newContent.replace(/\n\n\n/g, '\n\n');
 
     ghSetStatus('Salvando no GitHub…', 'saving');
@@ -346,22 +430,6 @@ function githubDeleteVariant(parentId, variantNome) {
     alert('Erro ao deletar variante no GitHub:\n' + e.message);
     return false;
   });
-}
-
-
-/* ═══════════════════════════════════════════════════════════════════════
-   UTILITÁRIO: Remove variante da memória do SenkoLib
-═══════════════════════════════════════════════════════════════════════ */
-function ghvRemoveVariantFromMemory(parentId, variantNome) {
-  var variants = SenkoLib.getVariants(parentId);
-  var nomeLower = variantNome.toLowerCase();
-  for (var i = 0; i < variants.length; i++) {
-    var n = (variants[i].nome || variants[i].name || '').toLowerCase();
-    if (n === nomeLower) {
-      variants.splice(i, 1);
-      break;
-    }
-  }
 }
 
 
@@ -413,20 +481,18 @@ function ghvOpenDeleteModal(parentId, variantNome) {
     'Você está prestes a excluir a variante <strong>' + variantNome + '</strong> de <strong>' + parentId + '</strong>.<br>' +
     'Essa ação <strong>não pode ser desfeita</strong>.';
 
-  /* Substitui o botão para limpar listeners anteriores */
+  /* Clona o botão para limpar listeners anteriores */
   var newConfirmBtn = confirmBtn.cloneNode(true);
   confirmBtn.parentNode.replaceChild(newConfirmBtn, confirmBtn);
 
   newConfirmBtn.addEventListener('click', function () {
     ghvCloseDeleteModal();
-
     setTimeout(function () {
       githubDeleteVariant(parentId, variantNome).then(function (result) {
         if (result && state.currentForVariant) {
           var updated = SenkoLib.getVariants(parentId);
           if (typeof renderVariantBlocks === 'function') renderVariantBlocks(updated);
-          var countEl = document.getElementById('variantsCount');
-          if (countEl) countEl.textContent = updated.length + (updated.length === 1 ? ' variação' : ' variações');
+          if (typeof updateVariantsCount === 'function') updateVariantsCount(parentId);
           renderGrid();
         }
       });
@@ -445,194 +511,29 @@ function ghvCloseDeleteModal() {
 
 
 /* ═══════════════════════════════════════════════════════════════════════
-   ESTILOS — injetados no <head>
-═══════════════════════════════════════════════════════════════════════ */
-function ghvInjectStyles() {
-  var style = document.createElement('style');
-  style.textContent = [
-    /* Overlay do modal de exclusão */
-    '#ghvDeleteOverlay {',
-    '  position: fixed;',
-    '  inset: 0;',
-    '  background: rgba(0,0,0,.55);',
-    '  backdrop-filter: blur(3px);',
-    '  display: flex;',
-    '  align-items: center;',
-    '  justify-content: center;',
-    '  z-index: 9999;',
-    '  padding: 1rem;',
-    '}',
-    '#ghvDeleteOverlay.ghv-hidden { display: none; }',
-
-    /* Modal box */
-    '#ghvDeleteModal {',
-    '  background: var(--card, #fff);',
-    '  border: 1.5px solid var(--border, #e2e8f0);',
-    '  border-radius: calc(var(--radius, 8px) * 1.5);',
-    '  padding: 2rem;',
-    '  width: 100%;',
-    '  max-width: 400px;',
-    '  display: flex;',
-    '  flex-direction: column;',
-    '  align-items: center;',
-    '  gap: 1rem;',
-    '  text-align: center;',
-    '  box-shadow: 0 20px 60px rgba(0,0,0,.18);',
-    '}',
-
-    /* Ícone */
-    '#ghvDeleteIcon {',
-    '  width: 60px;',
-    '  height: 60px;',
-    '  border-radius: 50%;',
-    '  background: #fee2e2;',
-    '  color: #ef4444;',
-    '  display: flex;',
-    '  align-items: center;',
-    '  justify-content: center;',
-    '  flex-shrink: 0;',
-    '}',
-
-    /* Título */
-    '#ghvDeleteTitle {',
-    '  font-family: var(--font-body, sans-serif);',
-    '  font-size: 1.15rem;',
-    '  font-weight: 800;',
-    '  color: var(--text1, #0f172a);',
-    '  margin: 0;',
-    '}',
-
-    /* Descrição */
-    '#ghvDeleteDesc {',
-    '  font-family: var(--font-body, sans-serif);',
-    '  font-size: .88rem;',
-    '  color: var(--text2, #64748b);',
-    '  line-height: 1.5;',
-    '  margin: 0;',
-    '}',
-    '#ghvDeleteDesc strong { color: var(--text1, #0f172a); }',
-
-    /* Botões */
-    '#ghvDeleteActions {',
-    '  display: flex;',
-    '  gap: .6rem;',
-    '  width: 100%;',
-    '  margin-top: .25rem;',
-    '}',
-    '#ghvDeleteCancelBtn {',
-    '  flex: 1;',
-    '  padding: .6rem 1rem;',
-    '  background: var(--bg, #f8fafc);',
-    '  color: var(--text2, #64748b);',
-    '  border: 1.5px solid var(--border, #e2e8f0);',
-    '  border-radius: var(--radius, 8px);',
-    '  font-family: var(--font-body, sans-serif);',
-    '  font-size: .85rem;',
-    '  font-weight: 700;',
-    '  cursor: pointer;',
-    '  transition: background .15s, border-color .15s;',
-    '}',
-    '#ghvDeleteCancelBtn:hover { background: var(--hover, #f1f5f9); border-color: var(--text3, #94a3b8); }',
-    '#ghvDeleteConfirmBtn {',
-    '  flex: 1;',
-    '  display: inline-flex;',
-    '  align-items: center;',
-    '  justify-content: center;',
-    '  gap: .4rem;',
-    '  padding: .6rem 1rem;',
-    '  background: #ef4444;',
-    '  color: #fff;',
-    '  border: 1.5px solid #ef4444;',
-    '  border-radius: var(--radius, 8px);',
-    '  font-family: var(--font-body, sans-serif);',
-    '  font-size: .85rem;',
-    '  font-weight: 700;',
-    '  cursor: pointer;',
-    '  transition: background .15s, border-color .15s;',
-    '}',
-    '#ghvDeleteConfirmBtn:hover { background: #dc2626; border-color: #dc2626; }',
-    '#ghvDeleteConfirmBtn:disabled { opacity: .6; cursor: not-allowed; }',
-
-    /* Botão excluir variante — nos cards de variante */
-    '.btn-delete-variant {',
-    '  display: inline-flex;',
-    '  align-items: center;',
-    '  gap: .35rem;',
-    '  padding: .35rem .7rem;',
-    '  background: transparent;',
-    '  color: #ef4444;',
-    '  border: 1px solid #fca5a5;',
-    '  border-radius: var(--radius, 6px);',
-    '  font-size: .78rem;',
-    '  font-weight: 700;',
-    '  font-family: var(--font-body, sans-serif);',
-    '  cursor: pointer;',
-    '  height: 30px;',
-    '  white-space: nowrap;',
-    '  transition: background .15s, border-color .15s;',
-    '}',
-    '.btn-delete-variant:hover { background: #fee2e2; border-color: #ef4444; }',
-    '.btn-delete-variant:disabled { opacity: .5; cursor: not-allowed; }',
-
-    /* Botão salvar variante no GitHub — no modal nova variante */
-    '#ghvSaveVariantBtn {',
-    '  display: inline-flex;',
-    '  align-items: center;',
-    '  gap: .4rem;',
-    '  padding: .45rem .85rem;',
-    '  background: #21262d;',
-    '  color: #c9d1d9;',
-    '  border: 1px solid #30363d;',
-    '  border-radius: var(--radius, 6px);',
-    '  font-size: .8rem;',
-    '  font-weight: 700;',
-    '  font-family: var(--font-body, sans-serif);',
-    '  cursor: pointer;',
-    '  height: 34px;',
-    '  transition: background .15s, border-color .15s;',
-    '}',
-    '#ghvSaveVariantBtn:hover { background: #30363d; border-color: #8b949e; }',
-    '#ghvSaveVariantBtn:disabled { opacity: .6; cursor: not-allowed; }',
-  ].join('\n');
-
-  document.head.appendChild(style);
-}
-
-
-/* ═══════════════════════════════════════════════════════════════════════
    UI — Injeta botão "GitHub" no modal de Nova Variante
-   Substitui / complementa o botão que o senko-github-v2 já injeta,
-   usando a nova lógica de criação (com suporte a arquivo inexistente).
 ═══════════════════════════════════════════════════════════════════════ */
 function ghvInjectNewVariantButton() {
-  /* Evita duplicata — tanto deste módulo quanto do senko-github-v2 */
   if (document.getElementById('ghvSaveVariantBtn')) return;
-  if (document.getElementById('ghSaveVariantBtn')) return;
 
   var anchor = document.getElementById('newVarCopyBtn');
   if (!anchor) return;
 
   var btn       = document.createElement('button');
   btn.id        = 'ghvSaveVariantBtn';
+  btn.className = 'btn-github';
   btn.innerHTML = GH_ICON + ' GitHub';
   btn.title     = 'Criar variante diretamente no repositório GitHub';
 
-  /* Insere após o botão "Copiar objeto" */
   anchor.parentNode.insertBefore(btn, anchor.nextSibling);
 
   btn.addEventListener('click', function () {
-    var nomeRaw  = document.getElementById('newVarName')  ? document.getElementById('newVarName').value.trim()  : '';
-    var html     = document.getElementById('newVarHtml')  ? document.getElementById('newVarHtml').value          : '';
-    var css      = document.getElementById('newVarCss')   ? document.getElementById('newVarCss').value           : '';
+    var nomeRaw = document.getElementById('newVarName') ? document.getElementById('newVarName').value.trim() : '';
+    var html    = document.getElementById('newVarHtml') ? document.getElementById('newVarHtml').value : '';
+    var css     = document.getElementById('newVarCss')  ? document.getElementById('newVarCss').value  : '';
 
-    if (nomeRaw.length < 2) {
-      alert('Preencha o nome da variante primeiro.');
-      return;
-    }
-    if (!state.currentForVariant) {
-      alert('Nenhum layout pai selecionado.');
-      return;
-    }
+    if (nomeRaw.length < 2) { alert('Preencha o nome da variante primeiro.'); return; }
+    if (!state.currentForVariant) { alert('Nenhum layout pai selecionado.'); return; }
 
     var nomeLower = nomeRaw.toLowerCase();
     var parentId  = state.currentForVariant.id;
@@ -640,9 +541,12 @@ function ghvInjectNewVariantButton() {
     var safeCss   = css.replace(/`/g, '\\`');
 
     var objectCode =
-      "  { nome: '" + nomeLower + "',\n" +
+      '/*@@@@Senko - ' + nomeLower + ' */\n' +
+      '  {\n' +
+      "    name: '" + nomeLower + "',\n" +
       '    html: `' + safeHtml + '`,\n' +
-      '    css: `'  + safeCss  + '` }';
+      '    css: `'  + safeCss  + '`,\n' +
+      '  },';
 
     btn.textContent = 'Salvando…';
     btn.disabled    = true;
@@ -650,23 +554,17 @@ function ghvInjectNewVariantButton() {
     githubCreateVariant(parentId, nomeLower, objectCode).then(function (result) {
       if (result) {
         btn.innerHTML = GH_ICON + ' Salvo!';
-
-        /* Atualiza UI do modal de variantes */
         setTimeout(function () {
           if (typeof closeNewVariantModal === 'function') closeNewVariantModal();
-
           if (state.currentForVariant) {
             var updated = SenkoLib.getVariants(state.currentForVariant.id);
             if (typeof renderVariantBlocks === 'function') renderVariantBlocks(updated);
-            var countEl = document.getElementById('variantsCount');
-            if (countEl) countEl.textContent = updated.length + (updated.length === 1 ? ' variação' : ' variações');
+            if (typeof updateVariantsCount === 'function') updateVariantsCount(state.currentForVariant.id);
           }
-
           renderGrid();
           btn.innerHTML = GH_ICON + ' GitHub';
           btn.disabled  = false;
         }, 1200);
-
       } else {
         btn.innerHTML = GH_ICON + ' GitHub';
         btn.disabled  = false;
@@ -680,65 +578,162 @@ function ghvInjectNewVariantButton() {
 
 
 /* ═══════════════════════════════════════════════════════════════════════
-   UI — Injeta botão "Excluir" em cada card de variante renderizado
-   Chamado sempre que renderVariantBlocks() é executado.
-
-   ESTRATÉGIA: sobrescreve renderVariantBlocks com uma versão que,
-   após renderizar os cards, injeta os botões de deletar.
+   UI — Injeta botão "GitHub" no modal de Edição de Variante
+   ───────────────────────────────────────────────────────────────────────
+   ⚠ Usa githubSaveVariant (edição), NÃO githubCreateVariant (criação).
+   O nome original é lido de state.currentEditVariant.name no momento
+   do clique — nunca do campo de texto, que pode ter sido alterado.
 ═══════════════════════════════════════════════════════════════════════ */
-function ghvPatchRenderVariantBlocks() {
-  if (typeof renderVariantBlocks !== 'function') return;
-  if (renderVariantBlocks._ghvPatched) return;
+function ghvInjectEditVariantButton() {
+  if (document.getElementById('ghvSaveEditVarBtn')) return;
 
-  var _original = renderVariantBlocks;
+  var anchor = document.getElementById('saveVarToFileBtn');
+  if (!anchor) return;
 
-  renderVariantBlocks = function (variants) {
-    _original(variants);
-    ghvInjectDeleteButtonsInVariantCards();
-  };
+  var btn       = document.createElement('button');
+  btn.id        = 'ghvSaveEditVarBtn';
+  btn.className = 'btn-github';
+  btn.innerHTML = GH_ICON + ' GitHub';
+  btn.title     = 'Salvar variante editada no repositório GitHub';
 
-  renderVariantBlocks._ghvPatched = true;
-}
+  /* Insere antes do botão FSA (saveVarToFileBtn) */
+  anchor.parentNode.insertBefore(btn, anchor);
 
-function ghvInjectDeleteButtonsInVariantCards() {
-  /* Cada card de variante tem um elemento com data-variant-nome */
-  var cards = document.querySelectorAll('.variant-block, .variant-card, [data-variant-nome]');
+  btn.addEventListener('click', function () {
+    if (!state.currentForVariant)  { alert('Nenhum layout pai selecionado.'); return; }
+    if (!state.currentEditVariant) { alert('Nenhuma variante selecionada.');  return; }
 
-  cards.forEach(function (card) {
-    if (card.querySelector('.btn-delete-variant')) return; /* já tem botão */
+    /* ⚠ Nome ORIGINAL: lido do state, não do campo editável */
+    var originalName = state.currentEditVariant.name || '';
+    var newName      = document.getElementById('editVarName').value.trim().toLowerCase();
+    var html         = document.getElementById('editVarHtml').value;
+    var css          = document.getElementById('editVarCss').value;
+    var parentId     = state.currentForVariant.id;
 
-    var nome     = card.dataset.variantNome || card.dataset.nome;
-    var parentId = state.currentForVariant ? state.currentForVariant.id : null;
+    if (newName.length < 2) { alert('Preencha o nome da variante primeiro.'); return; }
 
-    if (!nome || !parentId) return;
+    var safeHtml   = html.replace(/`/g, '\\`');
+    var safeCss    = css.replace(/`/g, '\\`');
+    var objectCode =
+      '/*@@@@Senko - ' + newName + ' */\n' +
+      '  {\n' +
+      "    name: '" + newName + "',\n" +
+      '    html: `' + safeHtml + '`,\n' +
+      '    css: `'  + safeCss  + '`,\n' +
+      '  },';
 
-    var deleteBtn       = document.createElement('button');
-    deleteBtn.className = 'btn-delete-variant';
-    deleteBtn.innerHTML = GHV_TRASH_ICON + ' Excluir';
-    deleteBtn.title     = 'Excluir esta variante do GitHub';
+    btn.textContent = 'Salvando…';
+    btn.disabled    = true;
 
-    deleteBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      if (!ghEnsureToken()) return;
-      ghvOpenDeleteModal(parentId, nome);
+    githubSaveVariant(parentId, originalName, objectCode).then(function (result) {
+      if (result) {
+        /* Atualiza memória com os valores novos */
+        ghvUpdateVariantInMemory(parentId, originalName, newName, html, css);
+
+        btn.innerHTML = GH_ICON + ' Salvo!';
+        setTimeout(function () {
+          if (typeof closeEditVariantModal === 'function') closeEditVariantModal();
+          btn.innerHTML = GH_ICON + ' GitHub';
+          btn.disabled  = false;
+        }, 1200);
+      } else {
+        btn.innerHTML = GH_ICON + ' GitHub';
+        btn.disabled  = false;
+      }
+    }).catch(function () {
+      btn.innerHTML = GH_ICON + ' GitHub';
+      btn.disabled  = false;
     });
-
-    /* Insere no final do card */
-    card.appendChild(deleteBtn);
   });
 }
 
 
 /* ═══════════════════════════════════════════════════════════════════════
-   INICIALIZAÇÃO
+   ESTILOS — injetados no <head>
+═══════════════════════════════════════════════════════════════════════ */
+function ghvInjectStyles() {
+  var style = document.createElement('style');
+  style.textContent = [
+    '#ghvDeleteOverlay {',
+    '  position: fixed; inset: 0;',
+    '  background: rgba(0,0,0,.55);',
+    '  backdrop-filter: blur(3px);',
+    '  display: flex; align-items: center; justify-content: center;',
+    '  z-index: 9999; padding: 1rem;',
+    '}',
+    '#ghvDeleteOverlay.ghv-hidden { display: none; }',
+    '#ghvDeleteModal {',
+    '  background: var(--card, #fff);',
+    '  border: 1.5px solid var(--border, #e2e8f0);',
+    '  border-radius: calc(var(--radius, 8px) * 1.5);',
+    '  padding: 2rem; width: 100%; max-width: 400px;',
+    '  display: flex; flex-direction: column; align-items: center;',
+    '  gap: 1rem; text-align: center;',
+    '  box-shadow: 0 20px 60px rgba(0,0,0,.18);',
+    '}',
+    '#ghvDeleteIcon {',
+    '  width: 60px; height: 60px; border-radius: 50%;',
+    '  background: #fee2e2; color: #ef4444;',
+    '  display: flex; align-items: center; justify-content: center; flex-shrink: 0;',
+    '}',
+    '#ghvDeleteTitle {',
+    '  font-family: var(--font-body, sans-serif);',
+    '  font-size: 1.15rem; font-weight: 800;',
+    '  color: var(--text1, #0f172a); margin: 0;',
+    '}',
+    '#ghvDeleteDesc {',
+    '  font-family: var(--font-body, sans-serif);',
+    '  font-size: .88rem; color: var(--text2, #64748b);',
+    '  line-height: 1.5; margin: 0;',
+    '}',
+    '#ghvDeleteDesc strong { color: var(--text1, #0f172a); }',
+    '#ghvDeleteActions {',
+    '  display: flex; gap: .6rem; width: 100%; margin-top: .25rem;',
+    '}',
+    '#ghvDeleteCancelBtn {',
+    '  flex: 1; padding: .6rem 1rem;',
+    '  background: var(--bg, #f8fafc); color: var(--text2, #64748b);',
+    '  border: 1.5px solid var(--border, #e2e8f0);',
+    '  border-radius: var(--radius, 8px);',
+    '  font-family: var(--font-body, sans-serif); font-size: .85rem; font-weight: 700;',
+    '  cursor: pointer; transition: background .15s, border-color .15s;',
+    '}',
+    '#ghvDeleteCancelBtn:hover { background: var(--hover, #f1f5f9); border-color: var(--text3, #94a3b8); }',
+    '#ghvDeleteConfirmBtn {',
+    '  flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: .4rem;',
+    '  padding: .6rem 1rem; background: #ef4444; color: #fff;',
+    '  border: 1.5px solid #ef4444; border-radius: var(--radius, 8px);',
+    '  font-family: var(--font-body, sans-serif); font-size: .85rem; font-weight: 700;',
+    '  cursor: pointer; transition: background .15s, border-color .15s;',
+    '}',
+    '#ghvDeleteConfirmBtn:hover { background: #dc2626; border-color: #dc2626; }',
+    '#ghvDeleteConfirmBtn:disabled { opacity: .6; cursor: not-allowed; }',
+    '.btn-delete-variant {',
+    '  display: inline-flex; align-items: center; gap: .35rem;',
+    '  padding: .35rem .7rem;',
+    '  background: transparent; color: #ef4444;',
+    '  border: 1px solid #fca5a5; border-radius: var(--radius, 6px);',
+    '  font-size: .78rem; font-weight: 700;',
+    '  font-family: var(--font-body, sans-serif);',
+    '  cursor: pointer; height: 30px; white-space: nowrap;',
+    '  transition: background .15s, border-color .15s;',
+    '}',
+    '.btn-delete-variant:hover { background: #fee2e2; border-color: #ef4444; }',
+    '.btn-delete-variant:disabled { opacity: .5; cursor: not-allowed; }',
+  ].join('\n');
+
+  document.head.appendChild(style);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   INICIALIZAÇÃO — só ativa no GitHub Pages
 ═══════════════════════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', function () {
   if (!window.location.hostname.match(/^[^.]+\.github\.io$/i)) return;
+
   ghvInjectStyles();
   ghvCreateDeleteModal();
   ghvInjectNewVariantButton();
-
-  /* Patch no renderVariantBlocks após um tick para garantir que
-     o script.js já definiu a função */
-  setTimeout(ghvPatchRenderVariantBlocks, 0);
+  ghvInjectEditVariantButton();
 });
