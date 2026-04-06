@@ -1141,7 +1141,7 @@ SenkoLib.register([
     /* ===== TITULO ===== */
     .section-46-y-content h2 {
       font-family: sans-serif;
-      font-size: clamp(22px, 3.2vw, 48px);
+      font-size: clamp(22px, 3.2vw, 38px);
       font-weight: 700;
       margin-bottom: 20px;
       line-height: 1.2;
