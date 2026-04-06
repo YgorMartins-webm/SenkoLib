@@ -3622,4 +3622,233 @@ SenkoLib.register([
 </style>`
   },
 
+
+/*@@@@Senko - section-9 */
+  /* variantes: variants/section-9.js */
+  {
+    id: 'section-9',
+    name: 'Section-9',
+    tags: ['Section 9', '9', 'grid'],
+    html: `<section class="section-9" aria-labelledby="section-9-title">
+  <div class="section-9__header">
+    <h2 class="section-9__title" id="section-9-title">frequentes</h2>
+    <p class="section-9__subtitle">Cabo</p>
+  </div>
+  <ul class="section-9__list">
+    <li class="section-9__item">
+      <details class="section-9__item">
+        <summary>
+          <span class="section-9__q-text">cabo</span>
+          <span class="section-9__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="section-9__a-inner">
+          <span class="section-9__badge">
+            <span class="section-9__badge-dot"></span>Confirmado
+          </span>
+          <p class="section-9__a-text">Sim, fabricado com cobre nu de têmpera mole. Não é alumínio revestido, garantindo condutividade total e máxima segurança.</p>
+        </div>
+      </details>
+    </li>
+    <li class="section-9__item">
+      <details class="section-9__item">
+        <summary>
+          <span class="section-9__q-text">Ele é fácil de passar pelo conduíte?</span>
+          <span class="section-9__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="section-9__a-inner">
+          <span class="section-9__badge">
+            <span class="section-9__badge-dot"></span>Confirmado
+          </span>
+          <p class="section-9__a-text">Com certeza. Por ser classe 5 (extra flexível) e ter isolação deslizante, ele atravessa curvas e eletrodutos apertados sem travar.</p>
+        </div>
+      </details>
+    </li>
+    <li class="section-9__item">
+      <details class="section-9__item">
+        <summary>
+          <span class="section-9__q-text">O material é antichama?</span>
+          <span class="section-9__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="section-9__a-inner">
+          <span class="section-9__badge">
+            <span class="section-9__badge-dot"></span>Confirmado
+          </span>
+          <p class="section-9__a-text">Sim. A isolação em PVC é autoextinguível e não propaga fogo, atendendo rigorosamente à norma ABNT NBR NM 247-3.</p>
+        </div>
+      </details>
+    </li>
+    <li class="section-9__item">
+      <details class="section-9__item">
+        <summary>
+          <span class="section-9__q-text">Qual o tamanho do rolo?</span>
+          <span class="section-9__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="section-9__a-inner">
+          <span class="section-9__badge">
+            <span class="section-9__badge-dot"></span>Confirmado
+          </span>
+          <p class="section-9__a-text">Este anúncio refere-se ao rolo fechado de 200 metros na cor amarela, ideal para circuitos de sinalização ou comandos.</p>
+        </div>
+      </details>
+    </li>
+    <li class="section-9__item">
+      <details class="section-9__item">
+        <summary>
+          <span class="section-9__q-text">O cabo é original e normatizado?</span>
+          <span class="section-9__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="section-9__a-inner">
+          <span class="section-9__badge">
+            <span class="section-9__badge-dot"></span>Confirmado
+          </span>
+          <p class="section-9__a-text">Sim, produto original Corfio com selo de conformidade e fabricado sob as normas técnicas.</p>
+        </div>
+      </details>
+    </li>
+  </ul>
+</section>`,
+    css: `<style>
+  .section-9 {
+    width: 100%;
+    padding: 2rem 16px;
+    box-sizing: border-box;
+    margin: 0 auto 25px;
+  }
+
+  .section-9__header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .section-9__title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 8px;
+  }
+
+  .section-9__subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+  }
+
+  .section-9__list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 56rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .section-9__item {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .section-9__item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .section-9__item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .section-9__item summary:hover {
+    background: #f9f9f9;
+  }
+
+  .section-9__q-text {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    flex: 1;
+  }
+
+  .section-9__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .section-9__icon::before,
+  .section-9__icon::after {
+    content: '';
+    position: absolute;
+    background: #888;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .section-9__icon::before {
+    width: 12px;
+    height: 1.5px;
+    top: 9px;
+    left: 4px;
+  }
+
+  .section-9__icon::after {
+    width: 1.5px;
+    height: 12px;
+    top: 4px;
+    left: 9px;
+  }
+
+  .section-9__item[open] .section-9__icon::after {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  .section-9__a-inner {
+    padding: 14px 20px 16px;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .section-9__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #1a7a4a;
+    background: #e6f4ed;
+    border-radius: 6px;
+    padding: 3px 10px;
+    margin-bottom: 8px;
+  }
+
+  .section-9__badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #1a7a4a;
+    flex-shrink: 0;
+  }
+
+  .section-9__a-text {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 480px) {
+    .section-9__q-text {
+      font-size: 0.9rem;
+    }
+  }
+</style>`
+  },
+
 ]);
