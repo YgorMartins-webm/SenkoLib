@@ -2519,7 +2519,8 @@ SenkoLib.register([
   </article>
 
 `,
-    css: `
+    css: `<style>
+
   *{
     margin: 0;
     padding: 0;
@@ -2700,17 +2701,17 @@ SenkoLib.register([
       height: 16rem
     }
 
-    .tw-h-\[25rem\] {
+    .tw-h-[25rem] {
 
       height: 25rem
     }
 
-    .tw-h-\[31\.25rem\] {
+    .tw-h-[31.25rem] {
 
       height: 31.25rem
     }
 
-    .tw-h-\[32rem\] {
+    .tw-h-[32rem] {
 
       height: 32rem
     }
@@ -2745,7 +2746,7 @@ SenkoLib.register([
       width: 100%
     }
 
-    .tw-max-w-\[6rem\] {
+    .tw-max-w-[6rem] {
 
       max-width: 6rem
     }
@@ -3324,7 +3325,8 @@ SenkoLib.register([
     }
 
 
-`
+
+</style>`
   },
 
 
