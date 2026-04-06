@@ -1087,7 +1087,8 @@ SenkoLib.register([
           </div>
         </div>
       </div>`,
-    css: `.section-46-y {
+    css: `<style>
+.section-46-y {
       max-width: 1300px;
       margin: 0 auto;
       padding: 40px 20px;
@@ -1337,7 +1338,8 @@ SenkoLib.register([
     .section-46-y-box.reverse-icon-46 {
       flex-direction: row-reverse;
       text-align: right;
-    }`
+    }
+</style>`
   },
 
   /*@@@@Senko - section-3 */
