@@ -3724,7 +3724,8 @@ SenkoLib.register([
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: bold;
     color: #333;
-    margin: 0 0 8px;
+    margin: 0 0 12px;
+    line-height: 98%;
   }
 
   .section-9__subtitle {
