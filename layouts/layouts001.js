@@ -180,7 +180,7 @@ SenkoLib.register([
     html: `    <section class="video-header" aria-label="Cabeçalho do produto">
       <header class="video-header__banner">
         <video class="video-header__banner-video"
-          poster="C:\Users\ygorq\Downloads\Captura de tela 2026-04-02 161810.png" preload="none" autoplay muted loop
+          poster="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/header.jpg" preload="none" autoplay muted loop
           playsinline width="1200" height="250" aria-hidden="true">
           <source
             src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/header-cottonbaby.mov"
