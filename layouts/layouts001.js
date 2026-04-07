@@ -2268,16 +2268,15 @@ SenkoLib.register([
   {
     id: 'comp-p',
     name: 'Padrão Conteúdo Pedro',
-    tags: ['comp'],
+    tags: ['comp', 'semântico', 'Acessível', 'SEO'],
     html: `<div class="lp-container">
   <link rel="nestlenect" href="https://fonts.googleapis.com">
   <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
   <title>PDP - eFácil</title>
-
-  
 
     <section class="video-header" aria-label="Cabeçalho do produto">
         <article style="width: 100%;">
@@ -2286,7 +2285,7 @@ SenkoLib.register([
           poster="C:UsersygorqDownloadsCaptura de tela 2026-04-02 161810.png" preload="none" autoplay muted loop
           playsinline width="1200" height="250" aria-hidden="true">
           <source
-            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/header-cottonbaby1.mov"
+            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/header-cottonbaby.mov"
             loading="lazy">
         </video>
         <div class="video-header__badge" role="img" aria-label="Logo da marca">
@@ -2303,6 +2302,7 @@ SenkoLib.register([
         <p class="video-header__subtitle">
           Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
           Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
+          Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
         </p>
     </section>
      </section>
@@ -2315,24 +2315,23 @@ SenkoLib.register([
       <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background">
         <h2><strong>SUB-TÍTULO</strong></h2>
         <p>Isso é uma descrição. Isso é uma descrição. Isso é uma descrição. Isso é umadescrição.
-          Isso é uma descrição.  Isso é uma descrição.
+          Isso é uma descrição. 
         </p>
       </figcaption>
 
     </figure>
-     <figure class="section-32__groupimage-section" style="z-index: 2;">
+     <figure class="section-32__groupimage-section">
       <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao32.jpg"
         alt="!!!!!COLOQUE O TEXTO ALT AQUI!!!!!" style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay bottom grouptext-overlay-Background" style="top: 75%;">
+      <figcaption class="section-32__grouptext-overlay bottom grouptext-overlay-Background" style="top: 75%">
         <h2><strong>SUB-TÍTULO</strong></h2>
         <p>Isso é uma descrição. Isso é uma descrição. Isso é uma descrição. Isso é umadescrição.Isso é uma descrição. 
-          Isso é uma descrição.  
-        </p>
+          Isso é uma descrição. </p>
       </figcaption>
     </figure>
 
-    <figure class="section-32__groupimage-section" style="z-index: 0;">
+    <figure class="section-32__groupimage-section">
       <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao32.jpg"
         alt="!!!!!COLOQUE O TEXTO ALT AQUI!!!!!" style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
@@ -2341,7 +2340,7 @@ SenkoLib.register([
             <strong>SUB-TÍTULO</strong>
         </h2>
         <p>Isso é uma descrição. Isso é uma descrição. Isso é uma descrição. Isso é umadescrição.
-          Isso é uma descrição. 
+          Isso é uma descrição. Isso é uma descrição.
         </p>
       </figcaption>
     </figure>
@@ -2353,8 +2352,11 @@ SenkoLib.register([
     <strong>Imagens Meramente Ilustrativas</strong>
   </p>
   </footer>
-  </article>`,
-    css: `
+  </article>
+
+`,
+    css: `<style>
+
   *{
     margin: 0;
     padding: 0;
@@ -2535,17 +2537,17 @@ SenkoLib.register([
       height: 16rem
     }
 
-    .tw-h-25rem {
+    .tw-h-[25rem] {
 
       height: 25rem
     }
 
-    .tw-h-31-25rem {
+    .tw-h-[31.25rem] {
 
       height: 31.25rem
     }
 
-    .tw-h-32rem {
+    .tw-h-[32rem] {
 
       height: 32rem
     }
@@ -2580,7 +2582,7 @@ SenkoLib.register([
       width: 100%
     }
 
-    .tw-max-w-6rem {
+    .tw-max-w-[6rem] {
 
       max-width: 6rem
     }
@@ -2912,7 +2914,6 @@ SenkoLib.register([
   }
 
   .video-header__title {
-    color: #000;
     font-size: clamp(1.4rem, 4vw, 2.4rem);
     line-height: clamp(1.6rem, 4vw, 3.1rem);
     font-weight: 600;
@@ -2938,13 +2939,9 @@ SenkoLib.register([
   @media (max-width: 470px) {
     .video-header__subtitle {
       text-align: justify;
-      font-size: clamp(0.9rem, 2vw, 1.5rem);
-      font-weight: 550;
-      
+      font-size: clamp(0.9rem, 2vw, 1.2rem);
     }
-
-    }
-  
+  }
     .section-32__container {
       width: 100%;
       max-width: 1600px;
@@ -3010,12 +3007,13 @@ SenkoLib.register([
     }
 
     .section-32__grouptext-overlay p {
-      font-size: 1.2vw;
+      font-size: 1.1vw;
       margin: 0;
       line-height: 120%;
     }
     
-  
+
+    
 
     @media (max-width: 960px) {
       .section-32__grouptext-overlay h2 {
@@ -3053,29 +3051,8 @@ SenkoLib.register([
       }
 
       .section-32__grouptext-overlay p {
-        font-size: 2.4vw;
+        font-size: 2.3vw;
       }
-
-    }
-
-       @media (max-width: 320px) {
-      .section-32__grouptext-overlay h2 {
-        font-size: 3vw;
-      }
-
-      .section-32__grouptext-overlay p {
-        font-size: 2.8vw;
-      }
-
-
-
-       .section-32__container {
-      width: 100%;
-      max-width: 1600px;
-      margin: 0 auto;
-      border: 3px solid #000;
-      border-radius: 34.5px;
-    }
     }
 
     @media (max-width: 1060px) {
@@ -3157,12 +3134,12 @@ SenkoLib.register([
     }
 
     .grouptext-overlay-Background {
-        background: rgba(0, 0, 0, 0.438);
+        background: rgba(0, 0, 0, 0.205);
         border-radius: 4.5vw;
         padding: 0.5rem;
-        backdrop-filter: blur(0.5vw);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0.8vw);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        -webkit-backdrop-filter: blur(10px);
 
         display: flex;
         flex-direction: column;
@@ -3183,7 +3160,9 @@ SenkoLib.register([
 
     }
 
-`
+
+
+</style>`
   },
 
 
