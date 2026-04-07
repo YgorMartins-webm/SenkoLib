@@ -898,7 +898,7 @@ SenkoLib.registerVariant('comp-p', [
       padding: 40px 0;
 
     }`,
-  },,
+  },
 /*@@@@Senko - padrao-p-com-table */
   {
     name: 'padrao-p-com-table',
