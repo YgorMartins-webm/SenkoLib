@@ -6,10 +6,4 @@ SenkoLib.registerVariant('section-2', [
     html: `dawda`,
     css: `awdad`,
   },
-/*@@@@Senko - teste4 */
-  {
-    name: 'teste4',
-    html: `awdawd`,
-    css: `awdawdaw`,
-  },
 ]);
