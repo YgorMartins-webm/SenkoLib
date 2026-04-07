@@ -3711,7 +3711,7 @@ SenkoLib.register([
       </div>
       <!-- Imagem Principal-->
       <div class="image-col-section-8">
-        <img src="C:\Users\ygorq\Downloads\cabo-flexivel-corfio-1-5mm-bobina-vermelho-4203788-01.jpg"
+        <img src="C:UsersygorqDownloadscabo-flexivel-corfio-1-5mm-bobina-vermelho-4203788-01.jpg"
           class="bg-image-section-8" alt="Imagem representativa" width="800" height="600" loading="lazy" />
       </div>
     </section>`,
@@ -3756,7 +3756,7 @@ SenkoLib.register([
     }
 
     .desc-section-8 {
-      font-size: clamp(14px, 1.4vw, 26px);
+      font-size: clamp(14px, 1.4vw, 22px);
       color: #1b1b1b;
       line-height: 28px;
     }
