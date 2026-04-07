@@ -1930,5 +1930,6 @@ SenkoLib.registerVariant('comp-p', [
 
 
   </style>`,
-  }
+  },
+  
 ]);
