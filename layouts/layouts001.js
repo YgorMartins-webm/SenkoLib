@@ -3688,4 +3688,195 @@ SenkoLib.register([
 </style>`
   },
 
+
+/*@@@@Senko - section-8 */
+  /* variantes: variants/section-8.js */
+  {
+    id: 'section-8',
+    name: 'Section-8',
+    tags: ['section 8', '8', 'split'],
+    html: `    <section class="wrapper-section-8" aria-labelledby="section-8-title">
+      <div class="text-col-section-8">
+        <img src="https://cdn-icons-png.flaticon.com/512/894/894565.png" class="brand-icon-section-8"
+          alt="Imagem representativa" width="60" height="60" loading="lazy" />
+        <h2 id="section-8-title" class="title-section-8">
+          A Lenda dos Sete Mares
+        </h2>
+        <p class="desc-section-8">
+          Capitan Cortez não é apenas um rum, é um convite à descoberta. Inspirado
+          nos diários de bordo dos grandes navegadores, nossa receita busca capturar
+          a glória da tradição em cada garrafa. Uma homenagem àqueles que ousam ir
+          além do horizonte.
+        </p>
+      </div>
+      <!-- Imagem Principal-->
+      <div class="image-col-section-8">
+        <img src="C:\Users\ygorq\Downloads\cabo-flexivel-corfio-1-5mm-bobina-vermelho-4203788-01.jpg"
+          class="bg-image-section-8" alt="Imagem representativa" width="800" height="600" loading="lazy" />
+      </div>
+    </section>`,
+    css: `  <style>
+    /* ===== Section-8 ===== */
+    .wrapper-section-8 {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      background-color: #f8f8f8;
+      min-height: 28rem;
+    }
+
+    .text-col-section-8 {
+      flex: 1 1 18.75rem;
+      padding: 2.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 1.25rem;
+    }
+
+    .image-col-section-8 {
+      flex: 1 1 18.75rem;
+      position: relative;
+    }
+
+    .brand-icon-section-8 {
+      width: 3.75rem;
+      height: auto;
+      opacity: 0.8;
+      display: block;
+    }
+
+    .title-section-8 {
+      font-size: clamp(22px, 3.2vw, 38px);
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .desc-section-8 {
+      font-size: clamp(14px, 1.4vw, 26px);
+      color: #1b1b1b;
+      line-height: 28px;
+    }
+
+
+
+
+
+
+    @media (max-width: 1060px) {
+
+      .title-section-8 h1 {
+        font-size: 3.8vw;
+      }
+
+      .desc-section-8 {
+        font-size: 1.8vw;
+      }
+    }
+
+    @media (max-width: 960px) {
+
+      .title-section-8 h1 {
+        font-size: 4.3vw;
+      }
+
+      .desc-section-8 {
+        font-size: 2vw;
+      }
+
+    }
+
+    @media (max-width: 730px) {
+
+      .title-section-8 h1 {
+        font-size: 5vw;
+      }
+
+      .desc-section-8 {
+        font-size: 2.9vw;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .title-section-8 h1 {
+        font-size: 6vw;
+      }
+
+      .desc-section-8 {
+        font-size: 3.5vw;
+      }
+
+    }
+
+    @media (max-width: 420px) {
+      .title-section-8 h1 {
+        font-size: 7vw;
+      }
+
+      .desc-section-8 {
+        font-size: 4vw;
+      }
+    }
+
+
+
+
+    .arrow-icon-section-8 {
+      font-size: 1rem;
+      line-height: 1;
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+
+    .cta-link-section-8:hover .arrow-icon-section-8 {
+      transform: translateX(4px);
+    }
+
+    .bg-image-section-8 {
+      width: 95%;
+      height: 95%;
+      margin: 0.5rem;
+      border-radius: 15px;
+      object-fit: cover;
+      display: block;
+      min-height: 18.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .text-col-section-8 {
+        padding: 1.5rem 1.25rem 0.7rem;
+      }
+
+      .reverse-desktop-section-8 {
+        flex-direction: row-reverse;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .wrapper-section-8 {
+        flex-direction: column-reverse;
+      }
+
+      .reverse-mobile-section-8 {
+        flex-direction: column;
+      }
+
+      .bg-image-section-8 {
+        width: 90%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        min-height: 18.75rem;
+        max-width: 95%;
+        margin: 0.6rem auto;
+        border-radius: 10px;
+        aspect-ratio: 26 / 17;
+      }
+    }
+  </style>`
+  },
+
 ]);
