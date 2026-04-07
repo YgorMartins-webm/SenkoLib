@@ -866,8 +866,9 @@ SenkoLib.registerVariant('comp-p', [
     rel="stylesheet">
   <title>PDP - eFácil</title>
 
+   <article style="width: 100%;">
     <section class="video-header" aria-label="Cabeçalho do produto">
-        <article style="width: 100%;">
+   
       <header class="video-header__banner">
         <video class="video-header__banner-video"
           poster="C:UsersygorqDownloadsCaptura de tela 2026-04-02 161810.png" preload="none" autoplay muted loop
@@ -885,18 +886,20 @@ SenkoLib.registerVariant('comp-p', [
         <section class="video-header__body">
         <small class="video-header__brand">Marca</small>
         <h1 class="video-header__title">
-          TÍTULO DO PRODUTO (Nome, modelo, diferencial...)
+          TÍTULO DO PRODUTO (Nome, modelo, diferencial...)s
         </h1>
         <p class="video-header__subtitle">
           Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
           Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
         </p>
-    </section>
+     </section>
      </section>
 
-      <section class="section-32__container" aria-label="Seção de destaque do produto">
-    <figure class="section-32__groupimage-section">
-      <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao32.jpg"
+
+
+      <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
+       <figure class="section-32__groupimage-section">
+       <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao32.jpg"
         alt="!!!!!COLOQUE O TEXTO ALT AQUI!!!!!" style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
       <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 25%;">
@@ -920,7 +923,7 @@ SenkoLib.registerVariant('comp-p', [
       </figure>
 
 
-    <figure class="section-32__groupimage-section">
+      <figure class="section-32__groupimage-section">
       <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao32.jpg"
         alt="!!!!!COLOQUE O TEXTO ALT AQUI!!!!!" style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
@@ -932,53 +935,56 @@ SenkoLib.registerVariant('comp-p', [
           Isso é uma descrição. 
         </p>
       </figcaption>
-    </figure>
-  </section>
+      </figure>
+      </section>
     
 
-  <footer>
-  <p class="p__end">
-    <strong>Imagens Meramente Ilustrativas</strong>
-  </p>
-    </footer>
-  </article>
+        <footer>
+           <p class="p__end">
+          <strong>Imagens Meramente Ilustrativas</strong>
+          </p>
 
-  <section class="table-container-custom">
-  <h1 class="table-text-custom">ITENS RELACIONADOS</h1><br />
-  <table class="table-design-custom">
-    <thead class="table-head-custom">
-      <tr class="table-tr-custom">
-        <th class="table-text-custom table-th-custom" style="background-color: #fb8d00; border-radius: 10px 0 0 0;">SKU
-        </th>
-        <!--Replicar para adicionar mais COLUNAS-->
-        <th class="table-text-custom table-th-custom" style="background-color: #fb8d00; border-radius: 0 10px 0 0;">TÍTULO
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title">SKU 1</td>
-        <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 1</td>
-      </tr>
-      <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title">SKU 2</td>
-        <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 2</td>
-      </tr>
-      <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title">SKU 3</td>
-        <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 3</td>
-      </tr>
-      <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title ">SKU 4</td>
-        <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 4</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-  </footer>
-  </article>`,
-    css: ` <style>
+          <section class="table-container-custom" aria-label="tabela contendo produtos relacionados e citados dentre deste conteúdo">
+          <h1 class="table-text-custom">ITENS RELACIONADOS</h1><br />
+          <table class="table-design-custom">
+            <thead class="table-head-custom">
+               <tr class="table-tr-custom">
+                 <th class="table-text-custom table-th-custom" style="background-color: #fb8d00; border-radius: 10px 0 0 0;">SKU
+                 </th>
+                 <!--Replicar para adicionar mais COLUNAS-->
+                 <th class="table-text-custom table-th-custom" style="background-color: #fb8d00; border-radius: 0 10px 0 0;">TÍTULO
+                 </th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr class="table-tr-custom">
+                 <td class="table-text-custom table-td-custom-title">SKU 1</td>
+                 <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 1</td>
+               </tr>
+               <tr class="table-tr-custom">
+                 <td class="table-text-custom table-td-custom-title">SKU 2</td>
+                 <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 2</td>
+               </tr>
+               <tr class="table-tr-custom">
+                 <td class="table-text-custom table-td-custom-title">SKU 3</td>
+                 <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 3</td>
+               </tr>
+               <tr class="table-tr-custom">
+                 <td class="table-text-custom table-td-custom-title ">SKU 4</td>
+                 <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 4</td>
+               </tr>
+             </tbody>
+           </table>
+         </section>
+        </footer>
 
+        </article>
+
+</div>
+
+
+`,
+    css: `
     @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
 
@@ -1557,21 +1563,7 @@ SenkoLib.registerVariant('comp-p', [
     text-wrap: pretty;
   }
 
-  @media (max-width: 768px) {
-    .video-header {
-      --banner-height: 180px;
-    }
-  }
-
-  @media (max-width: 470px) {
-    .video-header__subtitle {
-      text-align: justify;
-      font-size: clamp(0.9rem, 2vw, 1.5rem);
-      font-weight: 550;
-      
-    }
-
-    }
+ 
   
     .section-32__container {
       width: 100%;
@@ -1642,147 +1634,6 @@ SenkoLib.registerVariant('comp-p', [
       margin: 0;
       line-height: 120%;
     }
-    
-  
-
-    @media (max-width: 960px) {
-      .section-32__grouptext-overlay h2 {
-        font-size: 2.1vw;
-      }
-
-      .section-32__grouptext-overlay p {
-        font-size: 1.5vw;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .section-32__grouptext-overlay h2 {
-        font-size: 2.5vw;
-      }
-
-      .section-32__grouptext-overlay p {
-        font-size: 1.8vw;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .section-32__grouptext-overlay h2 {
-        font-size: 3vw;
-      }
-
-      .section-32__grouptext-overlay p {
-        font-size: 2.3vw;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .section-32__grouptext-overlay h2 {
-        font-size: 3vw;
-      }
-
-      .section-32__grouptext-overlay p {
-        font-size: 2.4vw;
-      }
-
-    }
-
-       @media (max-width: 320px) {
-      .section-32__grouptext-overlay h2 {
-        font-size: 3vw;
-      }
-
-      .section-32__grouptext-overlay p {
-        font-size: 2.8vw;
-      }
-
-
-
-       .section-32__container {
-      width: 100%;
-      max-width: 1600px;
-      margin: 0 auto;
-      border: 3px solid #000;
-      border-radius: 34.5px;
-    }
-    }
-
-    @media (max-width: 1060px) {
-      .section-32__grouptext-overlay.top {
-        top: 3%;
-      }
-    }
-
-    @media (max-width: 960px) {
-      .section-32__grouptext-overlay.top {
-        top: 3%;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .section-32__grouptext-overlay.top {
-        top: 3%;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .section-32__grouptext-overlay.top {
-        top: 3%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .section-32__grouptext-overlay.top {
-        top: 3%;
-      }
-    }
-
-    @media (max-width: 1060px) {
-      .section-32__grouptext-overlay.bottom {
-        top: 81%;
-      }
-    }
-
-    @media (max-width: 960px) {
-      .section-32__grouptext-overlay.bottom {
-        top: 79%
-      }
-    }
-
-    @media (max-width: 480px) {
-      .section-32__grouptext-overlay.bottom {
-        top: 81%
-      }
-    }
-
-    @media (max-width: 768px) {
-      .section-32__grouptext-overlay.bottom {
-        top: 76%;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .section-32__grouptext-overlay.bottom {
-        top: 67%;
-      }
-    }
-    
-    @media (max-width: 480px) {
-
-      .section-32__grouptext-overlay.right {
-        top: 50%;
-        left: 73%;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      .section-32__grouptext-overlay.left {
-        top: 50%;
-        left: 27%;
-        transform: translate(-50%, -50%);
-      }
-    }
 
     .grouptext-overlay-Background {
         background: rgba(0, 0, 0, 0.438);
@@ -1821,20 +1672,20 @@ SenkoLib.registerVariant('comp-p', [
     width: 100%;
     margin: 0 auto;
     display: block;
-  }
+    }
 
   .table-design-custom {
 
     width: 100%;
     border-collapse: collapse;
     margin: 0 auto;
-  }
+    }
 
   .table-head-custom {
     color: rgb(255, 255, 255);
     border-radius: 10px;
 
-  }
+    }
 
   .table-text-custom {
 
@@ -1842,34 +1693,104 @@ SenkoLib.registerVariant('comp-p', [
     text-align: left;
     border-bottom: 1px solid #979797;
     font-family: sans-serif;
-  }
+     }
 
   .table-row-custom:hover {
 
     background-color: #f1f1f1;
     filter: brightness(0.9);
-  }
+    }
 
   .table-th-custom {
 
     font-weight: bold;
-  }
+    }
 
   .table-td-custom {
 
     color: #555;
-  }
+    }
 
   /* Efeito de zebrado nas linhas */
 
   .table-tr-custom:nth-child(even) {
 
     background-color: #f1f1f1;
-  }
+    }
 
-  /* Responsividade */
+    @media (max-width: 360px) {
+        .section-32__grouptext-overlay h2 {
+          font-size: 3vw;
+        }
 
-  @media (max-width: 600px) {
+        .section-32__grouptext-overlay p {
+          font-size: 2.8vw;
+        }
+
+
+
+        
+    }
+
+    @media (max-width: 470px) {  
+      .video-header__subtitle {
+        text-align: justify;
+        font-size: clamp(0.9rem, 2vw, 1.5rem);
+        font-weight: 550;
+        
+      }
+
+      .section-32__grouptext-overlay h2 {
+          font-size: 3vw;
+        }
+
+      .section-32__grouptext-overlay p {
+          font-size: 2.4vw;
+        }
+
+      .section-32__grouptext-overlay.top {
+          top: 3%;
+        }
+
+      .section-32__grouptext-overlay.bottom {
+          top: 81%
+        }
+
+      .section-32__grouptext-overlay.right {
+          top: 35%;
+          left: 73%;
+          transform: translate(-50%, -50%);
+        }
+
+        .section-32__grouptext-overlay.left {
+          top: 50%;
+          left: 27%;
+          transform: translate(-50%, -50%);
+        }
+
+    }
+
+    @media (max-width: 500px) {
+        .section-32__grouptext-overlay h2 {
+          font-size: 3vw;
+        }
+
+        .section-32__grouptext-overlay p {
+          font-size: 2.3vw;
+        }
+
+        .section-32__grouptext-overlay.top {
+          top: 3%;
+        }
+
+          .section-32__grouptext-overlay.bottom {
+          top: 67%;
+        }
+
+        
+    }
+
+    @media (max-width: 600px) {
 
     .table-container-custom {
 
@@ -1882,10 +1803,57 @@ SenkoLib.registerVariant('comp-p', [
 
       padding: 8px;
     }
-  }
+    }
 
+    @media (max-width: 768px) {
+      .video-header {
+        --banner-height: 180px;
+      }
 
-  </style>`,
+      .section-32__grouptext-overlay h2 {
+          font-size: 2.5vw;
+        }
+
+      .section-32__grouptext-overlay p {
+          font-size: 2vw;
+        }
+
+      .section-32__grouptext-overlay.top {
+          top: 3%;
+        }
+
+      .section-32__grouptext-overlay.bottom {
+          top: 76%;
+        }
+    }
+
+    @media (max-width: 960px) {
+        .section-32__grouptext-overlay h2 {
+          font-size: 2.1vw;
+        }
+
+        .section-32__grouptext-overlay p {
+          font-size: 1.5vw;
+        }
+
+        .section-32__grouptext-overlay.top {
+          top: 3%;
+        }
+
+        .section-32__grouptext-overlay.bottom {
+          top: 79%
+        }
+    }
+
+    @media (max-width: 1060px) {
+        .section-32__grouptext-overlay.top {
+          top: 3%;
+        }
+
+        .section-32__grouptext-overlay.bottom {
+          top: 81%;
+        }
+    }`,
   },
   
 ]);
