@@ -10,8 +10,7 @@ var state = {
   currentForVariant:  null,
   currentEditVariant: null,
   _fromVariant:       false,
-  viewMode:           'normal',
-  favOnly:            false,
+
 };
 
 /* ─── Utilitários ─────────────────────────────────── */
@@ -182,7 +181,6 @@ function getFilteredLayouts() {
   var favs = getFavs();
   return SenkoLib.getAll()
     .filter(function (l) {
-      if (state.favOnly && favs.indexOf(l.id) === -1) return false;
       if (!q) return true;
       return [l.name].concat(l.tags).some(function (s) {
         return s && s.toLowerCase().indexOf(q) !== -1;
@@ -205,7 +203,6 @@ function renderGrid() {
 
   grid.innerHTML = '';
   grid.className = 'grid';
-  if (state.viewMode !== 'normal') grid.classList.add('view-' + state.viewMode);
 
   if (filtered.length === 0) {
     if (state.search) {
@@ -282,7 +279,6 @@ function createCard(layout, index) {
     toggleFav(layout.id);
     btnFav.classList.toggle('active');
     updateStatsBar(getFilteredLayouts().length);
-    if (state.favOnly) renderGrid();
   });
 
   /* Editar */
@@ -900,15 +896,6 @@ document.addEventListener('DOMContentLoaded', function () {
     renderGrid();
   });
 
-  document.querySelectorAll('.view-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      state.viewMode = this.dataset.view;
-      document.querySelectorAll('.view-btn').forEach(function (b) { b.classList.remove('active'); });
-      this.classList.add('active');
-      renderGrid();
-    });
-  });
-
   /* Modal visualizar */
   document.getElementById('modalClose').addEventListener('click', closeModal);
   document.getElementById('modalOverlay').addEventListener('click', overlayClick('modal', closeModal));
@@ -1033,13 +1020,6 @@ document.addEventListener('DOMContentLoaded', function () {
   /* saveToFileBtn — listener gerenciado pelo senko-fsa.js (o botão é clonado lá) */
 
   document.getElementById('selectFolderBtn').addEventListener('click', selectProjectFolder);
-
-  /* Filtro favoritos */
-  document.getElementById('favFilterBtn').addEventListener('click', function () {
-    state.favOnly = !state.favOnly;
-    this.classList.toggle('active', state.favOnly);
-    renderGrid();
-  });
 
   /* Escape */
   document.addEventListener('keydown', function (e) {
