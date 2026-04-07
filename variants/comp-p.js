@@ -68,10 +68,12 @@ SenkoLib.registerVariant('comp-p', [
   </article>
 
  </div>`,
-    css: `    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+    css: `
+    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
 
-*{
+
+    *{
     margin: 0;
     padding: 0;
   }
@@ -645,21 +647,7 @@ SenkoLib.registerVariant('comp-p', [
     text-wrap: pretty;
   }
 
-  @media (max-width: 768px) {
-    .video-header {
-      --banner-height: 180px;
-    }
-  }
-
-  @media (max-width: 470px) {
-    .video-header__subtitle {
-      text-align: justify;
-      font-size: clamp(0.9rem, 2vw, 1.5rem);
-      font-weight: 550;
-      
-    }
-
-    }
+ 
   
     .section-32__container {
       width: 100%;
@@ -730,147 +718,6 @@ SenkoLib.registerVariant('comp-p', [
       margin: 0;
       line-height: 120%;
     }
-    
-  
-
-    @media (max-width: 960px) {
-      .section-32__grouptext-overlay h2 {
-        font-size: 2.1vw;
-      }
-
-      .section-32__grouptext-overlay p {
-        font-size: 1.5vw;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .section-32__grouptext-overlay h2 {
-        font-size: 2.5vw;
-      }
-
-      .section-32__grouptext-overlay p {
-        font-size: 1.8vw;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .section-32__grouptext-overlay h2 {
-        font-size: 3vw;
-      }
-
-      .section-32__grouptext-overlay p {
-        font-size: 2.3vw;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .section-32__grouptext-overlay h2 {
-        font-size: 3vw;
-      }
-
-      .section-32__grouptext-overlay p {
-        font-size: 2.4vw;
-      }
-
-    }
-
-       @media (max-width: 320px) {
-      .section-32__grouptext-overlay h2 {
-        font-size: 3vw;
-      }
-
-      .section-32__grouptext-overlay p {
-        font-size: 2.8vw;
-      }
-
-
-
-       .section-32__container {
-      width: 100%;
-      max-width: 1600px;
-      margin: 0 auto;
-      border: 3px solid #000;
-      border-radius: 34.5px;
-    }
-    }
-
-    @media (max-width: 1060px) {
-      .section-32__grouptext-overlay.top {
-        top: 3%;
-      }
-    }
-
-    @media (max-width: 960px) {
-      .section-32__grouptext-overlay.top {
-        top: 3%;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .section-32__grouptext-overlay.top {
-        top: 3%;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .section-32__grouptext-overlay.top {
-        top: 3%;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .section-32__grouptext-overlay.top {
-        top: 3%;
-      }
-    }
-
-    @media (max-width: 1060px) {
-      .section-32__grouptext-overlay.bottom {
-        top: 81%;
-      }
-    }
-
-    @media (max-width: 960px) {
-      .section-32__grouptext-overlay.bottom {
-        top: 79%
-      }
-    }
-
-    @media (max-width: 480px) {
-      .section-32__grouptext-overlay.bottom {
-        top: 81%
-      }
-    }
-
-    @media (max-width: 768px) {
-      .section-32__grouptext-overlay.bottom {
-        top: 76%;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .section-32__grouptext-overlay.bottom {
-        top: 67%;
-      }
-    }
-    
-    @media (max-width: 480px) {
-
-      .section-32__grouptext-overlay.right {
-        top: 50%;
-        left: 73%;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      .section-32__grouptext-overlay.left {
-        top: 50%;
-        left: 27%;
-        transform: translate(-50%, -50%);
-      }
-    }
 
     .grouptext-overlay-Background {
         background: rgba(0, 0, 0, 0.438);
@@ -896,7 +743,116 @@ SenkoLib.registerVariant('comp-p', [
       text-wrap: pretty;
       text-align: center;
       padding: 40px 0;
+        
+    }
 
+    @media (max-width: 470px) {  
+      .video-header__subtitle {
+        text-align: justify;
+        font-size: clamp(0.9rem, 2vw, 1.5rem);
+        font-weight: 550;
+        
+      }
+
+      .section-32__grouptext-overlay h2 {
+          font-size: 3vw;
+        }
+
+      .section-32__grouptext-overlay p {
+          font-size: 2.4vw;
+        }
+
+      .section-32__grouptext-overlay.top {
+          top: 3%;
+        }
+
+      .section-32__grouptext-overlay.bottom {
+          top: 81%
+        }
+
+      .section-32__grouptext-overlay.right {
+          top: 35%;
+          left: 73%;
+          transform: translate(-50%, -50%);
+        }
+
+        .section-32__grouptext-overlay.left {
+          top: 50%;
+          left: 27%;
+          transform: translate(-50%, -50%);
+        }
+
+    }
+
+    @media (max-width: 500px) {
+        .section-32__grouptext-overlay h2 {
+          font-size: 3vw;
+        }
+
+        .section-32__grouptext-overlay p {
+          font-size: 2.3vw;
+        }
+
+        .section-32__grouptext-overlay.top {
+          top: 3%;
+        }
+
+          .section-32__grouptext-overlay.bottom {
+          top: 67%;
+        }
+
+        
+    }
+
+
+    @media (max-width: 768px) {
+      .video-header {
+        --banner-height: 180px;
+      }
+
+      .section-32__grouptext-overlay h2 {
+          font-size: 2.5vw;
+        }
+
+      .section-32__grouptext-overlay p {
+          font-size: 2vw;
+        }
+
+      .section-32__grouptext-overlay.top {
+          top: 3%;
+        }
+
+      .section-32__grouptext-overlay.bottom {
+          top: 76%;
+        }
+    }
+
+    @media (max-width: 960px) {
+        .section-32__grouptext-overlay h2 {
+          font-size: 2.1vw;
+        }
+
+        .section-32__grouptext-overlay p {
+          font-size: 1.5vw;
+        }
+
+        .section-32__grouptext-overlay.top {
+          top: 3%;
+        }
+
+        .section-32__grouptext-overlay.bottom {
+          top: 79%
+        }
+    }
+
+    @media (max-width: 1060px) {
+        .section-32__grouptext-overlay.top {
+          top: 3%;
+        }
+
+        .section-32__grouptext-overlay.bottom {
+          top: 81%;
+        }
     }`,
   },
 /*@@@@Senko - padrao-p-com-table */
