@@ -3,7 +3,7 @@ SenkoLib.registerVariant('section-2', [
 /*@@@@Senko - teste */
   {
     name: 'teste',
-    html: `dawdawd`,
+    html: `dawdawdccava`,
     css: `awdad`,
   },
 ]);
