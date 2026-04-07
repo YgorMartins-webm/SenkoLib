@@ -866,6 +866,7 @@ SenkoLib.registerVariant('comp-p', [
     rel="stylesheet">
   <title>PDP - eFácil</title>
 
+
    <article style="width: 100%;">
     <section class="video-header" aria-label="Cabeçalho do produto">
    
@@ -889,7 +890,7 @@ SenkoLib.registerVariant('comp-p', [
           TÍTULO DO PRODUTO (Nome, modelo, diferencial...)s
         </h1>
         <p class="video-header__subtitle">
-          Isso é uma desscrição. Isso é uma descrição. Isso é uma descrição.
+          Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
           Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
         </p>
      </section>
@@ -979,6 +980,7 @@ SenkoLib.registerVariant('comp-p', [
         </footer>
 
         </article>
+
 
 </div>
 
