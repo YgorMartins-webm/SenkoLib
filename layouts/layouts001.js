@@ -2357,6 +2357,10 @@ SenkoLib.register([
 `,
     css: `<style>
 
+    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
+
+
   *{
     margin: 0;
     padding: 0;
