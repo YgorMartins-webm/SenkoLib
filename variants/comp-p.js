@@ -889,7 +889,7 @@ SenkoLib.registerVariant('comp-p', [
           TÍTULO DO PRODUTO (Nome, modelo, diferencial...)s
         </h1>
         <p class="video-header__subtitle">
-          Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
+          Isso é uma desscrição. Isso é uma descrição. Isso é uma descrição.
           Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
         </p>
      </section>
