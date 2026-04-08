@@ -2259,7 +2259,7 @@ SenkoLib.register([
   {
     id: 'comp-p',
     name: 'Padrão Conteúdo Pedro',
-    tags: ['comp', 'semantico', 'Acessivel', 'SEO'],
+    tags: ['comp', 'semantico', 'Acessivel', 'SEO', 'contraste'],
     html: `<div class="lp-container">
   <link rel="nestlenect" href="https://fonts.googleapis.com">
   <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
