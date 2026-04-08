@@ -1693,7 +1693,7 @@ SenkoLib.register([
   /* variantes: variants/section 41.js */
   {
     id: 'section 41',
-    name: 'section-41-tabela',
+    name: 'section -41-tabela',
     tags: ['tabela', 'section 41', '41', 'footer', 'semantico'],
     html: `<footer>
 
