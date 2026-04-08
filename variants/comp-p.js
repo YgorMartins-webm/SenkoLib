@@ -3,7 +3,17 @@ SenkoLib.registerVariant('comp-p', [
 /*@@@@Senko - padrao-p-2-blocos */
   {
     name: 'padrao-p-2-blocos',
-    html: `<section class="video-header" aria-label="Cabeçalho do produto">
+    html: `<div class="lp-container">
+  <link rel="nestlenect" href="https://fonts.googleapis.com">
+  <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <title>PDP - eFácil</title>
+
+  <article style="width: 100%;">
+
+<section class="video-header" aria-label="Cabeçalho do produto">
         <article style="width: 100%;">
       <header class="video-header__banner">
         <video class="video-header__banner-video"
