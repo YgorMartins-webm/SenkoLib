@@ -760,6 +760,10 @@ SenkoLib.registerVariant('comp-p', [
         color: #000;
       }
 
+      .video-header__brand {
+        color:#3a2301
+      }
+     
       }
 
     @media (max-width: 470px) {  
