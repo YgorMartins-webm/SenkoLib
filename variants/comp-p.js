@@ -634,7 +634,6 @@ SenkoLib.registerVariant('comp-p', [
     color: #ff9900;
     font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
   }
@@ -664,7 +663,7 @@ SenkoLib.registerVariant('comp-p', [
       max-width: 1600px;
       margin: 0 auto;
       border: 5.5px solid #000;
-      border-radius: 34.5px;
+      border-radius: 36px;
     }
 
     .section-32__groupimage-section {
