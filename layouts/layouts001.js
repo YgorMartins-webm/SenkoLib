@@ -1695,51 +1695,45 @@ SenkoLib.register([
     id: 'section 41',
     name: 'Section 41 - Tabela',
     tags: ['tabela', 'section 41', '41'],
-    html: `<div class="table-container-custom">
-  <h1 class="table-text-custom">NOME DA TABELA</h1><br />
-  <table class="table-design-custom">
-    <thead class="table-head-custom">
-      <tr class="table-tr-custom">
-        <th class="table-text-custom table-th-custom" style="background-color: #16a2ff;">Coluna 1
-        </th>
-        <!--Replicar para adicionar mais COLUNAS-->
-        <th class="table-text-custom table-th-custom" style="background-color: #16a2ff;">Coluna 2
-        </th>
-        <th class="table-text-custom table-th-custom" style="background-color: #16a2ff;">Coluna 3
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom">SKU 1</td>
-        <!--Replicar para adicionar mais LINHAS-->
-        <td class="table-text-custom table-td-custom">DESCRIÇÃO DO PRODUTO 1</td>
-        <td class="table-text-custom table-td-custom">-</td>
-      </tr>
-      <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom">SKU 2</td>
-        <td class="table-text-custom table-td-custom">DESCRIÇÃO DO PRODUTO 2</td>
-        <td class="table-text-custom table-td-custom">-</td>
-      </tr>
-      <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom">SKU 3</td>
-        <td class="table-text-custom table-td-custom">DESCRIÇÃO DO PRODUTO 3</td>
-        <td class="table-text-custom table-td-custom">-</td>
-      </tr>
-      <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom">SKU 4</td>
-        <td class="table-text-custom table-td-custom">DESCRIÇÃO DO PRODUTO 4</td>
-        <td class="table-text-custom table-td-custom">-</td>
-      </tr>
-      <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom">SKU 5</td>
-        <td class="table-text-custom table-td-custom">DESCRIÇÃO DO PRODUTO 5</td>
-        <td class="table-text-custom table-td-custom">-</td>
-      </tr>
-    </tbody>
-  </table>
-</div>`,
-    css: `  .table-container-custom {
+    html: `<footer>
+           <p class="p__end">
+          <strong>Imagens Meramente Ilustrativas</strong>
+          </p>
+
+          <section class="table-container-custom" aria-label="tabela contendo produtos relacionados e citados dentre deste conteúdo">
+          <h1 class="table-text-custom">ITENS RELACIONADOS</h1><br />
+          <table class="table-design-custom">
+            <thead class="table-head-custom">
+               <tr class="table-tr-custom">
+                 <th class="table-text-custom table-th-custom" style="background-color: #fb8d00; border-radius: 10px 0 0 0;">SKU
+                 </th>
+                 <!--Replicar para adicionar mais COLUNAS-->
+                 <th class="table-text-custom table-th-custom" style="background-color: #fb8d00; border-radius: 0 10px 0 0;">TÍTULO
+                 </th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr class="table-tr-custom">
+                 <td class="table-text-custom table-td-custom-title">SKU 1</td>
+                 <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 1</td>
+               </tr>
+               <tr class="table-tr-custom">
+                 <td class="table-text-custom table-td-custom-title">SKU 2</td>
+                 <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 2</td>
+               </tr>
+               <tr class="table-tr-custom">
+                 <td class="table-text-custom table-td-custom-title">SKU 3</td>
+                 <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 3</td>
+               </tr>
+               <tr class="table-tr-custom">
+                 <td class="table-text-custom table-td-custom-title ">SKU 4</td>
+                 <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 4</td>
+               </tr>
+             </tbody>
+           </table>
+         </section>
+        </footer>`,
+    css: `.table-container-custom {
 
     background-color: #fff;
     padding: 20px;
@@ -1749,54 +1743,54 @@ SenkoLib.register([
     width: 100%;
     margin: 0 auto;
     display: block;
-  }
+    }
 
   .table-design-custom {
 
     width: 100%;
     border-collapse: collapse;
     margin: 0 auto;
-  }
+    }
 
   .table-head-custom {
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
 
-    background-color: #ee3b0f;
-    color: white;
-  }
+    }
 
   .table-text-custom {
 
     padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
+    border-bottom: 1px solid #979797;
+    font-family: sans-serif;
+     }
 
   .table-row-custom:hover {
 
     background-color: #f1f1f1;
     filter: brightness(0.9);
-  }
+    }
 
   .table-th-custom {
 
     font-weight: bold;
-  }
+    }
 
   .table-td-custom {
 
     color: #555;
-  }
+    }
 
   /* Efeito de zebrado nas linhas */
 
   .table-tr-custom:nth-child(even) {
 
     background-color: #f1f1f1;
-  }
+    }
 
-  /* Responsividade */
 
-  @media (max-width: 600px) {
+ @media (max-width: 600px) {
 
     .table-container-custom {
 
@@ -1809,7 +1803,7 @@ SenkoLib.register([
 
       padding: 8px;
     }
-  }`
+    }`
   },
 
   
