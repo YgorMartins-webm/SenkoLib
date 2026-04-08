@@ -1692,8 +1692,8 @@ SenkoLib.register([
   /*@@@@Senko - section 41 */
   /* variantes: variants/section 41.js */
   {
-    id: 'section 41',
-    name: 'section -41-tabela',
+    id: 'section-41',
+    name: 'Section-41 (tabela)',
     tags: ['tabela', 'section 41', '41', 'footer', 'semantico'],
     html: `<footer>
 
