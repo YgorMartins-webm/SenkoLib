@@ -1736,6 +1736,34 @@ SenkoLib.registerVariant('comp-p', [
     background-color: #f1f1f1;
     }
 
+ @media (prefers-contrast: more) {
+
+      .p__end {
+        color: #000;
+      }
+
+      .grouptext-overlay-Background {
+        background: rgb(0, 0, 0);
+      }
+
+      .video-header__subtitle {
+        color: #000;
+      }
+
+      .table-td-custom-sub
+      {
+        color: #000;
+        font-weight: 550;
+      }
+
+      .table-td-custom-title
+      {
+        color: #000;
+        font-weight: 700;
+      } 
+     
+    }
+
     @media (max-width: 360px) {
         .section-32__grouptext-overlay h2 {
           font-size: 3vw;
@@ -1744,9 +1772,6 @@ SenkoLib.registerVariant('comp-p', [
         .section-32__grouptext-overlay p {
           font-size: 2.8vw;
         }
-
-
-
         
     }
 
