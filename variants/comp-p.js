@@ -1736,7 +1736,7 @@ SenkoLib.registerVariant('comp-p', [
     background-color: #f1f1f1;
     }
 
- @media (prefers-contrast: more) {
+  @media (prefers-contrast: more) {
 
       .p__end {
         color: #000;
@@ -1761,6 +1761,10 @@ SenkoLib.registerVariant('comp-p', [
         color: #000;
         font-weight: 700;
       } 
+
+      .video-header__brand {
+        color:#3a2301
+      }
      
     }
 
@@ -1772,6 +1776,9 @@ SenkoLib.registerVariant('comp-p', [
         .section-32__grouptext-overlay p {
           font-size: 2.8vw;
         }
+
+
+
         
     }
 
