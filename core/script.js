@@ -1066,6 +1066,7 @@ function copiarBasics() {
       background: linear-gradient(90deg, #c29869, #ddbc88, #e6c588);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      color: transparent;
       background-clip: text;
      }
   </style>
