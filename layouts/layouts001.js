@@ -3086,6 +3086,22 @@ SenkoLib.register([
     background-color: #f1f1f1;
     }
 
+   @media (prefers-contrast: more) {
+
+      .p__end {
+        color: #000;
+      }
+
+      .grouptext-overlay-Background {
+        background: rgb(0, 0, 0);
+      }
+
+      .video-header__subtitle {
+        color: #000;
+      }
+     
+    }
+
     @media (max-width: 360px) {
         .section-32__grouptext-overlay h2 {
           font-size: 3vw;
