@@ -3086,8 +3086,6 @@ SenkoLib.register([
     background-color: #f1f1f1;
     }
 
-<<<<<<< HEAD
-=======
    @media (prefers-contrast: more) {
 
       .p__end {
@@ -3101,10 +3099,25 @@ SenkoLib.register([
       .video-header__subtitle {
         color: #000;
       }
+
+      .table-td-custom-sub
+      {
+        color: #000;
+        font-weight: 550;
+      }
+
+      .table-td-custom-title
+      {
+        color: #000;
+        font-weight: 700;
+      } 
+
+      .video-header__brand {
+        color:#3a2301
+      }
      
     }
 
->>>>>>> 8de231263445476cdff26343d3b861e0534c02dc
     @media (max-width: 360px) {
         .section-32__grouptext-overlay h2 {
           font-size: 3vw;
