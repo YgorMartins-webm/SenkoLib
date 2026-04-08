@@ -746,6 +746,22 @@ SenkoLib.registerVariant('comp-p', [
         
     }
 
+    @media (prefers-contrast: more) {
+
+      .p__end {
+        color: #000;
+      }
+
+      .grouptext-overlay-Background {
+        background: rgb(0, 0, 0);
+      }
+
+      .video-header__subtitle {
+        color: #000;
+      }
+
+      }
+
     @media (max-width: 470px) {  
       .video-header__subtitle {
         text-align: justify;
