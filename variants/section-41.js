@@ -1,11 +1,5 @@
 // @ts-nocheck
 SenkoLib.registerVariant('section-41', [
-/*@@@@Senko - teste gamer */
-  {
-    name: 'teste gamer',
-    html: `test`,
-    css: `test`,
-  },
 /*@@@@Senko - padrao-p-table-click */
   {
     name: 'padrao-p-table-click',
@@ -96,7 +90,6 @@ SenkoLib.registerVariant('section-41', [
     background-color: #f1f1f1;
     filter: brightness(0.9);
   }
-
 
   td a {
     color: #000;
