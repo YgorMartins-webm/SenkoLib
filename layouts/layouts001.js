@@ -1694,11 +1694,8 @@ SenkoLib.register([
   {
     id: 'section 41',
     name: 'Section 41 - Tabela',
-    tags: ['tabela', 'section 41', '41'],
+    tags: ['tabela', 'section 41', '41', 'footer', 'semantico'],
     html: `<footer>
-           <p class="p__end">
-          <strong>Imagens Meramente Ilustrativas</strong>
-          </p>
 
           <section class="table-container-custom" aria-label="tabela contendo produtos relacionados e citados dentre deste conteúdo">
           <h1 class="table-text-custom">ITENS RELACIONADOS</h1><br />
