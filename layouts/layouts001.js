@@ -3620,13 +3620,14 @@ SenkoLib.register([
                 </li>
             </ul>
         </section>`,
-    css: `    <style>
+    css: ` <style>
         .section-9 {
             width: 100%;
             padding: 2rem 16px;
             box-sizing: border-box;
             margin: 0 auto 25px;
             padding-top: 0;
+            font-family: sans-serif;
         }
 
         .section-9__header {
@@ -3688,6 +3689,10 @@ SenkoLib.register([
             font-weight: bold;
             color: #333;
             flex: 1;
+        }
+
+          .section-9__q-text:hover {
+            color: #ea5b0c;
         }
 
         .section-9__icon {
