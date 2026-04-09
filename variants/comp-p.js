@@ -2031,7 +2031,7 @@ SenkoLib.registerVariant('comp-p', [
              <tbody>
                <tr class="table-tr-custom">
                  <td class="table-text-custom table-td-custom-title">
-            <a href="#" aria-label="Clique para ir para a página específica do PRODUTO 1"></a>SKU 1</a>
+            <a href="#" aria-label="Clique para ir para a página específica do PRODUTO 1">SKU 1</a>
             </td>
             <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 1</td>
            </tr>
