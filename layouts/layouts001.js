@@ -1102,6 +1102,7 @@ SenkoLib.register([
       .section-46-y.reverse,
       .section-46-y[data-order="invert"] {
         flex-direction: column !important;
+        padding: 0 20px 40px 20px;
       }
 
       .section-46-y-img {
