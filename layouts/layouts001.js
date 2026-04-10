@@ -184,7 +184,7 @@ SenkoLib.register([
           playsinline width="1200" height="250" aria-hidden="true">
           <source
             src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/header-cottonbaby1.mov"
-            loading="lazy">
+            loading="eager">
         </video>
         <div class="video-header__badge" role="img" aria-label="Logo da marca">
           <img
