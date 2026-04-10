@@ -3944,4 +3944,186 @@ SenkoLib.register([
 
 
 
+
+/*@@@@Senko - section-100 */
+  /* variantes: variants/section-100.js */
+  {
+    id: 'section-100',
+    name: 'section-100',
+    tags: ['section-100'],
+    html: `        <div class="pdp-row-product">
+            <div class="pdp-row-product-content">
+                <h3 class="pdp-product-title tw-text-2xl">
+                    A garantia de que o que está por trás das paredes nunca será um problema
+                </h3>
+                <p class="pdp-product-description">
+                    Ao escolher um condutor que une a máxima segurança contra incêndios, a eficiência energética para seus equipamentos de alta potência e a flexibilidade necessária para uma instalação ágil, você garante a proteção do seu patrimônio e a tranquilidade de saber que sua estrutura elétrica foi feita para durar uma vida inteira, sem surpresas na conta de luz ou a necessidade de reformas precoces
+                </p>
+            </div>
+            <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/corfio/cabo-flexivel-corfio-eletricista-obra-lifestyle-4203798-03.png" alt="Eletricista com capacete branco e colete laranja em obra garantindo qualidade e segurança Corfio" class="pdp-row-product-image" />
+        </div>`,
+    css: `    <style>
+        .pdp-row-product {
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            width: 100%
+        }
+
+        .tw-text-2xl {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 40px
+        }
+
+        .pdp-product-title {
+            --tw-text-opacity: 1;
+            color: rgb(0 0 0/var(--tw-text-opacity));
+            max-width: 56rem;
+            text-align: center
+        }
+
+        .tw-text-lg {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px
+        }
+
+        .pdp-product-description {
+            --tw-text-opacity: 1;
+            color: rgb(138 138 138/var(--tw-text-opacity));
+            font-size: 14px;
+            line-height: 22px;
+            margin-top: 1rem;
+            max-width: 56rem;
+            text-align: center
+        }
+
+        @media (min-width:576px) {
+            .pdp-row-product {
+                max-width: 576px
+            }
+
+            .tw-text-2xl {
+                font-size: 32px;
+            }
+        }
+
+        @media (min-width:768px) {
+            .pdp-row-product {
+                max-width: 768px
+            }
+
+            .tw-text-2xl {
+                font-size: 32px;
+            }
+        }
+
+        @media (min-width:992px) {
+            .pdp-row-product {
+                max-width: 992px
+            }
+
+            .tw-text-2xl {
+                font-size: 32px;
+            }
+        }
+
+        @media (min-width:1200px) {
+            .pdp-row-product {
+                max-width: 1200px
+            }
+
+            .tw-text-2xl {
+                font-size: 32px;
+            }
+        }
+
+        @media (min-width:1536px) {
+            .pdp-row-product {
+                max-width: 1536px
+            }
+
+            .tw-text-2xl {
+                font-size: 32px;
+            }
+        }
+
+        .pdp-row-product {
+            align-items: center;
+            display: flex;
+            gap: 2.5rem;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            margin-top: 2rem
+        }
+
+        .reverse-row-product {
+            flex-direction: row-reverse;
+        }
+
+        @media not all and (min-width:992px) {
+            .pdp-row-product {
+                flex-direction: column-reverse
+            }
+        }
+
+        @media (min-width:992px) {
+            .pdp-row-product {
+                gap: 6rem
+            }
+        }
+
+        .pdp-row-product-image {
+            max-width: 30rem;
+            object-fit: contain;
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .pdp-row-product-content {
+            display: flex;
+            flex-direction: column;
+            max-width: 28rem;
+            width: 100%
+        }
+
+        .pdp-row-product-content * {
+            text-align: left
+        }
+
+        @media (min-width:992px) {
+            .pdp-row-product.is-reverse .pdp-row-product-image {
+                order: 1
+            }
+
+            .pdp-row-product.is-reverse .pdp-row-product-content {
+                order: 2
+            }
+        }
+
+        .pdp-row-product-content {
+            display: flex;
+            flex-direction: column;
+            max-width: 28rem;
+            width: 100%
+        }
+
+        .pdp-row-product-content * {
+            text-align: left
+        }
+
+        @media (min-width:992px) {
+            .pdp-row-product.is-reverse .pdp-row-product-image {
+                order: 1
+            }
+
+            .pdp-row-product.is-reverse .pdp-row-product-content {
+                order: 2
+            }
+        }
+    </style>`
+  },
+
 ]);
