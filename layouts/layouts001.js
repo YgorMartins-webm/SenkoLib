@@ -4282,11 +4282,11 @@ SenkoLib.register([
       <figure class="section-12 section-12--minimal" aria-label="Comparador antes e depois minimalista">
         <div class="section-12__wrapper" role="img" aria-label="Animação comparando antes e depois">
           <img class="section-12__image-after"
-            src="C:\Users\ygorq\Downloads\smart-tv-philco-4k-uhd-tecnologia-hdr10-otimizada-01577-22-11928-10.png"
+            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/philco/smart-tv-philco-4k-uhd-tecnologia-hdr10-otimizada-01577-22-11928-10.png"
             alt="Tecnologia HDR10 e 4K UHD em Smart TV Philco proporcionando brilho e nitidez superior" loading="lazy"
             decoding="async" />
           <img class="section-12__image-before"
-            src="C:\Users\ygorq\Downloads\smart-tv-philco-4k-uhd-qualidade-imagem-padrao-01577-22-11928-09.png"
+            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/philco/smart-tv-philco-4k-uhd-qualidade-imagem-padrao-01577-22-11928-09.png"
             alt="Comparativo de qualidade imagem normal em Smart TV Philco exibindo paisagem de aurora boreal"
             loading="lazy" decoding="async" />
           <div class="section-12__divider"></div>
