@@ -3960,7 +3960,7 @@ SenkoLib.register([
                     Ao escolher um condutor que une a máxima segurança contra incêndios, a eficiência energética para seus equipamentos de alta potência e a flexibilidade necessária para uma instalação ágil, você garante a proteção do seu patrimônio e a tranquilidade de saber que sua estrutura elétrica foi feita para durar uma vida inteira, sem surpresas na conta de luz ou a necessidade de reformas precoces
                 </p>
             </div>
-            <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/corfio/cabo-flexivel-corfio-eletricista-obra-lifestyle-4203798-03.png" alt="Eletricista com capacete branco e colete laranja em obra garantindo qualidade e segurança Corfio" class="pdp-row-product-image" />
+            <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao4.jpg" alt="Eletricista com capacete branco e colete laranja em obra garantindo qualidade e segurança Corfio" class="pdp-row-product-image" />
         </div>`,
     css: `    <style>
         .pdp-row-product {
