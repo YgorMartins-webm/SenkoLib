@@ -4053,7 +4053,7 @@ SenkoLib.register([
         .pdp-row-product {
             align-items: center;
             display: flex;
-            gap: 2.5rem;
+            gap: 1.5rem;
             justify-content: space-between;
             margin-bottom: 2rem;
             margin-top: 2rem
