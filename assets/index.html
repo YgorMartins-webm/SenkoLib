@@ -36,8 +36,16 @@
   <title>SenkoLib — Biblioteca de Layouts</title>
   <script>(function(){var t=localStorage.getItem('senkolib_theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
   <script>
+    /* ── Garante que nenhum Service Worker interfira no cache ──
+       Registra o sw.js destruidor (limpa caches + se desregistra).
+       Na primeira visita após a atualização o SW antigo é removido.
+       Nas visitas seguintes não há nenhum SW ativo — F5 = Ctrl+Shift+R. */
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js');
+      navigator.serviceWorker.getRegistrations().then(function (regs) {
+        if (regs.length === 0) return; /* nenhum SW — nada a fazer */
+        /* Ainda há SW registrado: sobe o destruidor para limpá-lo */
+        navigator.serviceWorker.register('./sw.js');
+      });
     }
   </script>
   <link rel="stylesheet" href="assets/styles.css" />

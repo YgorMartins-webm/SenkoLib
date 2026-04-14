@@ -213,6 +213,7 @@ function githubDeleteLayout(layoutId, deleteVariants) {
         ghRemoveLayoutFromMemory(layoutId);
         ghSetStatus('✓ Layout excluído: ' + layoutId, 'ok');
         if (typeof ghUnlockSave === 'function') ghUnlockSave();
+        if (typeof ghStartDeployWatch === 'function') ghStartDeployWatch('index.html');
         renderGrid();
         return true;
       });
@@ -496,8 +497,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.getElementById('ghDeleteLayoutBtn')) return;
 
     var anchor = document.getElementById('ghSaveLayoutBtn')
-               || document.getElementById('saveToFileBtn')
-               || document.getElementById('copyEditBtn');
+               || document.getElementById('saveToFileBtn');
     if (!anchor) return;
 
     var deleteBtn = document.createElement('button');

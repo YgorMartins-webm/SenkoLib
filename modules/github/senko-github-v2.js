@@ -315,7 +315,7 @@ var _ghSavingTimeout = null;
 
 function ghLockSave() {
   if (_ghSaving) {
-    alert('Já existe uma operação em andamento. Aguarde terminar antes de salvar novamente.');
+    ghShowErrorModal('Já existe uma operação em andamento. Aguarde terminar antes de salvar novamente.');
     return false;
   }
   _ghSaving = true;
@@ -370,17 +370,14 @@ function githubSaveLayout(layoutId, objectCode) {
 
       if (candidates.length === 0) {
         ghSetStatus('Marcador não encontrado', 'error');
-        alert(
-          'Marcador não encontrado para "' + layoutId + '".\n\n' +
-          'Se é um layout novo: use o botão "GitHub" no modal de criação.'
-        );
+        ghShowErrorModal('Marcador não encontrado para "' + layoutId + '".\n\nSe é um layout novo: use o botão "GitHub" no modal de criação.');
         return false;
       }
 
       if (candidates.length > 1) {
         ghSetStatus('Duplicata detectada', 'error');
         var names = candidates.map(function (c) { return c.entry.name; }).join(', ');
-        alert('O marcador de "' + layoutId + '" foi encontrado em mais de um arquivo:\n' + names + '\n\nCorrija a duplicata manualmente.');
+        ghShowErrorModal('O marcador de "' + layoutId + '" foi encontrado em mais de um arquivo: ' + names + '. Corrija a duplicata manualmente.');
         return false;
       }
 
@@ -390,7 +387,7 @@ function githubSaveLayout(layoutId, objectCode) {
 
       if (!bounds || bounds.error) {
         ghSetStatus('Objeto não localizado', 'error');
-        alert('Não foi possível localizar o objeto "' + layoutId + '" para substituição.\nSalve manualmente.');
+        ghShowErrorModal('Não foi possível localizar o objeto "' + layoutId + '" para substituição. Salve manualmente.');
         return false;
       }
 
@@ -423,6 +420,7 @@ function githubSaveLayout(layoutId, objectCode) {
         }
         ghSetStatus('✓ Salvo em ' + target.entry.name, 'ok');
         ghUnlockSave();
+        ghStartDeployWatch(target.entry.path);
         renderGrid();
         return target.entry.name;
       });
@@ -431,7 +429,7 @@ function githubSaveLayout(layoutId, objectCode) {
     console.error('[senko-github] Erro ao salvar layout:', e);
     ghSetStatus('Erro: ' + e.message, 'error');
     ghUnlockSave();
-    alert('Erro ao salvar no GitHub:\n' + e.message);
+    ghShowErrorModal(e.message);
     return false;
   });
 }
@@ -459,7 +457,7 @@ function githubSaveNewLayout(fileName, objectCode, layoutId) {
     if (content.indexOf(marker) !== -1) {
       ghSetStatus('ID já existe', 'error');
       ghUnlockSave();
-      alert('O ID "' + layoutId + '" já existe em ' + fileName + '.\nUse o botão de editar no card para modificar layouts existentes.');
+      ghShowErrorModal('O ID "' + layoutId + '" já existe em ' + fileName + '. Use o botão de editar no card para modificar layouts existentes.');
       return false;
     }
 
@@ -467,7 +465,7 @@ function githubSaveNewLayout(fileName, objectCode, layoutId) {
     if (closePos === -1) {
       ghSetStatus('Estrutura inválida', 'error');
       ghUnlockSave();
-      alert('Não foi possível encontrar o fechamento do array em ' + fileName + '.\nVerifique se o arquivo segue o padrão SenkoLib.register([...]);');
+      ghShowErrorModal('Não foi possível encontrar o fechamento do array em ' + fileName + '. Verifique se o arquivo segue o padrão SenkoLib.register([...]);');
       return false;
     }
 
@@ -498,6 +496,7 @@ function githubSaveNewLayout(fileName, objectCode, layoutId) {
       SenkoLib.register([{ id: layoutId, name: name, tags: tags, html: html, css: css }]);
       ghSetStatus('✓ Salvo em layouts/' + fileName, 'ok');
       ghUnlockSave();
+      ghStartDeployWatch('layouts/' + fileName);
       renderGrid();
       return fileName;
     });
@@ -505,7 +504,7 @@ function githubSaveNewLayout(fileName, objectCode, layoutId) {
     console.error('[senko-github] Erro ao salvar novo layout:', e);
     ghSetStatus('Erro: ' + e.message, 'error');
     ghUnlockSave();
-    alert('Erro ao salvar no GitHub:\n' + e.message);
+    ghShowErrorModal(e.message);
     return false;
   });
 }
@@ -536,13 +535,13 @@ function githubSaveVariant(parentId, variantNome, objectCode) {
     if (pos === -1) {
       ghSetStatus('Variante não encontrada', 'error');
       ghUnlockSave();
-      alert('Variante "' + variantNome + '" não encontrada em ' + filePath);
+      ghShowErrorModal('Variante "' + variantNome + '" não encontrada em ' + filePath);
       return false;
     }
     if (content.indexOf(marker, pos + marker.length) !== -1) {
       ghSetStatus('Variante duplicada', 'error');
       ghUnlockSave();
-      alert('A variante "' + variantNome + '" aparece mais de uma vez no arquivo.\nCorrija manualmente.');
+      ghShowErrorModal('A variante "' + variantNome + '" aparece mais de uma vez no arquivo. Corrija manualmente.');
       return false;
     }
 
@@ -550,7 +549,7 @@ function githubSaveVariant(parentId, variantNome, objectCode) {
     if (objOpen === -1) {
       ghSetStatus('Objeto da variante não encontrado', 'error');
       ghUnlockSave();
-      alert('Início do objeto da variante não encontrado.');
+      ghShowErrorModal('Início do objeto da variante não encontrado.');
       return false;
     }
 
@@ -581,7 +580,7 @@ function githubSaveVariant(parentId, variantNome, objectCode) {
     if (objEnd === -1) {
       ghSetStatus('Fim da variante não encontrado', 'error');
       ghUnlockSave();
-      alert('Fim do objeto da variante não encontrado.');
+      ghShowErrorModal('Fim do objeto da variante não encontrado.');
       return false;
     }
 
@@ -614,6 +613,7 @@ function githubSaveVariant(parentId, variantNome, objectCode) {
 
       ghSetStatus('✓ Salvo em ' + filePath, 'ok');
       ghUnlockSave();
+      ghStartDeployWatch(filePath);
       renderGrid();
       return filePath;
     });
@@ -621,17 +621,307 @@ function githubSaveVariant(parentId, variantNome, objectCode) {
     console.error('[senko-github] Erro ao salvar variante:', e);
     ghSetStatus('Erro: ' + e.message, 'error');
     ghUnlockSave();
-    alert('Erro ao salvar variante no GitHub:\n' + e.message);
+    ghShowErrorModal(e.message);
     return false;
   });
 }
 
 
 /* ═══════════════════════════════════════════════════════════════════════
+   DEPLOY WATCH — bolinha de status no header
+   Aparece quando qualquer save é feito com sucesso.
+   Desaparece quando o GitHub Pages confirma o deploy como "success".
+═══════════════════════════════════════════════════════════════════════ */
+var _ghDeployPollTimer = null;
+var GH_DEPLOY_KEY      = 'senkolib_deploy_watching';
+var GH_DEPLOY_INTERVAL = 5000;
+var GH_DEPLOY_TIMEOUT  = 300000; /* 5 minutos máximo */
+
+function ghShowDeployDot() {
+  var dot = document.getElementById('ghDeployDot');
+  if (dot) dot.style.display = 'flex';
+}
+
+function ghHideDeployDot() {
+  var dot = document.getElementById('ghDeployDot');
+  if (dot) dot.style.display = 'none';
+}
+
+function ghStopDeployWatch() {
+  if (_ghDeployPollTimer) {
+    clearInterval(_ghDeployPollTimer);
+    _ghDeployPollTimer = null;
+  }
+  ghHideDeployDot();
+  try { localStorage.removeItem(GH_DEPLOY_KEY); } catch(e) {}
+}
+
+/* Busca o arquivo raw no GitHub Pages sem cache e retorna o conteúdo */
+function ghFetchRaw(filePath) {
+  var base = window.location.origin + '/' + GITHUB_CONFIG.REPO + '/';
+  var url  = base + filePath + '?_=' + Date.now();
+  return fetch(url, { cache: 'no-store' })
+    .then(function (res) { return res.ok ? res.text() : null; })
+    .catch(function () { return null; });
+}
+
+function ghStartDeployWatch(filePath) {
+  if (_ghDeployPollTimer) {
+    clearInterval(_ghDeployPollTimer);
+    _ghDeployPollTimer = null;
+  }
+
+  ghShowDeployDot();
+
+  /* Captura o tamanho ATUAL do arquivo antes do GitHub Pages atualizar */
+  ghFetchRaw(filePath).then(function (oldContent) {
+    var oldSize  = oldContent ? oldContent.length : -1;
+    var startTs  = Date.now();
+
+    try {
+      localStorage.setItem(GH_DEPLOY_KEY, JSON.stringify({
+        ts:      startTs,
+        file:    filePath,
+        oldSize: oldSize
+      }));
+    } catch(e) {}
+
+    _ghDeployPollTimer = setInterval(function () {
+      if (Date.now() - startTs > GH_DEPLOY_TIMEOUT) {
+        ghStopDeployWatch();
+        return;
+      }
+
+      ghFetchRaw(filePath).then(function (newContent) {
+        var newSize = newContent ? newContent.length : -1;
+        if (newSize !== -1 && newSize !== oldSize) {
+          ghStopDeployWatch();
+        }
+      });
+
+    }, GH_DEPLOY_INTERVAL);
+  });
+}
+
+function ghResumeDeployWatchIfNeeded() {
+  var stored;
+  try { stored = localStorage.getItem(GH_DEPLOY_KEY); } catch(e) { return; }
+  if (!stored) return;
+
+  var data;
+  try { data = JSON.parse(stored); } catch(e) {
+    try { localStorage.removeItem(GH_DEPLOY_KEY); } catch(e2) {}
+    return;
+  }
+
+  if (!data.ts || !data.file) {
+    try { localStorage.removeItem(GH_DEPLOY_KEY); } catch(e) {}
+    return;
+  }
+
+  /* Expirado */
+  if (Date.now() - data.ts > GH_DEPLOY_TIMEOUT) {
+    try { localStorage.removeItem(GH_DEPLOY_KEY); } catch(e) {}
+    return;
+  }
+
+  ghShowDeployDot();
+
+  var startTs  = data.ts;
+  var filePath = data.file;
+  var oldSize  = data.oldSize !== undefined ? data.oldSize : -1;
+
+  _ghDeployPollTimer = setInterval(function () {
+    if (Date.now() - startTs > GH_DEPLOY_TIMEOUT) {
+      ghStopDeployWatch();
+      return;
+    }
+
+    ghFetchRaw(filePath).then(function (newContent) {
+      var newSize = newContent ? newContent.length : -1;
+      if (newSize !== -1 && newSize !== oldSize) {
+        ghStopDeployWatch();
+      }
+    });
+
+  }, GH_DEPLOY_INTERVAL);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
    UI — Botão cadeado + botões GitHub nos modais
 ═══════════════════════════════════════════════════════════════════════ */
 
 var GH_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>';
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   MODAL DE ERRO — substitui window.alert para erros do GitHub
+   Mesmo estilo visual do modal de confirmação de exclusão.
+═══════════════════════════════════════════════════════════════════════ */
+
+var _ghErrorModalReady = false;
+
+function ghEnsureErrorModal() {
+  if (_ghErrorModalReady) return;
+  _ghErrorModalReady = true;
+
+  /* ── Estilos ── */
+  var style = document.createElement('style');
+  style.textContent = [
+    '#ghErrorOverlay {',
+    '  position: fixed; inset: 0;',
+    '  background: rgba(0,0,0,.55);',
+    '  backdrop-filter: blur(3px);',
+    '  display: flex; align-items: center; justify-content: center;',
+    '  z-index: 10000; padding: 1rem;',
+    '}',
+    '#ghErrorOverlay.gh-hidden { display: none; }',
+    '#ghErrorModal {',
+    '  background: var(--card, #fff);',
+    '  border: 1.5px solid var(--border, #e2e8f0);',
+    '  border-radius: calc(var(--radius, 8px) * 1.5);',
+    '  padding: 2rem;',
+    '  width: 100%; max-width: 420px;',
+    '  display: flex; flex-direction: column; align-items: center;',
+    '  gap: 1rem; text-align: center;',
+    '  box-shadow: 0 20px 60px rgba(0,0,0,.18);',
+    '}',
+    '#ghErrorIcon {',
+    '  width: 60px; height: 60px; border-radius: 50%;',
+    '  background: #fef3c7; color: #d97706;',
+    '  display: flex; align-items: center; justify-content: center;',
+    '  flex-shrink: 0;',
+    '}',
+    '#ghErrorTitle {',
+    '  font-family: var(--font-body, sans-serif);',
+    '  font-size: 1.1rem; font-weight: 800;',
+    '  color: var(--text1, #0f172a); margin: 0;',
+    '}',
+    '#ghErrorDesc {',
+    '  font-family: var(--font-body, sans-serif);',
+    '  font-size: .875rem; color: var(--text2, #64748b);',
+    '  line-height: 1.55; margin: 0;',
+    '  word-break: break-word;',
+    '}',
+    '#ghErrorDesc strong { color: var(--text1, #0f172a); }',
+    '#ghErrorHint {',
+    '  font-family: var(--font-body, sans-serif);',
+    '  font-size: .8rem; color: var(--text3, #94a3b8);',
+    '  background: var(--bg, #f8fafc);',
+    '  border: 1px solid var(--border, #e2e8f0);',
+    '  border-radius: var(--radius, 6px);',
+    '  padding: .6rem .85rem;',
+    '  width: 100%; text-align: left; line-height: 1.5;',
+    '  display: none;',
+    '}',
+    '#ghErrorHint.visible { display: block; }',
+    '#ghErrorActions { display: flex; gap: .6rem; width: 100%; margin-top: .25rem; }',
+    '#ghErrorReloadBtn {',
+    '  flex: 1;',
+    '  display: inline-flex; align-items: center; justify-content: center; gap: .4rem;',
+    '  padding: .6rem 1rem;',
+    '  background: var(--accent, #6366f1); color: #fff;',
+    '  border: 1.5px solid var(--accent, #6366f1);',
+    '  border-radius: var(--radius, 8px);',
+    '  font-family: var(--font-body, sans-serif);',
+    '  font-size: .85rem; font-weight: 700;',
+    '  cursor: pointer; transition: background .15s, border-color .15s;',
+    '  display: none;',
+    '}',
+    '#ghErrorReloadBtn.visible { display: inline-flex; }',
+    '#ghErrorReloadBtn:hover { filter: brightness(1.1); }',
+    '#ghErrorOkBtn {',
+    '  flex: 1;',
+    '  padding: .6rem 1rem;',
+    '  background: var(--bg, #f8fafc); color: var(--text2, #64748b);',
+    '  border: 1.5px solid var(--border, #e2e8f0);',
+    '  border-radius: var(--radius, 8px);',
+    '  font-family: var(--font-body, sans-serif);',
+    '  font-size: .85rem; font-weight: 700;',
+    '  cursor: pointer; transition: background .15s, border-color .15s;',
+    '}',
+    '#ghErrorOkBtn:hover { background: var(--hover, #f1f5f9); border-color: var(--text3, #94a3b8); }',
+  ].join('\n');
+  document.head.appendChild(style);
+
+  /* ── HTML ── */
+  var overlay = document.createElement('div');
+  overlay.id        = 'ghErrorOverlay';
+  overlay.className = 'gh-hidden';
+  overlay.innerHTML = [
+    '<div id="ghErrorModal">',
+    '  <div id="ghErrorIcon">',
+    '    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">',
+    '      <circle cx="12" cy="12" r="10"/>',
+    '      <line x1="12" y1="8" x2="12" y2="12"/>',
+    '      <line x1="12" y1="16" x2="12.01" y2="16"/>',
+    '    </svg>',
+    '  </div>',
+    '  <h3 id="ghErrorTitle">Não foi possível salvar</h3>',
+    '  <p id="ghErrorDesc"></p>',
+    '  <p id="ghErrorHint"></p>',
+    '  <div id="ghErrorActions">',
+    '    <button id="ghErrorReloadBtn">',
+    '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13">',
+    '        <polyline points="23 4 23 10 17 10"/>',
+    '        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>',
+    '      </svg>',
+    '      Recarregar página',
+    '    </button>',
+    '    <button id="ghErrorOkBtn">Entendi</button>',
+    '  </div>',
+    '</div>',
+  ].join('\n');
+  document.body.appendChild(overlay);
+
+  document.getElementById('ghErrorOkBtn').addEventListener('click', ghCloseErrorModal);
+  document.getElementById('ghErrorReloadBtn').addEventListener('click', function () {
+    window.location.reload();
+  });
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) ghCloseErrorModal();
+  });
+}
+
+function ghCloseErrorModal() {
+  var overlay = document.getElementById('ghErrorOverlay');
+  if (overlay) overlay.classList.add('gh-hidden');
+  document.body.style.overflow = '';
+}
+
+function ghShowErrorModal(rawMessage) {
+  ghEnsureErrorModal();
+
+  var is409    = rawMessage && rawMessage.indexOf('409') !== -1;
+  var titleEl  = document.getElementById('ghErrorTitle');
+  var descEl   = document.getElementById('ghErrorDesc');
+  var hintEl   = document.getElementById('ghErrorHint');
+  var reloadBtn = document.getElementById('ghErrorReloadBtn');
+  var iconEl   = document.getElementById('ghErrorIcon');
+
+  if (is409) {
+    /* Conflito de SHA — outra pessoa salvou antes */
+    titleEl.textContent  = 'Conflito de versão (409)';
+    descEl.innerHTML     = 'O arquivo foi modificado por <strong>outra pessoa</strong> desde a última vez que você o carregou.<br>Suas alterações não foram salvas para não sobrescrever o trabalho dela.';
+    hintEl.textContent   = '💡 Recarregue a página para buscar a versão mais recente e tente salvar novamente.';
+    hintEl.classList.add('visible');
+    reloadBtn.classList.add('visible');
+    iconEl.style.background = '#fef3c7';
+    iconEl.style.color      = '#d97706';
+  } else {
+    /* Erro genérico */
+    titleEl.textContent  = 'Erro ao salvar no GitHub';
+    descEl.textContent   = rawMessage || 'Ocorreu um erro inesperado.';
+    hintEl.classList.remove('visible');
+    reloadBtn.classList.remove('visible');
+    iconEl.style.background = '#fee2e2';
+    iconEl.style.color      = '#ef4444';
+  }
+
+  var overlay = document.getElementById('ghErrorOverlay');
+  overlay.classList.remove('gh-hidden');
+  document.body.style.overflow = 'hidden';
+}
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -683,6 +973,25 @@ document.addEventListener('DOMContentLoaded', function () {
     '  display: inline-flex;',
     '  align-items: center;',
     '  gap: .4rem;',
+    '}',
+    /* Bolinha de deploy */
+    '#ghDeployDot {',
+    '  display: none;',
+    '  align-items: center;',
+    '  justify-content: center;',
+    '  width: 10px;',
+    '  height: 10px;',
+    '  border-radius: 50%;',
+    '  background: #e3a008;',
+    '  box-shadow: 0 0 0 0 rgba(227,160,8,.6);',
+    '  animation: ghDeployPulse 1.4s ease-in-out infinite;',
+    '  flex-shrink: 0;',
+    '  margin-right: .25rem;',
+    '}',
+    '@keyframes ghDeployPulse {',
+    '  0%   { box-shadow: 0 0 0 0 rgba(227,160,8,.6); }',
+    '  70%  { box-shadow: 0 0 0 7px rgba(227,160,8,0); }',
+    '  100% { box-shadow: 0 0 0 0 rgba(227,160,8,0); }',
     '}',
   ].join('\n');
   document.head.appendChild(style);
@@ -992,11 +1301,18 @@ document.addEventListener('DOMContentLoaded', function () {
     gearBtn.addEventListener('click', ghOpenConfigModal);
     ghUpdateConfigButton();
 
-    /* Se estiver no GitHub Pages (config automática), mostra engrenagem como
-       info apenas — não precisa configurar owner/repo, só o token */
     if (GITHUB_CONFIG._auto) {
       gearBtn.title = 'GitHub Pages detectado: ' + GITHUB_CONFIG.OWNER + '/' + GITHUB_CONFIG.REPO + ' — clique para ver/editar';
     }
+
+    /* Bolinha de deploy — criada uma única vez, oculta, ANTES da engrenagem */
+    var deployDot = document.createElement('div');
+    deployDot.id    = 'ghDeployDot';
+    deployDot.title = 'Publicando no GitHub Pages…';
+    gearBtn.parentNode.insertBefore(deployDot, gearBtn);
+
+    /* Retoma o polling se havia um deploy em andamento antes do reload */
+    ghResumeDeployWatchIfNeeded();
   }
 
   /* ─── Span de status oculto (para uso interno) ─── */
@@ -1006,14 +1322,14 @@ document.addEventListener('DOMContentLoaded', function () {
   document.body.appendChild(hiddenStatus);
 
   /* ─── Modal edição — botão GitHub ─────────────────── */
-  var saveToFileBtn = document.getElementById('saveToFileBtn');
-  if (saveToFileBtn && !document.getElementById('ghSaveLayoutBtn')) {
+  var saveToFileAnchor = document.getElementById('saveToFileBtn');
+  if (saveToFileAnchor && !document.getElementById('ghSaveLayoutBtn')) {
     var ghEditBtn = document.createElement('button');
     ghEditBtn.id        = 'ghSaveLayoutBtn';
     ghEditBtn.className = 'btn-github';
     ghEditBtn.innerHTML = GH_ICON + ' GitHub';
     ghEditBtn.title     = 'Salvar diretamente no repositório GitHub';
-    saveToFileBtn.parentNode.insertBefore(ghEditBtn, saveToFileBtn);
+    saveToFileAnchor.parentNode.replaceChild(ghEditBtn, saveToFileAnchor);
 
     ghEditBtn.addEventListener('click', function () {
       var code = document.getElementById('editGeneratedCode').textContent;
@@ -1050,8 +1366,8 @@ document.addEventListener('DOMContentLoaded', function () {
      modules/github/senko-github-variants.js              */
 
   /* ─── Modal criação — select + botão GitHub ────────── */
-  var copyGeneratedBtn = document.getElementById('copyGeneratedBtn');
-  if (copyGeneratedBtn && !document.getElementById('ghNewLayoutGroup')) {
+  var copyGeneratedAnchor = document.getElementById('copyGeneratedBtn');
+  if (copyGeneratedAnchor && !document.getElementById('ghNewLayoutGroup')) {
 
     var ghSelect = document.createElement('select');
     ghSelect.id        = 'ghTargetFile';
@@ -1070,7 +1386,9 @@ document.addEventListener('DOMContentLoaded', function () {
     ghGroup.className = 'gh-auto-group';
     ghGroup.appendChild(ghSelect);
     ghGroup.appendChild(ghNewBtn);
-    copyGeneratedBtn.parentNode.insertBefore(ghGroup, copyGeneratedBtn.nextSibling);
+
+    /* Substitui o span âncora pelo grupo select+botão */
+    copyGeneratedAnchor.parentNode.replaceChild(ghGroup, copyGeneratedAnchor);
 
     function ghPopulateFileSelect() {
       if (!ghGetToken()) return;

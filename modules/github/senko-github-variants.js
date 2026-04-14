@@ -220,6 +220,7 @@ function githubCreateVariant(parentId, variantName, objectCode) {
         SenkoLib.registerVariant(parentId, [{ name: variantName, html: html, css: css }]);
         ghSetStatus('✓ Variante salva em ' + fileInfo.path, 'ok');
         ghUnlockSave();
+        if (typeof ghStartDeployWatch === 'function') ghStartDeployWatch(fileInfo.path);
         return fileInfo.path;
       }).catch(function (e) {
         ghSetStatus('Erro ao salvar: ' + e.message, 'error');
@@ -261,6 +262,7 @@ function githubCreateVariant(parentId, variantName, objectCode) {
       SenkoLib.registerVariant(parentId, [{ name: variantName, html: html, css: css }]);
       ghSetStatus('✓ Arquivo criado: ' + fileInfo.path, 'ok');
       ghUnlockSave();
+      if (typeof ghStartDeployWatch === 'function') ghStartDeployWatch(fileInfo.path);
       return fileInfo.path;
     }).catch(function (e) {
       ghSetStatus('Erro ao criar arquivo: ' + e.message, 'error');
@@ -330,6 +332,7 @@ function githubSaveVariant(parentId, originalName, objectCode) {
     ).then(function () {
       ghSetStatus('✓ Salvo em ' + filePath, 'ok');
       ghUnlockSave();
+      if (typeof ghStartDeployWatch === 'function') ghStartDeployWatch(filePath);
       return filePath;
     });
 
@@ -417,6 +420,8 @@ function githubDeleteVariant(parentId, variantNome) {
       }).then(function () {
         ghvRemoveVariantFromMemory(parentId, variantNome);
         ghSetStatus('✓ Arquivo de variantes removido: ' + fileInfo.path, 'ok');
+        /* arquivo foi deletado — monitora o index.html como proxy */
+        if (typeof ghStartDeployWatch === 'function') ghStartDeployWatch('index.html');
         return true;
       });
     }
@@ -438,6 +443,7 @@ function githubDeleteVariant(parentId, variantNome) {
     ).then(function () {
       ghvRemoveVariantFromMemory(parentId, variantNome);
       ghSetStatus('✓ Variante excluída: ' + variantNome, 'ok');
+      if (typeof ghStartDeployWatch === 'function') ghStartDeployWatch(fileInfo.path);
       return true;
     });
 
@@ -542,7 +548,8 @@ function ghvInjectNewVariantButton() {
   btn.innerHTML = GH_ICON + ' GitHub';
   btn.title     = 'Criar variante diretamente no repositório GitHub';
 
-  anchor.parentNode.insertBefore(btn, anchor.nextSibling);
+  /* Substitui o span âncora pelo botão */
+  anchor.parentNode.replaceChild(btn, anchor);
 
   btn.addEventListener('click', function () {
     var nomeRaw = document.getElementById('newVarName') ? document.getElementById('newVarName').value.trim() : '';
@@ -553,6 +560,7 @@ function ghvInjectNewVariantButton() {
     if (!state.currentForVariant) { alert('Nenhum layout pai selecionado.'); return; }
 
     var nomeLower = nomeRaw.toLowerCase();
+    if (!/^[a-z0-9\-.]+$/.test(nomeLower)) { return; }
     var parentId  = state.currentForVariant.id;
     var safeHtml  = html.replace(/`/g, '\\`');
     var safeCss   = css.replace(/`/g, '\\`');
@@ -613,8 +621,8 @@ function ghvInjectEditVariantButton() {
   btn.innerHTML = GH_ICON + ' GitHub';
   btn.title     = 'Salvar variante editada no repositório GitHub';
 
-  /* Insere antes do botão FSA (saveVarToFileBtn) */
-  anchor.parentNode.insertBefore(btn, anchor);
+  /* Substitui o span âncora pelo botão */
+  anchor.parentNode.replaceChild(btn, anchor);
 
   btn.addEventListener('click', function () {
     if (!state.currentForVariant)  { alert('Nenhum layout pai selecionado.'); return; }
@@ -628,6 +636,7 @@ function ghvInjectEditVariantButton() {
     var parentId     = state.currentForVariant.id;
 
     if (newName.length < 2) { alert('Preencha o nome da variante primeiro.'); return; }
+    if (!/^[a-z0-9\-.]+$/.test(newName)) { return; }
 
     var safeHtml   = html.replace(/`/g, '\\`');
     var safeCss    = css.replace(/`/g, '\\`');
