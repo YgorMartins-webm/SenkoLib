@@ -3692,7 +3692,10 @@ SenkoLib.register([
             .tw-text-2xl {
                 font-size: 32px;
             }
+
         }
+
+
 
         @media (min-width:992px) {
             .pdp-row-product {
@@ -3795,6 +3798,14 @@ SenkoLib.register([
 
             .pdp-row-product.is-reverse .pdp-row-product-content {
                 order: 2
+            }
+        }
+
+        @media (max-width:768px) {
+            .pdp-row-product-image {
+                width: 100%;
+                aspect-ratio: 9 / 6;
+                object-fit: cover;
             }
         }
     </style>`
