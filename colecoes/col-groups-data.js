@@ -6,5 +6,5 @@
    NÃO edite manualmente em produção.
 ═══════════════════════════════════════════════════════════════════════ */
 ColGroups.load([
-  { slug: 'efacil', name: 'eFácil', cor: '#ff6b00' },
+  { slug: 'ygor', name: 'Ygor', cor: '#1a9e52' },
 ]);
