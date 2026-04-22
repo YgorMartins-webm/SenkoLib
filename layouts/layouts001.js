@@ -3732,7 +3732,6 @@ SenkoLib.register([
             display: flex;
             gap: 1.5rem;
             justify-content: space-between;
-            margin-bottom: 2rem;
             margin-top: 2rem
         }
 
