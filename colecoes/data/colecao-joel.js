@@ -1011,158 +1011,166 @@ ColLib.register({
 </style>`,
     },
 
-    /*@@@@Col - padrao-conteudo-joel2 */
+        /*@@@@Col - padrao-conteudo-joel2 */
     {
       id:   'padrao-conteudo-joel2',
       name: 'Padrão de Conteúdo Joel 2',
-      html: `<div class="lp-container">
-  <link rel="nestlenect" href="https://fonts.googleapis.com">
-  <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
+      html: `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
   <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PDP - eFácil</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+  <div class="lp-container">
+    
+    <article style="width: 100%;" aria-labelledby="article-title">
+      
+      <h2 id="article-title" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;">
+        Descrição Detalhada do Produto
+      </h2>
+      
+      <section class="video-header" aria-label="Cabeçalho do produto">
+        <header class="video-header__banner">
+          <figure style="width:100%;height:100%;margin:0;">
+            <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/bobina-termica-rio-branco-fundo-grafico-azul-2601311-01.jpg"
+                 alt="Fundo gráfico azul Rio Branco com padrão visual marca para bobinas térmicas" 
+                 class="product-header__banner-img" 
+                 loading="eager">
+          </figure>
 
-  <article style="width: 100%;">
-    <section class="video-header" aria-label="Cabeçalho do produto">
+          <div class="video-header__badge" role="img" aria-label="Logo da marca">
+            <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/logo-rb.png"
+                 alt="imagem png com ícone da marca" 
+                 class="video-header__badge-img">
+          </div>
+        </header>
+        
+        <div class="video-header__body">
+          <small class="video-header__brand">RB</small>
+          <h3 class="video-header__title">
+            Bobina Térmica Rio Branco 57mm x 15m Branca
+          </h3>
+          <p class="video-header__subtitle">
+            Produzido com material de alta qualidade, garante maior durabilidade das informações impressas. Perfeito para manter registros legíveis por mais tempo.
+          </p>
+        </div>
+      </section>
 
-      <header class="video-header__banner">
-        <figure style="width:100%;height:100%;margin:0;">
-          <img
-            src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/bobina-termica-rio-branco-80mmx40m-mascote-segurando-bobina-2601308-01.jpg"
-            alt="Fundo gráfico azul Rio Branco com padrão visual marca para bobinas térmicas PDV"
-            class="product-header__banner-img" loading="eager">
+      <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
+        <figure class="section-32__groupimage-section">
+          <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/bobina-termica-rio-branco-caixa-bobinas-pos-papel-termico-2601311-02.jpg" 
+               alt="Caixa bobinas térmicas Rio Branco para POS papel branco com várias unidades sobre bancada"
+               style="border-radius: 30px 30px 0px 0px;" 
+               width="1600" 
+               height="865" 
+               loading="lazy" 
+               decoding="async"
+               fetchpriority="low">
+          <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 25%; min-width: 20%; padding: 1%; max-width: 29%; min-height: 21%; left: 17%;">
+            <h3><strong>USO VERSÁTIL DIÁRIO</strong></h3>
+            <p>Indicado para cupons, comandas e senhas, atende diversas necessidades com eficiência. Uma opção completa para diferentes segmentos comerciais.</p>
+          </figcaption>
         </figure>
 
-        <div class="video-header__badge" role="img" aria-label="Logo da marca">
-          <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/logo-rb.png"
-            alt="imagem png com ícone da marca" class="video-header__badge-img">
-        </div>
-      </header>
-      <section class="video-header__body">
-        <small class="video-header__brand">RB</small>
-        <h1 class="video-header__title">
-          Bobina Térmica Rio Branco 80mmx40m Branca
-        </h1>
-        <p class="video-header__subtitle">
-          Produzido com material de alta qualidade, garante maior durabilidade das informações impressas. Perfeito para
-          manter registros legíveis por mais tempo.
-        </p>
+        <figure class="section-32__groupimage-section" style="z-index: 2;">
+          <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/bobina-termica-rio-branco-mascote-segurando-bobina-ilustracao-produto-2601311-03.jpg" 
+               alt="Mascote Rio Branco segurando bobina térmica destacando uso em máquinas de cartão POS"
+               style="border-radius: 0px 0px 30px 30px;" 
+               width="1600" 
+               height="865" 
+               loading="lazy" 
+               decoding="async"
+               fetchpriority="low">
+          <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 45%; min-width: 20%; padding: 1%; max-width: 29%; min-height: 21%;">
+            <h3><strong>ALTA PERFORMANCE</strong></h3>
+            <p>Oferece impressão nítida e consistente, ideal para operações que exigem agilidade e qualidade. É a escolha certa para quem busca eficiência no dia a dia.</p>
+          </figcaption>
+        </figure>
+
+        <footer>
+          <p class="p__end">
+            <strong>Imagens Meramente Ilustrativas</strong>
+          </p>
+        </footer>
       </section>
+      
+    </article>
+
+    <section class="section-9" aria-labelledby="section-9-title">
+      <div class="section-9__header">
+        <h2 class="section-9__title" id="section-9-title">Resolva suas dúvidas</h2>
+        <p class="section-9__subtitle">Saiba por que essa bobina térmica é a escolha ideal para impressões rápidas e confiáveis no dia a dia</p>
+      </div>
+      <ul class="section-9__list">
+        <li class="section-9__item">
+          <details class="section-9__item">
+            <summary>
+              <span class="section-9__q-text">Qual bobina usar na maquininha de cartão?</span>
+              <span class="section-9__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="section-9__a-inner">
+              <p class="section-9__a-text">A bobina térmica 57mm x 15m é uma das mais utilizadas em maquininhas de cartão e mini impressoras POS. Esse modelo é compatível com diversos equipamentos do mercado.</p>
+            </div>
+          </details>
+        </li>
+        <li class="section-9__item">
+          <details class="section-9__item">
+            <summary>
+              <span class="section-9__q-text">O que significa bobina térmica 57x15?</span>
+              <span class="section-9__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="section-9__a-inner">
+              <p class="section-9__a-text">Significa que a bobina possui 57mm de largura e 15 metros de comprimento. Esse padrão é ideal para comprovantes de pagamento em maquininhas de cartão.</p>
+            </div>
+          </details>
+        </li>
+        <li class="section-9__item">
+          <details class="section-9__item">
+            <summary>
+              <span class="section-9__q-text">Essa bobina serve para qual tipo de impressora?</span>
+              <span class="section-9__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="section-9__a-inner">
+              <p class="section-9__a-text">Ela é indicada para máquinas de cartão de crédito/débito e mini impressoras térmicas POS, muito comuns em comércios e serviços.</p>
+            </div>
+          </details>
+        </li>
+        <li class="section-9__item">
+          <details class="section-9__item">
+            <summary>
+              <span class="section-9__q-text">Qual a vantagem da bobina térmica?</span>
+              <span class="section-9__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="section-9__a-inner">
+              <p class="section-9__a-text">A bobina térmica não utiliza tinta, pois a impressão ocorre por calor. Isso garante mais praticidade, menos manutenção e maior velocidade na emissão de comprovantes.</p>
+            </div>
+          </details>
+        </li>
+        <li class="section-9__item">
+          <details class="section-9__item">
+            <summary>
+              <span class="section-9__q-text">A impressão da bobina térmica apaga com o tempo?</span>
+              <span class="section-9__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="section-9__a-inner">
+              <p class="section-9__a-text">A durabilidade da impressão depende do armazenamento, mas o papel térmico de qualidade premium garante maior resistência e legibilidade por mais tempo.</p>
+            </div>
+          </details>
+        </li>
+      </ul>
     </section>
 
+  </div>
 
-
-    <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
-      <figure class="section-32__groupimage-section">
-        <img
-          src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/bobina-termica-rio-branco-80mmx40m-caixa-30-unidades-2601308-02.jpg"
-          alt="Caixa bobinas térmicas Rio Branco 80mm x 40m com 30 unidades para impressoras PDV"
-          style="border-radius: 30px 30px 0px 0px;" width="1600" height="865" loading="lazy" decoding="async"
-          fetchpriority="low">
-        <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background"
-          style="top: 25%; min-width: 20%; padding: 1%; max-width: 29%; min-height: 21%; left: 17%;">
-          <h2><strong>USO VERSÁTIL DIÁRIO</strong></h2>
-          <p>Indicado para cupons, comandas e senhas, atende diversas necessidades com eficiência. Uma opção completa
-            para diferentes segmentos comerciais.
-          </p>
-        </figcaption>
-      </figure>
-
-      <figure class="section-32__groupimage-section" style="z-index: 2;">
-        <img
-          src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/bobina-termica-rio-branco-80mmx40m-fundo-grafico-azul-2601308-03.jpg"
-          alt="Mascote Rio Branco segurando bobina térmica branca 80mm x 40m uso PDV cupons fiscais"
-          style="border-radius: 0px 0px 30px 30px;" width="1600" height="865" loading="lazy" decoding="async"
-          fetchpriority="low">
-        <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background"
-          style="top: 45%; min-width: 20%; padding: 1%; max-width: 29%; min-height: 21%;">
-          <h2><strong>ALTA PERFORMANCE</strong></h2>
-          <p>Oferece impressão nítida e consistente, ideal para operações que exigem agilidade e qualidade. É a escolha
-            certa para quem busca eficiência no dia a dia.
-          </p>
-        </figcaption>
-      </figure>
-
-      <footer>
-        <p class="p__end">
-          <strong>Imagens Meramente Ilustrativas</strong>
-        </p>
-      </footer>
-  </article>
-
-  <section class="section-9" aria-labelledby="section-9-title">
-    <div class="section-9__header">
-      <h2 class="section-9__title" id="section-9-title">Resolva suas dúvidas</h2>
-      <p class="section-9__subtitle">Saiba por que essa bobina térmica é a escolha ideal para impressões rápidas e
-        confiáveis no dia a dia</p>
-    </div>
-    <ul class="section-9__list">
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <span class="section-9__q-text">Essa bobina é compatível com quais impressoras?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">É compatível com a maioria das impressoras térmicas do mercado, como Elgin,
-              Epson, Bematech, Daruma e Sweda, entre outras.</p>
-          </div>
-        </details>
-      </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <span class="section-9__q-text">Bobina térmica precisa de tinta?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">Não. A impressão ocorre por reação ao calor no papel térmico, dispensando o uso
-              de tinta ou ribbon.</p>
-          </div>
-        </details>
-      </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <span class="section-9__q-text">Quanto tempo dura a impressão no papel térmico?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">A impressão pode durar até cerca de 5 anos, desde que armazenada corretamente e
-              longe de calor, luz e produtos químicos.</p>
-          </div>
-        </details>
-      </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <span class="section-9__q-text">Quantas bobinas vêm na caixa?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">A embalagem geralmente contém 30 unidades, ideal para reposição e uso contínuo
-              em estabelecimentos comerciais.</p>
-          </div>
-        </details>
-      </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <span class="section-9__q-text">Pode usar em qualquer comércio?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">Sim, é indicada para supermercados, farmácias, restaurantes, lojas e qualquer
-              negócio que utilize impressora térmica para emissão de comprovantes.</p>
-          </div>
-        </details>
-      </li>
-    </ul>
-  </section>
-
-</div>`,
+</body>
+</html>`,
       css:  `<style>
   @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
