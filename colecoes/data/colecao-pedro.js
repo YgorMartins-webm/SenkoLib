@@ -11,7 +11,7 @@ ColLib.register({
   group: 'pedro',
   tags:  [],
   layouts: [
-        /*@@@@Col - comp-3p */
+            /*@@@@Col - comp-3p */
     {
       id:   'comp-3p',
       name: 'comp - 3p',
@@ -23,39 +23,36 @@ ColLib.register({
     rel="stylesheet">
   <title>PDP - eFácil</title>
    <article style="width: 100%;">
-    <section class="video-header" aria-label="Cabeçalho do produto">
-   
-      <header class="video-header__banner">
-        <video class="video-header__banner-video"
-          poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/poster-preto-puro.jpg" 
-          preload="none" autoplay muted loop playsinline width="1200" height="250" aria-hidden="true">
-          <source
-            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/philips/header-philips1.mov"
-            loading="eager">
-        </video>
-        <div class="video-header__badge" role="img" aria-label="Logo da marca philips dentro de um círculo alaranjado">
-          <img
-            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/philips/logo-philips.png"
-            alt="imagem png com ícone da marca philips dentro de um círculo alaranjado em frente ao cabeçalho" class="video-header__badge-img">
-        </div>
-      </header>
-        <section class="video-header__body">
-        <small class="video-header__brand">philips</small>
-        <h3 class="video-header__title">
-          SMART TV 50P DLED 50PUG7300/78 4K UHD HDR10+ HDMI USB
-        </h3>
-        <p class="video-header__subtitle">
-          A Smart TV Philips 50" 4K UHD com HDR10+ entrega cores vivas e detalhes reais. Acesse seus apps e conecte tudo via HDMI e USB com facilidade.
-        </p>
-     </section>
-     </section>
+<section class="product-header" aria-label="Cabeçalho do produto">
+  <header class="product-header__banner">
+    <figure style="width:100%;height:100%;margin:0;">
+      <img
+        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-grafismo-bolas-futebol-2224602-01.jpg"
+        alt="Padrão visual roxo cachos uva folhas identidade suco aoc Kids" 
+        class="product-header__banner-img" loading="eager">
+    </figure>
+    <div class="product-header__badge" role="img" aria-label="Logo da marca aoc dentro de um círculo laranja">
+      <img
+        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/aoc/aoc-logo.png"
+        alt="imagem png com ícone da marca aoc dentro de um círculo laranja em frente ao cabeçalho" class="product-header__badge-img">
+    </div>
+  </header>
 
-
+  <section class="product-header__body">
+    <small class="product-header__brand">aoc</small>
+    <h3 class="product-header__title">
+   SMART TV 50P DLED AOC 50U7045/78G 4K UHD HDR10 HDMI USB
+    </h3>
+    <p class="product-header__subtitle">
+       A Smart TV AOC 50" 4K UHD com HDR10+ entrega cores vivas e detalhes reais. Acesse seus apps e conecte tudo via HDMI e USB com facilidade.
+    </p>
+  </section>
+</section>
 
       <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
        <figure class="section-32__groupimage-section">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-philips-50pug7300-78-4k-frente-destaques-2224601-02.jpg"
-        alt="Smart TV Philips 50 4K exibindo alpinista e ícones HDR10+, Dolby Atmos, Bluetooth e jogo" 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-tela-frontal-lancamento-2224602-02.jpg"
+        alt="Smart TV AOC 50 4K exibindo alpinista e ícones HDR10+, Dolby Atmos, Bluetooth e jogo" 
         style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
       <figcaption class="section-32__grouptext-overlay bottom grouptext-overlay-Background" style="top: 80%;">
@@ -66,8 +63,8 @@ ColLib.register({
       </figure>
 
        <figure class="section-32__groupimage-section" style="z-index: 3;">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-philips-50pug7300-78-esportes-futebol-movimento-2224601-03x.jpg"
-        alt="Smart TV Philips exibindo jogador de futebol em lance acrobático e bola em primeiro plano" 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-controle-remoto-atalho-aplicativos-2224602-03.jpg"
+        alt="Smart TV AOC exibindo jogador de futebol em lance acrobático e bola em primeiro plano" 
         style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
       <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%;">
@@ -78,8 +75,8 @@ ColLib.register({
       </figure>
 
       <figure class="section-32__groupimage-section" style="z-index: 3;">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-philips-50pug7300-78-tela-estadio-futebol-2224601-04x.jpg"
-        alt="Smart TV Philips transmitindo partida de futebol em estádio lotado com fundo verde gráfico" 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-controle-remoto-fundo-jogo-2224602-04.jpg"
+        alt="Smart TV AOC transmitindo partida de futebol em estádio lotado com fundo verde gráfico" 
         style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
       <figcaption class="section-32__grouptext-overlay top grouptext-overlay-Background" style="top: 50%;">
@@ -90,8 +87,8 @@ ColLib.register({
       </figure>
 
       <figure class="section-32__groupimage-section">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-philips-50pug7300-78-lifestyle-casal-assistindo-jogo-2224601-05.jpg"
-        alt="Casal assistindo jogo de futebol na Smart TV Philips em sala de estar com fundo verde" 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-familia-futebol-sala-2224602-05.jpg"
+        alt="Casal assistindo jogo de futebol na Smart TV AOC em sala de estar com fundo verde" 
         style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
       </figure>
@@ -107,7 +104,8 @@ ColLib.register({
         </article>
 
 
-</div>`,
+</div>
+`,
       css:  `<style>  
     
     @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
@@ -603,9 +601,10 @@ ColLib.register({
       margin: 0;
     }
 
-  .video-header {
+    .product-header {
     --badge-size: 8rem;
     --banner-height: 250px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -615,7 +614,7 @@ ColLib.register({
     container-type: inline-size;
   }
 
-  .video-header__banner {
+  .product-header__banner {
     width: 100%;
     height: var(--banner-height);
     position: relative;
@@ -623,17 +622,20 @@ ColLib.register({
     justify-content: center;
   }
 
-  .video-header__banner-video {
-    position: absolute;
-    inset: 0;
+  .product-header__banner figure {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  .product-header__banner-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    pointer-events: none;
   }
 
-  .video-header__badge {
+  .product-header__badge {
     position: absolute;
     bottom: calc(var(--badge-size) / -2);
     width: var(--badge-size);
@@ -647,13 +649,13 @@ ColLib.register({
     z-index: 10;
   }
 
-  .video-header__badge-img {
+  .product-header__badge-img {
     max-width: 90px;
     max-height: 90px;
     object-fit: contain;
   }
 
-  .video-header__body {
+  .product-header__body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -661,7 +663,7 @@ ColLib.register({
     text-align: center;
   }
 
-  .video-header__brand {
+  .product-header__brand {
     color: #ff9900;
     font-size: 0.75rem;
     font-weight: 700;
@@ -669,8 +671,7 @@ ColLib.register({
     margin-bottom: 0.5rem;
   }
 
-  .video-header__title {
-    color: #000;
+  .product-header__title {
     font-size: clamp(1.4rem, 4vw, 2.4rem);
     line-height: clamp(1.6rem, 4vw, 3.1rem);
     font-weight: 600;
@@ -678,7 +679,7 @@ ColLib.register({
     text-wrap: pretty;
   }
 
-  .video-header__subtitle {
+  .product-header__subtitle {
     color: #8a8a8a;
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 120%;
@@ -686,8 +687,6 @@ ColLib.register({
     max-width: 52rem;
     text-wrap: pretty;
   }
-
- 
   
     .section-32__container {
       width: 100%;
@@ -865,14 +864,14 @@ ColLib.register({
         background: rgb(0, 0, 0);
       }
 
-      .video-header__subtitle {
+      .product-header__subtitle {
         color: #000;
       }
 
       .table-td-custom-sub
       {
         color: #000;
-        font-weight: 600;
+        font-weight: 550;
       }
 
       .table-td-custom-title
@@ -881,14 +880,14 @@ ColLib.register({
         font-weight: 700;
       } 
 
-      .video-header__brand {
+      .product-header__brand {
         color:#3a2301
       }
      
     }
 
     @media (max-width: 360px) {
-        .section-32__grouptext-overlay h3 {
+        .section-32__grouptext-overlay h2 {
           font-size: 3vw;
         }
 
@@ -902,14 +901,14 @@ ColLib.register({
     }
 
     @media (max-width: 470px) {  
-      .video-header__subtitle {
-        text-align: justify;
-        font-size: clamp(0.9rem, 2vw, 1.5rem);
-        font-weight: 550;
-        
-      }
 
-      .section-32__grouptext-overlay h3 {
+      .product-header__subtitle {
+      text-align: justify;
+      font-size: clamp(0.9rem, 2vw, 1.2rem);
+      font-weight: 550;
+    }
+
+      .section-32__grouptext-overlay h2 {
           font-size: 3vw;
         }
 
@@ -975,9 +974,6 @@ ColLib.register({
     }
 
     @media (max-width: 768px) {
-      .video-header {
-        --banner-height: 180px;
-      }
 
       .section-32__grouptext-overlay h3 {
           font-size: 2.5vw;
@@ -994,6 +990,10 @@ ColLib.register({
       .section-32__grouptext-overlay.bottom {
           top: 76%;
         }
+
+            .product-header {
+      --banner-height: 180px;
+    }
     }
 
     @media (max-width: 960px) {
