@@ -11,7 +11,7 @@ ColLib.register({
   group: 'pedro',
   tags:  [],
   layouts: [
-    /*@@@@Col - comp-3p */
+        /*@@@@Col - comp-3p */
     {
       id:   'comp-3p',
       name: 'comp - 3p',
@@ -30,22 +30,22 @@ ColLib.register({
           poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/poster-preto-puro.jpg" 
           preload="none" autoplay muted loop playsinline width="1200" height="250" aria-hidden="true">
           <source
-            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/AOC/header-AOC1.mov"
+            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/philips/header-philips1.mov"
             loading="eager">
         </video>
-        <div class="video-header__badge" role="img" aria-label="Logo da marca AOC dentro de um círculo alaranjado">
+        <div class="video-header__badge" role="img" aria-label="Logo da marca philips dentro de um círculo alaranjado">
           <img
-            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/AOC/logo-AOC.png"
-            alt="imagem png com ícone da marca AOC dentro de um círculo alaranjado em frente ao cabeçalho" class="video-header__badge-img">
+            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/philips/logo-philips.png"
+            alt="imagem png com ícone da marca philips dentro de um círculo alaranjado em frente ao cabeçalho" class="video-header__badge-img">
         </div>
       </header>
         <section class="video-header__body">
-        <small class="video-header__brand">AOC</small>
+        <small class="video-header__brand">philips</small>
         <h3 class="video-header__title">
-          SMART TV 50P DLED AOC 50U7045/78G 4K UHD HDR10 HDMI USB
+          SMART TV 50P DLED 50PUG7300/78 4K UHD HDR10+ HDMI USB
         </h3>
         <p class="video-header__subtitle">
-          A Smart TV AOC 50" 4K UHD com HDR10+ entrega cores vivas e detalhes reais. Acesse seus apps e conecte tudo via HDMI e USB com facilidade.
+          A Smart TV Philips 50" 4K UHD com HDR10+ entrega cores vivas e detalhes reais. Acesse seus apps e conecte tudo via HDMI e USB com facilidade.
         </p>
      </section>
      </section>
@@ -54,8 +54,8 @@ ColLib.register({
 
       <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
        <figure class="section-32__groupimage-section">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-AOC-50pug7300-78-4k-frente-destaques-2224601-02.jpg"
-        alt="Smart TV AOC 50 4K exibindo alpinista e ícones HDR10+, Dolby Atmos, Bluetooth e jogo" 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-philips-50pug7300-78-4k-frente-destaques-2224601-02.jpg"
+        alt="Smart TV Philips 50 4K exibindo alpinista e ícones HDR10+, Dolby Atmos, Bluetooth e jogo" 
         style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
       <figcaption class="section-32__grouptext-overlay bottom grouptext-overlay-Background" style="top: 80%;">
@@ -66,8 +66,8 @@ ColLib.register({
       </figure>
 
        <figure class="section-32__groupimage-section" style="z-index: 3;">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-AOC-50pug7300-78-esportes-futebol-movimento-2224601-03x.jpg"
-        alt="Smart TV AOC exibindo jogador de futebol em lance acrobático e bola em primeiro plano" 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-philips-50pug7300-78-esportes-futebol-movimento-2224601-03x.jpg"
+        alt="Smart TV Philips exibindo jogador de futebol em lance acrobático e bola em primeiro plano" 
         style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
       <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%;">
@@ -78,8 +78,8 @@ ColLib.register({
       </figure>
 
       <figure class="section-32__groupimage-section" style="z-index: 3;">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-AOC-50pug7300-78-tela-estadio-futebol-2224601-04x.jpg"
-        alt="Smart TV AOC transmitindo partida de futebol em estádio lotado com fundo verde gráfico" 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-philips-50pug7300-78-tela-estadio-futebol-2224601-04x.jpg"
+        alt="Smart TV Philips transmitindo partida de futebol em estádio lotado com fundo verde gráfico" 
         style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
       <figcaption class="section-32__grouptext-overlay top grouptext-overlay-Background" style="top: 50%;">
@@ -90,8 +90,8 @@ ColLib.register({
       </figure>
 
       <figure class="section-32__groupimage-section">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-AOC-50pug7300-78-lifestyle-casal-assistindo-jogo-2224601-05.jpg"
-        alt="Casal assistindo jogo de futebol na Smart TV AOC em sala de estar com fundo verde" 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-philips-50pug7300-78-lifestyle-casal-assistindo-jogo-2224601-05.jpg"
+        alt="Casal assistindo jogo de futebol na Smart TV Philips em sala de estar com fundo verde" 
         style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
       </figure>
