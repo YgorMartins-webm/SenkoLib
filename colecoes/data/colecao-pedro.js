@@ -4586,7 +4586,7 @@ ColLib.register({
 </style>  `,
     },
 
-    /*@@@@Col - comp-p-3b-faqe-vh-tb */
+        /*@@@@Col - comp-p-3b-faqe-vh-tb */
     {
       id:   'comp-p-3b-faqe-vh-tb',
       name: 'comp - 3 blocos faq embutido video header e tabela',
@@ -4602,7 +4602,7 @@ ColLib.register({
    
       <header class="video-header__banner">
         <video class="video-header__banner-video"
-          poster="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/poster-havaianas-logo-na-frente-de-fundo-tecnologico-escuro-com-luz-azul.jpg" 
+          poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/poster-havaianas-listras-rosa-e-vermelha-tropical.jpg" 
           preload="none" autoplay muted loop playsinline width="1200" height="250" aria-hidden="true">
           <source
             src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/havaianas/header-havaianas1.mov"
