@@ -2169,7 +2169,7 @@ ColLib.register({
 </style>  `,
     },
 
-    /*@@@@Col - comp-p-faq-e */
+        /*@@@@Col - comp-p-faq-e */
     {
       id:   'comp-p-faq-e',
       name: 'Comp p com 3 blocos e FAQ embutido na figure',
@@ -2249,7 +2249,7 @@ ColLib.register({
        <section class="section-9" aria-labelledby="section-9-title">
            
     <div class="section-9__header">
-      <h2 class="section-9__title" id="section-9-title">Resolva suas dúvidas</h2>
+      <h3 class="section-9__title" id="section-9-title">Resolva suas dúvidas</h3>
       <p class="section-9__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
     </div>
     <ul class="section-9__list">
@@ -2316,23 +2316,7 @@ ColLib.register({
     </ul>
       </section>
     </figure>
-    </section>
-      </figure>
-      
-      </section>
-    
-
-        <footer>
-           <p class="p__end">
-          <strong>Imagens Meramente Ilustrativas</strong>
-          </p>
-        </footer>
-
-        </article>
-
-
-</div>
-`,
+    </section>`,
       css:  `
   <style>  
     
