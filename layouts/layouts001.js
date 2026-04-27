@@ -2229,69 +2229,69 @@ SenkoLib.register([
     id: 'section-9',
     name: 'Section-9',
     tags: ['Section 9', '9', 'grid'],
-    html: `        <section class="section-9" aria-labelledby="section-9-title">
-            <div class="section-9__header">
-                <h2 class="section-9__title" id="section-9-title">Resolva suas dúvidas</h2>
-                <p class="section-9__subtitle">Saiba por que o Dove Hialuron-Vit é o favorito para o uso diário</p>
-            </div>
-            <ul class="section-9__list">
-                <li class="section-9__item">
-                    <details class="section-9__item">
-                        <summary>
-                            <span class="section-9__q-text">O ácido hialurônico serve para o meu cabelo?</span>
-                            <span class="section-9__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">Sim. Ele funciona em todos os tipos de fios, agindo como um imã de hidratação para cabelos ressecados e sem brilho.</p>
-                        </div>
-                    </details>
-                </li>
-                <li class="section-9__item">
-                    <details class="section-9__item">
-                        <summary>
-                            <span class="section-9__q-text">Ele deixa o cabelo pesado ou oleoso?</span>
-                            <span class="section-9__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">Não. A fórmula é leve e garante fios 100% mais macios, mantendo o movimento natural sem pesar.</p>
-                        </div>
-                    </details>
-                </li>
-                <li class="section-9__item">
-                    <details class="section-9__item">
-                        <summary>
-                            <span class="section-9__q-text">Posso usar todos os dias?</span>
-                            <span class="section-9__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">Sim. Ele é dermatologicamente testado e ideal para uso diário, proporcionando hidratação contínua.</p>
-                        </div>
-                    </details>
-                </li>
-                <li class="section-9__item">
-                    <details class="section-9__item">
-                        <summary>
-                            <span class="section-9__q-text">Onde ele entra no meu Cronograma Capilar?</span>
-                            <span class="section-9__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">Ele é o aliado perfeito para a etapa de Hidratação, retendo a umidade e combatendo o ressecamento.</p>
-                        </div>
-                    </details>
-                </li>
-                <li class="section-9__item">
-                    <details class="section-9__item">
-                        <summary>
-                            <span class="section-9__q-text">Cabelo com química ou tintura pode usar?</span>
-                            <span class="section-9__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">Com certeza. Ele ajuda a recuperar a maciez e o brilho que os fios perdem durante processos químicos.</p>
-                        </div>
-                    </details>
-                </li>
-            </ul>
-        </section>`,
+    html: `<section class="section-9" aria-labelledby="section-9-title">
+    <div class="section-9__header">
+        <h2 class="section-9__title" id="section-9-title">Título Principal</h2>
+        <p class="section-9__subtitle">Sub-título</p>
+    </div>
+    <ul class="section-9__list">
+        <li class="section-9__item">
+            <details class="section-9__item">
+                <summary>
+                    <h3 class="section-9__q-text">Pergunta</h3>
+                    <span class="section-9__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="section-9__a-inner">
+                    <p class="section-9__a-text">Resposta</p>
+                </div>
+            </details>
+        </li>
+        <li class="section-9__item">
+            <details class="section-9__item">
+                <summary>
+                    <h3 class="section-9__q-text">Pergunta</h3>
+                    <span class="section-9__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="section-9__a-inner">
+                    <p class="section-9__a-text">Resposta</p>
+                </div>
+            </details>
+        </li>
+        <li class="section-9__item">
+            <details class="section-9__item">
+                <summary>
+                    <h3 class="section-9__q-text">Pergunta</h3>
+                    <span class="section-9__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="section-9__a-inner">
+                    <p class="section-9__a-text">Resposta</p>
+                </div>
+            </details>
+        </li>
+        <li class="section-9__item">
+            <details class="section-9__item">
+                <summary>
+                    <h3 class="section-9__q-text">Pergunta</h3>
+                    <span class="section-9__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="section-9__a-inner">
+                    <p class="section-9__a-text">Resposta</p>
+                </div>
+            </details>
+        </li>
+        <li class="section-9__item">
+            <details class="section-9__item">
+                <summary>
+                    <h3 class="section-9__q-text">Pergunta</h3>
+                    <span class="section-9__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="section-9__a-inner">
+                    <p class="section-9__a-text">Resposta</p>
+                </div>
+            </details>
+        </li>
+    </ul>
+</section>`,
     css: ` <style>
         .section-9 {
             width: 100%;
