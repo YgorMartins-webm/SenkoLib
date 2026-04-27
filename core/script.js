@@ -281,6 +281,12 @@ function createCard(layout, index) {
     updateStatsBar(getFilteredLayouts().length);
   });
 
+  /* Editar */
+  var btnEdit = document.createElement('button');
+  btnEdit.className = 'btn btn-edit-icon';
+  btnEdit.title = 'Editar layout';
+  btnEdit.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>';
+  btnEdit.addEventListener('click', function (e) { e.stopPropagation(); openEditModal(layout); });
 
   /* Badge variantes */
   var variantCount = SenkoLib.getVariants(layout.id).length;
@@ -296,7 +302,7 @@ function createCard(layout, index) {
   }
   btnPlus.addEventListener('click', function (e) { e.stopPropagation(); openVariantsModal(layout); });
 
-  actions.append(btnH, btnC, btnFav, btnPlus);
+  actions.append(btnH, btnC, btnFav, btnEdit, btnPlus);
   card.addEventListener('click', function () { openModal(layout); });
   card.append(preview, body, actions);
   return card;
@@ -343,34 +349,6 @@ function closeModal() {
   if (state._fromVariant) {
     state._fromVariant = false;
     document.getElementById('variantsOverlay').classList.remove('hidden');
-  }
-}
-
-/* ─── Picker Adicionar ──────────────────────────────── */
-function openAdicionarPicker() {
-  _pickerSetTab('layout');
-  document.getElementById('pickerOverlay').classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeAdicionarPicker() {
-  document.getElementById('pickerOverlay').classList.add('hidden');
-  document.body.style.overflow = '';
-}
-
-function _pickerSetTab(tab) {
-  var btnLayout  = document.getElementById('pickerTabLayout');
-  var btnColecao = document.getElementById('pickerTabColecao');
-  var title      = document.getElementById('pickerTitle');
-  if (!btnLayout || !btnColecao) return;
-  if (tab === 'layout') {
-    btnLayout.classList.add('active');
-    btnColecao.classList.remove('active');
-    if (title) title.textContent = 'Adicionar Layout';
-  } else {
-    btnColecao.classList.add('active');
-    btnLayout.classList.remove('active');
-    if (title) title.textContent = 'Nova Coleção';
   }
 }
 
@@ -967,19 +945,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* Modal adicionar */
-  document.getElementById('openAddModal').addEventListener('click', openAdicionarPicker);
-  document.getElementById('pickerClose').addEventListener('click', closeAdicionarPicker);
-  document.getElementById('pickerOverlay').addEventListener('click', function (e) {
-    if (e.target === document.getElementById('pickerOverlay')) closeAdicionarPicker();
-  });
-  document.getElementById('pickerTabLayout').addEventListener('click', function () {
-    closeAdicionarPicker();
-    openAddModal();
-  });
-  document.getElementById('pickerTabColecao').addEventListener('click', function () {
-    closeAdicionarPicker();
-    if (typeof colOpenCreateModal === 'function') colOpenCreateModal();
-  });
+  document.getElementById('openAddModal').addEventListener('click', openAddModal);
   document.getElementById('addModalClose').addEventListener('click', closeAddModal);
   document.getElementById('addModalOverlay').addEventListener('click', overlayClick('addModal', closeAddModal));
   document.querySelectorAll('.add-tab').forEach(function (btn) {
@@ -1062,12 +1028,12 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Escape */
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
-    if (!document.getElementById('pickerOverlay').classList.contains('hidden'))          closeAdicionarPicker();
-    else if (!document.getElementById('editVarOverlay').classList.contains('hidden'))    closeEditVariantModal();
+    if (!document.getElementById('editVarOverlay').classList.contains('hidden'))         closeEditVariantModal();
     else if (!document.getElementById('newVarOverlay').classList.contains('hidden'))     closeNewVariantModal();
     else if (!document.getElementById('variantsOverlay').classList.contains('hidden'))   closeVariantsModal();
     else if (!document.getElementById('editModalOverlay').classList.contains('hidden'))  closeEditModal();
     else if (!document.getElementById('addModalOverlay').classList.contains('hidden'))   closeAddModal();
+    else closeModal();
   });
 
 });
