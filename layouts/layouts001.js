@@ -3626,7 +3626,7 @@ SenkoLib.register([
             <!-- ══ FIM TÍTULO + DESCRIÇÃO ══ -->
             <ul class="section-15__feature-list" aria-label="Benefícios do produto">
                 <li class="section-15__feature-item">
-                    <img class="section-15__feature-item-icon" src="C:\Users\ygorq\Downloads\2222455_03-2-1.png"
+                    <img class="section-15__feature-item-icon" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2-1.png"
                         alt="Ícone" />
                     <div class="section-15__feature-item-body">
                         <strong class="section-15__feature-item-title">Manhãs Sem Pausa</strong>
@@ -3635,7 +3635,7 @@ SenkoLib.register([
                     </div>
                 </li>
                 <li class="section-15__feature-item">
-                    <img class="section-15__feature-item-icon" src="C:\Users\ygorq\Downloads\2222455_03-2-2.png"
+                    <img class="section-15__feature-item-icon" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2-2.png"
                         alt="Ícone" />
                     <div class="section-15__feature-item-body">
                         <strong class="section-15__feature-item-title">Receitas de uma Só Vez</strong>
@@ -3644,7 +3644,7 @@ SenkoLib.register([
                     </div>
                 </li>
                 <li class="section-15__feature-item">
-                    <img class="section-15__feature-item-icon" src="C:\Users\ygorq\Downloads\2222455_03-2-3.png"
+                    <img class="section-15__feature-item-icon" src="C:\\Users\\ygorq\Downloads\\2222455_03-2-3.png"
                         alt="Ícone" />
                     <div class="section-15__feature-item-body">
                         <strong class="section-15__feature-item-title">Cozinha Sempre Organizada</strong>
@@ -3653,7 +3653,7 @@ SenkoLib.register([
                     </div>
                 </li>
                 <li class="section-15__feature-item">
-                    <img class="section-15__feature-item-icon" src="C:\Users\ygorq\Downloads\2222455_03-2-4.png"
+                    <img class="section-15__feature-item-icon" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2-4.png"
                         alt="Ícone" />
                     <div class="section-15__feature-item-body">
                         <strong class="section-15__feature-item-title">Cuidado com o Bolso</strong>
@@ -3665,8 +3665,8 @@ SenkoLib.register([
         </div>
         <div class="section-15__image-wrapper">
             <picture>
-                <source media="(min-width: 960px)" srcset="C:\Users\ygorq\Downloads\2222455_03-1.jpg" />
-                <img class="section-15__image" src="C:\Users\ygorq\Downloads\2222455_03-2.jpg"
+                <source media="(min-width: 960px)" srcset="C:\\Users\\ygorq\\Downloads\\2222455_03-1.jpg" />
+                <img class="section-15__image" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2.jpg"
                     alt="Eletricista com capacete branco e colete laranja em obra" />
             </picture>
         </div>
