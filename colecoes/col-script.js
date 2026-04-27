@@ -93,6 +93,8 @@ function colSwitchTab(tab) {
   var btnLib       = document.getElementById('colTabBiblioteca');
   var btnCol       = document.getElementById('colTabColecoes');
 
+  try { localStorage.setItem('senkolib_active_tab', tab); } catch(e) {}
+
   if (tab === 'biblioteca') {
     if (dashboard)    dashboard.style.display    = '';
     if (colDashboard) colDashboard.style.display = 'none';
@@ -199,21 +201,6 @@ function colRenderFilterBar() {
 
     bar.appendChild(pill);
   });
-
-  /* Botão "Nova Coleção" no final da barra */
-  var btnNew = document.createElement('button');
-  btnNew.id        = 'colBtnNewCollection';
-  btnNew.className = 'btn-add';
-  btnNew.style.marginLeft = 'auto';
-  btnNew.innerHTML =
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14">' +
-      '<line x1="12" y1="5" x2="12" y2="19"/>' +
-      '<line x1="5" y1="12" x2="19" y2="12"/>' +
-    '</svg> Nova Coleção';
-  btnNew.addEventListener('click', function () {
-    if (typeof colOpenCreateModal === 'function') colOpenCreateModal();
-  });
-  bar.appendChild(btnNew);
 }
 
 
@@ -278,7 +265,7 @@ function colRenderGrid() {
         '<rect x="14" y="14" width="7" height="7" rx="1"/>' +
       '</svg>' +
       '<p>Nenhuma coleção' + (colState.activeGroup ? ' neste grupo' : '') + ' ainda.</p>' +
-      '<p class="col-empty-hint">Clique em "Nova Coleção" para começar.</p>';
+      '<p class="col-empty-hint">Clique em "+ Adicionar" para criar sua primeira coleção.</p>';
     grid.appendChild(empty);
     colUpdateStatsBar(0);
     return;
@@ -413,5 +400,10 @@ document.addEventListener('DOMContentLoaded', function () {
   colInjectTabBar();
   colCreateDashboard();
   colHookSearch();
-  /* Grid não é renderizado aqui — só quando a aba é aberta pela primeira vez */
+
+  /* Restaura a aba ativa — feito aqui pois o #colDashboard já existe */
+  try {
+    var savedTab = localStorage.getItem('senkolib_active_tab');
+    if (savedTab === 'colecoes') colSwitchTab('colecoes');
+  } catch(e) {}
 });
