@@ -5940,5 +5940,13 @@ ColLib.register({
 </style>  `,
     },
 
+    /*@@@@Col - comp-3-blocos-product-header-faq-embutido-e-tabela */
+    {
+      id:   'comp-3-blocos-product-header-faq-embutido-e-tabela',
+      name: 'comp 3 blocos, product header, FAQ embutido, e tabela',
+      html: ``,
+      css:  ``,
+    },
+
   ]
 });
