@@ -5,17 +5,40 @@
 
 var state = {
   search:             '',
-  current:            null,
   currentEdit:        null,
   currentForVariant:  null,
   currentEditVariant: null,
-  _fromVariant:       false,
-
+  _editFromVariant:   false,
 };
 
 /* ─── Utilitários ─────────────────────────────────── */
 function escapeHtml(str) {
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function escapeTemplateLiteral(value) {
+  return String(value || '')
+    .replace(/\\/g, '\\\\')
+    .replace(/`/g, '\\`')
+    .replace(/\$\{/g, '\\${');
+}
+
+function senkoSlugifyIdentifier(value) {
+  return String(value || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function senkoSyncIdentifierInput(inputId, force) {
+  var el = document.getElementById(inputId);
+  if (!el) return '';
+  var value = senkoSlugifyIdentifier(el.value);
+  if (force || document.activeElement === el) el.value = value;
+  return value;
 }
 
 function buildSrcDoc(html, css) {
@@ -281,12 +304,6 @@ function createCard(layout, index) {
     updateStatsBar(getFilteredLayouts().length);
   });
 
-  /* Editar */
-  var btnEdit = document.createElement('button');
-  btnEdit.className = 'btn btn-edit-icon';
-  btnEdit.title = 'Editar layout';
-  btnEdit.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>';
-  btnEdit.addEventListener('click', function (e) { e.stopPropagation(); openEditModal(layout); });
 
   /* Badge variantes */
   var variantCount = SenkoLib.getVariants(layout.id).length;
@@ -302,61 +319,47 @@ function createCard(layout, index) {
   }
   btnPlus.addEventListener('click', function (e) { e.stopPropagation(); openVariantsModal(layout); });
 
-  actions.append(btnH, btnC, btnFav, btnEdit, btnPlus);
-  card.addEventListener('click', function () { openModal(layout); });
+  actions.append(btnH, btnC, btnFav, btnPlus);
+  card.addEventListener('click', function () { openEditModal(layout); });
   card.append(preview, body, actions);
   return card;
 }
 
-/* ─── Modal visualizar ──────────────────────────────── */
-function openModal(layout) {
-  state.current = layout;
-  document.getElementById('modalTitle').textContent = layout.name;
-
-  var tagsEl = document.getElementById('modalTags');
-  tagsEl.innerHTML = '';
-  layout.tags.slice().filter(Boolean).sort(function(a,b){ return a.localeCompare(b,'pt-BR',{sensitivity:'base'}); }).forEach(function (t) {
-    var s = document.createElement('span'); s.className = 'tag'; s.textContent = t; tagsEl.appendChild(s);
-  });
-
-  document.getElementById('codeHtml').innerHTML = escapeHtml(layout.html);
-  document.getElementById('codeCss').innerHTML  = escapeHtml(layout.css);
-
-  document.querySelectorAll('#modal .tab-btn').forEach(function (b) { b.classList.remove('active'); });
-  document.querySelectorAll('#modal .code-panel').forEach(function (p) { p.classList.remove('active'); });
-  document.querySelector('#modal [data-tab="html"]').classList.add('active');
-  document.getElementById('panelHtml').classList.add('active');
-
-  document.getElementById('copyHtmlBtn').innerHTML = COPY_ICON + ' Copiar HTML';
-  document.getElementById('copyCssBtn').innerHTML  = COPY_ICON + ' Copiar CSS';
-  document.getElementById('copyHtmlBtn').classList.remove('copied');
-  document.getElementById('copyCssBtn').classList.remove('copied');
-
-  var overlay = document.getElementById('modalOverlay');
-  overlay.classList.remove('hidden');
+/* ─── Picker Adicionar ──────────────────────────────── */
+function openAdicionarPicker() {
+  _pickerSetTab('layout');
+  document.getElementById('pickerOverlay').classList.remove('hidden');
   document.body.style.overflow = 'hidden';
-  overlay.scrollTop = 0;
-
-  var iframeEl = document.getElementById('modalIframe');
-  iframeEl.srcdoc = '';
-  requestAnimationFrame(function () { iframeEl.srcdoc = buildSrcDoc(layout.html, layout.css); });
 }
 
-function closeModal() {
-  document.getElementById('modalOverlay').classList.add('hidden');
+function closeAdicionarPicker() {
+  document.getElementById('pickerOverlay').classList.add('hidden');
   document.body.style.overflow = '';
-  state.current = null;
-  if (state._fromVariant) {
-    state._fromVariant = false;
-    document.getElementById('variantsOverlay').classList.remove('hidden');
+}
+
+function _pickerSetTab(tab) {
+  var btnLayout  = document.getElementById('pickerTabLayout');
+  var btnColecao = document.getElementById('pickerTabColecao');
+  var title      = document.getElementById('pickerTitle');
+  if (!btnLayout || !btnColecao) return;
+  if (tab === 'layout') {
+    btnLayout.classList.add('active');
+    btnColecao.classList.remove('active');
+    if (title) title.textContent = 'Adicionar Layout';
+  } else {
+    btnColecao.classList.add('active');
+    btnLayout.classList.remove('active');
+    if (title) title.textContent = 'Nova Coleção';
   }
 }
 
 /* ─── Modal adicionar layout ────────────────────────── */
 function openAddModal() {
-  ['addId','addName','addTags','addHtml','addCss'].forEach(function (id) {
+  ['addName','addTags','addHtml','addCss'].forEach(function (id) {
     document.getElementById(id).value = '';
   });
+  document.getElementById('addId').readOnly = true;
+  document.getElementById('addId').value = '';
   document.getElementById('generatedCode').textContent = '// Preencha os campos acima para gerar o objeto…';
   document.getElementById('addPreviewIframe').srcdoc = '';
 
@@ -377,8 +380,9 @@ function closeAddModal() {
 }
 
 function updateGeneratedCode() {
-  var id      = document.getElementById('addId').value.trim().toLowerCase();
   var name    = document.getElementById('addName').value.trim();
+  var id      = senkoSlugifyIdentifier(name);
+  document.getElementById('addId').value = id;
   var tagsRaw = document.getElementById('addTags').value;
   var html    = document.getElementById('addHtml').value;
   var css     = document.getElementById('addCss').value;
@@ -387,21 +391,8 @@ function updateGeneratedCode() {
   var hintEl = document.getElementById('hintVariantPath');
   if (hintEl) hintEl.textContent = id || 'id';
 
-  /* Valida id: só letras, números e hífen — sem espaços ou caracteres especiais */
-  var idEl    = document.getElementById('addId');
-  var idValid = /^[a-z0-9-]+$/.test(id);
-  var idWarn  = document.getElementById('addIdWarn');
-  if (!idWarn && idEl) {
-    idWarn = document.createElement('span');
-    idWarn.id = 'addIdWarn';
-    idWarn.style.cssText = 'color:#ef4444;font-size:.75rem;font-weight:700;display:none;';
-    idWarn.textContent = '\u26a0 Use apenas letras minúsculas, números e hífen (sem espaços)';
-    idEl.parentNode.insertBefore(idWarn, idEl.nextSibling);
-  }
-  if (idWarn) idWarn.style.display = (id.length > 0 && !idValid) ? 'block' : 'none';
-
   var copyBtn = document.getElementById('copyGeneratedBtn');
-  var allFilled = id.length >= 3 && idValid && name.length >= 3 && html.length >= 3;
+  var allFilled = id.length >= 3 && name.length >= 3 && html.length >= 3;
   if (copyBtn) {
     if (allFilled) {
       copyBtn.classList.remove('btn-blocked');
@@ -416,8 +407,8 @@ function updateGeneratedCode() {
   }
 
   var tagsStr  = tags.map(function (t) { return "'" + t + "'"; }).join(', ');
-  var safeHtml = html.replace(/`/g, '\\`');
-  var safeCss  = css.replace(/`/g, '\\`');
+  var safeHtml = escapeTemplateLiteral(html);
+  var safeCss  = escapeTemplateLiteral(css);
 
   document.getElementById('generatedCode').textContent =
     '/*@@@@Senko - ' + id.toLowerCase() + ' */\n' +
@@ -547,11 +538,7 @@ function renderVariantBlocks(variants) {
     });
 
     /* Editar */
-    var bEdit = document.createElement('button');
-    bEdit.className = 'btn btn-edit-icon';
-    bEdit.title = 'Editar variante';
-    bEdit.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>';
-    bEdit.addEventListener('click', function (e) { e.stopPropagation(); openEditVariantModal(v); });
+
 
     /* Botão de excluir — mantido no DOM para os módulos GitHub, mas escondido visualmente */
     var bDel = document.createElement('button');
@@ -570,10 +557,16 @@ function renderVariantBlocks(variants) {
       }
     });
 
-    actions.append(bH, bC, bFav, bEdit, bDel);
+    actions.append(bH, bC, bFav, bDel);
     block.append(previewWrap, body, actions);
 
-    block.addEventListener('click', function () { openVariantPreview(v); });
+    block.addEventListener('click', function (e) {
+      /* Ignora cliques nos botões de ação */
+      if (e.target.closest('.variant-actions')) return;
+      document.getElementById('variantsOverlay').classList.add('hidden');
+      state._editFromVariant = true;
+      openEditModal(v);
+    });
 
     grid.appendChild(block);
   });
@@ -619,25 +612,12 @@ function closeNewVariantModal() {
 }
 
 function updateNewVarCode() {
-  var name      = document.getElementById('newVarName').value.trim().toLowerCase();
+  var name      = senkoSyncIdentifierInput('newVarName', true);
   var html      = document.getElementById('newVarHtml').value;
   var css       = document.getElementById('newVarCss').value;
   var copyBtn   = document.getElementById('newVarCopyBtn');
 
-  /* Validação ao vivo do nome */
-  var nameEl      = document.getElementById('newVarName');
-  var nameValid   = name.length === 0 || /^[a-z0-9\-.]+$/.test(name);
-  var nameWarn    = document.getElementById('newVarNameWarn');
-  if (!nameWarn && nameEl) {
-    nameWarn = document.createElement('span');
-    nameWarn.id = 'newVarNameWarn';
-    nameWarn.style.cssText = 'color:#ef4444;font-size:.75rem;font-weight:700;display:none;margin-top:.2rem;';
-    nameWarn.textContent = '\u26a0 Use apenas letras, números, hífen (-) e ponto (.)';
-    nameEl.parentNode.insertBefore(nameWarn, nameEl.nextSibling);
-  }
-  if (nameWarn) nameWarn.style.display = (name.length > 0 && !nameValid) ? 'block' : 'none';
-
-  var allOk = name.length >= 2 && nameValid;
+  var allOk = name.length >= 2;
   if (copyBtn) {
     if (!allOk) {
       copyBtn.classList.add('btn-blocked');
@@ -652,8 +632,8 @@ function updateNewVarCode() {
     return;
   }
 
-  var safeHtml = html.replace(/`/g, '\\`');
-  var safeCss  = css.replace(/`/g, '\\`');
+  var safeHtml = escapeTemplateLiteral(html);
+  var safeCss  = escapeTemplateLiteral(css);
 
   document.getElementById('newVarGeneratedCode').textContent =
     '/*@@@@Senko - ' + name + ' */\n' +
@@ -675,6 +655,7 @@ function openEditVariantModal(v) {
 
   document.getElementById('editVarParentName').textContent  = parentNm;
   document.getElementById('editVarName').value              = v.name || '';
+  senkoSyncIdentifierInput('editVarName', true);
   document.getElementById('editVarHtml').value              = v.html || '';
   document.getElementById('editVarCss').value               = v.css  || '';
 
@@ -736,32 +717,19 @@ function switchEditVarMode(mode) {
 }
 
 function updateEditVarCode() {
-  var name = document.getElementById('editVarName').value.trim().toLowerCase();
+  var name = senkoSyncIdentifierInput('editVarName', false);
   var html = document.getElementById('editVarHtml').value;
   var css  = document.getElementById('editVarCss').value;
 
-  /* Validação ao vivo do nome */
-  var nameEl    = document.getElementById('editVarName');
-  var nameValid = name.length === 0 || /^[a-z0-9\-.]+$/.test(name);
-  var nameWarn  = document.getElementById('editVarNameWarn');
-  if (!nameWarn && nameEl) {
-    nameWarn = document.createElement('span');
-    nameWarn.id = 'editVarNameWarn';
-    nameWarn.style.cssText = 'color:#ef4444;font-size:.75rem;font-weight:700;display:none;margin-top:.2rem;';
-    nameWarn.textContent = '\u26a0 Use apenas letras, números, hífen (-) e ponto (.)';
-    nameEl.parentNode.insertBefore(nameWarn, nameEl.nextSibling);
-  }
-  if (nameWarn) nameWarn.style.display = (name.length > 0 && !nameValid) ? 'block' : 'none';
-
   var copyBtn = document.getElementById('copyEditVarBtn');
-  var ok = name.length >= 2 && nameValid && html.length >= 1;
+  var ok = name.length >= 2 && html.length >= 1;
   if (copyBtn) {
     if (ok) copyBtn.classList.remove('btn-blocked');
     else    copyBtn.classList.add('btn-blocked');
   }
 
-  var safeHtml = html.replace(/`/g, '\\`');
-  var safeCss  = css.replace(/`/g, '\\`');
+  var safeHtml = escapeTemplateLiteral(html);
+  var safeCss  = escapeTemplateLiteral(css);
 
   var genCode = document.getElementById('editVarGeneratedCode');
   if (genCode) genCode.textContent =
@@ -778,43 +746,6 @@ function updateEditVarCode() {
    * (via senko-fsa-variants.js ou senko-github-variants.js).
    * Isso evita corromper dados se o usuário fechar o modal sem salvar.
    */
-}
-
-
-/* ─── Preview de variante (reutiliza modal visualizar) ── */
-function openVariantPreview(v) {
-  /* Fecha o modal de variantes temporariamente e abre o de visualização */
-  document.getElementById('variantsOverlay').classList.add('hidden');
-
-  document.getElementById('modalTitle').textContent = v.name || '';
-
-  var tagsEl = document.getElementById('modalTags');
-  tagsEl.innerHTML = '';
-
-  document.getElementById('codeHtml').innerHTML = escapeHtml(v.html);
-  document.getElementById('codeCss').innerHTML  = escapeHtml(v.css);
-
-  document.querySelectorAll('#modal .tab-btn').forEach(function (b) { b.classList.remove('active'); });
-  document.querySelectorAll('#modal .code-panel').forEach(function (p) { p.classList.remove('active'); });
-  document.querySelector('#modal [data-tab="html"]').classList.add('active');
-  document.getElementById('panelHtml').classList.add('active');
-
-  document.getElementById('copyHtmlBtn').innerHTML = COPY_ICON + ' Copiar HTML';
-  document.getElementById('copyCssBtn').innerHTML  = COPY_ICON + ' Copiar CSS';
-  document.getElementById('copyHtmlBtn').classList.remove('copied');
-  document.getElementById('copyCssBtn').classList.remove('copied');
-
-  /* ao fechar o modal de visualização, reabre o de variantes */
-  state._fromVariant = true;
-  state.current = { html: v.html, css: v.css };
-
-  var overlay = document.getElementById('modalOverlay');
-  overlay.classList.remove('hidden');
-  overlay.scrollTop = 0;
-
-  var iframeEl = document.getElementById('modalIframe');
-  iframeEl.srcdoc = '';
-  requestAnimationFrame(function () { iframeEl.srcdoc = buildSrcDoc(v.html, v.css); });
 }
 
 
@@ -871,6 +802,10 @@ function switchEditMode(mode) {
 
 function closeEditModal() {
   document.getElementById('editModalOverlay').classList.add('hidden');
+  if (state._editFromVariant) {
+    state._editFromVariant = false;
+    document.getElementById('variantsOverlay').classList.remove('hidden');
+  }
 }
 
 function updateEditCode() {
@@ -894,8 +829,8 @@ function updateEditCode() {
   }
 
   var tagsStr  = tags.map(function(t){ return "'" + t + "'"; }).join(', ');
-  var safeHtml = html.replace(/`/g, '\\`');
-  var safeCss  = css.replace(/`/g, '\\`');
+  var safeHtml = escapeTemplateLiteral(html);
+  var safeCss  = escapeTemplateLiteral(css);
 
   document.getElementById('editGeneratedCode').textContent =
     '/*@@@@Senko - ' + id + ' */\n' +
@@ -925,27 +860,20 @@ document.addEventListener('DOMContentLoaded', function () {
     renderGrid();
   });
 
-  /* Modal visualizar */
-  document.getElementById('modalClose').addEventListener('click', closeModal);
-  document.getElementById('modalOverlay').addEventListener('click', overlayClick('modal', closeModal));
-  document.getElementById('copyHtmlBtn').addEventListener('click', function () {
-    if (state.current) copyToClipboard(state.current.html, this, COPY_ICON + ' Copiar HTML');
-  });
-  document.getElementById('copyCssBtn').addEventListener('click', function () {
-    if (state.current) copyToClipboard(state.current.css, this, COPY_ICON + ' Copiar CSS');
-  });
-  document.querySelectorAll('#modal .tab-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var tab = this.dataset.tab;
-      document.querySelectorAll('#modal .tab-btn').forEach(function (b) { b.classList.remove('active'); });
-      document.querySelectorAll('#modal .code-panel').forEach(function (p) { p.classList.remove('active'); });
-      this.classList.add('active');
-      document.getElementById('panel' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.add('active');
-    });
-  });
-
   /* Modal adicionar */
-  document.getElementById('openAddModal').addEventListener('click', openAddModal);
+  document.getElementById('openAddModal').addEventListener('click', openAdicionarPicker);
+  document.getElementById('pickerClose').addEventListener('click', closeAdicionarPicker);
+  document.getElementById('pickerOverlay').addEventListener('click', function (e) {
+    if (e.target === document.getElementById('pickerOverlay')) closeAdicionarPicker();
+  });
+  document.getElementById('pickerTabLayout').addEventListener('click', function () {
+    closeAdicionarPicker();
+    openAddModal();
+  });
+  document.getElementById('pickerTabColecao').addEventListener('click', function () {
+    closeAdicionarPicker();
+    if (typeof colOpenCreateModal === 'function') colOpenCreateModal();
+  });
   document.getElementById('addModalClose').addEventListener('click', closeAddModal);
   document.getElementById('addModalOverlay').addEventListener('click', overlayClick('addModal', closeAddModal));
   document.querySelectorAll('.add-tab').forEach(function (btn) {
@@ -1021,19 +949,19 @@ document.addEventListener('DOMContentLoaded', function () {
       updateEditCode();
     });
   });
-  ['editId','editName','editTags','editHtml','editCss'].forEach(function (id) {
+  ['editName','editTags','editHtml','editCss'].forEach(function (id) {
     document.getElementById(id).addEventListener('input', updateEditCode);
   });
 
   /* Escape */
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
-    if (!document.getElementById('editVarOverlay').classList.contains('hidden'))         closeEditVariantModal();
+    if (!document.getElementById('pickerOverlay').classList.contains('hidden'))          closeAdicionarPicker();
+    else if (!document.getElementById('editVarOverlay').classList.contains('hidden'))    closeEditVariantModal();
     else if (!document.getElementById('newVarOverlay').classList.contains('hidden'))     closeNewVariantModal();
     else if (!document.getElementById('variantsOverlay').classList.contains('hidden'))   closeVariantsModal();
     else if (!document.getElementById('editModalOverlay').classList.contains('hidden'))  closeEditModal();
     else if (!document.getElementById('addModalOverlay').classList.contains('hidden'))   closeAddModal();
-    else closeModal();
   });
 
 });

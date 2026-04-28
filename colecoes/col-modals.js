@@ -95,19 +95,36 @@ function colCloseAllModals() {
 
 /* Gera slug a partir do nome */
 function _colSlugify(name) {
+  if (typeof senkoSlugifyIdentifier === 'function') {
+    return senkoSlugifyIdentifier(name);
+  }
   if (typeof ColGroups !== 'undefined' && typeof ColGroups.slugify === 'function') {
     return ColGroups.slugify(name);
   }
   return (name || '')
     .toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9\s-]/g, '').trim()
-    .replace(/\s+/g, '-').replace(/-+/g, '-');
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
 }
 
 /* Valida slug: só letras minúsculas, números e hífen */
 function _colValidSlug(slug) {
   return /^[a-z0-9-]+$/.test(slug) && slug.length >= 2;
+}
+
+function _colSyncGeneratedId(nameId, targetId, previewId) {
+  var nameEl = document.getElementById(nameId);
+  var target = document.getElementById(targetId);
+  if (!nameEl || !target) return '';
+  var slug = _colSlugify(nameEl.value);
+  target.value = slug;
+  if (previewId) {
+    var preview = document.getElementById(previewId);
+    if (preview) preview.textContent = slug || 'slug';
+  }
+  return slug;
 }
 
 /* Preview de iframe — limpa e recarrega */
@@ -265,48 +282,24 @@ function _colRenderLayoutsGrid(col) {
 
     var COPY_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>';
 
-    var bH = document.createElement('button');
-    bH.className = 'btn btn-ghost';
-    bH.innerHTML = COPY_ICON + ' HTML';
-    bH.addEventListener('click', function (e) {
+    var bAll = document.createElement('button');
+    bAll.className = 'btn btn-ghost';
+    bAll.innerHTML = COPY_ICON + ' Copiar tudo';
+    bAll.addEventListener('click', function (e) {
       e.stopPropagation();
-      if (typeof copyToClipboard === 'function') copyToClipboard(layout.html || '', bH, COPY_ICON + ' HTML');
+      var tudo = (layout.css ? layout.css + '\n' : '') + (layout.html || '');
+      if (typeof copyToClipboard === 'function') copyToClipboard(tudo, bAll, COPY_ICON + ' Copiar tudo');
     });
 
-    var bC = document.createElement('button');
-    bC.className = 'btn btn-ghost';
-    bC.innerHTML = COPY_ICON + ' CSS';
-    bC.addEventListener('click', function (e) {
-      e.stopPropagation();
-      if (typeof copyToClipboard === 'function') copyToClipboard(layout.css || '', bC, COPY_ICON + ' CSS');
-    });
-
-    var bEdit = document.createElement('button');
-    bEdit.className = 'btn btn-edit-icon';
-    bEdit.title = 'Editar layout';
-    bEdit.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>';
-    bEdit.addEventListener('click', function (e) {
-      e.stopPropagation();
-      colOpenEditLayoutModal(_colCurrentCollection, layout);
-    });
-
-    /* Âncora de delete — senko-github-col.js injeta botão aqui */
-    var delAnchor = document.createElement('span');
-    delAnchor.className = 'col-layout-delete-anchor';
-    delAnchor.dataset.layoutId = layout.id || '';
-
-    footer.appendChild(bH);
-    footer.appendChild(bC);
-    footer.appendChild(bEdit);
-    footer.appendChild(delAnchor);
+    footer.appendChild(bAll);
 
     block.appendChild(previewWrap);
     block.appendChild(body);
     block.appendChild(footer);
 
-    /* Clique no bloco abre preview ampliado (placeholder — futura implementação) */
+    /* Clique no bloco abre a edição do layout */
     block.addEventListener('click', function () {
-      /* Por ora, não faz nada ao clicar no bloco — ações ficam nos botões */
+      colOpenEditLayoutModal(_colCurrentCollection, layout);
     });
 
     grid.appendChild(block);
@@ -357,10 +350,9 @@ function _colBuildCreateModal() {
 
         /* Slug */
         '<div class="col-field">' +
-          '<label>Slug <span class="req">*</span></label>' +
-          '<input type="text" id="colCreateSlug" placeholder="ex: kit-lancamento-2026" />' +
-          '<span class="col-field-hint">Identificador único e imutável. Vira o nome do arquivo: <code>colecoes/data/<span id="colCreateSlugPreview">slug</span>.js</code></span>' +
-          '<span class="col-field-error" id="colCreateSlugErr">⚠ Use apenas letras minúsculas, números e hífen</span>' +
+          '<label>Slug gerado</label>' +
+          '<input type="text" id="colCreateSlug" placeholder="gerado pelo nome" readonly />' +
+          '<span class="col-field-hint">Gerado automaticamente a partir do nome. Vira o arquivo: <code>colecoes/data/<span id="colCreateSlugPreview">slug</span>.js</code></span>' +
         '</div>' +
 
         /* Grupo */
@@ -391,18 +383,10 @@ function _colBuildCreateModal() {
     '</div>';
 
   var nameInput = document.getElementById('colCreateName');
-  var slugInput = document.getElementById('colCreateSlug');
 
   /* Auto-gera slug a partir do nome */
   nameInput.addEventListener('input', function () {
-    var slug = _colSlugify(this.value);
-    slugInput.value = slug;
-    document.getElementById('colCreateSlugPreview').textContent = slug || 'slug';
-    _colValidateCreateForm();
-  });
-
-  slugInput.addEventListener('input', function () {
-    document.getElementById('colCreateSlugPreview').textContent = this.value || 'slug';
+    _colSyncGeneratedId('colCreateName', 'colCreateSlug', 'colCreateSlugPreview');
     _colValidateCreateForm();
   });
 
@@ -435,7 +419,7 @@ function colOpenCreateModal() {
   _colPopulateGroupSelect(document.getElementById('colCreateGroup'), null);
 
   /* Esconde erros */
-  ['colCreateNameErr', 'colCreateSlugErr', 'colCreateGroupErr'].forEach(function (id) {
+  ['colCreateNameErr', 'colCreateGroupErr'].forEach(function (id) {
     document.getElementById(id).style.display = 'none';
   });
 
@@ -451,7 +435,7 @@ function colCloseCreateModal() {
 
 function _colValidateCreateForm() {
   var name  = (document.getElementById('colCreateName')  || {}).value || '';
-  var slug  = (document.getElementById('colCreateSlug')  || {}).value || '';
+  var slug  = _colSyncGeneratedId('colCreateName', 'colCreateSlug', 'colCreateSlugPreview');
   var group = (document.getElementById('colCreateGroup') || {}).value || '';
 
   var nameOk  = name.trim().length >= 3;
@@ -459,7 +443,6 @@ function _colValidateCreateForm() {
   var groupOk = !!group;
 
   _colShowFieldError('colCreateNameErr',  !nameOk  && name.length > 0);
-  _colShowFieldError('colCreateSlugErr',  !slugOk  && slug.length > 0);
   _colShowFieldError('colCreateGroupErr', false); /* só mostra no submit */
 
   return nameOk && slugOk && groupOk;
@@ -473,7 +456,7 @@ function _colShowFieldError(id, show) {
 /* Lê os dados do formulário de criação — usado pelo módulo GitHub */
 function colGetCreateFormData() {
   var name  = (document.getElementById('colCreateName')  || {}).value || '';
-  var slug  = (document.getElementById('colCreateSlug')  || {}).value || '';
+  var slug  = _colSyncGeneratedId('colCreateName', 'colCreateSlug', 'colCreateSlugPreview');
   var group = (document.getElementById('colCreateGroup') || {}).value || '';
   var tags  = ((document.getElementById('colCreateTags') || {}).value || '')
     .split(',').map(function (t) { return t.trim(); }).filter(Boolean);
@@ -482,7 +465,6 @@ function colGetCreateFormData() {
   var ok = name.trim().length >= 3 && _colValidSlug(slug.trim()) && !!group;
   if (!ok) {
     _colShowFieldError('colCreateNameErr',  name.trim().length < 3);
-    _colShowFieldError('colCreateSlugErr',  !_colValidSlug(slug.trim()));
     _colShowFieldError('colCreateGroupErr', !group);
   }
   return ok ? { name: name.trim(), slug: slug.trim(), group: group, tags: tags } : null;
@@ -536,6 +518,7 @@ function _colBuildEditModal() {
       '</div>' +
 
       '<div class="col-form-footer">' +
+        '<span id="colEditDeleteAnchor"></span>' +
         '<span id="colEditGhAnchor" style="display:none;"></span>' +
         '<button class="col-btn-cancel" id="colEditCancel">Cancelar</button>' +
       '</div>' +
@@ -750,9 +733,9 @@ function _colBuildAddLayoutModal() {
       '<div class="col-form-body" style="padding-bottom:0;flex-shrink:0;">' +
         '<div class="col-field-row">' +
           '<div class="col-field">' +
-            '<label>ID <span class="req">*</span></label>' +
-            '<input type="text" id="colAddLayoutId" placeholder="ex: hero-principal" />' +
-            '<span class="col-field-error" id="colAddLayoutIdErr">⚠ Use apenas letras minúsculas, números e hífen</span>' +
+            '<label>ID gerado</label>' +
+            '<input type="text" id="colAddLayoutId" placeholder="gerado pelo nome" readonly />' +
+            '<span class="col-field-hint">Gerado automaticamente a partir do nome.</span>' +
           '</div>' +
           '<div class="col-field">' +
             '<label>Nome <span class="req">*</span></label>' +
@@ -762,19 +745,15 @@ function _colBuildAddLayoutModal() {
         '</div>' +
       '</div>' +
 
-      /* Editor HTML/CSS/Preview */
+      /* Editor Conteúdo/Preview */
       '<div class="col-edit-mode-bar">' +
-        '<button class="col-edit-mode-btn active" data-colmode="html">HTML</button>' +
-        '<button class="col-edit-mode-btn" data-colmode="css">CSS</button>' +
+        '<button class="col-edit-mode-btn active" data-colmode="content">Conteúdo</button>' +
         '<button class="col-edit-mode-btn" data-colmode="preview">Preview</button>' +
       '</div>' +
 
       '<div class="col-edit-main">' +
-        '<div class="col-edit-panel active" id="colAddPanelHtml">' +
-          '<textarea class="col-edit-textarea" id="colAddLayoutHtml" placeholder="Cole o HTML do layout aqui…"></textarea>' +
-        '</div>' +
-        '<div class="col-edit-panel" id="colAddPanelCss">' +
-          '<textarea class="col-edit-textarea" id="colAddLayoutCss" placeholder="Cole o CSS do layout aqui…"></textarea>' +
+        '<div class="col-edit-panel active" id="colAddPanelContent">' +
+          '<textarea class="col-edit-textarea" id="colAddLayoutContent" placeholder="Cole o conteúdo do layout aqui…"></textarea>' +
         '</div>' +
         '<div class="col-edit-panel" id="colAddPanelPreview">' +
           '<iframe class="col-edit-iframe" id="colAddLayoutPreview" sandbox="allow-scripts"></iframe>' +
@@ -788,27 +767,26 @@ function _colBuildAddLayoutModal() {
 
     '</div>';
 
-  /* Troca de modo HTML/CSS/Preview */
+  /* Troca de modo Conteúdo/Preview */
   document.querySelectorAll('#colAddLayoutModal .col-edit-mode-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
       document.querySelectorAll('#colAddLayoutModal .col-edit-mode-btn').forEach(function (b) { b.classList.remove('active'); });
       document.querySelectorAll('#colAddLayoutModal .col-edit-panel').forEach(function (p) { p.classList.remove('active'); });
       this.classList.add('active');
       var mode = this.dataset.colmode;
-      var panels = { html: 'colAddPanelHtml', css: 'colAddPanelCss', preview: 'colAddPanelPreview' };
+      var panels = { content: 'colAddPanelContent', preview: 'colAddPanelPreview' };
       document.getElementById(panels[mode]).classList.add('active');
       if (mode === 'preview') {
         _colRefreshPreview('colAddLayoutPreview',
-          document.getElementById('colAddLayoutHtml').value,
-          document.getElementById('colAddLayoutCss').value);
+          document.getElementById('colAddLayoutContent').value,
+          '');
       }
     });
   });
 
-  /* Validação inline de ID */
-  document.getElementById('colAddLayoutId').addEventListener('input', function () {
-    var id = this.value.trim();
-    _colShowFieldError('colAddLayoutIdErr', id.length > 0 && !_colValidSlug(id));
+  document.getElementById('colAddLayoutName').addEventListener('input', function () {
+    _colSyncGeneratedId('colAddLayoutName', 'colAddLayoutId');
+    _colShowFieldError('colAddLayoutNameErr', this.value.trim().length < 1 && this.value.length > 0);
   });
 
   document.getElementById('colAddLayoutClose').addEventListener('click', colCloseAddLayoutModal);
@@ -823,18 +801,18 @@ function colOpenAddLayoutModal(col) {
   var catEl = document.getElementById('colAddLayoutParentName');
   if (catEl) catEl.textContent = 'em: ' + (col ? col.name : '');
 
-  ['colAddLayoutId', 'colAddLayoutName', 'colAddLayoutHtml', 'colAddLayoutCss'].forEach(function (id) {
+  ['colAddLayoutId', 'colAddLayoutName', 'colAddLayoutContent'].forEach(function (id) {
     document.getElementById(id).value = '';
   });
-  ['colAddLayoutIdErr', 'colAddLayoutNameErr'].forEach(function (id) {
+  ['colAddLayoutNameErr'].forEach(function (id) {
     document.getElementById(id).style.display = 'none';
   });
 
-  /* Volta para aba HTML */
+  /* Volta para aba Conteúdo */
   document.querySelectorAll('#colAddLayoutModal .col-edit-mode-btn').forEach(function (b) { b.classList.remove('active'); });
   document.querySelectorAll('#colAddLayoutModal .col-edit-panel').forEach(function (p) { p.classList.remove('active'); });
-  document.querySelector('[data-colmode="html"]').classList.add('active');
-  document.getElementById('colAddPanelHtml').classList.add('active');
+  document.querySelector('[data-colmode="content"]').classList.add('active');
+  document.getElementById('colAddPanelContent').classList.add('active');
   document.getElementById('colAddLayoutPreview').srcdoc = '';
 
   _colShowOverlay('colAddLayoutOverlay');
@@ -849,18 +827,15 @@ function colCloseAddLayoutModal() {
 
 /* Lê dados do formulário de novo layout — usado pelo módulo GitHub */
 function colGetAddLayoutFormData() {
-  var id   = (document.getElementById('colAddLayoutId')   || {}).value || '';
-  var name = (document.getElementById('colAddLayoutName') || {}).value || '';
-  var html = (document.getElementById('colAddLayoutHtml') || {}).value || '';
-  var css  = (document.getElementById('colAddLayoutCss')  || {}).value || '';
+  var name    = (document.getElementById('colAddLayoutName')    || {}).value || '';
+  var id      = _colSyncGeneratedId('colAddLayoutName', 'colAddLayoutId');
+  var content = (document.getElementById('colAddLayoutContent') || {}).value || '';
 
-  id = id.trim().toLowerCase();
   var ok = _colValidSlug(id) && name.trim().length >= 1;
   if (!ok) {
-    _colShowFieldError('colAddLayoutIdErr',   !_colValidSlug(id));
     _colShowFieldError('colAddLayoutNameErr', name.trim().length < 1);
   }
-  return ok ? { id: id, name: name.trim(), html: html, css: css } : null;
+  return ok ? { id: id, name: name.trim(), html: content, css: '' } : null;
 }
 
 
@@ -898,17 +873,13 @@ function _colBuildEditLayoutModal() {
       '</div>' +
 
       '<div class="col-edit-mode-bar">' +
-        '<button class="col-edit-mode-btn" data-coleditmode="html">HTML</button>' +
-        '<button class="col-edit-mode-btn" data-coleditmode="css">CSS</button>' +
+        '<button class="col-edit-mode-btn" data-coleditmode="content">Conteúdo</button>' +
         '<button class="col-edit-mode-btn active" data-coleditmode="preview">Visualizar</button>' +
       '</div>' +
 
       '<div class="col-edit-main">' +
-        '<div class="col-edit-panel" id="colEditPanelHtml">' +
-          '<textarea class="col-edit-textarea" id="colEditLayoutHtml" placeholder="HTML do layout…"></textarea>' +
-        '</div>' +
-        '<div class="col-edit-panel" id="colEditPanelCss">' +
-          '<textarea class="col-edit-textarea" id="colEditLayoutCss" placeholder="CSS do layout…"></textarea>' +
+        '<div class="col-edit-panel" id="colEditPanelContent">' +
+          '<textarea class="col-edit-textarea" id="colEditLayoutContent" placeholder="Conteúdo do layout…"></textarea>' +
         '</div>' +
         '<div class="col-edit-panel active" id="colEditPanelPreview">' +
           '<iframe class="col-edit-iframe" id="colEditLayoutPreview" sandbox="allow-scripts"></iframe>' +
@@ -916,7 +887,7 @@ function _colBuildEditLayoutModal() {
       '</div>' +
 
       '<div class="col-form-footer">' +
-        '<span id="colEditLayoutDelAnchor" style="display:none;"></span>' +
+        '<span id="colEditLayoutDelAnchor"></span>' +
         '<button class="col-btn-cancel" id="colEditLayoutCancel">Cancelar</button>' +
       '</div>' +
 
@@ -929,12 +900,12 @@ function _colBuildEditLayoutModal() {
       document.querySelectorAll('#colEditLayoutModal .col-edit-panel').forEach(function (p) { p.classList.remove('active'); });
       this.classList.add('active');
       var mode = this.dataset.coleditmode;
-      var panels = { html: 'colEditPanelHtml', css: 'colEditPanelCss', preview: 'colEditPanelPreview' };
+      var panels = { content: 'colEditPanelContent', preview: 'colEditPanelPreview' };
       document.getElementById(panels[mode]).classList.add('active');
       if (mode === 'preview') {
         _colRefreshPreview('colEditLayoutPreview',
-          document.getElementById('colEditLayoutHtml').value,
-          document.getElementById('colEditLayoutCss').value);
+          document.getElementById('colEditLayoutContent').value,
+          '');
       }
     });
   });
@@ -950,10 +921,11 @@ function colOpenEditLayoutModal(col, layout) {
   _colCurrentLayout     = layout;
 
   document.getElementById('colEditLayoutTitle').textContent = layout.name || '';
-  document.getElementById('colEditLayoutId').value    = layout.id   || '';
-  document.getElementById('colEditLayoutName').value  = layout.name || '';
-  document.getElementById('colEditLayoutHtml').value  = layout.html || '';
-  document.getElementById('colEditLayoutCss').value   = layout.css  || '';
+  document.getElementById('colEditLayoutId').value      = layout.id   || '';
+  document.getElementById('colEditLayoutName').value    = layout.name || '';
+  /* Mescla css legado + html no campo único (layouts novos terão css vazio) */
+  var mergedContent = (layout.css ? layout.css + '\n' : '') + (layout.html || '');
+  document.getElementById('colEditLayoutContent').value = mergedContent;
   document.getElementById('colEditLayoutNameErr').style.display = 'none';
 
   /* Começa no Preview */
@@ -962,7 +934,7 @@ function colOpenEditLayoutModal(col, layout) {
   document.querySelector('[data-coleditmode="preview"]').classList.add('active');
   document.getElementById('colEditPanelPreview').classList.add('active');
 
-  _colRefreshPreview('colEditLayoutPreview', layout.html || '', layout.css || '');
+  _colRefreshPreview('colEditLayoutPreview', mergedContent, '');
 
   _colShowOverlay('colEditLayoutOverlay');
 }
@@ -977,14 +949,13 @@ function colCloseEditLayoutModal() {
 
 /* Lê dados do formulário de edição de layout — usado pelo módulo GitHub */
 function colGetEditLayoutFormData() {
-  var id   = (document.getElementById('colEditLayoutId')   || {}).value || '';
-  var name = (document.getElementById('colEditLayoutName') || {}).value || '';
-  var html = (document.getElementById('colEditLayoutHtml') || {}).value || '';
-  var css  = (document.getElementById('colEditLayoutCss')  || {}).value || '';
+  var id      = (document.getElementById('colEditLayoutId')      || {}).value || '';
+  var name    = (document.getElementById('colEditLayoutName')    || {}).value || '';
+  var content = (document.getElementById('colEditLayoutContent') || {}).value || '';
 
   var ok = name.trim().length >= 1;
   if (!ok) _colShowFieldError('colEditLayoutNameErr', true);
-  return ok ? { id: id, name: name.trim(), html: html, css: css } : null;
+  return ok ? { id: id, name: name.trim(), html: content, css: '' } : null;
 }
 
 
