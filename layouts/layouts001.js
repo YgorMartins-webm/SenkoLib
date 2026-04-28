@@ -1,19 +1,19 @@
 // @ts-nocheck
 
- /*  layouts001.js — Primeiro pacote de layouts do SenkoLib
+/*  layouts001.js — Primeiro pacote de layouts do SenkoLib
 
-   RESPONSABILIDADE:
-     Registra o array principal de layouts via SenkoLib.register().
-     Cada objeto representa um bloco HTML/CSS reutilizável.
+  RESPONSABILIDADE:
+    Registra o array principal de layouts via SenkoLib.register().
+    Cada objeto representa um bloco HTML/CSS reutilizável.
 
-   ESTRUTURA DE CADA LAYOUT:
-     {
-       id:   'section-X',         // identificador único (minúsculo)
-       name: 'Section-X (...)',   // nome de exibição
-       tags: ['tag1', 'tag2'],    // palavras-chave para busca
-       html: `...`,               // HTML do layout
-       css:  `...`,               // CSS do layout
-     }
+  ESTRUTURA DE CADA LAYOUT:
+    {
+      id:   'section-X',         // identificador único (minúsculo)
+      name: 'Section-X (...)',   // nome de exibição
+      tags: ['tag1', 'tag2'],    // palavras-chave para busca
+      html: `...`,               // HTML do layout
+      css:  `...`,               // CSS do layout
+    }
 
 //  MARCADORES:
 //   Cada objeto é precedido por  /*@@@@Senko - [id] */
@@ -437,9 +437,9 @@ SenkoLib.register([
 </style>`
   },
 
-  
-  
-  
+
+
+
   /*@@@@Senko - section 39.3 (caderno) */
   /* variantes: variants/section 39.3 (caderno).js */
   {
@@ -555,7 +555,7 @@ SenkoLib.register([
     html: `<div class="bookcontainer3">
   <div class="book3">
     <div class="bookfront3">
-      <div class="bookcover3 frontcover3"
+      <div class="bookcover3 frontcover3" 
         style="background-image: url('https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao39.2.png')">
       </div>
     </div>
@@ -708,7 +708,7 @@ SenkoLib.register([
     html: `      <div class="section-46-y reverse-46 ">
         <!--    AQUI É POSSIVEL TROCAR SE A IMAGEM FICA EM CIMA OU EM BAIXO TIRANDO A CLASSE "TROCAR-ORDEM-730PX"-->
         <div class="section-46-y-img trocar-ordem-730px">
-          <img
+          <img loading="lazy"
             src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao4.jpg"
             alt="Imagem representativa do do produto">
         </div>
@@ -1467,7 +1467,7 @@ SenkoLib.register([
     html: `  <div class="section-33__container">
     <section class="section-33__mov-section" aria-label="Seção de destaque em vídeo">
       <figure class="section-33__mov-figure">
-        <video class="section-33__mov-figure__video"
+        <video class="section-33__mov-figure__video" loading="lazy"
           src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/metalfrio/2223537_video2.mov"
           autoplay muted loop playsinline style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
           aria-label="Vídeo de destaque do produto">
@@ -1631,7 +1631,7 @@ SenkoLib.register([
     }`
   },
 
-  
+
   /*@@@@Senko - section 39.1 (caderno) */
   /* variantes: variants/section 39.1 (caderno).js */
   {
@@ -1790,12 +1790,12 @@ SenkoLib.register([
 </style>`
   },
 
-  
 
 
 
 
-/*@@@@Senko - section-6 */
+
+  /*@@@@Senko - section-6 */
   /* variantes: variants/section-6.js */
   {
     id: 'section-6',
@@ -1809,7 +1809,7 @@ SenkoLib.register([
         <img class="section-6__image"
           src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/section-49-1.png"
           alt="Caderno Funny Cat com estampa de gatinhos, capa colorida e espiral" width="1600" height="650"
-          loading="eager" fetchpriority="high" decoding="async">
+          loading="lazy" fetchpriority="high" decoding="async">
       </picture>
       <div class="section-6__content">
         <h1 class="section-6__title">Caderno Funny Cat</h1>
@@ -1930,7 +1930,7 @@ SenkoLib.register([
 
 
 
-/*@@@@Senko - section-7 */
+  /*@@@@Senko - section-7 */
   /* variantes: variants/section-7.js */
   {
     id: 'section-7',
@@ -1939,23 +1939,23 @@ SenkoLib.register([
     html: `<section class="section-7__banner" style="--d1:0.1; --d2:0.7; --d3:0.3; --d4:0.5; --d5:0.2;"
   aria-label="Banner promocional">
   <!-- Falling items (decorativos, aria-hidden) -->
-  <img class="section-7__falling-item"
+  <img class="section-7__falling-item" loading="lazy"
     src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/logo-efacil.png"
     width="200" height="200" aria-hidden="true" alt="">
-  <img class="section-7__falling-item"
+  <img class="section-7__falling-item" loading="lazy"
     src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/logo-efacil.png"
     width="200" height="200" aria-hidden="true" alt="">
-  <img class="section-7__falling-item"
+  <img class="section-7__falling-item" loading="lazy"
     src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/logo-efacil.png"
     width="200" height="200" aria-hidden="true" alt="">
-  <img class="section-7__falling-item"
+  <img class="section-7__falling-item" loading="lazy"
     src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/logo-efacil.png"
     width="200" height="200" aria-hidden="true" alt="">
-  <img class="section-7__falling-item"
+  <img class="section-7__falling-item" loading="lazy"
     src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/logo-efacil.png"
     width="200" height="200" aria-hidden="true" alt="">
   <!-- Imagem de fundo -->
-  <img class="section-7__banner-image"
+  <img class="section-7__banner-image" loading="lazy"
     src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao32.jpg"
     width="1600" height="865" alt="Produto em destaque — qualidade, praticidade e estilo no dia a dia">
   <!-- Overlay de texto -->
@@ -2223,7 +2223,7 @@ SenkoLib.register([
   },
 
 
-/*@@@@Senko - section-9 */
+  /*@@@@Senko - section-9 */
   /* variantes: variants/section-9.js */
   {
     id: 'section-9',
@@ -2423,7 +2423,7 @@ SenkoLib.register([
   },
 
 
-/*@@@@Senko - section-8 */
+  /*@@@@Senko - section-8 */
   /* variantes: variants/section-8.js */
   {
     id: 'section-8',
@@ -2616,7 +2616,7 @@ SenkoLib.register([
 
 
 
-/*@@@@Senko - section-100 */
+  /*@@@@Senko - section-100 */
   /* variantes: variants/section-100.js */
   {
     id: 'section-100',
@@ -2631,7 +2631,7 @@ SenkoLib.register([
                     Ao escolher um condutor que une a máxima segurança contra incêndios, a eficiência energética para seus equipamentos de alta potência e a flexibilidade necessária para uma instalação ágil, você garante a proteção do seu patrimônio e a tranquilidade de saber que sua estrutura elétrica foi feita para durar uma vida inteira, sem surpresas na conta de luz ou a necessidade de reformas precoces
                 </p>
             </div>
-            <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao4.jpg" alt="Eletricista com capacete branco e colete laranja em obra garantindo qualidade e segurança Corfio" class="pdp-row-product-image" />
+            <img loading="lazy" src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao4.jpg" alt="Eletricista com capacete branco e colete laranja em obra garantindo qualidade e segurança Corfio" class="pdp-row-product-image" />
         </div>`,
     css: `    <style>
         .pdp-row-product {
@@ -2808,7 +2808,7 @@ SenkoLib.register([
   },
 
 
-/*@@@@Senko - section-11 */
+  /*@@@@Senko - section-11 */
   /* variantes: variants/section-11.js */
   {
     id: 'section-11',
@@ -2953,7 +2953,7 @@ SenkoLib.register([
   },
 
 
-/*@@@@Senko - section-12 */
+  /*@@@@Senko - section-12 */
   /* variantes: variants/section-12.js */
   {
     id: 'section-12',
@@ -2962,7 +2962,7 @@ SenkoLib.register([
     html: `    <section class="section-12-container">
       <figure class="section-12 section-12--minimal" aria-label="Comparador antes e depois minimalista">
         <div class="section-12__wrapper" role="img" aria-label="Animação comparando antes e depois">
-          <img class="section-12__image-after"
+          <img class="section-12__image-after" 
             src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/philco/smart-tv-philco-4k-uhd-tecnologia-hdr10-otimizada-01577-22-11928-10.png"
             alt="Tecnologia HDR10 e 4K UHD em Smart TV Philco proporcionando brilho e nitidez superior" loading="lazy"
             decoding="async" />
@@ -3114,7 +3114,7 @@ SenkoLib.register([
   },
 
 
-/*@@@@Senko - section-13 */
+  /*@@@@Senko - section-13 */
   /* variantes: variants/section-13.js */
   {
     id: 'section-13',
@@ -3127,7 +3127,7 @@ SenkoLib.register([
             <div class="section-13__notch" aria-hidden="true"></div>
             <!-- Tela -->
             <div class="section-13__screen">
-              <video class="section-13__video" src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/risque/Lollapalooza.mov" autoplay muted loop playsinline
+              <video class="section-13__video" src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/risque/Lollapalooza.mov" autoplay muted loop playsinline loading="lazy"
                 aria-label="Demonstração em vídeo do produto"></video>
             </div>
           </div>
@@ -3300,7 +3300,7 @@ SenkoLib.register([
   },
 
 
-/*@@@@Senko - section-14 */
+  /*@@@@Senko - section-14 */
   /* variantes: variants/section-14.js */
   {
     id: 'section-14',
@@ -3323,7 +3323,7 @@ SenkoLib.register([
       <div class="section-14__column section-14__column--left">
         <article class="section-14__feature">
           <img
-            class="section-14__icon"
+            class="section-14__icon" loading="lazy"
             src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/check2.png"
             width="56" height="56"
             alt="Ícone de confirmação representando a característica 1"
@@ -3604,7 +3604,7 @@ SenkoLib.register([
   },
 
 
-/*@@@@Senko - section-15 */
+  /*@@@@Senko - section-15 */
   /* variantes: variants/section-15.js */
   {
     id: 'section-15',
@@ -3626,7 +3626,7 @@ SenkoLib.register([
             <!-- ══ FIM TÍTULO + DESCRIÇÃO ══ -->
             <ul class="section-15__feature-list" aria-label="Benefícios do produto">
                 <li class="section-15__feature-item">
-                    <img class="section-15__feature-item-icon" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2-1.png"
+                    <img class="section-15__feature-item-icon" loading="lazy" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2-1.png"
                         alt="Ícone" />
                     <div class="section-15__feature-item-body">
                         <strong class="section-15__feature-item-title">Manhãs Sem Pausa</strong>
@@ -3635,7 +3635,7 @@ SenkoLib.register([
                     </div>
                 </li>
                 <li class="section-15__feature-item">
-                    <img class="section-15__feature-item-icon" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2-2.png"
+                    <img class="section-15__feature-item-icon" loading="lazy" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2-2.png"
                         alt="Ícone" />
                     <div class="section-15__feature-item-body">
                         <strong class="section-15__feature-item-title">Receitas de uma Só Vez</strong>
@@ -3644,7 +3644,7 @@ SenkoLib.register([
                     </div>
                 </li>
                 <li class="section-15__feature-item">
-                    <img class="section-15__feature-item-icon" src="C:\\Users\\ygorq\Downloads\\2222455_03-2-3.png"
+                    <img class="section-15__feature-item-icon" loading="lazy" src="C:\\Users\\ygorq\Downloads\\2222455_03-2-3.png"
                         alt="Ícone" />
                     <div class="section-15__feature-item-body">
                         <strong class="section-15__feature-item-title">Cozinha Sempre Organizada</strong>
@@ -3653,7 +3653,7 @@ SenkoLib.register([
                     </div>
                 </li>
                 <li class="section-15__feature-item">
-                    <img class="section-15__feature-item-icon" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2-4.png"
+                    <img class="section-15__feature-item-icon" loading="lazy" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2-4.png"
                         alt="Ícone" />
                     <div class="section-15__feature-item-body">
                         <strong class="section-15__feature-item-title">Cuidado com o Bolso</strong>
@@ -3665,7 +3665,7 @@ SenkoLib.register([
         </div>
         <div class="section-15__image-wrapper">
             <picture>
-                <source media="(min-width: 960px)" srcset="C:\\Users\\ygorq\\Downloads\\2222455_03-1.jpg" />
+                <source media="(min-width: 960px)" loading="lazy" srcset="C:\\Users\\ygorq\\Downloads\\2222455_03-1.jpg" />
                 <img class="section-15__image" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2.jpg"
                     alt="Eletricista com capacete branco e colete laranja em obra" />
             </picture>
