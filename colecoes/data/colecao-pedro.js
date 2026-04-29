@@ -11,102 +11,11 @@ ColLib.register({
   group: 'pedro',
   tags:  [],
   layouts: [
-            /*@@@@Col - comp-3p */
+                /*@@@@Col - comp-3p */
     {
       id:   'comp-3p',
       name: 'comp - 3p',
-      html: `<div class="lp-container">
-  <link rel="nestlenect" href="https://fonts.googleapis.com">
-  <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
-  <title>PDP - eFácil</title>
-   <article style="width: 100%;">
-<section class="product-header" aria-label="Cabeçalho do produto">
-  <header class="product-header__banner">
-    <figure style="width:100%;height:100%;margin:0;">
-      <img
-        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-grafismo-bolas-futebol-2224602-01.jpg"
-        alt="Padrão visual roxo cachos uva folhas identidade suco aoc Kids" 
-        class="product-header__banner-img" loading="eager">
-    </figure>
-    <div class="product-header__badge" role="img" aria-label="Logo da marca aoc dentro de um círculo laranja">
-      <img
-        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/aoc/aoc-logo.png"
-        alt="imagem png com ícone da marca aoc dentro de um círculo laranja em frente ao cabeçalho" class="product-header__badge-img">
-    </div>
-  </header>
-
-  <section class="product-header__body">
-    <small class="product-header__brand">aoc</small>
-    <h3 class="product-header__title">
-   SMART TV 50P DLED AOC 50U7045/78G 4K UHD HDR10 HDMI USB
-    </h3>
-    <p class="product-header__subtitle">
-       A Smart TV AOC 50" 4K UHD com HDR10+ entrega cores vivas e detalhes reais. Acesse seus apps e conecte tudo via HDMI e USB com facilidade.
-    </p>
-  </section>
-</section>
-
-      <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
-       <figure class="section-32__groupimage-section">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-tela-frontal-lancamento-2224602-02.jpg"
-        alt="Smart TV AOC 50 4K exibindo alpinista e ícones HDR10+, Dolby Atmos, Bluetooth e jogo" 
-        style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay bottom grouptext-overlay-Background" style="top: 80%;">
-        <h3><strong>TEM COMANDO DE VOZ?</strong></h3>
-        <p>Sim! Pelo controle remoto com microfone você faz buscas rapidinho. Ela também é compatível com Alexa e Apple Home (Siri).
-        </p>
-      </figcaption>
-      </figure>
-
-       <figure class="section-32__groupimage-section" style="z-index: 3;">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-controle-remoto-atalho-aplicativos-2224602-03.jpg"
-        alt="Smart TV AOC exibindo jogador de futebol em lance acrobático e bola em primeiro plano" 
-        style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%;">
-        <h3><strong>É BOA PARA JOGOS?</strong></h3>
-        <p>Com recursos VRR, ALLM e Gamebar 2.0, ela é Ready for Gaming, garantindo jogabilidade fluida e sem atrasos.
-        </p>
-      </figcaption>
-      </figure>
-
-      <figure class="section-32__groupimage-section" style="z-index: 3;">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-controle-remoto-fundo-jogo-2224602-04.jpg"
-        alt="Smart TV AOC transmitindo partida de futebol em estádio lotado com fundo verde gráfico" 
-        style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay top grouptext-overlay-Background" style="top: 50%;">
-        <h3><strong>E O ESPAÇO</strong></h3>
-        <p>A base tem 81,1cm entre os pés. A TV inteira mede 111,1cm de largura e aceita suportes de parede no padrão 200x100mm.
-        </p>
-      </figcaption>
-      </figure>
-
-      <figure class="section-32__groupimage-section">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-familia-futebol-sala-2224602-05.jpg"
-        alt="Casal assistindo jogo de futebol na Smart TV AOC em sala de estar com fundo verde" 
-        style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      </figure>
-      </section>
-    
-
-        <footer>
-           <p class="p__end">
-          <strong>Imagens Meramente Ilustrativas</strong>
-          </p>
-        </footer>
-
-        </article>
-
-
-</div>
-`,
-      css:  `<style>  
+      html: `<style>  
     
     @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
@@ -745,7 +654,7 @@ ColLib.register({
       max-width: 42%;
     }
 
-    .section-32__grouptext-overlay h3 {
+    .section-32__grouptext-overlay h2 {
       font-size: 2vw;
       font-weight: bold;
       margin-bottom: 1.5px;
@@ -939,7 +848,7 @@ ColLib.register({
     }
 
     @media (max-width: 500px) {
-        .section-32__grouptext-overlay h3 {
+        .section-32__grouptext-overlay h2 {
           font-size: 3vw;
         }
 
@@ -958,24 +867,9 @@ ColLib.register({
         
     }
 
-    @media (max-width: 600px) {
-
-    .table-container-custom {
-
-      padding: 10px;
-    }
-
-    .table-text-custom,
-    .table-th-custom,
-    .table-td-custom {
-
-      padding: 8px;
-    }
-    }
-
     @media (max-width: 768px) {
 
-      .section-32__grouptext-overlay h3 {
+      .section-32__grouptext-overlay h2 {
           font-size: 2.5vw;
         }
 
@@ -997,7 +891,7 @@ ColLib.register({
     }
 
     @media (max-width: 960px) {
-        .section-32__grouptext-overlay h3 {
+        .section-32__grouptext-overlay h2 {
           font-size: 2.1vw;
         }
 
@@ -1024,7 +918,99 @@ ColLib.register({
         }
     }
 
-</style>  `,
+</style>  
+<div class="lp-container">
+  <link rel="nestlenect" href="https://fonts.googleapis.com">
+  <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <title>PDP - eFácil</title>
+   <article style="width: 100%;">
+<section class="product-header" aria-label="Cabeçalho do produto">
+  <header class="product-header__banner">
+    <figure style="width:100%;height:100%;margin:0;">
+      <img
+        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-grafismo-bolas-futebol-2224602-01.jpg"
+        alt="Padrão visual roxo cachos uva folhas identidade suco aoc Kids" 
+        class="product-header__banner-img" loading="eager">
+    </figure>
+    <div class="product-header__badge" role="img" aria-label="Logo da marca aoc dentro de um círculo laranja">
+      <img
+        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/aoc/aoc-logo.png"
+        alt="imagem png com ícone da marca aoc dentro de um círculo laranja em frente ao cabeçalho" class="product-header__badge-img">
+    </div>
+  </header>
+
+  <section class="product-header__body">
+    <small class="product-header__brand">aoc</small>
+    <h2 class="product-header__title">
+   SMART TV 50P DLED AOC 50U7045/78G 4K UHD HDR10 HDMI USB
+    </h2>
+    <p class="product-header__subtitle">
+       A Smart TV AOC 50" 4K UHD com HDR10+ entrega cores vivas e detalhes reais. Acesse seus apps e conecte tudo via HDMI e USB com facilidade.
+    </p>
+  </section>
+</section>
+
+      <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
+       <figure class="section-32__groupimage-section">
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-tela-frontal-lancamento-2224602-02.jpg"
+        alt="Smart TV AOC 50 4K exibindo alpinista e ícones HDR10+, Dolby Atmos, Bluetooth e jogo" 
+        style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption class="section-32__grouptext-overlay bottom grouptext-overlay-Background" style="top: 80%;">
+        <h2><strong>TEM COMANDO DE VOZ?</strong></h2>
+        <p>Sim! Pelo controle remoto com microfone você faz buscas rapidinho. Ela também é compatível com Alexa e Apple Home (Siri).
+        </p>
+      </figcaption>
+      </figure>
+
+       <figure class="section-32__groupimage-section" style="z-index: 3;">
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-controle-remoto-atalho-aplicativos-2224602-03.jpg"
+        alt="Smart TV AOC exibindo jogador de futebol em lance acrobático e bola em primeiro plano" 
+        style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%;">
+        <h2><strong>É BOA PARA JOGOS?</strong></h2>
+        <p>Com recursos VRR, ALLM e Gamebar 2.0, ela é Ready for Gaming, garantindo jogabilidade fluida e sem atrasos.
+        </p>
+      </figcaption>
+      </figure>
+
+      <figure class="section-32__groupimage-section" style="z-index: 3;">
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-controle-remoto-fundo-jogo-2224602-04.jpg"
+        alt="Smart TV AOC transmitindo partida de futebol em estádio lotado com fundo verde gráfico" 
+        style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption class="section-32__grouptext-overlay top grouptext-overlay-Background" style="top: 50%;">
+        <h2><strong>E O ESPAÇO</strong></h2>
+        <p>A base tem 81,1cm entre os pés. A TV inteira mede 111,1cm de largura e aceita suportes de parede no padrão 200x100mm.
+        </p>
+      </figcaption>
+      </figure>
+
+      <figure class="section-32__groupimage-section">
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-familia-futebol-sala-2224602-05.jpg"
+        alt="Casal assistindo jogo de futebol na Smart TV AOC em sala de estar com fundo verde" 
+        style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+      </figure>
+      </section>
+    
+
+        <footer>
+           <p class="p__end">
+          <strong>Imagens Meramente Ilustrativas</strong>
+          </p>
+        </footer>
+
+        </article>
+
+
+</div>
+`,
+      css:  ``,
     },
 
     /*@@@@Col - comp-p-faq */
