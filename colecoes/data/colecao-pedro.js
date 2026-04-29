@@ -6098,7 +6098,7 @@ ColLib.register({
       css:  ``,
     },
 
-        /*@@@@Col - comp-3-blocos-product-header-faq-embutido-e-tabela */
+            /*@@@@Col - comp-3-blocos-product-header-faq-embutido-e-tabela */
     {
       id:   'comp-3-blocos-product-header-faq-embutido-e-tabela',
       name: 'comp 3 blocos, product header, FAQ embutido, e tabela',
@@ -6782,7 +6782,7 @@ ColLib.register({
 
     }
 
-        .section-9 {
+        .faq-section {
             width: 100%;
             padding: 2rem 16px;
             box-sizing: border-box;
@@ -6803,12 +6803,12 @@ ColLib.register({
             -webkit-overflow-scrolling: touch;
         }
 
-        .section-9__header {
+        .faq-section__header {
             text-align: center;
             margin-bottom: 2rem;
         }
 
-        .section-9__title {
+        .faq-section__title {
             font-size: clamp(1.5rem, 3vw, 2rem);
             font-weight: bold;
             color: #ffffff;
@@ -6816,13 +6816,13 @@ ColLib.register({
             line-height: 6vw;
         }
 
-        .section-9__subtitle {
+        .faq-section__subtitle {
             font-size: 1rem;
             color: #ffffff;
             margin: 0;
         }
 
-        .section-9__list {
+        .faq-section__list {
             list-style: none;
             margin: 0 auto;
             padding: 0;
@@ -6832,14 +6832,14 @@ ColLib.register({
             gap: 8px;
         }
 
-        .section-9__item {
+        .faq-section__item {
             background: #ffffff05;
             border: 1px solid #ffffff;
             border-radius: 12px;
             overflow: hidden;
         }
 
-        .section-9__item summary {
+        .faq-section__item summary {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -6849,49 +6849,49 @@ ColLib.register({
             list-style: none;
         }
 
-        .section-9::-webkit-scrollbar {
+        .faq-section::-webkit-scrollbar {
          width: 8px;
             }
-        .section-9::-webkit-scrollbar-track {
+        .faq-section::-webkit-scrollbar-track {
           background: rgba(255, 255, 255, 0.1);
            border-radius: 10px;
             }
-        .section-9::-webkit-scrollbar-thumb {
+        .faq-section::-webkit-scrollbar-thumb {
            background: rgba(255, 255, 255, 0.3);
             border-radius: 10px;
               }
-        .section-9::-webkit-scrollbar-thumb:hover {
+        .faq-section::-webkit-scrollbar-thumb:hover {
              background: rgba(255, 255, 255, 0.5);
         }
 
-        .section-9__item summary::-webkit-details-marker {
+        .faq-section__item summary::-webkit-details-marker {
             display: none;
         }
 
-        .section-9__item summary:hover {
+        .faq-section__item summary:hover {
             background: #f9f9f92f;
         }
 
-        .section-9__q-text {
+        .faq-section__q-text {
             font-size: 1rem;
             font-weight: bold;
             color: #ffffff;
             flex: 1;
         }
 
-          .section-9__q-text:hover {
+          .faq-section__q-text:hover {
             color: #f4c122;
         }
 
-        .section-9__icon {
+        .faq-section__icon {
             width: 20px;
             height: 20px;
             flex-shrink: 0;
             position: relative;
         }
 
-        .section-9__icon::before,
-        .section-9__icon::after {
+        .faq-section__icon::before,
+        .faq-section__icon::after {
             content: '';
             position: absolute;
             background: #888;
@@ -6899,31 +6899,31 @@ ColLib.register({
             transition: transform 0.25s ease, opacity 0.25s ease;
         }
 
-        .section-9__icon::before {
+        .faq-section__icon::before {
             width: 12px;
             height: 1.5px;
             top: 9px;
             left: 4px;
         }
 
-        .section-9__icon::after {
+        .faq-section__icon::after {
             width: 1.5px;
             height: 12px;
             top: 4px;
             left: 9px;
         }
 
-        .section-9__item[open] .section-9__icon::after {
+        .faq-section__item[open] .faq-section__icon::after {
             transform: rotate(90deg);
             opacity: 0;
         }
 
-        .section-9__a-inner {
+        .faq-section__a-inner {
             padding: 14px 20px 16px;
             border-top: 1px solid #e5e5e5;
         }
 
-        .section-9__a-text {
+        .faq-section__a-text {
             font-size: 0.9rem;
             color: #ffffff;
             line-height: 1.6;
@@ -7023,7 +7023,7 @@ ColLib.register({
         color:#3a2301
       }
 
-       .section-9__a-text {
+       .faq-section__a-text {
             font-size: 1.0rem;
             font-weight: bold;
             color: #000000;
@@ -7081,7 +7081,7 @@ ColLib.register({
           transform: translate(-50%, -50%);
         }
 
-            .section-9 {
+            .faq-section {
         max-height: 180px !important;
         padding: 0.5rem 8px !important;
         top: 5% !important;
@@ -7108,7 +7108,7 @@ ColLib.register({
           top: 67%;
         }
 
-        .section-9__q-text {
+        .faq-section__q-text {
                 font-size: 0.9rem;
             }
         
@@ -7151,25 +7151,25 @@ ColLib.register({
       --banner-height: 180px;
     }
 
-        .section-9__header {
+        .faq-section__header {
     text-align: center;
     margin-bottom: 1rem;
     }
 
     
-    .section-9__a-text {
+    .faq-section__a-text {
         font-size: 0.7rem !important;
     }
 
-    .section-9__title {
+    .faq-section__title {
         font-size: 1rem !important;
      }
 
-     .section-9__subtitle {
+     .faq-section__subtitle {
         font-size: 0.75rem !important;
      }
 
-     .section-9__q-text {
+     .faq-section__q-text {
         font-size: 0.75rem !important;
      }
 
@@ -7205,7 +7205,7 @@ ColLib.register({
           top: 81%;
         }
 
-          .section-9 {
+          .faq-section {
           top: 10%; 
          max-width: 90%;
          max-height: 80%;
@@ -7226,12 +7226,23 @@ ColLib.register({
    <article style="width: 100%;">
 <section class="product-header" aria-label="Cabeçalho do produto">
   <header class="product-header__banner">
-    <figure style="width:100%; height:100%; margin:0;">
+    <picture style="width:100%; height:100%; margin:0;">
+      <source media="(max-width: 393px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-208255-01.jpg?ims=393x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-208255-01.jpg?ims=768x">
+      
+              <source media="(max-width: 1199px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-208255-01.jpg?ims=1199x">
+      
+              <source media="(min-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-208255-01.jpg">
       <img
         src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-208255-01.jpg"
         alt="Detalhe do fundo abstrato vermelho e amarelo com linhas tracejadas da embalagem Fofura Baby Shortinho" 
         class="product-header__banner-img" loading="eager">
-    </figure>
+    </picture>
     <div class="product-header__badge" role="img" aria-label="Logo da marca fofurababy dentro de um círculo laranja">
       <img
         src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/fofurababy/logo-fofurababy.png"
@@ -7251,7 +7262,19 @@ ColLib.register({
 </section>
 
       <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
-       <figure class="section-32__groupimage-section">
+       <picture class="section-32__groupimage-section">
+        <source media="(max-width: 393px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-empilhadas-208255-02.jpg?ims=393x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-empilhadas-208255-02.jpg?ims=768x">
+      
+              <source media="(max-width: 1199px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-empilhadas-208255-02.jpg?ims=1199x">
+      
+              <source media="(min-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-empilhadas-208255-02.jpg">
+
        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-empilhadas-208255-02.jpg"
         alt="Embalagens fralda Fofura Baby Shortinho empilhadas exibindo os tamanhos M, G, XG e XXG" 
         style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
@@ -7261,9 +7284,21 @@ ColLib.register({
         <p>Com tecnologia japonesa e ajuste elástico perfeito, ela oferece até 12 horas de proteção contra vazamentos.
         </p>
       </figcaption>
-      </figure>
+      </picture>
 
-       <figure class="section-32__groupimage-section" style="z-index: 3;">
+       <picture class="section-32__groupimage-section" style="z-index: 3;">
+        <source media="(max-width: 393px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-lado-a-lado-208255-03.jpg?ims=393x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-lado-a-lado-208255-03.jpg?ims=768x">
+      
+              <source media="(max-width: 1199px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-lado-a-lado-208255-03.jpg?ims=1199x">
+      
+              <source media="(min-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-lado-a-lado-208255-03.jpg">
+
        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-lado-a-lado-208255-03.jpg"
         alt="Embalagens fralda Fofura Baby Shortinho lado a lado mostrando tamanhos M e XXG com proteção 12h" 
         style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
@@ -7273,9 +7308,21 @@ ColLib.register({
         <p>Siga o peso: M (6 a 10kg), G (9 a 13kg), XG (11 a 15kg) e XXG (+14kg). A cintura elástica garante o ajuste.
         </p>
       </figcaption>
-      </figure>
+      </picture>
 
-      <figure class="section-32__groupimage-section" style="z-index: 3; overflow: hidden;">
+      <picture class="section-32__groupimage-section" style="z-index: 3; overflow: hidden;">
+        <source media="(max-width: 393px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-verde-208255-04.jpg?ims=393x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-verde-208255-04.jpg?ims=768x">
+      
+              <source media="(max-width: 1199px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-verde-208255-04.jpg?ims=1199x">
+      
+              <source media="(min-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-verde-208255-04.jpg">
+
        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-verde-208255-04.jpg"
         alt="Detalhe de fundo abstrato vermelho, amarelo e verde com curvas tracejadas da marca Fofura Baby" 
         style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
@@ -7289,77 +7336,77 @@ ColLib.register({
 
               <!-- FAQ -->
 
-       <section class="section-9" aria-labelledby="section-9-title">
+       <section class="faq-section" aria-labelledby="faq-section-title">
            
-    <div class="section-9__header">
-      <h3 class="section-9__title" id="section-9-title">Resolva suas dúvidas</h3>
-      <p class="section-9__subtitle">Saiba o porquê do produto ser a melhor escolha baseado em perguntas frequentes do público</p>
+    <div class="faq-section__header">
+      <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
+      <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha baseado em perguntas frequentes do público</p>
     </div>
-    <ul class="section-9__list">
-      <li class="section-9__item">
-        <details class="section-9__item">
+    <ul class="faq-section__list">
+      <li class="faq-section__item">
+        <details class="faq-section__item">
           <summary>
-            <span class="section-9__q-text">Como escolher o tamanho ideal da fralda?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
+            <h3 class="faq-section__q-text">Como escolher o tamanho ideal da fralda?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
               Baseie-se no peso do bebê. A Fofura Baby vai do tamanho M (6 a 10kg) ao XXG (acima de 14kg). 
               O ajuste correto evita vazamentos e garante total conforto.
             </p>
           </div>
         </details>
       </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
+      <li class="faq-section__item">
+        <details class="faq-section__item">
           <summary>
-            <span class="section-9__q-text">O que avaliar na hora de comprar fraldas?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
+            <h3 class="faq-section__q-text">O que avaliar na hora de comprar fraldas?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
               Busque opções com toque super macio, tecido ultra respirável e alta absorção. 
               Modelos com tecnologia japonesa cuidam da pele e ajudam a evitar assaduras.
             </p>
           </div>
         </details>
       </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
+      <li class="faq-section__item">
+        <details class="faq-section__item">
           <summary>
-            <span class="section-9__q-text">Qual a diferença da fralda tipo shortinho?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
+            <h3 class="faq-section__q-text">Qual a diferença da fralda tipo shortinho?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
               Ela veste facilmente como uma roupinha, pois possui cintura elástica de ajuste perfeito. 
               Isso proporciona mais liberdade ao bebê e agiliza a troca.
             </p>
           </div>
         </details>
       </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
+      <li class="faq-section__item">
+        <details class="faq-section__item">
           <summary>
-            <span class="section-9__q-text">Qual fralda aguenta a noite toda sem vazar?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
+            <h3 class="faq-section__q-text">Qual fralda aguenta a noite toda sem vazar?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
               Opte por fraldas com até 12 horas de proteção. O modelo shortinho se ajusta 
               firmemente na cintura e nas pernas da criança, bloqueando os vazamentos noturnos.
             </p>
           </div>
         </details>
       </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
+      <li class="faq-section__item">
+        <details class="faq-section__item">
           <summary>
-            <span class="section-9__q-text">Como saber quando mudar o tamanho da fralda?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
+            <h3 class="faq-section__q-text">Como saber quando mudar o tamanho da fralda?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
               Troque se a cintura elástica estiver marcando a pele ou se ocorrerem vazamentos constantes. 
               Acompanhe sempre a evolução de peso indicada na embalagem.
             </p>
@@ -7368,7 +7415,7 @@ ColLib.register({
       </li>
     </ul>
       </section>
-    </figure>
+    </picture>
     </section>
 
     <footer>
