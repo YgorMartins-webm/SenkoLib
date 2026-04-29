@@ -1082,11 +1082,12 @@ ColLib.register({
       css:  ``,
     },
 
-        /*@@@@Col - comp-p-faq */
+            /*@@@@Col - comp-p-faq */
     {
       id:   'comp-p-faq',
       name: 'Comp p com 3 blocos e FAQ no final',
-      html: ` <style>  
+      html: `
+  <style>  
     
     @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
@@ -1765,7 +1766,7 @@ ColLib.register({
 
     }
 
-        .section-9 {
+        .faq-section {
             width: 100%;
             padding: 2rem 16px;
             box-sizing: border-box;
@@ -1774,12 +1775,12 @@ ColLib.register({
             font-family: sans-serif;
         }
 
-        .section-9__header {
+        .faq-section__header {
             text-align: center;
             margin-bottom: 2rem;
         }
 
-        .section-9__title {
+        .faq-section__title {
             font-size: clamp(1.5rem, 3vw, 2rem);
             font-weight: bold;
             color: #333;
@@ -1787,13 +1788,13 @@ ColLib.register({
             line-height: 98%;
         }
 
-        .section-9__subtitle {
+        .faq-section__subtitle {
             font-size: 1rem;
             color: #666;
             margin: 0;
         }
 
-        .section-9__list {
+        .faq-section__list {
             list-style: none;
             margin: 0 auto;
             padding: 0;
@@ -1803,14 +1804,14 @@ ColLib.register({
             gap: 8px;
         }
 
-        .section-9__item {
+        .faq-section__item {
             background: #fff;
             border: 1px solid #e5e5e5;
             border-radius: 12px;
             overflow: hidden;
         }
 
-        .section-9__item summary {
+        .faq-section__item summary {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -1820,34 +1821,34 @@ ColLib.register({
             list-style: none;
         }
 
-        .section-9__item summary::-webkit-details-marker {
+        .faq-section__item summary::-webkit-details-marker {
             display: none;
         }
 
-        .section-9__item summary:hover {
+        .faq-section__item summary:hover {
             background: #f9f9f9;
         }
 
-        .section-9__q-text {
+        .faq-section__q-text {
             font-size: 1rem;
             font-weight: bold;
             color: #333;
             flex: 1;
         }
 
-          .section-9__q-text:hover {
+          .faq-section__q-text:hover {
             color: #007f37;
         }
 
-        .section-9__icon {
+        .faq-section__icon {
             width: 20px;
             height: 20px;
             flex-shrink: 0;
             position: relative;
         }
 
-        .section-9__icon::before,
-        .section-9__icon::after {
+        .faq-section__icon::before,
+        .faq-section__icon::after {
             content: '';
             position: absolute;
             background: #888;
@@ -1855,31 +1856,31 @@ ColLib.register({
             transition: transform 0.25s ease, opacity 0.25s ease;
         }
 
-        .section-9__icon::before {
+        .faq-section__icon::before {
             width: 12px;
             height: 1.5px;
             top: 9px;
             left: 4px;
         }
 
-        .section-9__icon::after {
+        .faq-section__icon::after {
             width: 1.5px;
             height: 12px;
             top: 4px;
             left: 9px;
         }
 
-        .section-9__item[open] .section-9__icon::after {
+        .faq-section__item[open] .faq-section__icon::after {
             transform: rotate(90deg);
             opacity: 0;
         }
 
-        .section-9__a-inner {
+        .faq-section__a-inner {
             padding: 14px 20px 16px;
             border-top: 1px solid #e5e5e5;
         }
 
-        .section-9__a-text {
+        .faq-section__a-text {
             font-size: 0.9rem;
             color: #555;
             line-height: 1.6;
@@ -1917,7 +1918,7 @@ ColLib.register({
         color:#3a2301
       }
 
-       .section-9__a-text {
+       .faq-section__a-text {
             font-size: 1.0rem;
             font-weight: bold;
             color: #000000;
@@ -1994,7 +1995,7 @@ ColLib.register({
           top: 67%;
         }
 
-        .section-9__q-text {
+        .faq-section__q-text {
                 font-size: 0.9rem;
             }
 
@@ -2068,6 +2069,7 @@ ColLib.register({
     }
 
 </style>  
+
 <div class="lp-container">
   <link rel="nestlenect" href="https://fonts.googleapis.com">
   <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
@@ -2078,12 +2080,23 @@ ColLib.register({
    <article style="width: 100%;">
 <section class="product-header" aria-label="Cabeçalho do produto">
   <header class="product-header__banner">
-    <figure style="width:100%; height:100%; margin:0;">
+    <picture style="width:100%; height:100%; margin:0;">
+        <source media="(max-width: 393px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/textura-fundo-kelldrin-matt-pulgoes-verde-escuro-701603-01.jpg?ims=393x">
+    
+            <source media="(max-width: 768px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/textura-fundo-kelldrin-matt-pulgoes-verde-escuro-701603-01.jpg?ims=768x">
+    
+            <source media="(max-width: 1199px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/textura-fundo-kelldrin-matt-pulgoes-verde-escuro-701603-01.jpg?ims=1199x">
+    
+            <source media="(min-width: 1200px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/textura-fundo-kelldrin-matt-pulgoes-verde-escuro-701603-01.jpg">
       <img
         src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/textura-fundo-kelldrin-matt-pulgoes-verde-escuro-701603-01.jpg"
         alt="matt-pulgoes-verde-escuro-701603-01	Fundo verde escuro texturizado e desfocado identidade visual Kelldrin Matt Pulgões" 
         class="product-header__banner-img" loading="eager">
-    </figure>
+    </picture>
     <div class="product-header__badge" role="img" aria-label="Logo da marca kelldrin dentro de um círculo laranja">
       <img
         src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/kelldrin/logo-kelldrin.png"
@@ -2103,7 +2116,19 @@ ColLib.register({
 </section>
 
       <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
-       <figure class="section-32__groupimage-section">
+       <picture class="section-32__groupimage-section">
+          <source media="(max-width: 393px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-caixa-fundo-verde-701603-02.jpg?ims=393x">
+    
+            <source media="(max-width: 768px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-caixa-fundo-verde-701603-02.jpg?ims=768x">
+    
+            <source media="(max-width: 1199px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-caixa-fundo-verde-701603-02.jpg?ims=1199x">
+    
+            <source media="(min-width: 1200px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-caixa-fundo-verde-701603-02.jpg">
+            
        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-caixa-fundo-verde-701603-02.jpg"
         alt="matt-pulgoes-caixa-fundo-verde-701603-02	Caixa Inseticida pó molhável Kelldrin Matt Pulgões 100x10g embalagem amarela fundo verde" 
         style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
@@ -2113,9 +2138,21 @@ ColLib.register({
         <p>Dilua exatos 10g em 1 litro de água e, em seguida, aplique tudo utilizando um pulverizador manual.
         </p>
       </figcaption>
-      </figure>
+      </picture>
 
-       <figure class="section-32__groupimage-section" style="z-index: 3;">
+       <picture class="section-32__groupimage-section" style="z-index: 3;">
+          <source media="(max-width: 393px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-homem-pulverizando-jardim-701603-03.jpg?ims=393x">
+    
+            <source media="(max-width: 768px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-homem-pulverizando-jardim-701603-03.jpg?ims=768x">
+    
+            <source media="(max-width: 1199px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-homem-pulverizando-jardim-701603-03.jpg?ims=1199x">
+    
+            <source media="(min-width: 1200px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-homem-pulverizando-jardim-701603-03.jpg">
+
        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-homem-pulverizando-jardim-701603-03.jpg"
         alt="Jardineiro pulverizando horta caixa Inseticida Kelldrin Matt Pulgões em primeiro plano" 
         style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
@@ -2125,9 +2162,21 @@ ColLib.register({
         <p>Sim! O princípio ativo Deltametrina 0,2% é altamente eficaz não apenas contra pulgões, mas também elimina o mosquito da dengue.
         </p>
       </figcaption>
-      </figure>
+      </picture>
 
-      <figure class="section-32__groupimage-section" style="z-index: 3;">
+      <picture class="section-32__groupimage-section" style="z-index: 3;">
+          <source media="(max-width: 393px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-caixa-mesa-jardim-701603-04.jpg?ims=393x">
+    
+            <source media="(max-width: 768px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-caixa-mesa-jardim-701603-04.jpg?ims=768x">
+    
+            <source media="(max-width: 1199px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-caixa-mesa-jardim-701603-04.jpg?ims=1199x">
+    
+            <source media="(min-width: 1200px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-caixa-mesa-jardim-701603-04.jpg">
+
        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-caixa-mesa-jardim-701603-04.jpg"
         alt="Inseticida Kelldrin Matt Pulgões sobre mesa rústica pessoa pulverizando horta ao fundo" 
         style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
@@ -2137,7 +2186,7 @@ ColLib.register({
         <p>O ingrediente ativo é a Deltametrina na concentração de 0,2%. Isso garante alta eficácia no combate às pragas.
         </p>
       </figcaption>
-      </figure>
+      </picture>
       </section>
     
 
@@ -2146,69 +2195,69 @@ ColLib.register({
           <strong>Imagens Meramente Ilustrativas</strong>
           </p>
 
-                  <section class="section-9" aria-labelledby="section-9-title">
-            <div class="section-9__header">
-                <h2 class="section-9__title" id="section-9-title">Resolva suas dúvidas</h2>
-                <p class="section-9__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
+                  <section class="faq-section" aria-labelledby="faq-section-title">
+            <div class="faq-section__header">
+                <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
+                <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
             </div>
-            <ul class="section-9__list">
-                <li class="section-9__item">
-                    <details class="section-9__item">
+            <ul class="faq-section__list">
+                <li class="faq-section__item">
+                    <details class="faq-section__item">
                         <summary>
-                            <h3 class="section-9__q-text">Como eliminar pulgões e o mosquito da dengue ao mesmo tempo?</h3>
-                            <span class="section-9__icon" aria-hidden="true"></span>
+                            <h3 class="faq-section__q-text">Como eliminar pulgões e o mosquito da dengue ao mesmo tempo?</h3>
+                            <span class="faq-section__icon" aria-hidden="true"></span>
                         </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">Use um inseticida de dupla ação como o Matt Pulgões. 
+                        <div class="faq-section__a-inner">
+                            <p class="faq-section__a-text">Use um inseticida de dupla ação como o Matt Pulgões. 
                               A sua fórmula com Deltametrina a 0,2% elimina de forma rápida e letal tanto as 
                               infestações nas plantas como o mosquito transmissor da dengue.</p>
                         </div>
                     </details>
                 </li>
-                <li class="section-9__item">
-                    <details class="section-9__item">
+                <li class="faq-section__item">
+                    <details class="faq-section__item">
                         <summary>
-                            <h3 class="section-9__q-text">Qual a melhor época para intensificar o combate à dengue?</h3>
-                            <span class="section-9__icon" aria-hidden="true"></span>
+                            <h3 class="faq-section__q-text">Qual a melhor época para intensificar o combate à dengue?</h3>
+                            <span class="faq-section__icon" aria-hidden="true"></span>
                         </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">O pico de surtos ocorre entre fevereiro e março, devido à acumulação de chuvas. 
+                        <div class="faq-section__a-inner">
+                            <p class="faq-section__a-text">O pico de surtos ocorre entre fevereiro e março, devido à acumulação de chuvas. 
                               Comece a prevenção logo no início do ano, aplicando o inseticida e eliminando focos de água parada.</p>
                         </div>
                     </details>
                 </li>
-                <li class="section-9__item">
-                    <details class="section-9__item">
+                <li class="faq-section__item">
+                    <details class="faq-section__item">
                         <summary>
-                            <h3 class="section-9__q-text">Qual o melhor produto para acabar com pulgões nas plantas?</h3>
-                            <span class="section-9__icon" aria-hidden="true"></span>
+                            <h3 class="faq-section__q-text">Qual o melhor produto para acabar com pulgões nas plantas?</h3>
+                            <span class="faq-section__icon" aria-hidden="true"></span>
                         </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">O Matt Pulgões é a solução ideal e pode ser usado durante todo o ano. 
+                        <div class="faq-section__a-inner">
+                            <p class="faq-section__a-text">O Matt Pulgões é a solução ideal e pode ser usado durante todo o ano. 
                               Basta pulverizar a mistura diretamente nas folhas e caules afetados para acabar com a praga.</p>
                         </div>
                     </details>
                 </li>
-                <li class="section-9__item">
-                    <details class="section-9__item">
+                <li class="faq-section__item">
+                    <details class="faq-section__item">
                         <summary>
-                            <h3 class="section-9__q-text">Como preparar e aplicar o inseticida em pó?</h3>
-                            <span class="section-9__icon" aria-hidden="true"></span>
+                            <h3 class="faq-section__q-text">Como preparar e aplicar o inseticida em pó?</h3>
+                            <span class="faq-section__icon" aria-hidden="true"></span>
                         </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">A preparação é simples: misture 10g de produto em 1 litro de água limpa. Depois, 
+                        <div class="faq-section__a-inner">
+                            <p class="faq-section__a-text">A preparação é simples: misture 10g de produto em 1 litro de água limpa. Depois, 
                               coloque a solução num pulverizador manual e aplique diretamente nos focos de infestação.</p>
                         </div>
                     </details>
                 </li>
-                <li class="section-9__item">
-                    <details class="section-9__item">
+                <li class="faq-section__item">
+                    <details class="faq-section__item">
                         <summary>
-                            <h3 class="section-9__q-text">O que é a Deltametrina 0,2% e como funciona?</h3>
-                            <span class="section-9__icon" aria-hidden="true"></span>
+                            <h3 class="faq-section__q-text">O que é a Deltametrina 0,2% e como funciona?</h3>
+                            <span class="faq-section__icon" aria-hidden="true"></span>
                         </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">É um princípio ativo com efeito de choque. Ao entrar em contacto com a área pulverizada, 
+                        <div class="faq-section__a-inner">
+                            <p class="faq-section__a-text">É um princípio ativo com efeito de choque. Ao entrar em contacto com a área pulverizada, 
                               atinge de imediato o sistema nervoso dos insetos, paralisando e eliminando rapidamente pulgões e mosquitos.</p>
                         </div>
                     </details>
@@ -2221,7 +2270,10 @@ ColLib.register({
         </article>
 
 
-</div>`,
+</div>
+
+
+`,
       css:  ``,
     },
 
