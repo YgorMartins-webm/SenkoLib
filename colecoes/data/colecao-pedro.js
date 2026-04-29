@@ -2277,155 +2277,11 @@ ColLib.register({
       css:  ``,
     },
 
-        /*@@@@Col - comp-p-faq-e */
+            /*@@@@Col - comp-p-faq-e */
     {
       id:   'comp-p-faq-e',
       name: 'Comp p com 3 blocos e FAQ embutido na figure',
-      html: `<div class="lp-container">
-  <link rel="nestlenect" href="https://fonts.googleapis.com">
-  <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
-  <title>PDP - eFácil</title>
-   <article style="width: 100%;">
-<section class="product-header" aria-label="Cabeçalho do produto">
-  <header class="product-header__banner">
-    <figure style="width:100%; height:100%; margin:0;">
-      <img
-        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg"
-        alt="Fundo verde silhuetas insetos aranhas baratas. Identidade visual multi inseticida Kelldrin." 
-        class="product-header__banner-img" loading="eager">
-    </figure>
-    <div class="product-header__badge" role="img" aria-label="Logo da marca kelldrin dentro de um círculo laranja">
-      <img
-        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/kelldrin/logo-kelldrin.png"
-        alt="imagem png com ícone da marca kelldrin dentro de um círculo laranja em frente ao cabeçalho" class="product-header__badge-img">
-    </div>
-  </header>
-
-  <section class="product-header__body">
-    <small class="product-header__brand">kelldrin</small>
-    <h2 class="product-header__title">
-     	INSETICIDA KELLTHINE SC25 SPRAY KELLDRIN 500ML
-    </h2>
-    <p class="product-header__subtitle">
-       Pronto para uso, garante proteção rápida e prolongada, trazendo mais tranquilidade para o seu lar.
-    </p>
-  </section>
-</section>
-
-      <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
-       <figure class="section-32__groupimage-section">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg"
-        alt="Frasco multi inseticida Kellthine SC 25 Kelldrin 500ml pronto para uso fundo verde com pragas." 
-        style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 50%;">
-        <h2><strong>BOM CONTRA O QUE?</strong></h2>
-        <p>O Kellthine SC 25 combate escorpiões, cupins, carrapatos, baratas e os mosquitos da dengue com alta eficácia.
-        </p>
-      </figcaption>
-      </figure>
-
-       <figure class="section-32__groupimage-section" style="z-index: 3;">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg"
-        alt="Aplicação Kelldrin Kellthine SC 25 armário cozinha controlando aranha ambiente escuro." 
-        style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%; left: 45%;">
-        <h2><strong>PRONTO PARA USO?</strong></h2>
-        <p>Precisa diluir na água? Não! O inseticida Kellthine 500ml já vem pronto. Basta girar o bico e aplicar direto nas frestas e rodapés.
-        </p>
-      </figcaption>
-      </figure>
-
-      <figure class="section-32__groupimage-section" style="z-index: 3; overflow: hidden;">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg"
-        alt="Aplicação Kelldrin Kellthine SC 25 spray piso perto de ralo combatendo barata." 
-        style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-        
-  <!-- Camada com gradiente de fade -->
-
-   <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
-              background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.550) 37%, rgba(0, 0, 0, 0.897) 100%); 
-              z-index: 5; border-radius: 0px 0px 30px 30px; pointer-events: none;"></div>
-
-              <!-- FAQ -->
-
-       <section class="section-9" aria-labelledby="section-9-title">
-           
-    <div class="section-9__header">
-      <h3 class="section-9__title" id="section-9-title">Resolva suas dúvidas</h3>
-      <p class="section-9__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
-    </div>
-    <ul class="section-9__list">
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <span class="section-9__q-text">Como usar corretamente spray para insetos?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">Agite bem e aplique a 30 cm de distância nos locais onde as pragas se escondem, 
-              como frestas e rodapés, garantindo uma cobertura uniforme no ambiente.</p>
-          </div>
-        </details>
-      </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <span class="section-9__q-text">Inseticida em spray é seguro para crianças e pets?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">Afaste pessoas e animais durante o uso. Promova a aeração do local tratado e 
-              permita o retorno deles somente 6 horas após a aplicação do produto.</p>
-          </div>
-        </details>
-      </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <span class="section-9__q-text">O inseticida spray mata aranha?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">Sim! É eficaz contra aranhas, baratas e mosquitos. Para combater aracnídeos, 
-              aplique diretamente em locais escuros e úmidos, como pilhas de entulhos.</p>
-          </div>
-        </details>
-      </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <span class="section-9__q-text">Qual o melhor spray para mosquitos em ambientes?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">Opte por fórmulas de amplo espectro, como a Lambda-Cialotrina. 
-              Elas são ideais para combater o Mosquito da Dengue e pernilongos com alta eficiência.</p>
-          </div>
-        </details>
-      </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <span class="section-9__q-text">Como escolher um inseticida spray seguro?</span>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">Busque opções prontas para uso e seguras. Para sua segurança, use luvas na aplicação, 
-              não aplique sobre alimentos e jamais reutilize a embalagem vazia.</p>
-          </div>
-        </details>
-      </li>
-    </ul>
-      </section>
-    </figure>
-    </section>`,
-      css:  `
+      html: `
   <style>  
     
     @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
@@ -3105,47 +2961,35 @@ ColLib.register({
 
     }
 
-        .section-9 {
+        .faq-section {
             width: 100%;
             padding: 2rem 16px;
             box-sizing: border-box;
             margin: 0 auto 25px;
             padding-top: 0;
             font-family: sans-serif;
-            position: absolute; 
-            top: 20%; 
-            left: 5%; 
-            right: 5%; 
-            background: rgba(255, 255, 255, 0.014);
-            border-radius: 40px; 
-            max-width: 75%; 
-            z-index: 10; 
-            border: 1px solid #ffffff;
-            max-height: 75vh;
-            overflow-y: scroll;
-            -webkit-overflow-scrolling: touch;
         }
 
-        .section-9__header {
+        .faq-section__header {
             text-align: center;
             margin-bottom: 2rem;
         }
 
-        .section-9__title {
+        .faq-section__title {
             font-size: clamp(1.5rem, 3vw, 2rem);
             font-weight: bold;
-            color: #ffffff;
-            margin: 0 0 0px;
-            line-height: 6vw;
+            color: #333;
+            margin: 0 0 12px;
+            line-height: 98%;
         }
 
-        .section-9__subtitle {
+        .faq-section__subtitle {
             font-size: 1rem;
-            color: #ffffff;
+            color: #666;
             margin: 0;
         }
 
-        .section-9__list {
+        .faq-section__list {
             list-style: none;
             margin: 0 auto;
             padding: 0;
@@ -3155,14 +2999,14 @@ ColLib.register({
             gap: 8px;
         }
 
-        .section-9__item {
-            background: #ffffff05;
-            border: 1px solid #ffffff;
+        .faq-section__item {
+            background: #fff;
+            border: 1px solid #e5e5e5;
             border-radius: 12px;
             overflow: hidden;
         }
 
-        .section-9__item summary {
+        .faq-section__item summary {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -3172,49 +3016,34 @@ ColLib.register({
             list-style: none;
         }
 
-        .section-9::-webkit-scrollbar {
-         width: 8px;
-            }
-        .section-9::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.1);
-           border-radius: 10px;
-            }
-        .section-9::-webkit-scrollbar-thumb {
-           background: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-              }
-        .section-9::-webkit-scrollbar-thumb:hover {
-             background: rgba(255, 255, 255, 0.5);
-        }
-
-        .section-9__item summary::-webkit-details-marker {
+        .faq-section__item summary::-webkit-details-marker {
             display: none;
         }
 
-        .section-9__item summary:hover {
-            background: #f9f9f92f;
+        .faq-section__item summary:hover {
+            background: #f9f9f9;
         }
 
-        .section-9__q-text {
+        .faq-section__q-text {
             font-size: 1rem;
             font-weight: bold;
-            color: #ffffff;
+            color: #333;
             flex: 1;
         }
 
-          .section-9__q-text:hover {
-            color: #00ff6e;
+          .faq-section__q-text:hover {
+            color: #007f37;
         }
 
-        .section-9__icon {
+        .faq-section__icon {
             width: 20px;
             height: 20px;
             flex-shrink: 0;
             position: relative;
         }
 
-        .section-9__icon::before,
-        .section-9__icon::after {
+        .faq-section__icon::before,
+        .faq-section__icon::after {
             content: '';
             position: absolute;
             background: #888;
@@ -3222,33 +3051,33 @@ ColLib.register({
             transition: transform 0.25s ease, opacity 0.25s ease;
         }
 
-        .section-9__icon::before {
+        .faq-section__icon::before {
             width: 12px;
             height: 1.5px;
             top: 9px;
             left: 4px;
         }
 
-        .section-9__icon::after {
+        .faq-section__icon::after {
             width: 1.5px;
             height: 12px;
             top: 4px;
             left: 9px;
         }
 
-        .section-9__item[open] .section-9__icon::after {
+        .faq-section__item[open] .faq-section__icon::after {
             transform: rotate(90deg);
             opacity: 0;
         }
 
-        .section-9__a-inner {
+        .faq-section__a-inner {
             padding: 14px 20px 16px;
             border-top: 1px solid #e5e5e5;
         }
 
-        .section-9__a-text {
+        .faq-section__a-text {
             font-size: 0.9rem;
-            color: #ffffff;
+            color: #555;
             line-height: 1.6;
             margin: 0;
             font-weight: 500;
@@ -3284,7 +3113,7 @@ ColLib.register({
         color:#3a2301
       }
 
-       .section-9__a-text {
+       .faq-section__a-text {
             font-size: 1.0rem;
             font-weight: bold;
             color: #000000;
@@ -3342,15 +3171,7 @@ ColLib.register({
           transform: translate(-50%, -50%);
         }
 
-            .section-9 {
-        max-height: 180px !important;
-        padding: 0.5rem 8px !important;
-        top: 5% !important;
-        max-width: 90%;
-        border-radius: 20px;
     }
-
-  }
 
     @media (max-width: 500px) {
         .section-32__grouptext-overlay h2 {
@@ -3369,9 +3190,10 @@ ColLib.register({
           top: 67%;
         }
 
-        .section-9__q-text {
+        .faq-section__q-text {
                 font-size: 0.9rem;
             }
+
         
     }
 
@@ -3411,31 +3233,7 @@ ColLib.register({
             .product-header {
       --banner-height: 180px;
     }
-
-        .section-9__header {
-    text-align: center;
-    margin-bottom: 1rem;
     }
-
-    
-    .section-9__a-text {
-        font-size: 0.7rem !important;
-    }
-
-    .section-9__title {
-        font-size: 1rem !important;
-     }
-
-     .section-9__subtitle {
-        font-size: 0.75rem !important;
-     }
-
-     .section-9__q-text {
-        font-size: 0.75rem !important;
-     }
-
-     }
-    
 
     @media (max-width: 960px) {
         .section-32__grouptext-overlay h2 {
@@ -3453,9 +3251,7 @@ ColLib.register({
         .section-32__grouptext-overlay.bottom {
           top: 79%
         }
-
-
-        }
+    }
 
     @media (max-width: 1060px) {
         .section-32__grouptext-overlay.top {
@@ -3465,18 +3261,216 @@ ColLib.register({
         .section-32__grouptext-overlay.bottom {
           top: 81%;
         }
-
-          .section-9 {
-          top: 10%; 
-         max-width: 90%;
-         max-height: 80%;
-
-        }
-
-        }
+    }
 
 </style>  
+
+<div class="lp-container">
+  <link rel="nestlenect" href="https://fonts.googleapis.com">
+  <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <title>PDP - eFácil</title>
+   <article style="width: 100%;">
+<section class="product-header" aria-label="Cabeçalho do produto">
+  <header class="product-header__banner">
+    <picture style="width:100%; height:100%; margin:0;">
+
+      <source media="(max-width: 393px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg?ims=393x">
+    
+            <source media="(max-width: 768px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg?ims=768x">
+    
+            <source media="(max-width: 1199px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg?ims=1199x">
+    
+            <source media="(min-width: 1200px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg">
+
+      <img
+        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg"
+        alt="Fundo verde silhuetas insetos aranhas baratas. Identidade visual multi inseticida Kelldrin." 
+        class="product-header__banner-img" loading="eager">
+    </picture>
+    <div class="product-header__badge" role="img" aria-label="Logo da marca kelldrin dentro de um círculo laranja">
+      <img
+        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/kelldrin/logo-kelldrin.png"
+        alt="imagem png com ícone da marca kelldrin dentro de um círculo laranja em frente ao cabeçalho" class="product-header__badge-img">
+    </div>
+  </header>
+
+  <section class="product-header__body">
+    <small class="product-header__brand">kelldrin</small>
+    <h2 class="product-header__title">
+     	INSETICIDA KELLTHINE SC25 SPRAY KELLDRIN 500ML
+    </h2>
+    <p class="product-header__subtitle">
+       Pronto para uso, garante proteção rápida e prolongada, trazendo mais tranquilidade para o seu lar.
+    </p>
+  </section>
+</section>
+
+      <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
+       <picture class="section-32__groupimage-section">
+         <source media="(max-width: 393px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg?ims=393x">
+    
+            <source media="(max-width: 768px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg?ims=768x">
+    
+            <source media="(max-width: 1199px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg?ims=1199x">
+    
+            <source media="(min-width: 1200px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg">
+
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg"
+        alt="Frasco multi inseticida Kellthine SC 25 Kelldrin 500ml pronto para uso fundo verde com pragas." 
+        style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 50%;">
+        <h2><strong>BOM CONTRA O QUE?</strong></h2>
+        <p>O Kellthine SC 25 combate escorpiões, cupins, carrapatos, baratas e os mosquitos da dengue com alta eficácia.
+        </p>
+      </figcaption>
+      </picture>
+
+       <picture class="section-32__groupimage-section" style="z-index: 3;">
+        <source media="(max-width: 393px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg?ims=393x">
+    
+            <source media="(max-width: 768px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg?ims=768x">
+    
+            <source media="(max-width: 1199px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg?ims=1199x">
+    
+            <source media="(min-width: 1200px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg">
+
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg"
+        alt="Aplicação Kelldrin Kellthine SC 25 armário cozinha controlando aranha ambiente escuro." 
+        style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%; left: 45%;">
+        <h2><strong>PRONTO PARA USO?</strong></h2>
+        <p>Precisa diluir na água? Não! O inseticida Kellthine 500ml já vem pronto. Basta girar o bico e aplicar direto nas frestas e rodapés.
+        </p>
+      </figcaption>
+      </picture>
+
+      <picture class="section-32__groupimage-section" style="z-index: 3;">
+        <source media="(max-width: 393px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg?ims=393x">
+    
+            <source media="(max-width: 768px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg?ims=768x">
+    
+            <source media="(max-width: 1199px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg?ims=1199x">
+    
+            <source media="(min-width: 1200px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg">
+
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg"
+        alt="Aplicação Kelldrin Kellthine SC 25 spray piso perto de ralo combatendo barata." 
+        style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 20%; left: 25%;">
+        <h2><strong>E PRAS PRAGAS ESCONDIDAS?</strong></h2>
+        <p>O spray atinge frestas, cantos, rodapés e áreas úmidas. Elimina baratas, aranhas e escorpiões direto no ninho.
+        </p>
+      </figcaption>
+      </picture>
+      </section>
+    
+
+        <footer>
+           <p class="p__end">
+          <strong>Imagens Meramente Ilustrativas</strong>
+          </p>
+
+                  <section class="faq-section" aria-labelledby="faq-section-title">
+            <div class="faq-section__header">
+                <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
+                <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
+            </div>
+            <ul class="faq-section__list">
+                <li class="faq-section__item">
+                    <details class="faq-section__item">
+                        <summary>
+                            <h3 class="faq-section__q-text">Como usar corretamente spray para insetos?</h3>
+                            <span class="faq-section__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-section__a-inner">
+                            <p class="faq-section__a-text">Agite bem e aplique a 30 cm de distância nos locais onde as pragas se escondem, 
+                              como frestas e rodapés, garantindo uma cobertura uniforme no ambiente.</p>
+                        </div>
+                    </details>
+                </li>
+                <li class="faq-section__item">
+                    <details class="faq-section__item">
+                        <summary>
+                            <h3 class="faq-section__q-text">Inseticida em spray é seguro para crianças e pets?</span>
+                            <span class="faq-section__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-section__a-inner">
+                            <p class="faq-section__a-text">Afaste pessoas e animais durante o uso. Promova a aeração do local tratado e 
+                              permita o retorno deles somente 6 horas após a aplicação do produto.</p>
+                        </div>
+                    </details>
+                </li>
+                <li class="faq-section__item">
+                    <details class="faq-section__item">
+                        <summary>
+                            <h3 class="faq-section__q-text">O inseticida spray mata aranha?</h3>
+                            <span class="faq-section__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-section__a-inner">
+                            <p class="faq-section__a-text">Sim! É eficaz contra aranhas, baratas e mosquitos. Para combater aracnídeos, 
+                              aplique diretamente em locais escuros e úmidos, como pilhas de entulhos.</p>
+                        </div>
+                    </details>
+                </li>
+                <li class="faq-section__item">
+                    <details class="faq-section__item">
+                        <summary>
+                            <h3 class="faq-section__q-text">Qual o melhor spray para mosquitos em ambientes?</h3>
+                            <span class="faq-section__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-section__a-inner">
+                            <p class="faq-section__a-text">Opte por fórmulas de amplo espectro, como a Lambda-Cialotrina. 
+                              Elas são ideais para combater o Mosquito da Dengue e pernilongos com alta eficiência.</p>
+                        </div>
+                    </details>
+                </li>
+                <li class="faq-section__item">
+                    <details class="faq-section__item">
+                        <summary>
+                            <h3 class="faq-section__q-text">Como escolher um inseticida spray seguro?</h3>
+                            <span class="faq-section__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-section__a-inner">
+                            <p class="faq-section__a-text">Busque opções prontas para uso e seguras. Para sua segurança, use luvas na aplicação, 
+                              não aplique sobre alimentos e jamais reutilize a embalagem vazia.</p>
+                        </div>
+                    </details>
+                </li>
+            </ul>
+        </section>
+
+        </footer>
+
+        </article>
+
+
+</div>
+
+
 `,
+      css:  ``,
     },
 
     /*@@@@Col - comp-p-3b-faqe-vh */
