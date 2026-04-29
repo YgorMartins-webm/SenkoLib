@@ -1013,165 +1013,11 @@ ColLib.register({
       css:  ``,
     },
 
-    /*@@@@Col - comp-p-faq */
+        /*@@@@Col - comp-p-faq */
     {
       id:   'comp-p-faq',
       name: 'Comp p com 3 blocos e FAQ no final',
-      html: `<div class="lp-container">
-  <link rel="nestlenect" href="https://fonts.googleapis.com">
-  <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
-  <title>PDP - eFácil</title>
-   <article style="width: 100%;">
-<section class="product-header" aria-label="Cabeçalho do produto">
-  <header class="product-header__banner">
-    <figure style="width:100%; height:100%; margin:0;">
-      <img
-        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/textura-fundo-kelldrin-matt-pulgoes-verde-escuro-701603-01.jpg"
-        alt="matt-pulgoes-verde-escuro-701603-01	Fundo verde escuro texturizado e desfocado identidade visual Kelldrin Matt Pulgões" 
-        class="product-header__banner-img" loading="eager">
-    </figure>
-    <div class="product-header__badge" role="img" aria-label="Logo da marca kelldrin dentro de um círculo laranja">
-      <img
-        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/kelldrin/logo-kelldrin.png"
-        alt="imagem png com ícone da marca kelldrin dentro de um círculo laranja em frente ao cabeçalho" class="product-header__badge-img">
-    </div>
-  </header>
-
-  <section class="product-header__body">
-    <small class="product-header__brand">kelldrin</small>
-    <h2 class="product-header__title">
-     MATT PULGOES DELTAMETRINA KELLDRIN 100X10G
-    </h2>
-    <p class="product-header__subtitle">
-       Em práticos sachês de 10g, garante rendimento e facilidade na aplicação. Proteção total para o seu jardim
-    </p>
-  </section>
-</section>
-
-      <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
-       <figure class="section-32__groupimage-section">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-caixa-fundo-verde-701603-02.jpg"
-        alt="matt-pulgoes-caixa-fundo-verde-701603-02	Caixa Inseticida pó molhável Kelldrin Matt Pulgões 100x10g embalagem amarela fundo verde" 
-        style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 50%;">
-        <h2><strong>COMO PREPARAR?</strong></h2>
-        <p>Dilua exatos 10g em 1 litro de água e, em seguida, aplique tudo utilizando um pulverizador manual.
-        </p>
-      </figcaption>
-      </figure>
-
-       <figure class="section-32__groupimage-section" style="z-index: 3;">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-homem-pulverizando-jardim-701603-03.jpg"
-        alt="Jardineiro pulverizando horta caixa Inseticida Kelldrin Matt Pulgões em primeiro plano" 
-        style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%;">
-        <h2><strong>MATA MOSQUITO?</strong></h2>
-        <p>Sim! O princípio ativo Deltametrina 0,2% é altamente eficaz não apenas contra pulgões, mas também elimina o mosquito da dengue.
-        </p>
-      </figcaption>
-      </figure>
-
-      <figure class="section-32__groupimage-section" style="z-index: 3;">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-caixa-mesa-jardim-701603-04.jpg"
-        alt="Inseticida Kelldrin Matt Pulgões sobre mesa rústica pessoa pulverizando horta ao fundo" 
-        style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 60%; left: 35%;">
-        <h2><strong>QUAL A FÓRMULA?</strong></h2>
-        <p>O ingrediente ativo é a Deltametrina na concentração de 0,2%. Isso garante alta eficácia no combate às pragas.
-        </p>
-      </figcaption>
-      </figure>
-      </section>
-    
-
-        <footer>
-           <p class="p__end">
-          <strong>Imagens Meramente Ilustrativas</strong>
-          </p>
-
-                  <section class="section-9" aria-labelledby="section-9-title">
-            <div class="section-9__header">
-                <h2 class="section-9__title" id="section-9-title">Resolva suas dúvidas</h2>
-                <p class="section-9__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
-            </div>
-            <ul class="section-9__list">
-                <li class="section-9__item">
-                    <details class="section-9__item">
-                        <summary>
-                            <span class="section-9__q-text">Como eliminar pulgões e o mosquito da dengue ao mesmo tempo?</span>
-                            <span class="section-9__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">Use um inseticida de dupla ação como o Matt Pulgões. 
-                              A sua fórmula com Deltametrina a 0,2% elimina de forma rápida e letal tanto as 
-                              infestações nas plantas como o mosquito transmissor da dengue.</p>
-                        </div>
-                    </details>
-                </li>
-                <li class="section-9__item">
-                    <details class="section-9__item">
-                        <summary>
-                            <span class="section-9__q-text">Qual a melhor época para intensificar o combate à dengue?</span>
-                            <span class="section-9__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">O pico de surtos ocorre entre fevereiro e março, devido à acumulação de chuvas. 
-                              Comece a prevenção logo no início do ano, aplicando o inseticida e eliminando focos de água parada.</p>
-                        </div>
-                    </details>
-                </li>
-                <li class="section-9__item">
-                    <details class="section-9__item">
-                        <summary>
-                            <span class="section-9__q-text">Qual o melhor produto para acabar com pulgões nas plantas?</span>
-                            <span class="section-9__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">O Matt Pulgões é a solução ideal e pode ser usado durante todo o ano. 
-                              Basta pulverizar a mistura diretamente nas folhas e caules afetados para acabar com a praga.</p>
-                        </div>
-                    </details>
-                </li>
-                <li class="section-9__item">
-                    <details class="section-9__item">
-                        <summary>
-                            <span class="section-9__q-text">Como preparar e aplicar o inseticida em pó?</span>
-                            <span class="section-9__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">A preparação é simples: misture 10g de produto em 1 litro de água limpa. Depois, 
-                              coloque a solução num pulverizador manual e aplique diretamente nos focos de infestação.</p>
-                        </div>
-                    </details>
-                </li>
-                <li class="section-9__item">
-                    <details class="section-9__item">
-                        <summary>
-                            <span class="section-9__q-text">O que é a Deltametrina 0,2% e como funciona?</span>
-                            <span class="section-9__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="section-9__a-inner">
-                            <p class="section-9__a-text">É um princípio ativo com efeito de choque. Ao entrar em contacto com a área pulverizada, 
-                              atinge de imediato o sistema nervoso dos insetos, paralisando e eliminando rapidamente pulgões e mosquitos.</p>
-                        </div>
-                    </details>
-                </li>
-            </ul>
-        </section>
-
-        </footer>
-
-        </article>
-
-
-</div>`,
-      css:  ` <style>  
+      html: ` <style>  
     
     @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
@@ -2152,7 +1998,162 @@ ColLib.register({
         }
     }
 
-</style>  `,
+</style>  
+<div class="lp-container">
+  <link rel="nestlenect" href="https://fonts.googleapis.com">
+  <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <title>PDP - eFácil</title>
+   <article style="width: 100%;">
+<section class="product-header" aria-label="Cabeçalho do produto">
+  <header class="product-header__banner">
+    <figure style="width:100%; height:100%; margin:0;">
+      <img
+        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/textura-fundo-kelldrin-matt-pulgoes-verde-escuro-701603-01.jpg"
+        alt="matt-pulgoes-verde-escuro-701603-01	Fundo verde escuro texturizado e desfocado identidade visual Kelldrin Matt Pulgões" 
+        class="product-header__banner-img" loading="eager">
+    </figure>
+    <div class="product-header__badge" role="img" aria-label="Logo da marca kelldrin dentro de um círculo laranja">
+      <img
+        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/kelldrin/logo-kelldrin.png"
+        alt="imagem png com ícone da marca kelldrin dentro de um círculo laranja em frente ao cabeçalho" class="product-header__badge-img">
+    </div>
+  </header>
+
+  <section class="product-header__body">
+    <small class="product-header__brand">kelldrin</small>
+    <h2 class="product-header__title">
+     MATT PULGOES DELTAMETRINA KELLDRIN 100X10G
+    </h2>
+    <p class="product-header__subtitle">
+       Em práticos sachês de 10g, garante rendimento e facilidade na aplicação. Proteção total para o seu jardim
+    </p>
+  </section>
+</section>
+
+      <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
+       <figure class="section-32__groupimage-section">
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-caixa-fundo-verde-701603-02.jpg"
+        alt="matt-pulgoes-caixa-fundo-verde-701603-02	Caixa Inseticida pó molhável Kelldrin Matt Pulgões 100x10g embalagem amarela fundo verde" 
+        style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 50%;">
+        <h2><strong>COMO PREPARAR?</strong></h2>
+        <p>Dilua exatos 10g em 1 litro de água e, em seguida, aplique tudo utilizando um pulverizador manual.
+        </p>
+      </figcaption>
+      </figure>
+
+       <figure class="section-32__groupimage-section" style="z-index: 3;">
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-homem-pulverizando-jardim-701603-03.jpg"
+        alt="Jardineiro pulverizando horta caixa Inseticida Kelldrin Matt Pulgões em primeiro plano" 
+        style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%;">
+        <h2><strong>MATA MOSQUITO?</strong></h2>
+        <p>Sim! O princípio ativo Deltametrina 0,2% é altamente eficaz não apenas contra pulgões, mas também elimina o mosquito da dengue.
+        </p>
+      </figcaption>
+      </figure>
+
+      <figure class="section-32__groupimage-section" style="z-index: 3;">
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/inseticida-kelldrin-matt-pulgoes-caixa-mesa-jardim-701603-04.jpg"
+        alt="Inseticida Kelldrin Matt Pulgões sobre mesa rústica pessoa pulverizando horta ao fundo" 
+        style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 60%; left: 35%;">
+        <h2><strong>QUAL A FÓRMULA?</strong></h2>
+        <p>O ingrediente ativo é a Deltametrina na concentração de 0,2%. Isso garante alta eficácia no combate às pragas.
+        </p>
+      </figcaption>
+      </figure>
+      </section>
+    
+
+        <footer>
+           <p class="p__end">
+          <strong>Imagens Meramente Ilustrativas</strong>
+          </p>
+
+                  <section class="section-9" aria-labelledby="section-9-title">
+            <div class="section-9__header">
+                <h2 class="section-9__title" id="section-9-title">Resolva suas dúvidas</h2>
+                <p class="section-9__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
+            </div>
+            <ul class="section-9__list">
+                <li class="section-9__item">
+                    <details class="section-9__item">
+                        <summary>
+                            <h3 class="section-9__q-text">Como eliminar pulgões e o mosquito da dengue ao mesmo tempo?</h3>
+                            <span class="section-9__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="section-9__a-inner">
+                            <p class="section-9__a-text">Use um inseticida de dupla ação como o Matt Pulgões. 
+                              A sua fórmula com Deltametrina a 0,2% elimina de forma rápida e letal tanto as 
+                              infestações nas plantas como o mosquito transmissor da dengue.</p>
+                        </div>
+                    </details>
+                </li>
+                <li class="section-9__item">
+                    <details class="section-9__item">
+                        <summary>
+                            <h3 class="section-9__q-text">Qual a melhor época para intensificar o combate à dengue?</h3>
+                            <span class="section-9__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="section-9__a-inner">
+                            <p class="section-9__a-text">O pico de surtos ocorre entre fevereiro e março, devido à acumulação de chuvas. 
+                              Comece a prevenção logo no início do ano, aplicando o inseticida e eliminando focos de água parada.</p>
+                        </div>
+                    </details>
+                </li>
+                <li class="section-9__item">
+                    <details class="section-9__item">
+                        <summary>
+                            <h3 class="section-9__q-text">Qual o melhor produto para acabar com pulgões nas plantas?</h3>
+                            <span class="section-9__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="section-9__a-inner">
+                            <p class="section-9__a-text">O Matt Pulgões é a solução ideal e pode ser usado durante todo o ano. 
+                              Basta pulverizar a mistura diretamente nas folhas e caules afetados para acabar com a praga.</p>
+                        </div>
+                    </details>
+                </li>
+                <li class="section-9__item">
+                    <details class="section-9__item">
+                        <summary>
+                            <h3 class="section-9__q-text">Como preparar e aplicar o inseticida em pó?</h3>
+                            <span class="section-9__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="section-9__a-inner">
+                            <p class="section-9__a-text">A preparação é simples: misture 10g de produto em 1 litro de água limpa. Depois, 
+                              coloque a solução num pulverizador manual e aplique diretamente nos focos de infestação.</p>
+                        </div>
+                    </details>
+                </li>
+                <li class="section-9__item">
+                    <details class="section-9__item">
+                        <summary>
+                            <h3 class="section-9__q-text">O que é a Deltametrina 0,2% e como funciona?</h3>
+                            <span class="section-9__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="section-9__a-inner">
+                            <p class="section-9__a-text">É um princípio ativo com efeito de choque. Ao entrar em contacto com a área pulverizada, 
+                              atinge de imediato o sistema nervoso dos insetos, paralisando e eliminando rapidamente pulgões e mosquitos.</p>
+                        </div>
+                    </details>
+                </li>
+            </ul>
+        </section>
+
+        </footer>
+
+        </article>
+
+
+</div>`,
+      css:  ``,
     },
 
         /*@@@@Col - comp-p-faq-e */
