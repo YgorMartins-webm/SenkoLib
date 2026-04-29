@@ -11,11 +11,12 @@ ColLib.register({
   group: 'pedro',
   tags:  [],
   layouts: [
-                /*@@@@Col - comp-3p */
+                    /*@@@@Col - comp-3p */
     {
       id:   'comp-3p',
       name: 'comp - 3p',
-      html: `<style>  
+      html: `
+  <style>  
     
     @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
@@ -867,6 +868,21 @@ ColLib.register({
         
     }
 
+    @media (max-width: 600px) {
+
+    .table-container-custom {
+
+      padding: 10px;
+    }
+
+    .table-text-custom,
+    .table-th-custom,
+    .table-td-custom {
+
+      padding: 8px;
+    }
+    }
+
     @media (max-width: 768px) {
 
       .section-32__grouptext-overlay h2 {
@@ -919,6 +935,7 @@ ColLib.register({
     }
 
 </style>  
+
 <div class="lp-container">
   <link rel="nestlenect" href="https://fonts.googleapis.com">
   <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
@@ -932,7 +949,7 @@ ColLib.register({
     <figure style="width:100%;height:100%;margin:0;">
       <img
         src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-grafismo-bolas-futebol-2224602-01.jpg"
-        alt="Padrão visual roxo cachos uva folhas identidade suco aoc Kids" 
+        alt="Grafismo bolas de futebol verde e amarelo em fundo azul escuro Smart TV AOC Roku 7045" 
         class="product-header__banner-img" loading="eager">
     </figure>
     <div class="product-header__badge" role="img" aria-label="Logo da marca aoc dentro de um círculo laranja">
@@ -954,9 +971,21 @@ ColLib.register({
 </section>
 
       <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
-       <figure class="section-32__groupimage-section">
+       <picture class="section-32__groupimage-section">
+        <source media="(max-width: 480px)" 
+        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-tela-frontal-lancamento-2224602-02.jpg?ims=480x">
+
+        <source media="(max-width: 768px)" 
+        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-tela-frontal-lancamento-2224602-02.jpg?ims=768x">
+
+        <source media="(max-width: 1199px)" 
+        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-tela-frontal-lancamento-2224602-02.jpg?ims=1199x">
+
+        <source media="(min-width: 1200px)" 
+        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-tela-frontal-lancamento-2224602-02.jpg">
+
        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-tela-frontal-lancamento-2224602-02.jpg"
-        alt="Smart TV AOC 50 4K exibindo alpinista e ícones HDR10+, Dolby Atmos, Bluetooth e jogo" 
+        alt="Vista frontal Smart TV AOC Roku Série 7045 50 polegadas. Tela destaca design sem bordas, 4K e Dolby Digital." 
         style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
       <figcaption class="section-32__grouptext-overlay bottom grouptext-overlay-Background" style="top: 80%;">
@@ -964,11 +993,23 @@ ColLib.register({
         <p>Sim! Pelo controle remoto com microfone você faz buscas rapidinho. Ela também é compatível com Alexa e Apple Home (Siri).
         </p>
       </figcaption>
-      </figure>
+    </picture>
 
-       <figure class="section-32__groupimage-section" style="z-index: 3;">
+       <picture class="section-32__groupimage-section" style="z-index: 3;">
+         <source media="(max-width: 480px)" 
+          srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-controle-remoto-atalho-aplicativos-2224602-03.jpg?ims=480x">
+  
+          <source media="(max-width: 768px)" 
+          srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-controle-remoto-atalho-aplicativos-2224602-03.jpg?ims=768x">
+  
+          <source media="(max-width: 1199px)" 
+          srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-controle-remoto-atalho-aplicativos-2224602-03.jpg?ims=1199x">
+  
+          <source media="(min-width: 1200px)" 
+          srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-controle-remoto-atalho-aplicativos-2224602-03.jpg">
+
        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-controle-remoto-atalho-aplicativos-2224602-03.jpg"
-        alt="Smart TV AOC exibindo jogador de futebol em lance acrobático e bola em primeiro plano" 
+        alt="Controle remoto Smart TV AOC Roku Série 7045 com atalhos de aplicativos. Fundo telhado e bolas de futebol." 
         style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
       <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%;">
@@ -976,11 +1017,24 @@ ColLib.register({
         <p>Com recursos VRR, ALLM e Gamebar 2.0, ela é Ready for Gaming, garantindo jogabilidade fluida e sem atrasos.
         </p>
       </figcaption>
-      </figure>
+      </picture>
 
-      <figure class="section-32__groupimage-section" style="z-index: 3;">
+      <picture class="section-32__groupimage-section" style="z-index: 3;">
+
+          <source media="(max-width: 480px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-controle-remoto-fundo-jogo-2224602-04.jpg?ims=480x">
+    
+            <source media="(max-width: 768px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-controle-remoto-fundo-jogo-2224602-04.jpg?ims=768x">
+    
+            <source media="(max-width: 1199px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-controle-remoto-fundo-jogo-2224602-04.jpg?ims=1199x">
+    
+            <source media="(min-width: 1200px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-controle-remoto-fundo-jogo-2224602-04.jpg">
+
        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-controle-remoto-fundo-jogo-2224602-04.jpg"
-        alt="Smart TV AOC transmitindo partida de futebol em estádio lotado com fundo verde gráfico" 
+        alt="Controle remoto flutuando e Smart TV AOC Roku 50 polegadas transmitindo jogo de futebol em sala de estar." 
         style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
       <figcaption class="section-32__grouptext-overlay top grouptext-overlay-Background" style="top: 50%;">
@@ -988,14 +1042,27 @@ ColLib.register({
         <p>A base tem 81,1cm entre os pés. A TV inteira mede 111,1cm de largura e aceita suportes de parede no padrão 200x100mm.
         </p>
       </figcaption>
-      </figure>
+      </picture>
 
-      <figure class="section-32__groupimage-section">
+      <picture class="section-32__groupimage-section">
+        <source media="(max-width: 480px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-familia-futebol-sala-2224602-05.jpg?ims=480x">
+    
+            <source media="(max-width: 768px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-familia-futebol-sala-2224602-05.jpg?ims=768x">
+    
+            <source media="(max-width: 1199px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-familia-futebol-sala-2224602-05.jpg?ims=1199x">
+    
+            <source media="(min-width: 1200px)" 
+            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-familia-futebol-sala-2224602-05.jpg">
+
+
        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/smart-tv-aoc-roku-tv-50-polegadas-4k-familia-futebol-sala-2224602-05.jpg"
-        alt="Casal assistindo jogo de futebol na Smart TV AOC em sala de estar com fundo verde" 
+        alt="Família torcendo assistindo jogo de futebol na Smart TV AOC Roku Série 7045 50 polegadas em sala de estar." 
         style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
-      </figure>
+      </picture>
       </section>
     
 
@@ -1009,6 +1076,8 @@ ColLib.register({
 
 
 </div>
+
+
 `,
       css:  ``,
     },
