@@ -4674,240 +4674,11 @@ ColLib.register({
 </style>  `,
     },
 
-        /*@@@@Col - comp-p-3b-faqe-vh-tb */
+            /*@@@@Col - comp-p-3b-faqe-vh-tb */
     {
       id:   'comp-p-3b-faqe-vh-tb',
       name: 'comp - 3 blocos faq embutido video header e tabela',
-      html: `<div class="lp-container">
-  <link rel="nestlenect" href="https://fonts.googleapis.com">
-  <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
-  <title>PDP - eFácil</title>
-   <article style="width: 100%;">
-    <section class="video-header" aria-label="Cabeçalho do produto">
-   
-      <header class="video-header__banner">
-        <video class="video-header__banner-video"
-          poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/poster-havaianas-listras-rosa-e-vermelha-tropical.jpg" 
-          preload="none" autoplay muted loop playsinline width="1200" height="250" aria-hidden="true">
-          <source
-            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/havaianas/header-havaianas1.mov"
-            loading="eager">
-        </video>
-        <div class="video-header__badge" role="img" aria-label="Logo da marca havaianas dentro de um círculo alaranjado">
-          <img
-            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/havaianas/logo-havaianas.png"
-            alt="imagem png com ícone da marca havaianas dentro de um círculo alaranjado em frente ao cabeçalho" class="video-header__badge-img">
-        </div>
-      </header>
-        <section class="video-header__body">
-        <small class="video-header__brand">havaianas</small>
-        <h3 class="video-header__title">
-          	CHINELOS HAVAIANAS KIDS COLOR BRANCO/PRETO
-        </h3>
-        <p class="video-header__subtitle">
-         Unem o design clássico que você confia com a leveza necessária para as crianças brincarem o dia todo sem desconforto nos pés.
-        </p>
-     </section>
-     </section>
-
-
-      <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
-       <figure class="section-32__groupimage-section">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-solado-branco-1224878-02.jpg"
-        alt="Chinelo Havaianas Kids Color branco  detalhe solado e tiras fundo vermelho tropical." 
-        style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 50%;">
-        <h2><strong>É CONFORTÁVEL?</strong></h2>
-        <p>É confortável para crianças? Sim! Possui solas 100% borracha, macias e flexíveis, garantindo o amortecimento ideal para o uso diário.
-        </p>
-      </figcaption>
-      </figure>
-
-       <figure class="section-32__groupimage-section" style="z-index: 11;">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-frontal-preto-1224878-03.jpg"
-        alt="Chinelo Havaianas Kids Color preto  detalhe frontal texturizado fundo vermelho." 
-        style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 20%; left: 25%;">
-        <h2><strong>BRANCA OU PRETA?</strong></h2>
-        <p>Temos a Havaianas Kids Color Branca e Preta. Ambas contam com material resistente ao desgaste e exposição solar moderada.
-        </p>
-      </figcaption>
-      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 90%; left: 40%;">
-        <h2><strong>DEFORMA COM O USO?</strong></h2>
-        <p>Não! Sua composição em borracha de alta qualidade evita deformações e garante maior vida útil ao produto infantil.
-        </p>
-      </figcaption>
-      </figure>
-
-      <figure class="section-32__groupimage-section" style="z-index: 3; overflow: hidden;">
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-calcanhar-preto-1224878-04.jpg"
-        alt="Chinelo Havaianas Kids Color preto  detalhe calcanhar solado borracha cenário tropical." 
-        style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-        
-  <!-- Camada com gradiente de fade -->
-
-   <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
-              background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.550) 37%, rgba(0, 0, 0, 0.897) 100%); 
-              z-index: 5; border-radius: 0px 0px 30px 30px; pointer-events: none;"></div>
-
-              <!-- FAQ -->
-
-       <section class="section-9" aria-labelledby="section-9-title">
-           
-    <div class="section-9__header">
-      <h3 class="section-9__title" id="section-9-title">Resolva suas dúvidas</h3>
-      <p class="section-9__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
-    </div>
-    <ul class="section-9__list">
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <h3 class="section-9__q-text">Qual o melhor material para chinelos de criança?</h3>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">
-              O ideal é optar por solas 100% em borracha e tiras em PVC texturizado. Esta combinação oferece flexibilidade, 
-              conforto e um excelente amortecimento para o uso diário.
-            </p>
-          </div>
-        </details>
-      </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <h3 class="section-9__q-text">Como escolher chinelos resistentes para o dia a dia?</h3>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">
-              Procure modelos feitos com borracha de alta qualidade. Este material evita deformações, resiste ao 
-              desgaste e suporta a exposição solar, garantindo uma longa vida útil.
-            </p>
-          </div>
-        </details>
-      </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <h3 class="section-9__q-text">Quais são as vantagens dos chinelos de borracha?</h3>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">
-              Proporcionam muito conforto graças às solas macias e flexíveis. O seu 
-              design funcional assegura a frescura ideal para os dias quentes, sendo um calçado leve e prático.
-            </p>
-          </div>
-        </details>
-      </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <h3 class="section-9__q-text">Como funciona a numeração dos chinelos infantis?</h3>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">
-              As marcas disponibilizam tamanhos duplos para acompanhar o crescimento da criança. 
-              Pode encontrar opções do 23/24 até o 31/32, garantindo um excelente ajuste ao pé.
-            </p>
-          </div>
-        </details>
-      </li>
-      <li class="section-9__item">
-        <details class="section-9__item">
-          <summary>
-            <h3 class="section-9__q-text">Os chinelos de borracha são antiderrapantes?</h3>
-            <span class="section-9__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="section-9__a-inner">
-            <p class="section-9__a-text">
-              Os modelos de qualidade contam com solas antiderrapantes que garantem maior segurança e 
-              estabilidade, permitindo que as crianças brinquem à vontade e sem escorregar.
-            </p>
-          </div>
-        </details>
-      </li>
-    </ul>
-      </section>
-    </figure>
-    </section>
-      
-
-        <footer>
-           <p class="p__end">
-          <strong>Imagens Meramente Ilustrativas</strong>
-          </p>
-           <section class="table-container-custom" aria-label="tabela contendo produtos relacionados e citados dentre deste conteúdo">
-          <table class="table-design-custom">
-            <thead class="table-head-custom">
-               <tr class="table-tr-custom">
-                 <th class="table-text-custom table-th-custom" style="background-color: #fb373c; border-radius: 10px 0 0 0;">SKU
-                 </th>
-                 <!--Replicar para adicionar mais COLUNAS-->
-                 <th class="table-text-custom table-th-custom" style="background-color: #fb373c; border-radius: 0 10px 0 0;">TÍTULO
-                 </th>
-               </tr>
-             </thead>
-             <tbody>
-               <tr class="table-tr-custom">
-                 <td class="table-text-custom table-td-custom-title">1224878</td>
-            <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 23/4</td>
-           </tr>
-         <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">1224879</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 25/6</td>
-        </tr>
-          <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">1224881</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 27/8</td>
-      </tr>
-      <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title">1224882</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 29/0</td>
-         </tr>
-        <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title ">1224883</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 31/2</td>
-          </tr>
-           <tr class="table-tr-custom">
-                 <td class="table-text-custom table-td-custom-title">1224884</td>
-            <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 23/4</td>
-           </tr>
-         <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">1224885</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 25/6</td>
-        </tr>
-          <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">1224886</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 27/8</td>
-      </tr>
-      <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title">1224887</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 29/0</td>
-         </tr>
-        <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title">1224888</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 31/2</td>
-          </tr>
-             </tbody>
-           </table>
-         </section>
-        </footer>
-
-        </article>
-
-
-</div>
-`,
-      css:  `
+      html: `
   <style>  
     
     @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
@@ -5584,7 +5355,7 @@ ColLib.register({
 
     }
 
-        .section-9 {
+        .faq-section {
             width: 100%;
             padding: 2rem 16px;
             box-sizing: border-box;
@@ -5605,12 +5376,12 @@ ColLib.register({
             -webkit-overflow-scrolling: touch;
         }
 
-        .section-9__header {
+        .faq-section__header {
             text-align: center;
             margin-bottom: 2rem;
         }
 
-        .section-9__title {
+        .faq-section__title {
             font-size: clamp(1.5rem, 3vw, 2rem);
             font-weight: bold;
             color: #ffffff;
@@ -5618,13 +5389,13 @@ ColLib.register({
             line-height: 6vw;
         }
 
-        .section-9__subtitle {
+        .faq-section__subtitle {
             font-size: 1rem;
             color: #ffffff;
             margin: 0;
         }
 
-        .section-9__list {
+        .faq-section__list {
             list-style: none;
             margin: 0 auto;
             padding: 0;
@@ -5634,14 +5405,14 @@ ColLib.register({
             gap: 8px;
         }
 
-        .section-9__item {
+        .faq-section__item {
             background: #ffffff05;
             border: 1px solid #ffffff;
             border-radius: 12px;
             overflow: hidden;
         }
 
-        .section-9__item summary {
+        .faq-section__item summary {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -5651,49 +5422,49 @@ ColLib.register({
             list-style: none;
         }
 
-        .section-9::-webkit-scrollbar {
+        .faq-section::-webkit-scrollbar {
          width: 8px;
             }
-        .section-9::-webkit-scrollbar-track {
+        .faq-section::-webkit-scrollbar-track {
           background: rgba(255, 255, 255, 0.1);
            border-radius: 10px;
             }
-        .section-9::-webkit-scrollbar-thumb {
+        .faq-section::-webkit-scrollbar-thumb {
            background: rgba(255, 255, 255, 0.3);
             border-radius: 10px;
               }
-        .section-9::-webkit-scrollbar-thumb:hover {
+        .faq-section::-webkit-scrollbar-thumb:hover {
              background: rgba(255, 255, 255, 0.5);
         }
 
-        .section-9__item summary::-webkit-details-marker {
+        .faq-section__item summary::-webkit-details-marker {
             display: none;
         }
 
-        .section-9__item summary:hover {
+        .faq-section__item summary:hover {
             background: #f9f9f92f;
         }
 
-        .section-9__q-text {
+        .faq-section__q-text {
             font-size: 1rem;
             font-weight: bold;
             color: #ffffff;
             flex: 1;
         }
 
-          .section-9__q-text:hover {
+          .faq-section__q-text:hover {
             color: #00ff6e;
         }
 
-        .section-9__icon {
+        .faq-section__icon {
             width: 20px;
             height: 20px;
             flex-shrink: 0;
             position: relative;
         }
 
-        .section-9__icon::before,
-        .section-9__icon::after {
+        .faq-section__icon::before,
+        .faq-section__icon::after {
             content: '';
             position: absolute;
             background: #888;
@@ -5701,31 +5472,31 @@ ColLib.register({
             transition: transform 0.25s ease, opacity 0.25s ease;
         }
 
-        .section-9__icon::before {
+        .faq-section__icon::before {
             width: 12px;
             height: 1.5px;
             top: 9px;
             left: 4px;
         }
 
-        .section-9__icon::after {
+        .faq-section__icon::after {
             width: 1.5px;
             height: 12px;
             top: 4px;
             left: 9px;
         }
 
-        .section-9__item[open] .section-9__icon::after {
+        .faq-section__item[open] .faq-section__icon::after {
             transform: rotate(90deg);
             opacity: 0;
         }
 
-        .section-9__a-inner {
+        .faq-section__a-inner {
             padding: 14px 20px 16px;
             border-top: 1px solid #e5e5e5;
         }
 
-        .section-9__a-text {
+        .faq-section__a-text {
             font-size: 0.9rem;
             color: #ffffff;
             line-height: 1.6;
@@ -5830,7 +5601,7 @@ ColLib.register({
       } 
       
 
-       .section-9__a-text {
+       .faq-section__a-text {
             font-size: 1.0rem;
             font-weight: bold;
             color: #000000;
@@ -5893,7 +5664,7 @@ ColLib.register({
           transform: translate(-50%, -50%);
         }
 
-            .section-9 {
+            .faq-section {
         max-height: 180px !important;
         padding: 0.5rem 8px !important;
         top: 5% !important;
@@ -5920,7 +5691,7 @@ ColLib.register({
           top: 67%;
         }
 
-        .section-9__q-text {
+        .faq-section__q-text {
                 font-size: 0.9rem;
             }
         
@@ -5962,25 +5733,25 @@ ColLib.register({
     .video-header {
         --banner-height: 180px;
       }
-        .section-9__header {
+        .faq-section__header {
     text-align: center;
     margin-bottom: 1rem;
     }
 
     
-    .section-9__a-text {
+    .faq-section__a-text {
         font-size: 0.7rem !important;
     }
 
-    .section-9__title {
+    .faq-section__title {
         font-size: 1rem !important;
      }
 
-     .section-9__subtitle {
+     .faq-section__subtitle {
         font-size: 0.75rem !important;
      }
 
-     .section-9__q-text {
+     .faq-section__q-text {
         font-size: 0.75rem !important;
      }
 
@@ -6016,7 +5787,7 @@ ColLib.register({
           top: 81%;
         }
 
-          .section-9 {
+          .faq-section {
           top: 10%; 
          max-width: 90%;
          max-height: 80%;
@@ -6025,7 +5796,277 @@ ColLib.register({
 
         }
 
-</style>  `,
+</style>  
+
+<div class="lp-container">
+  <link rel="nestlenect" href="https://fonts.googleapis.com">
+  <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <title>PDP - eFácil</title>
+   <article style="width: 100%;">
+    <section class="video-header" aria-label="Cabeçalho do produto">
+   
+      <header class="video-header__banner">
+        <video class="video-header__banner-video"
+          poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/poster-havaianas-listras-rosa-e-vermelha-tropical.jpg" 
+          preload="none" autoplay muted loop playsinline width="1200" height="250" aria-hidden="true">
+          <source
+            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/havaianas/header-havaianas1.mov"
+            loading="eager">
+        </video>
+        <div class="video-header__badge" role="img" aria-label="Logo da marca havaianas dentro de um círculo alaranjado">
+          <img
+            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/havaianas/logo-havaianas.png"
+            alt="imagem png com ícone da marca havaianas dentro de um círculo alaranjado em frente ao cabeçalho" class="video-header__badge-img">
+        </div>
+      </header>
+        <section class="video-header__body">
+        <small class="video-header__brand">havaianas</small>
+        <h2 class="video-header__title">
+          	CHINELOS HAVAIANAS KIDS COLOR BRANCO/PRETO
+        </h2>
+        <p class="video-header__subtitle">
+         Unem o design clássico que você confia com a leveza necessária para as crianças brincarem o dia todo sem desconforto nos pés.
+        </p>
+     </section>
+     </section>
+
+
+      <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
+       <picture class="section-32__groupimage-section">
+
+        <source media="(max-width: 393px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-solado-branco-1224878-02.jpg?ims=393x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-solado-branco-1224878-02.jpg?ims=768x">
+      
+              <source media="(max-width: 1199px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-solado-branco-1224878-02.jpg?ims=1199x">
+      
+              <source media="(min-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-solado-branco-1224878-02.jpg">
+
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-solado-branco-1224878-02.jpg"
+        alt="Chinelo Havaianas Kids Color branco  detalhe solado e tiras fundo vermelho tropical." 
+        style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 50%;">
+        <h2><strong>É CONFORTÁVEL?</strong></h2>
+        <p>É confortável para crianças? Sim! Possui solas 100% borracha, macias e flexíveis, garantindo o amortecimento ideal para o uso diário.
+        </p>
+      </figcaption>
+      </picture>
+
+       <picture class="section-32__groupimage-section" style="z-index: 11;">
+
+        <source media="(max-width: 393px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-frontal-preto-1224878-03.jpg?ims=393x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-frontal-preto-1224878-03.jpg?ims=768x">
+      
+              <source media="(max-width: 1199px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-frontal-preto-1224878-03.jpg?ims=1199x">
+      
+              <source media="(min-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-frontal-preto-1224878-03.jpg">
+        
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-frontal-preto-1224878-03.jpg"
+        alt="Chinelo Havaianas Kids Color preto  detalhe frontal texturizado fundo vermelho." 
+        style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 20%; left: 25%;">
+        <h2><strong>BRANCA OU PRETA?</strong></h2>
+        <p>Temos a Havaianas Kids Color Branca e Preta. Ambas contam com material resistente ao desgaste e exposição solar moderada.
+        </p>
+      </figcaption>
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 90%; left: 40%;">
+        <h2><strong>DEFORMA COM O USO?</strong></h2>
+        <p>Não! Sua composição em borracha de alta qualidade evita deformações e garante maior vida útil ao produto infantil.
+        </p>
+      </figcaption>
+      </picture>
+
+      <picture class="section-32__groupimage-section" style="z-index: 3; overflow: hidden;">
+
+        <source media="(max-width: 393px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-calcanhar-preto-1224878-04.jpg?ims=393x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-calcanhar-preto-1224878-04.jpg?ims=768x">
+      
+              <source media="(max-width: 1199px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-calcanhar-preto-1224878-04.jpg?ims=1199x">
+      
+              <source media="(min-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-calcanhar-preto-1224878-04.jpg">
+
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-calcanhar-preto-1224878-04.jpg"
+        alt="Chinelo Havaianas Kids Color preto  detalhe calcanhar solado borracha cenário tropical." 
+        style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+        
+  <!-- Camada com gradiente de fade -->
+
+   <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
+              background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.550) 37%, rgba(0, 0, 0, 0.897) 100%); 
+              z-index: 5; border-radius: 0px 0px 30px 30px; pointer-events: none;"></div>
+
+              <!-- FAQ -->
+
+       <section class="faq-section" aria-labelledby="faq-section-title">
+           
+    <div class="faq-section__header">
+      <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
+      <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
+    </div>
+    <ul class="faq-section__list">
+      <li class="faq-section__item">
+        <details class="faq-section__item">
+          <summary>
+            <h3 class="faq-section__q-text">Qual o melhor material para chinelos de criança?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
+              O ideal é optar por solas 100% em borracha e tiras em PVC texturizado. Esta combinação oferece flexibilidade, 
+              conforto e um excelente amortecimento para o uso diário.
+            </p>
+          </div>
+        </details>
+      </li>
+      <li class="faq-section__item">
+        <details class="faq-section__item">
+          <summary>
+            <h3 class="faq-section__q-text">Como escolher chinelos resistentes para o dia a dia?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
+              Procure modelos feitos com borracha de alta qualidade. Este material evita deformações, resiste ao 
+              desgaste e suporta a exposição solar, garantindo uma longa vida útil.
+            </p>
+          </div>
+        </details>
+      </li>
+      <li class="faq-section__item">
+        <details class="faq-section__item">
+          <summary>
+            <h3 class="faq-section__q-text">Quais são as vantagens dos chinelos de borracha?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
+              Proporcionam muito conforto graças às solas macias e flexíveis. O seu 
+              design funcional assegura a frescura ideal para os dias quentes, sendo um calçado leve e prático.
+            </p>
+          </div>
+        </details>
+      </li>
+      <li class="faq-section__item">
+        <details class="faq-section__item">
+          <summary>
+            <h3 class="faq-section__q-text">Como funciona a numeração dos chinelos infantis?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
+              As marcas disponibilizam tamanhos duplos para acompanhar o crescimento da criança. 
+              Pode encontrar opções do 23/24 até o 31/32, garantindo um excelente ajuste ao pé.
+            </p>
+          </div>
+        </details>
+      </li>
+      <li class="faq-section__item">
+        <details class="faq-section__item">
+          <summary>
+            <h3 class="faq-section__q-text">Os chinelos de borracha são antiderrapantes?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
+              Os modelos de qualidade contam com solas antiderrapantes que garantem maior segurança e 
+              estabilidade, permitindo que as crianças brinquem à vontade e sem escorregar.
+            </p>
+          </div>
+        </details>
+      </li>
+    </ul>
+      </section>
+    </picture>
+    </section>
+      
+
+        <footer>
+           <p class="p__end">
+          <strong>Imagens Meramente Ilustrativas</strong>
+          </p>
+           <section class="table-container-custom" aria-label="tabela contendo produtos relacionados e citados dentre deste conteúdo">
+          <table class="table-design-custom">
+            <thead class="table-head-custom">
+               <tr class="table-tr-custom">
+                 <th class="table-text-custom table-th-custom" style="background-color: #fb373c; border-radius: 10px 0 0 0;">SKU
+                 </th>
+                 <!--Replicar para adicionar mais COLUNAS-->
+                 <th class="table-text-custom table-th-custom" style="background-color: #fb373c; border-radius: 0 10px 0 0;">TÍTULO
+                 </th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr class="table-tr-custom">
+                 <td class="table-text-custom table-td-custom-title">1224878</td>
+            <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 23/4</td>
+           </tr>
+         <tr class="table-tr-custom">
+           <td class="table-text-custom table-td-custom-title">1224879</td>
+        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 25/6</td>
+        </tr>
+          <tr class="table-tr-custom">
+           <td class="table-text-custom table-td-custom-title">1224881</td>
+        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 27/8</td>
+      </tr>
+      <tr class="table-tr-custom">
+        <td class="table-text-custom table-td-custom-title">1224882</td>
+        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 29/0</td>
+         </tr>
+        <tr class="table-tr-custom">
+        <td class="table-text-custom table-td-custom-title ">1224883</td>
+        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 31/2</td>
+          </tr>
+           <tr class="table-tr-custom">
+                 <td class="table-text-custom table-td-custom-title">1224884</td>
+            <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 23/4</td>
+           </tr>
+         <tr class="table-tr-custom">
+           <td class="table-text-custom table-td-custom-title">1224885</td>
+        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 25/6</td>
+        </tr>
+          <tr class="table-tr-custom">
+           <td class="table-text-custom table-td-custom-title">1224886</td>
+        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 27/8</td>
+      </tr>
+      <tr class="table-tr-custom">
+        <td class="table-text-custom table-td-custom-title">1224887</td>
+        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 29/0</td>
+         </tr>
+        <tr class="table-tr-custom">
+        <td class="table-text-custom table-td-custom-title">1224888</td>
+        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 31/2</td>
+          </tr>
+             </tbody>
+           </table>
+         </section>
+        </footer>
+
+        </article>
+
+
+</div>
+`,
+      css:  ``,
     },
 
         /*@@@@Col - comp-3-blocos-product-header-faq-embutido-e-tabela */
