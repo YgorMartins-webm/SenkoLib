@@ -2277,1196 +2277,1182 @@ ColLib.register({
       css:  ``,
     },
 
-            /*@@@@Col - comp-p-faq-e */
+                /*@@@@Col - comp-p-faq-e */
     {
       id:   'comp-p-faq-e',
       name: 'Comp p com 3 blocos e FAQ embutido na figure',
       html: `
-  <style>  
-    
-    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
+    <style>  
+      
+      @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
 
 
-    *{
-    margin: 0;
-    padding: 0;
-  }
-
-   body {
-
+      *{
       margin: 0;
+      padding: 0;
     }
 
-    .tw-container {
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      width: 100%
-    }
+    body {
 
-    @media (min-width:576px) {
+        margin: 0;
+      }
 
       .tw-container {
-
-        max-width: 576px
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        width: 100%
       }
-    }
 
-    @media (min-width:768px) {
+      @media (min-width:576px) {
 
-      .tw-container {
+        .tw-container {
 
-        max-width: 768px
+          max-width: 576px
+        }
       }
-    }
 
-    @media (min-width:992px) {
+      @media (min-width:768px) {
 
-      .tw-container {
+        .tw-container {
 
-        max-width: 992px
+          max-width: 768px
+        }
       }
-    }
 
-    @media (min-width:1200px) {
+      @media (min-width:992px) {
 
-      .tw-container {
+        .tw-container {
 
-        max-width: 1200px
+          max-width: 992px
+        }
       }
-    }
 
-    @media (min-width:1536px) {
+      @media (min-width:1200px) {
 
-      .tw-container {
+        .tw-container {
 
-        max-width: 1536px
+          max-width: 1200px
+        }
       }
-    }
 
-    .tw-absolute {
+      @media (min-width:1536px) {
 
-      position: absolute
-    }
+        .tw-container {
 
-    .tw-relative {
+          max-width: 1536px
+        }
+      }
 
-      position: relative
-    }
+      .tw-absolute {
 
-    .-tw-bottom-16 {
+        position: absolute
+      }
 
-      bottom: -4rem
-    }
+      .tw-relative {
 
-    .tw-left-0 {
+        position: relative
+      }
 
-      left: 0
-    }
+      .-tw-bottom-16 {
 
-    .tw-top-0 {
+        bottom: -4rem
+      }
 
-      top: 0
-    }
+      .tw-left-0 {
 
-    .tw-z-0 {
+        left: 0
+      }
 
-      z-index: 0
-    }
+      .tw-top-0 {
 
-    .tw-z-10 {
+        top: 0
+      }
 
-      z-index: 10
-    }
+      .tw-z-0 {
 
-    .tw-col-span-2 {
+        z-index: 0
+      }
 
-      grid-column: span 2/span 2
-    }
+      .tw-z-10 {
 
-    .tw-m-0 {
+        z-index: 10
+      }
 
-      margin: 0
-    }
+      .tw-col-span-2 {
 
-    .tw-my-16 {
+        grid-column: span 2/span 2
+      }
 
-      margin-bottom: 4rem;
-      margin-top: 4rem
-    }
+      .tw-m-0 {
 
-    .tw-my-8 {
+        margin: 0
+      }
 
-      margin-bottom: 2rem;
-      margin-top: 2rem
-    }
+      .tw-my-16 {
 
-    .tw-mb-1 {
+        margin-bottom: 4rem;
+        margin-top: 4rem
+      }
 
-      margin-bottom: .25rem
-    }
+      .tw-my-8 {
 
-    .tw-mb-6 {
+        margin-bottom: 2rem;
+        margin-top: 2rem
+      }
 
-      margin-bottom: 1.5rem
-    }
+      .tw-mb-1 {
 
-    .tw-mt-16 {
+        margin-bottom: .25rem
+      }
 
-      margin-top: 4rem
-    }
+      .tw-mb-6 {
 
-    .tw-mt-4 {
+        margin-bottom: 1.5rem
+      }
 
-      margin-top: 1rem
-    }
+      .tw-mt-16 {
 
-    .tw-mt-8 {
+        margin-top: 4rem
+      }
 
-      margin-top: 2rem
-    }
+      .tw-mt-4 {
 
-    .tw-flex {
+        margin-top: 1rem
+      }
 
-      display: flex
-    }
+      .tw-mt-8 {
 
-    .tw-grid {
+        margin-top: 2rem
+      }
 
-      display: grid
-    }
+      .tw-flex {
 
-    .tw-h-14 {
+        display: flex
+      }
 
-      height: 3.5rem
-    }
+      .tw-grid {
 
-    .tw-h-32 {
+        display: grid
+      }
 
-      height: 8rem
-    }
+      .tw-h-14 {
 
-    .tw-h-5 {
+        height: 3.5rem
+      }
 
-      height: 1.25rem
-    }
+      .tw-h-32 {
 
-    .tw-h-56 {
+        height: 8rem
+      }
 
-      height: 14rem
-    }
+      .tw-h-5 {
 
-    .tw-h-6 {
+        height: 1.25rem
+      }
 
-      height: 1.5rem
-    }
+      .tw-h-56 {
 
-    .tw-h-64 {
+        height: 14rem
+      }
 
-      height: 16rem
-    }
+      .tw-h-6 {
 
-    .tw-h-25rem {
+        height: 1.5rem
+      }
 
-      height: 25rem
-    }
+      .tw-h-64 {
 
-    .tw-h-31-25rem {
+        height: 16rem
+      }
 
-      height: 31.25rem
-    }
+      .tw-h-25rem {
 
-    .tw-h-32rem {
+        height: 25rem
+      }
 
-      height: 32rem
-    }
+      .tw-h-31-25rem {
 
-    .tw-h-full {
+        height: 31.25rem
+      }
 
-      height: 100%
-    }
+      .tw-h-32rem {
 
-    .tw-w-14 {
+        height: 32rem
+      }
 
-      width: 3.5rem
-    }
+      .tw-h-full {
 
-    .tw-w-32 {
+        height: 100%
+      }
 
-      width: 8rem
-    }
+      .tw-w-14 {
 
-    .tw-w-5 {
+        width: 3.5rem
+      }
 
-      width: 1.25rem
-    }
+      .tw-w-32 {
 
-    .tw-w-6 {
+        width: 8rem
+      }
 
-      width: 1.5rem
-    }
+      .tw-w-5 {
 
-    .tw-w-full {
+        width: 1.25rem
+      }
 
-      width: 100%
-    }
+      .tw-w-6 {
 
-    .tw-max-w-6rem {
+        width: 1.5rem
+      }
 
-      max-width: 6rem
-    }
+      .tw-w-full {
 
-    .tw-max-w-md {
+        width: 100%
+      }
 
-      max-width: 28rem
-    }
+      .tw-max-w-6rem {
 
-    .tw-max-w-sm {
+        max-width: 6rem
+      }
 
-      max-width: 24rem
-    }
+      .tw-max-w-md {
 
-    .tw-max-w-xl {
+        max-width: 28rem
+      }
 
-      max-width: 36rem
-    }
+      .tw-max-w-sm {
 
-    .tw-select-none {
+        max-width: 24rem
+      }
 
-      -webkit-user-select: none;
-      user-select: none
-    }
+      .tw-max-w-xl {
 
-    .tw-list-none {
+        max-width: 36rem
+      }
 
-      list-style-type: none
-    }
+      .tw-select-none {
 
-    .tw-grid-cols-1 {
+        -webkit-user-select: none;
+        user-select: none
+      }
 
-      grid-template-columns: repeat(1, minmax(0, 1fr))
-    }
+      .tw-list-none {
 
-    .tw-flex-col {
+        list-style-type: none
+      }
 
-      flex-direction: column
-    }
+      .tw-grid-cols-1 {
 
-    .tw-items-end {
+        grid-template-columns: repeat(1, minmax(0, 1fr))
+      }
 
-      align-items: flex-end
-    }
+      .tw-flex-col {
 
-    .tw-items-center {
+        flex-direction: column
+      }
 
-      align-items: center
-    }
+      .tw-items-end {
 
-    .tw-justify-end {
+        align-items: flex-end
+      }
 
-      justify-content: flex-end
-    }
+      .tw-items-center {
 
-    .tw-justify-center {
+        align-items: center
+      }
 
-      justify-content: center
-    }
+      .tw-justify-end {
 
-    .tw-justify-between {
+        justify-content: flex-end
+      }
 
-      justify-content: space-between
-    }
+      .tw-justify-center {
 
-    .tw-gap-10 {
+        justify-content: center
+      }
 
-      gap: 2.5rem
-    }
+      .tw-justify-between {
 
-    .tw-gap-14 {
+        justify-content: space-between
+      }
 
-      gap: 3.5rem
-    }
+      .tw-gap-10 {
 
-    .tw-gap-4 {
+        gap: 2.5rem
+      }
 
-      gap: 1rem
-    }
+      .tw-gap-14 {
 
-    .tw-gap-y-4 {
+        gap: 3.5rem
+      }
 
-      row-gap: 1rem
-    }
+      .tw-gap-4 {
 
-    .tw-rounded {
+        gap: 1rem
+      }
 
-      border-radius: .25rem
-    }
+      .tw-gap-y-4 {
 
-    .tw-rounded-2xl {
+        row-gap: 1rem
+      }
 
-      border-radius: 1rem
-    }
+      .tw-rounded {
 
-    .tw-rounded-full {
+        border-radius: .25rem
+      }
 
-      border-radius: 9999px
-    }
+      .tw-rounded-2xl {
 
-    .tw-rounded-lg {
+        border-radius: 1rem
+      }
 
-      border-radius: .5rem
-    }
+      .tw-rounded-full {
 
-    .tw-rounded-t {
+        border-radius: 9999px
+      }
 
-      border-top-left-radius: .25rem;
-      border-top-right-radius: .25rem
-    }
+      .tw-rounded-lg {
 
-    .tw-border-t {
+        border-radius: .5rem
+      }
 
-      border-top-width: 1px
-    }
+      .tw-rounded-t {
 
-    .tw-border-solid {
+        border-top-left-radius: .25rem;
+        border-top-right-radius: .25rem
+      }
 
-      border-style: solid
-    }
+      .tw-border-t {
 
-    .tw-border-transparent {
+        border-top-width: 1px
+      }
 
-      border-color: transparent
-    }
+      .tw-border-solid {
 
-    .tw-bg-gray-900 {
+        border-style: solid
+      }
 
-      --tw-bg-opacity: 1;
-      background-color: rgb(46 53 56/var(--tw-bg-opacity))
-    }
+      .tw-border-transparent {
 
-    .tw-bg-primary {
+        border-color: transparent
+      }
 
-      --tw-bg-opacity: 1;
-      background-color: rgb(255 153 0/var(--tw-bg-opacity))
-    }
+      .tw-bg-gray-900 {
 
-    .tw-bg-white {
+        --tw-bg-opacity: 1;
+        background-color: rgb(46 53 56/var(--tw-bg-opacity))
+      }
 
-      --tw-bg-opacity: 1;
-      background-color: rgb(255 255 255/var(--tw-bg-opacity))
-    }
+      .tw-bg-primary {
 
-    .tw-object-contain {
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 153 0/var(--tw-bg-opacity))
+      }
 
-      object-fit: contain
-    }
+      .tw-bg-white {
 
-    .tw-object-cover {
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255/var(--tw-bg-opacity))
+      }
 
-      object-fit: cover
-    }
+      .tw-object-contain {
 
-    .tw-p-3 {
+        object-fit: contain
+      }
 
-      padding: .75rem
-    }
+      .tw-object-cover {
 
-    .tw-p-5 {
+        object-fit: cover
+      }
 
-      padding: 1.25rem
-    }
+      .tw-p-3 {
 
-    .tw-p-6 {
+        padding: .75rem
+      }
 
-      padding: 1.5rem
-    }
+      .tw-p-5 {
 
-    .tw-p-8 {
+        padding: 1.25rem
+      }
 
-      padding: 2rem
-    }
+      .tw-p-6 {
 
-    .tw-py-10 {
+        padding: 1.5rem
+      }
 
-      padding-bottom: 2.5rem;
-      padding-top: 2.5rem
-    }
+      .tw-p-8 {
 
-    .tw-pl-0 {
+        padding: 2rem
+      }
 
-      padding-left: 0
-    }
+      .tw-py-10 {
 
-    .tw-pt-8 {
+        padding-bottom: 2.5rem;
+        padding-top: 2.5rem
+      }
 
-      padding-top: 2rem
-    }
+      .tw-pl-0 {
 
-    .tw-text-center {
+        padding-left: 0
+      }
 
-      text-align: center
-    }
+      .tw-pt-8 {
 
-    .tw-font-roboto {
+        padding-top: 2rem
+      }
 
-      font-family: Roboto, sans-serif
-    }
+      .tw-text-center {
 
-    .tw-text-2xl {
+        text-align: center
+      }
 
-      font-size: 32px;
-      font-weight: 600;
-      line-height: 40px
-    }
+      .tw-font-roboto {
 
-    .tw-text-lg {
+        font-family: Roboto, sans-serif
+      }
 
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 28px
-    }
+      .tw-text-2xl {
 
-    .tw-text-md {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 40px
+      }
 
-      font-size: 16px;
-      line-height: 24px
-    }
+      .tw-text-lg {
 
-    .tw-text-sm {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 28px
+      }
 
-      font-size: 14px;
-      line-height: 22px
-    }
+      .tw-text-md {
 
-    .tw-text-xs {
+        font-size: 16px;
+        line-height: 24px
+      }
 
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 16px
-    }
+      .tw-text-sm {
 
-    .tw-uppercase {
+        font-size: 14px;
+        line-height: 22px
+      }
 
-      text-transform: uppercase
-    }
+      .tw-text-xs {
 
-    .tw-text-black {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px
+      }
 
-      --tw-text-opacity: 1;
-      color: rgb(0 0 0/var(--tw-text-opacity))
-    }
+      .tw-uppercase {
 
-    .tw-text-gray-500 {
+        text-transform: uppercase
+      }
 
-      --tw-text-opacity: 1;
-      color: rgb(138 138 138/var(--tw-text-opacity))
-    }
+      .tw-text-black {
 
-    .pdp {
+        --tw-text-opacity: 1;
+        color: rgb(0 0 0/var(--tw-text-opacity))
+      }
 
-      display: flex;
-      flex-direction: column;
-      font-family: Roboto, sans-serif
-    }
+      .tw-text-gray-500 {
 
-    .pdp * {
+        --tw-text-opacity: 1;
+        color: rgb(138 138 138/var(--tw-text-opacity))
+      }
 
-      box-sizing: border-box;
-      margin: 0;
-    }
-
-    .product-header {
-    --badge-size: 8rem;
-    --banner-height: 250px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    font-family: sans-serif;
-    container-type: inline-size;
-  }
-
-  .product-header__banner {
-    width: 100%;
-    height: var(--banner-height);
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-
-  .product-header__banner figure {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-  }
-
-  .product-header__banner-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .product-header__badge {
-    position: absolute;
-    bottom: calc(var(--badge-size) / -2);
-    width: var(--badge-size);
-    height: var(--badge-size);
-    background-color: #ff9900;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 10;
-  }
-
-  .product-header__badge-img {
-    max-width: 90px;
-    max-height: 90px;
-    object-fit: contain;
-  }
-
-  .product-header__body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: calc(var(--badge-size) / 2 + 1.1rem) 0.3rem 2.5rem;
-    text-align: center;
-  }
-
-  .product-header__brand {
-    color: #ff9900;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-
-  .product-header__title {
-    font-size: clamp(1.4rem, 4vw, 2.4rem);
-    line-height: clamp(1.6rem, 4vw, 3.1rem);
-    font-weight: 600;
-    max-width: 50rem;
-    text-wrap: pretty;
-  }
-
-  .product-header__subtitle {
-    color: #8a8a8a;
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    line-height: 120%;
-    margin-top: 1rem;
-    max-width: 52rem;
-    text-wrap: pretty;
-  }
-  
-    .section-32__container {
-      width: 100%;
-      max-width: 1600px;
-      margin: 0 auto;
-      border: 5.5px solid #000;
-      border-radius: 36px;
-    }
-
-    .section-32__groupimage-section {
-      position: relative;
-      width: 100%;
-      margin: 0;
-      contain: layout style;
-    }
-
-    .section-32__groupimage-section img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .section-32__grouptext-overlay {
-      color: #ffffff;
-      position: absolute;
-      max-width: 45%;
-      width: 90%;
-      line-height: 2rem;
-      text-align: center;
-      font-family: sans-serif
-    }
-
-    .section-32__grouptext-overlay.top {
-      top: 3%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .section-32__grouptext-overlay.bottom {
-      top: 75%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .section-32__grouptext-overlay.left {
-      top: 50%;
-      left: 25%;
-      transform: translate(-50%, -50%);
-      max-width: 41%;
-    }
-
-    .section-32__grouptext-overlay.right {
-      top: 25%;
-      left: 75%;
-      transform: translate(-50%, -50%);
-      max-width: 42%;
-    }
-
-    .section-32__grouptext-overlay h2 {
-      font-size: 2vw;
-      font-weight: bold;
-      margin-bottom: 1.5px;
-      line-height: 120%;
-    }
-
-    .section-32__grouptext-overlay p {
-      font-size: 1.2vw;
-      margin: 0;
-      line-height: 120%;
-    }
-
-    .grouptext-overlay-Background {
-        background: rgba(0, 0, 0, 0.438);
-        border-radius: 4.5vw;
-        padding: 0.5rem;
-        backdrop-filter: blur(0.5vw);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        -webkit-backdrop-filter: blur(0px);
+      .pdp {
 
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        max-width: 70%;
-        z-index: 100;
-    }
+        font-family: Roboto, sans-serif
+      }
 
-    .p__end {
-      color: #8a8a8a;
+      .pdp * {
+
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      .product-header {
+      --badge-size: 8rem;
+      --banner-height: 250px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      position: relative;
       font-family: sans-serif;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      text-wrap: pretty;
-      text-align: center;
-      padding: 40px 0;
-
+      container-type: inline-size;
     }
 
-        .faq-section {
-            width: 100%;
-            padding: 2rem 16px;
-            box-sizing: border-box;
-            margin: 0 auto 25px;
-            padding-top: 0;
-            font-family: sans-serif;
-        }
+    .product-header__banner {
+      width: 100%;
+      height: var(--banner-height);
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
 
-        .faq-section__header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
+    .product-header__banner figure {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
 
-        .faq-section__title {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: bold;
-            color: #333;
-            margin: 0 0 12px;
-            line-height: 98%;
-        }
+    .product-header__banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-        .faq-section__subtitle {
-            font-size: 1rem;
-            color: #666;
-            margin: 0;
-        }
+    .product-header__badge {
+      position: absolute;
+      bottom: calc(var(--badge-size) / -2);
+      width: var(--badge-size);
+      height: var(--badge-size);
+      background-color: #ff9900;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      z-index: 10;
+    }
 
-        .faq-section__list {
-            list-style: none;
-            margin: 0 auto;
-            padding: 0;
-            max-width: 56rem;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
+    .product-header__badge-img {
+      max-width: 90px;
+      max-height: 90px;
+      object-fit: contain;
+    }
 
-        .faq-section__item {
-            background: #fff;
-            border: 1px solid #e5e5e5;
-            border-radius: 12px;
-            overflow: hidden;
-        }
+    .product-header__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: calc(var(--badge-size) / 2 + 1.1rem) 0.3rem 2.5rem;
+      text-align: center;
+    }
 
-        .faq-section__item summary {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 16px 20px;
-            cursor: pointer;
-            list-style: none;
-        }
+    .product-header__brand {
+      color: #ff9900;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
 
-        .faq-section__item summary::-webkit-details-marker {
-            display: none;
-        }
+    .product-header__title {
+      font-size: clamp(1.4rem, 4vw, 2.4rem);
+      line-height: clamp(1.6rem, 4vw, 3.1rem);
+      font-weight: 600;
+      max-width: 50rem;
+      text-wrap: pretty;
+    }
 
-        .faq-section__item summary:hover {
-            background: #f9f9f9;
-        }
+    .product-header__subtitle {
+      color: #8a8a8a;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 120%;
+      margin-top: 1rem;
+      max-width: 52rem;
+      text-wrap: pretty;
+    }
+    
+      .section-32__container {
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+        border: 5.5px solid #000;
+        border-radius: 36px;
+      }
 
-        .faq-section__q-text {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #333;
-            flex: 1;
-        }
+      .section-32__groupimage-section {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        contain: layout style;
+      }
 
-          .faq-section__q-text:hover {
-            color: #007f37;
-        }
+      .section-32__groupimage-section img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
 
-        .faq-section__icon {
-            width: 20px;
-            height: 20px;
-            flex-shrink: 0;
-            position: relative;
-        }
+      .section-32__grouptext-overlay {
+        color: #ffffff;
+        position: absolute;
+        max-width: 45%;
+        width: 90%;
+        line-height: 2rem;
+        text-align: center;
+        font-family: sans-serif
+      }
 
-        .faq-section__icon::before,
-        .faq-section__icon::after {
-            content: '';
-            position: absolute;
-            background: #888;
-            border-radius: 2px;
-            transition: transform 0.25s ease, opacity 0.25s ease;
-        }
+      .section-32__grouptext-overlay.top {
+        top: 3%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
 
-        .faq-section__icon::before {
-            width: 12px;
-            height: 1.5px;
-            top: 9px;
-            left: 4px;
-        }
+      .section-32__grouptext-overlay.bottom {
+        top: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
 
-        .faq-section__icon::after {
-            width: 1.5px;
-            height: 12px;
-            top: 4px;
-            left: 9px;
-        }
+      .section-32__grouptext-overlay.left {
+        top: 50%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        max-width: 41%;
+      }
 
-        .faq-section__item[open] .faq-section__icon::after {
-            transform: rotate(90deg);
-            opacity: 0;
-        }
+      .section-32__grouptext-overlay.right {
+        top: 25%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+        max-width: 42%;
+      }
 
-        .faq-section__a-inner {
-            padding: 14px 20px 16px;
-            border-top: 1px solid #e5e5e5;
-        }
+      .section-32__grouptext-overlay h2 {
+        font-size: 2vw;
+        font-weight: bold;
+        margin-bottom: 1.5px;
+        line-height: 120%;
+      }
 
-        .faq-section__a-text {
-            font-size: 0.9rem;
-            color: #555;
-            line-height: 1.6;
-            margin: 0;
-            font-weight: 500;
-        }
-
-    @media (prefers-contrast: more) {
-
-      .p__end {
-        color: #000;
+      .section-32__grouptext-overlay p {
+        font-size: 1.2vw;
+        margin: 0;
+        line-height: 120%;
       }
 
       .grouptext-overlay-Background {
-        background: rgb(0, 0, 0);
+          background: rgba(0, 0, 0, 0.438);
+          border-radius: 4.5vw;
+          padding: 0.5rem;
+          backdrop-filter: blur(0.5vw);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+          -webkit-backdrop-filter: blur(0px);
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          max-width: 70%;
+          z-index: 100;
       }
 
-      .product-header__subtitle {
-        color: #000;
+      .p__end {
+        color: #8a8a8a;
+        font-family: sans-serif;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        text-wrap: pretty;
+        text-align: center;
+        padding: 40px 0;
+
       }
 
-      .table-td-custom-sub
-      {
-        color: #000;
+          .faq-section {
+              width: 100%;
+              padding: 2rem 16px;
+              box-sizing: border-box;
+              margin: 0 auto 25px;
+              padding-top: 0;
+              font-family: sans-serif;
+          }
+
+          .faq-section__header {
+              text-align: center;
+              margin-bottom: 2rem;
+          }
+
+          .faq-section__title {
+              font-size: clamp(1.5rem, 3vw, 2rem);
+              font-weight: bold;
+              color: #333;
+              margin: 0 0 12px;
+              line-height: 98%;
+          }
+
+          .faq-section__subtitle {
+              font-size: 1rem;
+              color: #666;
+              margin: 0;
+          }
+
+          .faq-section__list {
+              list-style: none;
+              margin: 0 auto;
+              padding: 0;
+              max-width: 56rem;
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+          }
+
+          .faq-section__item {
+              background: #fff;
+              border: 1px solid #e5e5e5;
+              border-radius: 12px;
+              overflow: hidden;
+          }
+
+          .faq-section__item summary {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 12px;
+              padding: 16px 20px;
+              cursor: pointer;
+              list-style: none;
+          }
+
+          .faq-section__item summary::-webkit-details-marker {
+              display: none;
+          }
+
+          .faq-section__item summary:hover {
+              background: #f9f9f9;
+          }
+
+          .faq-section__q-text {
+              font-size: 1rem;
+              font-weight: bold;
+              color: #333;
+              flex: 1;
+          }
+
+            .faq-section__q-text:hover {
+              color: #007f37;
+          }
+
+          .faq-section__icon {
+              width: 20px;
+              height: 20px;
+              flex-shrink: 0;
+              position: relative;
+          }
+
+          .faq-section__icon::before,
+          .faq-section__icon::after {
+              content: '';
+              position: absolute;
+              background: #888;
+              border-radius: 2px;
+              transition: transform 0.25s ease, opacity 0.25s ease;
+          }
+
+          .faq-section__icon::before {
+              width: 12px;
+              height: 1.5px;
+              top: 9px;
+              left: 4px;
+          }
+
+          .faq-section__icon::after {
+              width: 1.5px;
+              height: 12px;
+              top: 4px;
+              left: 9px;
+          }
+
+          .faq-section__item[open] .faq-section__icon::after {
+              transform: rotate(90deg);
+              opacity: 0;
+          }
+
+          .faq-section__a-inner {
+              padding: 14px 20px 16px;
+              border-top: 1px solid #e5e5e5;
+          }
+
+          .faq-section__a-text {
+              font-size: 0.9rem;
+              color: #555;
+              line-height: 1.6;
+              margin: 0;
+              font-weight: 500;
+          }
+
+      @media (prefers-contrast: more) {
+
+        .p__end {
+          color: #000;
+        }
+
+        .grouptext-overlay-Background {
+          background: rgb(0, 0, 0);
+        }
+
+        .product-header__subtitle {
+          color: #000;
+        }
+
+        .table-td-custom-sub
+        {
+          color: #000;
+          font-weight: 550;
+        }
+
+        .table-td-custom-title
+        {
+          color: #000;
+          font-weight: 700;
+        } 
+
+        .product-header__brand {
+          color:#3a2301
+        }
+
+        .faq-section__a-text {
+              font-size: 1.0rem;
+              font-weight: bold;
+              color: #000000;
+          }
+      
+      }
+
+      @media (max-width: 360px) {
+          .section-32__grouptext-overlay h2 {
+            font-size: 3vw;
+          }
+
+          .section-32__grouptext-overlay p {
+            font-size: 2.8vw;
+          }
+
+
+
+          
+      }
+
+      @media (max-width: 470px) {  
+
+        .product-header__subtitle {
+        text-align: justify;
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
         font-weight: 550;
       }
 
-      .table-td-custom-title
-      {
-        color: #000;
-        font-weight: 700;
-      } 
+        .section-32__grouptext-overlay h2 {
+            font-size: 3vw;
+          }
 
-      .product-header__brand {
-        color:#3a2301
+        .section-32__grouptext-overlay p {
+            font-size: 2.4vw;
+          }
+
+        .section-32__grouptext-overlay.top {
+            top: 3%;
+          }
+
+        .section-32__grouptext-overlay.bottom {
+            top: 81%
+          }
+
+        .section-32__grouptext-overlay.right {
+            top: 35%;
+            left: 73%;
+            transform: translate(-50%, -50%);
+          }
+
+          .section-32__grouptext-overlay.left {
+            top: 50%;
+            left: 27%;
+            transform: translate(-50%, -50%);
+          }
+
       }
 
-       .faq-section__a-text {
-            font-size: 1.0rem;
-            font-weight: bold;
-            color: #000000;
-        }
-     
-    }
+      @media (max-width: 500px) {
+          .section-32__grouptext-overlay h2 {
+            font-size: 3vw;
+          }
 
-    @media (max-width: 360px) {
+          .section-32__grouptext-overlay p {
+            font-size: 2.3vw;
+          }
+
+          .section-32__grouptext-overlay.top {
+            top: 3%;
+          }
+
+            .section-32__grouptext-overlay.bottom {
+            top: 67%;
+          }
+
+          .faq-section__q-text {
+                  font-size: 0.9rem;
+              }
+
+          
+      }
+
+
+      @media (max-width: 768px) {
+
         .section-32__grouptext-overlay h2 {
-          font-size: 3vw;
-        }
+            font-size: 2.5vw;
+          }
 
         .section-32__grouptext-overlay p {
-          font-size: 2.8vw;
-        }
-
-
-
-        
-    }
-
-    @media (max-width: 470px) {  
-
-      .product-header__subtitle {
-      text-align: justify;
-      font-size: clamp(0.9rem, 2vw, 1.2rem);
-      font-weight: 550;
-    }
-
-      .section-32__grouptext-overlay h2 {
-          font-size: 3vw;
-        }
-
-      .section-32__grouptext-overlay p {
-          font-size: 2.4vw;
-        }
-
-      .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-      .section-32__grouptext-overlay.bottom {
-          top: 81%
-        }
-
-      .section-32__grouptext-overlay.right {
-          top: 35%;
-          left: 73%;
-          transform: translate(-50%, -50%);
-        }
-
-        .section-32__grouptext-overlay.left {
-          top: 50%;
-          left: 27%;
-          transform: translate(-50%, -50%);
-        }
-
-    }
-
-    @media (max-width: 500px) {
-        .section-32__grouptext-overlay h2 {
-          font-size: 3vw;
-        }
-
-        .section-32__grouptext-overlay p {
-          font-size: 2.3vw;
-        }
+            font-size: 2vw;
+          }
 
         .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
+            top: 3%;
+          }
+
+        .section-32__grouptext-overlay.bottom {
+            top: 76%;
+          }
+
+              .product-header {
+        --banner-height: 180px;
+      }
+      }
+
+      @media (max-width: 960px) {
+          .section-32__grouptext-overlay h2 {
+            font-size: 2.1vw;
+          }
+
+          .section-32__grouptext-overlay p {
+            font-size: 1.5vw;
+          }
+
+          .section-32__grouptext-overlay.top {
+            top: 3%;
+          }
 
           .section-32__grouptext-overlay.bottom {
-          top: 67%;
-        }
+            top: 79%
+          }
+      }
 
-        .faq-section__q-text {
-                font-size: 0.9rem;
-            }
+      @media (max-width: 1060px) {
+          .section-32__grouptext-overlay.top {
+            top: 3%;
+          }
 
-        
-    }
+          .section-32__grouptext-overlay.bottom {
+            top: 81%;
+          }
+      }
 
-    @media (max-width: 600px) {
+  </style>  
 
-    .table-container-custom {
+  <div class="lp-container">
+    <link rel="nestlenect" href="https://fonts.googleapis.com">
+    <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet">
+    <title>PDP - eFácil</title>
+    <article style="width: 100%;">
+  <section class="product-header" aria-label="Cabeçalho do produto">
+    <header class="product-header__banner">
+      <picture style="width:100%; height:100%; margin:0;">
 
-      padding: 10px;
-    }
+        <source media="(max-width: 393px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg?ims=393x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg?ims=768x">
+      
+              <source media="(max-width: 1199px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg?ims=1199x">
+      
+              <source media="(min-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg">
 
-    .table-text-custom,
-    .table-th-custom,
-    .table-td-custom {
+        <img
+          src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg"
+          alt="Fundo verde silhuetas insetos aranhas baratas. Identidade visual multi inseticida Kelldrin." 
+          class="product-header__banner-img" loading="eager">
+      </picture>
+      <div class="product-header__badge" role="img" aria-label="Logo da marca kelldrin dentro de um círculo laranja">
+        <img
+          src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/kelldrin/logo-kelldrin.png"
+          alt="imagem png com ícone da marca kelldrin dentro de um círculo laranja em frente ao cabeçalho" class="product-header__badge-img">
+      </div>
+    </header>
 
-      padding: 8px;
-    }
-    }
-
-    @media (max-width: 768px) {
-
-      .section-32__grouptext-overlay h2 {
-          font-size: 2.5vw;
-        }
-
-      .section-32__grouptext-overlay p {
-          font-size: 2vw;
-        }
-
-      .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-      .section-32__grouptext-overlay.bottom {
-          top: 76%;
-        }
-
-            .product-header {
-      --banner-height: 180px;
-    }
-    }
-
-    @media (max-width: 960px) {
-        .section-32__grouptext-overlay h2 {
-          font-size: 2.1vw;
-        }
-
-        .section-32__grouptext-overlay p {
-          font-size: 1.5vw;
-        }
-
-        .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-        .section-32__grouptext-overlay.bottom {
-          top: 79%
-        }
-    }
-
-    @media (max-width: 1060px) {
-        .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-        .section-32__grouptext-overlay.bottom {
-          top: 81%;
-        }
-    }
-
-</style>  
-
-<div class="lp-container">
-  <link rel="nestlenect" href="https://fonts.googleapis.com">
-  <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
-  <title>PDP - eFácil</title>
-   <article style="width: 100%;">
-<section class="product-header" aria-label="Cabeçalho do produto">
-  <header class="product-header__banner">
-    <picture style="width:100%; height:100%; margin:0;">
-
-      <source media="(max-width: 393px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg?ims=393x">
-    
-            <source media="(max-width: 768px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg?ims=768x">
-    
-            <source media="(max-width: 1199px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg?ims=1199x">
-    
-            <source media="(min-width: 1200px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg">
-
-      <img
-        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg"
-        alt="Fundo verde silhuetas insetos aranhas baratas. Identidade visual multi inseticida Kelldrin." 
-        class="product-header__banner-img" loading="eager">
-    </picture>
-    <div class="product-header__badge" role="img" aria-label="Logo da marca kelldrin dentro de um círculo laranja">
-      <img
-        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/kelldrin/logo-kelldrin.png"
-        alt="imagem png com ícone da marca kelldrin dentro de um círculo laranja em frente ao cabeçalho" class="product-header__badge-img">
-    </div>
-  </header>
-
-  <section class="product-header__body">
-    <small class="product-header__brand">kelldrin</small>
-    <h2 class="product-header__title">
-     	INSETICIDA KELLTHINE SC25 SPRAY KELLDRIN 500ML
-    </h2>
-    <p class="product-header__subtitle">
-       Pronto para uso, garante proteção rápida e prolongada, trazendo mais tranquilidade para o seu lar.
-    </p>
+    <section class="product-header__body">
+      <small class="product-header__brand">kelldrin</small>
+      <h2 class="product-header__title">
+        INSETICIDA KELLTHINE SC25 SPRAY KELLDRIN 500ML
+      </h2>
+      <p class="product-header__subtitle">
+        Pronto para uso, garante proteção rápida e prolongada, trazendo mais tranquilidade para o seu lar.
+      </p>
+    </section>
   </section>
-</section>
 
-      <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
-       <picture class="section-32__groupimage-section">
-         <source media="(max-width: 393px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg?ims=393x">
-    
-            <source media="(max-width: 768px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg?ims=768x">
-    
-            <source media="(max-width: 1199px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg?ims=1199x">
-    
-            <source media="(min-width: 1200px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg">
+        <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
+        <picture class="section-32__groupimage-section">
+          <source media="(max-width: 393px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg?ims=393x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg?ims=768x">
+      
+              <source media="(max-width: 1199px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg?ims=1199x">
+      
+              <source media="(min-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg">
 
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg"
-        alt="Frasco multi inseticida Kellthine SC 25 Kelldrin 500ml pronto para uso fundo verde com pragas." 
-        style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 50%;">
-        <h2><strong>BOM CONTRA O QUE?</strong></h2>
-        <p>O Kellthine SC 25 combate escorpiões, cupins, carrapatos, baratas e os mosquitos da dengue com alta eficácia.
-        </p>
-      </figcaption>
-      </picture>
-
-       <picture class="section-32__groupimage-section" style="z-index: 3;">
-        <source media="(max-width: 393px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg?ims=393x">
-    
-            <source media="(max-width: 768px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg?ims=768x">
-    
-            <source media="(max-width: 1199px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg?ims=1199x">
-    
-            <source media="(min-width: 1200px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg">
-
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg"
-        alt="Aplicação Kelldrin Kellthine SC 25 armário cozinha controlando aranha ambiente escuro." 
-        style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%; left: 45%;">
-        <h2><strong>PRONTO PARA USO?</strong></h2>
-        <p>Precisa diluir na água? Não! O inseticida Kellthine 500ml já vem pronto. Basta girar o bico e aplicar direto nas frestas e rodapés.
-        </p>
-      </figcaption>
-      </picture>
-
-      <picture class="section-32__groupimage-section" style="z-index: 3;">
-        <source media="(max-width: 393px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg?ims=393x">
-    
-            <source media="(max-width: 768px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg?ims=768x">
-    
-            <source media="(max-width: 1199px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg?ims=1199x">
-    
-            <source media="(min-width: 1200px)" 
-            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg">
-
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg"
-        alt="Aplicação Kelldrin Kellthine SC 25 spray piso perto de ralo combatendo barata." 
-        style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 20%; left: 25%;">
-        <h2><strong>E PRAS PRAGAS ESCONDIDAS?</strong></h2>
-        <p>O spray atinge frestas, cantos, rodapés e áreas úmidas. Elimina baratas, aranhas e escorpiões direto no ninho.
-        </p>
-      </figcaption>
-      </picture>
-      </section>
-    
-
-        <footer>
-           <p class="p__end">
-          <strong>Imagens Meramente Ilustrativas</strong>
+        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg"
+          alt="Frasco multi inseticida Kellthine SC 25 Kelldrin 500ml pronto para uso fundo verde com pragas." 
+          style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
+          loading="lazy" decoding="async" fetchpriority="low">
+        <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 50%;">
+          <h2><strong>BOM CONTRA O QUE?</strong></h2>
+          <p>O Kellthine SC 25 combate escorpiões, cupins, carrapatos, baratas e os mosquitos da dengue com alta eficácia.
           </p>
+        </figcaption>
+        </picture>
 
-                  <section class="faq-section" aria-labelledby="faq-section-title">
-            <div class="faq-section__header">
-                <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
-                <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
-            </div>
-            <ul class="faq-section__list">
-                <li class="faq-section__item">
-                    <details class="faq-section__item">
-                        <summary>
-                            <h3 class="faq-section__q-text">Como usar corretamente spray para insetos?</h3>
-                            <span class="faq-section__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="faq-section__a-inner">
-                            <p class="faq-section__a-text">Agite bem e aplique a 30 cm de distância nos locais onde as pragas se escondem, 
-                              como frestas e rodapés, garantindo uma cobertura uniforme no ambiente.</p>
-                        </div>
-                    </details>
-                </li>
-                <li class="faq-section__item">
-                    <details class="faq-section__item">
-                        <summary>
-                            <h3 class="faq-section__q-text">Inseticida em spray é seguro para crianças e pets?</span>
-                            <span class="faq-section__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="faq-section__a-inner">
-                            <p class="faq-section__a-text">Afaste pessoas e animais durante o uso. Promova a aeração do local tratado e 
-                              permita o retorno deles somente 6 horas após a aplicação do produto.</p>
-                        </div>
-                    </details>
-                </li>
-                <li class="faq-section__item">
-                    <details class="faq-section__item">
-                        <summary>
-                            <h3 class="faq-section__q-text">O inseticida spray mata aranha?</h3>
-                            <span class="faq-section__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="faq-section__a-inner">
-                            <p class="faq-section__a-text">Sim! É eficaz contra aranhas, baratas e mosquitos. Para combater aracnídeos, 
-                              aplique diretamente em locais escuros e úmidos, como pilhas de entulhos.</p>
-                        </div>
-                    </details>
-                </li>
-                <li class="faq-section__item">
-                    <details class="faq-section__item">
-                        <summary>
-                            <h3 class="faq-section__q-text">Qual o melhor spray para mosquitos em ambientes?</h3>
-                            <span class="faq-section__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="faq-section__a-inner">
-                            <p class="faq-section__a-text">Opte por fórmulas de amplo espectro, como a Lambda-Cialotrina. 
-                              Elas são ideais para combater o Mosquito da Dengue e pernilongos com alta eficiência.</p>
-                        </div>
-                    </details>
-                </li>
-                <li class="faq-section__item">
-                    <details class="faq-section__item">
-                        <summary>
-                            <h3 class="faq-section__q-text">Como escolher um inseticida spray seguro?</h3>
-                            <span class="faq-section__icon" aria-hidden="true"></span>
-                        </summary>
-                        <div class="faq-section__a-inner">
-                            <p class="faq-section__a-text">Busque opções prontas para uso e seguras. Para sua segurança, use luvas na aplicação, 
-                              não aplique sobre alimentos e jamais reutilize a embalagem vazia.</p>
-                        </div>
-                    </details>
-                </li>
-            </ul>
+        <picture class="section-32__groupimage-section" style="z-index: 3;">
+          <source media="(max-width: 393px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg?ims=393x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg?ims=768x">
+      
+              <source media="(max-width: 1199px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg?ims=1199x">
+      
+              <source media="(min-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg">
+
+        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg"
+          alt="Aplicação Kelldrin Kellthine SC 25 armário cozinha controlando aranha ambiente escuro." 
+          style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
+          loading="lazy" decoding="async" fetchpriority="low">
+        <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%; left: 45%;">
+          <h2><strong>PRONTO PARA USO?</strong></h2>
+          <p>Precisa diluir na água? Não! O inseticida Kellthine 500ml já vem pronto. Basta girar o bico e aplicar direto nas frestas e rodapés.
+          </p>
+        </figcaption>
+        </picture>
+
+        <picture class="section-32__groupimage-section" style="z-index: 3;">
+          <source media="(max-width: 393px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg?ims=393x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg?ims=768x">
+      
+              <source media="(max-width: 1199px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg?ims=1199x">
+      
+              <source media="(min-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg">
+
+        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg"
+          alt="Aplicação Kelldrin Kellthine SC 25 spray piso perto de ralo combatendo barata." 
+          style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
+          loading="lazy" decoding="async" fetchpriority="low">
+        <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 20%; left: 25%;">
+          <h2><strong>E PRAS PRAGAS ESCONDIDAS?</strong></h2>
+          <p>O spray atinge frestas, cantos, rodapés e áreas úmidas. Elimina baratas, aranhas e escorpiões direto no ninho.
+          </p>
+        </figcaption>
+        </picture>
         </section>
+      
 
-        </footer>
+          <footer>
+            <p class="p__end">
+            <strong>Imagens Meramente Ilustrativas</strong>
+            </p>
 
-        </article>
+                    <section class="faq-section" aria-labelledby="faq-section-title">
+              <div class="faq-section__header">
+                  <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
+                  <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
+              </div>
+              <ul class="faq-section__list">
+                  <li class="faq-section__item">
+                      <details class="faq-section__item">
+                          <summary>
+                              <h3 class="faq-section__q-text">Como usar corretamente spray para insetos?</h3>
+                              <span class="faq-section__icon" aria-hidden="true"></span>
+                          </summary>
+                          <div class="faq-section__a-inner">
+                              <p class="faq-section__a-text">Agite bem e aplique a 30 cm de distância nos locais onde as pragas se escondem, 
+                                como frestas e rodapés, garantindo uma cobertura uniforme no ambiente.</p>
+                          </div>
+                      </details>
+                  </li>
+                  <li class="faq-section__item">
+                      <details class="faq-section__item">
+                          <summary>
+                              <h3 class="faq-section__q-text">Inseticida em spray é seguro para crianças e pets?</span>
+                              <span class="faq-section__icon" aria-hidden="true"></span>
+                          </summary>
+                          <div class="faq-section__a-inner">
+                              <p class="faq-section__a-text">Afaste pessoas e animais durante o uso. Promova a aeração do local tratado e 
+                                permita o retorno deles somente 6 horas após a aplicação do produto.</p>
+                          </div>
+                      </details>
+                  </li>
+                  <li class="faq-section__item">
+                      <details class="faq-section__item">
+                          <summary>
+                              <h3 class="faq-section__q-text">O inseticida spray mata aranha?</h3>
+                              <span class="faq-section__icon" aria-hidden="true"></span>
+                          </summary>
+                          <div class="faq-section__a-inner">
+                              <p class="faq-section__a-text">Sim! É eficaz contra aranhas, baratas e mosquitos. Para combater aracnídeos, 
+                                aplique diretamente em locais escuros e úmidos, como pilhas de entulhos.</p>
+                          </div>
+                      </details>
+                  </li>
+                  <li class="faq-section__item">
+                      <details class="faq-section__item">
+                          <summary>
+                              <h3 class="faq-section__q-text">Qual o melhor spray para mosquitos em ambientes?</h3>
+                              <span class="faq-section__icon" aria-hidden="true"></span>
+                          </summary>
+                          <div class="faq-section__a-inner">
+                              <p class="faq-section__a-text">Opte por fórmulas de amplo espectro, como a Lambda-Cialotrina. 
+                                Elas são ideais para combater o Mosquito da Dengue e pernilongos com alta eficiência.</p>
+                          </div>
+                      </details>
+                  </li>
+                  <li class="faq-section__item">
+                      <details class="faq-section__item">
+                          <summary>
+                              <h3 class="faq-section__q-text">Como escolher um inseticida spray seguro?</h3>
+                              <span class="faq-section__icon" aria-hidden="true"></span>
+                          </summary>
+                          <div class="faq-section__a-inner">
+                              <p class="faq-section__a-text">Busque opções prontas para uso e seguras. Para sua segurança, use luvas na aplicação, 
+                                não aplique sobre alimentos e jamais reutilize a embalagem vazia.</p>
+                          </div>
+                      </details>
+                  </li>
+              </ul>
+          </section>
+
+          </footer>
+
+          </article>
 
 
-</div>
+  </div>
 
 
 `,
