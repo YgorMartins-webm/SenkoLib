@@ -2231,7 +2231,7 @@ SenkoLib.register([
     tags: ['Section 9', '9', 'grid'],
     html: `<section class="faq-section" aria-labelledby="faq-section-title">
   <div class="faq-section__header">
-    <h3 class="faq-section__title" id="faq-section-title">Título Principal</h3>
+    <h2 class="faq-section__title" id="faq-section-title">Título Principal</h2>
     <p class="faq-section__subtitle">Sub-título</p>
   </div>
   <ul class="faq-section__list">
