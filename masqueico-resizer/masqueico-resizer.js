@@ -68,7 +68,7 @@
     var btn = document.createElement('button');
     btn.id        = 'colTabMasqueico';
     btn.className = 'col-tab-btn';
-    btn.textContent = 'Masqueico';
+    btn.textContent = 'Resizer';
     btn.addEventListener('click', function () {
       if (typeof colSwitchTab === 'function') colSwitchTab('masqueico');
     });
