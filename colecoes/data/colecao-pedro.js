@@ -2277,979 +2277,1125 @@ ColLib.register({
       css:  ``,
     },
 
-                    /*@@@@Col - comp-p-faq-e */
+                        /*@@@@Col - comp-p-faq-e */
     {
       id:   'comp-p-faq-e',
       name: 'Comp p com 3 blocos e FAQ embutido no picture',
       html: `
-    <style>  
-      
-      @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
+      <style>  
+    
+    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
 
 
-      *{
+    *{
+    margin: 0;
+    padding: 0;
+  }
+
+   body {
+
       margin: 0;
-      padding: 0;
     }
 
-    body {
+    .tw-container {
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      width: 100%
+    }
 
-        margin: 0;
-      }
+    @media (min-width:576px) {
 
       .tw-container {
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        width: 100%
-      }
-
-      @media (min-width:576px) {
-
-        .tw-container {
-
-          max-width: 576px
-        }
-      }
 
-      @media (min-width:768px) {
-
-        .tw-container {
-
-          max-width: 768px
-        }
+        max-width: 576px
       }
+    }
 
-      @media (min-width:992px) {
+    @media (min-width:768px) {
 
-        .tw-container {
+      .tw-container {
 
-          max-width: 992px
-        }
+        max-width: 768px
       }
+    }
 
-      @media (min-width:1200px) {
+    @media (min-width:992px) {
 
-        .tw-container {
+      .tw-container {
 
-          max-width: 1200px
-        }
+        max-width: 992px
       }
+    }
 
-      @media (min-width:1536px) {
+    @media (min-width:1200px) {
 
-        .tw-container {
+      .tw-container {
 
-          max-width: 1536px
-        }
+        max-width: 1200px
       }
-
-      .tw-absolute {
+    }
 
-        position: absolute
-      }
+    @media (min-width:1536px) {
 
-      .tw-relative {
+      .tw-container {
 
-        position: relative
+        max-width: 1536px
       }
+    }
 
-      .-tw-bottom-16 {
+    .tw-absolute {
 
-        bottom: -4rem
-      }
+      position: absolute
+    }
 
-      .tw-left-0 {
+    .tw-relative {
 
-        left: 0
-      }
+      position: relative
+    }
 
-      .tw-top-0 {
+    .-tw-bottom-16 {
 
-        top: 0
-      }
+      bottom: -4rem
+    }
 
-      .tw-z-0 {
+    .tw-left-0 {
 
-        z-index: 0
-      }
+      left: 0
+    }
 
-      .tw-z-10 {
+    .tw-top-0 {
 
-        z-index: 10
-      }
+      top: 0
+    }
 
-      .tw-col-span-2 {
+    .tw-z-0 {
 
-        grid-column: span 2/span 2
-      }
+      z-index: 0
+    }
 
-      .tw-m-0 {
+    .tw-z-10 {
 
-        margin: 0
-      }
+      z-index: 10
+    }
 
-      .tw-my-16 {
+    .tw-col-span-2 {
 
-        margin-bottom: 4rem;
-        margin-top: 4rem
-      }
+      grid-column: span 2/span 2
+    }
 
-      .tw-my-8 {
+    .tw-m-0 {
 
-        margin-bottom: 2rem;
-        margin-top: 2rem
-      }
+      margin: 0
+    }
 
-      .tw-mb-1 {
+    .tw-my-16 {
 
-        margin-bottom: .25rem
-      }
+      margin-bottom: 4rem;
+      margin-top: 4rem
+    }
 
-      .tw-mb-6 {
+    .tw-my-8 {
 
-        margin-bottom: 1.5rem
-      }
+      margin-bottom: 2rem;
+      margin-top: 2rem
+    }
 
-      .tw-mt-16 {
+    .tw-mb-1 {
 
-        margin-top: 4rem
-      }
+      margin-bottom: .25rem
+    }
 
-      .tw-mt-4 {
+    .tw-mb-6 {
 
-        margin-top: 1rem
-      }
+      margin-bottom: 1.5rem
+    }
 
-      .tw-mt-8 {
+    .tw-mt-16 {
 
-        margin-top: 2rem
-      }
+      margin-top: 4rem
+    }
 
-      .tw-flex {
+    .tw-mt-4 {
 
-        display: flex
-      }
+      margin-top: 1rem
+    }
 
-      .tw-grid {
+    .tw-mt-8 {
 
-        display: grid
-      }
+      margin-top: 2rem
+    }
 
-      .tw-h-14 {
+    .tw-flex {
 
-        height: 3.5rem
-      }
+      display: flex
+    }
 
-      .tw-h-32 {
+    .tw-grid {
 
-        height: 8rem
-      }
+      display: grid
+    }
 
-      .tw-h-5 {
+    .tw-h-14 {
 
-        height: 1.25rem
-      }
+      height: 3.5rem
+    }
 
-      .tw-h-56 {
+    .tw-h-32 {
 
-        height: 14rem
-      }
+      height: 8rem
+    }
 
-      .tw-h-6 {
+    .tw-h-5 {
 
-        height: 1.5rem
-      }
+      height: 1.25rem
+    }
 
-      .tw-h-64 {
+    .tw-h-56 {
 
-        height: 16rem
-      }
+      height: 14rem
+    }
 
-      .tw-h-25rem {
+    .tw-h-6 {
 
-        height: 25rem
-      }
+      height: 1.5rem
+    }
 
-      .tw-h-31-25rem {
+    .tw-h-64 {
 
-        height: 31.25rem
-      }
+      height: 16rem
+    }
 
-      .tw-h-32rem {
+    .tw-h-25rem {
 
-        height: 32rem
-      }
+      height: 25rem
+    }
 
-      .tw-h-full {
+    .tw-h-31-25rem {
 
-        height: 100%
-      }
+      height: 31.25rem
+    }
 
-      .tw-w-14 {
+    .tw-h-32rem {
 
-        width: 3.5rem
-      }
+      height: 32rem
+    }
 
-      .tw-w-32 {
+    .tw-h-full {
 
-        width: 8rem
-      }
+      height: 100%
+    }
 
-      .tw-w-5 {
+    .tw-w-14 {
 
-        width: 1.25rem
-      }
+      width: 3.5rem
+    }
 
-      .tw-w-6 {
+    .tw-w-32 {
 
-        width: 1.5rem
-      }
+      width: 8rem
+    }
 
-      .tw-w-full {
+    .tw-w-5 {
 
-        width: 100%
-      }
+      width: 1.25rem
+    }
 
-      .tw-max-w-6rem {
+    .tw-w-6 {
 
-        max-width: 6rem
-      }
+      width: 1.5rem
+    }
 
-      .tw-max-w-md {
+    .tw-w-full {
 
-        max-width: 28rem
-      }
+      width: 100%
+    }
 
-      .tw-max-w-sm {
+    .tw-max-w-6rem {
 
-        max-width: 24rem
-      }
+      max-width: 6rem
+    }
 
-      .tw-max-w-xl {
+    .tw-max-w-md {
 
-        max-width: 36rem
-      }
+      max-width: 28rem
+    }
 
-      .tw-select-none {
+    .tw-max-w-sm {
 
-        -webkit-user-select: none;
-        user-select: none
-      }
+      max-width: 24rem
+    }
 
-      .tw-list-none {
+    .tw-max-w-xl {
 
-        list-style-type: none
-      }
+      max-width: 36rem
+    }
 
-      .tw-grid-cols-1 {
+    .tw-select-none {
 
-        grid-template-columns: repeat(1, minmax(0, 1fr))
-      }
+      -webkit-user-select: none;
+      user-select: none
+    }
 
-      .tw-flex-col {
+    .tw-list-none {
 
-        flex-direction: column
-      }
+      list-style-type: none
+    }
 
-      .tw-items-end {
+    .tw-grid-cols-1 {
 
-        align-items: flex-end
-      }
+      grid-template-columns: repeat(1, minmax(0, 1fr))
+    }
 
-      .tw-items-center {
+    .tw-flex-col {
 
-        align-items: center
-      }
+      flex-direction: column
+    }
 
-      .tw-justify-end {
+    .tw-items-end {
 
-        justify-content: flex-end
-      }
+      align-items: flex-end
+    }
 
-      .tw-justify-center {
+    .tw-items-center {
 
-        justify-content: center
-      }
+      align-items: center
+    }
 
-      .tw-justify-between {
+    .tw-justify-end {
 
-        justify-content: space-between
-      }
+      justify-content: flex-end
+    }
 
-      .tw-gap-10 {
+    .tw-justify-center {
 
-        gap: 2.5rem
-      }
+      justify-content: center
+    }
 
-      .tw-gap-14 {
+    .tw-justify-between {
 
-        gap: 3.5rem
-      }
+      justify-content: space-between
+    }
 
-      .tw-gap-4 {
+    .tw-gap-10 {
 
-        gap: 1rem
-      }
+      gap: 2.5rem
+    }
 
-      .tw-gap-y-4 {
+    .tw-gap-14 {
 
-        row-gap: 1rem
-      }
+      gap: 3.5rem
+    }
 
-      .tw-rounded {
+    .tw-gap-4 {
 
-        border-radius: .25rem
-      }
+      gap: 1rem
+    }
 
-      .tw-rounded-2xl {
+    .tw-gap-y-4 {
 
-        border-radius: 1rem
-      }
+      row-gap: 1rem
+    }
 
-      .tw-rounded-full {
+    .tw-rounded {
 
-        border-radius: 9999px
-      }
+      border-radius: .25rem
+    }
 
-      .tw-rounded-lg {
+    .tw-rounded-2xl {
 
-        border-radius: .5rem
-      }
+      border-radius: 1rem
+    }
 
-      .tw-rounded-t {
+    .tw-rounded-full {
 
-        border-top-left-radius: .25rem;
-        border-top-right-radius: .25rem
-      }
+      border-radius: 9999px
+    }
 
-      .tw-border-t {
+    .tw-rounded-lg {
 
-        border-top-width: 1px
-      }
+      border-radius: .5rem
+    }
 
-      .tw-border-solid {
+    .tw-rounded-t {
 
-        border-style: solid
-      }
+      border-top-left-radius: .25rem;
+      border-top-right-radius: .25rem
+    }
 
-      .tw-border-transparent {
+    .tw-border-t {
 
-        border-color: transparent
-      }
+      border-top-width: 1px
+    }
 
-      .tw-bg-gray-900 {
+    .tw-border-solid {
 
-        --tw-bg-opacity: 1;
-        background-color: rgb(46 53 56/var(--tw-bg-opacity))
-      }
+      border-style: solid
+    }
 
-      .tw-bg-primary {
+    .tw-border-transparent {
 
-        --tw-bg-opacity: 1;
-        background-color: rgb(255 153 0/var(--tw-bg-opacity))
-      }
+      border-color: transparent
+    }
 
-      .tw-bg-white {
+    .tw-bg-gray-900 {
 
-        --tw-bg-opacity: 1;
-        background-color: rgb(255 255 255/var(--tw-bg-opacity))
-      }
+      --tw-bg-opacity: 1;
+      background-color: rgb(46 53 56/var(--tw-bg-opacity))
+    }
 
-      .tw-object-contain {
+    .tw-bg-primary {
 
-        object-fit: contain
-      }
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 153 0/var(--tw-bg-opacity))
+    }
 
-      .tw-object-cover {
+    .tw-bg-white {
 
-        object-fit: cover
-      }
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 255 255/var(--tw-bg-opacity))
+    }
 
-      .tw-p-3 {
+    .tw-object-contain {
 
-        padding: .75rem
-      }
+      object-fit: contain
+    }
 
-      .tw-p-5 {
+    .tw-object-cover {
 
-        padding: 1.25rem
-      }
+      object-fit: cover
+    }
 
-      .tw-p-6 {
+    .tw-p-3 {
 
-        padding: 1.5rem
-      }
+      padding: .75rem
+    }
 
-      .tw-p-8 {
+    .tw-p-5 {
 
-        padding: 2rem
-      }
+      padding: 1.25rem
+    }
 
-      .tw-py-10 {
+    .tw-p-6 {
 
-        padding-bottom: 2.5rem;
-        padding-top: 2.5rem
-      }
+      padding: 1.5rem
+    }
 
-      .tw-pl-0 {
+    .tw-p-8 {
 
-        padding-left: 0
-      }
+      padding: 2rem
+    }
 
-      .tw-pt-8 {
+    .tw-py-10 {
 
-        padding-top: 2rem
-      }
+      padding-bottom: 2.5rem;
+      padding-top: 2.5rem
+    }
 
-      .tw-text-center {
+    .tw-pl-0 {
 
-        text-align: center
-      }
+      padding-left: 0
+    }
 
-      .tw-font-roboto {
+    .tw-pt-8 {
 
-        font-family: Roboto, sans-serif
-      }
+      padding-top: 2rem
+    }
 
-      .tw-text-2xl {
+    .tw-text-center {
 
-        font-size: 32px;
-        font-weight: 600;
-        line-height: 40px
-      }
+      text-align: center
+    }
 
-      .tw-text-lg {
+    .tw-font-roboto {
 
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 28px
-      }
+      font-family: Roboto, sans-serif
+    }
 
-      .tw-text-md {
+    .tw-text-2xl {
 
-        font-size: 16px;
-        line-height: 24px
-      }
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 40px
+    }
 
-      .tw-text-sm {
+    .tw-text-lg {
 
-        font-size: 14px;
-        line-height: 22px
-      }
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px
+    }
 
-      .tw-text-xs {
+    .tw-text-md {
 
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px
-      }
+      font-size: 16px;
+      line-height: 24px
+    }
 
-      .tw-uppercase {
+    .tw-text-sm {
 
-        text-transform: uppercase
-      }
+      font-size: 14px;
+      line-height: 22px
+    }
 
-      .tw-text-black {
+    .tw-text-xs {
 
-        --tw-text-opacity: 1;
-        color: rgb(0 0 0/var(--tw-text-opacity))
-      }
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 16px
+    }
 
-      .tw-text-gray-500 {
+    .tw-uppercase {
 
-        --tw-text-opacity: 1;
-        color: rgb(138 138 138/var(--tw-text-opacity))
-      }
+      text-transform: uppercase
+    }
 
-      .pdp {
+    .tw-text-black {
 
-        display: flex;
-        flex-direction: column;
-        font-family: Roboto, sans-serif
-      }
+      --tw-text-opacity: 1;
+      color: rgb(0 0 0/var(--tw-text-opacity))
+    }
 
-      .pdp * {
+    .tw-text-gray-500 {
 
-        box-sizing: border-box;
-        margin: 0;
-      }
+      --tw-text-opacity: 1;
+      color: rgb(138 138 138/var(--tw-text-opacity))
+    }
 
-      .product-header {
-      --badge-size: 8rem;
-      --banner-height: 250px;
+    .pdp {
 
       display: flex;
       flex-direction: column;
-      align-items: center;
-      width: 100%;
-      position: relative;
-      font-family: sans-serif;
-      container-type: inline-size;
+      font-family: Roboto, sans-serif
     }
 
-    .product-header__banner {
-      width: 100%;
-      height: var(--banner-height);
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
+    .pdp * {
 
-    .product-header__banner figure {
-      width: 100%;
-      height: 100%;
+      box-sizing: border-box;
       margin: 0;
     }
 
-    .product-header__banner-img {
+    .product-header {
+    --badge-size: 8rem;
+    --banner-height: 250px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    font-family: sans-serif;
+    container-type: inline-size;
+  }
+
+  .product-header__banner {
+    width: 100%;
+    height: var(--banner-height);
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .product-header__banner figure {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  .product-header__banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .product-header__badge {
+    position: absolute;
+    bottom: calc(var(--badge-size) / -2);
+    width: var(--badge-size);
+    height: var(--badge-size);
+    background-color: #ff9900;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 10;
+  }
+
+  .product-header__badge-img {
+    max-width: 90px;
+    max-height: 90px;
+    object-fit: contain;
+  }
+
+  .product-header__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calc(var(--badge-size) / 2 + 1.1rem) 0.3rem 2.5rem;
+    text-align: center;
+  }
+
+  .product-header__brand {
+    color: #ff9900;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .product-header__title {
+    font-size: clamp(1.4rem, 4vw, 2.4rem);
+    line-height: clamp(1.6rem, 4vw, 3.1rem);
+    font-weight: 600;
+    max-width: 50rem;
+    text-wrap: pretty;
+  }
+
+  .product-header__subtitle {
+    color: #8a8a8a;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 120%;
+    margin-top: 1rem;
+    max-width: 52rem;
+    text-wrap: pretty;
+  }
+  
+    .section-32__container {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 1600px;
+      margin: 0 auto;
+      border: 5.5px solid #000;
+      border-radius: 36px;
+    }
+
+    .section-32__groupimage-section {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      contain: layout style;
+    }
+
+    .section-32__groupimage-section img {
+      width: 100%;
+      height: auto;
       display: block;
     }
 
-    .product-header__badge {
+    .section-32__grouptext-overlay {
+      color: #ffffff;
       position: absolute;
-      bottom: calc(var(--badge-size) / -2);
-      width: var(--badge-size);
-      height: var(--badge-size);
-      background-color: #ff9900;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      z-index: 10;
-    }
-
-    .product-header__badge-img {
-      max-width: 90px;
-      max-height: 90px;
-      object-fit: contain;
-    }
-
-    .product-header__body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: calc(var(--badge-size) / 2 + 1.1rem) 0.3rem 2.5rem;
+      max-width: 45%;
+      width: 90%;
+      line-height: 2rem;
       text-align: center;
+      font-family: sans-serif;
+      z-index: 10;
+      
     }
 
-    .product-header__brand {
-      color: #ff9900;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
+    .section-32__grouptext-overlay.top {
+      top: 3%;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    .product-header__title {
-      font-size: clamp(1.4rem, 4vw, 2.4rem);
-      line-height: clamp(1.6rem, 4vw, 3.1rem);
-      font-weight: 600;
-      max-width: 50rem;
-      text-wrap: pretty;
+    .section-32__grouptext-overlay.bottom {
+      top: 75%;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    .product-header__subtitle {
-      color: #8a8a8a;
-      font-size: clamp(1rem, 2vw, 1.2rem);
+    .section-32__grouptext-overlay.left {
+      top: 50%;
+      left: 25%;
+      transform: translate(-50%, -50%);
+      max-width: 41%;
+    }
+
+    .section-32__grouptext-overlay.right {
+      top: 25%;
+      left: 75%;
+      transform: translate(-50%, -50%);
+      max-width: 42%;
+    }
+
+    .section-32__grouptext-overlay h2 {
+      font-size: 2vw;
+      font-weight: bold;
+      margin-bottom: 1.5px;
       line-height: 120%;
-      margin-top: 1rem;
-      max-width: 52rem;
-      text-wrap: pretty;
     }
-    
-      .section-32__container {
-        width: 100%;
-        max-width: 1600px;
-        margin: 0 auto;
-        border: 5.5px solid #000;
-        border-radius: 36px;
-      }
 
-      .section-32__groupimage-section {
-        position: relative;
-        width: 100%;
-        margin: 0;
-        contain: layout style;
-      }
+    .section-32__grouptext-overlay p {
+      font-size: 1.2vw;
+      margin: 0;
+      line-height: 120%;
+    }
 
-      .section-32__groupimage-section img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
+    .grouptext-overlay-Background {
+        background: rgba(0, 0, 0, 0.438);
+        border-radius: 4.5vw;
+        padding: 0.5rem;
+        backdrop-filter: blur(0.5vw);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        -webkit-backdrop-filter: blur(0px);
 
-      .section-32__grouptext-overlay {
-        color: #ffffff;
-        position: absolute;
-        max-width: 45%;
-        width: 90%;
-        line-height: 2rem;
-        text-align: center;
-        font-family: sans-serif
-      }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        max-width: 70%;
+        z-index: 100;
+    }
 
-      .section-32__grouptext-overlay.top {
-        top: 3%;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+    .p__end {
+      color: #8a8a8a;
+      font-family: sans-serif;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      text-wrap: pretty;
+      text-align: center;
+      padding: 40px 0;
 
-      .section-32__grouptext-overlay.bottom {
-        top: 75%;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+    }
 
-      .section-32__grouptext-overlay.left {
-        top: 50%;
-        left: 25%;
-        transform: translate(-50%, -50%);
-        max-width: 41%;
-      }
-
-      .section-32__grouptext-overlay.right {
-        top: 25%;
-        left: 75%;
-        transform: translate(-50%, -50%);
-        max-width: 42%;
-      }
-
-      .section-32__grouptext-overlay h2 {
-        font-size: 2vw;
-        font-weight: bold;
-        margin-bottom: 1.5px;
-        line-height: 120%;
-      }
-
-      .section-32__grouptext-overlay p {
-        font-size: 1.2vw;
-        margin: 0;
-        line-height: 120%;
-      }
-
-      .grouptext-overlay-Background {
-          background: rgba(0, 0, 0, 0.438);
-          border-radius: 4.5vw;
-          padding: 0.5rem;
-          backdrop-filter: blur(0.5vw);
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-          -webkit-backdrop-filter: blur(0px);
-
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          max-width: 70%;
-          z-index: 100;
-      }
-
-      .p__end {
-        color: #8a8a8a;
-        font-family: sans-serif;
-        font-size: clamp(1rem, 2vw, 1.2rem);
-        text-wrap: pretty;
-        text-align: center;
-        padding: 40px 0;
-
-      }
-
-          .faq-section {
-              width: 100%;
-              padding: 2rem 16px;
-              box-sizing: border-box;
-              margin: 0 auto 25px;
-              padding-top: 0;
-              font-family: sans-serif;
-          }
-
-          .faq-section__header {
-              text-align: center;
-              margin-bottom: 2rem;
-          }
-
-          .faq-section__title {
-              font-size: clamp(1.5rem, 3vw, 2rem);
-              font-weight: bold;
-              color: #333;
-              margin: 0 0 12px;
-              line-height: 98%;
-          }
-
-          .faq-section__subtitle {
-              font-size: 1rem;
-              color: #666;
-              margin: 0;
-          }
-
-          .faq-section__list {
-              list-style: none;
-              margin: 0 auto;
-              padding: 0;
-              max-width: 56rem;
-              display: flex;
-              flex-direction: column;
-              gap: 8px;
-          }
-
-          .faq-section__item {
-              background: #fff;
-              border: 1px solid #e5e5e5;
-              border-radius: 12px;
-              overflow: hidden;
-          }
-
-          .faq-section__item summary {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              gap: 12px;
-              padding: 16px 20px;
-              cursor: pointer;
-              list-style: none;
-          }
-
-          .faq-section__item summary::-webkit-details-marker {
-              display: none;
-          }
-
-          .faq-section__item summary:hover {
-              background: #f9f9f9;
-          }
-
-          .faq-section__q-text {
-              font-size: 1rem;
-              font-weight: bold;
-              color: #333;
-              flex: 1;
-          }
-
-            .faq-section__q-text:hover {
-              color: #007f37;
-          }
-
-          .faq-section__icon {
-              width: 20px;
-              height: 20px;
-              flex-shrink: 0;
-              position: relative;
-          }
-
-          .faq-section__icon::before,
-          .faq-section__icon::after {
-              content: '';
-              position: absolute;
-              background: #888;
-              border-radius: 2px;
-              transition: transform 0.25s ease, opacity 0.25s ease;
-          }
-
-          .faq-section__icon::before {
-              width: 12px;
-              height: 1.5px;
-              top: 9px;
-              left: 4px;
-          }
-
-          .faq-section__icon::after {
-              width: 1.5px;
-              height: 12px;
-              top: 4px;
-              left: 9px;
-          }
-
-          .faq-section__item[open] .faq-section__icon::after {
-              transform: rotate(90deg);
-              opacity: 0;
-          }
-
-          .faq-section__a-inner {
-              padding: 14px 20px 16px;
-              border-top: 1px solid #e5e5e5;
-          }
-
-          .faq-section__a-text {
-              font-size: 0.9rem;
-              color: #555;
-              line-height: 1.6;
-              margin: 0;
-              font-weight: 500;
-          }
-
-      @media (prefers-contrast: more) {
-
-        .p__end {
-          color: #000;
+        .faq-section {
+            width: 100%;
+            padding: 2rem 16px;
+            box-sizing: border-box;
+            margin: 0 auto 25px;
+            padding-top: 0;
+            font-family: sans-serif;
+            position: absolute; 
+            top: 20%; 
+            left: 5%; 
+            right: 5%; 
+            background: rgba(255, 255, 255, 0.014);
+            border-radius: 40px; 
+            max-width: 75%; 
+            z-index: 10; 
+            border: 1px solid #ffffff;
+            max-height: 75vh;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
         }
 
-        .grouptext-overlay-Background {
-          background: rgb(0, 0, 0);
+        .faq-section__header {
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
-        .product-header__subtitle {
-          color: #000;
+        .faq-section__title {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0 0 0px;
+            line-height: 6vw;
         }
 
-        .table-td-custom-sub
-        {
-          color: #000;
-          font-weight: 550;
+        .faq-section__subtitle {
+            font-size: 1rem;
+            color: #ffffff;
+            margin: 0;
         }
 
-        .table-td-custom-title
-        {
-          color: #000;
-          font-weight: 700;
-        } 
+        .faq-section__list {
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+            max-width: 56rem;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
-        .product-header__brand {
-          color:#3a2301
+        .faq-section__item {
+            background: #ffffff05;
+            border: 1px solid #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .faq-section__item summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 16px 20px;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-section::-webkit-scrollbar {
+         width: 8px;
+            }
+        .faq-section::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.1);
+           border-radius: 10px;
+            }
+        .faq-section::-webkit-scrollbar-thumb {
+           background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+              }
+        .faq-section::-webkit-scrollbar-thumb:hover {
+             background: rgba(255, 255, 255, 0.5);
+        }
+
+        .faq-section__item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-section__item summary:hover {
+            background: #f9f9f92f;
+        }
+
+        .faq-section__q-text {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #ffffff;
+            flex: 1;
+        }
+
+          .faq-section__q-text:hover {
+            color: #6ed9ff;
+        }
+
+        .faq-section__icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .faq-section__icon::before,
+        .faq-section__icon::after {
+            content: '';
+            position: absolute;
+            background: #888;
+            border-radius: 2px;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        .faq-section__icon::before {
+            width: 12px;
+            height: 1.5px;
+            top: 9px;
+            left: 4px;
+        }
+
+        .faq-section__icon::after {
+            width: 1.5px;
+            height: 12px;
+            top: 4px;
+            left: 9px;
+        }
+
+        .faq-section__item[open] .faq-section__icon::after {
+            transform: rotate(90deg);
+            opacity: 0;
+        }
+
+        .faq-section__a-inner {
+            padding: 14px 20px 16px;
+            border-top: 1px solid #e5e5e5;
         }
 
         .faq-section__a-text {
-              font-size: 1.0rem;
-              font-weight: bold;
-              color: #000000;
-          }
-      
+            font-size: 0.9rem;
+            color: #ffffff;
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 500;
+        }
+
+              .table-container-custom {
+
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .table-design-custom {
+
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+
+  .table-head-custom {
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+
+  }
+
+  .table-text-custom {
+
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #979797;
+    font-family: sans-serif;
+  }
+
+  
+
+  .table-row-custom:hover {
+
+    background-color: #f1f1f1;
+    filter: brightness(0.9);
+  }
+
+
+  td a {
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+
+  }
+
+  td a:hover {
+     color: #e74011;
+  }
+
+  .table-th-custom {
+
+    font-weight: bold;
+  }
+
+  .table-td-custom {
+    color: #555;
+  }
+
+    @media (prefers-contrast: more) {
+
+      .p__end {
+        color: #000;
       }
 
-      @media (max-width: 360px) {
-          .section-32__grouptext-overlay h2 {
-            font-size: 3vw;
-          }
-
-          .section-32__grouptext-overlay p {
-            font-size: 2.8vw;
-          }
-
-
-
-          
+      .grouptext-overlay-Background {
+        background: rgb(0, 0, 0);
       }
 
-      @media (max-width: 470px) {  
+      .product-header__subtitle {
+        color: #000;
+      }
 
-        .product-header__subtitle {
-        text-align: justify;
-        font-size: clamp(0.9rem, 2vw, 1.2rem);
+           .table-td-custom-sub
+      {
+        color: #000;
         font-weight: 550;
       }
 
+      .table-td-custom-title
+      {
+        color: #000;
+        font-weight: 700;
+      } 
+
+      .product-header__brand {
+        color:#3a2301
+      }
+
+       .faq-section__a-text {
+            font-size: 1.0rem;
+            font-weight: bold;
+            color: #000000;
+        }
+     
+    }
+
+    @media (max-width: 360px) {
         .section-32__grouptext-overlay h2 {
-            font-size: 3vw;
-          }
+          font-size: 3vw;
+        }
 
         .section-32__grouptext-overlay p {
-            font-size: 2.4vw;
-          }
-
-        .section-32__grouptext-overlay.top {
-            top: 3%;
-          }
-
-        .section-32__grouptext-overlay.bottom {
-            top: 81%
-          }
-
-        .section-32__grouptext-overlay.right {
-            top: 35%;
-            left: 73%;
-            transform: translate(-50%, -50%);
-          }
-
-          .section-32__grouptext-overlay.left {
-            top: 50%;
-            left: 27%;
-            transform: translate(-50%, -50%);
-          }
-
-      }
-
-      @media (max-width: 500px) {
-          .section-32__grouptext-overlay h2 {
-            font-size: 3vw;
-          }
-
-          .section-32__grouptext-overlay p {
-            font-size: 2.3vw;
-          }
-
-          .section-32__grouptext-overlay.top {
-            top: 3%;
-          }
-
-            .section-32__grouptext-overlay.bottom {
-            top: 67%;
-          }
-
-          .faq-section__q-text {
-                  font-size: 0.9rem;
-              }
-
-          
-      }
+          font-size: 2.8vw;
+        }
 
 
-      @media (max-width: 768px) {
 
+        
+    }
+
+    @media (max-width: 470px) {  
+
+      .product-header__subtitle {
+      text-align: justify;
+      font-size: clamp(0.9rem, 2vw, 1.2rem);
+      font-weight: 550;
+    }
+
+      .section-32__grouptext-overlay h2 {
+          font-size: 3vw;
+        }
+
+      .section-32__grouptext-overlay p {
+          font-size: 2.4vw;
+        }
+
+      .section-32__grouptext-overlay.top {
+          top: 3%;
+        }
+
+      .section-32__grouptext-overlay.bottom {
+          top: 81%
+        }
+
+      .section-32__grouptext-overlay.right {
+          top: 35%;
+          left: 73%;
+          transform: translate(-50%, -50%);
+        }
+
+        .section-32__grouptext-overlay.left {
+          top: 50%;
+          left: 27%;
+          transform: translate(-50%, -50%);
+        }
+
+            .faq-section {
+        max-height: 180px !important;
+        padding: 0.5rem 8px !important;
+        top: 5% !important;
+        max-width: 90%;
+        border-radius: 20px;
+    }
+
+  }
+
+    @media (max-width: 500px) {
         .section-32__grouptext-overlay h2 {
-            font-size: 2.5vw;
-          }
+          font-size: 3vw;
+        }
 
         .section-32__grouptext-overlay p {
-            font-size: 2vw;
-          }
+          font-size: 2.3vw;
+        }
 
         .section-32__grouptext-overlay.top {
-            top: 3%;
-          }
+          top: 3%;
+        }
+
+          .section-32__grouptext-overlay.bottom {
+          top: 67%;
+        }
+
+        .faq-section__q-text {
+                font-size: 0.9rem;
+            }
+        
+    }
+
+    @media (max-width: 600px) {
+
+    .table-container-custom {
+
+      padding: 10px;
+    }
+
+    .table-text-custom,
+    .table-th-custom,
+    .table-td-custom {
+
+      padding: 8px;
+    }
+    }
+
+    @media (max-width: 768px) {
+
+      .section-32__grouptext-overlay h2 {
+          font-size: 2.5vw;
+        }
+
+      .section-32__grouptext-overlay p {
+          font-size: 2vw;
+        }
+
+      .section-32__grouptext-overlay.top {
+          top: 3%;
+        }
+
+      .section-32__grouptext-overlay.bottom {
+          top: 76%;
+        }
+
+            .product-header {
+      --banner-height: 180px;
+    }
+
+        .faq-section__header {
+    text-align: center;
+    margin-bottom: 1rem;
+    }
+
+    
+    .faq-section__a-text {
+        font-size: 0.7rem !important;
+    }
+
+    .faq-section__title {
+        font-size: 1rem !important;
+     }
+
+     .faq-section__subtitle {
+        font-size: 0.75rem !important;
+     }
+
+     .faq-section__q-text {
+        font-size: 0.75rem !important;
+     }
+
+     }
+    
+
+    @media (max-width: 960px) {
+        .section-32__grouptext-overlay h2 {
+          font-size: 2.1vw;
+        }
+
+        .section-32__grouptext-overlay p {
+          font-size: 1.5vw;
+        }
+
+        .section-32__grouptext-overlay.top {
+          top: 3%;
+        }
 
         .section-32__grouptext-overlay.bottom {
-            top: 76%;
-          }
+          top: 79%
+        }
 
-              .product-header {
-        --banner-height: 180px;
-      }
-      }
 
-      @media (max-width: 960px) {
-          .section-32__grouptext-overlay h2 {
-            font-size: 2.1vw;
-          }
+        }
 
-          .section-32__grouptext-overlay p {
-            font-size: 1.5vw;
-          }
+    @media (max-width: 1060px) {
+        .section-32__grouptext-overlay.top {
+          top: 3%;
+        }
 
-          .section-32__grouptext-overlay.top {
-            top: 3%;
-          }
+        .section-32__grouptext-overlay.bottom {
+          top: 81%;
+        }
 
-          .section-32__grouptext-overlay.bottom {
-            top: 79%
-          }
-      }
+          .faq-section {
+          top: 10%; 
+         max-width: 90%;
+         max-height: 80%;
 
-      @media (max-width: 1060px) {
-          .section-32__grouptext-overlay.top {
-            top: 3%;
-          }
+        }
 
-          .section-32__grouptext-overlay.bottom {
-            top: 81%;
-          }
-      }
+        }
 
-  </style>  
+</style>   
 
   <div class="lp-container">
     <link rel="nestlenect" href="https://fonts.googleapis.com">
@@ -3263,113 +3409,214 @@ ColLib.register({
     <header class="product-header__banner">
       <picture style="width:100%; height:100%; margin:0;">
 
-        <source media="(max-width: 393px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg?ims=393x">
+        <source media="(max-width: 430px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-textura-silhuetas-roxo-716020-01.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg?ims=768x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-textura-silhuetas-roxo-716020-01.jpg?ims=768x">
+
+              <source media="(max-width: 1024px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-textura-silhuetas-roxo-716020-01.jpg?ims=1024x">
       
-              <source media="(max-width: 1199px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg?ims=1199x">
-      
-              <source media="(min-width: 1200px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg">
+              <source media="(max-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-textura-silhuetas-roxo-716020-01.jpg?ims=1200x">
 
         <img
-          src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-silhuetas-insetos-fundo-verde-1702652-01.jpg"
-          alt="Fundo verde silhuetas insetos aranhas baratas. Identidade visual multi inseticida Kelldrin." 
+          src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-textura-silhuetas-roxo-716020-01.jpg"
+          alt="Fundo roxo texturizado silhuetas gatos marca Whiskas" 
           class="product-header__banner-img" loading="eager">
       </picture>
-      <div class="product-header__badge" role="img" aria-label="Logo da marca kelldrin dentro de um círculo laranja">
+      <div class="product-header__badge" role="img" aria-label="Logo da marca whiskas dentro de um círculo laranja">
         <img
-          src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/kelldrin/logo-kelldrin.png"
-          alt="imagem png com ícone da marca kelldrin dentro de um círculo laranja em frente ao cabeçalho" class="product-header__badge-img">
+          src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/whiskas/logo-whiskas.png"
+          alt="imagem png com ícone da marca whiskas dentro de um círculo laranja em frente ao cabeçalho" class="product-header__badge-img">
       </div>
     </header>
 
     <section class="product-header__body">
-      <small class="product-header__brand">kelldrin</small>
+      <small class="product-header__brand">whiskas</small>
       <h2 class="product-header__title">
-        INSETICIDA KELLTHINE SC25 SPRAY KELLDRIN 500ML
+       RAÇÃO WHISKAS PREMIUM CARNE COM DELICROCS 10,1KG
       </h2>
       <p class="product-header__subtitle">
-        Pronto para uso, garante proteção rápida e prolongada, trazendo mais tranquilidade para o seu lar.
+        Oferece uma textura crocante por fora e um recheio macio. Uma explosão de sabor que conquista os paladares mais exigentes.
       </p>
     </section>
   </section>
 
         <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
         <picture class="section-32__groupimage-section">
-          <source media="(max-width: 393px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg?ims=393x">
+          <source media="(max-width: 430px)" 
+              srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-adulto-carne-10kg-embalagem-716020-02.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg?ims=768x">
-      
-              <source media="(max-width: 1199px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg?ims=1199x">
-      
-              <source media="(min-width: 1200px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg">
+              srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-adulto-carne-10kg-embalagem-716020-02.jpg?ims=768x">
 
-        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-frasco-500ml-verde-1702652-02.jpg"
-          alt="Frasco multi inseticida Kellthine SC 25 Kelldrin 500ml pronto para uso fundo verde com pragas." 
+              <source media="(max-width: 1024px)" 
+              srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-adulto-carne-10kg-embalagem-716020-02.jpg?ims=1024x">
+      
+              <source media="(max-width: 1200px)" 
+              srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-adulto-carne-10kg-embalagem-716020-02.jpg?ims=1200x">
+      
+              <source media="(max-width: 1440px)" 
+              srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-adulto-carne-10kg-embalagem-716020-02.jpg?ims=1440x">
+
+              <source media="(min-width: 1441px)" 
+              srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-adulto-carne-10kg-embalagem-716020-02.jpg">
+
+        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-adulto-carne-10kg-embalagem-716020-02.jpg"
+          alt="Ração seca Whiskas alimento completo gatos adultos sabor carne 10,1kg" 
           style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
           loading="lazy" decoding="async" fetchpriority="low">
         <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 50%;">
-          <h2><strong>BOM CONTRA O QUE?</strong></h2>
-          <p>O Kellthine SC 25 combate escorpiões, cupins, carrapatos, baratas e os mosquitos da dengue com alta eficácia.
+          <h2><strong>A WHISKAS MELHORA DIGESTÃO?</strong></h2>
+          <p>Sim! A fórmula contém múltiplas fibras e prebióticos MOS. Eles equilibram o intestino e melhoram a absorção dos nutrientes diariamente.
           </p>
         </figcaption>
         </picture>
 
-        <picture class="section-32__groupimage-section" style="z-index: 3;">
-          <source media="(max-width: 393px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg?ims=393x">
+        <picture class="section-32__groupimage-section">
+           <source media="(max-width: 430px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-lifestyle-gato-cinza-roxo-716020-03.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg?ims=768x">
-      
-              <source media="(max-width: 1199px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg?ims=1199x">
-      
-              <source media="(min-width: 1200px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-lifestyle-gato-cinza-roxo-716020-03.jpg?ims=768x">
 
-        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-armario-aranha-1702652-03.jpg"
-          alt="Aplicação Kelldrin Kellthine SC 25 armário cozinha controlando aranha ambiente escuro." 
+              <source media="(max-width: 1024px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-lifestyle-gato-cinza-roxo-716020-03.jpg?ims=1024x">
+      
+              <source media="(max-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-lifestyle-gato-cinza-roxo-716020-03.jpg?ims=1200x">
+      
+              <source media="(max-width: 1440px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-lifestyle-gato-cinza-roxo-716020-03.jpg?ims=1440x">
+
+              <source media="(min-width: 1441px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-lifestyle-gato-cinza-roxo-716020-03.jpg">
+
+        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-lifestyle-gato-cinza-roxo-716020-03.jpg"
+          alt="Gato cinza olhando sobre fundo roxo embalagem alimento seco Whiskas" 
           style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
           loading="lazy" decoding="async" fetchpriority="low">
-        <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%; left: 45%;">
-          <h2><strong>PRONTO PARA USO?</strong></h2>
-          <p>Precisa diluir na água? Não! O inseticida Kellthine 500ml já vem pronto. Basta girar o bico e aplicar direto nas frestas e rodapés.
+        <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 55%; left: 29%;">
+          <h2><strong>PROTEGE O TRATO URINÁRIO?</strong></h2>
+          <p>Sim! Além de manter a massa muscular com proteínas de alta qualidade, ela contribui ativamente para um trato urinário saudável.
           </p>
         </figcaption>
         </picture>
 
-        <picture class="section-32__groupimage-section" style="z-index: 3;">
-          <source media="(max-width: 393px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg?ims=393x">
+        <picture class="section-32__groupimage-section">
+          <source media="(max-width: 430px)" 
+              srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-fundo-grafico-curva-roxo-716020-04.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg?ims=768x">
-      
-              <source media="(max-width: 1199px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg?ims=1199x">
-      
-              <source media="(min-width: 1200px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg">
+              srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-fundo-grafico-curva-roxo-716020-04.jpg?ims=768x">
 
-        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/multi-inseticida-kelldrin-kellthine-sc-25-aplicacao-piso-barata-1702652-04.jpg"
-          alt="Aplicação Kelldrin Kellthine SC 25 spray piso perto de ralo combatendo barata." 
+              <source media="(max-width: 1024px)" 
+              srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-fundo-grafico-curva-roxo-716020-04.jpg?ims=1024x">
+      
+              <source media="(max-width: 1200px)" 
+              srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-fundo-grafico-curva-roxo-716020-04.jpg?ims=1200x">
+      
+              <source media="(max-width: 1440px)" 
+              srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-fundo-grafico-curva-roxo-716020-04.jpg?ims=1440x">
+
+              <source media="(min-width: 1441px)" 
+              srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-fundo-grafico-curva-roxo-716020-04.jpg">
+
+        <img src="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/racao-gato-whiskas-fundo-grafico-curva-roxo-716020-04.jpg"
+          alt="Fundo roxo detalhe linha preta curva canto superior Whiskas" 
           style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
           loading="lazy" decoding="async" fetchpriority="low">
-        <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 20%; left: 25%;">
-          <h2><strong>E PRAS PRAGAS ESCONDIDAS?</strong></h2>
-          <p>O spray atinge frestas, cantos, rodapés e áreas úmidas. Elimina baratas, aranhas e escorpiões direto no ninho.
-          </p>
-        </figcaption>
-        </picture>
+           <!-- Camada com gradiente de fade -->
+
+   <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
+              background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.550) 37%, rgba(0, 0, 0, 0.897) 100%); 
+              z-index: 5; border-radius: 0px 0px 30px 30px; pointer-events: none;"></div>
+
+              <!-- FAQ -->
+
+       <section class="faq-section" aria-labelledby="faq-section-title">
+           
+    <div class="faq-section__header">
+      <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
+      <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
+    </div>
+    <ul class="faq-section__list">
+      <li class="faq-section__item">
+        <details class="faq-section__item">
+          <summary>
+            <h3 class="faq-section__q-text">Qual a melhor ração para gatos adultos?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
+              Opte por alimentos completos e balanceados, como a Whiskas. Ela oferece proteínas de alta qualidade 
+              e prebióticos MOS que garantem a saúde e vitalidade do felino.
+            </p>
+          </div>
+        </details>
+      </li>
+      <li class="faq-section__item">
+        <details class="faq-section__item">
+          <summary>
+            <h3 class="faq-section__q-text">Quando mudar a ração do gato para a fase adulta?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
+              A transição deve ocorrer quando o gato atinge 12 meses de idade. Mude gradualmente ao longo de uma 
+              semana para que o sistema digestivo se adapte à nova fórmula.
+            </p>
+          </div>
+        </details>
+      </li>
+      <li class="faq-section__item">
+        <details class="faq-section__item">
+          <summary>
+            <h3 class="faq-section__q-text">O que avaliar ao escolher a ração do gato adulto?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
+             Busque rações com proteínas para manter a massa muscular, minerais para o trato urinário e 
+             fibras que auxiliem a digestão, mantendo a pele e os pelos saudáveis.
+            </p>
+          </div>
+        </details>
+      </li>
+      <li class="faq-section__item">
+        <details class="faq-section__item">
+          <summary>
+            <h3 class="faq-section__q-text">Qual a diferença da ração de filhote para adulto?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
+              A ração adulta, como a Whiskas, possui minerais ajustados para a manutenção do peso e trato 
+              urinário saudável, diferente da versão focada no crescimento de filhotes.
+            </p>
+          </div>
+        </details>
+      </li>
+      <li class="faq-section__item">
+        <details class="faq-section__item">
+          <summary>
+            <h3 class="faq-section__q-text">Pode misturar sachê na ração do gato adulto?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
+              Sim! Misturar sachês à ração seca aumenta a ingestão de líquidos do seu gato. Isso melhora a hidratação e é 
+              essencial para ajudar a manter o trato urinário saudável.
+            </p>
+          </div>
+        </details>
+      </li>
+    </ul>
+      </section>
+    </picture>
+        
         </section>
       
 
@@ -3377,76 +3624,6 @@ ColLib.register({
             <p class="p__end">
             <strong>Imagens Meramente Ilustrativas</strong>
             </p>
-
-                    <section class="faq-section" aria-labelledby="faq-section-title">
-              <div class="faq-section__header">
-                  <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
-                  <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
-              </div>
-              <ul class="faq-section__list">
-                  <li class="faq-section__item">
-                      <details class="faq-section__item">
-                          <summary>
-                              <h3 class="faq-section__q-text">Como usar corretamente spray para insetos?</h3>
-                              <span class="faq-section__icon" aria-hidden="true"></span>
-                          </summary>
-                          <div class="faq-section__a-inner">
-                              <p class="faq-section__a-text">Agite bem e aplique a 30 cm de distância nos locais onde as pragas se escondem, 
-                                como frestas e rodapés, garantindo uma cobertura uniforme no ambiente.</p>
-                          </div>
-                      </details>
-                  </li>
-                  <li class="faq-section__item">
-                      <details class="faq-section__item">
-                          <summary>
-                              <h3 class="faq-section__q-text">Inseticida em spray é seguro para crianças e pets?</span>
-                              <span class="faq-section__icon" aria-hidden="true"></span>
-                          </summary>
-                          <div class="faq-section__a-inner">
-                              <p class="faq-section__a-text">Afaste pessoas e animais durante o uso. Promova a aeração do local tratado e 
-                                permita o retorno deles somente 6 horas após a aplicação do produto.</p>
-                          </div>
-                      </details>
-                  </li>
-                  <li class="faq-section__item">
-                      <details class="faq-section__item">
-                          <summary>
-                              <h3 class="faq-section__q-text">O inseticida spray mata aranha?</h3>
-                              <span class="faq-section__icon" aria-hidden="true"></span>
-                          </summary>
-                          <div class="faq-section__a-inner">
-                              <p class="faq-section__a-text">Sim! É eficaz contra aranhas, baratas e mosquitos. Para combater aracnídeos, 
-                                aplique diretamente em locais escuros e úmidos, como pilhas de entulhos.</p>
-                          </div>
-                      </details>
-                  </li>
-                  <li class="faq-section__item">
-                      <details class="faq-section__item">
-                          <summary>
-                              <h3 class="faq-section__q-text">Qual o melhor spray para mosquitos em ambientes?</h3>
-                              <span class="faq-section__icon" aria-hidden="true"></span>
-                          </summary>
-                          <div class="faq-section__a-inner">
-                              <p class="faq-section__a-text">Opte por fórmulas de amplo espectro, como a Lambda-Cialotrina. 
-                                Elas são ideais para combater o Mosquito da Dengue e pernilongos com alta eficiência.</p>
-                          </div>
-                      </details>
-                  </li>
-                  <li class="faq-section__item">
-                      <details class="faq-section__item">
-                          <summary>
-                              <h3 class="faq-section__q-text">Como escolher um inseticida spray seguro?</h3>
-                              <span class="faq-section__icon" aria-hidden="true"></span>
-                          </summary>
-                          <div class="faq-section__a-inner">
-                              <p class="faq-section__a-text">Busque opções prontas para uso e seguras. Para sua segurança, use luvas na aplicação, 
-                                não aplique sobre alimentos e jamais reutilize a embalagem vazia.</p>
-                          </div>
-                      </details>
-                  </li>
-              </ul>
-          </section>
-
           </footer>
 
           </article>
