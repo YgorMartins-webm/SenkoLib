@@ -2277,10 +2277,10 @@ ColLib.register({
       css:  ``,
     },
 
-                /*@@@@Col - comp-p-faq-e */
+                    /*@@@@Col - comp-p-faq-e */
     {
       id:   'comp-p-faq-e',
-      name: 'Comp p com 3 blocos e FAQ embutido na figure',
+      name: 'Comp p com 3 blocos e FAQ embutido no picture',
       html: `
     <style>  
       
