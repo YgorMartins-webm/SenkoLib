@@ -2304,7 +2304,7 @@ SenkoLib.register([
 
   .faq-section__header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin: 1rem;
   }
 
   .faq-section__title {
