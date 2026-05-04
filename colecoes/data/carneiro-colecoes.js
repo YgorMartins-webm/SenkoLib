@@ -1,15 +1,15 @@
 // @ts-nocheck
 /* ═══════════════════════════════════════════════════════════════════════
-   colecoes/data/carneiro-colecoes.js — Coleção: Carneiro Coleções
+   colecoes/data/carneiro-colecoes.js — Coleção: Ygor Coleções
 
    ATENÇÃO: Arquivo gerado pelo módulo GitHub do SenkoLib.
    NÃO edite manualmente em produção.
 ═══════════════════════════════════════════════════════════════════════ */
 ColLib.register({
   slug:  'carneiro-colecoes',
-  name:  'Carneiro Coleções',
+  name:  'Ygor Coleções',
   group: 'ygor',
-  tags:  ['Responsivo'],
+  tags:  ['Responsivo', 'adaptativos'],
   layouts: [
     /*@@@@Col - padrao1 */
     {
@@ -4180,6 +4180,5 @@ ColLib.register({
 </div>`,
       css:  ``,
     },
-
   ]
 });
