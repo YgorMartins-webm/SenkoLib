@@ -3380,227 +3380,235 @@ SenkoLib.register([
     </div>
   </section>
 </div>`,
-    css: `<style>
-  /* ── CONTAINER UNIVERSAL ── */
-  .section-14-container {
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-  }
-
-  @media (min-width: 768px) {
+    css: `  <style>
+    /* ── CONTAINER UNIVERSAL ── */
     .section-14-container {
-      max-width: 768px;
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
+    }
+
+    @media (min-width: 768px) {
+      .section-14-container {
+        max-width: 768px;
+        margin-inline: auto;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .section-14-container {
+        max-width: 992px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .section-14-container {
+        max-width: 1200px;
+      }
+    }
+
+    @media (min-width: 1536px) {
+      .section-14-container {
+        max-width: 1536px;
+      }
+    }
+
+    /* ── HEADER ── */
+    .section-14__header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-inline: 16px;
+    }
+
+    .section-14__title {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #111;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+
+    .section-14__description {
+      font-size: 0.9375rem;
+      color: #555;
+      max-width: 700px;
       margin-inline: auto;
+      line-height: 1.6;
     }
-  }
 
-  @media (min-width: 992px) {
-    .section-14-container {
-      max-width: 992px;
+    /* ── BODY: mobile — coluna única ── */
+    .section-14__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      padding-inline: 16px;
     }
-  }
 
-  @media (min-width: 1200px) {
-    .section-14-container {
-      max-width: 1200px;
+    /* ── FEATURE BLOCK ── */
+    .section-14__feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 15px 16px;
     }
-  }
 
-  @media (min-width: 1536px) {
-    .section-14-container {
-      max-width: 1536px;
+    .section-14__icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      padding: 10px;
+      background: #ff9100;
+      flex-shrink: 0;
     }
-  }
 
-  /* ── HEADER ── */
-  .section-14__header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding-inline: 16px;
-  }
+    .section-14__feature-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111;
+      margin: 0 0 8px;
+    }
 
-  .section-14__title {
-    font-size: 2rem;
-    font-weight: 900;
-    color: #111;
-    margin: 0 0 16px;
-    line-height: 1.1;
-  }
+    .section-14__feature-text {
+      font-size: 0.875rem;
+      color: #666;
+      line-height: 1.5;
+      margin: 0;
+    }
 
-  .section-14__description {
-    font-size: 0.9375rem;
-    color: #555;
-    max-width: 700px;
-    margin-inline: auto;
-    line-height: 1.6;
-  }
+    /* ── IMAGEM CENTRAL ── */
+    .section-14__image-wrap {
+      width: 100%;
+    }
 
-  /* ── BODY: mobile — coluna única ── */
-  .section-14__body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    padding-inline: 16px;
-  }
+    .section-14__image {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
 
-  /* ── FEATURE BLOCK ── */
-  .section-14__feature {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px 16px;
-  }
+    }
 
-  .section-14__icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    padding: 10px;
-    background: #ff9100;
-    flex-shrink: 0;
-  }
+    /* ── COLUNA DE FEATURES ── */
+    .section-14__column {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
 
-  .section-14__feature-title {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #111;
-    margin: 0 0 8px;
-  }
-
-  .section-14__feature-text {
-    font-size: 0.875rem;
-    color: #666;
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  /* ── IMAGEM CENTRAL ── */
-  .section-14__image-wrap {
-    width: 100%;
-  }
-
-  .section-14__image {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    
-  }
-
-  /* ── COLUNA DE FEATURES ── */
-  .section-14__column {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  /* ─────────────────────────────────────────────────
+    /* ─────────────────────────────────────────────────
       @media 768px — imagem central com features
       sobrepostas nas bordas (layout imagem 2)
   ───────────────────────────────────────────────── */
-  @media (min-width: 768px) {
-    .section-14__body {
-      position: relative;
-      flex-direction: row;
-      align-items: stretch;
-      padding-inline: 0;
-    }
+    @media (min-width: 768px) {
+      .section-14__body {
+        position: relative;
+        flex-direction: row;
+        align-items: stretch;
+        padding-inline: 0;
+      }
 
-    .section-14__column {
-      width: auto;
-      flex: 0 0 220px;
-      justify-content: space-around;
-      z-index: 2;
-    }
+      .section-14__column {
+        width: auto;
+        flex: 0 0 220px;
+        justify-content: space-around;
+        z-index: 2;
+      }
 
-    .section-14__column--left {
-      align-items: flex-start;
-    }
+      .section-14__column--left {
+        align-items: flex-start;
+      }
 
-    .section-14__column--right {
-      align-items: flex-end;
-    }
+      .section-14__column--right {
+        align-items: flex-end;
+      }
 
-    .section-14__image-wrap {
-      flex: 1;
-      min-width: 0;
-      position: relative;
-    }
+      .section-14__image-wrap {
+        flex: 1;
+        min-width: 0;
+        position: relative;
+      }
 
-    .section-14__image {
-      height: 100%;
-      border-radius: 16px;
-      object-fit: cover;
-    }
-
-    .section-14__feature {
-      align-items: flex-start;
-      text-align: left;
-      padding: 12px 16px;
-    }
-
-    .section-14__column--right .section-14__feature {
-      align-items: flex-end;
-      text-align: right;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .section-14__image {
+      .section-14__image {
+        height: 100%;
+        border-radius: 16px;
         object-fit: cover;
-        width: 88%;
+      }
+
+      .section-14__feature {
+        align-items: flex-start;
+        text-align: left;
+        padding: 12px 16px;
+      }
+
+      .section-14__column--right .section-14__feature {
+        align-items: flex-end;
+        text-align: right;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .section-14__image {
+        object-fit: cover;
+        width: 84%;
         aspect-ratio: 9 / 6;
         margin: auto;
         border-radius: 20px;
+      }
     }
-}
 
-  /* ─────────────────────────────────────────────────
+    @media (min-width: 992px) {
+      .section-14__image {
+        object-fit: cover;
+        width: 88%;
+        margin: auto;
+      }
+    }
+
+    /* ─────────────────────────────────────────────────
       @media 1200px — 3 colunas separadas (layout imagem 3):
       col-esq | imagem | col-dir, sem sobreposição
   ───────────────────────────────────────────────── */
-  @media (min-width: 1200px) {
-    .section-14__body {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: 48px;
-    }
+    @media (min-width: 1200px) {
+      .section-14__body {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 48px;
+      }
 
-    .section-14__column {
-      width: 90%;
+      .section-14__column {
+        width: 90%;
         margin: auto;
         gap: 58px;
         justify-content: flex-start;
-    }
+      }
 
-    .section-14__column--left {
-      align-items: flex-start;
-    }
+      .section-14__column--left {
+        align-items: flex-start;
+      }
 
-    .section-14__column--right {
-      align-items: flex-end;
-    }
+      .section-14__column--right {
+        align-items: flex-end;
+      }
 
-    .section-14__image-wrap {
-      flex: unset;
-      width: 420px;
-    }
+      .section-14__image-wrap {
+        flex: unset;
+        width: 420px;
+      }
 
-    .section-14__image {
-      height: auto;
-      border-radius: 4px;
-      border-radius: 18px;
-    }
+      .section-14__image {
+        height: auto;
+        border-radius: 4px;
+        border-radius: 18px;
+      }
 
-    .section-14__feature {
-      padding: 0;
+      .section-14__feature {
+        padding: 0;
+      }
     }
-  }
-</style>`
+  </style>`
   },
 
 
