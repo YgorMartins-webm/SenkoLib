@@ -3652,7 +3652,7 @@ SenkoLib.register([
                     </div>
                 </li>
                 <li class="section-15__feature-item">
-                    <img class="section-15__feature-item-icon" loading="lazy" src="C:\\Users\\ygorq\Downloads\\2222455_03-2-3.png"
+                    <img class="section-15__feature-item-icon" loading="lazy" src="C:\\Users\\ygorqDownloads\\2222455_03-2-3.png"
                         alt="Ícone" />
                     <div class="section-15__feature-item-body">
                         <strong class="section-15__feature-item-title">Cozinha Sempre Organizada</strong>
@@ -3672,11 +3672,8 @@ SenkoLib.register([
             </ul>
         </div>
         <div class="section-15__image-wrapper">
-            <picture>
-                <source media="(min-width: 960px)" loading="lazy" srcset="C:\\Users\\ygorq\\Downloads\\2222455_03-1.jpg" />
-                <img class="section-15__image" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2.jpg"
-                    alt="Eletricista com capacete branco e colete laranja em obra" />
-            </picture>
+            <img class="section-15__image" src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao4.jpg"
+                 alt="Eletricista com capacete branco e colete laranja em obra" />
         </div>
     </div>
 </div>`,
