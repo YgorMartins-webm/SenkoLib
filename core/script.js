@@ -1021,7 +1021,7 @@ function copiarBasics() {
 
     .faq-section__header {
       text-align: center;
-      margin-bottom: 2rem;
+      margin: 2rem auto;
     }
 
     .faq-section__title {
