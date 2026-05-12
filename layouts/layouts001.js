@@ -4073,7 +4073,26 @@ SenkoLib.register([
 
   </div>
 </div>`,
-    css: `/* ── Reset e container ── */
+    css: `.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Melhora a percepção de foco: Quando o rádio for focado via teclado, 
+   destaque a label correspondente */
+input[type="radio"]:focus + .c32-nav label[for="c32-s1"],
+input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
+  outline: 2px solid #000; /* Ou o estilo de foco da sua marca */
+}
+
+/* ── Reset e container ── */
   .c32-carousel {
     position: relative;
     width: 100%;
