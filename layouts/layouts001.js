@@ -4335,7 +4335,7 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
   /* variantes: variants/section-21.js */
   {
     id: 'section-21',
-    name: 'Section-21',
+    name: 'Section-18',
     tags: ['cards', 'clicavel', 'interativo', 'diversos'],
     html: `<section class="features-section">
     <div class="section-header" aria-labelledby="main-title">
