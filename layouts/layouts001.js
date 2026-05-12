@@ -4031,8 +4031,8 @@ SenkoLib.register([
 
   <!-- Navegação: Labels que funcionam como botões -->
   <nav class="c32-nav" aria-label="Selecionar slide">
-    <label for="c32-s1" class="c32-nav__btn">Ver Salmão</label>
-    <label for="c32-s2" class="c32-nav__btn">Ver Peru</label>
+    <label for="c32-s1" class="c32-nav__btn">Salmão</label>
+    <label for="c32-s2" class="c32-nav__btn">Peru</label>
   </nav>
 
   <!-- Slides -->
