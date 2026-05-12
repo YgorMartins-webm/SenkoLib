@@ -4178,7 +4178,138 @@ SenkoLib.register([
       width: 100%;
       margin: 0;
       contain: layout style;
-    }`
+    }
+
+  @media (max-width: 1060px) {
+
+        .c32-nav {
+          width: 30%;
+          gap: 4vh;
+          margin-top: 6.5rem;
+        }
+
+        .c32-nav label {
+          font-size: 1.8em;
+          font-weight: 600;
+          line-height: 2.5vh;
+          border-radius: 1.2vw;
+          border-bottom: 2px solid transparent;
+          padding: 1rem;
+        
+        }
+
+        }
+
+            
+    @media (max-width: 960px) {
+
+              .c32-nav {
+          width: 30%;
+          gap: 5vh;
+        }
+
+        .c32-nav label {
+          font-size: 1.8em;
+          font-weight: 600;
+          line-height: 2.5vh;
+          border-radius: 1.2vw;
+          border-bottom: 2px solid transparent;
+          padding: 0.8rem;
+        
+        }
+
+
+        }
+
+          @media (max-width: 768px) {
+
+             .c32-nav {
+          width: 30%;
+          gap: 2.5vh;
+        }
+
+        .c32-nav label {
+          font-size: 1em;
+          line-height: 2vh;
+          border-radius: 1.5vw;
+          border-bottom: 2px solid transparent;
+        
+        }
+
+     }
+
+     @media (max-width: 600px) {
+
+
+        .c32-nav {
+          width: 30%;
+          gap: 2vh;
+        }
+
+        .c32-nav label {
+          font-size: 0.8em;
+          line-height: 2vh;
+          border-radius: 3vw;
+          border-bottom: 2px solid transparent;
+          padding: 0.5rem;
+        
+        }
+    }
+
+         @media (max-width: 500px) {
+
+        .c32-nav label {
+          font-size: 0.6em;
+          line-height: 2vh;
+          padding: 0.4rem 0.5rem;
+          border-bottom: 1px solid transparent;
+          box-shadow: #00000093 -3px 3px 3px;
+        }
+
+        .c32-nav {
+           margin-top: 5rem;
+  }
+    
+ }       
+
+
+       @media (max-width: 440px) {  
+
+        .c32-nav {
+          margin-top: 5rem;
+        }
+
+          .c32-nav label {
+          line-height: 1vh;
+            
+        
+        }
+  }
+
+         @media (max-width: 375px) {
+
+        .c32-nav {
+          width: 30%;
+        }
+
+        .c32-nav label {
+          font-size: 0.6em;
+          line-height: 1vh;
+          padding: 0.3rem 0.5rem;
+        
+        }
+
+        
+    }
+
+             @media (max-width: 320px) {
+
+        .c32-nav label {
+          padding: 0.2rem 0.5rem;
+        
+        }
+
+     }`
   },
 
 ]);
