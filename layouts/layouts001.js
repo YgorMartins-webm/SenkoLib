@@ -4021,7 +4021,7 @@ SenkoLib.register([
   /* variantes: variants/carrossel-com-nav.js */
   {
     id: 'carrossel-com-nav',
-    name: 'Section 18',
+    name: 'Section 17',
     tags: ['Carrossel', 'diversos', 'nav', '32'],
     html: `<section class="c32-carousel" role="region" aria-roledescription="carousel" aria-label="Destaques Pedigree Barriguinha Saudável">
 
