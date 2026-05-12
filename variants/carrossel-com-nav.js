@@ -75,7 +75,7 @@ SenkoLib.registerVariant('carrossel-com-nav', [
     align-items: center;
     justify-content: center;
     margin-top: 10rem;
-    left: 50%;
+    left: 75%;
   }
 
   .c32-nav label {
