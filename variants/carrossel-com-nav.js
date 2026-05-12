@@ -68,7 +68,7 @@ SenkoLib.registerVariant('carrossel-com-nav', [
   .c32-nav {
     position: absolute;
     display: flex;
-    flex-direction: row; 
+    flex-direction: column; 
     z-index: 30;
     width: 30%;
     gap: 6vw;
