@@ -4312,4 +4312,251 @@ SenkoLib.register([
      }`
   },
 
+
+/*@@@@Senko - section-21 */
+  /* variantes: variants/section-21.js */
+  {
+    id: 'section-21',
+    name: 'Section-21',
+    tags: ['cards', 'clicavel', 'interativo', 'diversos'],
+    html: `<section class="features-section">
+    <div class="section-header" aria-labelledby="main-title">
+        <h2 id="main-title">Sub-título padrão opcional</h2>
+        <p>Bleblueble ble blue ble Bleblueble ble blue ble Bleblueble ble blue ble</p>
+    </div>
+
+    <!-- Inputs de rádio agrupados para acessibilidade -->
+    <div role="radiogroup" aria-label="Escolha uma característica para visualizar">
+        <input type="radio" id="feat1" name="feature" class="sr-only" checked>
+        <input type="radio" id="feat2" name="feature" class="sr-only">
+        <input type="radio" id="feat3" name="feature" class="sr-only">
+
+        <div class="grid-container">
+            <!-- Coluna Esquerda -->
+            <aside class="column">
+                <label for="feat1" class="feature-card" role="radio" aria-checked="true">
+                    <article>
+                        <h2>Característica 01</h2>
+                        <p>Descrição clara e acessível sobre a primeira funcionalidade de destaque.</p>
+                    </article>
+                </label>
+            </aside>
+
+            <!-- Coluna Central: Imagens (Picture) e Card 2 -->
+            <section class="image-display">
+                <div class="circle-frame" aria-live="polite">
+                    
+                    <!-- IMAGEM 1 RESPONSIVA -->
+                    <picture class="img1">
+                        <source media="(max-width: 425px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=345x">
+                        <source media="(max-width: 545px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=465x">
+                        <source media="(max-width: 779px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=576x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg" alt="Perspectiva da característica 1">
+                    </picture>
+
+                    <!-- IMAGEM 2 RESPONSIVA -->
+                    <picture class="img2">
+                        <source media="(max-width: 425px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=345x">
+                        <source media="(max-width: 545px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=465x">
+                        <source media="(max-width: 779px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=576x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg" alt="Perspectiva da característica 2">
+                    </picture>
+
+                    <!-- IMAGEM 3 RESPONSIVA -->
+                    <picture class="img3">
+                        <source media="(max-width: 425px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=345x">
+                        <source media="(max-width: 545px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=465x">
+                        <source media="(max-width: 779px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=576x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg" alt="Perspectiva da característica 3">
+                    </picture>
+
+                </div>
+
+                <label for="feat2" class="feature-card" role="radio" style="width: 90%;">
+                    <article>
+                        <h2>Característica 02</h2>
+                        <p>Este card está posicionado exatamente abaixo do círculo central no desktop.</p>
+                    </article>
+                </label>
+            </section>
+
+            <!-- Coluna Direita -->
+            <aside class="column">
+                <label for="feat3" class="feature-card" role="radio">
+                    <article>
+                        <h2>Característica 03</h2>
+                        <p>Navegue usando a tecla TAB e veja o foco acessível funcionando em cada card.</p>
+                    </article>
+                </label>
+            </aside>
+        </div>
+    </div>
+</section>
+`,
+    css: `
+    <style>
+        /* Classe utilitária para leitores de tela */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        .features-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 40px;
+            padding: 60px 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            font-family: sans-serif;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Layout Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Container da Imagem Central */
+        .image-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .circle-frame {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 780 / 740;
+            border-radius: 50%;
+            border: 10px solid #0d438b;
+            overflow: hidden;
+            position: relative;
+            background: #eee;
+        }
+
+        /* Ajuste para que o picture se comporte como a imagem antiga */
+        .circle-frame picture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .circle-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Estilo dos Cards */
+        .feature-card {
+            display: block;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px solid #eee;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+
+        .feature-card h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Animações e Estados Interativos */
+        .feature-card:hover {
+            background-color: #eff1f3;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        /* Feedback visual quando o input invisível é focado ou marcado */
+        input:focus-visible + .feature-card {
+            outline: 3px solid #ff8c00;
+            outline-offset: 5px;
+        }
+
+        /* Lógica de Troca de Imagens (através da tag picture agora) */
+        #feat1:checked ~ .grid-container .img1,
+        #feat2:checked ~ .grid-container .img2,
+        #feat3:checked ~ .grid-container .img3 {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        #feat1:checked ~ .grid-container label[for="feat1"],
+        #feat2:checked ~ .grid-container label[for="feat2"],
+        #feat3:checked ~ .grid-container label[for="feat3"] {
+            border-color: #ff8c00;
+            background-color: #fffaf5;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .image-display {
+                grid-row: 1;
+            }
+
+            .circle-frame {
+                max-width: 320px;
+            }
+
+            .column {
+                order: 2;
+            }
+        }
+    </style>`
+  },
+
 ]);
