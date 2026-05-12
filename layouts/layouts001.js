@@ -4021,7 +4021,7 @@ SenkoLib.register([
   /* variantes: variants/carrossel-com-nav.js */
   {
     id: 'carrossel-com-nav',
-    name: 'Carrossel com Nav em Linha',
+    name: 'Carrossel com Nav em Linha/Coluna',
     tags: ['Carrossel', 'diversos', 'nav', '32'],
     html: `<div class="c32-carousel">
 
