@@ -205,7 +205,8 @@ function getFilteredLayouts() {
   return SenkoLib.getAll()
     .filter(function (l) {
       if (!q) return true;
-      return [l.name].concat(l.tags).some(function (s) {
+      var tags = Array.isArray(l.tags) ? l.tags : [];
+      return [l.name].concat(tags).some(function (s) {
         return s && s.toLowerCase().indexOf(q) !== -1;
       });
     })
@@ -276,7 +277,7 @@ function createCard(layout, index) {
   var body = document.createElement('div'); body.className = 'card-body';
   var nameEl = document.createElement('div'); nameEl.className = 'card-name'; nameEl.textContent = layout.name;
   var tagsEl = document.createElement('div'); tagsEl.className = 'card-tags';
-  var sortedTags = layout.tags.slice().filter(Boolean).sort(function(a,b){ return a.localeCompare(b,'pt-BR',{sensitivity:'base'}); });
+  var sortedTags = (Array.isArray(layout.tags) ? layout.tags : []).slice().filter(Boolean).sort(function(a,b){ return a.localeCompare(b,'pt-BR',{sensitivity:'base'}); });
   sortedTags.forEach(function (t) {
     if (!t) return;
     var tag = document.createElement('span'); tag.className = 'tag'; tag.textContent = t;
@@ -564,8 +565,7 @@ function renderVariantBlocks(variants) {
       /* Ignora cliques nos botões de ação */
       if (e.target.closest('.variant-actions')) return;
       document.getElementById('variantsOverlay').classList.add('hidden');
-      state._editFromVariant = true;
-      openEditModal(v);
+      openEditVariantModal(v);
     });
 
     grid.appendChild(block);
