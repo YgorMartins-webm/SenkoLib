@@ -3782,10 +3782,6 @@ SenkoLib.register([
   
   /* ── NOVO: aspect-ratio e desc oculta no mobile ── */
   @media (max-width: 759px) {
-      .section-15__desc {
-          display: none;
-      }
-  
       .section-15__image {
           aspect-ratio: 4 / 3;
       }
