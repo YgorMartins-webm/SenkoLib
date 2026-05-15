@@ -4362,26 +4362,39 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
                     
                     <!-- IMAGEM 1 RESPONSIVA -->
                     <picture class="img1">
-                        <source media="(max-width: 425px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=345x">
-                        <source media="(max-width: 545px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=465x">
-                        <source media="(max-width: 779px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=576x">
-                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg" alt="Perspectiva da característica 1">
+                         
+                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=400x">
+                        <source media="(mix-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg" 
+                        alt="Perspectiva da característica 1">
                     </picture>
 
                     <!-- IMAGEM 2 RESPONSIVA -->
                     <picture class="img2">
-                        <source media="(max-width: 425px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=345x">
-                        <source media="(max-width: 545px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=465x">
-                        <source media="(max-width: 779px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=576x">
-                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg" alt="Perspectiva da característica 2">
+                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=400x">
+                        <source media="(mix-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg" 
+                        alt="Perspectiva da característica 2">
                     </picture>
 
                     <!-- IMAGEM 3 RESPONSIVA -->
                     <picture class="img3">
-                        <source media="(max-width: 425px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=345x">
-                        <source media="(max-width: 545px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=465x">
-                        <source media="(max-width: 779px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=576x">
-                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg" alt="Perspectiva da característica 3">
+                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=400x">
+                        <source media="(mix-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg" 
+                         alt="Perspectiva da característica 3">
                     </picture>
 
                 </div>
