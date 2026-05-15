@@ -15,17 +15,13 @@ ColLib.register({
             
                         
         
-                /*@@@@Col - comp-p-3b-faqe-vh-tb */
+                    /*@@@@Col - comp-p-3b-faqe-vh-tb */
     {
       id:   'comp-p-3b-faqe-vh-tb',
       name: 'comp - 3 blocos faq embutido video header e tabela',
-      html: `
-  
+      html: `<div class="lp-container">
+  <style>  
 
-<div class="lp-container">
-
-<style>  
-    
     *{
     margin: 0;
     padding: 0;
@@ -515,6 +511,18 @@ ColLib.register({
       margin: 0;
     }
 
+    .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
      .video-header {
     --badge-size: 8rem;
     --banner-height: 250px;
@@ -675,7 +683,7 @@ ColLib.register({
         padding: 0.5rem;
         backdrop-filter: blur(0.5vw);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        -webkit-backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0.5vw);
 
         display: flex;
         flex-direction: column;
@@ -1138,9 +1146,8 @@ ColLib.register({
         }
 
 </style>  
-
   <meta charset="UTF-8">
-   <article style="width: 100%;">
+   <article style="width: 100%;" aria-labelledby="product-main-title">
     <section class="video-header" aria-label="Cabeçalho do produto">
    
       <header class="video-header__banner">
@@ -1154,12 +1161,12 @@ ColLib.register({
         <div class="video-header__badge" role="img" aria-label="Logo da marca havaianas dentro de um círculo alaranjado">
           <img
             src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/havaianas/logo-havaianas.png"
-            alt="imagem png com ícone da marca havaianas dentro de um círculo alaranjado em frente ao cabeçalho" class="video-header__badge-img">
+            alt="">
         </div>
       </header>
-        <section class="video-header__body">
+        <section class="video-header__body" aria-label="Título e descrição do produto">
         <small class="video-header__brand">havaianas</small>
-        <h2 class="video-header__title">
+        <h2 class="video-header__title" id="product-main-title">
           	CHINELOS HAVAIANAS KIDS COLOR BRANCO/PRETO
         </h2>
         <p class="video-header__subtitle">
@@ -1170,8 +1177,8 @@ ColLib.register({
 
 
       <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
-       <picture class="section-32__groupimage-section">
-
+        <figure class="section-32__groupimage-section">
+       <picture>
         <source media="(max-width: 393px)" 
               srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-solado-branco-1224878-02.jpg?ims=393x">
       
@@ -1187,15 +1194,19 @@ ColLib.register({
        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-solado-branco-1224878-02.jpg"
         alt="Chinelo Havaianas Kids Color branco  detalhe solado e tiras fundo vermelho tropical." 
         style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
-        loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 50%;">
+        loading="eager" fetchpriority="high" decoding="async">
+        </picture>
+
+      <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 50%">
         <h2><strong>É CONFORTÁVEL?</strong></h2>
         <p>É confortável para crianças? Sim! Possui solas 100% borracha, macias e flexíveis, garantindo o amortecimento ideal para o uso diário.
         </p>
       </figcaption>
-      </picture>
+      </figure>
 
-       <picture class="section-32__groupimage-section" style="z-index: 11;">
+      
+        <figure class="section-32__groupimage-section">
+       <picture>
 
         <source media="(max-width: 393px)" 
               srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-frontal-preto-1224878-03.jpg?ims=393x">
@@ -1213,19 +1224,23 @@ ColLib.register({
         alt="Chinelo Havaianas Kids Color preto  detalhe frontal texturizado fundo vermelho." 
         style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
+        </picture>
+
       <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 20%; left: 25%;">
         <h2><strong>BRANCA OU PRETA?</strong></h2>
         <p>Temos a Havaianas Kids Color Branca e Preta. Ambas contam com material resistente ao desgaste e exposição solar moderada.
         </p>
       </figcaption>
-      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 90%; left: 40%;">
+      <div class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 90%; left: 40%;">
         <h2><strong>DEFORMA COM O USO?</strong></h2>
         <p>Não! Sua composição em borracha de alta qualidade evita deformações e garante maior vida útil ao produto infantil.
         </p>
-      </figcaption>
-      </picture>
+      </div>
+      </figure>
 
-      <picture class="section-32__groupimage-section" style="z-index: 3; overflow: hidden;">
+      <div style="position: relative;"> 
+      <figure class="section-32__groupimage-section">
+      <picture>
 
         <source media="(max-width: 393px)" 
               srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-calcanhar-preto-1224878-04.jpg?ims=393x">
@@ -1243,12 +1258,14 @@ ColLib.register({
         alt="Chinelo Havaianas Kids Color preto  detalhe calcanhar solado borracha cenário tropical." 
         style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
+
+        </picture>
         
   <!-- Camada com gradiente de fade -->
 
    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
               background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.550) 37%, rgba(0, 0, 0, 0.897) 100%); 
-              z-index: 5; border-radius: 0px 0px 30px 30px; pointer-events: none;"></div>
+              z-index: 5; border-radius: 0px 0px 30px 30px; pointer-events: none;" aria-hidden="true"></div>
 
               <!-- FAQ -->
 
@@ -1258,9 +1275,9 @@ ColLib.register({
       <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
       <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
     </div>
-    <ul class="faq-section__list">
+    <ul class="faq-section__list" role="list">
       <li class="faq-section__item">
-        <details class="faq-section__item">
+        <details>
           <summary>
             <h3 class="faq-section__q-text">Qual o melhor material para chinelos de criança?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
@@ -1274,7 +1291,7 @@ ColLib.register({
         </details>
       </li>
       <li class="faq-section__item">
-        <details class="faq-section__item">
+        <details>
           <summary>
             <h3 class="faq-section__q-text">Como escolher chinelos resistentes para o dia a dia?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
@@ -1288,7 +1305,7 @@ ColLib.register({
         </details>
       </li>
       <li class="faq-section__item">
-        <details class="faq-section__item">
+        <details>
           <summary>
             <h3 class="faq-section__q-text">Quais são as vantagens dos chinelos de borracha?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
@@ -1302,7 +1319,7 @@ ColLib.register({
         </details>
       </li>
       <li class="faq-section__item">
-        <details class="faq-section__item">
+        <details>
           <summary>
             <h3 class="faq-section__q-text">Como funciona a numeração dos chinelos infantis?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
@@ -1316,7 +1333,7 @@ ColLib.register({
         </details>
       </li>
       <li class="faq-section__item">
-        <details class="faq-section__item">
+        <details>
           <summary>
             <h3 class="faq-section__q-text">Os chinelos de borracha são antiderrapantes?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
@@ -1331,22 +1348,26 @@ ColLib.register({
       </li>
     </ul>
       </section>
-    </picture>
+    </figure>
+     </div> 
     </section>
       
 
-        <footer>
+        <footer aria-label="Informações complementares e produtos Relacionados">
            <p class="p__end">
           <strong>Imagens Meramente Ilustrativas</strong>
           </p>
            <section class="table-container-custom" aria-label="tabela contendo produtos relacionados e citados dentre deste conteúdo">
-          <table class="table-design-custom">
+          <table class="table-design-custom" aria-describedby="table-desc">
+            <caption id="table-desc" class="sr-only" style="text-align:left; padding: 0 0 8px; font-weight:600;">
+            Produtos Havaianas Kids Color disponíveis
+          </caption>
             <thead class="table-head-custom">
                <tr class="table-tr-custom">
-                 <th class="table-text-custom table-th-custom" style="background-color: #fb373c; border-radius: 10px 0 0 0;">SKU
+                 <th class="table-text-custom table-th-custom" style="background-color: #fb373c; border-radius: 10px 0 0 0;" scope="col">SKU
                  </th>
                  <!--Replicar para adicionar mais COLUNAS-->
-                 <th class="table-text-custom table-th-custom" style="background-color: #fb373c; border-radius: 0 10px 0 0;">TÍTULO
+                 <th class="table-text-custom table-th-custom" style="background-color: #fb373c; border-radius: 0 10px 0 0;" scope="col">TÍTULO
                  </th>
                </tr>
              </thead>
@@ -1368,7 +1389,7 @@ ColLib.register({
         <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 29/0</td>
          </tr>
         <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title ">1224883</td>
+        <td class="table-text-custom table-td-custom-title">1224883</td>
         <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 31/2</td>
           </tr>
            <tr class="table-tr-custom">
