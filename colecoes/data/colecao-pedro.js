@@ -2768,7 +2768,7 @@ ColLib.register({
       css:  ``,
     },
 
-    /*@@@@Col - 3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido */
+        /*@@@@Col - 3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido */
     {
       id:   '3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido',
       name: '3 blocos, com ytb, 18 no meio e faq embutido corrigido',
@@ -4283,25 +4283,34 @@ ColLib.register({
                     
                     <!-- IMAGEM 1 RESPONSIVA -->
                     <picture class="img1">
-                        <source media="(max-width: 425px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-aquecendo-macarrao-preto-2224543-03.jpg?ims=345x">
-                        <source media="(max-width: 545px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-aquecendo-macarrao-preto-2224543-03.jpg?ims=465x">
-                        <source media="(max-width: 779px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-aquecendo-macarrao-preto-2224543-03.jpg?ims=576x">
+                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-aquecendo-macarrao-preto-2224543-03.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-aquecendo-macarrao-preto-2224543-03.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-aquecendo-macarrao-preto-2224543-03.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-aquecendo-macarrao-preto-2224543-03.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-aquecendo-macarrao-preto-2224543-03.jpg?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-aquecendo-macarrao-preto-2224543-03.jpg?ims=400x">
                         <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-aquecendo-macarrao-preto-2224543-03.jpg" alt="Perspectiva da característica 1">
                     </picture>
 
                     <!-- IMAGEM 2 RESPONSIVA -->
                     <picture class="img2">
-                        <source media="(max-width: 425px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-descongelando-carne-preto-2224543-04.jpg?ims=345x">
-                        <source media="(max-width: 545px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-descongelando-carne-preto-2224543-04.jpg?ims=465x">
-                        <source media="(max-width: 779px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-descongelando-carne-preto-2224543-04.jpg?ims=576x">
-                        <img src="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-descongelando-carne-preto-2224543-04.jpg" alt="Perspectiva da característica 2">
+                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-descongelando-carne-preto-2224543-04.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-descongelando-carne-preto-2224543-04.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-descongelando-carne-preto-2224543-04.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-descongelando-carne-preto-2224543-04.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-descongelando-carne-preto-2224543-04.jpg?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-descongelando-carne-preto-2224543-04.jpg?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-descongelando-carne-preto-2224543-04.jpg" alt="Perspectiva da característica 2">
                     </picture>
 
                     <!-- IMAGEM 3 RESPONSIVA -->
                     <picture class="img3">
-                        <source media="(max-width: 425px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-porta-aberta-tira-odor-preto-2224543-05.jpg?ims=345x">
-                        <source media="(max-width: 545px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-porta-aberta-tira-odor-preto-2224543-05.jpg?ims=465x">
-                        <source media="(max-width: 779px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-porta-aberta-tira-odor-preto-2224543-05.jpg?ims=576x">
+                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-porta-aberta-tira-odor-preto-2224543-05.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-porta-aberta-tira-odor-preto-2224543-05.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-porta-aberta-tira-odor-preto-2224543-05.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-porta-aberta-tira-odor-preto-2224543-05.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-porta-aberta-tira-odor-preto-2224543-05.jpg?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-porta-aberta-tira-odor-preto-2224543-05.jpg?ims=400x">
                         <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/micro-ondas-mondial-mo-01-21-b-porta-aberta-tira-odor-preto-2224543-05.jpg" alt="Perspectiva da característica 3">
                     </picture>
 
