@@ -15,17 +15,17 @@ ColLib.register({
             
                         
         
-            /*@@@@Col - comp-p-3b-faqe-vh-tb */
+                /*@@@@Col - comp-p-3b-faqe-vh-tb */
     {
       id:   'comp-p-3b-faqe-vh-tb',
       name: 'comp - 3 blocos faq embutido video header e tabela',
       html: `
-  <style>  
+  
+
+<div class="lp-container">
+
+<style>  
     
-    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
-
-
     *{
     margin: 0;
     padding: 0;
@@ -1139,13 +1139,7 @@ ColLib.register({
 
 </style>  
 
-<div class="lp-container">
-  <link rel="nestlenect" href="https://fonts.googleapis.com">
-  <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
   <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
-  <title>PDP - eFácil</title>
    <article style="width: 100%;">
     <section class="video-header" aria-label="Cabeçalho do produto">
    
