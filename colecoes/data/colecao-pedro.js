@@ -1404,16 +1404,13 @@ ColLib.register({
       css:  ``,
     },
 
-            /*@@@@Col - comp-3-blocos-product-header-faq-embutido-e-tabela */
+                /*@@@@Col - comp-3-blocos-product-header-faq-embutido-e-tabela */
     {
       id:   'comp-3-blocos-product-header-faq-embutido-e-tabela',
       name: 'comp 3 blocos, product header, FAQ embutido, e tabela',
       html: `
-  <style>  
-    
-    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
-
+<div class="lp-container">
+ <style>  
 
     *{
     margin: 0;
@@ -2521,14 +2518,6 @@ ColLib.register({
         }
 
 </style>  
-
-<div class="lp-container">
-  <link rel="nestlenect" href="https://fonts.googleapis.com">
-  <link rel="nestlenect" href="https://fonts.gstatic.com" crossorigin>
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
-  <title>PDP - eFácil</title>
    <article style="width: 100%;">
 <section class="product-header" aria-label="Cabeçalho do produto">
   <header class="product-header__banner">
