@@ -1812,7 +1812,7 @@ SenkoLib.register([
           loading="lazy" fetchpriority="high" decoding="async">
       </picture>
       <div class="section-6__content">
-        <h1 class="section-6__title">Caderno Funny Cat</h1>
+        <h2 class="section-6__title">Caderno Funny Cat</h2>
         <p class="section-6__description">Organize seus estudos com fofura e estilo!</p>
       </div>
     </section>`,
