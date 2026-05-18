@@ -4333,10 +4333,9 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
     id: 'section-21',
     name: 'Section-18',
     tags: ['cards', 'clicavel', 'interativo', 'diversos'],
-    html: `<section class="features-section">
+    html: ` <section class="features-section">
     <div class="section-header" aria-labelledby="main-title">
-        <h2 id="main-title">Sub-título padrão opcional</h2>
-        <p>Bleblueble ble blue ble Bleblueble ble blue ble Bleblueble ble blue ble</p>
+        <h2 id="main-title">TUDO O QUE VOCÊ PROCURA</h2>
     </div>
 
     <!-- Inputs de rádio agrupados para acessibilidade -->
@@ -4347,83 +4346,78 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
 
         <div class="grid-container">
             <!-- Coluna Esquerda -->
-            <aside class="column">
-                <label for="feat1" class="feature-card" role="radio" aria-checked="true">
+            <aside class="column" aria-label="Funcionalidade de resistência">
+                <label for="feat1" class="feature-card" role="radio" aria-checked="true" tabindex="0">
                     <article>
-                        <h2>Característica 01</h2>
-                        <p>Descrição clara e acessível sobre a primeira funcionalidade de destaque.</p>
+                        <h2>É RESISTENTE?</h2>
+                        <p>Sim! Possui caixa de engrenagem metálica para maior vida útil e interruptor selado que bloqueia a entrada de pó.</p>
                     </article>
                 </label>
             </aside>
 
             <!-- Coluna Central: Imagens (Picture) e Card 2 -->
-            <section class="image-display">
-                <div class="circle-frame" aria-live="polite">
+            <section class="image-display" aria-label="Imagem ilustrativa da funcionalidade selecionada">
+                <div class="circle-frame" aria-live="polite" aria-label="Imagem da funcionalidade selecionada">
                     
                     <!-- IMAGEM 1 RESPONSIVA -->
                     <picture class="img1">
-                         
-                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=492x">
-                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=301x">
-                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=318x">
-                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=318x">
-                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=400x">
-                        <source media="(mix-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg?ims=400x">
-                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste1.jpg" 
-                        alt="Perspectiva da característica 1">
+                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg" 
+                        alt="Operador com Esmerilhadeira Black & Decker realizando acabamento sobre solda">
                     </picture>
 
                     <!-- IMAGEM 2 RESPONSIVA -->
                     <picture class="img2">
-                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=492x">
-                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=301x">
-                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=318x">
-                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=318x">
-                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=400x">
-                        <source media="(mix-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg?ims=400x">
-                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste2.jpg" 
-                        alt="Perspectiva da característica 2">
+                       <source media="(max-width: 320px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=400x">
+                        <img src="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg" 
+                        alt="Esmerilhadeira Black & Decker G720XB2 limpando superfície enferrujada">
                     </picture>
 
                     <!-- IMAGEM 3 RESPONSIVA -->
                     <picture class="img3">
-                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=492x">
-                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=301x">
-                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=318x">
-                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=318x">
-                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=400x">
-                        <source media="(mix-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg?ims=400x">
-                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/teste3.jpg" 
-                         alt="Perspectiva da característica 3">
+                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg" 
+                        alt="Esmerilhadeira Black & Decker desbastando borda de peça metálica espessa">
                     </picture>
 
                 </div>
 
-                <label for="feat2" class="feature-card" role="radio" style="width: 90%;">
+                <label for="feat2" class="feature-card" role="radio" style="width: 90%;" aria-checked="false" tabindex="0">
                     <article>
-                        <h2>Característica 02</h2>
-                        <p>Este card está posicionado exatamente abaixo do círculo central no desktop.</p>
+                        <h2>A PEGADA É SEGURA?</h2>
+                        <p>Sua carcaça é emborrachada e conta com empunhadura ergonômica de 3 posições, dando total controle.</p>
                     </article>
                 </label>
             </section>
 
             <!-- Coluna Direita -->
-            <aside class="column">
-                <label for="feat3" class="feature-card" role="radio">
+            <aside class="column" aria-label="Funcionalidade de troca de disco">
+                <label for="feat3" class="feature-card" role="radio" aria-checked="false" tabindex="0">
                     <article>
-                        <h2>Característica 03</h2>
-                        <p>Navegue usando a tecla TAB e veja o foco acessível funcionando em cada card.</p>
+                        <h2>É FÁCIL TROCAR DISCO?</h2>
+                        <p>A troca de disco é rápida graças ao botão de trava do eixo e o ajuste da guarda é feito sem ferramentas.</p>
                     </article>
                 </label>
             </aside>
         </div>
     </div>
-</section>
-`,
-    css: `
-    <style>
-        /* Classe utilitária para leitores de tela */
-        .sr-only {
+</section>`,
+    css: `   .sr-only {
             position: absolute;
             width: 1px;
             height: 1px;
@@ -4451,13 +4445,16 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
 
         .section-header h2 {
             font-size: 2rem;
+            line-height: 2rem;
+            color: #000;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .section-header p {
-            color: #666;
+            color: #8a8a8a;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -4489,7 +4486,7 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
             max-width: 400px;
             aspect-ratio: 780 / 740;
             border-radius: 50%;
-            border: 10px solid #0d438b;
+            border: 05px solid #f2540d;
             overflow: hidden;
             position: relative;
             background: #eee;
@@ -4527,6 +4524,8 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
         .feature-card h2 {
             margin: 0 0 10px 0;
             font-size: 1.2rem;
+            color: #000;
+            font-weight: 550;
         }
 
         .feature-card p {
@@ -4538,14 +4537,14 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
 
         /* Animações e Estados Interativos */
         .feature-card:hover {
-            background-color: #eff1f3;
+            background-color: #fffcfa;
             transform: translateY(-8px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.08);
         }
 
         /* Feedback visual quando o input invisível é focado ou marcado */
         input:focus-visible + .feature-card {
-            outline: 3px solid #ff8c00;
+            outline: 3px solid #f2540d;
             outline-offset: 5px;
         }
 
@@ -4560,13 +4559,13 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
         #feat1:checked ~ .grid-container label[for="feat1"],
         #feat2:checked ~ .grid-container label[for="feat2"],
         #feat3:checked ~ .grid-container label[for="feat3"] {
-            border-color: #ff8c00;
-            background-color: #fffaf5;
+            border-color: #f2540d;
+            background-color: #fffcfa;
         }
 
-        /* Responsividade */
-        @media (max-width: 1024px) {
-            .grid-container {
+@media (max-width: 1060px) {
+
+        .grid-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
@@ -4583,7 +4582,10 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
                 order: 2;
             }
         }
-    </style>`
+
+
+
+`
   },
 
 
