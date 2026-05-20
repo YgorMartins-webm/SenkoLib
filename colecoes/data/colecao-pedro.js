@@ -4512,1357 +4512,635 @@ ColLib.register({
       css:  ``,
     },
 
-    /*@@@@Col - semelhante-ao-anterior */
+        /*@@@@Col - semelhante-ao-anterior */
     {
       id:   'semelhante-ao-anterior',
       name: 'semelhante ao anterior',
       html: `  <div class="lp-container">
-  <style>  
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
 
+.product-header {
+  --badge-size: 8rem;
+  --banner-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  font-family: sans-serif;
+  container-type: inline-size;
+}
 
-    *{
-    margin: 0;
-    padding: 0;
+.product-header__banner {
+  width: 100%;
+  height: var(--banner-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.product-header__banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-header__badge {
+  position: absolute;
+  bottom: calc(var(--badge-size) / -2);
+  width: var(--badge-size);
+  height: var(--badge-size);
+  background-color: #ff9900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.product-header__badge-img {
+  max-width: 90px;
+  max-height: 90px;
+  object-fit: contain;
+}
+
+.product-header__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(var(--badge-size) / 2 + 1.1rem) 0.3rem 2.5rem;
+  text-align: center;
+}
+
+.product-header__brand {
+  color: #ff9900;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.product-header__title {
+  color: #000;
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  line-height: clamp(1.6rem, 4vw, 3.1rem);
+  font-weight: 600;
+  max-width: 50rem;
+  text-wrap: pretty;
+}
+
+.product-header__subtitle {
+  color: #8a8a8a;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 120%;
+  margin-top: 1rem;
+  max-width: 52rem;
+  text-wrap: pretty;
+}
+
+.section-32__container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  border: 5.5px solid #000;
+  border-radius: 36px;
+}
+
+.section-32__groupimage-section {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  contain: layout style;
+}
+
+.section-32__groupimage-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.section-32__grouptext-overlay {
+  color: #fff;
+  position: absolute;
+  max-width: 50%;
+  width: 90%;
+  line-height: 2rem;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.section-32__grouptext-overlay.left {
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  max-width: 45%;
+}
+
+.section-32__grouptext-overlay h2 {
+  font-size: 2vw;
+  font-weight: bold;
+  margin-bottom: 1.5px;
+  line-height: 120%;
+}
+
+.section-32__grouptext-overlay p {
+  font-size: 1.2vw;
+  margin: 0;
+  line-height: 120%;
+}
+
+.grouptext-overlay-Background {
+  background: rgba(0, 0, 0, 0.438);
+  border-radius: 2.8vw;
+  padding: 0.5rem;
+  backdrop-filter: blur(0.5vw);
+  -webkit-backdrop-filter: blur(0.5vw);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 70%;
+  z-index: 100;
+}
+
+.youtube-video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.youtube-video {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px 30px 0 0;
+}
+
+.features-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 40px;
+  padding: 60px 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  font-family: sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.column,
+.image-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.column {
+  gap: 30px;
+}
+
+.image-display {
+  align-items: center;
+  gap: 40px;
+}
+
+.circle-frame {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 780 / 740;
+  border-radius: 50%;
+  border: 5px solid #0053a2;
+  overflow: hidden;
+  position: relative;
+  background: #eee;
+}
+
+.circle-frame picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.circle-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-card {
+  display: block;
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  border: 2px solid #eee;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+
+.feature-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: #000;
+  font-weight: 550;
+  line-height: 2.2vh;
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.feature-card:hover,
+.feature-card:focus-visible {
+  background-color: #fffcfa;
+  transform: translateY(-8px);
+  box-shadow: 0 10px 15px #002f5c;
+}
+
+.feature-card:focus-visible {
+  outline: 3px solid #0053a2;
+  outline-offset: 5px;
+}
+
+#feat1:checked ~ .grid-container .img1,
+#feat2:checked ~ .grid-container .img2,
+#feat3:checked ~ .grid-container .img3 {
+  opacity: 1;
+  z-index: 2;
+}
+
+#feat1:checked ~ .grid-container label[for="feat1"],
+#feat2:checked ~ .grid-container label[for="feat2"],
+#feat3:checked ~ .grid-container label[for="feat3"] {
+  border-color: #0053a2;
+  background-color: #f8fcff;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.faq-section {
+  width: 100%;
+  padding: 0 16px 2rem;
+  box-sizing: border-box;
+  margin: 0 auto 25px;
+  font-family: sans-serif;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  right: 5%;
+  background: rgba(255, 255, 255, 0.014);
+  border-radius: 40px;
+  max-width: 75%;
+  z-index: 10;
+  border: 1px solid #fff;
+  max-height: 55vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.faq-section__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.faq-section__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+  line-height: 6vw;
+}
+
+.faq-section__subtitle {
+  font-size: 1rem;
+  color: #fff;
+  margin: 0;
+}
+
+.faq-section__list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 56rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.faq-section__item {
+  background: #ffffff05;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faq-section__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-section__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-section__item summary:hover {
+  background: #f9f9f92f;
+}
+
+.faq-section__q-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  flex: 1;
+}
+
+.faq-section__q-text:hover {
+  color: #5dc4ff;
+}
+
+.faq-section__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.faq-section__icon::before,
+.faq-section__icon::after {
+  content: "";
+  position: absolute;
+  background: #888;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.faq-section__icon::before {
+  width: 12px;
+  height: 1.5px;
+  top: 9px;
+  left: 4px;
+}
+
+.faq-section__icon::after {
+  width: 1.5px;
+  height: 12px;
+  top: 4px;
+  left: 9px;
+}
+
+.faq-section__item details[open] .faq-section__icon::after {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.faq-section__a-inner {
+  padding: 14px 20px 16px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.faq-section__a-text {
+  font-size: 0.9rem;
+  color: #fff;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+}
+
+.faq-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.faq-section::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.faq-section::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.faq-section::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.p__end {
+  color: #8a8a8a;
+  font-family: sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  text-wrap: pretty;
+  text-align: center;
+  padding: 40px 0;
+}
+
+@media (prefers-contrast: more) {
+  .p__end,
+  .product-header__subtitle {
+    color: #000;
   }
 
-    .tw-container {
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      width: 100%
-    }
-
-    @media (min-width:576px) {
-
-      .tw-container {
-
-        max-width: 576px
-      }
-    }
-
-    @media (min-width:768px) {
-
-      .tw-container {
-
-        max-width: 768px
-      }
-    }
-
-    @media (min-width:992px) {
-
-      .tw-container {
-
-        max-width: 992px
-      }
-    }
-
-    @media (min-width:1200px) {
-
-      .tw-container {
-
-        max-width: 1200px
-      }
-    }
-
-    @media (min-width:1536px) {
-
-      .tw-container {
-
-        max-width: 1536px
-      }
-    }
-
-    .tw-absolute {
-
-      position: absolute
-    }
-
-    .tw-relative {
-
-      position: relative
-    }
-
-    .-tw-bottom-16 {
-
-      bottom: -4rem
-    }
-
-    .tw-left-0 {
-
-      left: 0
-    }
-
-    .tw-top-0 {
-
-      top: 0
-    }
-
-    .tw-z-0 {
-
-      z-index: 0
-    }
-
-    .tw-z-10 {
-
-      z-index: 10
-    }
-
-    .tw-col-span-2 {
-
-      grid-column: span 2/span 2
-    }
-
-    .tw-m-0 {
-
-      margin: 0
-    }
-
-    .tw-my-16 {
-
-      margin-bottom: 4rem;
-      margin-top: 4rem
-    }
-
-    .tw-my-8 {
-
-      margin-bottom: 2rem;
-      margin-top: 2rem
-    }
-
-    .tw-mb-1 {
-
-      margin-bottom: .25rem
-    }
-
-    .tw-mb-6 {
-
-      margin-bottom: 1.5rem
-    }
-
-    .tw-mt-16 {
-
-      margin-top: 4rem
-    }
-
-    .tw-mt-4 {
-
-      margin-top: 1rem
-    }
-
-    .tw-mt-8 {
-
-      margin-top: 2rem
-    }
-
-    .tw-flex {
-
-      display: flex
-    }
-
-    .tw-grid {
-
-      display: grid
-    }
-
-    .tw-h-14 {
-
-      height: 3.5rem
-    }
-
-    .tw-h-32 {
-
-      height: 8rem
-    }
-
-    .tw-h-5 {
-
-      height: 1.25rem
-    }
-
-    .tw-h-56 {
-
-      height: 14rem
-    }
-
-    .tw-h-6 {
-
-      height: 1.5rem
-    }
-
-    .tw-h-64 {
-
-      height: 16rem
-    }
-
-    .tw-h-25rem {
-
-      height: 25rem
-    }
-
-    .tw-h-31-25rem {
-
-      height: 31.25rem
-    }
-
-    .tw-h-32rem {
-
-      height: 32rem
-    }
-
-    .tw-h-full {
-
-      height: 100%
-    }
-
-    .tw-w-14 {
-
-      width: 3.5rem
-    }
-
-    .tw-w-32 {
-
-      width: 8rem
-    }
-
-    .tw-w-5 {
-
-      width: 1.25rem
-    }
-
-    .tw-w-6 {
-
-      width: 1.5rem
-    }
-
-    .tw-w-full {
-
-      width: 100%
-    }
-
-    .tw-max-w-6rem {
-
-      max-width: 6rem
-    }
-
-    .tw-max-w-md {
-
-      max-width: 28rem
-    }
-
-    .tw-max-w-sm {
-
-      max-width: 24rem
-    }
-
-    .tw-max-w-xl {
-
-      max-width: 36rem
-    }
-
-    .tw-select-none {
-
-      -webkit-user-select: none;
-      user-select: none
-    }
-
-    .tw-list-none {
-
-      list-style-type: none
-    }
-
-    .tw-grid-cols-1 {
-
-      grid-template-columns: repeat(1, minmax(0, 1fr))
-    }
-
-    .tw-flex-col {
-
-      flex-direction: column
-    }
-
-    .tw-items-end {
-
-      align-items: flex-end
-    }
-
-    .tw-items-center {
-
-      align-items: center
-    }
-
-    .tw-justify-end {
-
-      justify-content: flex-end
-    }
-
-    .tw-justify-center {
-
-      justify-content: center
-    }
-
-    .tw-justify-between {
-
-      justify-content: space-between
-    }
-
-    .tw-gap-10 {
-
-      gap: 2.5rem
-    }
-
-    .tw-gap-14 {
-
-      gap: 3.5rem
-    }
-
-    .tw-gap-4 {
-
-      gap: 1rem
-    }
-
-    .tw-gap-y-4 {
-
-      row-gap: 1rem
-    }
-
-    .tw-rounded {
-
-      border-radius: .25rem
-    }
-
-    .tw-rounded-2xl {
-
-      border-radius: 1rem
-    }
-
-    .tw-rounded-full {
-
-      border-radius: 9999px
-    }
-
-    .tw-rounded-lg {
-
-      border-radius: .5rem
-    }
-
-    .tw-rounded-t {
-
-      border-top-left-radius: .25rem;
-      border-top-right-radius: .25rem
-    }
-
-    .tw-border-t {
-
-      border-top-width: 1px
-    }
-
-    .tw-border-solid {
-
-      border-style: solid
-    }
-
-    .tw-border-transparent {
-
-      border-color: transparent
-    }
-
-    .tw-bg-gray-900 {
-
-      --tw-bg-opacity: 1;
-      background-color: rgb(46 53 56/var(--tw-bg-opacity))
-    }
-
-    .tw-bg-primary {
-
-      --tw-bg-opacity: 1;
-      background-color: rgb(255 153 0/var(--tw-bg-opacity))
-    }
-
-    .tw-bg-white {
-
-      --tw-bg-opacity: 1;
-      background-color: rgb(255 255 255/var(--tw-bg-opacity))
-    }
-
-    .tw-object-contain {
-
-      object-fit: contain
-    }
-
-    .tw-object-cover {
-
-      object-fit: cover
-    }
-
-    .tw-p-3 {
-
-      padding: .75rem
-    }
-
-    .tw-p-5 {
-
-      padding: 1.25rem
-    }
-
-    .tw-p-6 {
-
-      padding: 1.5rem
-    }
-
-    .tw-p-8 {
-
-      padding: 2rem
-    }
-
-    .tw-py-10 {
-
-      padding-bottom: 2.5rem;
-      padding-top: 2.5rem
-    }
-
-    .tw-pl-0 {
-
-      padding-left: 0
-    }
-
-    .tw-pt-8 {
-
-      padding-top: 2rem
-    }
-
-    .tw-text-center {
-
-      text-align: center
-    }
-
-    .tw-font-roboto {
-
-      font-family: Roboto, sans-serif
-    }
-
-    .tw-text-2xl {
-
-      font-size: 32px;
-      font-weight: 600;
-      line-height: 40px
-    }
-
-    .tw-text-lg {
-
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 28px
-    }
-
-    .tw-text-md {
-
-      font-size: 16px;
-      line-height: 24px
-    }
-
-    .tw-text-sm {
-
-      font-size: 14px;
-      line-height: 22px
-    }
-
-    .tw-text-xs {
-
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 16px
-    }
-
-    .tw-uppercase {
-
-      text-transform: uppercase
-    }
-
-    .tw-text-black {
-
-      --tw-text-opacity: 1;
-      color: rgb(0 0 0/var(--tw-text-opacity))
-    }
-
-    .tw-text-gray-500 {
-
-      --tw-text-opacity: 1;
-      color: rgb(138 138 138/var(--tw-text-opacity))
-    }
-
-    .pdp {
-
-      display: flex;
-      flex-direction: column;
-      font-family: Roboto, sans-serif
-    }
-
-    .pdp * {
-
-      box-sizing: border-box;
-      margin: 0;
-    }
-
-      .product-header {
-    --badge-size: 8rem;
-    --banner-height: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    font-family: sans-serif;
-    container-type: inline-size;
-  }
-
-  .product-header__banner {
-    width: 100%;
-    height: var(--banner-height);
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-
-  .product-header__banner-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .product-header__badge {
-    position: absolute;
-    bottom: calc(var(--badge-size) / -2);
-    width: var(--badge-size);
-    height: var(--badge-size);
-    background-color: #ff9900;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 10;
-  }
-
-  .product-header__badge-img {
-    max-width: 90px;
-    max-height: 90px;
-    object-fit: contain;
-  }
-
-  .product-header__body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: calc(var(--badge-size) / 2 + 1.1rem) 0.3rem 2.5rem;
-    text-align: center;
+  .grouptext-overlay-Background {
+    background: #000;
   }
 
   .product-header__brand {
-    color: #ff9900;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    color: #3a2301;
   }
 
-  .product-header__title {
+  .faq-section__a-text {
+    font-size: 1rem;
+    font-weight: bold;
     color: #000;
-    font-size: clamp(1.4rem, 4vw, 2.4rem);
-    line-height: clamp(1.6rem, 4vw, 3.1rem);
-    font-weight: 600;
-    max-width: 50rem;
-    text-wrap: pretty;
+  }
+}
+
+@media (max-width: 1060px) {
+  .faq-section {
+    top: 10%;
+    max-width: 90%;
+    max-height: 80%;
   }
 
-  .product-header__subtitle {
-    color: #8a8a8a;
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    line-height: 120%;
-    margin-top: 1rem;
-    max-width: 52rem;
-    text-wrap: pretty;
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
-  
-    .section-32__container {
-      width: 100%;
-      max-width: 1600px;
-      margin: 0 auto;
-      border: 5.5px solid #000;
-      border-radius: 36px;
-    }
 
-    .section-32__groupimage-section {
-      position: relative;
-      width: 100%;
-      margin: 0;
-      contain: layout style;
-    }
-
-    .section-32__groupimage-section img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .section-32__grouptext-overlay {
-      color: #ffffff;
-      position: absolute;
-      max-width: 50%;
-      width: 90%;
-      line-height: 2rem;
-      text-align: center;
-      font-family: sans-serif
-    }
-
-    .section-32__grouptext-overlay.top {
-      top: 3%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .section-32__grouptext-overlay.bottom {
-      top: 75%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .section-32__grouptext-overlay.left {
-      top: 50%;
-      left: 25%;
-      transform: translate(-50%, -50%);
-      max-width: 45%;
-    }
-
-    .section-32__grouptext-overlay.right {
-      top: 25%;
-      left: 75%;
-      transform: translate(-50%, -50%);
-      max-width: 45%;
-    }
-
-    .section-32__grouptext-overlay h2 {
-      font-size: 2vw;
-      font-weight: bold;
-      margin-bottom: 1.5px;
-      line-height: 120%;
-    }
-
-    .section-32__grouptext-overlay p {
-      font-size: 1.2vw;
-      margin: 0;
-      line-height: 120%;
-    }
-
-    .grouptext-overlay-Background {
-        background: rgba(0, 0, 0, 0.438);
-        border-radius: 2.8vw;
-        padding: 0.5rem;
-        backdrop-filter: blur(0.5vw);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        -webkit-backdrop-filter: blur(0.5vw);
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        max-width: 70%;
-        z-index: 100;
-    }
-
-    .p__end {
-      color: #8a8a8a;
-      font-family: sans-serif;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      text-wrap: pretty;
-      text-align: center;
-      padding: 40px 0;
-
-    }
-
-        .faq-section {
-            width: 100%;
-            padding: 2rem 16px;
-            box-sizing: border-box;
-            margin: 0 auto 25px;
-            padding-top: 0;
-            font-family: sans-serif;
-            position: absolute; 
-            top: 20%; 
-            left: 5%; 
-            right: 5%; 
-            background: rgba(255, 255, 255, 0.014);
-            border-radius: 40px; 
-            max-width: 75%; 
-            z-index: 10; 
-            border: 1px solid #ffffff;
-            max-height: 70vh;
-            overflow-y: scroll;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .faq-section__header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .faq-section__title {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: bold;
-            color: #ffffff;
-            margin: 0 0 0px;
-            line-height: 6vw;
-        }
-
-        .faq-section__subtitle {
-            font-size: 1rem;
-            color: #ffffff;
-            margin: 0;
-        }
-
-        .faq-section__list {
-            list-style: none;
-            margin: 0 auto;
-            padding: 0;
-            max-width: 56rem;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            overflow: hidden;
-        }
-
-        .faq-section__item {
-            background: #ffffff05;
-            border: 1px solid #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .faq-section__item summary {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 16px 20px;
-            cursor: pointer;
-            list-style: none;
-        }
-
-        .faq-section::-webkit-scrollbar {
-         width: 8px;
-            }
-        .faq-section::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.1);
-           border-radius: 10px;
-            }
-        .faq-section::-webkit-scrollbar-thumb {
-           background: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-              }
-        .faq-section::-webkit-scrollbar-thumb:hover {
-             background: rgba(255, 255, 255, 0.5);
-        }
-
-        .faq-section__item summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .faq-section__item summary:hover {
-            background: #f9f9f92f;
-        }
-
-        .faq-section__q-text {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #ffffff;
-            flex: 1;
-        }
-
-          .faq-section__q-text:hover {
-            color: #ff5100;
-        }
-
-        .faq-section__icon {
-            width: 20px;
-            height: 20px;
-            flex-shrink: 0;
-            position: relative;
-        }
-
-        .faq-section__icon::before,
-        .faq-section__icon::after {
-            content: '';
-            position: absolute;
-            background: #888;
-            border-radius: 2px;
-            transition: transform 0.25s ease, opacity 0.25s ease;
-        }
-
-        .faq-section__icon::before {
-            width: 12px;
-            height: 1.5px;
-            top: 9px;
-            left: 4px;
-        }
-
-        .faq-section__icon::after {
-            width: 1.5px;
-            height: 12px;
-            top: 4px;
-            left: 9px;
-        }
-
-        .faq-section__item[open] .faq-section__icon::after {
-            transform: rotate(90deg);
-            opacity: 0;
-        }
-
-        .faq-section__a-inner {
-            padding: 14px 20px 16px;
-            border-top: 1px solid #e5e5e5;
-        }
-
-        .faq-section__a-text {
-            font-size: 0.9rem;
-            color: #ffffff;
-            line-height: 1.6;
-            margin: 0;
-            font-weight: 500;
-        }
-
-
-         .youtube-video-container {
-
-      width: 100%;
-      aspect-ratio: 16 / 9;
-    }
-
-    .youtube-video {
-
-      width: 100%;
-      height: 100%;
-      border-radius: 30px 30px 0 0;
-    }
-
-     /* Classe utilitária para leitores de tela */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-
-        .features-section {
-            max-width: 1200px;
-            margin: 40px auto;
-            background: white;
-            border-radius: 40px;
-            padding: 60px 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-            font-family: sans-serif;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-size: 2rem;
-            line-height: 2rem;
-            color: #000;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .section-header p {
-            color: #8a8a8a;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Layout Grid */
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr 1fr;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .column {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        /* Container da Imagem Central */
-        .image-display {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .circle-frame {
-            width: 100%;
-            max-width: 400px;
-            aspect-ratio: 780 / 740;
-            border-radius: 50%;
-            border: 05px solid #f2540d;
-            overflow: hidden;
-            position: relative;
-            background: #eee;
-        }
-
-        /* Ajuste para que o picture se comporte como a imagem antiga */
-        .circle-frame picture {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .circle-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Estilo dos Cards */
-        .feature-card {
-            display: block;
-            background: white;
-            padding: 25px;
-            border-radius: 20px;
-            border: 2px solid #eee;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-        }
-
-        .feature-card h2 {
-            margin: 0 0 10px 0;
-            font-size: 1.2rem;
-            color: #000;
-            font-weight: 550;
-        }
-
-        .feature-card p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Animações e Estados Interativos */
-        .feature-card:hover {
-            background-color: #fffcfa;
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-        }
-
-        /* Feedback visual quando o input invisível é focado ou marcado */
-        input:focus-visible + .feature-card {
-            outline: 3px solid #f2540d;
-            outline-offset: 5px;
-        }
-
-        /* Lógica de Troca de Imagens (através da tag picture agora) */
-        #feat1:checked ~ .grid-container .img1,
-        #feat2:checked ~ .grid-container .img2,
-        #feat3:checked ~ .grid-container .img3 {
-            opacity: 1;
-            z-index: 2;
-        }
-
-        #feat1:checked ~ .grid-container label[for="feat1"],
-        #feat2:checked ~ .grid-container label[for="feat2"],
-        #feat3:checked ~ .grid-container label[for="feat3"] {
-            border-color: #f2540d;
-            background-color: #fffcfa;
-        }
-
-
-    @media (prefers-contrast: more) {
-
-      .p__end {
-        color: #000;
-      }
-
-      .grouptext-overlay-Background {
-        background: rgb(0, 0, 0);
-      }
-
-      .product-header__subtitle {
-        color: #000;
-      }
-
-           .table-td-custom-sub
-      {
-        color: #000;
-        font-weight: 550;
-      }
-
-      .table-td-custom-title
-      {
-        color: #000;
-        font-weight: 700;
-      } 
-
-      .product-header__brand {
-        color:#3a2301
-      }
-
-       .faq-section__a-text {
-            font-size: 1.0rem;
-            font-weight: bold;
-            color: #000000;
-        }
-     
-    }
-
-
-    @media (max-width: 1060px) {
-        .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-        .section-32__grouptext-overlay.bottom {
-          top: 81%;
-        }
-
-          .faq-section {
-          top: 10%; 
-         max-width: 90%;
-         max-height: 80%;
-
-        }
-
-        .c32-nav {
-          width: 30%;
-          gap: 4vh;
-          margin-top: 6.5rem;
-        }
-
-        .c32-nav label {
-          font-size: 1.8em;
-          font-weight: 600;
-          line-height: 2.5vh;
-          border-radius: 1.2vw;
-          border-bottom: 2px solid transparent;
-          padding: 1rem;
-        
-        }
-
-        .grid-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .image-display {
-                grid-row: 1;
-            }
-
-            .circle-frame {
-                max-width: 320px;
-            }
-
-            .column {
-                order: 2;
-            }
-        }
-
-            
-    @media (max-width: 960px) {
-        .section-32__grouptext-overlay h2 {
-          font-size: 2.1vw;
-        }
-
-        .section-32__grouptext-overlay p {
-          font-size: 1.5vw;
-        }
-
-        .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-        .section-32__grouptext-overlay.bottom {
-          top: 79%
-        }
-
-              .c32-nav {
-          width: 30%;
-          gap: 5vh;
-        }
-
-        .c32-nav label {
-          font-size: 1.8em;
-          font-weight: 600;
-          line-height: 2.5vh;
-          border-radius: 1.2vw;
-          border-bottom: 2px solid transparent;
-          padding: 0.8rem;
-        
-        }
-
-
-      }
-
-          @media (max-width: 768px) {
-
-      .section-32__grouptext-overlay h2 {
-          font-size: 2.5vw;
-        }
-
-      .section-32__grouptext-overlay p {
-          font-size: 2vw;
-        }
-
-      .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-      .section-32__grouptext-overlay.bottom {
-          top: 76%;
-        }
-
-      .product-header {
-        --banner-height: 180px;
-      }
-
-        .faq-section__header {
-    text-align: center;
+  .image-display {
+    grid-row: 1;
+  }
+
+  .circle-frame {
+    max-width: 320px;
+  }
+
+  .column {
+    order: 2;
+  }
+}
+
+@media (max-width: 960px) {
+  .section-32__grouptext-overlay h2 {
+    font-size: 2.1vw;
+  }
+
+  .section-32__grouptext-overlay p {
+    font-size: 1.5vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-32__grouptext-overlay h2 {
+    font-size: 2.5vw;
+  }
+
+  .section-32__grouptext-overlay p {
+    font-size: 2vw;
+  }
+
+  .product-header {
+    --banner-height: 180px;
+  }
+
+  .faq-section__header {
     margin-bottom: 1rem;
-    }
-
-    
-    .faq-section__a-text {
-        font-size: 0.7rem !important;
-    }
-
-    .faq-section__title {
-        font-size: 1rem !important;
-     }
-
-     .faq-section__subtitle {
-        font-size: 0.75rem !important;
-     }
-
-     .faq-section__q-text {
-        font-size: 0.75rem !important;
-     }
-
-             .c32-nav {
-          width: 30%;
-          gap: 2.5vh;
-        }
-
-        .c32-nav label {
-          font-size: 1em;
-          line-height: 2vh;
-          border-radius: 1.5vw;
-          border-bottom: 2px solid transparent;
-        
-        }
-
-     }
-
-     @media (max-width: 600px) {
-
-        .c32-nav {
-          width: 30%;
-          gap: 2vh;
-        }
-
-        .c32-nav label {
-          font-size: 0.8em;
-          line-height: 2vh;
-          border-radius: 3vw;
-          border-bottom: 2px solid transparent;
-          padding: 0.5rem;
-        
-        }
-    }
-
-         @media (max-width: 500px) {
-        .section-32__grouptext-overlay h2 {
-          font-size: 3vw;
-        }
-
-        .section-32__grouptext-overlay p {
-          font-size: 2.3vw;
-        }
-
-        .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-          .section-32__grouptext-overlay.bottom {
-          top: 67%;
-        }
-
-        .faq-section__q-text {
-                font-size: 0.9rem;
-            }
-
-
-        .c32-nav label {
-          font-size: 0.6em;
-          line-height: 2vh;
-          padding: 0.4rem 0.5rem;
-          border-bottom: 1px solid transparent;
-          box-shadow: #00000093 -3px 3px 3px;
-        }
-
-        .c32-nav {
-           margin-top: 5rem;
-  }
-        
-    }
-
-     @media (max-width: 470px) {  
-
-         .product-header__subtitle {
-        text-align: justify;
-        font-size: clamp(0.9rem, 2vw, 1.5rem);
-        font-weight: 550;
-        
-      }
-
-      .section-32__grouptext-overlay h2 {
-          font-size: 3vw;
-        }
-
-      .section-32__grouptext-overlay p {
-          font-size: 2.4vw;
-        }
-
-      .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-      .section-32__grouptext-overlay.bottom {
-          top: 81%
-        }
-
-      .section-32__grouptext-overlay.right {
-          top: 35%;
-          left: 73%;
-          transform: translate(-50%, -50%);
-        }
-
-        .section-32__grouptext-overlay.left {
-          top: 50%;
-          left: 27%;
-          transform: translate(-50%, -50%);
-        }
-
-            .faq-section {
-        max-height: 180px !important;
-        padding: 0.5rem 8px !important;
-        top: 5% !important;
-        max-width: 90%;
-        border-radius: 20px;
-    }
-
-      }
-
-
-       @media (max-width: 440px) {  
-
-        .c32-nav {
-          margin-top: 5rem;
-        }
-
-          .c32-nav label {
-          line-height: 1vh;
-            
-        
-        }
   }
 
-         @media (max-width: 375px) {
-        .section-32__grouptext-overlay h2 {
-          font-size: 3vw;
-        }
+  .faq-section__a-text {
+    font-size: 0.7rem !important;
+  }
 
-        .section-32__grouptext-overlay p {
-          font-size: 2.8vw;
-        }
+  .faq-section__title {
+    font-size: 1rem !important;
+  }
 
-        .c32-nav {
-          width: 30%;
-        }
+  .faq-section__subtitle,
+  .faq-section__q-text {
+    font-size: 0.75rem !important;
+  }
+}
 
-        .c32-nav label {
-          font-size: 0.6em;
-          line-height: 1vh;
-          padding: 0.3rem 0.5rem;
-        
-        }
+@media (max-width: 500px) {
+  .section-32__grouptext-overlay h2 {
+    font-size: 3vw;
+  }
 
-        
-    }
+  .section-32__grouptext-overlay p {
+    font-size: 2.3vw;
+  }
+}
 
-             @media (max-width: 320px) {
+@media (max-width: 470px) {
+  .product-header__subtitle {
+    text-align: justify;
+    font-size: clamp(0.9rem, 2vw, 1.5rem);
+    font-weight: 550;
+  }
 
-        .c32-nav label {
-          padding: 0.2rem 0.5rem;
-        
-        }
+  .section-32__grouptext-overlay p {
+    font-size: 2.4vw;
+  }
 
-     }
+  .faq-section {
+    max-height: 180px !important;
+    padding: 0.5rem 8px !important;
+    top: 5% !important;
+    max-width: 90%;
+    border-radius: 20px;
+  }
+}
 
-            
-
-</style>  
+@media (max-width: 375px) {
+  .section-32__grouptext-overlay p {
+    font-size: 2.8vw;
+  }
+}
+</style>
   <meta charset="UTF-8">
    <article style="width: 100%;" aria-labelledby="product-main-title">
     <section class="product-header" aria-label="Cabeçalho do produto">
   <header class="product-header__banner">
     <picture style="width:100%; height:100%; margin:0;">
              <source media="(max-width: 430px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-fundo-grafico-laranja-preto-509478-01.jpg?ims=430x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-fundo-azul-neve-2219397-01.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-fundo-grafico-laranja-preto-509478-01.jpg?ims=768x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-fundo-azul-neve-2219397-01.jpg?ims=768x">
 
               <source media="(max-width: 1024px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-fundo-grafico-laranja-preto-509478-01.jpg?ims=1024x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-fundo-azul-neve-2219397-01.jpg?ims=1024x">
       
               <source media="(max-width: 1200px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-fundo-grafico-laranja-preto-509478-01.jpg?ims=1200x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-fundo-azul-neve-2219397-01.jpg?ims=1200x">
       <img
-        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-fundo-grafico-laranja-preto-509478-01.jpg"
-        alt="Fundo gráfico geométrico para esmerilhadeira Black & Decker" 
+        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-fundo-azul-neve-2219397-01.jpg"
+        alt="Textura de fundo azul com flocos de neve para campanha do expositor MetalFrio." 
         class="product-header__banner-img" loading="eager">
     </picture>
-    <div class="product-header__badge" role="img" aria-label="Logo da marca blackdecker dentro de um círculo laranja">
+    <div class="product-header__badge" role="img" aria-label="Logo da marca metalfrio dentro de um círculo laranja">
       <img
-        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/blackdecker/logo-blackdecker.png"
+        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/metalfrio/logo-metalfrio.png"
         alt="" 
         class="product-header__badge-img">
     </div>
   </header>
   <section class="product-header__body" aria-label="Título e descrição do produto">
-    <small class="product-header__brand">blackdecker</small>
+    <small class="product-header__brand">metalfrio</small>
     <h2 class="product-header__title" id="product-main-title">
-     ESMERILHADEIRA ANGULAR G720XBR 4.1/2 127V/220V
+     FREEZER HORIZONTAL NF55S 505L SUPRA BRANCO
     </h2>
     <p class="product-header__subtitle">
-    Oferece força e ergonomia para desbastes e cortes precisos. Compacta e segura, facilita o trabalho em metais e 
-    pedras com alta performance e durabilidade.
+    Garante refrigeração contínua e eficiente, mantendo a temperatura ideal mesmo com aberturas frequentes da 
+    tampa. Qualidade e resistência para sua rotina!
     </p>
   </section>
 </section>
@@ -5873,37 +5151,38 @@ ColLib.register({
        <picture>
 
          <source media="(max-width: 430px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-vista-lateral-fundo-bicolor-509478-02.jpg?ims=430x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-tampa-vidro-branco-frontal-2219397-02.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-vista-lateral-fundo-bicolor-509478-02.jpg?ims=768x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-tampa-vidro-branco-frontal-2219397-02.jpg?ims=768x">
 
               <source media="(max-width: 1024px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-vista-lateral-fundo-bicolor-509478-02.jpg?ims=1024x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-tampa-vidro-branco-frontal-2219397-02.jpg?ims=1024x">
       
               <source media="(max-width: 1280px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-vista-lateral-fundo-bicolor-509478-02.jpg?ims=1238x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-tampa-vidro-branco-frontal-2219397-02.jpg?ims=1238x">
       
               <source media="(max-width: 1440px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-vista-lateral-fundo-bicolor-509478-02.jpg?ims=1440x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-tampa-vidro-branco-frontal-2219397-02.jpg?ims=1440x">
 
               <source media="(min-width: 1441px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-vista-lateral-fundo-bicolor-509478-02.jpg">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-tampa-vidro-branco-frontal-2219397-02.jpg">
 
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-vista-lateral-fundo-bicolor-509478-02.jpg"
-        alt="Esmerilhadeira Angular Black & Decker G720XB2  vista lateral" 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-tampa-vidro-branco-frontal-2219397-02.jpg"
+        alt="Expositor MetalFrio NF55S branco com tampa de vidro visto de frente sobre neve azul." 
         style="border-radius: 30px;" width="1600" height="865"
         loading="eager" decoding="async" fetchpriority="high">
         </picture>
-      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%; left: 20%; max-width: 33%;">
-        <h2><strong>QUAIS OS USOS?</strong></h2>
-        <p>Com 11.000 RPM, é ideal para cortar metais, desbastar soldas e remover tintas ou ferrugem facilmente.
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 60%; left: 80%; max-width: 33%;">
+        <h2><strong>ENFERRUJA POR DENTRO?</strong></h2>
+        <p>Não! O seu interior é construído em aço pré-pintado branco, o que oferece uma proteção 
+          extra contra a corrosão e garante grande longevidade.
         </p>
       </figcaption>
       </figure>
        </section>
 
-       <section class="features-section">
+       <section class="features-section" style="background-image: url(https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-fundo-branco-flocos-neve-2219397-bg.jpg);">
     <div class="section-header" aria-labelledby="main-title">
         <h2 id="main-title">TUDO O QUE VOCÊ PROCURA</h2>
     </div>
@@ -5919,8 +5198,9 @@ ColLib.register({
             <aside class="column" aria-label="Funcionalidade de resistência">
                 <label for="feat1" class="feature-card" role="radio" aria-checked="true" tabindex="0">
                     <article>
-                        <h2>É RESISTENTE?</h2>
-                        <p>Sim! Possui caixa de engrenagem metálica para maior vida útil e interruptor selado que bloqueia a entrada de pó.</p>
+                        <h2>DESIGN E BELEZA</h2>
+                        <p>Possui conjunto de tampas com design elegante e molduras em plástico ABS com linhas harmônicas e modernas. 
+                          Os puxadores são ergonômicos para facilitar o encaixe das mãos e a abertura das tampas.</p>
                     </article>
                 </label>
             </aside>
@@ -5931,46 +5211,47 @@ ColLib.register({
                     
                     <!-- IMAGEM 1 RESPONSIVA -->
                     <picture class="img1">
-                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=492x">
-                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=301x">
-                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=318x">
-                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=318x">
-                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=400x">
-                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=400x">
-                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg" 
-                        alt="Operador com Esmerilhadeira Black & Decker realizando acabamento sobre solda">
+                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-detalhe-puxador-ergonomico-2219397-03.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-detalhe-puxador-ergonomico-2219397-03.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-detalhe-puxador-ergonomico-2219397-03.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-detalhe-puxador-ergonomico-2219397-03.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-detalhe-puxador-ergonomico-2219397-03.jpg?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-detalhe-puxador-ergonomico-2219397-03.jpg?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-detalhe-puxador-ergonomico-2219397-03.jpg" 
+                        alt="Detalhe do puxador ergonômico e tampa de vidro do expositor MetalFrio NF55S com congelados.">
                     </picture>
 
                     <!-- IMAGEM 2 RESPONSIVA -->
                     <picture class="img2">
-                       <source media="(max-width: 320px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=492x">
-                        <source media="(max-width: 375px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=301x">
-                        <source media="(min-width: 400px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=318x">
-                        <source media="(max-width: 1024px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=318x">
-                        <source media="(max-width: 1280px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=400x">
-                        <source media="(min-width: 1440px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=400x">
-                        <img src="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg" 
-                        alt="Esmerilhadeira Black & Decker G720XB2 limpando superfície enferrujada">
+                       <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-grade-ventilacao-rodizios-2219397-04.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-grade-ventilacao-rodizios-2219397-04.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-grade-ventilacao-rodizios-2219397-04.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-grade-ventilacao-rodizios-2219397-04.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-grade-ventilacao-rodizios-2219397-04.jpg?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-grade-ventilacao-rodizios-2219397-04.jpg?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-grade-ventilacao-rodizios-2219397-04.jpg" 
+                        alt="Visão lateral do freezer MetalFrio NF55S mostrando grade de ventilação, cabo e rodízios.">
                     </picture>
 
                     <!-- IMAGEM 3 RESPONSIVA -->
                     <picture class="img3">
-                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=492x">
-                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=301x">
-                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=318x">
-                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=318x">
-                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=400x">
-                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=400x">
-                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg" 
-                        alt="Esmerilhadeira Black & Decker desbastando borda de peça metálica espessa">
+                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-interior-tampa-vidro-congelados-2219397-05.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-interior-tampa-vidro-congelados-2219397-05.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-interior-tampa-vidro-congelados-2219397-05.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-interior-tampa-vidro-congelados-2219397-05.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-interior-tampa-vidro-congelados-2219397-05.jpg?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-interior-tampa-vidro-congelados-2219397-05.jpg?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-interior-tampa-vidro-congelados-2219397-05.jpg" 
+                        alt="Vista superior do freezer MetalFrio através da tampa de vidro com caixas de alimentos.">
                     </picture>
 
                 </div>
 
                 <label for="feat2" class="feature-card" role="radio" style="width: 90%;" aria-checked="false" tabindex="0">
                     <article>
-                        <h2>A PEGADA É SEGURA?</h2>
-                        <p>Sua carcaça é emborrachada e conta com empunhadura ergonômica de 3 posições, dando total controle.</p>
+                        <h2>DESEMPENHO PROFISSIONAL</h2>
+                        <p>Novo sistema de refrigeração garante mais eficiência energética e alta capacidade 
+                          de conservação para manter sorvetes e alimentos congelados na temperatura ideal de consumo..</p>
                     </article>
                 </label>
             </section>
@@ -5979,8 +5260,10 @@ ColLib.register({
             <aside class="column" aria-label="Funcionalidade de troca de disco">
                 <label for="feat3" class="feature-card" role="radio" aria-checked="false" tabindex="0">
                     <article>
-                        <h2>É FÁCIL TROCAR DISCO?</h2>
-                        <p>A troca de disco é rápida graças ao botão de trava do eixo e o ajuste da guarda é feito sem ferramentas.</p>
+                        <h2>EXCELENTE EXPOSIÇÃO</h2>
+                        <p>A nova altura do gabinete proporciona perfeita visualização e acesso aos produtos. O interior em aço 
+                          pré-pintado branco, além de ser uma proteção extra contra corrosão, destaca as cores dos produtos no 
+                          interior de seu NF55 Supra.</p>
                     </article>
                 </label>
             </aside>
@@ -5993,7 +5276,7 @@ ColLib.register({
         <figure class="section-32__groupimage-section" aria-label="Vídeo demonstrativo do produto">
        <div class="youtube-video-container" style="border-radius: 30px 30px 0px 0px;">
           <iframe class="youtube-video" width="1600" height="865"
-            src="https://www.youtube.com/embed/6-eaxlAP5UI?si=pI2zjx77D_n9Q9au"
+            src="https://www.youtube.com/embed/wHkyxdJda7I?si=4WFaCzIloCLVFxTB"
             title="Vídeo demonstrativo da Esmerilhadeira Angular Black & Decker G720XBR" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
@@ -6003,31 +5286,31 @@ ColLib.register({
       <figure class="section-32__groupimage-section">
       <picture>
              <source media="(max-width: 430px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-corte-tubo-metal-torno-509478-06.jpg?ims=430x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-lifestyle-supermercado-sorvetes-2219397-06.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-corte-tubo-metal-torno-509478-06.jpg?ims=768x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-lifestyle-supermercado-sorvetes-2219397-06.jpg?ims=768x">
 
               <source media="(max-width: 1024px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-corte-tubo-metal-torno-509478-06.jpg?ims=1024x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-lifestyle-supermercado-sorvetes-2219397-06.jpg?ims=1024x">
       
               <source media="(max-width: 1280px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-corte-tubo-metal-torno-509478-06.jpg?ims=1280x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-lifestyle-supermercado-sorvetes-2219397-06.jpg?ims=1280x">
       
               <source media="(max-width: 1440px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-corte-tubo-metal-torno-509478-06.jpg?ims=1440x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-lifestyle-supermercado-sorvetes-2219397-06.jpg?ims=1440x">
 
               <source media="(min-width: 1441px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-corte-tubo-metal-torno-509478-06.jpg">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-lifestyle-supermercado-sorvetes-2219397-06.jpg">
 
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-corte-tubo-metal-torno-509478-06.jpg"
-        alt="Corte em metais usando a Esmerilhadeira Black & Decker  com tubo no torno" 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-lifestyle-supermercado-sorvetes-2219397-06.jpg"
+        alt="Expositor MetalFrio NF55S branco cheio de sorvetes em ambiente de supermercado com clientes. " 
         style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
         </picture>
-      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 80%; left: 30%;">
-        <h2><strong>O QUE VEM NA CAIXA?</strong></h2>
-        <p>Na caixa você encontrará a esmerilhadora, um disco abrasivo, a chave de aperto, a pega auxiliar e o respetivo protetor de disco.
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 80%; left: 70%;">
+        <h2><strong>GASTA MUITA ENERGIA?</strong></h2>
+        <p>Não! É o modelo mais económico da categoria, utiliza gás ecológico e garante máxima eficiência energética diária.
         </p>
       </figcaption>
       </figure>
@@ -6036,25 +5319,25 @@ ColLib.register({
       <figure class="section-32__groupimage-section">
       <picture>
         <source media="(max-width: 430px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-tubo-metal-aquecido-corte-509478-07.jpg?ims=430x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-fundo-piso-supermercado-azul-2219397-07.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-tubo-metal-aquecido-corte-509478-07.jpg?ims=768x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-fundo-piso-supermercado-azul-2219397-07.jpg?ims=768x">
 
               <source media="(max-width: 1024px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-tubo-metal-aquecido-corte-509478-07.jpg?ims=1024x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-fundo-piso-supermercado-azul-2219397-07.jpg?ims=1024x">
       
               <source media="(max-width: 1280px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-tubo-metal-aquecido-corte-509478-07.jpg?ims=1280x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-fundo-piso-supermercado-azul-2219397-07.jpg?ims=1280x">
       
               <source media="(max-width: 1440px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-tubo-metal-aquecido-corte-509478-07.jpg?ims=1440x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-fundo-piso-supermercado-azul-2219397-07.jpg?ims=1440x">
 
               <source media="(min-width: 1441px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-tubo-metal-aquecido-corte-509478-07.jpg">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-fundo-piso-supermercado-azul-2219397-07.jpg">
 
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-tubo-metal-aquecido-corte-509478-07.jpg"
-        alt="Tubo de metal aquecido após sofrer corte com esmerilhadeira Black & Decker" 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/freezer-horizontal-metalfrio-nf55s-supra-fundo-piso-supermercado-azul-2219397-07.jpg"
+        alt="Piso de supermercado com filtro azul e floco de neve para ambientação de produto MetalFrio." 
         style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
         </picture>
@@ -6077,14 +5360,13 @@ ColLib.register({
       <li class="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">1. Para quais tipos de trabalho essa esmerilhadeira é indicada?</h3>
+            <h3 class="faq-section__q-text">1. Possui boa eficiência de refrigeração para comércio?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-            Ela foi projetada para desbaste em peças metálicas, acabamento sobre soldas, remoção de rebarbas de peças fundidas e 
-            limpeza de superfícies enferrujadas ou com tinta. Serve tanto para uso doméstico quanto profissional, sendo uma 
-            ferramenta versátil para quem trabalha com metal no dia a dia.
+            Sim. O Freezer Metalfrio NF55S Supra conta com um novo sistema de refrigeração de alta capacidade. Esse motor é o 
+            mais econômico da categoria, mantendo a temperatura ideal de consumo e reduzindo custos operacionais.
             </p>
           </div>
         </details>
@@ -6092,14 +5374,13 @@ ColLib.register({
       <li class="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">2. Como é feita a troca do disco?</h3>
+            <h3 class="faq-section__q-text">2. Quais são os materiais e a tecnologia de congelamento do expositor?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-           A troca é simples e rápida graças ao botão de travamento do eixo, que imobiliza o prato e libera as mãos para soltar o 
-           disco com a chave de aperto incluída na embalagem. Não é necessário nenhuma ferramenta adicional para ajustar 
-           ou remover a guarda de proteção.
+           O Freezer Metalfrio NF55S Supra emprega gás ecológico e molduras em plástico ABS. O seu gabinete interno é construído 
+           em aço pré-pintado branco. A composição sustentável e robusta garante eficiência e um design moderno.
             </p>
           </div>
         </details>
@@ -6107,13 +5388,13 @@ ColLib.register({
       <li class="faq-section__item">
         <details> 
           <summary>
-            <h3 class="faq-section__q-text">3. A esmerilhadeira oferece conforto para usos prolongados?</h3>
+            <h3 class="faq-section__q-text">3. É seguro e fácil para os clientes acessarem os produtos congelados?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-            Sim. A carcaça emborrachada reduz a vibração transmitida às mãos, e a empunhadura lateral pode ser fixada em diferentes 
-            posições conforme a tarefa e a postura do operador. Isso diminui a fadiga em trabalhos mais longos e oferece mais controle durante o uso.
+            Sim. O Freezer Metalfrio NF55S Supra apresenta uma nova altura de gabinete e puxadores ergonômicos nas tampas. 
+            Essa estrutura inteligente facilita o encaixe das mãos, garantindo uma abertura segura e confortável diária.
             </p>
           </div>
         </details>
@@ -6121,13 +5402,13 @@ ColLib.register({
       <li class="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">4. Qual o diâmetro de disco compatível com esse modelo?</h3>
+            <h3 class="faq-section__q-text">4. Qual é a capacidade de armazenamento em litros e o tamanho do modelo?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-              O modelo é compatível com discos de 4-1/2 polegadas (115 mm), que é o padrão mais comum no mercado. Já acompanha 
-              um disco abrasivo na embalagem, então você pode usar a ferramenta assim que receber.
+              O Freezer Metalfrio NF55S Supra comporta 405 litros líquidos e 505 litros brutos. Externamente, ele mede 850 mm 
+              de altura por 1700 mm de largura. O amplo espaço de armazenagem organiza grandes estoques com confiabilidade.
             </p>
           </div>
         </details>
@@ -6135,14 +5416,13 @@ ColLib.register({
       <li class="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">5. Qual a garantia do produto e o que ela cobre?</h3>
+            <h3 class="faq-section__q-text">5. A estrutura do expositor comercial possui boa resistência à corrosão?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-            A esmerilhadeira possui 1 ano de garantia, já incluindo os 3 meses de garantia legal obrigatória. Em caso de defeito 
-            de fabricação dentro desse período, o produto pode ser encaminhado para a assistência técnica autorizada Black & Decker 
-            para avaliação e reparo sem custo.
+           Sim. O Freezer Metalfrio NF55S Supra traz interior em aço pré-pintado que funciona como proteção extra contra corrosão. 
+           O gabinete resiste à rotina do congelamento, prolongando a vida útil do equipamento no seu comércio.
             </p>
           </div>
         </details>
