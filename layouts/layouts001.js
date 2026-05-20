@@ -4526,6 +4526,7 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
             font-size: 1.2rem;
             color: #000;
             font-weight: 550;
+            line-height: 2.2vh;
         }
 
         .feature-card p {
