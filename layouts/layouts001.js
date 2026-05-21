@@ -35,23 +35,23 @@ SenkoLib.register([
     id: 'section-1',
     name: 'Section-1 (Header Imagem)',
     tags: ['header imagem', 'section-1', '1', 'section 1'],
-    html: ` <article style="width: 100%;" aria-labelledby="product-main-title"> /* fecha esse article lá no final do código, depois de todo conteúdo, e antes do fechamento da div.lp-container */
+    html: `<article style="width: 100%;" aria-labelledby="product-main-title"> <!-- fecha esse article lá no final do código, depois de todo conteúdo, e antes do fechamento da div.lp-container -->
     <section class="product-header" aria-label="Cabeçalho do produto">
   <header class="product-header__banner">
     <picture style="width:100%; height:100%; margin:0;">
              <source media="(max-width: 430px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/geladeira-consul-crd37eb-334l-fundo-abstrato-verde-2206327-01.jpg?ims=430x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/geladeira-consul-crd37eb-334l-fundo-abstrato-verde-2206327-01.jpg?ims=768x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header.jpg?ims=768x">
 
               <source media="(max-width: 1024px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/geladeira-consul-crd37eb-334l-fundo-abstrato-verde-2206327-01.jpg?ims=1024x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header.jpg?ims=1024x">
       
               <source media="(max-width: 1200px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/geladeira-consul-crd37eb-334l-fundo-abstrato-verde-2206327-01.jpg?ims=1200x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header.jpg?ims=1200x">
       <img
-        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/geladeira-consul-crd37eb-334l-fundo-abstrato-verde-2206327-01.jpg"
+        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header.jpg"
         alt="Grafismo verde Consul CRD37EB 334L com arcos abstratos" 
         class="product-header__banner-img" loading="eager">
     </picture>
@@ -63,18 +63,18 @@ SenkoLib.register([
     </div>
   </header>
   <section class="product-header__body" aria-label="Título e descrição do produto">
-    <small class="product-header__brand">consul</small>
+    <small class="product-header__brand">marca</small>
     <h2 class="product-header__title" id="product-main-title">
-     REFRIGERADOR 2P CYCLE DEFROST CRD37E BRANCO 334L
+     TÍTULO CURTO DO PRODUTO DA FORMA QUE PREFERIR
     </h2>
     <p class="product-header__subtitle">
-    Com 334 litros e duas portas, este refrigerador separa perfeitamente os congelados dos alimentos frescos. 
-    Organize suas compras com facilidade e encontre tudo o que precisa em um piscar de olhos.
+    Descrição breve do produto, destacando seus principais atributos e benefícios de forma clara e objetiva, para atrair a 
+    atenção do consumidor e incentivá-lo a conhecer mais sobre o produto.
     </p>
   </section>
 </section>
-</article>`,
-    css: `<style>
+`,
+    css: ` <style>
   *{
     margin: 0;
     padding: 0;
