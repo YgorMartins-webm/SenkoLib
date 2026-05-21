@@ -341,7 +341,7 @@ SenkoLib.register([
   {
     id: 'section-4',
     name: 'Section-4 (Manual de Instrução)',
-    tags: ['Section-4', '4', 'Section 4', 'manual de instrução'],
+    tags: ['Section-4', '4', 'Section 4', 'manual de instrução', 'responsivo', 'acessível'],
     html: `<section class="section-4-manual__container" aria-label="Manual de Instruções do Produto">
   <figure class="section-4-manual__figura" >
     <a href="https://static1.efacil.com.br/wcsstore/AuroraStorefrontAssetStore/PDP/philips-walita/2209713-manual.pdf"
