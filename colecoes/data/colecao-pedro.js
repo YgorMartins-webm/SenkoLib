@@ -1425,504 +1425,24 @@ ColLib.register({
       css:  ``,
     },
 
-                /*@@@@Col - comp-3-blocos-product-header-faq-embutido-e-tabela */
+                    /*@@@@Col - comp-3-blocos-product-header-faq-embutido-e-tabela */
     {
       id:   'comp-3-blocos-product-header-faq-embutido-e-tabela',
-      name: 'comp 3 blocos, product header, FAQ embutido, e tabela',
-      html: `
-<div class="lp-container">
- <style>  
+      name: 'comp 3 blocos, 18 no meio, video-header, FAQ embutido, e tabela',
+      html: `    <div class="lp-container">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
 
-    *{
+video-header,
+  .video-header * {
+    box-sizing: border-box;
     margin: 0;
-    padding: 0;
   }
 
-   body {
-
-      margin: 0;
-    }
-
-    .tw-container {
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      width: 100%
-    }
-
-    @media (min-width:576px) {
-
-      .tw-container {
-
-        max-width: 576px
-      }
-    }
-
-    @media (min-width:768px) {
-
-      .tw-container {
-
-        max-width: 768px
-      }
-    }
-
-    @media (min-width:992px) {
-
-      .tw-container {
-
-        max-width: 992px
-      }
-    }
-
-    @media (min-width:1200px) {
-
-      .tw-container {
-
-        max-width: 1200px
-      }
-    }
-
-    @media (min-width:1536px) {
-
-      .tw-container {
-
-        max-width: 1536px
-      }
-    }
-
-    .tw-absolute {
-
-      position: absolute
-    }
-
-    .tw-relative {
-
-      position: relative
-    }
-
-    .-tw-bottom-16 {
-
-      bottom: -4rem
-    }
-
-    .tw-left-0 {
-
-      left: 0
-    }
-
-    .tw-top-0 {
-
-      top: 0
-    }
-
-    .tw-z-0 {
-
-      z-index: 0
-    }
-
-    .tw-z-10 {
-
-      z-index: 10
-    }
-
-    .tw-col-span-2 {
-
-      grid-column: span 2/span 2
-    }
-
-    .tw-m-0 {
-
-      margin: 0
-    }
-
-    .tw-my-16 {
-
-      margin-bottom: 4rem;
-      margin-top: 4rem
-    }
-
-    .tw-my-8 {
-
-      margin-bottom: 2rem;
-      margin-top: 2rem
-    }
-
-    .tw-mb-1 {
-
-      margin-bottom: .25rem
-    }
-
-    .tw-mb-6 {
-
-      margin-bottom: 1.5rem
-    }
-
-    .tw-mt-16 {
-
-      margin-top: 4rem
-    }
-
-    .tw-mt-4 {
-
-      margin-top: 1rem
-    }
-
-    .tw-mt-8 {
-
-      margin-top: 2rem
-    }
-
-    .tw-flex {
-
-      display: flex
-    }
-
-    .tw-grid {
-
-      display: grid
-    }
-
-    .tw-h-14 {
-
-      height: 3.5rem
-    }
-
-    .tw-h-32 {
-
-      height: 8rem
-    }
-
-    .tw-h-5 {
-
-      height: 1.25rem
-    }
-
-    .tw-h-56 {
-
-      height: 14rem
-    }
-
-    .tw-h-6 {
-
-      height: 1.5rem
-    }
-
-    .tw-h-64 {
-
-      height: 16rem
-    }
-
-    .tw-h-25rem {
-
-      height: 25rem
-    }
-
-    .tw-h-31-25rem {
-
-      height: 31.25rem
-    }
-
-    .tw-h-32rem {
-
-      height: 32rem
-    }
-
-    .tw-h-full {
-
-      height: 100%
-    }
-
-    .tw-w-14 {
-
-      width: 3.5rem
-    }
-
-    .tw-w-32 {
-
-      width: 8rem
-    }
-
-    .tw-w-5 {
-
-      width: 1.25rem
-    }
-
-    .tw-w-6 {
-
-      width: 1.5rem
-    }
-
-    .tw-w-full {
-
-      width: 100%
-    }
-
-    .tw-max-w-6rem {
-
-      max-width: 6rem
-    }
-
-    .tw-max-w-md {
-
-      max-width: 28rem
-    }
-
-    .tw-max-w-sm {
-
-      max-width: 24rem
-    }
-
-    .tw-max-w-xl {
-
-      max-width: 36rem
-    }
-
-    .tw-select-none {
-
-      -webkit-user-select: none;
-      user-select: none
-    }
-
-    .tw-list-none {
-
-      list-style-type: none
-    }
-
-    .tw-grid-cols-1 {
-
-      grid-template-columns: repeat(1, minmax(0, 1fr))
-    }
-
-    .tw-flex-col {
-
-      flex-direction: column
-    }
-
-    .tw-items-end {
-
-      align-items: flex-end
-    }
-
-    .tw-items-center {
-
-      align-items: center
-    }
-
-    .tw-justify-end {
-
-      justify-content: flex-end
-    }
-
-    .tw-justify-center {
-
-      justify-content: center
-    }
-
-    .tw-justify-between {
-
-      justify-content: space-between
-    }
-
-    .tw-gap-10 {
-
-      gap: 2.5rem
-    }
-
-    .tw-gap-14 {
-
-      gap: 3.5rem
-    }
-
-    .tw-gap-4 {
-
-      gap: 1rem
-    }
-
-    .tw-gap-y-4 {
-
-      row-gap: 1rem
-    }
-
-    .tw-rounded {
-
-      border-radius: .25rem
-    }
-
-    .tw-rounded-2xl {
-
-      border-radius: 1rem
-    }
-
-    .tw-rounded-full {
-
-      border-radius: 9999px
-    }
-
-    .tw-rounded-lg {
-
-      border-radius: .5rem
-    }
-
-    .tw-rounded-t {
-
-      border-top-left-radius: .25rem;
-      border-top-right-radius: .25rem
-    }
-
-    .tw-border-t {
-
-      border-top-width: 1px
-    }
-
-    .tw-border-solid {
-
-      border-style: solid
-    }
-
-    .tw-border-transparent {
-
-      border-color: transparent
-    }
-
-    .tw-bg-gray-900 {
-
-      --tw-bg-opacity: 1;
-      background-color: rgb(46 53 56/var(--tw-bg-opacity))
-    }
-
-    .tw-bg-primary {
-
-      --tw-bg-opacity: 1;
-      background-color: rgb(255 153 0/var(--tw-bg-opacity))
-    }
-
-    .tw-bg-white {
-
-      --tw-bg-opacity: 1;
-      background-color: rgb(255 255 255/var(--tw-bg-opacity))
-    }
-
-    .tw-object-contain {
-
-      object-fit: contain
-    }
-
-    .tw-object-cover {
-
-      object-fit: cover
-    }
-
-    .tw-p-3 {
-
-      padding: .75rem
-    }
-
-    .tw-p-5 {
-
-      padding: 1.25rem
-    }
-
-    .tw-p-6 {
-
-      padding: 1.5rem
-    }
-
-    .tw-p-8 {
-
-      padding: 2rem
-    }
-
-    .tw-py-10 {
-
-      padding-bottom: 2.5rem;
-      padding-top: 2.5rem
-    }
-
-    .tw-pl-0 {
-
-      padding-left: 0
-    }
-
-    .tw-pt-8 {
-
-      padding-top: 2rem
-    }
-
-    .tw-text-center {
-
-      text-align: center
-    }
-
-    .tw-font-roboto {
-
-      font-family: Roboto, sans-serif
-    }
-
-    .tw-text-2xl {
-
-      font-size: 32px;
-      font-weight: 600;
-      line-height: 40px
-    }
-
-    .tw-text-lg {
-
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 28px
-    }
-
-    .tw-text-md {
-
-      font-size: 16px;
-      line-height: 24px
-    }
-
-    .tw-text-sm {
-
-      font-size: 14px;
-      line-height: 22px
-    }
-
-    .tw-text-xs {
-
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 16px
-    }
-
-    .tw-uppercase {
-
-      text-transform: uppercase
-    }
-
-    .tw-text-black {
-
-      --tw-text-opacity: 1;
-      color: rgb(0 0 0/var(--tw-text-opacity))
-    }
-
-    .tw-text-gray-500 {
-
-      --tw-text-opacity: 1;
-      color: rgb(138 138 138/var(--tw-text-opacity))
-    }
-
-    .pdp {
-
-      display: flex;
-      flex-direction: column;
-      font-family: Roboto, sans-serif
-    }
-
-    .pdp * {
-
-      box-sizing: border-box;
-      margin: 0;
-    }
-
-    .product-header {
+  .video-header {
     --badge-size: 8rem;
     --banner-height: 250px;
 
@@ -1935,7 +1455,7 @@ ColLib.register({
     container-type: inline-size;
   }
 
-  .product-header__banner {
+  .video-header__banner {
     width: 100%;
     height: var(--banner-height);
     position: relative;
@@ -1943,20 +1463,17 @@ ColLib.register({
     justify-content: center;
   }
 
-  .product-header__banner figure {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-  }
-
-  .product-header__banner-img {
+  .video-header__banner-video {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    pointer-events: none;
   }
 
-  .product-header__badge {
+  .video-header__badge {
     position: absolute;
     bottom: calc(var(--badge-size) / -2);
     width: var(--badge-size);
@@ -1970,13 +1487,13 @@ ColLib.register({
     z-index: 10;
   }
 
-  .product-header__badge-img {
+  .video-header__badge-img {
     max-width: 90px;
     max-height: 90px;
     object-fit: contain;
   }
 
-  .product-header__body {
+  .video-header__body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1984,7 +1501,7 @@ ColLib.register({
     text-align: center;
   }
 
-  .product-header__brand {
+  .video-header__brand {
     color: #ff9900;
     font-size: 0.75rem;
     font-weight: 700;
@@ -1992,7 +1509,8 @@ ColLib.register({
     margin-bottom: 0.5rem;
   }
 
-  .product-header__title {
+  .video-header__title {
+    color: #000;
     font-size: clamp(1.4rem, 4vw, 2.4rem);
     line-height: clamp(1.6rem, 4vw, 3.1rem);
     font-weight: 600;
@@ -2000,7 +1518,7 @@ ColLib.register({
     text-wrap: pretty;
   }
 
-  .product-header__subtitle {
+  .video-header__subtitle {
     color: #8a8a8a;
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 120%;
@@ -2008,254 +1526,391 @@ ColLib.register({
     max-width: 52rem;
     text-wrap: pretty;
   }
-  
-    .section-32__container {
-      width: 100%;
-      max-width: 1600px;
-      margin: 0 auto;
-      border: 5.5px solid #000;
-      border-radius: 36px;
-    }
 
-    .section-32__groupimage-section {
-      position: relative;
-      width: 100%;
-      margin: 0;
-      contain: layout style;
-    }
+.section-32__container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  border: 5.5px solid #000;
+  border-radius: 36px;
+}
 
-    .section-32__groupimage-section img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+.section-32__groupimage-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0;
+  contain: layout style;
+}
 
-    .section-32__grouptext-overlay {
-      color: #ffffff;
-      position: absolute;
-      max-width: 45%;
-      width: 90%;
-      line-height: 2rem;
-      text-align: center;
-      font-family: sans-serif
-    }
+.section-32__groupimage-section:has(.faq-section) {
+  z-index: 0;
+}
 
-    .section-32__grouptext-overlay.top {
-      top: 3%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+.section-32__grouptext-overlay {
+  z-index: 20;
+}
 
-    .section-32__grouptext-overlay.bottom {
-      top: 75%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+.grouptext-overlay-Background {
+  z-index: 20;
+}
 
-    .section-32__grouptext-overlay.left {
-      top: 50%;
-      left: 25%;
-      transform: translate(-50%, -50%);
-      max-width: 41%;
-    }
+.section-32__groupimage-section img {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  min-width: 100%;
+}
 
-    .section-32__grouptext-overlay.right {
-      top: 25%;
-      left: 75%;
-      transform: translate(-50%, -50%);
-      max-width: 42%;
-    }
+.section-32__grouptext-overlay {
+  color: #fff;
+  position: absolute;
+  max-width: 50%;
+  width: 90%;
+  line-height: 2rem;
+  text-align: center;
+  font-family: sans-serif;
+}
 
-    .section-32__grouptext-overlay h2 {
-      font-size: 2vw;
-      font-weight: bold;
-      margin-bottom: 1.5px;
-      line-height: 120%;
-    }
+.section-32__grouptext-overlay.left {
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  max-width: 45%;
+}
 
-    .section-32__grouptext-overlay p {
-      font-size: 1.2vw;
-      margin: 0;
-      line-height: 120%;
-    }
+.section-32__grouptext-overlay h2 {
+  font-size: 2vw;
+  font-weight: bold;
+  margin-bottom: 1.5px;
+  line-height: 120%;
+}
 
-    .grouptext-overlay-Background {
-        background: rgba(0, 0, 0, 0.438);
-        border-radius: 4.5vw;
-        padding: 0.5rem;
-        backdrop-filter: blur(0.5vw);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        -webkit-backdrop-filter: blur(0px);
+.section-32__grouptext-overlay p {
+  font-size: 1.2vw;
+  margin: 0;
+  line-height: 120%;
+}
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        max-width: 70%;
-        z-index: 100;
-    }
+.grouptext-overlay-Background {
+  background: rgba(0, 0, 0, 0.438);
+  border-radius: 2.8vw;
+  padding: 0.5rem;
+  backdrop-filter: blur(0.5vw);
+  -webkit-backdrop-filter: blur(0.5vw);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 70%;
+  z-index: 100;
+}
 
-    .p__end {
-      color: #8a8a8a;
-      font-family: sans-serif;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      text-wrap: pretty;
-      text-align: center;
-      padding: 40px 0;
+.features-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 40px;
+  padding: 60px 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  font-family: sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-    }
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
 
-        .faq-section {
-            width: 100%;
-            padding: 2rem 16px;
-            box-sizing: border-box;
-            margin: 0 auto 25px;
-            padding-top: 0;
-            font-family: sans-serif;
-            position: absolute; 
-            top: 20%; 
-            left: 5%; 
-            right: 5%; 
-            background: rgba(255, 255, 255, 0.014);
-            border-radius: 40px; 
-            max-width: 75%; 
-            z-index: 10; 
-            border: 1px solid #ffffff;
-            max-height: 75vh;
-            overflow-y: scroll;
-            -webkit-overflow-scrolling: touch;
-        }
+.section-header h2 {
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
 
-        .faq-section__header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
 
-        .faq-section__title {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: bold;
-            color: #ffffff;
-            margin: 0 0 0px;
-            line-height: 6vw;
-        }
+.column,
+.image-display {
+  display: flex;
+  flex-direction: column;
+}
 
-        .faq-section__subtitle {
-            font-size: 1rem;
-            color: #ffffff;
-            margin: 0;
-        }
+.column {
+  gap: 30px;
+}
 
-        .faq-section__list {
-            list-style: none;
-            margin: 0 auto;
-            padding: 0;
-            max-width: 56rem;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
+.image-display {
+  align-items: center;
+  gap: 40px;
+}
 
-        .faq-section__item {
-            background: #ffffff05;
-            border: 1px solid #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-        }
+.circle-frame {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 780 / 740;
+  border-radius: 50%;
+  border: 5px solid #1d2637;
+  overflow: hidden;
+  position: relative;
+  background: #eee;
+  box-shadow: 0 05px 10px #090d14;
+}
 
-        .faq-section__item summary {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 16px 20px;
-            cursor: pointer;
-            list-style: none;
-        }
+.circle-frame picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
 
-        .faq-section::-webkit-scrollbar {
-         width: 8px;
-            }
-        .faq-section::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.1);
-           border-radius: 10px;
-            }
-        .faq-section::-webkit-scrollbar-thumb {
-           background: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-              }
-        .faq-section::-webkit-scrollbar-thumb:hover {
-             background: rgba(255, 255, 255, 0.5);
-        }
+.circle-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-        .faq-section__item summary::-webkit-details-marker {
-            display: none;
-        }
+.feature-card {
+  display: block;
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  border: 2px solid #eee;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  box-shadow: 0 05px 10px #090d14;
+}
 
-        .faq-section__item summary:hover {
-            background: #f9f9f92f;
-        }
+.feature-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: #1d2637;
+  font-weight: 550;
+  line-height: 2.2vh;
+}
 
-        .faq-section__q-text {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #ffffff;
-            flex: 1;
-        }
+.feature-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
 
-          .faq-section__q-text:hover {
-            color: #f4c122;
-        }
+.feature-card:hover,
+.feature-card:focus-visible {
+  background-color: #f9fbff;
+  transform: translateY(-8px);
+  box-shadow: 0 10px 15px #090d14;
+}
 
-        .faq-section__icon {
-            width: 20px;
-            height: 20px;
-            flex-shrink: 0;
-            position: relative;
-        }
+.feature-card:focus-visible {
+  outline: 3px solid #1d2637;
+  outline-offset: 5px;
+}
 
-        .faq-section__icon::before,
-        .faq-section__icon::after {
-            content: '';
-            position: absolute;
-            background: #888;
-            border-radius: 2px;
-            transition: transform 0.25s ease, opacity 0.25s ease;
-        }
+#feat1:checked ~ .grid-container .img1,
+#feat2:checked ~ .grid-container .img2,
+#feat3:checked ~ .grid-container .img3 {
+  opacity: 1;
+  z-index: 2;
+}
 
-        .faq-section__icon::before {
-            width: 12px;
-            height: 1.5px;
-            top: 9px;
-            left: 4px;
-        }
+#feat1:checked ~ .grid-container label[for="feat1"],
+#feat2:checked ~ .grid-container label[for="feat2"],
+#feat3:checked ~ .grid-container label[for="feat3"] {
+  border-color: #1d2637;
+  background-color: #f9fbff;
+}
 
-        .faq-section__icon::after {
-            width: 1.5px;
-            height: 12px;
-            top: 4px;
-            left: 9px;
-        }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 
-        .faq-section__item[open] .faq-section__icon::after {
-            transform: rotate(90deg);
-            opacity: 0;
-        }
+.faq-section {
+  width: 100%;
+  padding: 0 16px 2rem;
+  box-sizing: border-box;
+  margin: 0 auto 25px;
+  font-family: sans-serif;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  right: 5%;
+  background: rgba(255, 255, 255, 0.014);
+  border-radius: 40px;
+  max-width: 75%;
+  z-index: 10;
+  border: 1px solid #fff;
+  max-height: 55vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
 
-        .faq-section__a-inner {
-            padding: 14px 20px 16px;
-            border-top: 1px solid #e5e5e5;
-        }
+.faq-section__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
-        .faq-section__a-text {
-            font-size: 0.9rem;
-            color: #ffffff;
-            line-height: 1.6;
-            margin: 0;
-            font-weight: 500;
-        }
+.faq-section__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+  line-height: 6vw;
+}
 
-              .table-container-custom {
+.faq-section__subtitle {
+  font-size: 1rem;
+  color: #fff;
+  margin: 0;
+}
+
+.faq-section__list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 56rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.faq-section__item {
+  background: #ffffff05;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faq-section__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-section__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-section__item summary:hover {
+  background: #f9f9f92f;
+}
+
+.faq-section__q-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  flex: 1;
+}
+
+.faq-section__q-text:hover {
+  color: #ff7200;
+}
+
+.faq-section__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.faq-section__icon::before,
+.faq-section__icon::after {
+  content: "";
+  position: absolute;
+  background: #888;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.faq-section__icon::before {
+  width: 12px;
+  height: 1.5px;
+  top: 9px;
+  left: 4px;
+}
+
+.faq-section__icon::after {
+  width: 1.5px;
+  height: 12px;
+  top: 4px;
+  left: 9px;
+}
+
+.faq-section__item details[open] .faq-section__icon::after {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.faq-section__a-inner {
+  padding: 14px 20px 16px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.faq-section__a-text {
+  font-size: 0.9rem;
+  color: #fff;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+}
+
+.faq-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.faq-section::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.faq-section::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.faq-section::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.p__end {
+  color: #8a8a8a;
+  font-family: sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  text-wrap: pretty;
+  text-align: center;
+  padding: 40px 0;
+}
+
+ .table-container-custom {
 
     background-color: #fff;
     padding: 20px;
@@ -2317,21 +1972,34 @@ ColLib.register({
     color: #555;
   }
 
-    @media (prefers-contrast: more) {
+  /* Efeito de zebrado nas linhas */
 
-      .p__end {
-        color: #000;
-      }
+  .table-tr-custom:nth-child(even) {
 
-      .grouptext-overlay-Background {
-        background: rgb(0, 0, 0);
-      }
+    background-color: #f1f1f1;
+  }
 
-      .product-header__subtitle {
-        color: #000;
-      }
+@media (prefers-contrast: more) {
+   .p__end,
+  .video-header__subtitle {
+    color: #000;
+  }
 
-           .table-td-custom-sub
+  .grouptext-overlay-Background {
+    background: #000;
+  }
+
+  .video-header__brand {
+    color: #3a2301;
+  }
+
+  .faq-section__a-text {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+  }
+
+        .table-td-custom-sub
       {
         color: #000;
         font-weight: 550;
@@ -2342,105 +2010,78 @@ ColLib.register({
         color: #000;
         font-weight: 700;
       } 
+}
 
-      .product-header__brand {
-        color:#3a2301
-      }
-
-       .faq-section__a-text {
-            font-size: 1.0rem;
-            font-weight: bold;
-            color: #000000;
-        }
-     
-    }
-
-    @media (max-width: 360px) {
-        .section-32__grouptext-overlay h2 {
-          font-size: 3vw;
-        }
-
-        .section-32__grouptext-overlay p {
-          font-size: 2.8vw;
-        }
-
-
-
-        
-    }
-
-    @media (max-width: 470px) {  
-
-      .product-header__subtitle {
-      text-align: justify;
-      font-size: clamp(0.9rem, 2vw, 1.2rem);
-      font-weight: 550;
-    }
-
-      .section-32__grouptext-overlay h2 {
-          font-size: 3vw;
-        }
-
-      .section-32__grouptext-overlay p {
-          font-size: 2.4vw;
-        }
-
-      .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-      .section-32__grouptext-overlay.bottom {
-          top: 81%
-        }
-
-      .section-32__grouptext-overlay.right {
-          top: 35%;
-          left: 73%;
-          transform: translate(-50%, -50%);
-        }
-
-        .section-32__grouptext-overlay.left {
-          top: 50%;
-          left: 27%;
-          transform: translate(-50%, -50%);
-        }
-
-            .faq-section {
-        max-height: 180px !important;
-        padding: 0.5rem 8px !important;
-        top: 5% !important;
-        max-width: 90%;
-        border-radius: 20px;
-    }
-
+@media (max-width: 1060px) {
+  .faq-section {
+    top: 10%;
+    max-width: 90%;
+    max-height: 80%;
   }
 
-    @media (max-width: 500px) {
-        .section-32__grouptext-overlay h2 {
-          font-size: 3vw;
-        }
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-        .section-32__grouptext-overlay p {
-          font-size: 2.3vw;
-        }
+  .image-display {
+    grid-row: 1;
+  }
 
-        .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
+  .circle-frame {
+    max-width: 320px;
+  }
 
-          .section-32__grouptext-overlay.bottom {
-          top: 67%;
-        }
+  .column {
+    order: 2;
+  }
+}
 
-        .faq-section__q-text {
-                font-size: 0.9rem;
-            }
-        
-    }
+@media (max-width: 960px) {
+  .section-32__grouptext-overlay h2 {
+    font-size: 2.1vw;
+  }
 
-    @media (max-width: 600px) {
+  .section-32__grouptext-overlay p {
+    font-size: 1.5vw;
+  }
+}
 
-    .table-container-custom {
+@media (max-width: 768px) {
+  .section-32__grouptext-overlay h2 {
+    font-size: 2.5vw;
+  }
+
+  .section-32__grouptext-overlay p {
+    font-size: 2vw;
+  }
+
+  .video-header {
+    --banner-height: 180px;
+  }
+
+  .faq-section__header {
+    margin-bottom: 1rem;
+  }
+
+  .faq-section__a-text {
+    font-size: 0.7rem !important;
+  }
+
+  .faq-section__title {
+    font-size: 1rem !important;
+  }
+
+  .faq-section__subtitle,
+  .faq-section__q-text {
+    font-size: 0.75rem !important;
+  }
+}
+
+ @media (max-width: 600px) {
+
+
+        .table-container-custom {
 
       padding: 10px;
     }
@@ -2453,202 +2094,297 @@ ColLib.register({
     }
     }
 
-    @media (max-width: 768px) {
+@media (max-width: 500px) {
+  .section-32__grouptext-overlay h2 {
+    font-size: 3vw;
+  }
 
-      .section-32__grouptext-overlay h2 {
-          font-size: 2.5vw;
-        }
+  .section-32__grouptext-overlay p {
+    font-size: 2.3vw;
+  }
 
-      .section-32__grouptext-overlay p {
-          font-size: 2vw;
-        }
+  .section-32__grouptext-overlay {
+    max-width: 50%;
+  }
+}
 
-      .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
+@media (max-width: 470px) {
+  .video-header__subtitle {
+    text-align: justify;
+    font-size: clamp(0.9rem, 2vw, 1.5rem);
+    font-weight: 550;
+  }
 
-      .section-32__grouptext-overlay.bottom {
-          top: 76%;
-        }
+  .section-32__grouptext-overlay p {
+    font-size: 2.4vw;
+  }
 
-            .product-header {
-      --banner-height: 180px;
-    }
+  .faq-section {
+    max-height: 180px !important;
+    padding: 0.5rem 8px !important;
+    top: 5% !important;
+    max-width: 90%;
+    border-radius: 20px;
+  }
+}
 
-        .faq-section__header {
-    text-align: center;
-    margin-bottom: 1rem;
-    }
+@media (max-width: 375px) {
+  .section-32__grouptext-overlay p {
+    font-size: 2.8vw;
+  }
+}
+</style>
+  <article style="width: 100%;" aria-labelledby="video-main-title">
+  <section class="video-header" aria-label="Cabeçalho do produto">
+    <header class="video-header__banner">
+      <video class="video-header__banner-video"
+        poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/poster-precon-p-alaranjado-ao-fundo-azul-grafitado.jpg"
+        preload="none" autoplay muted loop playsinline width="1200" height="250" aria-hidden="true">
+        <source src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/precon/header-precon.mov">
+      </video>
+      <div class="video-header__badge" role="img" aria-label="Logo da marca precon dentro de um círculo laranja">
+        <img
+          src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/precon/logo-precon.png"
+          alt=""
+          class="video-header__badge-img">
+      </div>
+    </header>
 
-    
-    .faq-section__a-text {
-        font-size: 0.7rem !important;
-    }
+    <section class="video-header__body" aria-label="Título e descrição do produto">
+      <small class="video-header__brand">precon</small>
 
-    .faq-section__title {
-        font-size: 1rem !important;
-     }
+      <h2 class="video-header__title" id="video-main-title">
+        CONJUNTOS DE PARAFUSO AUTOBROCANTES CERAMICO/BRANCO/CONCRETO/MARFIM
+      </h2>
 
-     .faq-section__subtitle {
-        font-size: 0.75rem !important;
-     }
-
-     .faq-section__q-text {
-        font-size: 0.75rem !important;
-     }
-
-     }
-    
-
-    @media (max-width: 960px) {
-        .section-32__grouptext-overlay h2 {
-          font-size: 2.1vw;
-        }
-
-        .section-32__grouptext-overlay p {
-          font-size: 1.5vw;
-        }
-
-        .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-        .section-32__grouptext-overlay.bottom {
-          top: 79%
-        }
+      <p class="video-header__subtitle">
+        Perfuram e fixam em uma única etapa, dispensando pré-furo. Ideais para agilizar sua obra ou reparo com total segurança e firmeza nas aplicações.
+      </p>
+    </section>
+  </section>
 
 
-        }
-
-    @media (max-width: 1060px) {
-        .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-        .section-32__grouptext-overlay.bottom {
-          top: 81%;
-        }
-
-          .faq-section {
-          top: 10%; 
-         max-width: 90%;
-         max-height: 80%;
-
-        }
-
-        }
-
-</style>  
-   <article style="width: 100%;">
-<section class="product-header" aria-label="Cabeçalho do produto">
-  <header class="product-header__banner">
-    <picture style="width:100%; height:100%; margin:0;">
-      <source media="(max-width: 393px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-208255-01.jpg?ims=393x">
+      <section class="section-32__container" aria-label="Destaque visual do produto">
+      <figure class="section-32__groupimage-section">
+       <picture>
+         <source media="(max-width: 430px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafusos-autobrocantes-10-unidades-410376-02.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-208255-01.jpg?ims=768x">
-      
-              <source media="(max-width: 1199px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-208255-01.jpg?ims=1199x">
-      
-              <source media="(min-width: 1200px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-208255-01.jpg">
-      <img
-        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-208255-01.jpg"
-        alt="Detalhe do fundo abstrato vermelho e amarelo com linhas tracejadas da embalagem Fofura Baby Shortinho" 
-        class="product-header__banner-img" loading="eager">
-    </picture>
-    <div class="product-header__badge" role="img" aria-label="Logo da marca fofurababy dentro de um círculo laranja">
-      <img
-        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/fofurababy/logo-fofurababy.png"
-        alt="imagem png com ícone da marca fofurababy dentro de um círculo laranja em frente ao cabeçalho" class="product-header__badge-img">
-    </div>
-  </header>
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafusos-autobrocantes-10-unidades-410376-02.jpg?ims=768x">
 
-  <section class="product-header__body">
-    <small class="product-header__brand">fofurababy</small>
-    <h2 class="product-header__title">
-     FRALDAS DESCARTÁVEIS SHORTINHO MEGA M/G/XG/XXG 
-    </h2>
-    <p class="product-header__subtitle">
-       Vestem como cuequinha, facilitando a rotina. Com alta absorção e tamanhos do M ao XXG, garantem conforto e liberdade de movimento.
-    </p>
-  </section>
+              <source media="(max-width: 1024px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafusos-autobrocantes-10-unidades-410376-02.jpg?ims=1024x">
+      
+              <source media="(max-width: 1280px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafusos-autobrocantes-10-unidades-410376-02.jpg?ims=1238x">
+      
+              <source media="(max-width: 1440px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafusos-autobrocantes-10-unidades-410376-02.jpg?ims=1440x">
+
+              <source media="(min-width: 1441px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafusos-autobrocantes-10-unidades-410376-02.jpg">
+
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafusos-autobrocantes-10-unidades-410376-02.jpg"
+        alt="Kit de fixação para telha Precon Tubozan com parafusos autobrocantes em embalagem" 
+        style="border-radius: 30px;" width="1600" height="865"
+        loading="eager" decoding="async" fetchpriority="high">
+        </picture>
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%; left: 25%; max-width: 40%;">
+        <h2><strong>FIXAÇÃO PRECON PARA TELHA</strong></h2>
+        <p>O kit Precon Tubozan é de fixação para telha, com 10 parafusos metálicos autobrocantes e tampa de acabamento.
+        </p>
+      </figcaption>
+      </figure>
+       </section>
+
+       <section class="features-section" style="background-image: url(https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-fundo-branco-laranja-410376-bg.jpg);">
+    <div class="section-header" aria-labelledby="main-title">
+        <h2 id="main-title">TUDO O QUE VOCÊ PROCURA</h2>
+    </div>
+
+    <!-- Inputs de rádio agrupados para acessibilidade -->
+    <div role="radiogroup" aria-label="Escolha uma característica para visualizar">
+        <input type="radio" id="feat1" name="feature" class="sr-only" checked>
+        <input type="radio" id="feat2" name="feature" class="sr-only">
+        <input type="radio" id="feat3" name="feature" class="sr-only">
+
+        <div class="grid-container">
+            <!-- Coluna Esquerda -->
+            <aside class="column" aria-label="Fala sobre medidas diversas disponíveis para o produto">
+                <label for="feat1" class="feature-card" role="radio" aria-checked="true" tabindex="0">
+                    <article>
+                        <h2>QUAL MEDIDA ESCOLHER?</h2>
+                        <p>A linha oferece 2.1/2 em cerâmico, concreto e marfim, além do 3.1/2 branco para quem 
+                          busca uma opção diferente na fixação de telhas.</p>
+                    </article>
+                </label>
+            </aside>
+
+            <!-- Coluna Central: Imagens (Picture) e Card 2 -->
+            <section class="image-display" aria-label="Imagem ilustrativa da funcionalidade selecionada">
+                <div class="circle-frame" aria-live="polite" aria-label="Imagem da funcionalidade selecionada">
+                    
+                    <!-- IMAGEM 1 RESPONSIVA -->
+                    <picture class="img1">
+                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafuso-autobrocante-telha-ondulada-410376-03.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafuso-autobrocante-telha-ondulada-410376-03.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafuso-autobrocante-telha-ondulada-410376-03.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafuso-autobrocante-telha-ondulada-410376-03.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafuso-autobrocante-telha-ondulada-410376-03.jpg?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafuso-autobrocante-telha-ondulada-410376-03.jpg?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafuso-autobrocante-telha-ondulada-410376-03.jpg" 
+                        alt="Parafuso autobrocante Precon Tubozan fixado em telha ondulada com tampa cerâmica">
+                    </picture>
+
+                    <!-- IMAGEM 2 RESPONSIVA -->
+                    <picture class="img2">
+                       <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampa-acabamento-ceramico-410376-04.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampa-acabamento-ceramico-410376-04.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampa-acabamento-ceramico-410376-04.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampa-acabamento-ceramico-410376-04.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampa-acabamento-ceramico-410376-04.jpg?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampa-acabamento-ceramico-410376-04.jpg?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampa-acabamento-ceramico-410376-04.jpg" 
+                        alt="Tampa cerâmica Precon Tubozan sobre telha laranja texturizada em close">
+                    </picture>
+
+                    <!-- IMAGEM 3 RESPONSIVA -->
+                    <picture class="img3">
+                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampa-ceramica-telhado-laranja-410376-05.jpg?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampa-ceramica-telhado-laranja-410376-05.jpg?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampa-ceramica-telhado-laranja-410376-05.jpg?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampa-ceramica-telhado-laranja-410376-05.jpg?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampa-ceramica-telhado-laranja-410376-05.jpg?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampa-ceramica-telhado-laranja-410376-05.jpg?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampa-ceramica-telhado-laranja-410376-05.jpg" 
+                        alt="Fixador Precon Tubozan cerâmico instalado em telhado laranja, vista externa">
+                    </picture>
+
+                </div>
+
+                <label for="feat2" class="feature-card" role="radio" style="width: 90%;" aria-checked="false" tabindex="0">
+                    <article>
+                        <h2>TAMPA DE ACABAMENTO</h2>
+                        <p>A tampa de acabamento acompanha o kit e dá um toque final mais limpo à fixação, sem deixar o parafuso visualmente cru.</p>
+                    </article>
+                </label>
+            </section>
+
+            <!-- Coluna Direita -->
+            <aside class="column" aria-label="Explicação da característica autobrocante do parafuso">
+                <label for="feat3" class="feature-card" role="radio" aria-checked="false" tabindex="0">
+                    <article>
+                        <h2>ELE É AUTOBROCANTE?</h2>
+                        <p>Sim. O parafuso metálico autobrocante Precon Tubozan entrega fixação para telha com instalação 
+                          mais prática e acabamento mais completo no mesmo kit.</p>
+                    </article>
+                </label>
+            </aside>
+        </div>
+    </div>
 </section>
 
-      <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
-       <picture class="section-32__groupimage-section">
-        <source media="(max-width: 393px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-empilhadas-208255-02.jpg?ims=393x">
+
+        <section class="section-32__container" aria-label="Galeria de características">
+        <figure class="section-32__groupimage-section">
+       <picture>
+
+         <source media="(max-width: 430px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafusos-autobrocantes-cores-410376-06.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-empilhadas-208255-02.jpg?ims=768x">
-      
-              <source media="(max-width: 1199px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-empilhadas-208255-02.jpg?ims=1199x">
-      
-              <source media="(min-width: 1200px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-empilhadas-208255-02.jpg">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafusos-autobrocantes-cores-410376-06.jpg?ims=768x">
 
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-empilhadas-208255-02.jpg"
-        alt="Embalagens fralda Fofura Baby Shortinho empilhadas exibindo os tamanhos M, G, XG e XXG" 
-        style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
+              <source media="(max-width: 1024px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafusos-autobrocantes-cores-410376-06.jpg?ims=1024x">
+      
+              <source media="(max-width: 1280px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafusos-autobrocantes-cores-410376-06.jpg?ims=1238x">
+      
+              <source media="(max-width: 1440px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafusos-autobrocantes-cores-410376-06.jpg?ims=1440x">
+
+              <source media="(min-width: 1441px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafusos-autobrocantes-cores-410376-06.jpg">
+
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-parafusos-autobrocantes-cores-410376-06.jpg"
+        alt="Parafusos autobrocantes Precon Tubozan com tampas cerâmica, branca e concreto" 
+        style="border-radius: 30px 30px 0 0;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%;">
-        <h2><strong>AGUENTA A NOITE TODA?</strong></h2>
-        <p>Com tecnologia japonesa e ajuste elástico perfeito, ela oferece até 12 horas de proteção contra vazamentos.
+        </picture>
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 50%; left: 72%; max-width: 35%;">
+        <h2><strong>KIT PRECON COM 10</strong></h2>
+        <p>Cada embalagem traz 10 unidades, uma quantidade prática para comprar, separar e aplicar os parafusos autobrocantes Precon Tubozan na obra.
         </p>
       </figcaption>
-      </picture>
+      </figure>
 
-       <picture class="section-32__groupimage-section" style="z-index: 3;">
-        <source media="(max-width: 393px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-lado-a-lado-208255-03.jpg?ims=393x">
+       <figure class="section-32__groupimage-section">
+       <picture>
+
+         <source media="(max-width: 430px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampas-branco-marfim-concreto-410376-07.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-lado-a-lado-208255-03.jpg?ims=768x">
-      
-              <source media="(max-width: 1199px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-lado-a-lado-208255-03.jpg?ims=1199x">
-      
-              <source media="(min-width: 1200px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-lado-a-lado-208255-03.jpg">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampas-branco-marfim-concreto-410376-07.jpg?ims=768x">
 
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-embalagens-lado-a-lado-208255-03.jpg"
-        alt="Embalagens fralda Fofura Baby Shortinho lado a lado mostrando tamanhos M e XXG com proteção 12h" 
-        style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
+              <source media="(max-width: 1024px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampas-branco-marfim-concreto-410376-07.jpg?ims=1024x">
+      
+              <source media="(max-width: 1280px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampas-branco-marfim-concreto-410376-07.jpg?ims=1238x">
+      
+              <source media="(max-width: 1440px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampas-branco-marfim-concreto-410376-07.jpg?ims=1440x">
+
+              <source media="(min-width: 1441px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampas-branco-marfim-concreto-410376-07.jpg">
+
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-tampas-branco-marfim-concreto-410376-07.jpg"
+        alt="Parafusos Precon Tubozan com tampas branco e marfim sobre fundo de instalação" 
+        style="border-radius: 0;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
-      <figcaption class="section-32__grouptext-overlay bottom grouptext-overlay-Background" style="top: 85%;">
-        <h2><strong>QUAL O TAMANHO CERTO?</strong></h2>
-        <p>Siga o peso: M (6 a 10kg), G (9 a 13kg), XG (11 a 15kg) e XXG (+14kg). A cintura elástica garante o ajuste.
+        </picture>
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 75%; left: 50%; max-width: 40%;">
+        <h2><strong>CORES PRECON TUBOZAN</strong></h2>
+        <p>A linha Precon Tubozan oferece kits nas cores cerâmico, branco, concreto e marfim, permitindo combinar a fixação da telha 
+          com o acabamento visual do projeto.
         </p>
       </figcaption>
-      </picture>
-
-      <picture class="section-32__groupimage-section" style="z-index: 3; overflow: hidden;">
-        <source media="(max-width: 393px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-verde-208255-04.jpg?ims=393x">
+      </figure>
+      
+      <figure class="section-32__groupimage-section">
+      <picture>
+        <source media="(max-width: 430px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-fundo-instalacao-obra-410376-08.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-verde-208255-04.jpg?ims=768x">
-      
-              <source media="(max-width: 1199px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-verde-208255-04.jpg?ims=1199x">
-      
-              <source media="(min-width: 1200px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-verde-208255-04.jpg">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-fundo-instalacao-obra-410376-08.jpg?ims=768x">
 
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fralda-fofura-baby-shortinho-fundo-vermelho-amarelo-verde-208255-04.jpg"
-        alt="Detalhe de fundo abstrato vermelho, amarelo e verde com curvas tracejadas da marca Fofura Baby" 
+              <source media="(max-width: 1024px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-fundo-instalacao-obra-410376-08.jpg?ims=1024x">
+      
+              <source media="(max-width: 1280px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-fundo-instalacao-obra-410376-08.jpg?ims=1280x">
+      
+              <source media="(max-width: 1440px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-fundo-instalacao-obra-410376-08.jpg?ims=1440x">
+
+              <source media="(min-width: 1441px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-fundo-instalacao-obra-410376-08.jpg">
+
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/kit-fixacao-telha-precon-tubozan-fundo-instalacao-obra-410376-08.jpg"
+        alt="Cenário obra Precon Tubozan com furadeira e superfície de fixação ao fundo" 
         style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
+        </picture>
         
   <!-- Camada com gradiente de fade -->
 
    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
               background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.550) 37%, rgba(0, 0, 0, 0.897) 100%); 
-              z-index: 5; border-radius: 0px 0px 30px 30px; pointer-events: none;"></div>
+              z-index: 5; border-radius: 0px 0px 30px 30px; pointer-events: none;" aria-hidden="true"></div>
 
               <!-- FAQ -->
 
@@ -2656,119 +2392,141 @@ ColLib.register({
            
     <div class="faq-section__header">
       <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
-      <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha baseado em perguntas frequentes do público</p>
+      <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha baseado em perguntas do público</p>
     </div>
-    <ul class="faq-section__list">
+    <ul class="faq-section__list" style="overflow: hidden;" role="list">
       <li class="faq-section__item">
-        <details class="faq-section__item">
+        <details>
           <summary>
-            <h3 class="faq-section__q-text">Como escolher o tamanho ideal da fralda?</h3>
+            <h3 class="faq-section__q-text">1. Para que serve o Conjunto Parafuso Precon Tubozan Autobrocante para Telha 10 unidades?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-              Baseie-se no peso do bebê. A Fofura Baby vai do tamanho M (6 a 10kg) ao XXG (acima de 14kg). 
-              O ajuste correto evita vazamentos e garante total conforto.
+            Serve como kit de fixação para telha. A ficha informa que o produto pertence à linha Parafusos Autobrocantes 
+            e conta com parafuso metálico autobrocante. É indicado para quem precisa de uma solução de fixação com 
+            instalação facilitada e acabamento no conjunto.
             </p>
           </div>
         </details>
       </li>
       <li class="faq-section__item">
-        <details class="faq-section__item">
+        <details>
           <summary>
-            <h3 class="faq-section__q-text">O que avaliar na hora de comprar fraldas?</h3>
+            <h3 class="faq-section__q-text">2. O kit Precon Tubozan tem boa praticidade na instalação?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-              Busque opções com toque super macio, tecido ultra respirável e alta absorção. 
-              Modelos com tecnologia japonesa cuidam da pele e ajudam a evitar assaduras.
+           apresenta fácil instalação conforme a ficha técnica. O produto reúne parafusos autobrocantes e tampa de acabamento 
+           ou tampa protetora, conforme a variação informada. Essa composição favorece uma aplicação mais prática e com acabamento mais organizado.
             </p>
           </div>
         </details>
       </li>
       <li class="faq-section__item">
-        <details class="faq-section__item">
+        <details> 
           <summary>
-            <h3 class="faq-section__q-text">Qual a diferença da fralda tipo shortinho?</h3>
+            <h3 class="faq-section__q-text">3. Como usar o kit para obter melhor acabamento?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-              Ela veste facilmente como uma roupinha, pois possui cintura elástica de ajuste perfeito. 
-              Isso proporciona mais liberdade ao bebê e agiliza a troca.
+            Deve ser usado conforme sua finalidade de kit de fixação para telha. A ficha destaca fácil instalação e, em algumas variações, 
+            informa melhor acabamento e tampa de acabamento ou protetora.
             </p>
           </div>
         </details>
       </li>
       <li class="faq-section__item">
-        <details class="faq-section__item">
+        <details>
           <summary>
-            <h3 class="faq-section__q-text">Qual fralda aguenta a noite toda sem vazar?</h3>
+            <h3 class="faq-section__q-text">4. De que material é feito o parafuso do kit?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-              Opte por fraldas com até 12 horas de proteção. O modelo shortinho se ajusta 
-              firmemente na cintura e nas pernas da criança, bloqueando os vazamentos noturnos.
+              Possui parafuso metálico autobrocante. A ficha também informa a presença de tampa de acabamento 
+              ou tampa protetora, dependendo da variação. Esse conjunto entrega fixação com acabamento associado ao uso em telhas.
             </p>
           </div>
         </details>
       </li>
       <li class="faq-section__item">
-        <details class="faq-section__item">
+        <details>
           <summary>
-            <h3 class="faq-section__q-text">Como saber quando mudar o tamanho da fralda?</h3>
+            <h3 class="faq-section__q-text">5. Quais são as medidas e cores disponíveis desse conjunto?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-              Troque se a cintura elástica estiver marcando a pele ou se ocorrerem vazamentos constantes. 
-              Acompanhe sempre a evolução de peso indicada na embalagem.
+              Aparece nas medidas 2.1/2 e 3.1/2 sendo as cores Cerâmico, Branco, Concreto e Marfim.
+              Essa variação permite selecionar a opção conforme medida e acabamento descritos para cada item.
             </p>
           </div>
         </details>
       </li>
     </ul>
       </section>
-    </picture>
+    </figure>
     </section>
 
-    <footer>
+  <footer aria-label="Informações complementares e produtos relacionados">
            <p class="p__end">
           <strong>Imagens Meramente Ilustrativas</strong>
           </p>
            <section class="table-container-custom" aria-label="tabela contendo produtos relacionados e citados dentre deste conteúdo">
-          <table class="table-design-custom">
+          <table class="table-design-custom" aria-describedby="table-desc">
+            <caption id="table-desc" class="sr-only" style="text-align:left; padding: 0 0 8px; font-weight:600;">
+          Modelos de Conjuntos de Parafusos disponíveis
+          </caption>
             <thead class="table-head-custom">
                <tr class="table-tr-custom">
-                 <th class="table-text-custom table-th-custom" style="background-color: #c73a4b; border-radius: 10px 0 0 0;">SKU
+                 <th class="table-text-custom table-th-custom" style="background-color: #1d2637; border-radius: 10px 0 0 0;" scope="col">SKU
                  </th>
                  <!--Replicar para adicionar mais COLUNAS-->
-                 <th class="table-text-custom table-th-custom" style="background-color: #c73a4b; border-radius: 0 10px 0 0;">TÍTULO
+                 <th class="table-text-custom table-th-custom" style="background-color: #1d2637; border-radius: 0 10px 0 0;" scope="col">TÍTULO
                  </th>
                </tr>
              </thead>
              <tbody>
                <tr class="table-tr-custom">
-                 <td class="table-text-custom table-td-custom-title">208255</td>
-            <td class="table-text-custom table-td-custom-sub">FRALDA DESCARTAVEL FOFURA BABY SHORTINHO MEGA MEDIA 8X28</td>
+                 <td class="table-text-custom table-td-custom-title">410376</td>
+            <td class="table-text-custom table-td-custom-sub">CONJUNTO PARAFUSO PRECON AUTOBRACANTES 3.1/2 CERAMICO 10X1</td>
            </tr>
          <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">208256</td>
-        <td class="table-text-custom table-td-custom-sub">FRALDA DESCARTAVEL FOFURA BABY SHORTINHO MEGA GRANDE 8X24</td>
+           <td class="table-text-custom table-td-custom-title">410377</td>
+        <td class="table-text-custom table-td-custom-sub">CONJUNTO PARAFUSO PRECON AUTOBRACANTES 2.1/2 CERAMICO 10X1</td>
         </tr>
           <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">208257</td>
-        <td class="table-text-custom table-td-custom-sub">FRALDA DESCARTAVEL FOFURA BABY SHORTINHO MEGA EXTRA GRANDE 8X22</td>
+           <td class="table-text-custom table-td-custom-title">410378</td>
+        <td class="table-text-custom table-td-custom-sub">CONJUNTO PARAFUSO PRECON AUTOBRACANTES 3.1/2 BRANCO 10X1</td>
       </tr>
       <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title">208258</td>
-        <td class="table-text-custom table-td-custom-sub">FRALDA DESCARTAVEL FOFURA BABY SHORTINHO MEGA EXTRA EXTRA GRANDE 8X20</td>
+        <td class="table-text-custom table-td-custom-title">410379</td>
+        <td class="table-text-custom table-td-custom-sub">CONJUNTO PARAFUSO PRECON AUTOBRACANTES 3.1/2 CONCRETO 10X1</td>
+         </tr>
+        <tr class="table-tr-custom">
+        <td class="table-text-custom table-td-custom-title">410381</td>
+        <td class="table-text-custom table-td-custom-sub">CONJUNTO PARAFUSO PRECON AUTOBRACANTES 2.1/2 CONCRETO 10X</td>
+          </tr>
+         <tr class="table-tr-custom">
+           <td class="table-text-custom table-td-custom-title">410382</td>
+        <td class="table-text-custom table-td-custom-sub">CONJUNTO PARAFUSO PRECON AUTOBRACANTES 3.1/2 MARFIM 10X1</td>
+        </tr>
+          <tr class="table-tr-custom">
+           <td class="table-text-custom table-td-custom-title">410383</td>
+        <td class="table-text-custom table-td-custom-sub">CONJUNTO PARAFUSO PRECON AUTOBRACANTES 2.1/2 MARFIM 10X1</td>
+      </tr>
              </tbody>
            </table>
          </section>
-        </footer>`,
+        </footer>
+
+        </article>
+
+        </div>
+`,
       css:  ``,
     },
 
