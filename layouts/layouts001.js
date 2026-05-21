@@ -35,33 +35,45 @@ SenkoLib.register([
     id: 'section-1',
     name: 'Section-1 (Header Imagem)',
     tags: ['header imagem', 'section-1', '1', 'section 1'],
-    html: `<section class="product-header" aria-label="Cabeçalho do produto">
+    html: ` <article style="width: 100%;" aria-labelledby="product-main-title">
+    <section class="product-header" aria-label="Cabeçalho do produto">
   <header class="product-header__banner">
-    <figure style="width:100%;height:100%;margin:0;">
-      <img
-        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/header.jpg"
-        alt="Banner do produto" class="product-header__banner-img" loading="eager">
-    </figure>
+    <picture style="width:100%; height:100%; margin:0;">
+             <source media="(max-width: 430px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/geladeira-consul-crd37eb-334l-fundo-abstrato-verde-2206327-01.jpg?ims=430x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/geladeira-consul-crd37eb-334l-fundo-abstrato-verde-2206327-01.jpg?ims=768x">
 
-    <div class="product-header__badge" role="img" aria-label="Logo da marca">
+              <source media="(max-width: 1024px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/geladeira-consul-crd37eb-334l-fundo-abstrato-verde-2206327-01.jpg?ims=1024x">
+      
+              <source media="(max-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/geladeira-consul-crd37eb-334l-fundo-abstrato-verde-2206327-01.jpg?ims=1200x">
       <img
-        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/logo.png"
-        alt="imagem png com ícone da marca" class="product-header__badge-img">
+        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/geladeira-consul-crd37eb-334l-fundo-abstrato-verde-2206327-01.jpg"
+        alt="Grafismo verde Consul CRD37EB 334L com arcos abstratos" 
+        class="product-header__banner-img" loading="eager">
+    </picture>
+    <div class="product-header__badge" role="img" aria-label="Logo da marca consul dentro de um círculo laranja">
+      <img
+        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/consul/logo-consul.png"
+        alt="" 
+        class="product-header__badge-img">
     </div>
   </header>
-
-  <article class="product-header__body">
-    <small class="product-header__brand">Marca</small>
-    <h1 class="product-header__title">
-      TÍTULO DO PRODUTO GAMER (Nome, modelo, diferencial...)
-    </h1>
+  <section class="product-header__body" aria-label="Título e descrição do produto">
+    <small class="product-header__brand">consul</small>
+    <h2 class="product-header__title" id="product-main-title">
+     REFRIGERADOR 2P CYCLE DEFROST CRD37E BRANCO 334L
+    </h2>
     <p class="product-header__subtitle">
-      Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
-      Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
-      Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
+    Com 334 litros e duas portas, este refrigerador separa perfeitamente os congelados dos alimentos frescos. 
+    Organize suas compras com facilidade e encontre tudo o que precisa em um piscar de olhos.
     </p>
-  </article>
-</section>`,
+  </section>
+</section>
+</article>`,
     css: `<style>
   *{
     margin: 0;
