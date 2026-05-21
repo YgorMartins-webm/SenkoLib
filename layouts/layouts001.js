@@ -2579,7 +2579,7 @@ SenkoLib.register([
                     A garantia de que o que está por trás das paredes nunca será um problema
                 </h3>
                 <p class="pdp-product-description">
-                    Ao escolher um condutor que une a máxima segurança contra incêndios, a eficiência energética para seus equipamentos de alta potência e a flexibilidade necessária para uma instalação ágil, você garante a proteção do seu patrimônio e a tranquilidade de saber que sua estrutura elétrica foi feita para durar uma vida inteira, sem surpresas na conta de luz ou a necessidade de reformas precoces
+                    Ao escolher umw condutor que une a máxima segurança contra incêndios, a eficiência energética para seus equipamentos de alta potência e a flexibilidade necessária para uma instalação ágil, você garante a proteção do seu patrimônio e a tranquilidade de saber que sua estrutura elétrica foi feita para durar uma vida inteira, sem surpresas na conta de luz ou a necessidade de reformas precoces
                 </p>
             </div>
             <img loading="lazy" src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao4.jpg" alt="Eletricista com capacete branco e colete laranja em obra garantindo qualidade e segurança Corfio" class="pdp-row-product-image" />
