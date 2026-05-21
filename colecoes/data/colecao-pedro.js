@@ -3439,7 +3439,7 @@ video-header,
       css:  ``,
     },
 
-        /*@@@@Col - semelhante-ao-anterior */
+            /*@@@@Col - semelhante-ao-anterior */
     {
       id:   'semelhante-ao-anterior',
       name: 'semelhante ao anterior',
@@ -3541,15 +3541,29 @@ video-header,
 
 .section-32__groupimage-section {
   position: relative;
+  z-index: 1;
   width: 100%;
   margin: 0;
   contain: layout style;
 }
 
+.section-32__groupimage-section:has(.faq-section) {
+  z-index: 0;
+}
+
+.section-32__grouptext-overlay {
+  z-index: 20;
+}
+
+.grouptext-overlay-Background {
+  z-index: 20;
+}
+
 .section-32__groupimage-section img {
   width: 100%;
   height: auto;
-  display: block;
+  display: inline-block;
+  min-width: 100%;
 }
 
 .section-32__grouptext-overlay {
