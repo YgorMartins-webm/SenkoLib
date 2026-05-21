@@ -1275,79 +1275,53 @@ SenkoLib.register([
       </figure>
        </section>`,
     css: `  <style>
-   .section-32__container {
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  border: 5.5px solid #000;
-  border-radius: 36px;
-}
-
-.section-32__groupimage-section {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  margin: 0;
-  contain: layout style;
-}
-
-.section-32__groupimage-section:has(.faq-section) {
-  z-index: 0;
-}
+  
 
 .section-32__grouptext-overlay {
-  z-index: 20;
+  color: #fff;
+  position: absolute;
+  max-width: 50%;
+  width: 90%;
+  line-height: 2rem;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.section-32__grouptext-overlay.left {
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  max-width: 45%;
+}
+
+.section-32__grouptext-overlay h2 {
+  font-size: 2vw;
+  font-weight: bold;
+  margin-bottom: 1.5px;
+  line-height: 120%;
+}
+
+.section-32__grouptext-overlay p {
+  font-size: 1.2vw;
+  margin: 0;
+  line-height: 120%;
 }
 
 .grouptext-overlay-Background {
-  z-index: 20;
+  background: rgba(0, 0, 0, 0.438);
+  border-radius: 2.8vw;
+  padding: 0.5rem;
+  backdrop-filter: blur(0.5vw);
+  -webkit-backdrop-filter: blur(0.5vw);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 70%;
+  z-index: 100;
 }
-
-.section-32__groupimage-section img {
-  width: 100%;
-  height: auto;
-  display: inline-block;
-  min-width: 100%;
-}
-
-    .section-32__grouptext-overlay.top {
-      top: 3%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .section-32__grouptext-overlay.bottom {
-      top: 84%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .section-32__grouptext-overlay.left {
-      top: 50%;
-      left: 25%;
-      transform: translate(-50%, -50%);
-      max-width: 41%;
-    }
-
-    .section-32__grouptext-overlay.right {
-      top: 50%;
-      left: 75%;
-      transform: translate(-50%, -50%);
-      max-width: 42%;
-    }
-
-    .section-32__grouptext-overlay h2 {
-      font-size: 2vw;
-      font-weight: bold;
-      margin-bottom: 1.5px;
-      line-height: 120%;
-    }
-
-    .section-32__grouptext-overlay p {
-      font-size: 1.1vw;
-      margin: 0;
-      line-height: 120%;
-    }
 
     @media (max-width: 960px) {
       .section-32__grouptext-overlay h2 {
