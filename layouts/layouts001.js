@@ -343,17 +343,30 @@ SenkoLib.register([
     name: 'Section-4 (Manual de Instrução)',
     tags: ['Section-4', '4', 'Section 4', 'manual de instrução'],
     html: `<section class="section-4-manual__container" aria-label="Manual de Instruções do Produto">
-  <figure class="section-4-manual__figura">
+  <figure class="section-4-manual__figura" >
     <a href="https://static1.efacil.com.br/wcsstore/AuroraStorefrontAssetStore/PDP/philips-walita/2209713-manual.pdf"
-      target="_blank" rel="noopener noreferrer" download title="Baixar manual de instruções do produto"
+      target="_blank" rel="noopener noreferrer" aria-label="Abrir manual de instruções do produto em PDF em nova aba"
       class="section-4-manual__link">
+      <picture style="width:100%; height:100%; margin:0;">
+             <source media="(max-width: 430px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/manual-banner.jpg?ims=430x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/manual-banner.jpg?ims=768x">
+
+              <source media="(max-width: 1024px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/manual-banner.jpg?ims=1024x">
+      
+              <source media="(max-width: 1200px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/manual-banner.jpg?ims=1200x">
       <img
-        src="https://static1.efacil.com.br/wcsstore/AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/manual.jpg"
-        class="section-4-manual__imagem" width="1200" height="250" loading="lazy" decoding="async" fetchpriority="low"
-        alt="Manual de instruções do produto"/>
+        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/manual-banner.jpg"
+        class="section-4-manual__imagem" width="1200" height="250" loading="lazy" decoding="async" fetchpriority="low"  alt=""/>
+        
+    </picture>
     </a>
     <figcaption class="section-4-manual__legenda">
-      Manual de Instruções — clique para baixar
+      Manual de Instruções — abrir PDF em nova aba
     </figcaption>
   </figure>
 </section>`,
@@ -389,6 +402,12 @@ SenkoLib.register([
     margin-top: 0.25rem;
     text-align: center;
   }
+
+  .section-4-manual__link:focus-visible {
+  outline: 3px solid #ff9900;
+  outline-offset: 4px;
+  border-radius: 0.25rem;
+}
 
   @media (min-width: 820px) {
 
