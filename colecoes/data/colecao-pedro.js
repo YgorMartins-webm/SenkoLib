@@ -2530,7 +2530,7 @@ video-header,
       css:  ``,
     },
 
-            /*@@@@Col - 3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido */
+                /*@@@@Col - 3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido */
     {
       id:   '3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido',
       name: '3 blocos, 18 com bgi no meio, faq embutido,',
@@ -2632,26 +2632,29 @@ video-header,
 
 .section-32__groupimage-section {
   position: relative;
+  z-index: 1;
   width: 100%;
   margin: 0;
   contain: layout style;
 }
 
-.section-32__groupimage-section img {
-  width: 100%;
-  height: auto;
-  display: block;
+.section-32__groupimage-section:has(.faq-section) {
+  z-index: 0;
 }
 
 .section-32__grouptext-overlay {
-  color: #fff;
-  position: absolute;
-  max-width: 50%;
-  width: 90%;
-  line-height: 2rem;
-  text-align: center;
-  font-family: sans-serif;
-  z-index: 100
+  z-index: 20;
+}
+
+.grouptext-overlay-Background {
+  z-index: 20;
+}
+
+.section-32__groupimage-section img {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  min-width: 100%;
 }
 
 .section-32__grouptext-overlay.left {
