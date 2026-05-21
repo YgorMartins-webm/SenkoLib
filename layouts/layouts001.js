@@ -34,7 +34,7 @@ SenkoLib.register([
   {
     id: 'section-1',
     name: 'Section-1 (Header Imagem)',
-    tags: ['header imagem', 'section-1', '1', 'section 1'],
+    tags: ['header imagem', 'section-1', '1', 'section 1', 'responsivo', 'acessível'],
     html: `<article style="width: 100%;" aria-labelledby="product-main-title"> <!-- fecha esse article lá no final do código, depois de todo conteúdo, e antes do fechamento da div.lp-container -->
     <section class="product-header" aria-label="Cabeçalho do produto">
   <header class="product-header__banner">
