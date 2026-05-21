@@ -1102,7 +1102,7 @@ SenkoLib.register([
   {
     id: 'section-6',
     name: 'Section-6',
-    tags: ['Section 6', 'Hero', '6'],
+    tags: ['Section 6', 'Hero', '6', 'responsivo', 'acessivel'],
     html: `    <section class="section-6" aria-label="Destaque do produto com texto">
       <picture>
         <source media="(max-width: 760px)"
