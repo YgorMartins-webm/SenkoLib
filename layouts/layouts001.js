@@ -449,9 +449,6 @@ SenkoLib.register([
 </style>`
   },
 
-
-
-
   /*@@@@Senko - section 39.3 (caderno) */
   /* variantes: variants/section 39.3 (caderno).js */
   {
@@ -708,313 +705,6 @@ SenkoLib.register([
     transform: translate3d(0px, 0px, 0px);
     /* Leve ajuste de posição */
   }
-</style>`
-  },
-
-  /*@@@@Senko - section-46 */
-  /* variantes: variants/section-46.js */
-  {
-    id: 'section-46',
-    name: 'Section-46',
-    tags: ['Imagem quadrada'],
-    html: `      <div class="section-46-y reverse-46 ">
-        <!--    AQUI É POSSIVEL TROCAR SE A IMAGEM FICA EM CIMA OU EM BAIXO TIRANDO A CLASSE "TROCAR-ORDEM-730PX"-->
-        <div class="section-46-y-img trocar-ordem-730px">
-          <img loading="lazy"
-            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao4.jpg"
-            alt="Imagem representativa do do produto">
-        </div>
-        <div class="section-46-y-content">
-
-          <!-- Título padrão-->
-          <h2>
-            Isso é um título. <br> Isso é um título.
-          </h2>
-          <!-- Descrição padrão-->
-          <p class="section-46-y-desc">
-            Isso é uma descrição gamer. Isso é uma descrição gamer.
-          </p>
-
-          <!-- título e Descrição com ícone -->
-          <div class="section-46-y-box reverse-icon-46">
-            <div class="section-46-y-box-icon reverse-icon-46">
-              <img
-                src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao47.jpg"
-                width="75" height="75" alt="Ícone de qualidade">
-            </div>
-            <div class="section-46-y-box-text">
-              <h3>Isso é um título.</h3>
-              <p>Isso é uma descrição gamer. Isso é uma descrição gamer.</p>
-            </div>
-          </div>
-
-          <!-- título e Descrição com ícone invertido -->
-          <div class="section-46-y-box reverse-icon">
-            <div class="section-46-y-box-icon">
-              <img
-                src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao47.jpg"
-                width="75" height="75" alt="Ícone de qualidade">
-            </div>
-            <div class="section-46-y-box-text">
-              <h3>Isso é um título.</h3>
-              <p>Isso é uma descrição gamer. Isso é uma descrição gamer.</p>
-            </div>
-          </div>
-        </div>
-      </div>`,
-    css: `<style>
-.section-46-y {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      text-align: left;
-    }
-
-    .section-46-y.reverse-46 {
-      flex-direction: row-reverse;
-
-    }
-
-    /* ===== IMAGEM ===== */
-    .section-46-y-img {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
-
-    .section-46-y-img img {
-      width: 100%;
-      max-width: 550px;
-      border-radius: 12px;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .section-46-y-img img:hover {
-      transform: scale(1.02);
-      /*aumentar/diminuir efeito que faz piscar a iamgem */
-    }
-
-    /* ===== CONTEÚDO ===== */
-    .section-46-y-content {
-      flex: 1;
-    }
-
-    .section-46-y-content h2 {
-      text-align: center;
-    }
-
-    .section-46-y-content p {
-      text-align: center;
-    }
-
-    /* ===== TITULO ===== */
-    .section-46-y-content h2 {
-      font-family: sans-serif;
-      font-size: clamp(22px, 3.2vw, 38px);
-      font-weight: 700;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-
-    /* ===== DESCRIÇÃO ===== */
-    .section-46-y-desc {
-      font-family: sans-serif;
-      font-size: clamp(14px, 1.4vw, 26px);
-      margin-bottom: 30px;
-      color: #1b1b1b;
-      line-height: 28px;
-    }
-
-    .section-46-y-box {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 25px;
-      padding: 12px;
-      border-radius: 10px;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-
-    .section-46-y-box:hover {
-      background: #29292936;
-      transform: translateY(-3px);
-    }
-
-    .section-46-y-box-icon img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-    }
-
-    .section-46-y-box-text h3 {
-      font-family: sans-serif;
-      font-size: clamp(16px, 2vw, 32px);
-      margin: 0 0 5px;
-      line-height: 1.1;
-    }
-
-    .section-46-y-box-text p {
-      font-family: sans-serif;
-      font-size: clamp(12px, 1.4vw, 22px);
-      color: #555;
-      margin: 0;
-      line-height: 1.1;
-    }
-
-    @media (max-width: 1060px) {
-
-      .section-46-y-content h1 {
-        font-size: 3.8vw;
-      }
-
-      .section-46-y-desc {
-        font-size: 1.8vw;
-      }
-
-      .section-46-y-box-text h3 {
-        font-size: 2.4vw;
-      }
-
-      .section-46-y-box-text p {
-        font-size: 1.8vw;
-      }
-    }
-
-    @media (max-width: 960px) {
-
-      .section-46-y-content h1 {
-        font-size: 4.3vw;
-      }
-
-      .section-46-y-desc {
-        font-size: 2vw;
-      }
-
-      .section-46-y-box-text h3 {
-        font-size: 2.7vw;
-      }
-
-      .section-46-y-box-text p {
-        font-size: 2.3vw;
-      }
-    }
-
-    @media (max-width: 730px) {
-
-      .section-46-y {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .section-46-y-box {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .section-46-y-content h1 {
-        font-size: 5vw;
-      }
-
-      .section-46-y-desc {
-        font-size: 2.7vw;
-      }
-
-      .section-46-y-box-text h3 {
-        font-size: 3.3vw;
-      }
-
-      .section-46-y-box-text p {
-        font-size: 2.5vw;
-        text-align: left;
-      }
-    }
-
-    @media (max-width: 800px) {
-
-      .section-46-y,
-      .section-46-y.reverse,
-      .section-46-y[data-order="invert"] {
-        flex-direction: column !important;
-        padding: 0 20px 40px 20px;
-      }
-
-      .section-46-y-img {
-        width: 81%;
-      }
-
-      .section-46-y-box,
-      .section-46-y-box.reverse-icon,
-      .section-46-y-box[data-icon-order="invert"] {
-        flex-direction: row !important;
-        text-align: center !important;
-      }
-
-      .section-46-y-box-text {
-        text-align: left !important;
-        margin-left: 8px;
-      }
-
-      .section-46-y-box-text p {
-        text-align: left !important;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .section-46-y-content h1 {
-        font-size: 6vw;
-      }
-
-      .section-46-y-desc {
-        font-size: 3.5vw;
-      }
-
-      .section-46-y-box-text h3 {
-        font-size: 4vw;
-        line-height: 1.1;
-      }
-
-      .section-46-y-box-text p {
-        font-size: 3.3vw;
-        line-height: 1.1;
-        text-align: left;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .section-46-y-content h1 {
-        font-size: 7vw;
-      }
-
-      .section-46-y-desc {
-        font-size: 4vw;
-      }
-
-      .section-46-y-box-text h3 {
-        font-size: 5vw;
-        line-height: 1.1;
-      }
-
-      .section-46-y-box-text p {
-        font-size: 3.8vw;
-        line-height: 1.1;
-        text-align: left;
-      }
-    }
-
-    .section-46-y.reverse-46 {
-      flex-direction: row-reverse;
-    }
-
-    .section-46-y-box.reverse-icon-46 {
-      flex-direction: row-reverse;
-      text-align: right;
-    }
 </style>`
   },
 
@@ -1421,180 +1111,6 @@ SenkoLib.register([
 </style>`
   },
 
-  /*@@@@Senko - section-33 */
-  /* variantes: variants/section-33.js */
-  {
-    id: 'section-33',
-    name: 'section-33',
-    tags: ['section-33', 'section 33', '33', 'video'],
-    html: `  <div class="section-33__container">
-    <section class="section-33__mov-section" aria-label="Seção de destaque em vídeo">
-      <figure class="section-33__mov-figure">
-        <video class="section-33__mov-figure__video" loading="lazy"
-          src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/metalfrio/2223537_video2.mov"
-          autoplay muted loop playsinline style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
-          aria-label="Vídeo de destaque do produto">
-          <track kind="descriptions" label="Descrição do vídeo"/>
-          Desculpe, mas o vídeo não pode ser carregado...
-        </video>
-      </figure>
-    </section>
-  </div>`,
-    css: `  <style>
-    .section-33__container {
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    .section-33__container--spaced {
-      margin-bottom: 50px;
-      align-self: center;
-    }
-
-    .section-33__mov-section {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .section-33__mov-figure {
-      position: relative;
-      width: 100%;
-      margin: 0;
-    }
-
-    .section-33__mov-figure__video {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-    }
-
-    /* Suporte a imagem como fallback */
-    .section-33__mov-figure__img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-  </style>`
-  },
-
-  /*@@@@Senko - section 41 */
-  /* variantes: variants/section 41.js */
-  {
-    id: 'section-41',
-    name: 'Section-41 (tabela)',
-    tags: ['tabela', 'section 41', '41', 'footer', 'semantico'],
-    html: `<footer>
-
-          <section class="table-container-custom" aria-label="tabela contendo produtos relacionados e citados dentre deste conteúdo">
-          <h1 class="table-text-custom">ITENS RELACIONADOS</h1><br />
-          <table class="table-design-custom">
-            <thead class="table-head-custom">
-               <tr class="table-tr-custom">
-                 <th class="table-text-custom table-th-custom" style="background-color: #fb8d00; border-radius: 10px 0 0 0;">SKU
-                 </th>
-                 <!--Replicar para adicionar mais COLUNAS-->
-                 <th class="table-text-custom table-th-custom" style="background-color: #fb8d00; border-radius: 0 10px 0 0;">TÍTULO
-                 </th>
-               </tr>
-             </thead>
-             <tbody>
-               <tr class="table-tr-custom">
-                 <td class="table-text-custom table-td-custom-title">SKU 1</td>
-                 <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 1</td>
-               </tr>
-               <tr class="table-tr-custom">
-                 <td class="table-text-custom table-td-custom-title">SKU 2</td>
-                 <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 2</td>
-               </tr>
-               <tr class="table-tr-custom">
-                 <td class="table-text-custom table-td-custom-title">SKU 3</td>
-                 <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 3</td>
-               </tr>
-               <tr class="table-tr-custom">
-                 <td class="table-text-custom table-td-custom-title ">SKU 4</td>
-                 <td class="table-text-custom table-td-custom-sub">DESCRIÇÃO DO PRODUTO 4</td>
-               </tr>
-             </tbody>
-           </table>
-         </section>
-        </footer>`,
-    css: `.table-container-custom {
-
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-    }
-
-  .table-design-custom {
-
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-    }
-
-  .table-head-custom {
-    color: rgb(255, 255, 255);
-    border-radius: 10px;
-
-    }
-
-  .table-text-custom {
-
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #979797;
-    font-family: sans-serif;
-     }
-
-  .table-row-custom:hover {
-
-    background-color: #f1f1f1;
-    filter: brightness(0.9);
-    }
-
-  .table-th-custom {
-
-    font-weight: bold;
-    }
-
-  .table-td-custom {
-
-    color: #555;
-    }
-
-  /* Efeito de zebrado nas linhas */
-
-  .table-tr-custom:nth-child(even) {
-
-    background-color: #f1f1f1;
-    }
-
-
- @media (max-width: 600px) {
-
-    .table-container-custom {
-
-      padding: 10px;
-    }
-
-    .table-text-custom,
-    .table-th-custom,
-    .table-td-custom {
-
-      padding: 8px;
-    }
-    }`
-  },
-
-
   /*@@@@Senko - section 39.1 (caderno) */
   /* variantes: variants/section 39.1 (caderno).js */
   {
@@ -1753,11 +1269,6 @@ SenkoLib.register([
 </style>`
   },
 
-
-
-
-
-
   /*@@@@Senko - section-6 */
   /* variantes: variants/section-6.js */
   {
@@ -1881,17 +1392,6 @@ SenkoLib.register([
         }
     </style>`
   },
-
-
-
-
-
-
-
-
-
-
-
 
   /*@@@@Senko - section-7 */
   /* variantes: variants/section-7.js */
@@ -2385,7 +1885,6 @@ SenkoLib.register([
 </style>`
   },
 
-
   /*@@@@Senko - section-8 */
   /* variantes: variants/section-8.js */
   {
@@ -2576,201 +2075,6 @@ SenkoLib.register([
   </style>`
   },
 
-
-
-
-  /*@@@@Senko - section-100 */
-  /* variantes: variants/section-100.js */
-  {
-    id: 'section-100',
-    name: 'section-100',
-    tags: ['section-100'],
-    html: `        <div class="pdp-row-product">
-            <div class="pdp-row-product-content">
-                <h3 class="pdp-product-title tw-text-2xl">
-                    A garantia de que o que está por trás das paredes nunca será um problema
-                </h3>
-                <p class="pdp-product-description">
-                    Ao escolher umw condutor que une a máxima segurança contra incêndios, a eficiência energética para seus equipamentos de alta potência e a flexibilidade necessária para uma instalação ágil, você garante a proteção do seu patrimônio e a tranquilidade de saber que sua estrutura elétrica foi feita para durar uma vida inteira, sem surpresas na conta de luz ou a necessidade de reformas precoces
-                </p>
-            </div>
-            <img loading="lazy" src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao4.jpg" alt="Eletricista com capacete branco e colete laranja em obra garantindo qualidade e segurança Corfio" class="pdp-row-product-image" />
-        </div>`,
-    css: `    <style>
-        .pdp-row-product {
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            width: 100%
-        }
-
-        .tw-text-2xl {
-            font-size: 32px;
-            font-weight: 600;
-            line-height: 40px
-        }
-
-        .pdp-product-title {
-            --tw-text-opacity: 1;
-            color: rgb(0 0 0/var(--tw-text-opacity));
-            max-width: 56rem;
-            text-align: center
-        }
-
-        .tw-text-lg {
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 28px
-        }
-
-        .pdp-product-description {
-            --tw-text-opacity: 1;
-            color: rgb(138 138 138/var(--tw-text-opacity));
-            font-size: 14px;
-            line-height: 22px;
-            margin-top: 1rem;
-            max-width: 56rem;
-            text-align: center
-        }
-
-        @media (min-width:576px) {
-            .pdp-row-product {
-                max-width: 576px
-            }
-
-            .tw-text-2xl {
-                font-size: 32px;
-            }
-        }
-
-        @media (min-width:768px) {
-            .pdp-row-product {
-                max-width: 768px
-            }
-
-            .tw-text-2xl {
-                font-size: 32px;
-            }
-
-        }
-
-
-
-        @media (min-width:992px) {
-            .pdp-row-product {
-                max-width: 992px
-            }
-
-            .tw-text-2xl {
-                font-size: 32px;
-            }
-        }
-
-        @media (min-width:1200px) {
-            .pdp-row-product {
-                max-width: 1200px
-            }
-
-            .tw-text-2xl {
-                font-size: 32px;
-            }
-        }
-
-        @media (min-width:1536px) {
-            .pdp-row-product {
-                max-width: 1536px
-            }
-
-            .tw-text-2xl {
-                font-size: 32px;
-            }
-        }
-
-        .pdp-row-product {
-            align-items: center;
-            display: flex;
-            gap: 1.5rem;
-            justify-content: space-between;
-            margin-top: 2rem
-        }
-
-        .reverse-row-product {
-            flex-direction: row-reverse;
-        }
-
-        @media not all and (min-width:992px) {
-            .pdp-row-product {
-                flex-direction: column-reverse
-            }
-        }
-
-        @media (min-width:992px) {
-            .pdp-row-product {
-                gap: 6rem
-            }
-        }
-
-        .pdp-row-product-image {
-            max-width: 30rem;
-            object-fit: contain;
-            width: 100%;
-            border-radius: 20px;
-        }
-
-        .pdp-row-product-content {
-            display: flex;
-            flex-direction: column;
-            max-width: 28rem;
-            width: 100%
-        }
-
-        .pdp-row-product-content * {
-            text-align: left
-        }
-
-        @media (min-width:992px) {
-            .pdp-row-product.is-reverse .pdp-row-product-image {
-                order: 1
-            }
-
-            .pdp-row-product.is-reverse .pdp-row-product-content {
-                order: 2
-            }
-        }
-
-        .pdp-row-product-content {
-            display: flex;
-            flex-direction: column;
-            max-width: 28rem;
-            width: 100%
-        }
-
-        .pdp-row-product-content * {
-            text-align: left
-        }
-
-        @media (min-width:992px) {
-            .pdp-row-product.is-reverse .pdp-row-product-image {
-                order: 1
-            }
-
-            .pdp-row-product.is-reverse .pdp-row-product-content {
-                order: 2
-            }
-        }
-
-        @media (max-width:768px) {
-            .pdp-row-product-image {
-                width: 100%;
-                aspect-ratio: 9 / 6;
-                object-fit: cover;
-            }
-        }
-    </style>`
-  },
-
-
   /*@@@@Senko - section-11 */
   /* variantes: variants/section-11.js */
   {
@@ -2914,7 +2218,6 @@ SenkoLib.register([
         }
     </style>`
   },
-
 
   /*@@@@Senko - section-12 */
   /* variantes: variants/section-12.js */
@@ -3261,7 +2564,6 @@ SenkoLib.register([
     }
   </style>`
   },
-
 
   /*@@@@Senko - section-14 */
   /* variantes: variants/section-14.js */
@@ -3975,7 +3277,6 @@ SenkoLib.register([
   </style>`
   },
 
-
 /*@@@@Senko - carrossel-com-nav */
   /* variantes: variants/carrossel-com-nav.js */
   {
@@ -4289,7 +3590,6 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
      }`
   },
 
-
 /*@@@@Senko - section-21 */
   /* variantes: variants/section-21.js */
   {
@@ -4551,7 +3851,6 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
 
 `
   },
-
 
 /*@@@@Senko - section-19-carrossel-grid */
   /* variantes: variants/section-19-carrossel-grid.js */
@@ -4983,7 +4282,6 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
 </style>`
   },
 
-
 /*@@@@Senko - section-20 */
   /* variantes: variants/section-20.js */
   {
@@ -5163,7 +4461,6 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
     }
 </style>`
   },
-
 
 /*@@@@Senko - section-22 */
   /* variantes: variants/section-22.js */
