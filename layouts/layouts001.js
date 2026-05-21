@@ -1111,7 +1111,7 @@ SenkoLib.register([
         <img class="section-6__image"
           src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/section-49-1.png"
           alt="Caderno Funny Cat com estampa de gatinhos, capa colorida e espiral" width="1600" height="650"
-          loading="lazy" fetchpriority="high" decoding="async">
+          loading="lazy" fetchpriority="low" decoding="async"> 
       </picture>
       <div class="section-6__content">
         <h2 class="section-6__title">Caderno Funny Cat</h2>
@@ -1124,7 +1124,7 @@ SenkoLib.register([
             --pos-y: 50%;
             --pos-x: 7%;
             --color-title: #ffe178;
-            --bg-box: rgba(0, 0, 0, 0.33);
+            --bg-box: rgba(0, 0, 0, 0.55);
 
             width: 100%;
             position: relative;
@@ -1173,7 +1173,7 @@ SenkoLib.register([
 
         /* ===== MOBILE ===== */
         @media (max-width: 760px) {
-            .section-6__ {
+            .section-6{
                 border-radius: 0;
             }
 
