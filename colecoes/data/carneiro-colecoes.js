@@ -3496,7 +3496,7 @@ ColLib.register({
       css:  ``,
     },
 
-    /*@@@@Col - padrao-5-cabos */
+        /*@@@@Col - padrao-5-cabos */
     {
       id:   'padrao-5-cabos',
       name: 'Padrão 5 - Cabos',
@@ -4433,9 +4433,9 @@ ColLib.register({
 
             <article class="product-header__body">
                 <small class="product-header__brand">corfio</small>
-                <h1 class="product-header__title">
+                <h2 class="product-header__title">
                     Cabo Flexível Bobina 2,5mm 1100m 750V Branco
-                </h1>
+                </h2>
                 <p class="product-header__subtitle">
                     Garanta agilidade na obra com o Cabo Flexível Corfio 2,5mm². Desenvolvido com encordoamento classe
                     4/5 para maior flexibilidade e deslizamento, ele é a escolha perfeita para redes de distribuição em
