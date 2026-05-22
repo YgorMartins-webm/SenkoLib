@@ -2780,7 +2780,7 @@ SenkoLib.register([
   
   .section-15 {
       display: flex;
-      flex-direction: column; /* ← era column-reverse */
+      flex-direction: column-reverse;
       gap: 1.25rem;
       margin: 0 auto;
       width: 100%;
