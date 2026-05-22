@@ -4473,7 +4473,7 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
   /* variantes: variants/sessao-3-card-flip.js */
   {
     id: 'sessao-3-card-flip',
-    name: 'secton-3 - card flip',
+    name: 'section-3 - card flip',
     tags: ['section-3', '3', 'card', 'flip', 'card flip', 'resoponsivo', 'acessível'],
     html: `<section class="section-24-2" aria-labelledby="section-24-2-title">
   <header class="section-24-2__header">
