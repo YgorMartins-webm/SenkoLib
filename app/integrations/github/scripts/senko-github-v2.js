@@ -32,6 +32,7 @@
 ═══════════════════════════════════════════════════════════════════════ */
 
 var GH_CONFIG_KEY = 'senkolib_github_config';
+var GH_LAYOUTS_DIR = 'app/features/biblioteca/data/layouts';
 
 var GITHUB_CONFIG = (function () {
   var hostname = window.location.hostname;
@@ -349,7 +350,7 @@ function githubSaveLayout(layoutId, objectCode) {
 
   ghSetStatus('Buscando arquivo…', 'saving');
 
-  return githubListDir('layouts').then(function (entries) {
+  return githubListDir(GH_LAYOUTS_DIR).then(function (entries) {
     var jsFiles = entries.filter(function (e) {
       return e.type === 'file' && e.name.endsWith('.js');
     });
@@ -457,7 +458,7 @@ function githubSaveNewLayout(fileName, objectCode, layoutId) {
 
   ghSetStatus('Lendo arquivo…', 'saving');
 
-  return githubGetFile('app/features/biblioteca/data/layouts/' + fileName).then(function (data) {
+  return githubGetFile(GH_LAYOUTS_DIR + '/' + fileName).then(function (data) {
     var content = data.content;
     var sha     = data.sha;
 
@@ -485,7 +486,7 @@ function githubSaveNewLayout(fileName, objectCode, layoutId) {
     ghSetStatus('Salvando no GitHub…', 'saving');
 
     return githubPutFile(
-      'app/features/biblioteca/data/layouts/' + fileName,
+      GH_LAYOUTS_DIR + '/' + fileName,
       newContent,
       sha,
       '[SenkoLib] add layout: ' + layoutId
@@ -508,9 +509,9 @@ function githubSaveNewLayout(fileName, objectCode, layoutId) {
         : [];
 
       SenkoLib.register([{ id: layoutId, name: name, tags: tags, html: html, css: css }]);
-      ghSetStatus('✓ Salvo em app/features/biblioteca/data/layouts/' + fileName, 'ok');
+      ghSetStatus('✓ Salvo em ' + GH_LAYOUTS_DIR + '/' + fileName, 'ok');
       ghUnlockSave();
-      ghStartDeployWatch('app/features/biblioteca/data/layouts/' + fileName);
+      ghStartDeployWatch(GH_LAYOUTS_DIR + '/' + fileName);
       renderGrid();
       return fileName;
     });
