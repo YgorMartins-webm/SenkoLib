@@ -9,6 +9,7 @@
     $('html-input').addEventListener('input', updateHtmlHint);
 
     $('source-multiplier').addEventListener('change', refreshAllCards);
+    $('skip-last-multiplier').addEventListener('change', refreshAllCards);
     $('source-breakpoints').addEventListener('change', runAnalysis);
     $('measurement-mode').addEventListener('change', () => {
       updateMeasurementModeUI();
@@ -100,6 +101,7 @@
     return {
       breakpoints,
       multiplier: Number($('source-multiplier').value) || 1.9,
+      skipLastMultiplier: $('skip-last-multiplier').checked,
     };
   }
 
@@ -609,14 +611,25 @@ ${richHtml}
     // Toda alteracao de medida ou multiplicador recalcula imediatamente o picture do card.
     const meta = card._imgscopeMeta;
     const config = getSourceConfig();
-    const entries = Array.from(card.querySelectorAll('[data-measure-bp]'))
-      .map(input => {
-        const bp = Number(input.dataset.measureBp);
-        const measured = Number(String(input.value || '').replace(',', '.'));
-        const ims = measured > 0 ? Math.ceil(measured * config.multiplier) : null;
-        const calc = card.querySelector(`[data-calc-bp="${bp}"]`);
+    const measureRows = Array.from(card.querySelectorAll('[data-measure-bp]'))
+      .map(input => ({
+        bp: Number(input.dataset.measureBp),
+        measured: Number(String(input.value || '').replace(',', '.')),
+      }))
+      .filter(row => Number.isInteger(row.bp) && row.bp > 0)
+      .sort((a, b) => a.bp - b.bp);
+    const measuredRows = measureRows.filter(row => row.measured > 0);
+    const lastMeasureBp = measuredRows.length ? measuredRows[measuredRows.length - 1].bp : null;
+
+    const entries = measureRows
+      .map(row => {
+        const skipMultiplier = config.skipLastMultiplier && row.bp === lastMeasureBp;
+        const ims = row.measured > 0
+          ? Math.ceil(skipMultiplier ? row.measured : row.measured * config.multiplier)
+          : null;
+        const calc = card.querySelector(`[data-calc-bp="${row.bp}"]`);
         if (calc) calc.textContent = ims ? `?ims=${ims}x` : '?ims=-';
-        return { bp, measured, ims };
+        return { bp: row.bp, measured: row.measured, ims };
       })
       .filter(entry => entry.ims)
       .sort((a, b) => a.bp - b.bp);
