@@ -4242,7 +4242,7 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
   
   .section-15 {
       display: flex;
-      flex-direction: column; /* ← era column-reverse */
+      flex-direction: column-reverse;
       gap: 1.25rem;
       margin: 0 auto;
       width: 100%;
