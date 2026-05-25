@@ -15,517 +15,27 @@ ColLib.register({
             
                         
         
-                        /*@@@@Col - comp-p-3b-faqe-vh-tb */
+                            /*@@@@Col - comp-p-3b-faqe-vh-tb */
     {
       id:   'comp-p-3b-faqe-vh-tb',
       name: 'comp - 3 blocos faq embutido video header e tabela',
-      html: `<div class="lp-container">
-  <style>  
-
-    *{
-    margin: 0;
-    padding: 0;
-  }
-
-   body {
-
-      margin: 0;
-    }
-
-    .tw-container {
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      width: 100%
-    }
-
-    @media (min-width:576px) {
-
-      .tw-container {
-
-        max-width: 576px
-      }
-    }
-
-    @media (min-width:768px) {
-
-      .tw-container {
-
-        max-width: 768px
-      }
-    }
-
-    @media (min-width:992px) {
-
-      .tw-container {
-
-        max-width: 992px
-      }
-    }
-
-    @media (min-width:1200px) {
-
-      .tw-container {
-
-        max-width: 1200px
-      }
-    }
-
-    @media (min-width:1536px) {
-
-      .tw-container {
-
-        max-width: 1536px
-      }
-    }
-
-    .tw-absolute {
-
-      position: absolute
-    }
-
-    .tw-relative {
-
-      position: relative
-    }
-
-    .-tw-bottom-16 {
-
-      bottom: -4rem
-    }
-
-    .tw-left-0 {
-
-      left: 0
-    }
-
-    .tw-top-0 {
-
-      top: 0
-    }
-
-    .tw-z-0 {
-
-      z-index: 0
-    }
-
-    .tw-z-10 {
-
-      z-index: 10
-    }
-
-    .tw-col-span-2 {
-
-      grid-column: span 2/span 2
-    }
-
-    .tw-m-0 {
-
-      margin: 0
-    }
-
-    .tw-my-16 {
-
-      margin-bottom: 4rem;
-      margin-top: 4rem
-    }
-
-    .tw-my-8 {
-
-      margin-bottom: 2rem;
-      margin-top: 2rem
-    }
-
-    .tw-mb-1 {
-
-      margin-bottom: .25rem
-    }
-
-    .tw-mb-6 {
-
-      margin-bottom: 1.5rem
-    }
-
-    .tw-mt-16 {
-
-      margin-top: 4rem
-    }
-
-    .tw-mt-4 {
-
-      margin-top: 1rem
-    }
-
-    .tw-mt-8 {
-
-      margin-top: 2rem
-    }
-
-    .tw-flex {
-
-      display: flex
-    }
-
-    .tw-grid {
-
-      display: grid
-    }
-
-    .tw-h-14 {
-
-      height: 3.5rem
-    }
-
-    .tw-h-32 {
-
-      height: 8rem
-    }
-
-    .tw-h-5 {
-
-      height: 1.25rem
-    }
-
-    .tw-h-56 {
-
-      height: 14rem
-    }
-
-    .tw-h-6 {
-
-      height: 1.5rem
-    }
-
-    .tw-h-64 {
-
-      height: 16rem
-    }
-
-    .tw-h-25rem {
-
-      height: 25rem
-    }
-
-    .tw-h-31-25rem {
-
-      height: 31.25rem
-    }
-
-    .tw-h-32rem {
-
-      height: 32rem
-    }
-
-    .tw-h-full {
-
-      height: 100%
-    }
-
-    .tw-w-14 {
-
-      width: 3.5rem
-    }
-
-    .tw-w-32 {
-
-      width: 8rem
-    }
-
-    .tw-w-5 {
-
-      width: 1.25rem
-    }
-
-    .tw-w-6 {
-
-      width: 1.5rem
-    }
-
-    .tw-w-full {
-
-      width: 100%
-    }
-
-    .tw-max-w-6rem {
-
-      max-width: 6rem
-    }
-
-    .tw-max-w-md {
-
-      max-width: 28rem
-    }
-
-    .tw-max-w-sm {
-
-      max-width: 24rem
-    }
-
-    .tw-max-w-xl {
-
-      max-width: 36rem
-    }
-
-    .tw-select-none {
-
-      -webkit-user-select: none;
-      user-select: none
-    }
-
-    .tw-list-none {
-
-      list-style-type: none
-    }
-
-    .tw-grid-cols-1 {
-
-      grid-template-columns: repeat(1, minmax(0, 1fr))
-    }
-
-    .tw-flex-col {
-
-      flex-direction: column
-    }
-
-    .tw-items-end {
-
-      align-items: flex-end
-    }
-
-    .tw-items-center {
-
-      align-items: center
-    }
-
-    .tw-justify-end {
-
-      justify-content: flex-end
-    }
-
-    .tw-justify-center {
-
-      justify-content: center
-    }
-
-    .tw-justify-between {
-
-      justify-content: space-between
-    }
-
-    .tw-gap-10 {
-
-      gap: 2.5rem
-    }
-
-    .tw-gap-14 {
-
-      gap: 3.5rem
-    }
-
-    .tw-gap-4 {
-
-      gap: 1rem
-    }
-
-    .tw-gap-y-4 {
-
-      row-gap: 1rem
-    }
-
-    .tw-rounded {
-
-      border-radius: .25rem
-    }
-
-    .tw-rounded-2xl {
-
-      border-radius: 1rem
-    }
-
-    .tw-rounded-full {
-
-      border-radius: 9999px
-    }
-
-    .tw-rounded-lg {
-
-      border-radius: .5rem
-    }
-
-    .tw-rounded-t {
-
-      border-top-left-radius: .25rem;
-      border-top-right-radius: .25rem
-    }
-
-    .tw-border-t {
-
-      border-top-width: 1px
-    }
-
-    .tw-border-solid {
-
-      border-style: solid
-    }
-
-    .tw-border-transparent {
-
-      border-color: transparent
-    }
-
-    .tw-bg-gray-900 {
-
-      --tw-bg-opacity: 1;
-      background-color: rgb(46 53 56/var(--tw-bg-opacity))
-    }
-
-    .tw-bg-primary {
-
-      --tw-bg-opacity: 1;
-      background-color: rgb(255 153 0/var(--tw-bg-opacity))
-    }
-
-    .tw-bg-white {
-
-      --tw-bg-opacity: 1;
-      background-color: rgb(255 255 255/var(--tw-bg-opacity))
-    }
-
-    .tw-object-contain {
-
-      object-fit: contain
-    }
-
-    .tw-object-cover {
-
-      object-fit: cover
-    }
-
-    .tw-p-3 {
-
-      padding: .75rem
-    }
-
-    .tw-p-5 {
-
-      padding: 1.25rem
-    }
-
-    .tw-p-6 {
-
-      padding: 1.5rem
-    }
-
-    .tw-p-8 {
-
-      padding: 2rem
-    }
-
-    .tw-py-10 {
-
-      padding-bottom: 2.5rem;
-      padding-top: 2.5rem
-    }
-
-    .tw-pl-0 {
-
-      padding-left: 0
-    }
-
-    .tw-pt-8 {
-
-      padding-top: 2rem
-    }
-
-    .tw-text-center {
-
-      text-align: center
-    }
-
-    .tw-font-roboto {
-
-      font-family: Roboto, sans-serif
-    }
-
-    .tw-text-2xl {
-
-      font-size: 32px;
-      font-weight: 600;
-      line-height: 40px
-    }
-
-    .tw-text-lg {
-
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 28px
-    }
-
-    .tw-text-md {
-
-      font-size: 16px;
-      line-height: 24px
-    }
-
-    .tw-text-sm {
-
-      font-size: 14px;
-      line-height: 22px
-    }
-
-    .tw-text-xs {
-
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 16px
-    }
-
-    .tw-uppercase {
-
-      text-transform: uppercase
-    }
-
-    .tw-text-black {
-
-      --tw-text-opacity: 1;
-      color: rgb(0 0 0/var(--tw-text-opacity))
-    }
-
-    .tw-text-gray-500 {
-
-      --tw-text-opacity: 1;
-      color: rgb(138 138 138/var(--tw-text-opacity))
-    }
-
-    .pdp {
-
-      display: flex;
-      flex-direction: column;
-      font-family: Roboto, sans-serif
-    }
-
-    .pdp * {
-
-      box-sizing: border-box;
-      margin: 0;
-    }
-
-    .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+      html: `    <div class="lp-container">
+<style>
+* {
+  margin: 0;
   padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
 
-     .video-header {
+video-header,
+  .video-header * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .video-header {
     --badge-size: 8rem;
     --banner-height: 250px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -606,254 +116,391 @@ ColLib.register({
     max-width: 52rem;
     text-wrap: pretty;
   }
-  
-    .section-32__container {
-      width: 100%;
-      max-width: 1600px;
-      margin: 0 auto;
-      border: 5.5px solid #000;
-      border-radius: 36px;
-    }
 
-    .section-32__groupimage-section {
-      position: relative;
-      width: 100%;
-      margin: 0;
-      contain: layout style;
-    }
+.section-32__container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  border: 5.5px solid #000;
+  border-radius: 36px;
+}
 
-    .section-32__groupimage-section img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+.section-32__groupimage-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0;
+  contain: layout style;
+}
 
-    .section-32__grouptext-overlay {
-      color: #ffffff;
-      position: absolute;
-      max-width: 45%;
-      width: 90%;
-      line-height: 2rem;
-      text-align: center;
-      font-family: sans-serif
-    }
+.section-32__groupimage-section:has(.faq-section) {
+  z-index: 0;
+}
 
-    .section-32__grouptext-overlay.top {
-      top: 3%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+.section-32__grouptext-overlay {
+  z-index: 20;
+}
 
-    .section-32__grouptext-overlay.bottom {
-      top: 75%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+.grouptext-overlay-Background {
+  z-index: 20;
+}
 
-    .section-32__grouptext-overlay.left {
-      top: 50%;
-      left: 25%;
-      transform: translate(-50%, -50%);
-      max-width: 41%;
-    }
+.section-32__groupimage-section img {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  min-width: 100%;
+}
 
-    .section-32__grouptext-overlay.right {
-      top: 25%;
-      left: 75%;
-      transform: translate(-50%, -50%);
-      max-width: 42%;
-    }
+.section-32__grouptext-overlay {
+  color: #fff;
+  position: absolute;
+  max-width: 50%;
+  width: 90%;
+  line-height: 2rem;
+  text-align: center;
+  font-family: sans-serif;
+}
 
-    .section-32__grouptext-overlay h2 {
-      font-size: 2vw;
-      font-weight: bold;
-      margin-bottom: 1.5px;
-      line-height: 120%;
-    }
+.section-32__grouptext-overlay.left {
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  max-width: 45%;
+}
 
-    .section-32__grouptext-overlay p {
-      font-size: 1.2vw;
-      margin: 0;
-      line-height: 120%;
-    }
+.section-32__grouptext-overlay h2 {
+  font-size: 2vw;
+  font-weight: bold;
+  margin-bottom: 1.5px;
+  line-height: 120%;
+}
 
-    .grouptext-overlay-Background {
-        background: rgba(0, 0, 0, 0.438);
-        border-radius: 4.5vw;
-        padding: 0.5rem;
-        backdrop-filter: blur(0.5vw);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        -webkit-backdrop-filter: blur(0.5vw);
+.section-32__grouptext-overlay p {
+  font-size: 1.2vw;
+  margin: 0;
+  line-height: 120%;
+}
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        max-width: 70%;
-        z-index: 100;
-    }
+.grouptext-overlay-Background {
+  background: rgba(0, 0, 0, 0.438);
+  border-radius: 2.8vw;
+  padding: 0.5rem;
+  backdrop-filter: blur(0.5vw);
+  -webkit-backdrop-filter: blur(0.5vw);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 70%;
+  z-index: 100;
+}
 
-    .p__end {
-      color: #8a8a8a;
-      font-family: sans-serif;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      text-wrap: pretty;
-      text-align: center;
-      padding: 40px 0;
+.features-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 40px;
+  padding: 60px 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  font-family: sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-    }
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
 
-        .faq-section {
-            width: 100%;
-            padding: 2rem 16px;
-            box-sizing: border-box;
-            margin: 0 auto 25px;
-            padding-top: 0;
-            font-family: sans-serif;
-            position: absolute; 
-            top: 20%; 
-            left: 5%; 
-            right: 5%; 
-            background: rgba(255, 255, 255, 0.014);
-            border-radius: 40px; 
-            max-width: 75%; 
-            z-index: 10; 
-            border: 1px solid #ffffff;
-            max-height: 75vh;
-            overflow-y: scroll;
-            -webkit-overflow-scrolling: touch;
-        }
+.section-header h2 {
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
 
-        .faq-section__header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
 
-        .faq-section__title {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: bold;
-            color: #ffffff;
-            margin: 0 0 0px;
-            line-height: 6vw;
-        }
+.column,
+.image-display {
+  display: flex;
+  flex-direction: column;
+}
 
-        .faq-section__subtitle {
-            font-size: 1rem;
-            color: #ffffff;
-            margin: 0;
-        }
+.column {
+  gap: 30px;
+}
 
-        .faq-section__list {
-            list-style: none;
-            margin: 0 auto;
-            padding: 0;
-            max-width: 56rem;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
+.image-display {
+  align-items: center;
+  gap: 40px;
+}
 
-        .faq-section__item {
-            background: #ffffff05;
-            border: 1px solid #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-        }
+.circle-frame {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 780 / 740;
+  border-radius: 50%;
+  border: 5px solid #1d2637;
+  overflow: hidden;
+  position: relative;
+  background: #eee;
+  box-shadow: 0 05px 10px #090d14;
+}
 
-        .faq-section__item summary {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 16px 20px;
-            cursor: pointer;
-            list-style: none;
-        }
+.circle-frame picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
 
-        .faq-section::-webkit-scrollbar {
-         width: 8px;
-            }
-        .faq-section::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.1);
-           border-radius: 10px;
-            }
-        .faq-section::-webkit-scrollbar-thumb {
-           background: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-              }
-        .faq-section::-webkit-scrollbar-thumb:hover {
-             background: rgba(255, 255, 255, 0.5);
-        }
+.circle-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-        .faq-section__item summary::-webkit-details-marker {
-            display: none;
-        }
+.feature-card {
+  display: block;
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  border: 2px solid #eee;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  box-shadow: 0 05px 10px #090d14;
+}
 
-        .faq-section__item summary:hover {
-            background: #f9f9f92f;
-        }
+.feature-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: #1d2637;
+  font-weight: 550;
+  line-height: 2.2vh;
+}
 
-        .faq-section__q-text {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #ffffff;
-            flex: 1;
-        }
+.feature-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
 
-          .faq-section__q-text:hover {
-            color: #00ff6e;
-        }
+.feature-card:hover,
+.feature-card:focus-visible {
+  background-color: #f9fbff;
+  transform: translateY(-8px);
+  box-shadow: 0 10px 15px #090d14;
+}
 
-        .faq-section__icon {
-            width: 20px;
-            height: 20px;
-            flex-shrink: 0;
-            position: relative;
-        }
+.feature-card:focus-visible {
+  outline: 3px solid #1d2637;
+  outline-offset: 5px;
+}
 
-        .faq-section__icon::before,
-        .faq-section__icon::after {
-            content: '';
-            position: absolute;
-            background: #888;
-            border-radius: 2px;
-            transition: transform 0.25s ease, opacity 0.25s ease;
-        }
+#feat1:checked ~ .grid-container .img1,
+#feat2:checked ~ .grid-container .img2,
+#feat3:checked ~ .grid-container .img3 {
+  opacity: 1;
+  z-index: 2;
+}
 
-        .faq-section__icon::before {
-            width: 12px;
-            height: 1.5px;
-            top: 9px;
-            left: 4px;
-        }
+#feat1:checked ~ .grid-container label[for="feat1"],
+#feat2:checked ~ .grid-container label[for="feat2"],
+#feat3:checked ~ .grid-container label[for="feat3"] {
+  border-color: #1d2637;
+  background-color: #f9fbff;
+}
 
-        .faq-section__icon::after {
-            width: 1.5px;
-            height: 12px;
-            top: 4px;
-            left: 9px;
-        }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 
-        .faq-section__item[open] .faq-section__icon::after {
-            transform: rotate(90deg);
-            opacity: 0;
-        }
+.faq-section {
+  width: 100%;
+  padding: 0 16px 2rem;
+  box-sizing: border-box;
+  margin: 0 auto 25px;
+  font-family: sans-serif;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  right: 5%;
+  background: rgba(255, 255, 255, 0.014);
+  border-radius: 40px;
+  max-width: 75%;
+  z-index: 10;
+  border: 1px solid #fff;
+  max-height: 55vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
 
-        .faq-section__a-inner {
-            padding: 14px 20px 16px;
-            border-top: 1px solid #e5e5e5;
-        }
+.faq-section__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
-        .faq-section__a-text {
-            font-size: 0.9rem;
-            color: #ffffff;
-            line-height: 1.6;
-            margin: 0;
-            font-weight: 500;
-        }
+.faq-section__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+  line-height: 6vw;
+}
 
-        .table-container-custom {
+.faq-section__subtitle {
+  font-size: 1rem;
+  color: #fff;
+  margin: 0;
+}
+
+.faq-section__list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 56rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.faq-section__item {
+  background: #ffffff05;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faq-section__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-section__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-section__item summary:hover {
+  background: #f9f9f92f;
+}
+
+.faq-section__q-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  flex: 1;
+}
+
+.faq-section__q-text:hover {
+  color: #ffb81c;
+}
+
+.faq-section__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.faq-section__icon::before,
+.faq-section__icon::after {
+  content: "";
+  position: absolute;
+  background: #888;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.faq-section__icon::before {
+  width: 12px;
+  height: 1.5px;
+  top: 9px;
+  left: 4px;
+}
+
+.faq-section__icon::after {
+  width: 1.5px;
+  height: 12px;
+  top: 4px;
+  left: 9px;
+}
+
+.faq-section__item details[open] .faq-section__icon::after {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.faq-section__a-inner {
+  padding: 14px 20px 16px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.faq-section__a-text {
+  font-size: 0.9rem;
+  color: #fff;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+}
+
+.faq-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.faq-section::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.faq-section::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.faq-section::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.p__end {
+  color: #8a8a8a;
+  font-family: sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  text-wrap: pretty;
+  text-align: center;
+  padding: 40px 0;
+}
+
+ .table-container-custom {
 
     background-color: #fff;
     padding: 20px;
@@ -922,22 +569,27 @@ ColLib.register({
     background-color: #f1f1f1;
   }
 
+@media (prefers-contrast: more) {
+   .p__end,
+  .video-header__subtitle {
+    color: #000;
+  }
 
-    @media (prefers-contrast: more) {
+  .grouptext-overlay-Background {
+    background: #000;
+  }
 
-      .p__end {
-        color: #000;
-      }
+  .video-header__brand {
+    color: #3a2301;
+  }
 
-      .grouptext-overlay-Background {
-        background: rgb(0, 0, 0);
-      }
+  .faq-section__a-text {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+  }
 
-      .video-header__subtitle {
-        color: #000;
-      }
-
-      .table-td-custom-sub
+        .table-td-custom-sub
       {
         color: #000;
         font-weight: 550;
@@ -948,107 +600,78 @@ ColLib.register({
         color: #000;
         font-weight: 700;
       } 
-      
+}
 
-       .faq-section__a-text {
-            font-size: 1.0rem;
-            font-weight: bold;
-            color: #000000;
-        }
-
-              .video-header__brand {
-        color:#3a2301
-      }
-     
-    }
-
-    @media (max-width: 360px) {
-        .section-32__grouptext-overlay h2 {
-          font-size: 3vw;
-        }
-
-        .section-32__grouptext-overlay p {
-          font-size: 2.8vw;
-        }
-
-
-
-        
-    }
-
-    @media (max-width: 470px) {  
-
-        .video-header__subtitle {
-        text-align: justify;
-        font-size: clamp(0.9rem, 2vw, 1.5rem);
-        font-weight: 550;
-        
-      }
-
-      .section-32__grouptext-overlay h2 {
-          font-size: 3vw;
-        }
-
-      .section-32__grouptext-overlay p {
-          font-size: 2.4vw;
-        }
-
-      .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-      .section-32__grouptext-overlay.bottom {
-          top: 81%
-        }
-
-      .section-32__grouptext-overlay.right {
-          top: 35%;
-          left: 73%;
-          transform: translate(-50%, -50%);
-        }
-
-        .section-32__grouptext-overlay.left {
-          top: 50%;
-          left: 27%;
-          transform: translate(-50%, -50%);
-        }
-
-            .faq-section {
-        max-height: 180px !important;
-        padding: 0.5rem 8px !important;
-        top: 5% !important;
-        max-width: 90%;
-        border-radius: 20px;
-    }
-
+@media (max-width: 1060px) {
+  .faq-section {
+    top: 10%;
+    max-width: 90%;
+    max-height: 80%;
   }
 
-    @media (max-width: 500px) {
-        .section-32__grouptext-overlay h2 {
-          font-size: 3vw;
-        }
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-        .section-32__grouptext-overlay p {
-          font-size: 2.3vw;
-        }
+  .image-display {
+    grid-row: 1;
+  }
 
-        .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
+  .circle-frame {
+    max-width: 320px;
+  }
 
-          .section-32__grouptext-overlay.bottom {
-          top: 67%;
-        }
+  .column {
+    order: 2;
+  }
+}
 
-        .faq-section__q-text {
-                font-size: 0.9rem;
-            }
-        
-    }
+@media (max-width: 960px) {
+  .section-32__grouptext-overlay h2 {
+    font-size: 2.1vw;
+  }
 
-    @media (max-width: 600px) {
+  .section-32__grouptext-overlay p {
+    font-size: 1.5vw;
+  }
+}
 
-    .table-container-custom {
+@media (max-width: 768px) {
+  .section-32__grouptext-overlay h2 {
+    font-size: 2.5vw;
+  }
+
+  .section-32__grouptext-overlay p {
+    font-size: 2vw;
+  }
+
+  .video-header {
+    --banner-height: 180px;
+  }
+
+  .faq-section__header {
+    margin-bottom: 1rem;
+  }
+
+  .faq-section__a-text {
+    font-size: 0.7rem !important;
+  }
+
+  .faq-section__title {
+    font-size: 1rem !important;
+  }
+
+  .faq-section__subtitle,
+  .faq-section__q-text {
+    font-size: 0.75rem !important;
+  }
+}
+
+ @media (max-width: 600px) {
+
+
+        .table-container-custom {
 
       padding: 10px;
     }
@@ -1061,204 +684,167 @@ ColLib.register({
     }
     }
 
-    @media (max-width: 768px) {
+@media (max-width: 500px) {
+  .section-32__grouptext-overlay h2 {
+    font-size: 3vw;
+  }
 
-      .section-32__grouptext-overlay h2 {
-          font-size: 2.5vw;
-        }
+  .section-32__grouptext-overlay p {
+    font-size: 2.3vw;
+  }
 
-      .section-32__grouptext-overlay p {
-          font-size: 2vw;
-        }
+  .section-32__grouptext-overlay {
+    max-width: 50%;
+  }
+}
 
-      .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
+@media (max-width: 470px) {
+  .video-header__subtitle {
+    text-align: justify;
+    font-size: clamp(0.9rem, 2vw, 1.5rem);
+    font-weight: 550;
+  }
 
-      .section-32__grouptext-overlay.bottom {
-          top: 76%;
-        }
+  .section-32__grouptext-overlay p {
+    font-size: 2.4vw;
+  }
 
-    .video-header {
-        --banner-height: 180px;
-      }
-        .faq-section__header {
-    text-align: center;
-    margin-bottom: 1rem;
-    }
+  .faq-section {
+    max-height: 180px !important;
+    padding: 0.5rem 8px !important;
+    top: 5% !important;
+    max-width: 90%;
+    border-radius: 20px;
+  }
+}
 
-    
-    .faq-section__a-text {
-        font-size: 0.7rem !important;
-    }
+@media (max-width: 375px) {
+  .section-32__grouptext-overlay p {
+    font-size: 2.8vw;
+  }
+}
+</style>
+  <article style="width: 100%;" aria-labelledby="video-main-title">
+  <section class="video-header" aria-label="Cabeçalho do produto">
+    <header class="video-header__banner">
+      <video class="video-header__banner-video"
+        poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/poster-sata-engrenagens-peças-mecanicas-girando.jpg"
+        preload="none" autoplay muted loop playsinline width="1200" height="250" aria-hidden="true">
+        <source src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/sata/header-sata.mov">
+      </video>
+      <div class="video-header__badge" role="img" aria-label="Logo da marca sata dentro de um círculo laranja">
+        <img
+          src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/sata/logo-sata.png"
+          alt=""
+          class="video-header__badge-img">
+      </div>
+    </header>
+    <section class="video-header__body" aria-label="Título e descrição do produto">
+      <small class="video-header__brand">sata</small>
 
-    .faq-section__title {
-        font-size: 1rem !important;
-     }
-
-     .faq-section__subtitle {
-        font-size: 0.75rem !important;
-     }
-
-     .faq-section__q-text {
-        font-size: 0.75rem !important;
-     }
-
-     }
-    
-
-    @media (max-width: 960px) {
-        .section-32__grouptext-overlay h2 {
-          font-size: 2.1vw;
-        }
-
-        .section-32__grouptext-overlay p {
-          font-size: 1.5vw;
-        }
-
-        .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-        .section-32__grouptext-overlay.bottom {
-          top: 79%
-        }
-
-
-        }
-
-    @media (max-width: 1060px) {
-        .section-32__grouptext-overlay.top {
-          top: 3%;
-        }
-
-        .section-32__grouptext-overlay.bottom {
-          top: 81%;
-        }
-
-          .faq-section {
-          top: 10%; 
-         max-width: 90%;
-         max-height: 80%;
-
-        }
-
-        }
-
-</style>  
-  <meta charset="UTF-8">
-   <article style="width: 100%;" aria-labelledby="product-main-title">
-    <section class="video-header" aria-label="Cabeçalho do produto">
-   
-      <header class="video-header__banner">
-        <video class="video-header__banner-video"
-          poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/poster-havaianas-listras-rosa-e-vermelha-tropical.jpg" 
-          preload="none" autoplay muted loop playsinline width="1200" height="250" aria-hidden="true">
-          <source
-            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/havaianas/header-havaianas1.mov"
-            loading="eager">
-        </video>
-        <div class="video-header__badge" role="img" aria-label="Logo da marca havaianas dentro de um círculo alaranjado">
-          <img
-            src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/havaianas/logo-havaianas.png"
-            alt="">
-        </div>
-      </header>
-        <section class="video-header__body" aria-label="Título e descrição do produto">
-        <small class="video-header__brand">havaianas</small>
-        <h2 class="video-header__title" id="product-main-title">
-          	CHINELOS HAVAIANAS KIDS COLOR BRANCO/PRETO
-        </h2>
-        <p class="video-header__subtitle">
-         Unem o design clássico que você confia com a leveza necessária para as crianças brincarem o dia todo sem desconforto nos pés.
-        </p>
-     </section>
-     </section>
+      <h2 class="video-header__title" id="video-main-title">
+        SOQUETE SATA TORX 1/2P E10 A E24
+      </h2>
+      <p class="video-header__subtitle">
+        Mais força, precisão e durabilidade em cada aperto: soquetes Torx SATA 1/2” em aço Cromo-Vanádio, ideais para 
+        uso profissional em oficinas, manutenção e indústria.
+      </p>
+    </section>
+  </section>
 
 
-      <section class="section-32__container" aria-label="Seção de destaque do ou dos produto">
-        <figure class="section-32__groupimage-section">
-       <picture>
-        <source media="(max-width: 393px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-solado-branco-1224878-02.jpg?ims=393x">
-      
-              <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-solado-branco-1224878-02.jpg?ims=768x">
-      
-              <source media="(max-width: 1199px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-solado-branco-1224878-02.jpg?ims=1199x">
-      
-              <source media="(min-width: 1200px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-solado-branco-1224878-02.jpg">
-
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-solado-branco-1224878-02.jpg"
-        alt="Chinelo Havaianas Kids Color branco  detalhe solado e tiras fundo vermelho tropical." 
-        style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
-        loading="eager" fetchpriority="high" decoding="async">
-        </picture>
-
-      <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 50%">
-        <h2><strong>É CONFORTÁVEL?</strong></h2>
-        <p>É confortável para crianças? Sim! Possui solas 100% borracha, macias e flexíveis, garantindo o amortecimento ideal para o uso diário.
-        </p>
-      </figcaption>
-      </figure>
-
-      
+        <section class="section-32__container" aria-label="Galeria de características">
         <figure class="section-32__groupimage-section">
        <picture>
 
-        <source media="(max-width: 393px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-frontal-preto-1224878-03.jpg?ims=393x">
+         <source media="(max-width: 430px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-cromo-vanadio-detalhe-508938-02.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-frontal-preto-1224878-03.jpg?ims=768x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-cromo-vanadio-detalhe-508938-02.jpg?ims=768x">
+
+              <source media="(max-width: 1024px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-cromo-vanadio-detalhe-508938-02.jpg?ims=1024x">
       
-              <source media="(max-width: 1199px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-frontal-preto-1224878-03.jpg?ims=1199x">
+              <source media="(max-width: 1280px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-cromo-vanadio-detalhe-508938-02.jpg?ims=1238x">
       
-              <source media="(min-width: 1200px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-frontal-preto-1224878-03.jpg">
-        
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-frontal-preto-1224878-03.jpg"
-        alt="Chinelo Havaianas Kids Color preto  detalhe frontal texturizado fundo vermelho." 
-        style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
+              <source media="(max-width: 1440px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-cromo-vanadio-detalhe-508938-02.jpg?ims=1440x">
+
+              <source media="(min-width: 1441px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-cromo-vanadio-detalhe-508938-02.jpg">
+
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-cromo-vanadio-detalhe-508938-02.jpg"
+        alt="Parafusos autobrocantes sata Tubozan com tampas cerâmica, branca e concreto" 
+        style="border-radius: 30px 30px 0 0;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
         </picture>
-
-      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 20%; left: 25%;">
-        <h2><strong>BRANCA OU PRETA?</strong></h2>
-        <p>Temos a Havaianas Kids Color Branca e Preta. Ambas contam com material resistente ao desgaste e exposição solar moderada.
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 60%; left: 75%; max-width: 35%;">
+        <h2><strong>GUIA TORX E10 A E24</strong></h2>
+        <p>Escolha pela medida do parafuso Torx: E10, E12, E14, E16, E18, E20, E22 ou E24. Todos têm encaixe 1/2" e tecnologia Surface Drive SATA.
         </p>
       </figcaption>
-      <div class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 90%; left: 40%;">
-        <h2><strong>DEFORMA COM O USO?</strong></h2>
-        <p>Não! Sua composição em borracha de alta qualidade evita deformações e garante maior vida útil ao produto infantil.
-        </p>
-      </div>
       </figure>
 
-      <div style="position: relative;"> 
+       <figure class="section-32__groupimage-section">
+       <picture>
+
+         <source media="(max-width: 430px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-e14-uso-automotivo-508938-03.jpg?ims=430x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-e14-uso-automotivo-508938-03.jpg?ims=768x">
+
+              <source media="(max-width: 1024px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-e14-uso-automotivo-508938-03.jpg?ims=1024x">
+      
+              <source media="(max-width: 1280px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-e14-uso-automotivo-508938-03.jpg?ims=1238x">
+      
+              <source media="(max-width: 1440px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-e14-uso-automotivo-508938-03.jpg?ims=1440x">
+
+              <source media="(min-width: 1441px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-e14-uso-automotivo-508938-03.jpg">
+
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-e14-uso-automotivo-508938-03.jpg"
+        alt="Parafusos sata Tubozan com tampas branco e marfim sobre fundo de instalação" 
+        style="border-radius: 0;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+        </picture>
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 85%; left: 50%; max-width: 40%;">
+        <h2><strong>SURFACE DRIVE SATA</strong></h2>
+        <p>A tecnologia Surface Drive distribui melhor a força nas faces planas e ajuda a reduzir o desgaste do soquete e do parafuso. Enquanto 
+          O aço Cromo-Vanádio aumenta resistência e durabilidade, mantendo o soquete preparado para trabalhos intensos e uso profissional.
+        </p>
+      </figcaption>
+      </figure>
+      
       <figure class="section-32__groupimage-section">
       <picture>
-
-        <source media="(max-width: 393px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-calcanhar-preto-1224878-04.jpg?ims=393x">
+        <source media="(max-width: 430px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-fundo-mecanico-engrenagens-508938-04.jpg?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-calcanhar-preto-1224878-04.jpg?ims=768x">
-      
-              <source media="(max-width: 1199px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-calcanhar-preto-1224878-04.jpg?ims=1199x">
-      
-              <source media="(min-width: 1200px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-calcanhar-preto-1224878-04.jpg">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-fundo-mecanico-engrenagens-508938-04.jpg?ims=768x">
 
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-kids-color-detalhe-calcanhar-preto-1224878-04.jpg"
-        alt="Chinelo Havaianas Kids Color preto  detalhe calcanhar solado borracha cenário tropical." 
+              <source media="(max-width: 1024px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-fundo-mecanico-engrenagens-508938-04.jpg?ims=1024x">
+      
+              <source media="(max-width: 1280px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-fundo-mecanico-engrenagens-508938-04.jpg?ims=1280x">
+      
+              <source media="(max-width: 1440px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-fundo-mecanico-engrenagens-508938-04.jpg?ims=1440x">
+
+              <source media="(min-width: 1441px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-fundo-mecanico-engrenagens-508938-04.jpg">
+
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-fundo-mecanico-engrenagens-508938-04.jpg"
+        alt="Cenário obra sata Tubozan com furadeira e superfície de fixação ao fundo" 
         style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
-
         </picture>
         
   <!-- Camada com gradiente de fade -->
@@ -1273,19 +859,19 @@ ColLib.register({
            
     <div class="faq-section__header">
       <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
-      <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha</p>
+      <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha baseado em perguntas do público</p>
     </div>
-    <ul class="faq-section__list" role="list">
+    <ul class="faq-section__list" style="overflow: hidden;" role="list">
       <li class="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">Qual o melhor material para chinelos de criança?</h3>
+            <h3 class="faq-section__q-text">1. Para que serve o Soquete Torx 1/2P SATA E10 a E24?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-              O ideal é optar por solas 100% em borracha e tiras em PVC texturizado. Esta combinação oferece flexibilidade, 
-              conforto e um excelente amortecimento para o uso diário.
+            A linha inclui variações E10, E12, E14, E16, E18, E20, E22 e E24, conforme as fichas fornecidas.
+            É indicado para mecânicos automotivos, técnicos de manutenção, indústrias e profissionais que utilizam ferramentas de alto desempenho.
             </p>
           </div>
         </details>
@@ -1293,13 +879,28 @@ ColLib.register({
       <li class="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">Como escolher chinelos resistentes para o dia a dia?</h3>
+            <h3 class="faq-section__q-text">2. O Soquete Torx SATA tem bom desempenho em trabalhos profissionais?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-              Procure modelos feitos com borracha de alta qualidade. Este material evita deformações, resiste ao 
-              desgaste e suporta a exposição solar, garantindo uma longa vida útil.
+             A tecnologia Surface Drive atua na superfície plana de parafusos sextavados e estriados, distribuindo melhor a força.
+            Esse recurso ajuda a reduzir o desgaste no soquete e no parafuso durante trabalhos intensos.
+            </p>
+          </div>
+        </details>
+      </li>
+      <li class="faq-section__item">
+        <details> 
+          <summary>
+            <h3 class="faq-section__q-text">3. De que material é feito o Soquete Torx 1/2P SATA?</h3>
+            <span class="faq-section__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-section__a-inner">
+            <p class="faq-section__a-text">
+            O Soquete Torx 1/2P SATA E10 a E24 é fabricado em aço Cromo-Vanádio, identificado como Cr-V nas fichas técnicas.
+            Esse material é associado à maior resistência e durabilidade mesmo em trabalhos intensos.
+            A construção em Cr-V reforça a vida útil esperada da ferramenta em aplicações profissionais.
             </p>
           </div>
         </details>
@@ -1307,13 +908,13 @@ ColLib.register({
       <li class="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">Quais são as vantagens dos chinelos de borracha?</h3>
+            <h3 class="faq-section__q-text">4. Como usar o Soquete Torx SATA da forma correta?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-              Proporcionam muito conforto graças às solas macias e flexíveis. O seu 
-              design funcional assegura a frescura ideal para os dias quentes, sendo um calçado leve e prático.
+              O Soquete Torx 1/2P SATA E10 a E24 deve ser selecionado conforme a medida Torx necessária, de E10 a E24.
+              A ficha indica aplicação especialmente em trabalhos com parafusos Torx em oficinas, indústrias e manutenção automotiva.
             </p>
           </div>
         </details>
@@ -1321,27 +922,14 @@ ColLib.register({
       <li class="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">Como funciona a numeração dos chinelos infantis?</h3>
+            <h3 class="faq-section__q-text">5. Quais são as medidas técnicas disponíveis nessa linha?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-              As marcas disponibilizam tamanhos duplos para acompanhar o crescimento da criança. 
-              Pode encontrar opções do 23/24 até o 31/32, garantindo um excelente ajuste ao pé.
-            </p>
-          </div>
-        </details>
-      </li>
-      <li class="faq-section__item">
-        <details>
-          <summary>
-            <h3 class="faq-section__q-text">Os chinelos de borracha são antiderrapantes?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
-          </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
-              Os modelos de qualidade contam com solas antiderrapantes que garantem maior segurança e 
-              estabilidade, permitindo que as crianças brinquem à vontade e sem escorregar.
+              O Soquete Torx 1/2P SATA E10 a E24 está disponível nas medidas E10, E12, E14, E16, E18, E20, E22 e E24.
+              As fichas informam largura de 4,50 cm para todas as variações, com comprimentos de 3,80 cm ou 10,20 cm.
+              As alturas variam entre 2,20 cm, 2,38 cm, 2,58 cm e 2,78 cm, ajudando na escolha da medida correta.
             </p>
           </div>
         </details>
@@ -1349,69 +937,59 @@ ColLib.register({
     </ul>
       </section>
     </figure>
-     </div> 
     </section>
-      
 
-        <footer aria-label="Informações complementares e produtos Relacionados">
+  <footer aria-label="Informações complementares e produtos relacionados">
            <p class="p__end">
           <strong>Imagens Meramente Ilustrativas</strong>
           </p>
            <section class="table-container-custom" aria-label="tabela contendo produtos relacionados e citados dentre deste conteúdo">
           <table class="table-design-custom" aria-describedby="table-desc">
             <caption id="table-desc" class="sr-only" style="text-align:left; padding: 0 0 8px; font-weight:600;">
-            Produtos Havaianas Kids Color disponíveis
+          Modelos de Conjuntos de Parafusos disponíveis
           </caption>
             <thead class="table-head-custom">
                <tr class="table-tr-custom">
-                 <th class="table-text-custom table-th-custom" style="background-color: #fb373c; border-radius: 10px 0 0 0;" scope="col">SKU
+                 <th class="table-text-custom table-th-custom" style="background-color: #006549; border-radius: 10px 0 0 0;" scope="col">SKU
                  </th>
                  <!--Replicar para adicionar mais COLUNAS-->
-                 <th class="table-text-custom table-th-custom" style="background-color: #fb373c; border-radius: 0 10px 0 0;" scope="col">TÍTULO
+                 <th class="table-text-custom table-th-custom" style="background-color: #006549; border-radius: 0 10px 0 0;" scope="col">TÍTULO
                  </th>
                </tr>
              </thead>
              <tbody>
                <tr class="table-tr-custom">
-                 <td class="table-text-custom table-td-custom-title">1224878</td>
-            <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 23/4</td>
+                 <td class="table-text-custom table-td-custom-title">508938</td>
+            <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E10</td>
            </tr>
          <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">1224879</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 25/6</td>
+           <td class="table-text-custom table-td-custom-title">508939</td>
+        <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E12</td>
         </tr>
           <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">1224881</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 27/8</td>
+           <td class="table-text-custom table-td-custom-title">508941</td>
+        <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E14</td>
       </tr>
       <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title">1224882</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 29/0</td>
+        <td class="table-text-custom table-td-custom-title">508942</td>
+        <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E16</td>
          </tr>
         <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title">1224883</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR BRANCO 31/2</td>
+        <td class="table-text-custom table-td-custom-title">508943</td>
+        <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E18</td>
           </tr>
-           <tr class="table-tr-custom">
-                 <td class="table-text-custom table-td-custom-title">1224884</td>
-            <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 23/4</td>
-           </tr>
          <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">1224885</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 25/6</td>
+           <td class="table-text-custom table-td-custom-title">508944</td>
+        <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E20</td>
         </tr>
           <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">1224886</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 27/8</td>
+           <td class="table-text-custom table-td-custom-title">508945</td>
+        <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E22</td>
       </tr>
       <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title">1224887</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 29/0</td>
-         </tr>
-        <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title">1224888</td>
-        <td class="table-text-custom table-td-custom-sub">HAVAIANAS KIDS COLOR PRETO 31/2</td>
-          </tr>
+           <td class="table-text-custom table-td-custom-title">508946</td>
+        <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E24</td>
+      </tr>
              </tbody>
            </table>
          </section>
@@ -1419,8 +997,7 @@ ColLib.register({
 
         </article>
 
-
-</div>
+        </div>
 `,
       css:  ``,
     },
