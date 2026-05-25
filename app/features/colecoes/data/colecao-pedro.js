@@ -2530,10 +2530,10 @@ video-header,
       css:  ``,
     },
 
-                /*@@@@Col - 3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido */
+                    /*@@@@Col - 3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido */
     {
       id:   '3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido',
-      name: '3 blocos, 18 com bgi no meio, faq embutido,',
+      name: '3 blocos 18 com bgi no meio faq embutido',
       html: `<div class="lp-container">
 <style>
 * {
@@ -2655,6 +2655,16 @@ video-header,
   height: auto;
   display: inline-block;
   min-width: 100%;
+}
+
+.section-32__grouptext-overlay {
+  color: #fff;
+  position: absolute;
+  max-width: 50%;
+  width: 90%;
+  line-height: 2rem;
+  text-align: center;
+  font-family: sans-serif;
 }
 
 .section-32__grouptext-overlay.left {
