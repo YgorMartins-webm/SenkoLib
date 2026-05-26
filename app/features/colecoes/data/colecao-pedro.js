@@ -2107,7 +2107,7 @@ video-header,
       css:  ``,
     },
 
-                    /*@@@@Col - 3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido */
+                        /*@@@@Col - 3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido */
     {
       id:   '3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido',
       name: '3 blocos 18 com bgi no meio faq embutido',
@@ -2505,11 +2505,11 @@ video-header,
   max-width: 400px;
   aspect-ratio: 780 / 740;
   border-radius: 50%;
-  border: 5px solid #c10230;
+  border: 5px solid #000000;
   overflow: hidden;
   position: relative;
   background: rgb(255, 253, 253)230;
-  box-shadow: 0 5px 10px #680a10
+  box-shadow: 0 5px 10px #000000
 }
 
 .circle-frame picture {
@@ -2536,7 +2536,7 @@ video-header,
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
-  box-shadow: 0 5px 10px #680a10
+  box-shadow: 0 5px 10px #000000
 }
 
 .feature-card h2 {
@@ -2557,7 +2557,7 @@ video-header,
 .feature-card:hover {
   background-color: #fffcfd;
   transform: translateY(-8px);
-  box-shadow: 0 10px 15px  #680a10
+  box-shadow: 0 10px 15px  #000000
 }
 
 #feat1:checked ~ .grid-container .img1,
@@ -2570,8 +2570,8 @@ video-header,
 #feat1:checked ~ .grid-container label[for="feat1"],
 #feat2:checked ~ .grid-container label[for="feat2"],
 #feat3:checked ~ .grid-container label[for="feat3"] {
-  border-color: #c10230;
-  background-color: #fffcfd;
+  border-color: #000000;
+  background-color: #ffffff;
 }
 
 @media (prefers-contrast: more) {
@@ -2707,37 +2707,37 @@ video-header,
     <section class="product-header" aria-label="Cabeçalho do produto">
   <header class="product-header__banner">
     <picture style="width:100%; height:100%; margin:0;">
-             <source media="(max-width: 430px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/grafismo-fundo-vermelho-gotas-brancas-lorenzetti-4202777-01.jpg?ims=430x">
+             <source media="(max-width: 430px)"
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-faixa-engrenagens-amarelas-509485-01.webp?ims=430x">
       
-              <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/grafismo-fundo-vermelho-gotas-brancas-lorenzetti-4202777-01.jpg?ims=768x">
+              <source media="(max-width: 768px)"
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-faixa-engrenagens-amarelas-509485-01.webp?ims=768x">
 
               <source media="(max-width: 1024px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/grafismo-fundo-vermelho-gotas-brancas-lorenzetti-4202777-01.jpg?ims=1024x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-faixa-engrenagens-amarelas-509485-01.webp?ims=1024x">
       
               <source media="(max-width: 1200px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/grafismo-fundo-vermelho-gotas-brancas-lorenzetti-4202777-01.jpg?ims=1200x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-faixa-engrenagens-amarelas-509485-01.webp?ims=1200x">
       <img
-        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/grafismo-fundo-vermelho-gotas-brancas-lorenzetti-4202777-01.jpg"
-        alt="Fundo vermelho com gotas brancas para grafismo de campanha do chuveiro Lorenzetti" 
+        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-faixa-engrenagens-amarelas-509485-01.webp"
+        alt="Fundo branco Stanley SDH710 com engrenagens amarelas e contorno preto" 
         class="product-header__banner-img" loading="eager">
     </picture>
-    <div class="product-header__badge" role="img" aria-label="Logo da marca lorenzetti dentro de um círculo laranja">
+    <div class="product-header__badge" role="img" aria-label="Logo da marca stanley dentro de um círculo laranja">
       <img
-        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/lorenzetti/lorenzetti-logo.png"
+        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/logo-stanley.webp"
         alt="" 
         class="product-header__badge-img">
     </div>
   </header>
   <section class="product-header__body" aria-label="Título e descrição do produto">
-    <small class="product-header__brand">lorenzetti</small>
+    <small class="product-header__brand">stanley</small>
     <h2 class="product-header__title" id="product-main-title">
-     CHUVEIRO DUCHA ACQUA STAR PRETO ELETRÔNICO 220X7800W
+     FURADEIRA DE IMPACTO STANLEY 1/2 SDH710BR 710W
     </h2>
     <p class="product-header__subtitle">
-    Com 7800W de potência e controle eletrônico, você muda a temperatura de forma gradual e precisa sem desligar o chuveiro. 
-    Garanta o máximo de aquecimento e conforto até nos dias mais frios do ano.
+    Potência e desempenho para encarar diferentes trabalhos: furadeira de impacto Stanley 710W com mandril 1/2”, 
+    ideal para perfurações em madeira, metal e alvenaria.
     </p>
   </section>
 </section>
@@ -2748,38 +2748,38 @@ video-header,
        <picture>
 
          <source media="(max-width: 430px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-fundo-vermelho-preto-4202777-02.jpg?ims=430x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-meia-polegada-produto-lateral-509485-02.webp?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-fundo-vermelho-preto-4202777-02.jpg?ims=768x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-meia-polegada-produto-lateral-509485-02.webp?ims=768x">
 
               <source media="(max-width: 1024px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-fundo-vermelho-preto-4202777-02.jpg?ims=1024x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-meia-polegada-produto-lateral-509485-02.webp?ims=1024x">
       
               <source media="(max-width: 1280px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-fundo-vermelho-preto-4202777-02.jpg?ims=1238x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-meia-polegada-produto-lateral-509485-02.webp?ims=1238x">
       
               <source media="(max-width: 1440px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-fundo-vermelho-preto-4202777-02.jpg?ims=1440x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-meia-polegada-produto-lateral-509485-02.webp?ims=1440x">
 
               <source media="(min-width: 1441px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-fundo-vermelho-preto-4202777-02.jpg">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-meia-polegada-produto-lateral-509485-02.webp">
 
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-fundo-vermelho-preto-4202777-02.jpg"
-        alt="Chuveiro Lorenzetti Acqua Star Ultra preto em fundo vermelho com gotas brancas. Destaque no espalhador." 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-meia-polegada-produto-lateral-509485-02.webp"
+        alt="Furadeira de impacto Stanley SDH710 710W 1/2 pol. com empunhadura lateral" 
         style="border-radius: 30px;" width="1600" height="865"
         loading="eager" decoding="async" fetchpriority="high">
         </picture>
-      <figcaption class="section-32__grouptext-overlay right grouptext-overlay-Background" style="top: 40%; left: 58%; max-width: 35%;">
-        <h2><strong>COMO É O JATO?</strong></h2>
-        <p>A Acqua Star Ultra tem jato concentrado e direcionável. Ela também conta com dispositivo para regulagem exata da inclinação.
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 60%; left: 28%; max-width: 35%;">
+        <h2><strong>O QUE ELA FAZ?</strong></h2>
+        <p>A Stanley SDH710 entrega 710W para perfurar madeira, plástico, aço, alvenaria e concreto em reformas, instalações e obras.
         </p>
       </figcaption>
       </figure>
        </section>
 
        <section class="features-section" 
-       style="background-image: url('https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/fundo-branco-gotas-vermelhas-chuveiro-lorenzetti-4202777-bg.jpg');">
+       style="background-image: url('https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-fundo-branco-engrenagens-amarelas-509485-bg.webp');">
 
 
     <!-- Inputs de rádio agrupados para acessibilidade -->
@@ -2793,8 +2793,8 @@ video-header,
             <aside class="column" aria-label="Funcionalidade de resistência">
                 <label for="feat1" class="feature-card" role="radio" aria-checked="true" tabindex="0">
                     <article>
-                        <h2>FUNCIONA COM POUCA PRESSÃO?</h2>
-                        <p>Sim! A tecnologia Press Plus garante jatos de alta performance e um banho confortável mesmo com baixa pressão de água.</p>
+                        <h2>PERFURAÇÃO EM AÇO</h2>
+                        <p>A Stanley SDH710 perfura aço até 13mm, usando mandril de 1/2” e controle de velocidade variável.</p>
                     </article>
                 </label>
             </aside>
@@ -2805,46 +2805,46 @@ video-header,
                     
                     <!-- IMAGEM 1 RESPONSIVA -->
                     <picture class="img1">
-                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/mulher-banho-chuveiro-lorenzetti-cabelo-molhado-4202777-03.jpg?ims=492x">
-                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/mulher-banho-chuveiro-lorenzetti-cabelo-molhado-4202777-03.jpg?ims=301x">
-                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/mulher-banho-chuveiro-lorenzetti-cabelo-molhado-4202777-03.jpg?ims=318x">
-                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/mulher-banho-chuveiro-lorenzetti-cabelo-molhado-4202777-03.jpg?ims=318x">
-                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/mulher-banho-chuveiro-lorenzetti-cabelo-molhado-4202777-03.jpg?ims=400x">
-                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/mulher-banho-chuveiro-lorenzetti-cabelo-molhado-4202777-03.jpg?ims=400x">
-                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/mulher-banho-chuveiro-lorenzetti-cabelo-molhado-4202777-03.jpg" 
-                        alt="Mulher sorrindo com cabelos molhados durante banho relaxante com chuveiro Lorenzetti" loading="lazy" decoding="async" fetchpriority="low">
+                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-metal-509485-03.webp?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-metal-509485-03.webp?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-metal-509485-03.webp?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-metal-509485-03.webp?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-metal-509485-03.webp?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-metal-509485-03.webp?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-metal-509485-03.webp" 
+                        alt="Furadeira Stanley SDH710 perfurando metal com broca e empunhadura lateral" loading="lazy" decoding="async" fetchpriority="low">
                     </picture>
 
                     <!-- IMAGEM 2 RESPONSIVA -->
                     <picture class="img2">
-                       <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/pessoa-lavando-cabelo-box-vidro-chuveiro-lorenzetti-4202777-04.jpg?ims=492x">
-                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/pessoa-lavando-cabelo-box-vidro-chuveiro-lorenzetti-4202777-04.jpg?ims=301x">
-                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/pessoa-lavando-cabelo-box-vidro-chuveiro-lorenzetti-4202777-04.jpg?ims=318x">
-                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/pessoa-lavando-cabelo-box-vidro-chuveiro-lorenzetti-4202777-04.jpg?ims=318x">
-                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/pessoa-lavando-cabelo-box-vidro-chuveiro-lorenzetti-4202777-04.jpg?ims=400x">
-                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/pessoa-lavando-cabelo-box-vidro-chuveiro-lorenzetti-4202777-04.jpg?ims=400x">
-                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/pessoa-lavando-cabelo-box-vidro-chuveiro-lorenzetti-4202777-04.jpg" 
-                        alt="Pessoa lavando cabelos vista através de box de vidro com gotas de água chuveiro Lorenzetti" loading="lazy" decoding="async" fetchpriority="low">
+                       <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-madeira-509485-04.webp?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-madeira-509485-04.webp?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-madeira-509485-04.webp?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-madeira-509485-04.webp?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-madeira-509485-04.webp?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-madeira-509485-04.webp?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-madeira-509485-04.webp" 
+                        alt="Furadeira Stanley SDH710 perfurando madeira em móvel com apoio manual" loading="lazy" decoding="async" fetchpriority="low">
                     </picture>
 
                     <!-- IMAGEM 3 RESPONSIVA -->
                     <picture class="img3">
-                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/homem-costas-banho-chuveiro-lorenzetti-agua-quente-4202777-05.jpg?ims=492x">
-                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/homem-costas-banho-chuveiro-lorenzetti-agua-quente-4202777-05.jpg?ims=301x">
-                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/homem-costas-banho-chuveiro-lorenzetti-agua-quente-4202777-05.jpg?ims=318x">
-                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/homem-costas-banho-chuveiro-lorenzetti-agua-quente-4202777-05.jpg?ims=318x">
-                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/homem-costas-banho-chuveiro-lorenzetti-agua-quente-4202777-05.jpg?ims=400x">
-                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/homem-costas-banho-chuveiro-lorenzetti-agua-quente-4202777-05.jpg?ims=400x">
-                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/homem-costas-banho-chuveiro-lorenzetti-agua-quente-4202777-05.jpg" 
-                        alt="Homem de costas tomando banho sob luz cênica com água do chuveiro Lorenzetti" loading="lazy" decoding="async" fetchpriority="low">
+                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-concreto-509485-05.webp?ims=492x">
+                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-concreto-509485-05.webp?ims=301x">
+                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-concreto-509485-05.webp?ims=318x">
+                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-concreto-509485-05.webp?ims=318x">
+                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-concreto-509485-05.webp?ims=400x">
+                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-concreto-509485-05.webp?ims=400x">
+                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-perfuracao-concreto-509485-05.webp" 
+                        alt="Furadeira de impacto Stanley SDH710 perfurando parede de concreto" loading="lazy" decoding="async" fetchpriority="low">
                     </picture>
 
                 </div>
 
                 <label for="feat2" class="feature-card" role="radio" style="width: 90%;" aria-checked="false" tabindex="0">
                     <article>
-                        <h2>COMO AJUSTAR A TEMPERATURA?</h2>
-                        <p>Sim! O comando eletrônico permite ajuste gradual e preciso. Use a haste prolongadora para ter o controle total nas mãos.</p>
+                        <h2>PERFURAÇÃO EM MADEIRA</h2>
+                        <p>A Stanley SDH710 perfura madeira até 25mm, com motor de 710W e velocidade variável para ajustar o ritmo do trabalho.</p>
                     </article>
                 </label>
             </section>
@@ -2853,8 +2853,8 @@ video-header,
             <aside class="column" aria-label="Explica praticidade na hora da instalação">
                 <label for="feat3" class="feature-card" role="radio" aria-checked="false" tabindex="0">
                     <article>
-                        <h2>COMPATÍVEL COM SOLAR?</h2>
-                        <p>Sim! Essa ducha tem design ultrafino e é totalmente compatível com sistemas de aquecimento solar e outros modelos.</p>
+                        <h2>PERFURAÇÃO EM CONCRETO</h2>
+                        <p>A Stanley SDH710 perfura concreto até 13mm com função impacto, indicada para superfícies rígidas em reformas e instalações.</p>
                     </article>
                 </label>
             </aside>
@@ -2867,31 +2867,64 @@ video-header,
       <figure class="section-32__groupimage-section">
       <picture>
              <source media="(max-width: 430px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-ligado-vapor-preto-4202777-06.jpg?ims=430x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-close-concreto-509485-06.webp?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-ligado-vapor-preto-4202777-06.jpg?ims=768x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-close-concreto-509485-06.webp?ims=768x">
 
               <source media="(max-width: 1024px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-ligado-vapor-preto-4202777-06.jpg?ims=1024x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-close-concreto-509485-06.webp?ims=1024x">
       
               <source media="(max-width: 1280px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-ligado-vapor-preto-4202777-06.jpg?ims=1280x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-close-concreto-509485-06.webp?ims=1280x">
       
               <source media="(max-width: 1440px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-ligado-vapor-preto-4202777-06.jpg?ims=1440x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-close-concreto-509485-06.webp?ims=1440x">
 
               <source media="(min-width: 1441px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-ligado-vapor-preto-4202777-06.jpg">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-close-concreto-509485-06.webp">
 
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-ligado-vapor-preto-4202777-06.jpg"
-        alt="Chuveiro Lorenzetti Acqua Star Ultra preto ligado. Fluxo de água intenso e vapor em banheiro sofisticado." 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-close-concreto-509485-06.webp"
+        alt="Close da furadeira Stanley SDH710 perfurando concreto com limitador de profundidade" 
         style="border-radius: 30px 30px 0px 0px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
         </picture>
-      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 75%; left: 45%;">
-        <h2><strong>QUEIMA FÁCIL?</strong></h2>
-        <p>Não! Ela usa a exclusiva resistência plana Loren Ultra de longa duração. Se precisar, a troca é feita por um cartucho rápido.
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 75%; left: 30%;">
+        <h2><strong>O QUE É VVR?</strong></h2>
+        <p>O VVR combina velocidade variável e reversão, permitindo ajustar rotação e sentido conforme o material, a broca e o tipo de trabalho.
+        </p>
+      </figcaption>
+      </figure>
+
+      <figure class="section-32__groupimage-section">
+      <picture>
+             <source media="(max-width: 430px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-manejo-empunhadura-509485-07.webp?ims=430x">
+      
+              <source media="(max-width: 768px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-manejo-empunhadura-509485-07.webp?ims=768x">
+
+              <source media="(max-width: 1024px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-manejo-empunhadura-509485-07.webp?ims=1024x">
+      
+              <source media="(max-width: 1280px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-manejo-empunhadura-509485-07.webp?ims=1280x">
+      
+              <source media="(max-width: 1440px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-manejo-empunhadura-509485-07.webp?ims=1440x">
+
+              <source media="(min-width: 1441px)" 
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-manejo-empunhadura-509485-07.webp">
+
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-manejo-empunhadura-509485-07.webp"
+        alt="Detalhe da empunhadura Stanley SDH710 durante perfuração em parede" 
+        style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
+        loading="lazy" decoding="async" fetchpriority="low">
+        </picture>
+      <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 45%; left: 65%;">
+        <h2><strong>QUAL A CAPACIDADE?</strong></h2>
+        <p>A SDH710 perfura até 25mm em madeira e até 13mm em aço, concreto ou alvenaria, conforme a aplicação. O mandril de 1/2” 
+          ou 13mm com chave permite usar diferentes brocas com firmeza durante a perfuração.
         </p>
       </figcaption>
       </figure>
@@ -2900,25 +2933,25 @@ video-header,
       <figure class="section-32__groupimage-section">
       <picture>
         <source media="(max-width: 430px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-ambiente-cosmeticos-preto-4202777-07.jpg?ims=430x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-fundo-parede-obra-509485-08.webp?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-ambiente-cosmeticos-preto-4202777-07.jpg?ims=768x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-fundo-parede-obra-509485-08.webp?ims=768x">
 
               <source media="(max-width: 1024px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-ambiente-cosmeticos-preto-4202777-07.jpg?ims=1024x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-fundo-parede-obra-509485-08.webp?ims=1024x">
       
               <source media="(max-width: 1280px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-ambiente-cosmeticos-preto-4202777-07.jpg?ims=1280x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-fundo-parede-obra-509485-08.webp?ims=1280x">
       
               <source media="(max-width: 1440px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-ambiente-cosmeticos-preto-4202777-07.jpg?ims=1440x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-fundo-parede-obra-509485-08.webp?ims=1440x">
 
               <source media="(min-width: 1441px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-ambiente-cosmeticos-preto-4202777-07.jpg">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-fundo-parede-obra-509485-08.webp">
 
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chuveiro-lorenzetti-acqua-star-ultra-ambiente-cosmeticos-preto-4202777-07.jpg"
-        alt="Água fluindo do chuveiro Lorenzetti Acqua Star Ultra preto em banheiro escuro com prateleira e cosméticos." 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/furadeira-impacto-stanley-sdh710b2-710w-fundo-parede-obra-509485-08.webp"
+        alt="Recorte de obra Stanley SDH710 com parede, luva e fundo escuro" 
         style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
         </picture>
@@ -2941,13 +2974,14 @@ video-header,
       <li class="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">1. O aparelho possui um bom desempenho no banho?</h3>
+            <h3 class="faq-section__q-text">1. Para que serve a Furadeira de Impacto 1/2" 710W com Chave VVR Stanley 127V?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-           Sim. A ducha Acqua Star Ultra traz a Tecnologia Press Plus, garantindo jatos de alta performance mesmo com baixa 
-           pressão. Este sistema entrega um banho altamente revigorante no seu dia a dia.
+           A Furadeira de Impacto 1/2" 710W com Chave VVR Stanley 127V serve para perfuração em materiais como madeira, 
+           plástico e alvenaria. A ficha também informa capacidade de perfuração em madeira, aço e alvenaria. É indicada 
+           para aplicações que exigem força, controle e versatilidade em reformas, obras e instalações.
             </p>
           </div>
         </details>
@@ -2955,13 +2989,14 @@ video-header,
       <li class="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">2. Como ajustar o equipamento para melhores resultados?</h3>
+            <h3 class="faq-section__q-text">2. A Furadeira de Impacto Stanley tem bom desempenho em materiais rígidos?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-           A ducha Acqua Star Ultra possui comando eletrônico para escolha precisa da temperatura. Utilize a haste opcional e 
-           o regulador de inclinação D.R.I. para um ajuste fácil e enorme conforto no banho.
+           Sim. A Furadeira de Impacto 1/2" 710W com Chave VVR Stanley 127V possui motor de 710W e função impacto. 
+           A ficha informa impacto de 0 a 51.000 ipm e velocidade de 0 a 3.000 rpm. Esse desempenho favorece perfurações 
+           em aplicações exigentes e materiais como alvenaria.
             </p>
           </div>
         </details>
@@ -2969,13 +3004,14 @@ video-header,
       <li class="faq-section__item">
         <details> 
           <summary>
-            <h3 class="faq-section__q-text">3. É seguro instalar este equipamento no banheiro?</h3>
+            <h3 class="faq-section__q-text">3. A Furadeira de Impacto Stanley é adequada para uso contínuo?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-            Sim. A ducha Acqua Star Ultra é plenamente segura e compatível com aquecimento solar e outros sistemas de aquecimento. 
-            Essa adequação versátil garante total tranquilidade e proteção elétrica contínua
+            Sim. A Furadeira de Impacto 1/2" 710W com Chave VVR Stanley 127V possui gatilho eletrônico de dois dedos com trava para uso contínuo. 
+            O material do fornecedor também informa design ergonômico e botão de trava para longos períodos de trabalho. 
+            Esses recursos contribuem para mais conforto e controle durante a operação.
             </p>
           </div>
         </details>
@@ -2983,13 +3019,14 @@ video-header,
       <li class="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">4. Qual a tecnologia utilizada na composição do aparelho?</h3>
+            <h3 class="faq-section__q-text">4. Qual é a durabilidade e garantia da Furadeira de Impacto Stanley?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-              A ducha Acqua Star Ultra utiliza a Resistência Loren Ultra, a primeira resistência plana do mercado. Esta tecnologia 
-              de ponta com design ultrafino garante um visual elegante e altíssima eficiência.
+              A Furadeira de Impacto 1/2" 710W com Chave VVR Stanley 127V possui garantia de 12 meses conforme a ficha técnica. 
+              O arquivo também informa anéis de carvão, descritos como recurso para maior durabilidade da ferramenta. 
+              Essa construção oferece respaldo e resistência para o uso em aplicações frequentes.
             </p>
           </div>
         </details>
@@ -2997,13 +3034,14 @@ video-header,
       <li class="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">5. O produto oferece garantia e facilidade na conservação?</h3>
+            <h3 class="faq-section__q-text">5. Quais são as principais características técnicas da Furadeira de Impacto Stanley?</h3>
             <span class="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div class="faq-section__a-inner">
             <p class="faq-section__a-text">
-            Sim. A ducha Acqua Star Ultra possui resistência Loren Ultra, garantindo longa duração em relação às comuns. 
-            O cartucho de troca rápida facilita a manutenção e estende a vida útil do aparelho.
+            A Furadeira de Impacto 1/2" 710W com Chave VVR Stanley 127V tem referência SDH710B2, potência de 710W e mandril 
+            de 1/2" ou 13 mm. A capacidade de perfuração informada é de 25 mm em madeira e 13 mm em aço e alvenaria. 
+            Esses dados ajudam a avaliar a compatibilidade da ferramenta com diferentes materiais e brocas.
             </p>
           </div>
         </details>
