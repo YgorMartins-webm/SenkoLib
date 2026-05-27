@@ -15,10 +15,10 @@ ColLib.register({
             
                         
         
-                                /*@@@@Col - comp-p-3b-faqe-vh-tb */
+                                    /*@@@@Col - comp-p-3b-faqe-vh-tb */
     {
       id:   'comp-p-3b-faqe-vh-tb',
-      name: 'comp - 3 blocos faq embutido video header e tabela',
+      name: 'video-header-3bs-faq-emb-tab',
       html: `    <div class="lp-container">
 <style>
 * {
