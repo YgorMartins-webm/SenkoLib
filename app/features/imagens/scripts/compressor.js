@@ -1,6 +1,5 @@
 (function () {
   const SUPPORTED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
-  const DOWNLOAD_EACH_DELAY_MS = 500;
 
   // Estado em memoria da aba Compressor. Cada item representa um arquivo carregado.
   let items = [];
@@ -114,8 +113,8 @@
     $('compressor-badge').textContent = items.length + ' arquivo' + (items.length !== 1 ? 's' : '');
     $('btn-compress').disabled = isDownloadingEach || !items.length;
     $('btn-clear-images').disabled = isDownloadingEach || !items.length;
-    $('btn-download-each').disabled = isDownloadingEach || !items.some(item => item.resultBlob);
-    $('btn-download-all').disabled = isDownloadingEach || !items.some(item => item.resultBlob);
+    $('btn-download-each').disabled = isDownloadingEach || !items.length;
+    $('btn-download-all').disabled = isDownloadingEach || !items.length;
   }
 
   function buildImageCard(item) {
@@ -151,14 +150,14 @@
           <span class="stat__value ${saving ? 'saving' : ''}">${item.resultBlob ? `${saving}%` : '-'}</span>
         </div>
         <div class="image-card__actions">
-          <button class="btn btn-ghost" type="button" data-action="download" ${item.resultBlob ? '' : 'disabled'}>Baixar</button>
+          <button class="btn btn-ghost" type="button" data-action="download">Baixar</button>
           <button class="btn btn-ghost" type="button" data-action="remove">Remover</button>
         </div>
       </div>
     `;
 
     card.querySelector('[data-action="download"]').addEventListener('click', () => {
-      if (item.resultBlob) downloadBlob(item.resultBlob, normalizedOutputName(item));
+      downloadBlob(outputBlobFor(item), normalizedOutputName(item));
     });
     card.querySelector('[data-action="rename"]').addEventListener('input', event => {
       item.outputName = event.target.value;
@@ -261,38 +260,97 @@
 
   async function downloadAll() {
     // O ZIP usa nomes ja normalizados e resolve duplicidades antes de gerar o arquivo.
-    const ready = items.filter(item => item.resultBlob);
+    const ready = items.filter(item => outputBlobFor(item));
     if (!ready.length || !window.JSZip) return;
 
-    const zip = new JSZip();
     const zipNames = uniqueZipNames(ready);
-    ready.forEach(item => zip.file(zipNames.get(item.id), item.resultBlob));
-    const blob = await zip.generateAsync({ type: 'blob' });
-    downloadBlob(blob, 'imagens-comprimidas.zip');
+    const blob = await createZipBlob(ready, zipNames);
+    downloadBlob(blob, zipFilename(ready));
   }
 
   async function downloadEach() {
-    const ready = items.filter(item => item.resultBlob);
+    const ready = items.filter(item => outputBlobFor(item));
     if (!ready.length || isDownloadingEach) return;
 
     isDownloadingEach = true;
     renderList();
 
-    const names = uniqueZipNames(ready);
-    for (let i = 0; i < ready.length; i += 1) {
-      const item = ready[i];
-      setStatus('busy', `baixando ${i + 1}/${ready.length}`);
-      downloadBlob(item.resultBlob, names.get(item.id));
-      if (i < ready.length - 1) await wait(DOWNLOAD_EACH_DELAY_MS);
-    }
+    try {
+      const names = uniqueZipNames(ready);
 
-    isDownloadingEach = false;
-    renderList();
-    setStatus('ok', `${ready.length} downloads iniciados`);
+      if (canSaveToDirectory()) {
+        await saveEachToDirectory(ready, names);
+      } else if (window.JSZip) {
+        const blob = await createZipBlob(ready, names);
+        downloadBlob(blob, zipFilename(ready));
+        setStatus('ok', 'zip unico iniciado');
+      } else {
+        setStatus('', 'download em lote indisponivel');
+      }
+    } catch (error) {
+      if (error && error.name === 'AbortError') {
+        setStatus('', 'download cancelado');
+      } else {
+        console.error(error);
+        setStatus('', 'erro ao baixar');
+      }
+    } finally {
+      isDownloadingEach = false;
+      renderList();
+    }
   }
 
-  function wait(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  function canSaveToDirectory() {
+    return typeof window.showDirectoryPicker === 'function';
+  }
+
+  async function saveEachToDirectory(ready, names) {
+    const directory = await window.showDirectoryPicker({ mode: 'readwrite' });
+    const usedNames = new Set();
+
+    for (let i = 0; i < ready.length; i += 1) {
+      const item = ready[i];
+      const filename = await availableDirectoryName(directory, names.get(item.id), usedNames);
+      setStatus('busy', `salvando ${i + 1}/${ready.length}`);
+
+      const handle = await directory.getFileHandle(filename, { create: true });
+      const writable = await handle.createWritable();
+      await writable.write(outputBlobFor(item));
+      await writable.close();
+      item.outputName = filename;
+    }
+
+    setStatus('ok', `${ready.length} arquivo(s) salvos`);
+  }
+
+  async function availableDirectoryName(directory, filename, usedNames) {
+    const parts = splitFilename(filename);
+    let index = 1;
+    let candidate = filename;
+
+    while (usedNames.has(candidate.toLowerCase()) || await directoryFileExists(directory, candidate)) {
+      index += 1;
+      candidate = `${parts.base}-${index}${parts.ext}`;
+    }
+
+    usedNames.add(candidate.toLowerCase());
+    return candidate;
+  }
+
+  async function directoryFileExists(directory, filename) {
+    try {
+      await directory.getFileHandle(filename);
+      return true;
+    } catch (error) {
+      if (error && error.name === 'NotFoundError') return false;
+      throw error;
+    }
+  }
+
+  async function createZipBlob(ready, names) {
+    const zip = new JSZip();
+    ready.forEach(item => zip.file(names.get(item.id), outputBlobFor(item)));
+    return zip.generateAsync({ type: 'blob' });
   }
 
   function removeItem(id) {
@@ -324,6 +382,15 @@
     return `${fileBaseName(filename)}-compressed${ext}`;
   }
 
+  function outputBlobFor(item) {
+    return item.resultBlob || item.file;
+  }
+
+  function zipFilename(readyItems) {
+    const hasCompressed = readyItems.some(item => item.resultBlob);
+    return hasCompressed ? 'imagens-comprimidas.zip' : 'imagens-renomeadas.zip';
+  }
+
   function normalizedOutputName(item) {
     // Garante nome seguro e extensao coerente antes de download/ZIP.
     const fallback = compressedName(item.file.name, item.file.type);
@@ -353,6 +420,13 @@
 
   function hasExtension(filename, ext) {
     return filename.toLowerCase().endsWith(ext);
+  }
+
+  function splitFilename(filename) {
+    const extMatch = filename.match(/\.[^.]+$/);
+    const ext = extMatch ? extMatch[0] : '';
+    const base = ext ? filename.slice(0, -ext.length) : filename;
+    return { base, ext };
   }
 
   function uniqueZipNames(readyItems) {

@@ -723,7 +723,6 @@ ${richHtml}
       return imgSrc;
     }
 
-    const lastEntry = entries[entries.length - 1];
     let html = '<picture>\n';
 
     for (const entry of entries) {
@@ -733,7 +732,7 @@ ${richHtml}
 
     html += '  <img\n';
     if (meta.cls) html += `    class="${esc(meta.cls)}"\n`;
-    html += `    src="${imgSrc}?ims=${lastEntry.ims}x"\n`;
+    html += `    src="${imgSrc}"\n`;
     html += `    alt="${esc(meta.alt) || '!!COLOQUE O ALT AQUI!!'}"\n`;
     if (meta.width) html += `    width="${meta.width}"\n`;
     if (meta.height) html += `    height="${meta.height}"\n`;
