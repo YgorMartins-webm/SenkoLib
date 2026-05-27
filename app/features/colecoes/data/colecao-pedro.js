@@ -15,7 +15,7 @@ ColLib.register({
             
                         
         
-                            /*@@@@Col - comp-p-3b-faqe-vh-tb */
+                                /*@@@@Col - comp-p-3b-faqe-vh-tb */
     {
       id:   'comp-p-3b-faqe-vh-tb',
       name: 'comp - 3 blocos faq embutido video header e tabela',
@@ -133,7 +133,7 @@ video-header,
   contain: layout style;
 }
 
-.section-32__groupimage-section:has(.faq-section) {
+.section-32__groupimage-section:has(#faq-section) {
   z-index: 0;
 }
 
@@ -339,7 +339,9 @@ video-header,
   border: 0;
 }
 
-.faq-section {
+/* inicio-area-de-faq */
+
+#faq-section {
   width: 100%;
   padding: 0 16px 2rem;
   box-sizing: border-box;
@@ -359,12 +361,12 @@ video-header,
   -webkit-overflow-scrolling: touch;
 }
 
-.faq-section__header {
+#faq-section__header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.faq-section__title {
+#faq-section__title {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: bold;
   color: #fff;
@@ -372,13 +374,13 @@ video-header,
   line-height: 6vw;
 }
 
-.faq-section__subtitle {
+#faq-section__subtitle {
   font-size: 1rem;
   color: #fff;
   margin: 0;
 }
 
-.faq-section__list {
+#faq-section__list {
   list-style: none;
   margin: 0 auto;
   padding: 0;
@@ -389,14 +391,14 @@ video-header,
   overflow: hidden;
 }
 
-.faq-section__item {
+#faq-section__item {
   background: #ffffff05;
   border: 1px solid #fff;
   border-radius: 12px;
   overflow: hidden;
 }
 
-.faq-section__item summary {
+#faq-section__item summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -406,34 +408,34 @@ video-header,
   list-style: none;
 }
 
-.faq-section__item summary::-webkit-details-marker {
+#faq-section__item summary::-webkit-details-marker {
   display: none;
 }
 
-.faq-section__item summary:hover {
+#faq-section__item summary:hover {
   background: #f9f9f92f;
 }
 
-.faq-section__q-text {
+#faq-section__q-text {
   font-size: 1rem;
   font-weight: bold;
   color: #fff;
   flex: 1;
 }
 
-.faq-section__q-text:hover {
+#faq-section__q-text:hover {
   color: #ffb81c;
 }
 
-.faq-section__icon {
+#faq-section__icon {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
   position: relative;
 }
 
-.faq-section__icon::before,
-.faq-section__icon::after {
+#faq-section__icon::before,
+#faq-section__icon::after {
   content: "";
   position: absolute;
   background: #888;
@@ -441,31 +443,31 @@ video-header,
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.faq-section__icon::before {
+#faq-section__icon::before {
   width: 12px;
   height: 1.5px;
   top: 9px;
   left: 4px;
 }
 
-.faq-section__icon::after {
+#faq-section__icon::after {
   width: 1.5px;
   height: 12px;
   top: 4px;
   left: 9px;
 }
 
-.faq-section__item details[open] .faq-section__icon::after {
+#faq-section__item details[open] #faq-section__icon::after {
   transform: rotate(90deg);
   opacity: 0;
 }
 
-.faq-section__a-inner {
+#faq-section__a-inner {
   padding: 14px 20px 16px;
   border-top: 1px solid #e5e5e5;
 }
 
-.faq-section__a-text {
+#faq-section__a-text {
   font-size: 0.9rem;
   color: #fff;
   line-height: 1.6;
@@ -473,23 +475,70 @@ video-header,
   font-weight: 500;
 }
 
-.faq-section::-webkit-scrollbar {
+#faq-section::-webkit-scrollbar {
   width: 8px;
 }
 
-.faq-section::-webkit-scrollbar-track {
+#faq-section::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
 
-.faq-section::-webkit-scrollbar-thumb {
+#faq-section::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
 }
 
-.faq-section::-webkit-scrollbar-thumb:hover {
+#faq-section::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.5);
 }
+
+@media (prefers-contrast: more) {
+    #faq-section__a-text {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+  }
+}
+
+@media (max-width: 1060px) {
+    #faq-section {
+    top: 10%;
+    max-width: 90%;
+    max-height: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+    #faq-section__header {
+    margin-bottom: 1rem;
+  }
+
+  #faq-section__a-text {
+    font-size: 0.7rem !important;
+  }
+
+  #faq-section__title {
+    font-size: 1rem !important;
+  }
+
+  #faq-section__subtitle,
+  #faq-section__q-text {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media (max-width: 470px) {
+    #faq-section {
+    max-height: 180px !important;
+    padding: 0.5rem 8px !important;
+    top: 5% !important;
+    max-width: 90%;
+    border-radius: 20px;
+  }
+  }
+
+  /* final-area-de-faq */
 
 .p__end {
   color: #8a8a8a;
@@ -583,11 +632,6 @@ video-header,
     color: #3a2301;
   }
 
-  .faq-section__a-text {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #000;
-  }
 
         .table-td-custom-sub
       {
@@ -603,11 +647,6 @@ video-header,
 }
 
 @media (max-width: 1060px) {
-  .faq-section {
-    top: 10%;
-    max-width: 90%;
-    max-height: 80%;
-  }
 
   .grid-container {
     grid-template-columns: 1fr;
@@ -650,22 +689,6 @@ video-header,
     --banner-height: 180px;
   }
 
-  .faq-section__header {
-    margin-bottom: 1rem;
-  }
-
-  .faq-section__a-text {
-    font-size: 0.7rem !important;
-  }
-
-  .faq-section__title {
-    font-size: 1rem !important;
-  }
-
-  .faq-section__subtitle,
-  .faq-section__q-text {
-    font-size: 0.75rem !important;
-  }
 }
 
  @media (max-width: 600px) {
@@ -709,13 +732,6 @@ video-header,
     font-size: 2.4vw;
   }
 
-  .faq-section {
-    max-height: 180px !important;
-    padding: 0.5rem 8px !important;
-    top: 5% !important;
-    max-width: 90%;
-    border-radius: 20px;
-  }
 }
 
 @media (max-width: 375px) {
@@ -855,49 +871,48 @@ video-header,
 
               <!-- FAQ -->
 
-       <section class="faq-section" aria-labelledby="faq-section-title">
+       <section id="faq-section" aria-labelledby="faq-section-title">
            
-    <div class="faq-section__header">
-      <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
-      <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha baseado em perguntas do público</p>
+    <div id="faq-section__header">
+      <h2 id="faq-section__title" id="faq-section-title">Dúvidas Frequentes</h2>
     </div>
-    <ul class="faq-section__list" style="overflow: hidden;" role="list">
-      <li class="faq-section__item">
+    <ul id="faq-section__list" style="overflow: hidden;" role="list">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">1. Para que serve o Soquete Torx 1/2P SATA E10 a E24?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">1. Para que serve o Soquete Torx 1/2P SATA E10 a E24?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
             A linha inclui variações E10, E12, E14, E16, E18, E20, E22 e E24, conforme as fichas fornecidas.
             É indicado para mecânicos automotivos, técnicos de manutenção, indústrias e profissionais que utilizam ferramentas de alto desempenho.
             </p>
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">2. O Soquete Torx SATA tem bom desempenho em trabalhos profissionais?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">2. O Soquete Torx SATA tem bom desempenho em trabalhos profissionais?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
              A tecnologia Surface Drive atua na superfície plana de parafusos sextavados e estriados, distribuindo melhor a força.
             Esse recurso ajuda a reduzir o desgaste no soquete e no parafuso durante trabalhos intensos.
             </p>
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details> 
           <summary>
-            <h3 class="faq-section__q-text">3. De que material é feito o Soquete Torx 1/2P SATA?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">3. De que material é feito o Soquete Torx 1/2P SATA?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
             O Soquete Torx 1/2P SATA E10 a E24 é fabricado em aço Cromo-Vanádio, identificado como Cr-V nas fichas técnicas.
             Esse material é associado à maior resistência e durabilidade mesmo em trabalhos intensos.
             A construção em Cr-V reforça a vida útil esperada da ferramenta em aplicações profissionais.
@@ -905,28 +920,28 @@ video-header,
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">4. Como usar o Soquete Torx SATA da forma correta?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">4. Como usar o Soquete Torx SATA da forma correta?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
               O Soquete Torx 1/2P SATA E10 a E24 deve ser selecionado conforme a medida Torx necessária, de E10 a E24.
               A ficha indica aplicação especialmente em trabalhos com parafusos Torx em oficinas, indústrias e manutenção automotiva.
             </p>
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">5. Quais são as medidas técnicas disponíveis nessa linha?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">5. Quais são as medidas técnicas disponíveis nessa linha?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
               O Soquete Torx 1/2P SATA E10 a E24 está disponível nas medidas E10, E12, E14, E16, E18, E20, E22 e E24.
               As fichas informam largura de 4,50 cm para todas as variações, com comprimentos de 3,80 cm ou 10,20 cm.
               As alturas variam entre 2,20 cm, 2,38 cm, 2,58 cm e 2,78 cm, ajudando na escolha da medida correta.
