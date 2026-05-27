@@ -155,6 +155,7 @@
   function collectMeta(img) {
     // Coleta somente o necessario para reconstruir a imagem final sem perder atributos uteis.
     const picture = img.closest('picture');
+    const sourceNodes = collectSourceNodesForImage(img);
     const rawSrc = img.getAttribute('src') || '';
     const meta = {
       src: cleanUrl(rawSrc),
@@ -163,26 +164,70 @@
       loading: img.getAttribute('loading') || 'lazy',
       width: img.getAttribute('width') || '',
       height: img.getAttribute('height') || '',
-      hasPicture: !!picture,
+      hasPicture: !!picture || sourceNodes.length > 0,
       sources: [],
       attrs: collectImgAttributes(img),
     };
 
-    if (picture) {
+    if (sourceNodes.length) {
       // Sources originais com max-width sao tratados como pontos de troca de imagem.
-      meta.sources = Array.from(picture.querySelectorAll('source'))
-        .map(source => {
-          const match = (source.getAttribute('media') || '').match(/max-width:\s*(\d+)px/);
-          const bp = match ? parseInt(match[1], 10) : null;
-          const rawSrcset = source.getAttribute('srcset') || '';
-          const url = cleanUrl(rawSrcset.trim().split(',')[0].trim().split(' ')[0]);
-          return { bp, url, media: source.getAttribute('media') || '' };
-        })
+      meta.sources = sourceNodes
+        .map(sourceMetaFromNode)
         .filter(source => source.bp !== null && source.url)
         .sort((a, b) => a.bp - b.bp);
     }
 
     return meta;
+  }
+
+  function collectSourceNodesForImage(img) {
+    const picture = img.closest('picture');
+    const wrapper = picture || img;
+    const orphanSources = collectAdjacentSourceNodes(wrapper);
+    const pictureSources = picture ? Array.from(picture.querySelectorAll('source')) : [];
+    return [...orphanSources, ...pictureSources];
+  }
+
+  function collectAdjacentSourceNodes(node) {
+    const sources = [];
+    let current = node.previousSibling;
+
+    while (current) {
+      if (isIgnorableWhitespace(current) || current.nodeType === Node.COMMENT_NODE) {
+        current = current.previousSibling;
+        continue;
+      }
+
+      if (!isSourceElement(current)) break;
+      sources.unshift(current);
+      current = current.previousSibling;
+    }
+
+    return sources;
+  }
+
+  function sourceMetaFromNode(source) {
+    const media = source.getAttribute('media') || '';
+    const match = media.match(/max-width\s*:\s*(\d+(?:\.\d+)?)px/i);
+    const rawSrcset = source.getAttribute('srcset') || '';
+    const url = cleanUrl(firstSrcsetUrl(rawSrcset));
+    return {
+      bp: match ? Math.round(Number(match[1])) : null,
+      url,
+      media,
+    };
+  }
+
+  function firstSrcsetUrl(srcset) {
+    const candidate = String(srcset || '')
+      .split(',')
+      .map(part => part.trim())
+      .find(Boolean) || '';
+    return candidate.split(/\s+/)[0] || '';
+  }
+
+  function isSourceElement(node) {
+    return node && node.nodeType === Node.ELEMENT_NODE && node.tagName.toLowerCase() === 'source';
   }
 
   function collectImgAttributes(img) {
@@ -682,7 +727,9 @@ ${richHtml}
 
           const replacement = document.createElement('template');
           replacement.innerHTML = card._generatedPicture.trim();
-          target.replaceWith(replacement.content.cloneNode(true));
+          const replaceTarget = target.closest('picture') || target;
+          removeAdjacentOrphanSources(replaceTarget);
+          replaceTarget.replaceWith(replacement.content.cloneNode(true));
         });
 
       $('final-code').textContent = tmp.innerHTML.trim();
@@ -708,6 +755,27 @@ ${richHtml}
         $('btn-copy-final').classList.remove('copied');
       }, 1800);
     });
+  }
+
+  function removeAdjacentOrphanSources(node) {
+    const removable = [];
+    let current = node.previousSibling;
+
+    while (current) {
+      if (isIgnorableWhitespace(current) || current.nodeType === Node.COMMENT_NODE) {
+        removable.push(current);
+        current = current.previousSibling;
+        continue;
+      }
+
+      if (!isSourceElement(current)) break;
+      removable.push(current);
+      current = current.previousSibling;
+    }
+
+    if (removable.some(isSourceElement)) {
+      removable.forEach(item => item.remove());
+    }
   }
 
   function generatePicture(meta, entries) {
