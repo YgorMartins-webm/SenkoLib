@@ -12278,7 +12278,7 @@ ColLib.register({
       css:  ``,
     },
 
-        /*@@@@Col - variacao-12 */
+            /*@@@@Col - variacao-12 */
     {
       id:   'variacao-12',
       name: 'Variação 12',
@@ -12865,26 +12865,10 @@ ColLib.register({
         <section class="product-header-2" aria-label="Cabeçalho do produto">
             <header class="product-header__banner-2">
                 <div style="width: 100%; height: 100%; margin: 0px;">
-                    <picture>
-                        <source media="(max-width: 320px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-toalhas-algodao-lifestyle-1704676-00fix.jpg?ims=548x">
-                        <source media="(max-width: 375px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-toalhas-algodao-lifestyle-1704676-00fix.jpg?ims=652x">
-                        <source media="(max-width: 425px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-toalhas-algodao-lifestyle-1704676-00fix.jpg?ims=747x">
-                        <source media="(max-width: 768px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-toalhas-algodao-lifestyle-1704676-00fix.jpg?ims=1399x">
-                        <source media="(max-width: 1024px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-toalhas-algodao-lifestyle-1704676-00fix.jpg?ims=1885x">
-                        <source media="(max-width: 1440px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-toalhas-algodao-lifestyle-1704676-00fix.jpg?ims=2372x">
-                        <source media="(max-width: 2560px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-toalhas-algodao-lifestyle-1704676-00fix.jpg?ims=2372x">
-                        <img class="product-header__banner-img-2"
-                            src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-toalhas-algodao-lifestyle-1704676-00fix.jpg?ims=2372x"
-                            alt="Toalhas brancas macias empilhadas com flores de algodão e penas, Amaciante Comfort Puro Cuidado"
-                            loading="eager" decoding="async">
-                    </picture>
+                    <img class="product-header__banner-img-2"
+                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-toalhas-algodao-lifestyle-1704676-00fix.jpg"
+                        alt="Toalhas brancas macias empilhadas com flores de algodão e penas, Amaciante Comfort Puro Cuidado"
+                        loading="eager" decoding="async">
                 </div>
                 <div class="product-header__badge-2" role="img" aria-label="Logo da marca">
                     <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/comfort/logo-comfort.png"
@@ -12906,26 +12890,10 @@ ColLib.register({
         <section class="section-1-wrap" aria-label="Benefícios do amaciante Comfort Puro Cuidado">
             <article class="section-1">
                 <div class="section-1__media">
-                    <picture>
-                        <source media="(max-width: 320px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-fundo-preto-1704676-01.png?ims=353x">
-                        <source media="(max-width: 375px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-fundo-preto-1704676-01.png?ims=444x">
-                        <source media="(max-width: 425px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-fundo-preto-1704676-01.png?ims=528x">
-                        <source media="(max-width: 768px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-fundo-preto-1704676-01.png?ims=447x">
-                        <source media="(max-width: 1024px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-fundo-preto-1704676-01.png?ims=644x">
-                        <source media="(max-width: 1440px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-fundo-preto-1704676-01.png?ims=665x">
-                        <source media="(max-width: 2560px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-fundo-preto-1704676-01.png?ims=665x">
-                        <img class="section-1__image"
-                            src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-fundo-preto-1704676-01.png?ims=665x"
-                            alt="Amaciante Comfort Concentrado Puro Cuidado 1L hipoalergênico indicado para roupas de bebê"
-                            loading="lazy" decoding="async" style="margin: auto;">
-                    </picture>
+                    <img class="section-1__image"
+                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-fundo-preto-1704676-01.png"
+                        alt="Amaciante Comfort Concentrado Puro Cuidado 1L hipoalergênico indicado para roupas de bebê"
+                        loading="lazy" decoding="async" style="margin: auto;">
                 </div>
                 <div class="section-1__content">
                     <p class="section-1__eyebrow">Cuidado concentrado</p>
@@ -13001,26 +12969,10 @@ ColLib.register({
                     </ol>
                 </div>
                 <div class="section-3__media">
-                    <picture>
-                        <source media="(max-width: 320px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-hipoalergenico-1l-1704676-02fix.jpg?ims=355x">
-                        <source media="(max-width: 375px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-hipoalergenico-1l-1704676-02fix.jpg?ims=447x">
-                        <source media="(max-width: 425px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-hipoalergenico-1l-1704676-02fix.jpg?ims=531x">
-                        <source media="(max-width: 768px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-hipoalergenico-1l-1704676-02fix.jpg?ims=473x">
-                        <source media="(max-width: 1024px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-hipoalergenico-1l-1704676-02fix.jpg?ims=670x">
-                        <source media="(max-width: 1440px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-hipoalergenico-1l-1704676-02fix.jpg?ims=741x">
-                        <source media="(max-width: 2560px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-hipoalergenico-1l-1704676-02fix.jpg?ims=741x">
-                        <img class="section-3__image"
-                            src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-hipoalergenico-1l-1704676-02fix.jpg?ims=741x"
-                            alt="Amaciante Comfort Concentrado Puro Cuidado 1L hipoalergênico envolto por flores de algodão e penas"
-                            style="border-radius: 20px; margin: auto;" loading="lazy" decoding="async">
-                    </picture>
+                    <img class="section-3__image"
+                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-concentrado-puro-cuidado-hipoalergenico-1l-1704676-02fix.jpg"
+                        alt="Amaciante Comfort Concentrado Puro Cuidado 1L hipoalergênico envolto por flores de algodão e penas"
+                        style="border-radius: 20px; margin: auto;" loading="lazy" decoding="async">
                 </div>
             </article>
         </section>
@@ -13049,26 +13001,10 @@ ColLib.register({
                     </ul>
                 </div>
                 <div class="section-1__media">
-                    <picture>
-                        <source media="(max-width: 320px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-maquina-lavar-uso-lifestyle-1704676-03fix.jpg?ims=353x">
-                        <source media="(max-width: 375px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-maquina-lavar-uso-lifestyle-1704676-03fix.jpg?ims=444x">
-                        <source media="(max-width: 425px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-maquina-lavar-uso-lifestyle-1704676-03fix.jpg?ims=528x">
-                        <source media="(max-width: 768px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-maquina-lavar-uso-lifestyle-1704676-03fix.jpg?ims=538x">
-                        <source media="(max-width: 1024px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-maquina-lavar-uso-lifestyle-1704676-03fix.jpg?ims=665x">
-                        <source media="(max-width: 1440px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-maquina-lavar-uso-lifestyle-1704676-03fix.jpg?ims=665x">
-                        <source media="(max-width: 2560px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-maquina-lavar-uso-lifestyle-1704676-03fix.jpg?ims=665x">
-                        <img class="section-1__image"
-                            src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-maquina-lavar-uso-lifestyle-1704676-03fix.jpg?ims=665x"
-                            alt="Máquina de lavar roupas aberta com peças coloridas e espuma de Amaciante Comfort Puro Cuidado"
-                            style="border-radius: 38px; margin: auto;" loading="lazy" decoding="async">
-                    </picture>
+                    <img class="section-1__image"
+                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-comfort-puro-cuidado-maquina-lavar-uso-lifestyle-1704676-03fix.jpg"
+                        alt="Máquina de lavar roupas aberta com peças coloridas e espuma de Amaciante Comfort Puro Cuidado"
+                        style="border-radius: 38px; margin: auto;" loading="lazy" decoding="async">
                 </div>
             </article>
         </section>
