@@ -2137,10 +2137,10 @@ video-header,
       css:  ``,
     },
 
-                            /*@@@@Col - 3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido */
+                                /*@@@@Col - 3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido */
     {
       id:   '3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido',
-      name: '3 blocos 18 com bgi no meio faq embutido',
+      name: 'prod-header-1bs-feat-3bs-faq-emb-manual',
       html: `<div class="lp-container">
 <style>
 * {
