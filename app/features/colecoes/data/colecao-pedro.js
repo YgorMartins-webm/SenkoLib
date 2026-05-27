@@ -3143,7 +3143,7 @@ video-header,
     },
 
             
-    /*@@@@Col - prod-header-1bs-feat-3bs-faq-emb-manual */
+        /*@@@@Col - prod-header-1bs-feat-3bs-faq-emb-manual */
     {
       id:   'prod-header-1bs-feat-3bs-faq-emb-manual',
       name: 'prod-header-1bs-feat-3bs-faq-emb-manual',
@@ -3261,7 +3261,7 @@ video-header,
   contain: layout style;
 }
 
-.section-32__groupimage-section:has(.faq-section) {
+.section-32__groupimage-section:has(#faq-section) {
   z-index: 0;
 }
 
@@ -3467,7 +3467,9 @@ video-header,
   border: 0;
 }
 
-.faq-section {
+/* inicio-area-de-faq */
+
+#faq-section {
   width: 100%;
   padding: 0 16px 2rem;
   box-sizing: border-box;
@@ -3487,12 +3489,12 @@ video-header,
   -webkit-overflow-scrolling: touch;
 }
 
-.faq-section__header {
+#faq-section__header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.faq-section__title {
+#faq-section__title {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: bold;
   color: #fff;
@@ -3500,13 +3502,13 @@ video-header,
   line-height: 6vw;
 }
 
-.faq-section__subtitle {
+#faq-section__subtitle {
   font-size: 1rem;
   color: #fff;
   margin: 0;
 }
 
-.faq-section__list {
+#faq-section__list {
   list-style: none;
   margin: 0 auto;
   padding: 0;
@@ -3517,14 +3519,14 @@ video-header,
   overflow: hidden;
 }
 
-.faq-section__item {
+#faq-section__item {
   background: #ffffff05;
   border: 1px solid #fff;
   border-radius: 12px;
   overflow: hidden;
 }
 
-.faq-section__item summary {
+#faq-section__item summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -3534,34 +3536,34 @@ video-header,
   list-style: none;
 }
 
-.faq-section__item summary::-webkit-details-marker {
+#faq-section__item summary::-webkit-details-marker {
   display: none;
 }
 
-.faq-section__item summary:hover {
+#faq-section__item summary:hover {
   background: #f9f9f92f;
 }
 
-.faq-section__q-text {
+#faq-section__q-text {
   font-size: 1rem;
   font-weight: bold;
   color: #fff;
   flex: 1;
 }
 
-.faq-section__q-text:hover {
+#faq-section__q-text:hover {
   color: #e8ff5e;
 }
 
-.faq-section__icon {
+#faq-section__icon {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
   position: relative;
 }
 
-.faq-section__icon::before,
-.faq-section__icon::after {
+#faq-section__icon::before,
+#faq-section__icon::after {
   content: "";
   position: absolute;
   background: #888;
@@ -3569,31 +3571,31 @@ video-header,
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.faq-section__icon::before {
+#faq-section__icon::before {
   width: 12px;
   height: 1.5px;
   top: 9px;
   left: 4px;
 }
 
-.faq-section__icon::after {
+#faq-section__icon::after {
   width: 1.5px;
   height: 12px;
   top: 4px;
   left: 9px;
 }
 
-.faq-section__item details[open] .faq-section__icon::after {
+#faq-section__item details[open] #faq-section__icon::after {
   transform: rotate(90deg);
   opacity: 0;
 }
 
-.faq-section__a-inner {
+#faq-section__a-inner {
   padding: 14px 20px 16px;
   border-top: 1px solid #e5e5e5;
 }
 
-.faq-section__a-text {
+#faq-section__a-text {
   font-size: 0.9rem;
   color: #fff;
   line-height: 1.6;
@@ -3601,23 +3603,70 @@ video-header,
   font-weight: 500;
 }
 
-.faq-section::-webkit-scrollbar {
+#faq-section::-webkit-scrollbar {
   width: 8px;
 }
 
-.faq-section::-webkit-scrollbar-track {
+#faq-section::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
 
-.faq-section::-webkit-scrollbar-thumb {
+#faq-section::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
 }
 
-.faq-section::-webkit-scrollbar-thumb:hover {
+#faq-section::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.5);
 }
+
+@media (prefers-contrast: more) {
+    #faq-section__a-text {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+  }
+}
+
+@media (max-width: 1060px) {
+    #faq-section {
+    top: 10%;
+    max-width: 90%;
+    max-height: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+    #faq-section__header {
+    margin-bottom: 1rem;
+  }
+
+  #faq-section__a-text {
+    font-size: 0.7rem !important;
+  }
+
+  #faq-section__title {
+    font-size: 1rem !important;
+  }
+
+  #faq-section__subtitle,
+  #faq-section__q-text {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media (max-width: 470px) {
+    #faq-section {
+    max-height: 180px !important;
+    padding: 0.5rem 8px !important;
+    top: 5% !important;
+    max-width: 90%;
+    border-radius: 20px;
+  }
+  }
+
+  /* final-area-de-faq */
 
 .p__end {
   color: #8a8a8a;
@@ -3681,20 +3730,9 @@ video-header,
     color: #3a2301;
   }
 
-  .faq-section__a-text {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #000;
-  }
-
 }
 
 @media (max-width: 1060px) {
-  .faq-section {
-    top: 10%;
-    max-width: 90%;
-    max-height: 80%;
-  }
 
   .grid-container {
     grid-template-columns: 1fr;
@@ -3737,22 +3775,6 @@ video-header,
     --banner-height: 180px;
   }
 
-  .faq-section__header {
-    margin-bottom: 1rem;
-  }
-
-  .faq-section__a-text {
-    font-size: 0.7rem !important;
-  }
-
-  .faq-section__title {
-    font-size: 1rem !important;
-  }
-
-  .faq-section__subtitle,
-  .faq-section__q-text {
-    font-size: 0.75rem !important;
-  }
 }
 
   @media (min-width: 820px) {
@@ -3805,13 +3827,6 @@ video-header,
     font-size: 2.4vw;
   }
 
-  .faq-section {
-    max-height: 180px !important;
-    padding: 0.5rem 8px !important;
-    top: 5% !important;
-    max-width: 90%;
-    border-radius: 20px;
-  }
 }
 
 @media (max-width: 375px) {
@@ -4071,21 +4086,20 @@ video-header,
 
               <!-- FAQ -->
 
-       <section class="faq-section" aria-labelledby="faq-section-title">
+       <section id="faq-section" aria-labelledby="faq-section-title">
            
-    <div class="faq-section__header">
-      <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
-      <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha baseado em perguntas do público</p>
+    <div id="faq-section__header">
+      <h2 id="faq-section__title" id="faq-section-title">Dúvidas Frequentes</h2>
     </div>
-    <ul class="faq-section__list" style="overflow: hidden;" role="list">
-      <li class="faq-section__item">
+    <ul id="faq-section__list" style="overflow: hidden;" role="list">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">1. Para que serve a Cervejeira Philco 96L 3 em 1 PCV09A Preto?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">1. Para que serve a Cervejeira Philco 96L 3 em 1 PCV09A Preto?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
             A Cervejeira Philco 96L 3 em 1 PCV09A Preto serve como cervejeira, frigobar e adega em um só produto.
             Ela é indicada para armazenar latas, long necks, barris, bebidas e alimentos, conforme a necessidade de uso.
             Essa versatilidade facilita a organização em diferentes ocasiões e ambientes.
@@ -4093,28 +4107,28 @@ video-header,
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">2. A Cervejeira Philco PCV09A tem bom desempenho de refrigeração?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">2. A Cervejeira Philco PCV09A tem bom desempenho de refrigeração?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
            Sim. A Cervejeira Philco 96L 3 em 1 PCV09A Preto conta com sistema de refrigeração por compressor.
             A ventilação interna distribui a temperatura de forma uniforme, e o display digital permite controle preciso sem abrir a porta.
             </p>
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details> 
           <summary>
-            <h3 class="faq-section__q-text">3. A Cervejeira Philco PCV09A é adequada para evitar umidade na porta?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">3. A Cervejeira Philco PCV09A é adequada para evitar umidade na porta?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
             Sim. A Cervejeira Philco 96L 3 em 1 PCV09A Preto possui porta de vidro triplo com sistema antissudação.
             A ficha também informa resistência na porta, recurso que evita o acúmulo de umidade na parte interna.
             Isso favorece a estabilidade térmica e mantém a visualização do conteúdo mais prática.
@@ -4122,14 +4136,14 @@ video-header,
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">4. Como usar melhor a Cervejeira Philco PCV09A no dia a dia?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">4. Como usar melhor a Cervejeira Philco PCV09A no dia a dia?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
               A Cervejeira Philco 96L 3 em 1 PCV09A Preto permite ajustar a temperatura pelo display digital sem abrir a porta.
               A capacidade comporta até 84 latas, 48 long necks ou 4 barris, conforme as informações do fornecedor presentes na ficha.
               Com a organização interna e a iluminação em LED, o acesso às bebidas fica mais simples e funcional.
@@ -4137,14 +4151,14 @@ video-header,
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">5. Quais são as características técnicas da Cervejeira Philco PCV09A?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">5. Quais são as características técnicas da Cervejeira Philco PCV09A?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
               A Cervejeira Philco 96L 3 em 1 PCV09A Preto tem capacidade bruta de 96L e capacidade líquida de 82L.
               Ela aparece nas versões 110V, com EAN 7891356129827, e 220V, com EAN 7899963921469.
               Também possui iluminação interna em LED, degelo automático, pés frontais niveladores e cordão de 1800 mm.
