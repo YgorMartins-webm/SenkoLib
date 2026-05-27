@@ -1017,10 +1017,10 @@ video-header,
       css:  ``,
     },
 
-                    /*@@@@Col - comp-3-blocos-product-header-faq-embutido-e-tabela */
+                        /*@@@@Col - comp-3-blocos-product-header-faq-embutido-e-tabela */
     {
       id:   'comp-3-blocos-product-header-faq-embutido-e-tabela',
-      name: 'comp 3 blocos, 18 no meio, video-header, FAQ embutido, e tabela',
+      name: 'comp 3 blocos 18 no meio video-header FAQ embutido e tabela',
       html: `    <div class="lp-container">
 <style>
 * {
@@ -1197,7 +1197,7 @@ video-header,
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.3);
   max-width: 70%;
-  z-index: 100;
+  z-index: 30;
 }
 
 .features-section {
@@ -1341,7 +1341,9 @@ video-header,
   border: 0;
 }
 
-.faq-section {
+/* inicio-area-de-faq */
+
+#faq-section {
   width: 100%;
   padding: 0 16px 2rem;
   box-sizing: border-box;
@@ -1361,12 +1363,12 @@ video-header,
   -webkit-overflow-scrolling: touch;
 }
 
-.faq-section__header {
+#faq-section__header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.faq-section__title {
+#faq-section__title {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: bold;
   color: #fff;
@@ -1374,13 +1376,13 @@ video-header,
   line-height: 6vw;
 }
 
-.faq-section__subtitle {
+#faq-section__subtitle {
   font-size: 1rem;
   color: #fff;
   margin: 0;
 }
 
-.faq-section__list {
+#faq-section__list {
   list-style: none;
   margin: 0 auto;
   padding: 0;
@@ -1391,14 +1393,14 @@ video-header,
   overflow: hidden;
 }
 
-.faq-section__item {
+#faq-section__item {
   background: #ffffff05;
   border: 1px solid #fff;
   border-radius: 12px;
   overflow: hidden;
 }
 
-.faq-section__item summary {
+#faq-section__item summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1408,34 +1410,34 @@ video-header,
   list-style: none;
 }
 
-.faq-section__item summary::-webkit-details-marker {
+#faq-section__item summary::-webkit-details-marker {
   display: none;
 }
 
-.faq-section__item summary:hover {
+#faq-section__item summary:hover {
   background: #f9f9f92f;
 }
 
-.faq-section__q-text {
+#faq-section__q-text {
   font-size: 1rem;
   font-weight: bold;
   color: #fff;
   flex: 1;
 }
 
-.faq-section__q-text:hover {
-  color: #ff7200;
+#faq-section__q-text:hover {
+  color: #ffb81c;
 }
 
-.faq-section__icon {
+#faq-section__icon {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
   position: relative;
 }
 
-.faq-section__icon::before,
-.faq-section__icon::after {
+#faq-section__icon::before,
+#faq-section__icon::after {
   content: "";
   position: absolute;
   background: #888;
@@ -1443,31 +1445,31 @@ video-header,
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.faq-section__icon::before {
+#faq-section__icon::before {
   width: 12px;
   height: 1.5px;
   top: 9px;
   left: 4px;
 }
 
-.faq-section__icon::after {
+#faq-section__icon::after {
   width: 1.5px;
   height: 12px;
   top: 4px;
   left: 9px;
 }
 
-.faq-section__item details[open] .faq-section__icon::after {
+#faq-section__item details[open] #faq-section__icon::after {
   transform: rotate(90deg);
   opacity: 0;
 }
 
-.faq-section__a-inner {
+#faq-section__a-inner {
   padding: 14px 20px 16px;
   border-top: 1px solid #e5e5e5;
 }
 
-.faq-section__a-text {
+#faq-section__a-text {
   font-size: 0.9rem;
   color: #fff;
   line-height: 1.6;
@@ -1475,23 +1477,71 @@ video-header,
   font-weight: 500;
 }
 
-.faq-section::-webkit-scrollbar {
+#faq-section::-webkit-scrollbar {
   width: 8px;
 }
 
-.faq-section::-webkit-scrollbar-track {
+#faq-section::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
 
-.faq-section::-webkit-scrollbar-thumb {
+#faq-section::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
 }
 
-.faq-section::-webkit-scrollbar-thumb:hover {
+#faq-section::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.5);
 }
+
+@media (prefers-contrast: more) {
+    #faq-section__a-text {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+  }
+}
+
+@media (max-width: 1060px) {
+    #faq-section {
+    top: 10%;
+    max-width: 90%;
+    max-height: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+    #faq-section__header {
+    margin-bottom: 1rem;
+  }
+
+  #faq-section__a-text {
+    font-size: 0.7rem !important;
+  }
+
+  #faq-section__title {
+    font-size: 1rem !important;
+  }
+
+  #faq-section__subtitle,
+  #faq-section__q-text {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media (max-width: 470px) {
+    #faq-section {
+    max-height: 180px !important;
+    padding: 0.5rem 8px !important;
+    top: 5% !important;
+    max-width: 90%;
+    border-radius: 20px;
+  }
+  }
+
+  /* final-area-de-faq */
+
 
 .p__end {
   color: #8a8a8a;
@@ -1585,12 +1635,6 @@ video-header,
     color: #3a2301;
   }
 
-  .faq-section__a-text {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #000;
-  }
-
         .table-td-custom-sub
       {
         color: #000;
@@ -1605,11 +1649,6 @@ video-header,
 }
 
 @media (max-width: 1060px) {
-  .faq-section {
-    top: 10%;
-    max-width: 90%;
-    max-height: 80%;
-  }
 
   .grid-container {
     grid-template-columns: 1fr;
@@ -1652,22 +1691,6 @@ video-header,
     --banner-height: 180px;
   }
 
-  .faq-section__header {
-    margin-bottom: 1rem;
-  }
-
-  .faq-section__a-text {
-    font-size: 0.7rem !important;
-  }
-
-  .faq-section__title {
-    font-size: 1rem !important;
-  }
-
-  .faq-section__subtitle,
-  .faq-section__q-text {
-    font-size: 0.75rem !important;
-  }
 }
 
  @media (max-width: 600px) {
@@ -1711,13 +1734,6 @@ video-header,
     font-size: 2.4vw;
   }
 
-  .faq-section {
-    max-height: 180px !important;
-    padding: 0.5rem 8px !important;
-    top: 5% !important;
-    max-width: 90%;
-    border-radius: 20px;
-  }
 }
 
 @media (max-width: 375px) {
@@ -1980,21 +1996,20 @@ video-header,
 
               <!-- FAQ -->
 
-       <section class="faq-section" aria-labelledby="faq-section-title">
+       <section id="faq-section" aria-labelledby="faq-section-title">
            
-    <div class="faq-section__header">
-      <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
-      <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha baseado em perguntas do público</p>
+    <div id="faq-section__header">
+      <h2 id="faq-section__title" id="faq-section-title">Dúvidas Frequentes</h2>
     </div>
-    <ul class="faq-section__list" style="overflow: hidden;" role="list">
-      <li class="faq-section__item">
+    <ul id="faq-section__list" style="overflow: hidden;" role="list">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">1. Para que serve o Conjunto Parafuso Precon Tubozan Autobrocante para Telha 10 unidades?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">1. Para que serve o Conjunto Parafuso Precon Tubozan Autobrocante para Telha 10 unidades?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
             Serve como kit de fixação para telha. A ficha informa que o produto pertence à linha Parafusos Autobrocantes 
             e conta com parafuso metálico autobrocante. É indicado para quem precisa de uma solução de fixação com 
             instalação facilitada e acabamento no conjunto.
@@ -2002,56 +2017,56 @@ video-header,
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">2. O kit Precon Tubozan tem boa praticidade na instalação?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">2. O kit Precon Tubozan tem boa praticidade na instalação?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
            apresenta fácil instalação conforme a ficha técnica. O produto reúne parafusos autobrocantes e tampa de acabamento 
            ou tampa protetora, conforme a variação informada. Essa composição favorece uma aplicação mais prática e com acabamento mais organizado.
             </p>
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details> 
           <summary>
-            <h3 class="faq-section__q-text">3. Como usar o kit para obter melhor acabamento?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">3. Como usar o kit para obter melhor acabamento?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
             Deve ser usado conforme sua finalidade de kit de fixação para telha. A ficha destaca fácil instalação e, em algumas variações, 
             informa melhor acabamento e tampa de acabamento ou protetora.
             </p>
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">4. De que material é feito o parafuso do kit?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">4. De que material é feito o parafuso do kit?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
               Possui parafuso metálico autobrocante. A ficha também informa a presença de tampa de acabamento 
               ou tampa protetora, dependendo da variação. Esse conjunto entrega fixação com acabamento associado ao uso em telhas.
             </p>
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">5. Quais são as medidas e cores disponíveis desse conjunto?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">5. Quais são as medidas e cores disponíveis desse conjunto?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
               Aparece nas medidas 2.1/2 e 3.1/2 sendo as cores Cerâmico, Branco, Concreto e Marfim.
               Essa variação permite selecionar a opção conforme medida e acabamento descritos para cada item.
             </p>
