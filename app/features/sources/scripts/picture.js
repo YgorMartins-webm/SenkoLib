@@ -732,6 +732,7 @@ ${richHtml}
           replaceTarget.replaceWith(replacement.content.cloneNode(true));
         });
 
+      cleanupNestedPictures(tmp);
       $('final-code').textContent = tmp.innerHTML.trim();
       moveFinalOutputToEnd();
       $('final-output').classList.remove('is-hidden');
@@ -776,6 +777,22 @@ ${richHtml}
     if (removable.some(isSourceElement)) {
       removable.forEach(item => item.remove());
     }
+  }
+
+  function cleanupNestedPictures(root) {
+    Array.from(root.querySelectorAll('picture picture')).forEach(innerPicture => {
+      const outerPicture = closestParentPicture(innerPicture);
+      if (outerPicture) outerPicture.replaceWith(innerPicture.cloneNode(true));
+    });
+  }
+
+  function closestParentPicture(node) {
+    let current = node.parentElement;
+    while (current) {
+      if (current.tagName.toLowerCase() === 'picture') return current;
+      current = current.parentElement;
+    }
+    return null;
   }
 
   function generatePicture(meta, entries) {
