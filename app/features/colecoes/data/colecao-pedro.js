@@ -2137,7 +2137,7 @@ video-header,
       css:  ``,
     },
 
-                        /*@@@@Col - 3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido */
+                            /*@@@@Col - 3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido */
     {
       id:   '3-blocos-com-ytb-18-no-meio-e-faq-embutido-corrigido',
       name: '3 blocos 18 com bgi no meio faq embutido',
@@ -2245,7 +2245,7 @@ video-header,
   contain: layout style;
 }
 
-.section-32__groupimage-section:has(.faq-section) {
+.section-32__groupimage-section:has(#faq-section) {
   z-index: 0;
 }
 
@@ -2319,7 +2319,9 @@ video-header,
   padding: 40px 0;
 }
 
-.faq-section {
+/* inicio-area-de-faq */
+
+#faq-section {
   width: 100%;
   padding: 0 16px 2rem;
   box-sizing: border-box;
@@ -2339,12 +2341,12 @@ video-header,
   -webkit-overflow-scrolling: touch;
 }
 
-.faq-section__header {
+#faq-section__header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.faq-section__title {
+#faq-section__title {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: bold;
   color: #fff;
@@ -2352,13 +2354,13 @@ video-header,
   line-height: 6vw;
 }
 
-.faq-section__subtitle {
+#faq-section__subtitle {
   font-size: 1rem;
   color: #fff;
   margin: 0;
 }
 
-.faq-section__list {
+#faq-section__list {
   list-style: none;
   margin: 0 auto;
   padding: 0;
@@ -2369,14 +2371,14 @@ video-header,
   overflow: hidden;
 }
 
-.faq-section__item {
+#faq-section__item {
   background: #ffffff05;
   border: 1px solid #fff;
   border-radius: 12px;
   overflow: hidden;
 }
 
-.faq-section__item summary {
+#faq-section__item summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2386,52 +2388,52 @@ video-header,
   list-style: none;
 }
 
-.faq-section::-webkit-scrollbar {
+#faq-section::-webkit-scrollbar {
   width: 8px;
 }
 
-.faq-section::-webkit-scrollbar-track {
+#faq-section::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
 
-.faq-section::-webkit-scrollbar-thumb {
+#faq-section::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
 }
 
-.faq-section::-webkit-scrollbar-thumb:hover {
+#faq-section::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.5);
 }
 
-.faq-section__item summary::-webkit-details-marker {
+#faq-section__item summary::-webkit-details-marker {
   display: none;
 }
 
-.faq-section__item summary:hover {
+#faq-section__item summary:hover {
   background: #f9f9f92f;
 }
 
-.faq-section__q-text {
+#faq-section__q-text {
   font-size: 1rem;
   font-weight: bold;
   color: #fff;
   flex: 1;
 }
 
-.faq-section__q-text:hover {
+#faq-section__q-text:hover {
   color: #ffe600;
 }
 
-.faq-section__icon {
+#faq-section__icon {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
   position: relative;
 }
 
-.faq-section__icon::before,
-.faq-section__icon::after {
+#faq-section__icon::before,
+#faq-section__icon::after {
   content: "";
   position: absolute;
   background: #888;
@@ -2439,37 +2441,84 @@ video-header,
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.faq-section__icon::before {
+#faq-section__icon::before {
   width: 12px;
   height: 1.5px;
   top: 9px;
   left: 4px;
 }
 
-.faq-section__icon::after {
+#faq-section__icon::after {
   width: 1.5px;
   height: 12px;
   top: 4px;
   left: 9px;
 }
 
-.faq-section__item details[open] .faq-section__icon::after {
+#faq-section__item details[open] #faq-section__icon::after {
   transform: rotate(90deg);
   opacity: 0;
 }
 
-.faq-section__a-inner {
+#faq-section__a-inner {
   padding: 14px 20px 16px;
   border-top: 1px solid #e5e5e5;
 }
 
-.faq-section__a-text {
+#faq-section__a-text {
   font-size: 0.9rem;
   color: #fff;
   line-height: 1.6;
   margin: 0;
   font-weight: 500;
 }
+
+@media (prefers-contrast: more) {
+    #faq-section__a-text {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+  }
+}
+
+@media (max-width: 1060px) {
+    #faq-section {
+    top: 10%;
+    max-width: 90%;
+    max-height: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+    #faq-section__header {
+    margin-bottom: 1rem;
+  }
+
+  #faq-section__a-text {
+    font-size: 0.7rem !important;
+  }
+
+  #faq-section__title {
+    font-size: 1rem !important;
+  }
+
+  #faq-section__subtitle,
+  #faq-section__q-text {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media (max-width: 470px) {
+    #faq-section {
+    max-height: 180px !important;
+    padding: 0.5rem 8px !important;
+    top: 5% !important;
+    max-width: 90%;
+    border-radius: 20px;
+  }
+  }
+
+    /* final-area-de-faq */
 
 .sr-only {
   position: absolute;
@@ -2618,7 +2667,7 @@ video-header,
     color: #3a2301;
   }
 
-  .faq-section__a-text {
+  #faq-section__a-text {
     font-size: 1rem;
     font-weight: bold;
     color: #000;
@@ -2626,7 +2675,7 @@ video-header,
 }
 
 @media (max-width: 1060px) {
-  .faq-section {
+  #faq-section {
     top: 10%;
     max-width: 90%;
     max-height: 80%;
@@ -2673,20 +2722,20 @@ video-header,
     --banner-height: 180px;
   }
 
-  .faq-section__header {
+  #faq-section__header {
     margin-bottom: 1rem;
   }
 
-  .faq-section__a-text {
+  #faq-section__a-text {
     font-size: 0.7rem !important;
   }
 
-  .faq-section__title {
+  #faq-section__title {
     font-size: 1rem !important;
   }
 
-  .faq-section__subtitle,
-  .faq-section__q-text {
+  #faq-section__subtitle,
+  #faq-section__q-text {
     font-size: 0.75rem !important;
   }
 }
@@ -2718,7 +2767,7 @@ video-header,
     transform: translate(-50%, -50%);
   }
 
-  .faq-section {
+  #faq-section {
     max-height: 180px !important;
     padding: 0.5rem 8px !important;
     top: 5% !important;
@@ -2994,21 +3043,20 @@ video-header,
 
               <!-- FAQ -->
 
-       <section class="faq-section" aria-labelledby="faq-section-title">
+       <section id="faq-section" aria-labelledby="faq-section-title">
            
-    <div class="faq-section__header">
-      <h2 class="faq-section__title" id="faq-section-title">Resolva suas dúvidas</h2>
-      <p class="faq-section__subtitle">Saiba o porquê do produto ser a melhor escolha baseado em perguntas do público</p>
+    <div id="faq-section__header">
+      <h2 id="faq-section__title" id="faq-section-title">Dúvidas Frequentes</h2>
     </div>
-    <ul class="faq-section__list" style="overflow: hidden;" role="list">
-      <li class="faq-section__item">
+    <ul id="faq-section__list" style="overflow: hidden;" role="list">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">1. Para que serve a Furadeira de Impacto 1/2" 710W com Chave VVR Stanley 127V?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">1. Para que serve a Furadeira de Impacto 1/2" 710W com Chave VVR Stanley 127V?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
            A Furadeira de Impacto 1/2" 710W com Chave VVR Stanley 127V serve para perfuração em materiais como madeira, 
            plástico e alvenaria. A ficha também informa capacidade de perfuração em madeira, aço e alvenaria. É indicada 
            para aplicações que exigem força, controle e versatilidade em reformas, obras e instalações.
@@ -3016,14 +3064,14 @@ video-header,
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">2. A Furadeira de Impacto Stanley tem bom desempenho em materiais rígidos?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">2. A Furadeira de Impacto Stanley tem bom desempenho em materiais rígidos?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
            Sim. A Furadeira de Impacto 1/2" 710W com Chave VVR Stanley 127V possui motor de 710W e função impacto. 
            A ficha informa impacto de 0 a 51.000 ipm e velocidade de 0 a 3.000 rpm. Esse desempenho favorece perfurações 
            em aplicações exigentes e materiais como alvenaria.
@@ -3031,14 +3079,14 @@ video-header,
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details> 
           <summary>
-            <h3 class="faq-section__q-text">3. A Furadeira de Impacto Stanley é adequada para uso contínuo?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">3. A Furadeira de Impacto Stanley é adequada para uso contínuo?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
             Sim. A Furadeira de Impacto 1/2" 710W com Chave VVR Stanley 127V possui gatilho eletrônico de dois dedos com trava para uso contínuo. 
             O material do fornecedor também informa design ergonômico e botão de trava para longos períodos de trabalho. 
             Esses recursos contribuem para mais conforto e controle durante a operação.
@@ -3046,14 +3094,14 @@ video-header,
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">4. Qual é a durabilidade e garantia da Furadeira de Impacto Stanley?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">4. Qual é a durabilidade e garantia da Furadeira de Impacto Stanley?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
               A Furadeira de Impacto 1/2" 710W com Chave VVR Stanley 127V possui garantia de 12 meses conforme a ficha técnica. 
               O arquivo também informa anéis de carvão, descritos como recurso para maior durabilidade da ferramenta. 
               Essa construção oferece respaldo e resistência para o uso em aplicações frequentes.
@@ -3061,14 +3109,14 @@ video-header,
           </div>
         </details>
       </li>
-      <li class="faq-section__item">
+      <li id="faq-section__item">
         <details>
           <summary>
-            <h3 class="faq-section__q-text">5. Quais são as principais características técnicas da Furadeira de Impacto Stanley?</h3>
-            <span class="faq-section__icon" aria-hidden="true"></span>
+            <h3 id="faq-section__q-text">5. Quais são as principais características técnicas da Furadeira de Impacto Stanley?</h3>
+            <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
-          <div class="faq-section__a-inner">
-            <p class="faq-section__a-text">
+          <div id="faq-section__a-inner">
+            <p id="faq-section__a-text">
             A Furadeira de Impacto 1/2" 710W com Chave VVR Stanley 127V tem referência SDH710B2, potência de 710W e mandril 
             de 1/2" ou 13 mm. A capacidade de perfuração informada é de 25 mm em madeira e 13 mm em aço e alvenaria. 
             Esses dados ajudam a avaliar a compatibilidade da ferramenta com diferentes materiais e brocas.
