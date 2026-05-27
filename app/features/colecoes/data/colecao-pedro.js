@@ -1017,10 +1017,10 @@ video-header,
       css:  ``,
     },
 
-                        /*@@@@Col - comp-3-blocos-product-header-faq-embutido-e-tabela */
+                            /*@@@@Col - comp-3-blocos-product-header-faq-embutido-e-tabela */
     {
       id:   'comp-3-blocos-product-header-faq-embutido-e-tabela',
-      name: 'comp 3 blocos 18 no meio video-header FAQ embutido e tabela',
+      name: 'video-header-1bs-feat-3bs-faq-emb-tab',
       html: `    <div class="lp-container">
 <style>
 * {
