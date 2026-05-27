@@ -3143,10 +3143,10 @@ video-header,
     },
 
             
-        /*@@@@Col - prod-header-1bs-feat-3bs-faq-emb-manual */
+            /*@@@@Col - prod-header-1bs-feat-3bs-faq-emb-manual */
     {
       id:   'prod-header-1bs-feat-3bs-faq-emb-manual',
-      name: 'prod-header-1bs-feat-3bs-faq-emb-manual',
+      name: 'video-header-1bs-feat-3bs-faq-emb-manual',
       html: `    <div class="lp-container">
 <style>
 * {
