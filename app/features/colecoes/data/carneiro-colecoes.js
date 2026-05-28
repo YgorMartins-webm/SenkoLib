@@ -13081,7 +13081,7 @@ ColLib.register({
       css:  ``,
     },
 
-    /*@@@@Col - variacao-13 */
+        /*@@@@Col - variacao-13 */
     {
       id:   'variacao-13',
       name: 'Variação 13',
@@ -13746,10 +13746,9 @@ ColLib.register({
                 content: "";
                 position: absolute;
                 inset: 0;
-                background-image: url(C:/Users/ygorq/Downloads/chinelo-havaianas-dual-masculino-cinza-fundo-infinito-1225035-12.png);
+                background-image: url("https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-dual-masculino-cinza-fundo-infinito-1225035-12.png");
                 background-size: contain;
                 background-repeat: no-repeat;
-                opacity: 0.08;
                 pointer-events: none;
                 z-index: 4;
             }
@@ -14481,7 +14480,8 @@ ColLib.register({
         <section class="section-2-2" aria-label="Cabeçalho do produto">
             <header class="section-2-2__banner">
                 <div class="section-2-2__banner-container">
-                    <video class="section-2-2__banner-video" poster="C:\\Users\\ygorq\\Downloads\\header-havaianas.webp"
+                    <video class="section-2-2__banner-video"
+                        poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header-havaianas.webp"
                         preload="none" autoplay muted loop playsinline aria-hidden="true">
                         <source
                             src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/havaianas/header-havaianas.mov">
@@ -14509,10 +14509,10 @@ ColLib.register({
         <section class="section-6" aria-label="Destaque do produto com texto" background-color: #90939f99;>
             <picture>
                 <source media="(max-width: 760px)"
-                    srcset="C:\\Users\\ygorq\\Downloads\\chinelo-havaianas-dual-masculino-cinza-gelo-casual-1225035-10.webp"
+                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-dual-masculino-cinza-gelo-casual-1225035-10.webp"
                     width="780" height="400">
                 <img class="section-6__image"
-                    src="C:\\Users\\ygorq\\Downloads\\chinelo-havaianas-dual-masculino-cinza-gelo-lifestyle-1225035-11.webp"
+                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-dual-masculino-cinza-gelo-lifestyle-1225035-11.webp"
                     alt="Havaianas Dual Verde São Francisco com tiras largas e solado robusto" width="1600" height="650"
                     loading="lazy" fetchpriority="high" decoding="async">
             </picture>
@@ -14541,7 +14541,8 @@ ColLib.register({
                     </p>
                 </div>
                 <div class="section-15__image-wrapper">
-                    <img class="section-15__image" src="C:\\Users\\ygorq\\Downloads\\4145602-8275-havaianas-dual-3.png"
+                    <img class="section-15__image"
+                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/sandalia-havaianas-dual-masculina-cinza-gelo-fundo-infinito-1225035-13.webp"
                         alt="Chinelo Havaianas Dual Verde com solado robusto em duas camadas" />
                 </div>
             </div>
@@ -14563,7 +14564,7 @@ ColLib.register({
                             <figure class="section-10__card">
                                 <div class="section-10__media">
                                     <img class="section-10__image"
-                                        src="C:\\Users\\ygorq\\Downloads\\sandalia-havaianas-dual-masculina-cinza-gelo-1225035-02.webp"
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/sandalia-havaianas-dual-masculina-cinza-gelo-1225035-02.webp"
                                         alt="Detalhe das tiras largas em PVC da Havaianas Dual">
                                 </div>
                                 <figcaption>
@@ -14580,7 +14581,7 @@ ColLib.register({
                             <figure class="section-10__card">
                                 <div class="section-10__media">
                                     <img class="section-10__image"
-                                        src="C:\\Users\\ygorq\\Downloads\\chinelo-havaianas-dual-masculino-cinza-lifestyle-1225035-03.webp"
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-dual-masculino-cinza-lifestyle-1225035-03.webp"
                                         alt="Detalhe do solado de duas camadas da Havaianas Dual">
                                 </div>
                                 <figcaption>
@@ -14597,7 +14598,7 @@ ColLib.register({
                             <figure class="section-10__card">
                                 <div class="section-10__media">
                                     <img class="section-10__image"
-                                        src="C:\\Users\\ygorq\\Downloads\\chinelo-havaianas-dual-masculino-cinza-casual-1225035-04.webp"
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-dual-masculino-cinza-casual-1225035-04.webp"
                                         alt="Detalhe da textura na base da Havaianas Dual">
                                 </div>
                                 <figcaption>
@@ -14614,7 +14615,7 @@ ColLib.register({
                             <figure class="section-10__card">
                                 <div class="section-10__media">
                                     <img class="section-10__image"
-                                        src="C:\\Users\\ygorq\\Downloads\\chinelo-havaianas-dual-masculino-praia-lifestyle-1225035-05.webp"
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-dual-masculino-praia-lifestyle-1225035-05.webp"
                                         alt="Detalhe da borracha flexível da Havaianas Dual">
                                 </div>
                                 <figcaption>
@@ -14651,7 +14652,7 @@ ColLib.register({
                 </div>
                 <div class="section-15__image-wrapper">
                     <img class="section-15__image"
-                        src="C:\\Users\\ygorq\\Downloads\\chinelo-havaianas-dual-masculino-cinza-gelo-angulo-lateral-1225035-14.webp"
+                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-dual-masculino-cinza-gelo-angulo-lateral-1225035-14.webp"
                         alt="Chinelo Havaianas Dual Verde com tiras bicolores largas" />
                 </div>
             </div>
@@ -14678,19 +14679,19 @@ ColLib.register({
                         <div class="section-21__track">
                             <figure class="section-21__panel section-21__panel--first">
                                 <img class="section-21__image"
-                                    src="C:\\Users\\ygorq\\Downloads\\sandalia-havaianas-dual-detalhe-tira-textura-pneu-1225035-06.webp"
+                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/sandalia-havaianas-dual-detalhe-tira-textura-pneu-1225035-06.webp"
                                     alt="Imagem da tira bicolor da Havaianas Dual" loading="lazy" width="420"
                                     height="320">
                             </figure>
                             <figure class="section-21__panel section-21__panel--middle">
                                 <img class="section-21__image"
-                                    src="C:\\Users\\ygorq\\Downloads\\sandalia-havaianas-dual-solado-borracha-antiderrapante-1225035-07.webp"
+                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/sandalia-havaianas-dual-solado-borracha-antiderrapante-1225035-07.webp"
                                     alt="Imagem da palmilha texturizada da Havaianas Dual" loading="lazy" width="420"
                                     height="320">
                             </figure>
                             <figure class="section-21__panel section-21__panel--last">
                                 <img class="section-21__image"
-                                    src="C:\\Users\\ygorq\\Downloads\\sandalia-havaianas-dual-solado-dupla-camada-borracha-1225035-08.webp"
+                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/sandalia-havaianas-dual-solado-dupla-camada-borracha-1225035-08.webp"
                                     alt="Imagem lateral do solado da Havaianas Dual" loading="lazy" width="420"
                                     height="320">
                             </figure>
