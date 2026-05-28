@@ -15,7 +15,7 @@ ColLib.register({
             
                         
         
-                                    /*@@@@Col - comp-p-3b-faqe-vh-tb */
+                                        /*@@@@Col - comp-p-3b-faqe-vh-tb */
     {
       id:   'comp-p-3b-faqe-vh-tb',
       name: 'video-header-3bs-faq-emb-tab',
@@ -744,26 +744,26 @@ video-header,
   <section class="video-header" aria-label="Cabeçalho do produto">
     <header class="video-header__banner">
       <video class="video-header__banner-video"
-        poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/poster-sata-engrenagens-peças-mecanicas-girando.jpg"
+        poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/poster-imbat-engrenagens-peças-mecanicas-girando.jpg"
         preload="none" autoplay muted loop playsinline width="1200" height="250" aria-hidden="true">
-        <source src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/sata/header-sata.mov">
+        <source src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header-imbat.webm">
       </video>
-      <div class="video-header__badge" role="img" aria-label="Logo da marca sata dentro de um círculo laranja">
+      <div class="video-header__badge" role="img" aria-label="Logo da marca imbat dentro de um círculo laranja">
         <img
-          src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/sata/logo-sata.png"
+          src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/logo-imbat.webp"
           alt=""
           class="video-header__badge-img">
       </div>
     </header>
     <section class="video-header__body" aria-label="Título e descrição do produto">
-      <small class="video-header__brand">sata</small>
+      <small class="video-header__brand">imbat</small>
 
       <h2 class="video-header__title" id="video-main-title">
-        SOQUETE SATA TORX 1/2P E10 A E24
+        LUVA TRICOTADA COM BANHO JANELA EM LATEX VERDE 
       </h2>
       <p class="video-header__subtitle">
-        Mais força, precisão e durabilidade em cada aperto: soquetes Torx SATA 1/2” em aço Cromo-Vanádio, ideais para 
-        uso profissional em oficinas, manutenção e indústria.
+        O revestimento em látex verde na palma e dedos garante excelente aderência e resistência. Ideal para manusear 
+        ferramentas e materiais ásperos com total segurança e controle.
       </p>
     </section>
   </section>
@@ -774,31 +774,31 @@ video-header,
        <picture>
 
          <source media="(max-width: 430px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-cromo-vanadio-detalhe-508938-02.jpg?ims=430x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-latex-enrugado-verde-9000798-02.webp?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-cromo-vanadio-detalhe-508938-02.jpg?ims=768x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-latex-enrugado-verde-9000798-02.webp?ims=768x">
 
               <source media="(max-width: 1024px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-cromo-vanadio-detalhe-508938-02.jpg?ims=1024x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-latex-enrugado-verde-9000798-02.webp?ims=1024x">
       
               <source media="(max-width: 1280px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-cromo-vanadio-detalhe-508938-02.jpg?ims=1238x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-latex-enrugado-verde-9000798-02.webp?ims=1238x">
       
               <source media="(max-width: 1440px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-cromo-vanadio-detalhe-508938-02.jpg?ims=1440x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-latex-enrugado-verde-9000798-02.webp?ims=1440x">
 
               <source media="(min-width: 1441px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-cromo-vanadio-detalhe-508938-02.jpg">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-latex-enrugado-verde-9000798-02.webp">
 
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-cromo-vanadio-detalhe-508938-02.jpg"
-        alt="Parafusos autobrocantes sata Tubozan com tampas cerâmica, branca e concreto" 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-latex-enrugado-verde-9000798-02.webp"
+        alt="Parafusos autobrocantes imbat Tubozan com tampas cerâmica, branca e concreto" 
         style="border-radius: 30px 30px 0 0;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
         </picture>
       <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 60%; left: 75%; max-width: 35%;">
-        <h2><strong>GUIA TORX E10 A E24</strong></h2>
-        <p>Escolha pela medida do parafuso Torx: E10, E12, E14, E16, E18, E20, E22 ou E24. Todos têm encaixe 1/2" e tecnologia Surface Drive SATA.
+        <h2><strong>MAIS FIRMEZA NO TRABALHO?</strong></h2>
+        <p>O banho em látex verde enrugado garante uma pegada firme e segura, evitando que peças escorreguem.
         </p>
       </figcaption>
       </figure>
@@ -807,32 +807,31 @@ video-header,
        <picture>
 
          <source media="(max-width: 430px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-e14-uso-automotivo-508938-03.jpg?ims=430x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-manuseio-peca-verde-9000798-03.webp?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-e14-uso-automotivo-508938-03.jpg?ims=768x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-manuseio-peca-verde-9000798-03.webp?ims=768x">
 
               <source media="(max-width: 1024px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-e14-uso-automotivo-508938-03.jpg?ims=1024x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-manuseio-peca-verde-9000798-03.webp?ims=1024x">
       
               <source media="(max-width: 1280px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-e14-uso-automotivo-508938-03.jpg?ims=1238x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-manuseio-peca-verde-9000798-03.webp?ims=1238x">
       
               <source media="(max-width: 1440px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-e14-uso-automotivo-508938-03.jpg?ims=1440x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-manuseio-peca-verde-9000798-03.webp?ims=1440x">
 
               <source media="(min-width: 1441px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-e14-uso-automotivo-508938-03.jpg">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-manuseio-peca-verde-9000798-03.webp">
 
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-e14-uso-automotivo-508938-03.jpg"
-        alt="Parafusos sata Tubozan com tampas branco e marfim sobre fundo de instalação" 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-manuseio-peca-verde-9000798-03.webp"
+        alt="Parafusos imbat Tubozan com tampas branco e marfim sobre fundo de instalação" 
         style="border-radius: 0;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
         </picture>
       <figcaption class="section-32__grouptext-overlay left grouptext-overlay-Background" style="top: 85%; left: 50%; max-width: 40%;">
-        <h2><strong>SURFACE DRIVE SATA</strong></h2>
-        <p>A tecnologia Surface Drive distribui melhor a força nas faces planas e ajuda a reduzir o desgaste do soquete e do parafuso. Enquanto 
-          O aço Cromo-Vanádio aumenta resistência e durabilidade, mantendo o soquete preparado para trabalhos intensos e uso profissional.
+        <h2><strong>DURA MUITO TEMPO?</strong></h2>
+        <p>Projetada para riscos mecânicos, ela é muito resistente a rasgos e cortes, entregando maior economia.
         </p>
       </figcaption>
       </figure>
@@ -840,25 +839,25 @@ video-header,
       <figure class="section-32__groupimage-section">
       <picture>
         <source media="(max-width: 430px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-fundo-mecanico-engrenagens-508938-04.jpg?ims=430x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-detalhe-bancada-verde-9000798-04.webp?ims=430x">
       
               <source media="(max-width: 768px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-fundo-mecanico-engrenagens-508938-04.jpg?ims=768x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-detalhe-bancada-verde-9000798-04.webp?ims=768x">
 
               <source media="(max-width: 1024px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-fundo-mecanico-engrenagens-508938-04.jpg?ims=1024x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-detalhe-bancada-verde-9000798-04.webp?ims=1024x">
       
               <source media="(max-width: 1280px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-fundo-mecanico-engrenagens-508938-04.jpg?ims=1280x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-detalhe-bancada-verde-9000798-04.webp?ims=1280x">
       
               <source media="(max-width: 1440px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-fundo-mecanico-engrenagens-508938-04.jpg?ims=1440x">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-detalhe-bancada-verde-9000798-04.webp?ims=1440x">
 
               <source media="(min-width: 1441px)" 
-              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-fundo-mecanico-engrenagens-508938-04.jpg">
+              srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-detalhe-bancada-verde-9000798-04.webp">
 
-       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/soquete-sata-torx-meia-polegada-fundo-mecanico-engrenagens-508938-04.jpg"
-        alt="Cenário obra sata Tubozan com furadeira e superfície de fixação ao fundo" 
+       <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/luva-de-seguranca-imbat-lv-s-blv-detalhe-bancada-verde-9000798-04.webp"
+        alt="Cenário obra imbat Tubozan com furadeira e superfície de fixação ao fundo" 
         style="border-radius: 0px 0px 30px 30px;" width="1600" height="865"
         loading="lazy" decoding="async" fetchpriority="low">
         </picture>
@@ -880,13 +879,13 @@ video-header,
       <li id="faq-section__item">
         <details>
           <summary>
-            <h3 id="faq-section__q-text">1. Para que serve o Soquete Torx 1/2P SATA E10 a E24?</h3>
+            <h3 id="faq-section__q-text">1. Para que serve a luva de segurança imbat lv-s-blv e quando usar?</h3>
             <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div id="faq-section__a-inner">
             <p id="faq-section__a-text">
-            A linha inclui variações E10, E12, E14, E16, E18, E20, E22 e E24, conforme as fichas fornecidas.
-            É indicado para mecânicos automotivos, técnicos de manutenção, indústrias e profissionais que utilizam ferramentas de alto desempenho.
+            A luva de segurança IMBAT LV-S-BLV é indicada para proteger as mãos contra riscos mecânicos em diversas atividades diárias. 
+            O modelo atende perfeitamente situações que envolvem agentes abrasivos, escoriantes, objetos cortantes e materiais perfurantes.
             </p>
           </div>
         </details>
@@ -894,13 +893,13 @@ video-header,
       <li id="faq-section__item">
         <details>
           <summary>
-            <h3 id="faq-section__q-text">2. O Soquete Torx SATA tem bom desempenho em trabalhos profissionais?</h3>
+            <h3 id="faq-section__q-text">2. A luva oferece boa aderência e desempenho nas atividades?</h3>
             <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div id="faq-section__a-inner">
             <p id="faq-section__a-text">
-             A tecnologia Surface Drive atua na superfície plana de parafusos sextavados e estriados, distribuindo melhor a força.
-            Esse recurso ajuda a reduzir o desgaste no soquete e no parafuso durante trabalhos intensos.
+            A luva de segurança IMBAT possui um banho em látex verde enrugado aplicado na palma, no dorso e nas pontas dos dedos. 
+            Essa superfície texturizada atua como seu principal diferencial para aumentar a firmeza durante o manuseio de ferramentas.
             </p>
           </div>
         </details>
@@ -908,14 +907,13 @@ video-header,
       <li id="faq-section__item">
         <details> 
           <summary>
-            <h3 id="faq-section__q-text">3. De que material é feito o Soquete Torx 1/2P SATA?</h3>
+            <h3 id="faq-section__q-text">3. De que é feito este equipamento de proteção individual?</h3>
             <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div id="faq-section__a-inner">
             <p id="faq-section__a-text">
-            O Soquete Torx 1/2P SATA E10 a E24 é fabricado em aço Cromo-Vanádio, identificado como Cr-V nas fichas técnicas.
-            Esse material é associado à maior resistência e durabilidade mesmo em trabalhos intensos.
-            A construção em Cr-V reforça a vida útil esperada da ferramenta em aplicações profissionais.
+            A luva de segurança IMBAT é confeccionada a partir de um suporte têxtil em suedine branco revestido com o aplique de látex. 
+            O seu punho apresenta um excelente acabamento em elastano finalizado com resistentes costuras do tipo overlock.
             </p>
           </div>
         </details>
@@ -923,13 +921,13 @@ video-header,
       <li id="faq-section__item">
         <details>
           <summary>
-            <h3 id="faq-section__q-text">4. Como usar o Soquete Torx SATA da forma correta?</h3>
+            <h3 id="faq-section__q-text">4. Como higienizar a peça para garantir melhores resultados?</h3>
             <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div id="faq-section__a-inner">
             <p id="faq-section__a-text">
-              O Soquete Torx 1/2P SATA E10 a E24 deve ser selecionado conforme a medida Torx necessária, de E10 a E24.
-              A ficha indica aplicação especialmente em trabalhos com parafusos Torx em oficinas, indústrias e manutenção automotiva.
+              A luva de segurança IMBAT oferece validade de 5 anos e possui uma garantia de 180 dias em condições normais de uso. 
+              Para manter a integridade, ela precisa ser guardada em local com temperatura média de 23ºC e sem incidência direta de luz solar ou raios UV.
             </p>
           </div>
         </details>
@@ -937,14 +935,13 @@ video-header,
       <li id="faq-section__item">
         <details>
           <summary>
-            <h3 id="faq-section__q-text">5. Quais são as medidas técnicas disponíveis nessa linha?</h3>
+            <h3 id="faq-section__q-text">5. Como higienizar a peça para garantir melhores resultados?</h3>
             <span id="faq-section__icon" aria-hidden="true"></span>
           </summary>
           <div id="faq-section__a-inner">
             <p id="faq-section__a-text">
-              O Soquete Torx 1/2P SATA E10 a E24 está disponível nas medidas E10, E12, E14, E16, E18, E20, E22 e E24.
-              As fichas informam largura de 4,50 cm para todas as variações, com comprimentos de 3,80 cm ou 10,20 cm.
-              As alturas variam entre 2,20 cm, 2,38 cm, 2,58 cm e 2,78 cm, ajudando na escolha da medida correta.
+              A luva de segurança IMBAT deve ser lavada apenas com sabão neutro, evitando produtos com pH acima de 11, clarificadores ou alvejantes. 
+              A secagem precisa ocorrer sempre à sombra, sem utilizar calor extremo provindo de fornos ou caldeiras e evitando o sol direto.
             </p>
           </div>
         </details>
@@ -961,49 +958,29 @@ video-header,
            <section class="table-container-custom" aria-label="tabela contendo produtos relacionados e citados dentre deste conteúdo">
           <table class="table-design-custom" aria-describedby="table-desc">
             <caption id="table-desc" class="sr-only" style="text-align:left; padding: 0 0 8px; font-weight:600;">
-          Modelos de Conjuntos de Parafusos disponíveis
+          tamanhos de luvas disponíveis
           </caption>
             <thead class="table-head-custom">
                <tr class="table-tr-custom">
-                 <th class="table-text-custom table-th-custom" style="background-color: #006549; border-radius: 10px 0 0 0;" scope="col">SKU
+                 <th class="table-text-custom table-th-custom" style="background-color: #291d35; border-radius: 10px 0 0 0;" scope="col">SKU
                  </th>
                  <!--Replicar para adicionar mais COLUNAS-->
-                 <th class="table-text-custom table-th-custom" style="background-color: #006549; border-radius: 0 10px 0 0;" scope="col">TÍTULO
+                 <th class="table-text-custom table-th-custom" style="background-color: #291d35; border-radius: 0 10px 0 0;" scope="col">TÍTULO
                  </th>
                </tr>
              </thead>
              <tbody>
                <tr class="table-tr-custom">
-                 <td class="table-text-custom table-td-custom-title">508938</td>
-            <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E10</td>
+                 <td class="table-text-custom table-td-custom-title">9000798</td>
+            <td class="table-text-custom table-td-custom-sub">LUVA IMBAT TRICOTADA COM BANHO JANELA EM LATEX VERDE TAMANHO 8 12X1</td>
            </tr>
          <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">508939</td>
-        <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E12</td>
+           <td class="table-text-custom table-td-custom-title">9000799</td>
+        <td class="table-text-custom table-td-custom-sub">LUVA IMBAT TRICOTADA COM BANHO JANELA EM LATEX VERDE TAMANHO 9 12X1</td>
         </tr>
           <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">508941</td>
-        <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E14</td>
-      </tr>
-      <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title">508942</td>
-        <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E16</td>
-         </tr>
-        <tr class="table-tr-custom">
-        <td class="table-text-custom table-td-custom-title">508943</td>
-        <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E18</td>
-          </tr>
-         <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">508944</td>
-        <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E20</td>
-        </tr>
-          <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">508945</td>
-        <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E22</td>
-      </tr>
-      <tr class="table-tr-custom">
-           <td class="table-text-custom table-td-custom-title">508946</td>
-        <td class="table-text-custom table-td-custom-sub">SOQUETE SATA TORX 1/2P E24</td>
+           <td class="table-text-custom table-td-custom-title">9000800</td>
+        <td class="table-text-custom table-td-custom-sub">LUVA IMBAT TRICOTADA COM BANHO JANELA EM LATEX VERDE TAMANHO 10 12X1</td>
       </tr>
              </tbody>
            </table>
