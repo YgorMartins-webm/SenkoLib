@@ -30,21 +30,40 @@
   };
 
   window.downloadBlob = function downloadBlob(blob, filename) {
-    // Download local sem servidor; revoga a URL depois do clique.
+    // Dispara o download no documento principal para evitar que o Firefox
+    // trate blob de iframe como navegacao em uma nova janela.
     const shouldForceAttachment = blob && blob.type && blob.type.startsWith('image/');
     const payload = shouldForceAttachment ? new Blob([blob], { type: 'application/octet-stream' }) : blob;
-    const url = URL.createObjectURL(payload);
-    const link = document.createElement('a');
+    const targetWindow = downloadTargetWindow();
+    const targetDocument = targetWindow.document;
+    const url = targetWindow.URL.createObjectURL(payload);
+    const link = targetDocument.createElement('a');
     link.href = url;
-    link.download = filename;
-    link.target = '_self';
+    link.download = filename || 'download';
     link.rel = 'noopener';
+    if (payload && payload.type) link.type = payload.type;
     link.style.display = 'none';
-    document.body.appendChild(link);
+    targetDocument.body.appendChild(link);
     link.click();
     link.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    targetWindow.setTimeout(() => targetWindow.URL.revokeObjectURL(url), 1000);
   };
+
+  function downloadTargetWindow() {
+    try {
+      if (window.top && window.top.document && window.top.document.body) return window.top;
+    } catch (error) {
+      // Fallback abaixo quando o navegador bloquear acesso ao frame pai.
+    }
+
+    try {
+      if (window.parent && window.parent.document && window.parent.document.body) return window.parent;
+    } catch (error) {
+      // Fallback abaixo quando o navegador bloquear acesso ao frame pai.
+    }
+
+    return window;
+  }
 
   window.fileBaseName = function fileBaseName(filename) {
     // Remove somente a ultima extensao do nome.
