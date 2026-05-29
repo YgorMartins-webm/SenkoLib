@@ -32,6 +32,7 @@
 
     bindImageDrop(document, results, files => addFiles(files), () => view && view.classList.contains('is-active'));
     $('btn-compress').addEventListener('click', compressAll);
+    $('btn-sort-images').addEventListener('click', sortImagesByName);
     $('btn-download-each').addEventListener('click', downloadEach);
     $('btn-download-all').addEventListener('click', downloadAll);
     $('btn-clear-images').addEventListener('click', clearImages);
@@ -83,7 +84,7 @@
     items = items.concat(accepted.map(file => ({
       id: crypto.randomUUID(),
       file,
-      outputName: compressedName(file.name, file.type),
+      outputName: defaultOutputName(file.name, file.type),
       originalUrl: URL.createObjectURL(file),
       resultBlob: null,
       resultUrl: null,
@@ -112,6 +113,7 @@
 
     $('compressor-badge').textContent = items.length + ' arquivo' + (items.length !== 1 ? 's' : '');
     $('btn-compress').disabled = isDownloadingEach || !items.length;
+    $('btn-sort-images').disabled = isDownloadingEach || items.length < 2;
     $('btn-clear-images').disabled = isDownloadingEach || !items.length;
     $('btn-download-each').disabled = isDownloadingEach || !items.length;
     $('btn-download-all').disabled = isDownloadingEach || !items.length;
@@ -159,16 +161,40 @@
     card.querySelector('[data-action="download"]').addEventListener('click', () => {
       downloadBlob(outputBlobFor(item), normalizedOutputName(item));
     });
-    card.querySelector('[data-action="rename"]').addEventListener('input', event => {
+    const nameInput = card.querySelector('[data-action="rename"]');
+    nameInput.addEventListener('input', event => {
       item.outputName = event.target.value;
+      showInputEnd(event.target);
     });
-    card.querySelector('[data-action="rename"]').addEventListener('blur', event => {
+    nameInput.addEventListener('blur', event => {
       item.outputName = normalizedOutputName(item);
       event.target.value = item.outputName;
+      showInputEnd(event.target);
     });
+    showInputEnd(nameInput);
     card.querySelector('[data-action="remove"]').addEventListener('click', () => removeItem(item.id));
 
     return card;
+  }
+
+  function showInputEnd(input) {
+    requestAnimationFrame(() => {
+      input.scrollLeft = input.scrollWidth;
+    });
+  }
+
+  function sortImagesByName() {
+    if (items.length < 2) return;
+
+    items.sort((left, right) => {
+      return String(left.outputName || left.file.name)
+        .localeCompare(String(right.outputName || right.file.name), 'pt-BR', {
+          numeric: true,
+          sensitivity: 'base',
+        });
+    });
+    renderList();
+    setStatus('ok', 'ordenado A-Z');
   }
 
   async function compressAll() {
@@ -375,11 +401,13 @@
     setStatus('', 'aguardando');
   }
 
-  function compressedName(filename, mime) {
-    // Sugestao inicial de nome, mantendo a extensao do arquivo original.
+  function defaultOutputName(filename, mime) {
+    // Sugestao inicial de nome, mantendo o nome original sempre que possivel.
     const originalExt = filename.match(/\.[^.]+$/);
-    const ext = originalExt ? originalExt[0] : mime === 'image/jpeg' ? '.jpg' : mime === 'image/png' ? '.png' : '.webp';
-    return `${fileBaseName(filename)}-compressed${ext}`;
+    const ext = originalExt ? originalExt[0] : fallbackExtensionForMime(mime);
+    const safeName = sanitizeFilename(filename || `imagem${ext}`);
+    if (!safeName || safeName === ext) return `imagem${ext}`;
+    return originalExt || hasExtension(safeName, ext) ? safeName : `${safeName}${ext}`;
   }
 
   function outputBlobFor(item) {
@@ -393,7 +421,7 @@
 
   function normalizedOutputName(item) {
     // Garante nome seguro e extensao coerente antes de download/ZIP.
-    const fallback = compressedName(item.file.name, item.file.type);
+    const fallback = defaultOutputName(item.file.name, item.file.type);
     const ext = extensionFor(item.file);
     const raw = String(item.outputName || '').trim();
     const safeName = sanitizeFilename(raw || fallback);
@@ -415,6 +443,12 @@
     if (originalExt) return originalExt[0].toLowerCase();
     if (file.type === 'image/png') return '.png';
     if (file.type === 'image/webp') return '.webp';
+    return '.jpg';
+  }
+
+  function fallbackExtensionForMime(mime) {
+    if (mime === 'image/png') return '.png';
+    if (mime === 'image/webp') return '.webp';
     return '.jpg';
   }
 

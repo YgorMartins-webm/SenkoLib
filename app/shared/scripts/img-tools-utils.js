@@ -31,10 +31,15 @@
 
   window.downloadBlob = function downloadBlob(blob, filename) {
     // Download local sem servidor; revoga a URL depois do clique.
-    const url = URL.createObjectURL(blob);
+    const shouldForceAttachment = blob && blob.type && blob.type.startsWith('image/');
+    const payload = shouldForceAttachment ? new Blob([blob], { type: 'application/octet-stream' }) : blob;
+    const url = URL.createObjectURL(payload);
     const link = document.createElement('a');
     link.href = url;
     link.download = filename;
+    link.target = '_self';
+    link.rel = 'noopener';
+    link.style.display = 'none';
     document.body.appendChild(link);
     link.click();
     link.remove();

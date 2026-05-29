@@ -555,6 +555,10 @@ input[type="range"] {
   gap: .35rem;
 }
 
+.filename-input {
+  text-overflow: clip;
+}
+
 .image-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
