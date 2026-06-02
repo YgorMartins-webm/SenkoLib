@@ -16915,7 +16915,7 @@ ColLib.register({
       css:  ``,
     },
 
-    /*@@@@Col - variacao-15 */
+        /*@@@@Col - variacao-15 */
     {
       id:   'variacao-15',
       name: 'Variação 15',
@@ -17658,16 +17658,16 @@ ColLib.register({
         <section class="product-header-2" aria-label="Cabeçalho do produto">
             <header class="product-header__banner-2">
                 <figure style="width:100%;height:100%;margin:0;">
-                    <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/header.jpg"
-                        alt="Banner do produto" class="product-header__banner-img-2" loading="eager">
+                    <img src="C:\\Users\\ygorq\\Downloads\\header_degrade_4303600_00.webp" alt="Banner do produto"
+                        class="product-header__banner-img-2" loading="eager">
                 </figure>
                 <div class="product-header__badge-2" role="img" aria-label="Logo da marca">
-                    <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/logo.png"
+                    <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/itamaraty/itamaraty-logo.png"
                         alt="Ícone da marca" class="product-header__badge-img-2">
                 </div>
             </header>
             <article class="product-header__body-2">
-                <small class="product-header__brand-2">── Itamaraty ──</small>
+                <small class="product-header__brand-2">── itamaraty ──</small>
                 <h2 class="product-header__title-2">
                     <span>Biscoito Recheado Chocolate</span>
                     <strong>caixa com 30 unidades de 76g</strong>
