@@ -4696,9 +4696,9 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
             display: none;
             align-items: center;
             justify-content: center;
-            width: 34px;
-            height: 34px;
-            border: 1px solid #cbd1da;
+            width: 50px;
+            height: 50px;
+            border: 3px solid #cbd1da;
             border-radius: 50%;
             background: #ffffff;
             color: #3a414b;
