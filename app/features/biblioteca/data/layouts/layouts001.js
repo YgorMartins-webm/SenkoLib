@@ -5371,7 +5371,7 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
   {
     id: 'section-23',
     name: 'Section-23',
-    tags: [],
+    tags: ['stories', '23', 'section-23', 'responsivo', 'acessivel'],
     html: `<section class="lp-stories lp-stories--groups-3" aria-label="Stories visuais e representativos do produto">
       <span class="lp-stories__target" id="lp-story-produto-1" aria-hidden="true"></span>
       <span class="lp-stories__target" id="lp-story-produto-2" aria-hidden="true"></span>
