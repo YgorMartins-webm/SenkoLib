@@ -10,7 +10,7 @@ SenkoLib.registerVariant('section-2', [
                 poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header_giovannababy.webp"
                 preload="none" autoplay muted loop playsinline aria-hidden="true">
                 <source
-                    src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/giovannababy/header_giovannababy.mov">
+                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header_giovannababy.webm">
             </video>
         </div>
 
