@@ -184,35 +184,33 @@ SenkoLib.register([
   },
 
   /*@@@@Senko - section-2 */
-  /* variantes: variants/section-2.js */
+  /* variantes: app/features/biblioteca/data/variants/section-2.js */
   {
     id: 'section-2',
     name: 'Section-2 (Header Vídeo)',
     tags: ['Section-2', 'Section 2', '2', 'vídeo', 'header vídeo', 'responsivo', 'acessível'],
-    html: ` <article style="width: 100%;" aria-labelledby="product-main-title"> <!-- fecha esse article lá no final do código, depois de todo conteúdo, e antes do fechamento da div.lp-container -->
-    <section class="video-header" aria-label="Cabeçalho do produto">
-  <header class="video-header__banner">
-    <video class="video-header__banner-video"
-      poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/poster-precon-p-alaranjado-ao-fundo-azul-grafitado.jpg"
-      preload="none" autoplay muted loop playsinline width="1200" height="250" aria-hidden="true">
-      <source src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/precon/header-precon.mov">
-    </video>
-    <div class="video-header__badge" role="img" aria-label="Logo da marca precon dentro de um círculo laranja">
-      <img
-        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/precon/logo-precon.png"
-        alt=""
-        class="video-header__badge-img">
-    </div>
-  </header>
-  <section class="video-header__body" aria-label="Título e descrição do produto">
-    <small class="video-header__brand">precon</small>
-    <h2 class="video-header__title" id="video-main-title">
-      CONJUNTOS DE PARAFUSO AUTOBROCANTES CERAMICO/BRANCO
-    </h2>
-    <p class="video-header__subtitle">
-      Perfuram e fixam em uma única etapa, dispensando pré-furo. Ideais para agilizar sua obra ou reparo com total segurança e firmeza nas aplicações.
-    </p>
-  </section>
+    html: `<section class="video-header" aria-label="Cabeçalho do produto">
+    <header class="video-header__banner">
+        <video class="video-header__banner-video"
+            poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header_precon.webp" preload="none"
+            autoplay muted loop playsinline width="1200" height="250" aria-hidden="true">
+            <source src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header-precon.webm">
+        </video>
+        <div class="video-header__badge" role="img" aria-label="Logo da marca precon dentro de um círculo laranja">
+            <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/precon/logo-precon.png"
+                alt="" class="video-header__badge-img">
+        </div>
+    </header>
+    <section class="video-header__body" aria-label="Título e descrição do produto">
+        <small class="video-header__brand">precon</small>
+        <h2 class="video-header__title" id="video-main-title">
+            CONJUNTOS DE PARAFUSO AUTOBROCANTES CERAMICO/BRANCO
+        </h2>
+        <p class="video-header__subtitle">
+            Perfuram e fixam em uma única etapa, dispensando pré-furo. Ideais para agilizar sua obra ou reparo com
+            total segurança e firmeza nas aplicações.
+        </p>
+    </section>
 </section>`,
     css: `<style>
 * {
