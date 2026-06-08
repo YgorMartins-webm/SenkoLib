@@ -7,10 +7,10 @@ SenkoLib.registerVariant('section-2', [
     <header class="section-2-2__banner">
         <div class="section-2-2__banner-container">
             <video class="section-2-2__banner-video"
-                poster="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/header.jpg"
+                poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header_giovannababy.webp"
                 preload="none" autoplay muted loop playsinline aria-hidden="true">
                 <source
-                    src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/header-cottonbaby1.mov">
+                    src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/giovannababy/header_giovannababy.mov">
             </video>
         </div>
 
