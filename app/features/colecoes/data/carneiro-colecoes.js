@@ -20053,7 +20053,7 @@ ColLib.register({
       css:  ``,
     },
 
-    /*@@@@Col - variacao-18 */
+        /*@@@@Col - variacao-18 */
     {
       id:   'variacao-18',
       name: 'Variação 18',
@@ -20077,7 +20077,7 @@ ColLib.register({
             margin: 0;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
         rel="stylesheet">
     <title>PDP - eFácil</title>
     <!-- ---------------------------------------- ÁREA PARA COLOCAR STYLES ----------------------------------------------------------- -->
@@ -20217,14 +20217,14 @@ ColLib.register({
     <style>
         .ll-carousel {
             --ll-carousel-brand: #ff9900;
-            --ll-carousel-ink: #263126;
-            --ll-carousel-muted: #667066;
-            --ll-carousel-soft: #f5f7f1;
+            --ll-carousel-ink: #17253f;
+            --ll-carousel-muted: #61708a;
+            --ll-carousel-soft: #f3f6fb;
             --ll-carousel-panel: #ffffff;
-            --ll-carousel-line: #dce3d5;
-            --ll-carousel-dot-hover: #f0f4eb;
-            --ll-carousel-dot-active: #e7eee0;
-            --ll-carousel-dot-active-border: #bdcbb2;
+            --ll-carousel-line: #d7dfec;
+            --ll-carousel-dot-hover: #edf2f9;
+            --ll-carousel-dot-active: #e0e8f5;
+            --ll-carousel-dot-active-border: #b8c7df;
             --ll-carousel-shadow: 0 1.5rem 3rem rgba(13, 35, 51, 0.12);
             background: var(--ll-carousel-soft);
             color: var(--ll-carousel-ink);
@@ -20316,7 +20316,7 @@ ColLib.register({
         }
 
         .ll-carousel__layout--impact {
-            --ll-carousel-impact-bg: #53613d;
+            --ll-carousel-impact-bg: #173b74;
             --ll-carousel-impact-text: #fff7ef;
             --ll-carousel-impact-muted: rgba(255, 247, 239, 0.84);
             align-content: center;
@@ -20596,7 +20596,7 @@ ColLib.register({
             }
 
             .ll-carousel__layout--media {
-                background: #3f4d36;
+                background: #173b74;
                 padding: 0.65rem;
             }
 
@@ -20607,7 +20607,7 @@ ColLib.register({
 
             .ll-carousel__figure .ll-carousel__picture,
             .ll-carousel__figure>.ll-carousel__video {
-                background: #303b2a;
+                background: #102b58;
                 border-radius: 0.75rem;
                 display: block;
                 height: 100%;
@@ -20719,7 +20719,7 @@ ColLib.register({
             }
 
             .ll-carousel__layout--media {
-                background: #3f4d36;
+                background: #173b74;
                 padding: 0.65rem;
             }
 
@@ -20730,7 +20730,7 @@ ColLib.register({
 
             .ll-carousel__figure .ll-carousel__picture,
             .ll-carousel__figure>.ll-carousel__video {
-                background: #303b2a;
+                background: #102b58;
                 border-radius: 0.75rem;
                 display: block;
                 height: 100%;
@@ -20798,17 +20798,24 @@ ColLib.register({
         }
 
         .ll-carousel {
-            --ll-carousel-brand: #596a43;
-            --ll-carousel-soft: #f5f7f1;
-            --ll-carousel-dot-hover: #f0f4eb;
-            --ll-carousel-dot-active: #e7eee0;
-            --ll-carousel-dot-active-border: #bdcbb2;
+            --ll-carousel-brand: #1d4f91;
+            --ll-carousel-soft: #f3f6fb;
+            --ll-carousel-dot-hover: #edf2f9;
+            --ll-carousel-dot-active: #e0e8f5;
+            --ll-carousel-dot-active-border: #b8c7df;
         }
 
         @media (min-width: 760px) {
             #move-llcosseawd {
-                left: 49%;
-                top: 33%;
+                left: 2%;
+                top: 53%;
+            }
+        }
+
+        @media (min-width: 760px) {
+            #move-llcosseawd2 {
+                left: 47%;
+                top: 53%;
             }
         }
     </style>
@@ -20932,42 +20939,42 @@ ColLib.register({
     <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
     <article class="pdp" id="pdp" aria-labelledby="product-main-title"> <!-- HTML fica dentro dessa div PDP -->
 
-        <section class="section-2-2" aria-label="Cabeçalho do produto" style="background-color: #eef3e8;">
+        <section class="section-2-2" aria-label="Cabeçalho do produto">
             <header class="section-2-2__banner">
                 <div class="section-2-2__banner-container">
                     <video class="section-2-2__banner-video"
-                        poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header-havaianas.webp"
-                        preload="none" autoplay muted loop playsinline aria-hidden="true">
-                        <source src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header-havaianas.webm">
+                        poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header-nivea.webp"
+                        preload="none" autoplay="" muted="" loop="" playsinline="" aria-hidden="true">
+                        <source src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header-nivea.webm">
                     </video>
                 </div>
 
-                <div class="section-2-2__badge" role="img" aria-label="Logo da Havaianas">
-                    <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/havaianas/logo-havaianas.png"
-                        alt="Logo da Havaianas" class="section-2-2__badge-img">
+                <div class="section-2-2__badge" role="img" aria-label="Logo da NIVEA">
+                    <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/nivea/nivea-logo.png"
+                        alt="Logo da NIVEA" class="section-2-2__badge-img">
                 </div>
             </header>
 
             <article class="section-2-2__body">
-                <small class="section-2-2__brand">── havaianas ──</small>
+                <small class="section-2-2__brand">── nivea ──</small>
                 <h2 class="section-2-2__title">
-                    Havaianas Slim Verde Mandacaru <strong>Delicadeza que combina com tudo</strong>
+                    Desodorante Derma Control Defende <strong>Proteção intensa com cuidado para as axilas</strong>
                 </h2>
                 <p class="section-2-2__subtitle">
-                    Tiras finas com acabamento metalizado e solado leve para acompanhar looks de praia, passeios e
-                    momentos descontraídos com conforto e estilo.
+                    Antitranspirante stick feminino com proteção de até 72 horas, ácido hialurônico puro e pró-vitamina
+                    B5. Fórmula sem álcool etílico, desenvolvida para proporcionar conforto até após a depilação.
                 </p>
             </article>
         </section>
 
-        <section class="ll-carousel" aria-label="Diferenciais da Havaianas Slim Verde Mandacaru"
-            style="background-color: #34410530;">
+        <section class="ll-carousel" aria-label="Diferenciais do NIVEA Derma Control Defende"
+            style="background-image: linear-gradient(180deg, #ffffff, #edf3fb);">
             <div class="ll-carousel__container">
                 <div class="ll-carousel__intro">
                 </div>
 
                 <input class="ll-carousel__control ll-carousel__control--1" type="radio" name="ll-carousel-active"
-                    id="ll-carousel-slide-1" checked>
+                    id="ll-carousel-slide-1" checked="">
                 <input class="ll-carousel__control ll-carousel__control--2" type="radio" name="ll-carousel-active"
                     id="ll-carousel-slide-2">
                 <input class="ll-carousel__control ll-carousel__control--3" type="radio" name="ll-carousel-active"
@@ -20980,19 +20987,19 @@ ColLib.register({
                         <article class="ll-carousel__panel ll-carousel__panel--1" id="ll-carousel-panel-1"
                             aria-label="Slide 1: Impacto">
                             <section class="ll-carousel__layout ll-carousel__layout--impact"
-                                style="--ll-carousel-impact-bg: #3f4f32; --ll-carousel-impact-text: #fffdf8; --ll-carousel-impact-muted: rgba(255, 253, 248, 0.84);"
-                                aria-label="Design delicado">
+                                style="--ll-carousel-impact-bg: #173f7a; --ll-carousel-impact-text: #fffdf8; --ll-carousel-impact-muted: rgba(255, 253, 248, 0.84);"
+                                aria-label="Proteção antitranspirante">
                                 <div class="ll-carousel__layout-copy">
-                                    <p class="ll-carousel__layout-eyebrow">Modelo queridinho</p>
-                                    <h3 class="ll-carousel__layout-title">Tiras finas. Estilo que se destaca.</h3>
-                                    <p class="ll-carousel__layout-text">O desenho Slim valoriza os pés com uma aparência
-                                        leve e feminina. O acabamento metalizado acrescenta brilho na medida certa.</p>
+                                    <p class="ll-carousel__layout-eyebrow">Proteção prolongada</p>
+                                    <h3 class="ll-carousel__layout-title">Até 72 horas contra suor e mau odor</h3>
+                                    <p class="ll-carousel__layout-text">Proteção antitranspirante intensa para enfrentar
+                                        a rotina com sensação de conforto e segurança.</p>
                                 </div>
                                 <figure class="ll-carousel__media-card">
                                     <img class="ll-carousel__image"
-                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-slim-detalhe-pe-modelo-verde-mandacaru-1224856-1224857-1224858-1224859-1224861-03.webp"
-                                        alt="Havaianas Slim Verde Mandacaru com tiras finas metalizadas" width="1800"
-                                        height="1600" loading="lazy" decoding="async" style="object-position: 50% 50%;">
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/desodorante-nivea-derma-control-defende-stick-54g-mao-ceu-208131-01.webp"
+                                        alt="Desodorante Stick NIVEA Derma Control Defende 54g" width="1800"
+                                        height="1600" style="object-position: 50% 50%;" loading="lazy" decoding="async">
                                 </figure>
                             </section>
                         </article>
@@ -21000,20 +21007,17 @@ ColLib.register({
                         <article class="ll-carousel__panel ll-carousel__panel--2" id="ll-carousel-panel-2"
                             aria-label="Slide 2: Decisão">
                             <section class="ll-carousel__layout ll-carousel__layout--media"
-                                style="--ll-carousel-media-bg: #46543a; background-color: #7d8d64;"
-                                aria-label="Conforto">
+                                style="--ll-carousel-media-bg: #17457f; background-color: #547eb6;"
+                                aria-label="Cuidado da pele">
                                 <figure class="ll-carousel__figure">
-                                    <picture class="ll-carousel__picture">
-                                        <img class="ll-carousel__image"
-                                            src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-slim-vista-superior-par-verde-mandacaru-1224856-1224857-1224858-1224859-1224861-01.webp"
-                                            alt="Detalhe do solado da Havaianas Slim Verde Mandacaru" width="1800"
-                                            height="1600" loading="lazy" decoding="async"
-                                            style="object-position: 50% 50%;">
-                                    </picture>
-                                    <figcaption class="ll-carousel__caption">
-                                        <h3>Conforto para aproveitar o dia</h3>
-                                        <p>O solado de borracha é leve, macio e antiderrapante. Também não esquenta
-                                            mesmo sob o sol, ideal para os dias de praia e lazer.</p>
+                                    <img class="ll-carousel__image"
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/desodorante-nivea-derma-control-defende-stick-54g-agua-produto-208131-02.webp"
+                                        alt="Detalhe do NIVEA Derma Control Defende com ativos de cuidado" width="1800"
+                                        height="1600" style="object-position: 4% 50%;" loading="lazy" decoding="async">
+                                    <figcaption class="ll-carousel__caption" id="move-llcosseawd2">
+                                        <h3>Cuidado com ácido <br> hialurônico e B5</h3>
+                                        <p>A fórmula combina ácido hialurônico puro e pró-vitamina B5 para ajudar no
+                                            conforto e cuidado da pele das axilas.</p>
                                     </figcaption>
                                 </figure>
                             </section>
@@ -21023,20 +21027,20 @@ ColLib.register({
                             aria-label="Slide 3: Invertido">
                             <section
                                 class="ll-carousel__layout ll-carousel__layout--impact ll-carousel__layout--impact-reverse"
-                                style="--ll-carousel-impact-bg: #697852; --ll-carousel-impact-text: #fffdf8; --ll-carousel-impact-muted: rgba(255, 253, 248, 0.84);"
-                                aria-label="Versatilidade">
+                                style="--ll-carousel-impact-bg: #426a9f; --ll-carousel-impact-text: #fffdf8; --ll-carousel-impact-muted: rgba(255, 253, 248, 0.84);"
+                                aria-label="Pele sensível">
                                 <div class="ll-carousel__layout-copy">
-                                    <p class="ll-carousel__layout-eyebrow">Verde Mandacaru</p>
-                                    <h3 class="ll-carousel__layout-title">Uma cor natural para muitos looks</h3>
-                                    <p class="ll-carousel__layout-text">O verde traz personalidade sem perder a
-                                        versatilidade. Combine com peças neutras, estampas leves ou produções de verão.
+                                    <p class="ll-carousel__layout-eyebrow">Conforto pós-depilação</p>
+                                    <h3 class="ll-carousel__layout-title">Suavidade para axilas sensíveis</h3>
+                                    <p class="ll-carousel__layout-text">Sem álcool etílico e dermatologicamente testada,
+                                        a fórmula ajuda a evitar irritação e coceira, inclusive após a depilação.
                                     </p>
                                 </div>
                                 <figure class="ll-carousel__media-card">
                                     <img class="ll-carousel__image"
-                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-slim-exposicao-blocos-par-verde-mandacaru-1224856-1224857-1224858-1224859-1224861-04.webp"
-                                        alt="Havaianas Slim Verde Mandacaru compondo um visual de verão" width="1800"
-                                        height="1600" loading="lazy" decoding="async" style="object-position: 50% 50%;">
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/desodorante-nivea-derma-control-defende-stick-54g-axila-lifestyle-208131-03.webp"
+                                        alt="NIVEA Derma Control Defende para cuidado das axilas sensíveis" width="1800"
+                                        height="1600" style="object-position: 50% 50%;" loading="lazy" decoding="async">
                                 </figure>
                             </section>
                         </article>
@@ -21044,20 +21048,17 @@ ColLib.register({
                         <article class="ll-carousel__panel ll-carousel__panel--4" id="ll-carousel-panel-4"
                             aria-label="Slide 4: Decisão">
                             <section class="ll-carousel__layout ll-carousel__layout--media"
-                                style="--ll-carousel-media-bg: #46543a; background-color: #879672;"
-                                aria-label="Cuidados">
+                                style="--ll-carousel-media-bg: #244e86; background-color: #7194c2;"
+                                aria-label="Aplicação">
                                 <figure class="ll-carousel__figure">
-                                    <picture class="ll-carousel__picture">
-                                        <img class="ll-carousel__image"
-                                            src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/chinelo-havaianas-slim-modelo-pes-estilo-vida-verde-mandacaru-1224856-1224857-1224858-1224859-1224861-02.webp"
-                                            alt="Havaianas Slim Verde Mandacaru pronta para o uso diário" width="1800"
-                                            height="1600" loading="lazy" decoding="async"
-                                            style="object-position: 50% 50%;">
-                                    </picture>
+                                    <img class="ll-carousel__image"
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/desodorante-nivea-derma-control-defende-stick-54g-aplicacao-axila-208131-04.webp"
+                                        alt="Desodorante NIVEA em formato stick para aplicação nas axilas" width="1800"
+                                        height="1600" style="object-position: 50% 50%;" loading="lazy" decoding="async">
                                     <figcaption class="ll-carousel__caption" id="move-llcosseawd">
-                                        <h3>Fácil de cuidar. Fácil de usar.</h3>
-                                        <p>Lave com sabão neutro e escova macia, à mão ou na máquina. Depois, deixe
-                                            secar em um local bem ventilado.</p>
+                                        <h3>Stick prático para a rotina</h3>
+                                        <p>Aplique diretamente nas axilas e espere secar antes de se vestir. Não use
+                                            sobre a pele irritada ou lesionada.</p>
                                     </figcaption>
                                 </figure>
                             </section>
@@ -21070,22 +21071,22 @@ ColLib.register({
                     <label class="ll-carousel__dot ll-carousel__dot--1" for="ll-carousel-slide-1" role="button"
                         aria-controls="ll-carousel-panel-1">
                         <span class="ll-carousel__dot-number">01</span>
-                        <span class="ll-carousel__dot-text">Estilo</span>
+                        <span class="ll-carousel__dot-text">72h</span>
                     </label>
                     <label class="ll-carousel__dot ll-carousel__dot--2" for="ll-carousel-slide-2" role="button"
                         aria-controls="ll-carousel-panel-2">
                         <span class="ll-carousel__dot-number">02</span>
-                        <span class="ll-carousel__dot-text">Conforto</span>
+                        <span class="ll-carousel__dot-text">Ativos</span>
                     </label>
                     <label class="ll-carousel__dot ll-carousel__dot--3" for="ll-carousel-slide-3" role="button"
                         aria-controls="ll-carousel-panel-3">
                         <span class="ll-carousel__dot-number">03</span>
-                        <span class="ll-carousel__dot-text">Cor</span>
+                        <span class="ll-carousel__dot-text">Suavidade</span>
                     </label>
                     <label class="ll-carousel__dot ll-carousel__dot--4" for="ll-carousel-slide-4" role="button"
                         aria-controls="ll-carousel-panel-4">
                         <span class="ll-carousel__dot-number">04</span>
-                        <span class="ll-carousel__dot-text">Cuidados</span>
+                        <span class="ll-carousel__dot-text">Aplicação</span>
                     </label>
                 </nav>
             </div>
@@ -21094,7 +21095,7 @@ ColLib.register({
         <!-- ESSES CODIGOS ABAIXO VOCE NAO PRECISA MEXER!!! APENAS O HTML ACIMA-->
 
         <p style="color: #8a8a8a; font-family: sans-serif; font-size: clamp(1rem, 2vw, 1.2rem); text-wrap: pretty;
-            text-align: center; padding: 30px 0; background-color: #eef3e8;">
+            text-align: center; padding: 30px 0; background-color: #edf3fb;">
             IMAGENS MERAMENTE ILUSTRATIVAS
         </p>
 
@@ -21108,15 +21109,12 @@ ColLib.register({
                 <li id="faq-section__item">
                     <details class="faq-section__details">
                         <summary class="faq-section__summary">
-                            <h3 id="faq-section__q-text"> A Havaianas Slim Verde Mandacaru é indicada para qual tipo de
-                                uso? </h3>
+                            <h3 id="faq-section__q-text"> Por quanto tempo o NIVEA Derma Control Defende protege? </h3>
                             <span id="faq-section__icon" aria-hidden="true"></span>
                         </summary>
                         <div id="faq-section__a-inner">
-                            <p id="faq-section__a-text"> A Havaianas Slim Verde Mandacaru é indicada para quem busca uma
-                                sandália feminina, leve e confortável para o dia a dia, praia e momentos casuais. O
-                                modelo combina tiras finas, visual delicado e solado em borracha, entregando praticidade
-                                com estilo. </p>
+                            <p id="faq-section__a-text"> O antitranspirante oferece proteção de até 72 horas contra o
+                                suor e o mau odor. </p>
                         </div>
                     </details>
                 </li>
@@ -21126,14 +21124,12 @@ ColLib.register({
                 <li id="faq-section__item">
                     <details class="faq-section__details">
                         <summary class="faq-section__summary">
-                            <h3 id="faq-section__q-text"> O solado da Havaianas Slim Verde Mandacaru é confortável?
-                            </h3>
+                            <h3 id="faq-section__q-text"> Quais ativos de cuidado estão presentes na fórmula? </h3>
                             <span id="faq-section__icon" aria-hidden="true"></span>
                         </summary>
                         <div id="faq-section__a-inner">
-                            <p id="faq-section__a-text"> Sim. O solado em borracha é leve, macio e antiderrapante,
-                                ajudando no conforto durante o uso. Ele também não esquenta mesmo sob o sol, o que torna
-                                a sandália prática para praia e dias quentes. </p>
+                            <p id="faq-section__a-text"> A fórmula contém ácido hialurônico puro e pró-vitamina B5,
+                                ativos associados ao cuidado, conforto e maciez da pele das axilas. </p>
                         </div>
                     </details>
                 </li>
@@ -21143,14 +21139,14 @@ ColLib.register({
                 <li id="faq-section__item">
                     <details class="faq-section__details">
                         <summary class="faq-section__summary">
-                            <h3 id="faq-section__q-text"> Como limpar a Havaianas Slim Verde Mandacaru corretamente?
-                            </h3>
+                            <h3 id="faq-section__q-text"> Pode ser usado após a depilação? </h3>
                             <span id="faq-section__icon" aria-hidden="true"></span>
                         </summary>
                         <div id="faq-section__a-inner">
-                            <p id="faq-section__a-text"> Você pode lavar à mão com sabão neutro e escova macia ou usar a
-                                máquina de lavar. Depois, basta deixar secar em local bem ventilado para manter a
-                                sandália limpa e pronta para uso. </p>
+                            <p id="faq-section__a-text"> A fórmula foi desenvolvida para pele sensível pós-depilação e
+                                ajuda a evitar irritações e coceira. Não aplique se a pele estiver irritada ou
+                                lesionada.
+                            </p>
                         </div>
                     </details>
                 </li>
@@ -21160,14 +21156,12 @@ ColLib.register({
                 <li id="faq-section__item">
                     <details class="faq-section__details">
                         <summary class="faq-section__summary">
-                            <h3 id="faq-section__q-text"> O que diferencia a Havaianas Slim dos modelos tradicionais?
-                            </h3>
+                            <h3 id="faq-section__q-text"> O produto contém álcool etílico? </h3>
                             <span id="faq-section__icon" aria-hidden="true"></span>
                         </summary>
                         <div id="faq-section__a-inner">
-                            <p id="faq-section__a-text"> A Havaianas Slim tem tiras e sola mais finas, criando um visual
-                                mais delicado nos pés. É uma boa escolha para quem prefere uma sandália clássica,
-                                feminina e com aparência mais elegante. </p>
+                            <p id="faq-section__a-text"> Não. O NIVEA Derma Control Defende possui fórmula sem álcool
+                                etílico e é dermatologicamente testado. </p>
                         </div>
                     </details>
                 </li>
@@ -21177,14 +21171,13 @@ ColLib.register({
                 <li id="faq-section__item">
                     <details class="faq-section__details">
                         <summary class="faq-section__summary">
-                            <h3 id="faq-section__q-text"> A Havaianas Slim Verde Mandacaru pode ser usada na praia?
-                            </h3>
+                            <h3 id="faq-section__q-text"> Como aplicar o desodorante stick? </h3>
                             <span id="faq-section__icon" aria-hidden="true"></span>
                         </summary>
                         <div id="faq-section__a-inner">
-                            <p id="faq-section__a-text"> Sim. A sandália foi pensada para acompanhar você na praia com
-                                conforto, autenticidade e elegância. O solado leve, macio e que não esquenta ajuda no
-                                uso em dias de sol. </p>
+                            <p id="faq-section__a-text"> Aplique diretamente nas axilas e espere o produto secar antes
+                                de se vestir. Caso ocorra irritação ou coceira, suspenda o uso e procure orientação
+                                médica. </p>
                         </div>
                     </details>
                 </li>
