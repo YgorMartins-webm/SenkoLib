@@ -21190,7 +21190,7 @@ ColLib.register({
       css:  ``,
     },
 
-    /*@@@@Col - variacao-19 */
+        /*@@@@Col - variacao-19 */
     {
       id:   'variacao-19',
       name: 'Variação 19',
@@ -21214,7 +21214,8 @@ ColLib.register({
             margin: 0;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
+        rel="stylesheet">
     <title>PDP - eFácil</title>
     <!-- ---------------------------------------- ÁREA PARA COLOCAR STYLES ----------------------------------------------------------- -->
     <style>
@@ -22263,12 +22264,16 @@ ColLib.register({
         <section aria-label="Cabeçalho do produto" class="section-2-2">
             <header class="section-2-2__banner">
                 <div class="section-2-2__banner-container">
-                    <video aria-hidden="true" autoplay="" class="section-2-2__banner-video" loop="" muted="" playsinline="" poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header-coala.webp" preload="none">
+                    <video aria-hidden="true" autoplay="" class="section-2-2__banner-video" loop="" muted=""
+                        playsinline=""
+                        poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header-coala.webp"
+                        preload="none">
                         <source src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header-coala.webm">
                     </video>
                 </div>
                 <div aria-label="Logo da Coala" class="section-2-2__badge" role="img">
-                    <img alt="Logo da Coala" class="section-2-2__badge-img" src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/coala/logo-coala.png">
+                    <img alt="Logo da Coala" class="section-2-2__badge-img"
+                        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/coala/logo-coala.png">
                 </div>
             </header>
             <article class="section-2-2__body">
@@ -22280,14 +22285,19 @@ ColLib.register({
                 </p>
             </article>
         </section>
-        <section aria-label="Diferenciais do Amaciante Coala Concentrado Sol do Brasil 12x1L" class="ll-carousel" style="background-image: linear-gradient(180deg, #ffffff, #fff4e0);">
+        <section aria-label="Diferenciais do Amaciante Coala Concentrado Sol do Brasil 12x1L" class="ll-carousel"
+            style="background-image: linear-gradient(180deg, #ffffff, #fff4e0);">
             <div class="ll-carousel__container">
                 <div class="ll-carousel__intro">
                 </div>
-                <input checked="" class="ll-carousel__control ll-carousel__control--1" id="ll-carousel-slide-1" name="ll-carousel-active" type="radio">
-                <input class="ll-carousel__control ll-carousel__control--2" id="ll-carousel-slide-2" name="ll-carousel-active" type="radio">
-                <input class="ll-carousel__control ll-carousel__control--3" id="ll-carousel-slide-3" name="ll-carousel-active" type="radio">
-                <input class="ll-carousel__control ll-carousel__control--4" id="ll-carousel-slide-4" name="ll-carousel-active" type="radio">
+                <input checked="" class="ll-carousel__control ll-carousel__control--1" id="ll-carousel-slide-1"
+                    name="ll-carousel-active" type="radio">
+                <input class="ll-carousel__control ll-carousel__control--2" id="ll-carousel-slide-2"
+                    name="ll-carousel-active" type="radio">
+                <input class="ll-carousel__control ll-carousel__control--3" id="ll-carousel-slide-3"
+                    name="ll-carousel-active" type="radio">
+                <input class="ll-carousel__control ll-carousel__control--4" id="ll-carousel-slide-4"
+                    name="ll-carousel-active" type="radio">
                 <div class="ll-carousel__viewport">
                     <div class="ll-carousel__indicators">
                         <span class="ll-carousel__indicator ll-carousel__indicator--1"></span>
@@ -22296,8 +22306,11 @@ ColLib.register({
                         <span class="ll-carousel__indicator ll-carousel__indicator--4"></span>
                     </div>
                     <div class="ll-carousel__track">
-                        <article aria-label="Slide 1: Impacto" class="ll-carousel__panel ll-carousel__panel--1" id="ll-carousel-panel-1">
-                            <section aria-label="Maciez e perfume para as roupas" class="ll-carousel__layout ll-carousel__layout--impact" style="--ll-carousel-impact-bg: #ee6911e1; --ll-carousel-impact-text: #fffdf8; --ll-carousel-impact-muted: rgba(255, 253, 248, 0.84); background-image: linear-gradient(323deg, #495330, #607037);">
+                        <article aria-label="Slide 1: Impacto" class="ll-carousel__panel ll-carousel__panel--1"
+                            id="ll-carousel-panel-1">
+                            <section aria-label="Maciez e perfume para as roupas"
+                                class="ll-carousel__layout ll-carousel__layout--impact"
+                                style="--ll-carousel-impact-bg: #ee6911e1; --ll-carousel-impact-text: #fffdf8; --ll-carousel-impact-muted: rgba(255, 253, 248, 0.84); background-image: linear-gradient(323deg, #495330, #607037);">
                                 <div class="ll-carousel__layout-copy">
                                     <p class="ll-carousel__layout-eyebrow">Perfume</p>
                                     <h3 class="ll-carousel__layout-title">Maciez intensa e perfume por mais tempo</h3>
@@ -22306,30 +22319,23 @@ ColLib.register({
                                     </p>
                                 </div>
                                 <figure class="ll-carousel__media-card">
-                                    <picture>
-  <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-roupas-varal-lifestyle-1704661-01.webp?ims=230x">
-  <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-roupas-varal-lifestyle-1704661-01.webp?ims=285x">
-  <source media="(max-width: 425px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-roupas-varal-lifestyle-1704661-01.webp?ims=335x">
-  <source media="(max-width: 768px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-roupas-varal-lifestyle-1704661-01.webp?ims=357x">
-  <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-roupas-varal-lifestyle-1704661-01.webp?ims=489x">
-  <source media="(max-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-roupas-varal-lifestyle-1704661-01.webp?ims=608x">
-  <img class="ll-carousel__image" src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-roupas-varal-lifestyle-1704661-01.webp" alt="Amaciante Coala Concentrado Sol do Brasil 12x1L" width="1800" height="1600" style="object-position: 50% 50%;" loading="lazy" decoding="async">
-</picture>
+                                    <img class="ll-carousel__image"
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-roupas-varal-lifestyle-1704661-01.webp"
+                                        alt="Amaciante Coala Concentrado Sol do Brasil 12x1L" width="1800" height="1600"
+                                        style="object-position: 50% 50%;" loading="lazy" decoding="async">
                                 </figure>
                             </section>
                         </article>
-                        <article aria-label="Slide 2: Decisão" class="ll-carousel__panel ll-carousel__panel--2" id="ll-carousel-panel-2">
-                            <section aria-label="Rendimento concentrado" class="ll-carousel__layout ll-carousel__layout--media" style="--ll-carousel-media-bg: #ee6911e1; background-color: #ee6911e1; ">
+                        <article aria-label="Slide 2: Decisão" class="ll-carousel__panel ll-carousel__panel--2"
+                            id="ll-carousel-panel-2">
+                            <section aria-label="Rendimento concentrado"
+                                class="ll-carousel__layout ll-carousel__layout--media"
+                                style="--ll-carousel-media-bg: #ee6911e1; background-color: #ee6911e1; ">
                                 <figure class="ll-carousel__figure">
-                                    <picture>
-  <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-paisagem-rio-de-janeiro-1704661-02.webp?ims=242x">
-  <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-paisagem-rio-de-janeiro-1704661-02.webp?ims=297x">
-  <source media="(max-width: 425px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-paisagem-rio-de-janeiro-1704661-02.webp?ims=347x">
-  <source media="(max-width: 768px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-paisagem-rio-de-janeiro-1704661-02.webp?ims=702x">
-  <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-paisagem-rio-de-janeiro-1704661-02.webp?ims=958x">
-  <source media="(max-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-paisagem-rio-de-janeiro-1704661-02.webp?ims=1214x">
-  <img class="ll-carousel__image" src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-paisagem-rio-de-janeiro-1704661-02.webp" alt="Detalhe do Amaciante Coala Concentrado Sol do Brasil" width="1800" height="1600" style="object-position: 86% 50%;" loading="lazy" decoding="async">
-</picture>
+                                    <img class="ll-carousel__image"
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-paisagem-rio-de-janeiro-1704661-02.webp"
+                                        alt="Detalhe do Amaciante Coala Concentrado Sol do Brasil" width="1800"
+                                        height="1600" style="object-position: 86% 50%;" loading="lazy" decoding="async">
                                     <figcaption class="ll-carousel__caption" id="move-llcosseawd2">
                                         <h3>Rende até <br>50 lavagens</h3>
                                         <p>Com rendimento inteligente, 1 litro equivale a 4 litros. Use meia tampa por
@@ -22338,8 +22344,11 @@ ColLib.register({
                                 </figure>
                             </section>
                         </article>
-                        <article aria-label="Slide 3: Invertido" class="ll-carousel__panel ll-carousel__panel--3" id="ll-carousel-panel-3">
-                            <section aria-label="Ativos de fontes renováveis" class="ll-carousel__layout ll-carousel__layout--impact ll-carousel__layout--impact-reverse" style="--ll-carousel-impact-bg: #ee6911e1; --ll-carousel-impact-text: #fffdf8; --ll-carousel-impact-muted: rgba(255, 253, 248, 0.84); background-image: linear-gradient(323deg, #607037, #495330);">
+                        <article aria-label="Slide 3: Invertido" class="ll-carousel__panel ll-carousel__panel--3"
+                            id="ll-carousel-panel-3">
+                            <section aria-label="Ativos de fontes renováveis"
+                                class="ll-carousel__layout ll-carousel__layout--impact ll-carousel__layout--impact-reverse"
+                                style="--ll-carousel-impact-bg: #ee6911e1; --ll-carousel-impact-text: #fffdf8; --ll-carousel-impact-muted: rgba(255, 253, 248, 0.84); background-image: linear-gradient(323deg, #607037, #495330);">
                                 <div class="ll-carousel__layout-copy">
                                     <p class="ll-carousel__layout-eyebrow">Cuidado premium</p>
                                     <h3 class="ll-carousel__layout-title">Ativos de fontes renováveis</h3>
@@ -22348,30 +22357,23 @@ ColLib.register({
                                         roupas.</p>
                                 </div>
                                 <figure class="ll-carousel__media-card">
-                                    <picture>
-  <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-maquina-lavar-movimento-1704661-03.webp?ims=230x">
-  <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-maquina-lavar-movimento-1704661-03.webp?ims=285x">
-  <source media="(max-width: 425px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-maquina-lavar-movimento-1704661-03.webp?ims=335x">
-  <source media="(max-width: 768px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-maquina-lavar-movimento-1704661-03.webp?ims=357x">
-  <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-maquina-lavar-movimento-1704661-03.webp?ims=489x">
-  <source media="(max-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-maquina-lavar-movimento-1704661-03.webp?ims=608x">
-  <img class="ll-carousel__image" src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-maquina-lavar-movimento-1704661-03.webp" alt="Amaciante Coala Sol do Brasil em roupas no varal" width="1800" height="1600" style="object-position: 50% 50%;" loading="lazy" decoding="async">
-</picture>
+                                    <img class="ll-carousel__image"
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-maquina-lavar-movimento-1704661-03.webp"
+                                        alt="Amaciante Coala Sol do Brasil em roupas no varal" width="1800"
+                                        height="1600" style="object-position: 50% 50%;" loading="lazy" decoding="async">
                                 </figure>
                             </section>
                         </article>
-                        <article aria-label="Slide 4: Decisão" class="ll-carousel__panel ll-carousel__panel--4" id="ll-carousel-panel-4">
-                            <section aria-label="Modo de uso e conservação" class="ll-carousel__layout ll-carousel__layout--media" style="--ll-carousel-media-bg: #ee6911e1; background-color: #ee6911e1;">
+                        <article aria-label="Slide 4: Decisão" class="ll-carousel__panel ll-carousel__panel--4"
+                            id="ll-carousel-panel-4">
+                            <section aria-label="Modo de uso e conservação"
+                                class="ll-carousel__layout ll-carousel__layout--media"
+                                style="--ll-carousel-media-bg: #ee6911e1; background-color: #ee6911e1;">
                                 <figure class="ll-carousel__figure">
-                                    <picture>
-  <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-lavanderia-ambiente-1704661-04.webp?ims=242x">
-  <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-lavanderia-ambiente-1704661-04.webp?ims=297x">
-  <source media="(max-width: 425px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-lavanderia-ambiente-1704661-04.webp?ims=347x">
-  <source media="(max-width: 768px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-lavanderia-ambiente-1704661-04.webp?ims=702x">
-  <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-lavanderia-ambiente-1704661-04.webp?ims=958x">
-  <source media="(max-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-lavanderia-ambiente-1704661-04.webp?ims=1214x">
-  <img class="ll-carousel__image" src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-lavanderia-ambiente-1704661-04.webp" alt="Amaciante Coala Sol do Brasil em lavanderia" width="1800" height="1600" style="object-position: 50% 50%;" loading="lazy" decoding="async">
-</picture>
+                                    <img class="ll-carousel__image"
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/amaciante-concentrado-coala-sol-do-brasil-embalagem-lavanderia-ambiente-1704661-04.webp"
+                                        alt="Amaciante Coala Sol do Brasil em lavanderia" width="1800" height="1600"
+                                        style="object-position: 50% 50%;" loading="lazy" decoding="async">
                                     <figcaption class="ll-carousel__caption" id="move-llcosseawd">
                                         <h3>Modo de uso <br>recomendado</h3>
                                         <p>Na máquina, aplique meia tampa no compartimento ou no último enxágue. No
@@ -22382,50 +22384,66 @@ ColLib.register({
                         </article>
                     </div>
                 </div>
-                <nav aria-label="Selecionar slide do carrossel" class="ll-carousel__nav" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
-                    <label aria-controls="ll-carousel-panel-1" class="ll-carousel__dot ll-carousel__dot--1" for="ll-carousel-slide-1" role="button">
+                <nav aria-label="Selecionar slide do carrossel" class="ll-carousel__nav"
+                    style="grid-template-columns: repeat(4, minmax(0, 1fr));">
+                    <label aria-controls="ll-carousel-panel-1" class="ll-carousel__dot ll-carousel__dot--1"
+                        for="ll-carousel-slide-1" role="button">
                         <span class="ll-carousel__dot-copy">
                             <span class="ll-carousel__dot-number">01</span>
                             <span class="ll-carousel__dot-text">Maciez</span>
                         </span>
                         <span class="ll-carousel__dot-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
-                                <path d="M20.393 5.879A5.5 5.5 0 0 0 12 4.376a5.5 5.5 0 0 0-8.393 1.503C2.195 7.823 2.5 10.5 4.5 12.5L12 20l7.5-7.5c2-2 2.305-4.677.893-6.621z"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22"
+                                height="22" aria-hidden="true">
+                                <path
+                                    d="M20.393 5.879A5.5 5.5 0 0 0 12 4.376a5.5 5.5 0 0 0-8.393 1.503C2.195 7.823 2.5 10.5 4.5 12.5L12 20l7.5-7.5c2-2 2.305-4.677.893-6.621z">
+                                </path>
                             </svg>
                         </span>
                     </label>
-                    <label aria-controls="ll-carousel-panel-2" class="ll-carousel__dot ll-carousel__dot--2" for="ll-carousel-slide-2" role="button">
+                    <label aria-controls="ll-carousel-panel-2" class="ll-carousel__dot ll-carousel__dot--2"
+                        for="ll-carousel-slide-2" role="button">
                         <span class="ll-carousel__dot-copy">
                             <span class="ll-carousel__dot-number">02</span>
                             <span class="ll-carousel__dot-text">Rendimento</span>
                         </span>
                         <span class="ll-carousel__dot-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                                width="22" height="22" aria-hidden="true">
                                 <path d="M9 2h6l1 4H8z"></path>
                                 <path d="M8 6c0 8 8 8 8 14a4 4 0 0 1-8 0c0-6 8-6 8-14"></path>
                                 <line x1="12" y1="10" x2="12" y2="14"></line>
                             </svg>
                         </span>
                     </label>
-                    <label aria-controls="ll-carousel-panel-3" class="ll-carousel__dot ll-carousel__dot--3" for="ll-carousel-slide-3" role="button">
+                    <label aria-controls="ll-carousel-panel-3" class="ll-carousel__dot ll-carousel__dot--3"
+                        for="ll-carousel-slide-3" role="button">
                         <span class="ll-carousel__dot-copy">
                             <span class="ll-carousel__dot-number">03</span>
                             <span class="ll-carousel__dot-text">Perfume</span>
                         </span>
                         <span class="ll-carousel__dot-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                                width="22" height="22" aria-hidden="true">
                                 <circle cx="12" cy="12" r="3"></circle>
-                                <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+                                <path
+                                    d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+                                </path>
                             </svg>
                         </span>
                     </label>
-                    <label aria-controls="ll-carousel-panel-4" class="ll-carousel__dot ll-carousel__dot--4" for="ll-carousel-slide-4" role="button">
+                    <label aria-controls="ll-carousel-panel-4" class="ll-carousel__dot ll-carousel__dot--4"
+                        for="ll-carousel-slide-4" role="button">
                         <span class="ll-carousel__dot-copy">
                             <span class="ll-carousel__dot-number">04</span>
                             <span class="ll-carousel__dot-text">Modo de uso</span>
                         </span>
                         <span class="ll-carousel__dot-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                                width="22" height="22" aria-hidden="true">
                                 <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                                 <circle cx="12" cy="12" r="3"></circle>
                                 <path d="M2 9h3M19 9h3M2 15h3M19 15h3"></path>
