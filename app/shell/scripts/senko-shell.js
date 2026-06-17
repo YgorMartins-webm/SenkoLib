@@ -1,7 +1,19 @@
 (function () {
+  /*
+   * SenkoShell e o nucleo neutro do aplicativo.
+   *
+   * REGRAS DE ARQUITETURA:
+   * - O shell nao conhece Biblioteca, Colecoes, Imagens ou qualquer feature.
+   * - Cada feature se registra chamando SenkoShell.registerFeature().
+   * - Se uma feature for removida, a unica consequencia aceitavel e a aba
+   *   dela desaparecer. O shell escolhe a primeira feature disponivel.
+   * - O topo do shell tem apenas navegacao e tema.
+   * - Busca, adicionar e acoes extras ficam dentro da propria feature.
+   */
   var features = [];
+  var githubProviders = {};
   var isReady = false;
-  var activeFeatureId = 'biblioteca';
+  var activeFeatureId = null;
   var storageKey = 'senkolib_active_tab';
 
   function readSavedFeature() {
@@ -22,22 +34,18 @@
     return features.find(function (feature) { return feature.id === id; });
   }
 
-  function getMountPoint() {
-    return document.getElementById('dashboard') || document.body;
+  function orderedFeatures() {
+    return features.slice().sort(function (left, right) { return left.order - right.order; });
   }
 
-  function insertAfterMountPoint(node) {
-    var mountPoint = getMountPoint();
-    var parent = mountPoint.parentNode || document.body;
-    parent.insertBefore(node, mountPoint.nextSibling);
+  function getFeatureRoot() {
+    return document.getElementById('senkoFeatureRoot') || document.body;
   }
 
-  function ensurePanel(feature) {
+  function getExistingPanel(feature) {
     if (feature.panel && feature.panel.isConnected) return feature.panel;
 
-    if (feature.mount) {
-      feature.panel = feature.mount();
-    } else if (feature.panelId) {
+    if (feature.panelId) {
       feature.panel = document.getElementById(feature.panelId);
     }
 
@@ -48,8 +56,28 @@
     return feature.panel;
   }
 
+  function ensurePanel(feature) {
+    var existingPanel = getExistingPanel(feature);
+    if (existingPanel) return existingPanel;
+
+    if (feature.mount) {
+      feature.panel = feature.mount();
+    }
+
+    if (feature.panel) {
+      feature.panel.dataset.senkoFeaturePanel = feature.id;
+    }
+
+    return feature.panel;
+  }
+
   function setPanelVisibility(feature, isVisible) {
-    var panel = ensurePanel(feature);
+    /*
+     * Features montadas por callback podem criar telas pesadas. Para manter o
+     * app rapido, painel escondido nao nasce aqui: ele so e criado quando a
+     * feature fica ativa. Painel ja existente ainda e ocultado.
+     */
+    var panel = isVisible ? ensurePanel(feature) : getExistingPanel(feature);
     if (!panel) return;
 
     if (isVisible && typeof feature.show === 'function') {
@@ -65,6 +93,27 @@
     }
   }
 
+  function ensureEmptyState() {
+    var root = getFeatureRoot();
+    var empty = document.getElementById('senkoEmptyState');
+    if (empty) return empty;
+
+    empty = document.createElement('section');
+    empty.id = 'senkoEmptyState';
+    empty.className = 'senko-empty-state';
+    empty.innerHTML =
+      '<img src="app/shared/assets/senko.png" alt="" />' +
+      '<h1>Nenhuma feature carregada</h1>' +
+      '<p>Adicione ou restaure pelo menos um register.js de feature para iniciar o SenkoLib.</p>';
+    root.appendChild(empty);
+    return empty;
+  }
+
+  function setEmptyState(isVisible) {
+    var empty = ensureEmptyState();
+    empty.style.display = isVisible ? '' : 'none';
+  }
+
   function ensureTabBar() {
     var tabBar = document.getElementById('senkoTabBar');
     if (tabBar) return tabBar;
@@ -74,9 +123,10 @@
     tabBar.className = 'senko-tab-bar';
     tabBar.setAttribute('aria-label', 'Ferramentas do SenkoLib');
 
-    var header = document.querySelector('.site-header');
-    if (header && header.parentNode) {
-      header.parentNode.insertBefore(tabBar, header.nextSibling);
+    var headerInner = document.querySelector('.header-inner');
+    var headerActions = document.querySelector('.header-actions');
+    if (headerInner) {
+      headerInner.insertBefore(tabBar, headerActions || null);
     } else {
       document.body.insertBefore(tabBar, document.body.firstChild);
     }
@@ -90,20 +140,17 @@
     var tabBar = ensureTabBar();
     tabBar.innerHTML = '';
 
-    features
-      .slice()
-      .sort(function (left, right) { return left.order - right.order; })
-      .forEach(function (feature) {
-        var button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'senko-tab-btn' + (feature.id === activeFeatureId ? ' active' : '');
-        button.dataset.senkoFeatureTab = feature.id;
-        button.textContent = feature.label;
-        button.addEventListener('click', function () {
-          switchFeature(feature.id);
-        });
-        tabBar.appendChild(button);
+    orderedFeatures().forEach(function (feature) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'senko-tab-btn' + (feature.id === activeFeatureId ? ' active' : '');
+      button.dataset.senkoFeatureTab = feature.id;
+      button.textContent = feature.label;
+      button.addEventListener('click', function () {
+        switchFeature(feature.id);
       });
+      tabBar.appendChild(button);
+    });
   }
 
   function updateTabs() {
@@ -112,12 +159,90 @@
     });
   }
 
+  function listGithubProviderIds() {
+    return Object.keys(githubProviders).filter(function (id) {
+      return githubProviders[id] && typeof githubProviders[id].openConfig === 'function';
+    });
+  }
+
+  function getGithubProviderForActiveFeature() {
+    /*
+     * O shell nao conhece detalhes de nenhuma feature. Ele so guarda um
+     * callback registrado pela propria feature e tenta usar primeiro o
+     * provedor da aba ativa; se a aba ativa nao tiver GitHub, usa o primeiro
+     * provedor disponivel para manter o botao global consistente.
+     */
+    if (activeFeatureId && githubProviders[activeFeatureId]) {
+      return githubProviders[activeFeatureId];
+    }
+
+    var ids = listGithubProviderIds();
+    return ids.length ? githubProviders[ids[0]] : null;
+  }
+
+  function providerHasCredentials(provider) {
+    if (!provider || typeof provider.hasCredentials !== 'function') return false;
+    try {
+      return Boolean(provider.hasCredentials());
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function refreshGithubButton() {
+    var button = document.getElementById('senkoGithubConfigBtn');
+    if (!button) return;
+
+    var provider = getGithubProviderForActiveFeature();
+    if (!provider) {
+      button.hidden = true;
+      button.classList.remove('gh-config-active');
+      button.disabled = true;
+      return;
+    }
+
+    var configured = providerHasCredentials(provider);
+    var label = provider.label || 'GitHub';
+    button.hidden = false;
+    button.disabled = false;
+    button.classList.toggle('gh-config-active', configured);
+    button.title = configured
+      ? 'GitHub configurado para ' + label
+      : 'Configurar GitHub para ' + label;
+  }
+
+  function bindGithubButton() {
+    var button = document.getElementById('senkoGithubConfigBtn');
+    if (!button || button.dataset.senkoShellBound) return;
+
+    button.dataset.senkoShellBound = '1';
+    button.addEventListener('click', function () {
+      var provider = getGithubProviderForActiveFeature();
+      if (!provider || typeof provider.openConfig !== 'function') return;
+      provider.openConfig();
+    });
+
+    refreshGithubButton();
+  }
+
+  function registerGithubProvider(featureId, provider) {
+    /*
+     * Cada feature entrega somente callbacks pequenos. O shell nao importa
+     * arquivos de GitHub e nao chama funcoes internas de Biblioteca/Colecoes.
+     */
+    if (!featureId || !provider || typeof provider.openConfig !== 'function') return;
+    githubProviders[featureId] = provider;
+    bindGithubButton();
+    refreshGithubButton();
+  }
+
   function switchFeature(id) {
     var feature = findFeature(id);
     if (!feature) return false;
 
     activeFeatureId = id;
     saveFeature(id);
+    setEmptyState(false);
 
     features.forEach(function (item) {
       setPanelVisibility(item, item.id === id);
@@ -128,7 +253,24 @@
     }
 
     updateTabs();
+    refreshGithubButton();
     return true;
+  }
+
+  function pickInitialFeature() {
+    /*
+     * O parametro ?feature=id facilita links diretos e testes isolados.
+     * Um id inexistente e ignorado sem afetar as demais features.
+     */
+    try {
+      var requestedFeature = new URLSearchParams(window.location.search).get('feature');
+      if (requestedFeature && findFeature(requestedFeature)) return requestedFeature;
+    } catch (error) {}
+
+    var savedFeature = readSavedFeature();
+    if (savedFeature && findFeature(savedFeature)) return savedFeature;
+    var first = orderedFeatures()[0];
+    return first ? first.id : null;
   }
 
   function registerFeature(feature) {
@@ -139,76 +281,47 @@
 
     if (!isReady) return;
 
-    ensurePanel(feature);
     renderTabs();
 
-    var savedFeature = readSavedFeature();
-    if (savedFeature === feature.id) {
-      switchFeature(feature.id);
+    if (!activeFeatureId) {
+      switchFeature(pickInitialFeature());
     } else {
       setPanelVisibility(feature, feature.id === activeFeatureId);
     }
   }
 
-  function createFramePanel(options) {
-    var panel = document.createElement('section');
-    panel.id = options.panelId;
-    panel.className = 'senko-frame-feature';
-    panel.style.display = 'none';
-
-    var iframe = document.createElement('iframe');
-    iframe.className = 'senko-feature-frame';
-    iframe.src = options.src;
-    iframe.title = options.title;
-    iframe.loading = 'lazy';
-
-    panel.appendChild(iframe);
-    insertAfterMountPoint(panel);
-    return panel;
-  }
-
-  function registerFrameFeature(options) {
-    registerFeature({
-      id: options.id,
-      label: options.label,
-      order: options.order,
-      mount: function () {
-        return createFramePanel({
-          panelId: options.panelId || options.id + 'Dashboard',
-          src: options.src,
-          title: options.title || options.label
-        });
-      }
+  function bindLogoHome() {
+    var logo = document.getElementById('logoHome');
+    if (!logo || logo.dataset.senkoShellBound) return;
+    logo.dataset.senkoShellBound = '1';
+    logo.addEventListener('click', function () {
+      var first = orderedFeatures()[0];
+      if (first) switchFeature(first.id);
     });
   }
 
   function initShell() {
     isReady = true;
 
-    features.forEach(function (feature) {
-      ensurePanel(feature);
-    });
-
     renderTabs();
+    bindLogoHome();
+    bindGithubButton();
 
-    var savedFeature = readSavedFeature();
-    if (!switchFeature(savedFeature || 'biblioteca')) {
-      switchFeature('biblioteca');
+    var initialFeature = pickInitialFeature();
+    if (!initialFeature || !switchFeature(initialFeature)) {
+      activeFeatureId = null;
+      setEmptyState(true);
     }
   }
 
   window.SenkoShell = {
     registerFeature: registerFeature,
-    registerFrameFeature: registerFrameFeature,
-    switchFeature: switchFeature
+    registerGithubProvider: registerGithubProvider,
+    refreshGithubButton: refreshGithubButton,
+    switchFeature: switchFeature,
+    getFeatureRoot: getFeatureRoot,
+    getActiveFeatureId: function () { return activeFeatureId; }
   };
-
-  registerFeature({
-    id: 'biblioteca',
-    label: 'Biblioteca',
-    order: 10,
-    panelId: 'dashboard'
-  });
 
   document.addEventListener('DOMContentLoaded', initShell);
 })();

@@ -1,5 +1,13 @@
 (function () {
-  const BASE_TEMPLATE_URL = '../gamer-base.html';
+  const api = window.SenkoGamerPreview = window.SenkoGamerPreview || {};
+  const currentScript = document.currentScript;
+  const FEATURE_BASE_URL = currentScript && currentScript.src
+    ? new URL('./', currentScript.src).href
+    : new URL('app/prototype/gamer-preview/', document.baseURI).href;
+  const RAW_BASE_TEMPLATE_URL = new URL('../gamer-base.html', FEATURE_BASE_URL).href;
+  const BASE_TEMPLATE_URL = window.SenkoFreshAssets
+    ? window.SenkoFreshAssets.url(RAW_BASE_TEMPLATE_URL)
+    : RAW_BASE_TEMPLATE_URL;
   const DEFAULT_CONTENT = '<section style="padding: 48px 16px; text-align: center; font-family: Arial, sans-serif;">\n  <h2>Preview GAMER</h2>\n</section>';
   const CONTAINMENT_STYLE_ID = 'senkolib-gamer-containment';
   const CONTAINMENT_CSS = `
@@ -133,21 +141,47 @@
   let viewportWidth = 1024;
   let viewportRenderTimer = 0;
 
-  const els = {
-    input: document.getElementById('content-input'),
-    stage: document.querySelector('.preview-stage'),
-    viewport: document.getElementById('preview-viewport'),
-    frame: document.getElementById('preview-frame'),
-    range: document.getElementById('viewport-range'),
-    widthLabel: document.getElementById('width-label'),
-    status: document.getElementById('status'),
-    render: document.getElementById('btn-render'),
-    clear: document.getElementById('btn-clear'),
-    copy: document.getElementById('btn-copy'),
-    presets: Array.from(document.querySelectorAll('[data-width]')),
+  const els = {};
+
+  api.setRoot = function setRoot(root) {
+    api.root = root || document;
   };
 
-  function init() {
+  api.getRoot = function getRoot() {
+    return api.root || document;
+  };
+
+  api.$ = function getById(id) {
+    return api.getRoot().getElementById(id);
+  };
+
+  api.query = function query(selector) {
+    return api.getRoot().querySelector(selector);
+  };
+
+  api.queryAll = function queryAll(selector) {
+    return Array.from(api.getRoot().querySelectorAll(selector));
+  };
+
+  function bindElements() {
+    Object.assign(els, {
+      input: api.$('content-input'),
+      stage: api.query('.preview-stage'),
+      viewport: api.$('preview-viewport'),
+      frame: api.$('preview-frame'),
+      range: api.$('viewport-range'),
+      widthLabel: api.$('width-label'),
+      status: api.$('status'),
+      render: api.$('btn-render'),
+      clear: api.$('btn-clear'),
+      copy: api.$('btn-copy'),
+      presets: api.queryAll('[data-width]'),
+    });
+  }
+
+  api.init = function init(root) {
+    api.setRoot(root);
+    bindElements();
     els.input.value = DEFAULT_CONTENT;
     els.render.addEventListener('click', renderPreview);
     els.clear.addEventListener('click', clearContent);
@@ -171,7 +205,7 @@
       new ResizeObserver(fitPreviewToStage).observe(els.stage);
     }
     loadBaseTemplate();
-  }
+  };
 
   async function loadBaseTemplate() {
     setStatus('carregando base', '');
@@ -354,5 +388,13 @@
     return Math.min(max, Math.max(min, Number(value) || min));
   }
 
-  document.addEventListener('DOMContentLoaded', init);
+  document.addEventListener('DOMContentLoaded', function () {
+    /*
+     * Modo standalone para abrir o prototipo direto. No app principal, o
+     * register.js monta a raiz e chama SenkoGamerPreview.init(shadowRoot).
+     */
+    if (!window.SenkoShell && document.querySelector('.prototype-shell')) {
+      api.init(document);
+    }
+  });
 })();

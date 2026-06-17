@@ -1,60 +1,38 @@
-/* ═══════════════════════════════════════════════════════════════════════
-   sw.js — Service Worker do SenkoLib
-   ───────────────────────────────────────────────────────────────────────
-   Estratégia: Network First para todos os recursos locais.
-   O browser sempre busca a versão mais recente na rede.
-   O cache nunca é usado como resposta final — só como fallback de rede.
-   Equivalente a Ctrl+Shift+R em todo reload.
-═══════════════════════════════════════════════════════════════════════ */
-
-var CACHE_NAME = 'senkolib-v2';
-
-/* ── Install: ativa imediatamente sem esperar abas fecharem ── */
-self.addEventListener('install', function (e) {
+/*
+ * SenkoLib - recarregamento sempre fresco.
+ *
+ * O Service Worker nao armazena arquivos. Toda requisicao GET local passa
+ * pela rede com o cache HTTP desativado, reproduzindo um hard reload em
+ * HTTP/HTTPS. No modo file://, o index usa URLs com uma chave por abertura.
+ */
+self.addEventListener('install', function () {
   self.skipWaiting();
 });
 
-/* ── Activate: assume controle de todas as abas abertas ── */
-self.addEventListener('activate', function (e) {
-  e.waitUntil(
-    /* Remove caches de versões antigas */
+self.addEventListener('activate', function (event) {
+  event.waitUntil(
     caches.keys().then(function (keys) {
-      return Promise.all(
-        keys.filter(function (key) { return key !== CACHE_NAME; })
-            .map(function (key) { return caches.delete(key); })
-      );
+      return Promise.all(keys.filter(function (key) {
+        return key.indexOf('senkolib-') === 0 || key === 'senkolib';
+      }).map(function (key) {
+        return caches.delete(key);
+      }));
     }).then(function () {
       return self.clients.claim();
     })
   );
 });
 
-/* ── Fetch: Network First para recursos locais ── */
-self.addEventListener('fetch', function (e) {
-  var url = new URL(e.request.url);
+self.addEventListener('fetch', function (event) {
+  var url = new URL(event.request.url);
 
-  /* Deixa passar sem interceptar:
-     - Requisições externas (Google Fonts, GitHub API, etc.)
-     - Requisições que não sejam GET */
-  if (url.origin !== self.location.origin || e.request.method !== 'GET') {
+  if (event.request.method !== 'GET' || url.origin !== self.location.origin) {
     return;
   }
 
-  e.respondWith(
-    fetch(e.request, { cache: 'no-store' })
-      .then(function (response) {
-        /* Atualiza o cache com a resposta fresca */
-        if (response.ok) {
-          var clone = response.clone();
-          caches.open(CACHE_NAME).then(function (cache) {
-            cache.put(e.request, clone);
-          });
-        }
-        return response;
-      })
-      .catch(function () {
-        /* Rede falhou — usa cache como fallback (modo offline) */
-        return caches.match(e.request);
-      })
+  event.respondWith(
+    fetch(new Request(event.request, { cache: 'reload' })).catch(function () {
+      return fetch(event.request, { cache: 'no-store' });
+    })
   );
 });

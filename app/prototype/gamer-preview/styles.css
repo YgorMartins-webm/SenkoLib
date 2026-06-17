@@ -1,3 +1,4 @@
+:host,
 :root {
   --bg: #f8f8f8;
   --surface: #ffffff;
@@ -17,6 +18,7 @@
   --sans: 'Nunito', sans-serif;
 }
 
+:host-context([data-theme="dark"]),
 :root[data-theme="dark"] {
   --bg: #181a1b;
   --surface: #1c1e1f;
@@ -45,6 +47,13 @@ body {
   min-height: 100vh;
 }
 
+:host {
+  display: block;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -61,9 +70,13 @@ input {
 .prototype-shell {
   display: grid;
   grid-template-columns: minmax(360px, 430px) minmax(0, 1fr);
-  height: 100vh;
+  height: 100%;
   min-height: 0;
   background: var(--bg);
+}
+
+body > .prototype-shell {
+  height: 100vh;
 }
 
 .editor-panel,
