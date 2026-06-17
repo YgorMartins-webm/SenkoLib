@@ -11,7 +11,7 @@
      6. colEditLayoutOverlay   — editar layout dentro de coleção
      7. colConfirmOverlay      — confirmação de exclusão genérica
 
-   EXPÕE (globais usados por col-script.js e senko-github-col.js):
+   EXPÕE (globais usados por col-script.js e colecoes-github.js):
      colOpenCollectionModal(col)
      colOpenCreateModal()
      colOpenEditModal(col)
@@ -93,11 +93,16 @@ function colCloseAllModals() {
   if (!anyOpen) document.body.style.overflow = '';
 }
 
-/* Gera slug a partir do nome */
+/*
+ * Helpers locais de texto/metadados.
+ *
+ * REGRA DE INDEPENDENCIA:
+ * Colecoes nao chama senkoSlugifyIdentifier, senkoBindMetadataInput,
+ * senkoGetMetadataInputValue, senkoParseMetadataTags nem copyToClipboard
+ * da Biblioteca. A duplicacao aqui e intencional para permitir remover
+ * app/features/biblioteca sem quebrar os modais de Colecoes.
+ */
 function _colSlugify(name) {
-  if (typeof senkoSlugifyIdentifier === 'function') {
-    return senkoSlugifyIdentifier(name);
-  }
   if (typeof ColGroups !== 'undefined' && typeof ColGroups.slugify === 'function') {
     return ColGroups.slugify(name);
   }
@@ -109,9 +114,32 @@ function _colSlugify(name) {
     .replace(/^-|-$/g, '');
 }
 
-/* Valida slug: só letras minúsculas, números e hífen */
+/* Valida slug: so letras minusculas, numeros e hifen */
 function _colValidSlug(slug) {
   return /^[a-z0-9-]+$/.test(slug) && slug.length >= 2;
+}
+
+/*
+ * Colecoes valida seus proprios nomes sem depender da Biblioteca. O motor
+ * ColLib repete a regra para proteger chamadas que nao passam pelos modais.
+ */
+function _colCollectionNameExists(name, exceptSlug) {
+  return typeof ColLib !== 'undefined'
+    && typeof ColLib.hasCollectionName === 'function'
+    && ColLib.hasCollectionName(name, exceptSlug || null);
+}
+
+function _colLayoutNameExists(collectionSlug, name, exceptLayoutId) {
+  return typeof ColLib !== 'undefined'
+    && typeof ColLib.hasLayoutName === 'function'
+    && ColLib.hasLayoutName(collectionSlug, name, exceptLayoutId || null);
+}
+
+function _colSetFieldIssue(id, message) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  if (message) el.textContent = '⚠ ' + message;
+  el.style.display = message ? 'block' : 'none';
 }
 
 function _colSyncGeneratedId(nameId, targetId, previewId) {
@@ -128,29 +156,58 @@ function _colSyncGeneratedId(nameId, targetId, previewId) {
 }
 
 function _colBindMetadataInput(inputId, allowTagSeparator) {
-  if (typeof senkoBindMetadataInput === 'function') {
-    senkoBindMetadataInput(inputId, allowTagSeparator);
-  }
+  var input = document.getElementById(inputId);
+  if (!input || input.dataset.colMetadataBound) return;
+  input.dataset.colMetadataBound = '1';
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && !allowTagSeparator) e.preventDefault();
+  });
 }
 
 function _colReadMetadataInput(inputId, allowTagSeparator) {
-  if (typeof senkoGetMetadataInputValue === 'function') {
-    return senkoGetMetadataInputValue(inputId, allowTagSeparator);
-  }
-
   var input = document.getElementById(inputId);
-  return input ? input.value : '';
+  var value = input ? input.value : '';
+  return allowTagSeparator
+    ? value.replace(/\r?\n/g, ',').trim()
+    : value.replace(/\r?\n/g, ' ').trim();
 }
 
 function _colReadMetadataTags(inputId) {
-  var value = _colReadMetadataInput(inputId, true);
-  if (typeof senkoParseMetadataTags === 'function') {
-    return senkoParseMetadataTags(value);
+  return _colReadMetadataInput(inputId, true)
+    .split(',')
+    .map(function (tag) { return tag.trim(); })
+    .filter(Boolean);
+}
+
+function _colCopyToClipboard(text, button, restoredHtml) {
+  function markCopied() {
+    if (!button) return;
+    button.innerHTML = 'Copiado';
+    setTimeout(function () { button.innerHTML = restoredHtml; }, 1200);
   }
 
-  return value.split(',').map(function (tag) {
-    return tag.trim();
-  }).filter(Boolean);
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(markCopied).catch(function () {
+      _colFallbackCopy(text);
+      markCopied();
+    });
+    return;
+  }
+
+  _colFallbackCopy(text);
+  markCopied();
+}
+
+function _colFallbackCopy(text) {
+  var textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.setAttribute('readonly', 'readonly');
+  textarea.style.position = 'fixed';
+  textarea.style.left = '-9999px';
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
 }
 
 /* Preview de iframe — limpa e recarrega */
@@ -201,7 +258,7 @@ function _colBuildCollectionModal() {
           '<span class="col-modal-group-badge" id="colColGroupBadge"></span>' +
         '</div>' +
         '<div class="col-modal-header-right">' +
-          /* Âncora GitHub — senko-github-col.js injeta botão de salvar aqui */
+          /* Ancora GitHub: colecoes-github.js injeta botao de salvar aqui. */
           '<span id="colColSaveAnchor" style="display:none;"></span>' +
           '<button class="btn btn-edit-icon" id="colColEditMetaBtn" title="Editar metadados">' +
             '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">' +
@@ -314,7 +371,7 @@ function _colRenderLayoutsGrid(col) {
     bAll.addEventListener('click', function (e) {
       e.stopPropagation();
       var tudo = (layout.css ? layout.css + '\n' : '') + (layout.html || '');
-      if (typeof copyToClipboard === 'function') copyToClipboard(tudo, bAll, COPY_ICON + ' Copiar tudo');
+      _colCopyToClipboard(tudo, bAll, COPY_ICON + ' Copiar tudo');
     });
 
     footer.appendChild(bAll);
@@ -462,11 +519,18 @@ function _colValidateCreateForm() {
   var nameOk  = name.trim().length >= 3;
   var slugOk  = _colValidSlug(slug.trim());
   var groupOk = !!group;
+  var duplicateName = nameOk && slugOk && _colCollectionNameExists(name, null);
 
-  _colShowFieldError('colCreateNameErr', (!nameOk || !slugOk) && name.length > 0);
+  if (duplicateName) {
+    _colSetFieldIssue('colCreateNameErr', 'Ja existe uma colecao com esse nome');
+  } else if ((!nameOk || !slugOk) && name.length > 0) {
+    _colSetFieldIssue('colCreateNameErr', 'Informe um nome com letras ou numeros (minimo 3 caracteres)');
+  } else {
+    _colSetFieldIssue('colCreateNameErr', '');
+  }
   _colShowFieldError('colCreateGroupErr', false); /* só mostra no submit */
 
-  return nameOk && slugOk && groupOk;
+  return nameOk && slugOk && groupOk && !duplicateName;
 }
 
 function _colShowFieldError(id, show) {
@@ -482,9 +546,19 @@ function colGetCreateFormData() {
   var tags  = _colReadMetadataTags('colCreateTags');
 
   /* Validação final */
-  var ok = name.trim().length >= 3 && _colValidSlug(slug.trim()) && !!group;
+  var duplicateName = _colCollectionNameExists(name, null);
+  var ok = name.trim().length >= 3 && _colValidSlug(slug.trim()) && !!group && !duplicateName;
   if (!ok) {
-    _colShowFieldError('colCreateNameErr', name.trim().length < 3 || !_colValidSlug(slug.trim()));
+    if (duplicateName) {
+      _colSetFieldIssue('colCreateNameErr', 'Ja existe uma colecao com esse nome');
+    } else {
+      _colSetFieldIssue(
+        'colCreateNameErr',
+        name.trim().length < 3 || !_colValidSlug(slug.trim())
+          ? 'Informe um nome com letras ou numeros (minimo 3 caracteres)'
+          : ''
+      );
+    }
     _colShowFieldError('colCreateGroupErr', !group);
   }
   return ok ? { name: name.trim(), slug: slug.trim(), group: group, tags: tags } : null;
@@ -548,7 +622,14 @@ function _colBuildEditModal() {
   _colBindMetadataInput('colEditName', false);
   _colBindMetadataInput('colEditTags', true);
   document.getElementById('colEditName').addEventListener('input', function () {
-    _colShowFieldError('colEditNameErr', this.value.trim().length < 3 && this.value.length > 0);
+    var slug = (document.getElementById('colEditSlug') || {}).value || '';
+    if (_colCollectionNameExists(this.value, slug)) {
+      _colSetFieldIssue('colEditNameErr', 'Ja existe outra colecao com esse nome');
+    } else if (this.value.trim().length < 3 && this.value.length > 0) {
+      _colSetFieldIssue('colEditNameErr', 'Nome obrigatorio (minimo 3 caracteres)');
+    } else {
+      _colSetFieldIssue('colEditNameErr', '');
+    }
   });
 
   document.getElementById('colEditNewGroupBtn').addEventListener('click', function () {
@@ -594,9 +675,15 @@ function colGetEditFormData() {
   var group = (document.getElementById('colEditGroup') || {}).value || '';
   var tags  = _colReadMetadataTags('colEditTags');
 
-  var ok = name.trim().length >= 3 && !!group;
+  var duplicateName = _colCollectionNameExists(name, slug);
+  var ok = name.trim().length >= 3 && !!group && !duplicateName;
   if (!ok) {
-    _colShowFieldError('colEditNameErr',  name.trim().length < 3);
+    _colSetFieldIssue(
+      'colEditNameErr',
+      duplicateName
+        ? 'Ja existe outra colecao com esse nome'
+        : (name.trim().length < 3 ? 'Nome obrigatorio (minimo 3 caracteres)' : '')
+    );
     _colShowFieldError('colEditGroupErr', !group);
   }
   return ok ? { slug: slug, name: name.trim(), group: group, tags: tags } : null;
@@ -803,7 +890,14 @@ function _colBuildAddLayoutModal() {
   _colBindMetadataInput('colAddLayoutName', false);
   document.getElementById('colAddLayoutName').addEventListener('input', function () {
     var id = _colSyncGeneratedId('colAddLayoutName', 'colAddLayoutId');
-    _colShowFieldError('colAddLayoutNameErr', !_colValidSlug(id) && this.value.length > 0);
+    var slug = _colCurrentCollection ? _colCurrentCollection.slug : '';
+    if (_colLayoutNameExists(slug, this.value, null)) {
+      _colSetFieldIssue('colAddLayoutNameErr', 'Ja existe um layout com esse nome nesta colecao');
+    } else if (!_colValidSlug(id) && this.value.length > 0) {
+      _colSetFieldIssue('colAddLayoutNameErr', 'Informe um nome com pelo menos 2 letras ou numeros');
+    } else {
+      _colSetFieldIssue('colAddLayoutNameErr', '');
+    }
   });
 
   document.getElementById('colAddLayoutClose').addEventListener('click', colCloseAddLayoutModal);
@@ -848,9 +942,16 @@ function colGetAddLayoutFormData() {
   var id      = _colSyncGeneratedId('colAddLayoutName', 'colAddLayoutId');
   var content = (document.getElementById('colAddLayoutContent') || {}).value || '';
 
-  var ok = _colValidSlug(id) && name.trim().length >= 1;
+  var slug = _colCurrentCollection ? _colCurrentCollection.slug : '';
+  var duplicateName = _colLayoutNameExists(slug, name, null);
+  var ok = _colValidSlug(id) && name.trim().length >= 1 && !duplicateName;
   if (!ok) {
-    _colShowFieldError('colAddLayoutNameErr', name.trim().length < 1 || !_colValidSlug(id));
+    _colSetFieldIssue(
+      'colAddLayoutNameErr',
+      duplicateName
+        ? 'Ja existe um layout com esse nome nesta colecao'
+        : 'Informe um nome com pelo menos 2 letras ou numeros'
+    );
   }
   return ok ? { id: id, name: name.trim(), html: content, css: '' } : null;
 }
@@ -928,6 +1029,17 @@ function _colBuildEditLayoutModal() {
   });
 
   _colBindMetadataInput('colEditLayoutName', false);
+  document.getElementById('colEditLayoutName').addEventListener('input', function () {
+    var slug = _colCurrentCollection ? _colCurrentCollection.slug : '';
+    var layoutId = (document.getElementById('colEditLayoutId') || {}).value || '';
+    if (_colLayoutNameExists(slug, this.value, layoutId)) {
+      _colSetFieldIssue('colEditLayoutNameErr', 'Ja existe outro layout com esse nome nesta colecao');
+    } else if (!this.value.trim()) {
+      _colSetFieldIssue('colEditLayoutNameErr', 'Nome obrigatorio');
+    } else {
+      _colSetFieldIssue('colEditLayoutNameErr', '');
+    }
+  });
   document.getElementById('colEditLayoutClose').addEventListener('click', colCloseEditLayoutModal);
   document.getElementById('colEditLayoutCancel').addEventListener('click', colCloseEditLayoutModal);
   _colOverlayClick('colEditLayoutOverlay', 'colEditLayoutModal', colCloseEditLayoutModal);
@@ -971,8 +1083,17 @@ function colGetEditLayoutFormData() {
   var name    = _colReadMetadataInput('colEditLayoutName', false);
   var content = (document.getElementById('colEditLayoutContent') || {}).value || '';
 
-  var ok = name.trim().length >= 1;
-  if (!ok) _colShowFieldError('colEditLayoutNameErr', true);
+  var slug = _colCurrentCollection ? _colCurrentCollection.slug : '';
+  var duplicateName = _colLayoutNameExists(slug, name, id);
+  var ok = name.trim().length >= 1 && !duplicateName;
+  if (!ok) {
+    _colSetFieldIssue(
+      'colEditLayoutNameErr',
+      duplicateName
+        ? 'Ja existe outro layout com esse nome nesta colecao'
+        : 'Nome obrigatorio'
+    );
+  }
   return ok ? { id: id, name: name.trim(), html: content, css: '' } : null;
 }
 
@@ -1048,7 +1169,9 @@ function colOpenConfirm(opts) {
    ESC — fecha o modal de coleção mais externo aberto
 ═══════════════════════════════════════════════════════════════════════ */
 
-document.addEventListener('DOMContentLoaded', function () {
+function initColecoesModals() {
+  if (initColecoesModals.initialized) return;
+  initColecoesModals.initialized = true;
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
 
@@ -1074,4 +1197,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
-});
+}
+
+window.SenkoColecoesModals = {
+  init: initColecoesModals
+};

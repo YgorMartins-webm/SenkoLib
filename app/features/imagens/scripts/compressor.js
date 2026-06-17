@@ -1,4 +1,5 @@
 (function () {
+  const api = window.SenkoImagens;
   const SUPPORTED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
 
   // Estado em memoria da aba Compressor. Cada item representa um arquivo carregado.
@@ -6,11 +7,11 @@
   let isDownloadingEach = false;
 
   function initCompressor() {
-    const input = $('image-input');
-    const quality = $('quality-range');
-    const pickButton = $('btn-pick-images');
-    const view = $('view-compressor');
-    const results = document.querySelector('.compressor-results');
+    const input = api.$('image-input');
+    const quality = api.$('quality-range');
+    const pickButton = api.$('btn-pick-images');
+    const view = api.$('view-compressor');
+    const results = api.query('.compressor-results');
 
     // Upload via seletor tradicional.
     pickButton.addEventListener('click', () => input.click());
@@ -19,23 +20,23 @@
       input.value = '';
     });
     quality.addEventListener('input', () => {
-      $('quality-value').textContent = quality.value + '%';
-      document.querySelectorAll('[data-quality]').forEach(btn => btn.classList.toggle('is-active', btn.dataset.quality === quality.value));
+      api.$('quality-value').textContent = quality.value + '%';
+      api.queryAll('[data-quality]').forEach(btn => btn.classList.toggle('is-active', btn.dataset.quality === quality.value));
     });
 
-    document.querySelectorAll('[data-quality]').forEach(button => {
+    api.queryAll('[data-quality]').forEach(button => {
       button.addEventListener('click', () => {
         quality.value = button.dataset.quality;
         quality.dispatchEvent(new Event('input'));
       });
     });
 
-    bindImageDrop(document, results, files => addFiles(files), () => view && view.classList.contains('is-active'));
-    $('btn-compress').addEventListener('click', compressAll);
-    $('btn-sort-images').addEventListener('click', sortImagesByName);
-    $('btn-download-each').addEventListener('click', downloadEach);
-    $('btn-download-all').addEventListener('click', downloadAll);
-    $('btn-clear-images').addEventListener('click', clearImages);
+    bindImageDrop(api.getRoot(), results, files => addFiles(files), () => view && view.classList.contains('is-active'));
+    api.$('btn-compress').addEventListener('click', compressAll);
+    api.$('btn-sort-images').addEventListener('click', sortImagesByName);
+    api.$('btn-download-each').addEventListener('click', downloadEach);
+    api.$('btn-download-all').addEventListener('click', downloadAll);
+    api.$('btn-clear-images').addEventListener('click', clearImages);
   }
 
   function bindImageDrop(target, highlight, onFiles, isActive) {
@@ -92,12 +93,12 @@
     })));
 
     renderList();
-    setStatus('', `${accepted.length} imagem(ns) adicionadas`);
+    api.setStatus('', `${accepted.length} imagem(ns) adicionadas`);
   }
 
   function renderList() {
     // A lista e redesenhada de forma simples sempre que o estado muda.
-    const list = $('image-list');
+    const list = api.$('image-list');
     list.innerHTML = '';
 
     if (!items.length) {
@@ -111,12 +112,12 @@
       items.forEach(item => list.appendChild(buildImageCard(item)));
     }
 
-    $('compressor-badge').textContent = items.length + ' arquivo' + (items.length !== 1 ? 's' : '');
-    $('btn-compress').disabled = isDownloadingEach || !items.length;
-    $('btn-sort-images').disabled = isDownloadingEach || items.length < 2;
-    $('btn-clear-images').disabled = isDownloadingEach || !items.length;
-    $('btn-download-each').disabled = isDownloadingEach || !items.length;
-    $('btn-download-all').disabled = isDownloadingEach || !items.length;
+    api.$('compressor-badge').textContent = items.length + ' arquivo' + (items.length !== 1 ? 's' : '');
+    api.$('btn-compress').disabled = isDownloadingEach || !items.length;
+    api.$('btn-sort-images').disabled = isDownloadingEach || items.length < 2;
+    api.$('btn-clear-images').disabled = isDownloadingEach || !items.length;
+    api.$('btn-download-each').disabled = isDownloadingEach || !items.length;
+    api.$('btn-download-all').disabled = isDownloadingEach || !items.length;
   }
 
   function buildImageCard(item) {
@@ -126,25 +127,25 @@
 
     const sourceUrl = item.resultUrl || item.originalUrl;
     const resultSize = item.resultBlob ? item.resultBlob.size : 0;
-    const saving = savingPercent(item.file.size, resultSize);
+    const saving = api.savingPercent(item.file.size, resultSize);
 
     card.innerHTML = `
       <div class="image-preview"><img src="${sourceUrl}" alt=""></div>
       <div class="image-info">
-        <div class="image-name" title="${esc(item.file.name)}">${esc(item.file.name)}</div>
+        <div class="image-name" title="${api.esc(item.file.name)}">${api.esc(item.file.name)}</div>
         <span class="tag">${item.file.type.replace('image/', '')}</span>
         <label class="filename-field">
           <span class="stat__label">Nome final</span>
-          <input class="filename-input" type="text" value="${esc(item.outputName)}" data-action="rename">
+          <input class="filename-input" type="text" value="${api.esc(item.outputName)}" data-action="rename">
         </label>
         <div class="image-stats">
           <div class="stat">
             <span class="stat__label">Original</span>
-            <span class="stat__value">${formatBytes(item.file.size)}</span>
+            <span class="stat__value">${api.formatBytes(item.file.size)}</span>
           </div>
           <div class="stat">
             <span class="stat__label">Final</span>
-            <span class="stat__value">${item.resultBlob ? formatBytes(resultSize) : item.status}</span>
+            <span class="stat__value">${item.resultBlob ? api.formatBytes(resultSize) : item.status}</span>
           </div>
         </div>
         <div class="stat">
@@ -159,7 +160,7 @@
     `;
 
     card.querySelector('[data-action="download"]').addEventListener('click', () => {
-      downloadBlob(outputBlobFor(item), normalizedOutputName(item));
+      api.downloadBlob(outputBlobFor(item), normalizedOutputName(item));
     });
     const nameInput = card.querySelector('[data-action="rename"]');
     nameInput.addEventListener('input', event => {
@@ -194,16 +195,16 @@
         });
     });
     renderList();
-    setStatus('ok', 'ordenado A-Z');
+    api.setStatus('ok', 'ordenado A-Z');
   }
 
   async function compressAll() {
     if (!items.length) return;
-    const quality = Number($('quality-range').value) / 100;
-    const pngColors = Number($('png-colors').value);
+    const quality = Number(api.$('quality-range').value) / 100;
+    const pngColors = Number(api.$('png-colors').value);
 
-    $('btn-compress').disabled = true;
-    setStatus('busy', 'comprimindo...');
+    api.$('btn-compress').disabled = true;
+    api.setStatus('busy', 'comprimindo...');
 
     // Processa em sequencia para manter a interface previsivel em maquinas mais fracas.
     for (const item of items) {
@@ -224,7 +225,7 @@
     }
 
     renderList();
-    setStatus('ok', 'compressao finalizada');
+    api.setStatus('ok', 'compressao finalizada');
   }
 
   async function compressImage(file, quality, pngColors) {
@@ -245,7 +246,7 @@
       alwaysKeepResolution: true,
       fileType: file.type,
       useWebWorker: true,
-      libURL: new URL('vendor/browser-image-compression.js', window.location.href).href,
+      libURL: api.assetUrl('vendor/browser-image-compression.js'),
     });
   }
 
@@ -291,7 +292,7 @@
 
     const zipNames = uniqueZipNames(ready);
     const blob = await createZipBlob(ready, zipNames);
-    downloadBlob(blob, zipFilename(ready));
+    api.downloadBlob(blob, zipFilename(ready));
   }
 
   async function downloadEach() {
@@ -308,17 +309,17 @@
         await saveEachToDirectory(ready, names);
       } else if (window.JSZip) {
         const blob = await createZipBlob(ready, names);
-        downloadBlob(blob, zipFilename(ready));
-        setStatus('ok', 'zip unico iniciado');
+        api.downloadBlob(blob, zipFilename(ready));
+        api.setStatus('ok', 'zip unico iniciado');
       } else {
-        setStatus('', 'download em lote indisponivel');
+        api.setStatus('', 'download em lote indisponivel');
       }
     } catch (error) {
       if (error && error.name === 'AbortError') {
-        setStatus('', 'download cancelado');
+        api.setStatus('', 'download cancelado');
       } else {
         console.error(error);
-        setStatus('', 'erro ao baixar');
+        api.setStatus('', 'erro ao baixar');
       }
     } finally {
       isDownloadingEach = false;
@@ -337,7 +338,7 @@
     for (let i = 0; i < ready.length; i += 1) {
       const item = ready[i];
       const filename = await availableDirectoryName(directory, names.get(item.id), usedNames);
-      setStatus('busy', `salvando ${i + 1}/${ready.length}`);
+      api.setStatus('busy', `salvando ${i + 1}/${ready.length}`);
 
       const handle = await directory.getFileHandle(filename, { create: true });
       const writable = await handle.createWritable();
@@ -346,7 +347,7 @@
       item.outputName = filename;
     }
 
-    setStatus('ok', `${ready.length} arquivo(s) salvos`);
+    api.setStatus('ok', `${ready.length} arquivo(s) salvos`);
   }
 
   async function availableDirectoryName(directory, filename, usedNames) {
@@ -398,7 +399,7 @@
     });
     items = [];
     renderList();
-    setStatus('', 'aguardando');
+    api.setStatus('', 'aguardando');
   }
 
   function defaultOutputName(filename, mime) {
@@ -499,5 +500,5 @@
     return names;
   }
 
-  window.initCompressor = initCompressor;
+  api.initCompressor = initCompressor;
 })();

@@ -6,21 +6,29 @@
   <title>SenkoLib</title>
   <script>
     (function () {
-      function applyTheme() {
-        var theme = localStorage.getItem('senkolib_theme') || 'light';
+      function storedTheme() {
+        try {
+          return localStorage.getItem('senkolib_theme') || 'light';
+        } catch (error) {
+          return 'light';
+        }
+      }
+
+      function applyTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
       }
 
-      applyTheme();
+      applyTheme(storedTheme());
       window.addEventListener('storage', function (event) {
-        if (event.key === 'senkolib_theme') applyTheme();
+        if (event.key === 'senkolib_theme') applyTheme(storedTheme());
       });
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../shared/styles/img-tools.css">
+  <link rel="stylesheet" href="../../shared/styles/senko-tokens.css">
+  <link rel="stylesheet" href="../../shared/styles/senko-components.css">
   <link rel="stylesheet" href="styles/imagens.css">
 </head>
 <body>
@@ -173,7 +181,7 @@
   <script src="vendor/jszip.min.js"></script>
   <script src="vendor/UPNG.min.js"></script>
   <script src="vendor/browser-image-compression.js"></script>
-  <script src="../../shared/scripts/img-tools-utils.js?v=20260529-firefox-download"></script>
+  <script src="scripts/imagens-utils.js?v=20260607-independent"></script>
   <script src="scripts/compressor.js?v=20260529-firefox-download"></script>
   <script src="scripts/resizer.js"></script>
   <script src="scripts/imagens-app.js"></script>

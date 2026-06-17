@@ -1,6 +1,20 @@
 // @ts-nocheck
 /* ═══════════════════════════════════════════════════════
    SENKOLIB — script.js
+
+   RESPONSABILIDADE:
+     - Renderiza e filtra o grid principal da Biblioteca.
+     - Controla modais de criar/editar layouts e variantes.
+     - Gera blocos JS copiaveis no formato dos arquivos data/*.js.
+     - Mantem favoritos e aba atual em localStorage.
+
+   CONTRATOS IMPORTANTES:
+     - data/layouts/*.js registra layouts via SenkoLib.register([...]).
+     - data/variants/*.js registra variantes via SenkoLib.registerVariant(id, [...]).
+     - Os marcadores "@@@@Senko - id" sao usados pelos modulos GitHub
+       para localizar e substituir objetos no repositorio.
+     - Este arquivo atualiza a UI e a memoria do navegador; persistencia
+       real fica nos modulos de integracao (GitHub/FSA, quando carregados).
 ═══════════════════════════════════════════════════════ */
 
 var state = {
@@ -10,6 +24,11 @@ var state = {
   currentEditVariant: null,
   _editFromVariant:   false,
 };
+
+var _gridRendered = false;
+var _gridRenderTimer = null;
+var _bibliotecaInitialized = false;
+var bibliotecaApi = window.SenkoBiblioteca = window.SenkoBiblioteca || {};
 
 /* ─── Utilitários ─────────────────────────────────── */
 function escapeHtml(str) {
@@ -121,6 +140,44 @@ function senkoNormalizeVariantName(value) {
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');
 }
+
+/*
+ * A regra de unicidade pertence à Biblioteca e usa o motor da própria
+ * feature. Os fallbacks mantêm a validação funcional em testes isolados.
+ */
+function senkoCanonicalName(value) {
+  if (typeof SenkoLib !== 'undefined' && typeof SenkoLib.normalizeName === 'function') {
+    return SenkoLib.normalizeName(value);
+  }
+  return senkoSlugifyIdentifier(value).replace(/-/g, ' ');
+}
+
+function senkoLayoutNameExists(name, exceptId) {
+  if (typeof SenkoLib === 'undefined') return false;
+  if (typeof SenkoLib.hasLayoutName === 'function') {
+    return SenkoLib.hasLayoutName(name, exceptId || null);
+  }
+
+  var key = senkoCanonicalName(name);
+  return SenkoLib.getAll().some(function (layout) {
+    return layout.id !== exceptId && senkoCanonicalName(layout.name) === key;
+  });
+}
+
+function senkoVariantNameExists(parentId, name, exceptVariant) {
+  if (typeof SenkoLib === 'undefined' || !parentId) return false;
+  if (typeof SenkoLib.hasVariantName === 'function') {
+    return SenkoLib.hasVariantName(parentId, name, exceptVariant || null);
+  }
+
+  var key = senkoCanonicalName(name);
+  return SenkoLib.getVariants(parentId).some(function (variant) {
+    return variant !== exceptVariant && senkoCanonicalName(variant.name) === key;
+  });
+}
+
+bibliotecaApi.isLayoutNameTaken = senkoLayoutNameExists;
+bibliotecaApi.isVariantNameTaken = senkoVariantNameExists;
 
 function senkoVariantNameIssue(value) {
   var raw = String(value || '');
@@ -263,24 +320,44 @@ function scaleCardIframe(iframe) {
 }
 
 
-/* ─── Lazy loading de iframes ───────────────────────── */
-var _iframeObserver = new IntersectionObserver(function (entries) {
-  entries.forEach(function (entry) {
-    if (entry.isIntersecting) {
-      var iframe = entry.target;
-      if (iframe.dataset.src) {
-        iframe.srcdoc = iframe.dataset.src;
-        delete iframe.dataset.src;
-        _iframeObserver.unobserve(iframe);
-      }
-    }
-  });
-}, { rootMargin: '200px' });
+/* ─── Preview imediato dos layouts ──────────────────── */
+function mountPreview(container, html, css, title) {
+  /*
+   * A Biblioteca e uma ferramenta visual: ao abrir a aba, todos os previews
+   * precisam estar prontos para comparacao, sem depender de hover ou foco.
+   */
+  var iframe = document.createElement('iframe');
+  iframe.className = 'card-iframe';
+  iframe.setAttribute('sandbox', '');
+  iframe.title = title || '';
+  iframe.addEventListener('load', function () { scaleCardIframe(iframe); });
+  iframe.srcdoc = buildSrcDoc(html, css);
+  container.insertBefore(iframe, container.firstChild);
+}
 
-function lazyIframe(iframe, html, css) {
-  var src = buildSrcDoc(html, css);
-  iframe.dataset.src = src;
-  _iframeObserver.observe(iframe);
+function isBibliotecaActive() {
+  if (window.SenkoShell && typeof window.SenkoShell.getActiveFeatureId === 'function') {
+    return window.SenkoShell.getActiveFeatureId() === 'biblioteca';
+  }
+
+  var panel = document.getElementById('bibliotecaFeature');
+  if (!panel) return true;
+  return getComputedStyle(panel).display !== 'none';
+}
+
+function renderGridIfActive(force) {
+  if (!isBibliotecaActive()) return;
+  if (!force && _gridRendered) return;
+  renderGrid();
+}
+
+function scheduleGridRender() {
+  if (_gridRenderTimer) clearTimeout(_gridRenderTimer);
+
+  _gridRenderTimer = setTimeout(function () {
+    _gridRenderTimer = null;
+    renderGridIfActive(true);
+  }, 90);
 }
 
 
@@ -328,7 +405,12 @@ function renderGrid() {
   var noQ       = document.getElementById('noResultsQuery');
   var filtered  = getFilteredLayouts();
 
-  grid.innerHTML = '';
+  /*
+   * Ao filtrar, a grade e recriada. Antes de remover os cards antigos,
+   * soltamos os iframes pendentes do observer para evitar trabalho preso
+   * em elementos que ja sairam da tela.
+   */
+  grid.replaceChildren();
   grid.className = 'grid';
 
   if (filtered.length === 0) {
@@ -339,14 +421,18 @@ function renderGrid() {
       noResults.classList.add('hidden');
     }
     updateStatsBar(0);
+    _gridRendered = true;
     return;
   }
 
   noResults.classList.add('hidden');
+  var fragment = document.createDocumentFragment();
   filtered.forEach(function (layout, i) {
-    grid.appendChild(createCard(layout, i));
+    fragment.appendChild(createCard(layout, i));
   });
+  grid.appendChild(fragment);
   updateStatsBar(filtered.length);
+  _gridRendered = true;
 }
 
 
@@ -363,19 +449,15 @@ function updateStatsBar(count) {
 function createCard(layout, index) {
   var card = document.createElement('div');
   card.className = 'card';
-  card.style.animationDelay = (index * 40) + 'ms';
+  /* Evita que grades grandes parecam lentas por causa do efeito em cascata. */
+  card.style.animationDelay = (Math.min(index, 4) * 25) + 'ms';
 
   var preview = document.createElement('div');
   preview.className = 'card-preview';
-  var iframe = document.createElement('iframe');
-  iframe.className = 'card-iframe';
-  iframe.sandbox = 'allow-scripts';
-  iframe.title = layout.name;
-  lazyIframe(iframe, layout.html, layout.css);
-  iframe.addEventListener('load', function () { scaleCardIframe(iframe); });
   var ov = document.createElement('div');
   ov.className = 'card-preview-overlay';
-  preview.append(iframe, ov);
+  preview.appendChild(ov);
+  mountPreview(preview, layout.html, layout.css, layout.name);
 
   var body = document.createElement('div'); body.className = 'card-body';
   var nameEl = document.createElement('div'); nameEl.className = 'card-name'; nameEl.textContent = layout.name;
@@ -429,34 +511,6 @@ function createCard(layout, index) {
   return card;
 }
 
-/* ─── Picker Adicionar ──────────────────────────────── */
-function openAdicionarPicker() {
-  _pickerSetTab('layout');
-  document.getElementById('pickerOverlay').classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeAdicionarPicker() {
-  document.getElementById('pickerOverlay').classList.add('hidden');
-  document.body.style.overflow = '';
-}
-
-function _pickerSetTab(tab) {
-  var btnLayout  = document.getElementById('pickerTabLayout');
-  var btnColecao = document.getElementById('pickerTabColecao');
-  var title      = document.getElementById('pickerTitle');
-  if (!btnLayout || !btnColecao) return;
-  if (tab === 'layout') {
-    btnLayout.classList.add('active');
-    btnColecao.classList.remove('active');
-    if (title) title.textContent = 'Adicionar Layout';
-  } else {
-    btnColecao.classList.add('active');
-    btnLayout.classList.remove('active');
-    if (title) title.textContent = 'Nova Coleção';
-  }
-}
-
 /* ─── Modal adicionar layout ────────────────────────── */
 function openAddModal() {
   ['addName','addTags','addHtml','addCss'].forEach(function (id) {
@@ -482,6 +536,11 @@ function closeAddModal() {
   document.body.style.overflow = '';
 }
 
+/*
+ * Gera o objeto de layout exatamente no formato esperado por
+ * app/features/biblioteca/data/layouts/*.js. O texto tambem serve como
+ * payload para o botao GitHub quando a integracao esta ativa.
+ */
 function updateGeneratedCode() {
   var name    = senkoGetMetadataInputValue('addName', false).trim();
   var id      = senkoSlugifyIdentifier(name);
@@ -491,9 +550,12 @@ function updateGeneratedCode() {
   var css     = document.getElementById('addCss').value;
   var tags    = senkoParseMetadataTags(tagsRaw);
 
-  var copyBtn = document.getElementById('copyGeneratedBtn');
-  var allFilled = id.length >= 3 && name.length >= 3 && html.length >= 3;
+  var duplicateName = senkoLayoutNameExists(name, null);
+  var copyBtn = document.getElementById('copyGeneratedBtn')
+    || document.getElementById('ghSaveNewLayoutBtn');
+  var allFilled = id.length >= 3 && name.length >= 3 && html.length >= 3 && !duplicateName;
   if (copyBtn) {
+    copyBtn.disabled = !allFilled;
     if (allFilled) {
       copyBtn.classList.remove('btn-blocked');
     } else {
@@ -503,6 +565,12 @@ function updateGeneratedCode() {
 
   if (!id && !name && !html) {
     document.getElementById('generatedCode').textContent = '// Preencha os campos acima para gerar o objeto…';
+    return;
+  }
+
+  if (duplicateName) {
+    document.getElementById('generatedCode').textContent =
+      '// Já existe um layout com esse nome. Escolha outro nome.';
     return;
   }
 
@@ -572,6 +640,11 @@ function closeVariantsModal() {
   }
 }
 
+/*
+ * Renderiza as variantes do layout aberto. O card "Adicionar" fica sempre
+ * por ultimo, e o botao de excluir permanece escondido ate o modulo GitHub
+ * assumir a responsabilidade por operacoes destrutivas.
+ */
 function renderVariantBlocks(variants) {
   var grid = document.getElementById('variantsGrid');
   grid.innerHTML = '';
@@ -591,15 +664,10 @@ function renderVariantBlocks(variants) {
     /* Preview */
     var previewWrap = document.createElement('div');
     previewWrap.className = 'variant-preview';
-    var vIframe = document.createElement('iframe');
-    vIframe.className = 'card-iframe';
-    vIframe.sandbox = 'allow-scripts';
-    vIframe.title = v.name || '';
-    lazyIframe(vIframe, v.html, v.css);
-    vIframe.addEventListener('load', function () { scaleCardIframe(vIframe); });
     var ov = document.createElement('div');
     ov.className = 'variant-preview-overlay';
-    previewWrap.append(vIframe, ov);
+    previewWrap.appendChild(ov);
+    mountPreview(previewWrap, v.html, v.css, v.name || '');
 
     /* Body — nome */
     var body = document.createElement('div');
@@ -710,16 +778,25 @@ function closeNewVariantModal() {
   document.getElementById('newVarOverlay').classList.add('hidden');
 }
 
+/*
+ * Serializa uma nova variante no formato de data/variants/<layout-id>.js.
+ * Nomes de variantes sao normalizados para ids estaveis, porque tambem
+ * viram marcadores e chaves de favorito.
+ */
 function updateNewVarCode() {
   var nameInput = document.getElementById('newVarName').value;
   var nameIssue = senkoVariantNameIssue(nameInput);
   var name      = senkoSyncIdentifierInput('newVarName', false);
   var html      = document.getElementById('newVarHtml').value;
   var css       = document.getElementById('newVarCss').value;
-  var copyBtn   = document.getElementById('newVarCopyBtn');
+  var parentId  = state.currentForVariant ? state.currentForVariant.id : '';
+  var duplicateName = !nameIssue && senkoVariantNameExists(parentId, name, null);
+  var copyBtn   = document.getElementById('newVarCopyBtn')
+    || document.getElementById('ghvSaveVariantBtn');
 
-  var allOk = !nameIssue;
+  var allOk = !nameIssue && !duplicateName;
   if (copyBtn) {
+    copyBtn.disabled = !allOk;
     if (!allOk) {
       copyBtn.classList.add('btn-blocked');
       copyBtn.classList.remove('copied');
@@ -735,6 +812,12 @@ function updateNewVarCode() {
 
   if (nameIssue) {
     document.getElementById('newVarGeneratedCode').textContent = '// ' + nameIssue;
+    return;
+  }
+
+  if (duplicateName) {
+    document.getElementById('newVarGeneratedCode').textContent =
+      '// Já existe uma variante com esse nome neste layout.';
     return;
   }
 
@@ -822,16 +905,26 @@ function switchEditVarMode(mode) {
   }
 }
 
+/*
+ * Atualiza apenas o codigo gerado e o estado do botao. A variante em memoria
+ * so muda depois de uma confirmacao de salvamento, evitando perda acidental
+ * quando o usuario fecha o modal sem salvar.
+ */
 function updateEditVarCode() {
   var nameInput = document.getElementById('editVarName').value;
   var nameIssue = senkoVariantNameIssue(nameInput);
   var name      = senkoSyncIdentifierInput('editVarName', false);
   var html      = document.getElementById('editVarHtml').value;
   var css       = document.getElementById('editVarCss').value;
+  var parentId  = state.currentForVariant ? state.currentForVariant.id : '';
+  var duplicateName = !nameIssue
+    && senkoVariantNameExists(parentId, name, state.currentEditVariant);
 
-  var copyBtn = document.getElementById('copyEditVarBtn');
-  var ok = !nameIssue && html.length >= 1;
+  var copyBtn = document.getElementById('copyEditVarBtn')
+    || document.getElementById('ghvSaveEditVarBtn');
+  var ok = !nameIssue && !duplicateName && html.length >= 1;
   if (copyBtn) {
+    copyBtn.disabled = !ok;
     if (ok) copyBtn.classList.remove('btn-blocked');
     else    copyBtn.classList.add('btn-blocked');
   }
@@ -842,6 +935,11 @@ function updateEditVarCode() {
   var genCode = document.getElementById('editVarGeneratedCode');
   if (genCode && nameIssue) {
     genCode.textContent = '// ' + nameIssue;
+    return;
+  }
+
+  if (genCode && duplicateName) {
+    genCode.textContent = '// Já existe uma variante com esse nome neste layout.';
     return;
   }
 
@@ -921,6 +1019,11 @@ function closeEditModal() {
   }
 }
 
+/*
+ * Recria o bloco completo do layout editado. O id vem do campo oculto para
+ * preservar o marcador original; nome e tags podem mudar sem quebrar a
+ * localizacao do objeto nos arquivos de dados.
+ */
 function updateEditCode() {
   var id      = document.getElementById('editId').value.trim().toLowerCase();
   var name    = senkoGetMetadataInputValue('editName', false).trim();
@@ -928,16 +1031,25 @@ function updateEditCode() {
   var html    = document.getElementById('editHtml').value;
   var css     = document.getElementById('editCss').value;
   var tags    = senkoParseMetadataTags(tagsRaw);
+  var duplicateName = senkoLayoutNameExists(name, id);
 
-  var copyBtn = document.getElementById('copyEditBtn');
-  var allFilled = id.length >= 3 && name.length >= 3 && html.length >= 3;
+  var copyBtn = document.getElementById('copyEditBtn')
+    || document.getElementById('ghSaveLayoutBtn');
+  var allFilled = id.length >= 3 && name.length >= 3 && html.length >= 3 && !duplicateName;
   if (copyBtn) {
+    copyBtn.disabled = !allFilled;
     if (allFilled) copyBtn.classList.remove('btn-blocked');
     else copyBtn.classList.add('btn-blocked');
   }
 
   if (!id && !name && !html) {
     document.getElementById('editGeneratedCode').textContent = '// Preencha os campos acima para gerar o objeto…';
+    return;
+  }
+
+  if (duplicateName) {
+    document.getElementById('editGeneratedCode').textContent =
+      '// Já existe outro layout com esse nome. Escolha outro nome.';
     return;
   }
 
@@ -958,8 +1070,19 @@ function updateEditCode() {
     '  },';
 }
 
+/*
+ * Registro da feature Biblioteca.
+ *
+ * A Biblioteca deixou de ser a feature principal fixa do shell. Ela se
+ * registra como qualquer outra aba; se esta pasta for removida, nenhuma outra
+ * feature deve depender desta chamada.
+ */
+/* O registro no shell pertence exclusivamente a ../register.js. */
+
 /* ─── Inicialização ─────────────────────────────────── */
-document.addEventListener('DOMContentLoaded', function () {
+bibliotecaApi.init = function initBiblioteca() {
+  if (_bibliotecaInitialized) return;
+  _bibliotecaInitialized = true;
 
   senkoBindMetadataInput('addName', false);
   senkoBindMetadataInput('addTags', true);
@@ -968,33 +1091,15 @@ document.addEventListener('DOMContentLoaded', function () {
   senkoBindVariantNameInput('newVarName');
   senkoBindVariantNameInput('editVarName');
 
-  renderGrid();
+  renderGridIfActive(false);
 
   document.getElementById('searchInput').addEventListener('input', function () {
     state.search = this.value.trim();
-    renderGrid();
+    scheduleGridRender();
   });
 
-  document.getElementById('logoHome').addEventListener('click', function () {
-    state.search = '';
-    document.getElementById('searchInput').value = '';
-    renderGrid();
-  });
-
-  /* Modal adicionar */
-  document.getElementById('openAddModal').addEventListener('click', openAdicionarPicker);
-  document.getElementById('pickerClose').addEventListener('click', closeAdicionarPicker);
-  document.getElementById('pickerOverlay').addEventListener('click', function (e) {
-    if (e.target === document.getElementById('pickerOverlay')) closeAdicionarPicker();
-  });
-  document.getElementById('pickerTabLayout').addEventListener('click', function () {
-    closeAdicionarPicker();
-    openAddModal();
-  });
-  document.getElementById('pickerTabColecao').addEventListener('click', function () {
-    closeAdicionarPicker();
-    if (typeof colOpenCreateModal === 'function') colOpenCreateModal();
-  });
+  /* Modal adicionar layout da Biblioteca. Colecoes tem seu proprio botao/modal. */
+  document.getElementById('openAddModal').addEventListener('click', openAddModal);
   document.getElementById('addModalClose').addEventListener('click', closeAddModal);
   document.getElementById('addModalOverlay').addEventListener('click', overlayClick('addModal', closeAddModal));
   document.querySelectorAll('.add-tab').forEach(function (btn) {
@@ -1077,12 +1182,15 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Escape */
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
-    if (!document.getElementById('pickerOverlay').classList.contains('hidden'))          closeAdicionarPicker();
-    else if (!document.getElementById('editVarOverlay').classList.contains('hidden'))    closeEditVariantModal();
+    if (!document.getElementById('editVarOverlay').classList.contains('hidden'))         closeEditVariantModal();
     else if (!document.getElementById('newVarOverlay').classList.contains('hidden'))     closeNewVariantModal();
     else if (!document.getElementById('variantsOverlay').classList.contains('hidden'))   closeVariantsModal();
     else if (!document.getElementById('editModalOverlay').classList.contains('hidden'))  closeEditModal();
     else if (!document.getElementById('addModalOverlay').classList.contains('hidden'))   closeAddModal();
   });
 
-});
+};
+
+bibliotecaApi.render = function renderBiblioteca(force) {
+  renderGridIfActive(Boolean(force));
+};

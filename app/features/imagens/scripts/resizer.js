@@ -1,4 +1,5 @@
 (function () {
+  const api = window.SenkoImagens;
   const SUPPORTED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
   const DEFAULT_BREAKPOINTS = [
     { width: 393, label: 'm' },
@@ -11,11 +12,11 @@
   let outputFormat = 'webp';
 
   function initResizer() {
-    const input = $('resize-image-input');
-    const quality = $('resize-quality-range');
-    const pickButton = $('btn-pick-resize-images');
-    const view = $('view-resizer');
-    const results = document.querySelector('.resizer-results');
+    const input = api.$('resize-image-input');
+    const quality = api.$('resize-quality-range');
+    const pickButton = api.$('btn-pick-resize-images');
+    const view = api.$('view-resizer');
+    const results = api.query('.resizer-results');
 
     pickButton.addEventListener('click', () => input.click());
     input.addEventListener('change', event => {
@@ -23,14 +24,14 @@
       input.value = '';
     });
 
-    bindImageDrop(document, results, files => addFiles(files), () => view && view.classList.contains('is-active'));
+    bindImageDrop(api.getRoot(), results, files => addFiles(files), () => view && view.classList.contains('is-active'));
     quality.addEventListener('input', () => {
-      $('resize-quality-value').textContent = quality.value + '%';
+      api.$('resize-quality-value').textContent = quality.value + '%';
     });
 
-    document.querySelectorAll('[data-resize-format]').forEach(button => {
+    api.queryAll('[data-resize-format]').forEach(button => {
       button.addEventListener('click', () => {
-        document.querySelectorAll('[data-resize-format]').forEach(item => {
+        api.queryAll('[data-resize-format]').forEach(item => {
           item.classList.toggle('is-active', item === button);
         });
         outputFormat = button.dataset.resizeFormat;
@@ -38,12 +39,12 @@
       });
     });
 
-    $('btn-add-resize-breakpoint').addEventListener('click', () => {
+    api.$('btn-add-resize-breakpoint').addEventListener('click', () => {
       breakpoints.push({ width: nextBreakpointWidth(), label: '' });
       renderBreakpoints();
     });
-    $('btn-generate-resize-zip').addEventListener('click', generateZip);
-    $('btn-clear-resize-images').addEventListener('click', clearFiles);
+    api.$('btn-generate-resize-zip').addEventListener('click', generateZip);
+    api.$('btn-clear-resize-images').addEventListener('click', clearFiles);
 
     renderBreakpoints();
     renderFiles();
@@ -103,11 +104,11 @@
     items = items.concat(nextItems);
     hideRunLog();
     renderFiles();
-    setStatus('', `${nextItems.length} imagem(ns) no redimensionador`);
+    api.setStatus('', `${nextItems.length} imagem(ns) no redimensionador`);
   }
 
   function renderFiles() {
-    const list = $('resize-file-list');
+    const list = api.$('resize-file-list');
     list.innerHTML = '';
 
     if (!items.length) {
@@ -121,9 +122,9 @@
       items.forEach(item => list.appendChild(buildFileCard(item)));
     }
 
-    $('resize-badge').textContent = items.length + ' arquivo' + (items.length !== 1 ? 's' : '');
-    $('btn-generate-resize-zip').disabled = !items.length;
-    $('btn-clear-resize-images').disabled = !items.length;
+    api.$('resize-badge').textContent = items.length + ' arquivo' + (items.length !== 1 ? 's' : '');
+    api.$('btn-generate-resize-zip').disabled = !items.length;
+    api.$('btn-clear-resize-images').disabled = !items.length;
   }
 
   function buildFileCard(item) {
@@ -134,10 +135,10 @@
         <img src="${item.originalUrl}" alt="">
       </div>
       <div class="resize-file-card__body">
-        <div class="resize-file-card__name" title="${esc(item.file.name)}">${esc(item.file.name)}</div>
+        <div class="resize-file-card__name" title="${api.esc(item.file.name)}">${api.esc(item.file.name)}</div>
         <div class="resize-file-card__meta">
           <span class="tag">${item.file.type.replace('image/', '')}</span>
-          <span>${formatBytes(item.file.size)}</span>
+          <span>${api.formatBytes(item.file.size)}</span>
         </div>
         <button class="btn btn-ghost" type="button" data-remove-resize>Remover</button>
       </div>
@@ -158,19 +159,19 @@
     items = [];
     breakpoints = cloneBreakpoints(DEFAULT_BREAKPOINTS);
     outputFormat = 'webp';
-    document.querySelectorAll('[data-resize-format]').forEach(button => {
+    api.queryAll('[data-resize-format]').forEach(button => {
       button.classList.toggle('is-active', button.dataset.resizeFormat === outputFormat);
     });
-    $('resize-quality-range').value = '80';
-    $('resize-quality-value').textContent = '80%';
+    api.$('resize-quality-range').value = '80';
+    api.$('resize-quality-value').textContent = '80%';
     hideRunLog();
     renderBreakpoints();
     renderFiles();
-    setStatus('', 'aguardando');
+    api.setStatus('', 'aguardando');
   }
 
   function renderBreakpoints() {
-    const list = $('resize-breakpoints');
+    const list = api.$('resize-breakpoints');
     list.innerHTML = '';
 
     breakpoints.forEach((breakpoint, index) => {
@@ -183,7 +184,7 @@
         </label>
         <label class="resize-breakpoint__field">
           <span class="stat__label">Sufixo</span>
-          <input class="text-input" type="text" maxlength="12" value="${esc(breakpoint.label)}" placeholder="${breakpoint.width}" data-resize-label>
+          <input class="text-input" type="text" maxlength="12" value="${api.esc(breakpoint.label)}" placeholder="${breakpoint.width}" data-resize-label>
         </label>
       `;
 
@@ -216,7 +217,7 @@
   }
 
   function renderNamePreview() {
-    const preview = $('resize-name-preview');
+    const preview = api.$('resize-name-preview');
     const formats = targetFormats();
     const examples = validBreakpoints()
       .slice(0, 4)
@@ -237,12 +238,12 @@
     const usedNames = new Set();
     let done = 0;
 
-    $('btn-generate-resize-zip').disabled = true;
-    $('resize-progress').classList.remove('is-hidden');
-    $('resize-log').classList.remove('is-hidden');
-    $('resize-log').innerHTML = '';
+    api.$('btn-generate-resize-zip').disabled = true;
+    api.$('resize-progress').classList.remove('is-hidden');
+    api.$('resize-log').classList.remove('is-hidden');
+    api.$('resize-log').innerHTML = '';
     updateProgress(0, 'preparando variantes');
-    setStatus('busy', 'gerando variantes...');
+    api.setStatus('busy', 'gerando variantes...');
 
     for (const item of items) {
       for (const breakpoint of readyBreakpoints) {
@@ -251,7 +252,7 @@
           try {
             const blob = await resizeToBlob(item.file, breakpoint.width, format);
             zip.file(filename, blob);
-            addLog('ok', `${filename} ${formatBytes(blob.size)}`);
+            addLog('ok', `${filename} ${api.formatBytes(blob.size)}`);
           } catch (error) {
             addLog('error', `${filename} ${error.message}`);
           } finally {
@@ -265,16 +266,16 @@
     try {
       updateProgress(100, 'compactando zip');
       const blob = await zip.generateAsync({ type: 'blob' });
-      downloadBlob(blob, 'variantes.zip');
+      api.downloadBlob(blob, 'variantes.zip');
       addLog('ok', 'variantes.zip pronto');
       updateProgress(100, 'download iniciado');
-      setStatus('ok', 'zip de variantes gerado');
+      api.setStatus('ok', 'zip de variantes gerado');
     } catch (error) {
       addLog('error', 'falha ao gerar zip');
-      setStatus('', 'erro no zip');
+      api.setStatus('', 'erro no zip');
       console.error(error);
     } finally {
-      $('btn-generate-resize-zip').disabled = !items.length;
+      api.$('btn-generate-resize-zip').disabled = !items.length;
     }
   }
 
@@ -299,7 +300,7 @@
       canvas.toBlob(blob => {
         if (blob) resolve(blob);
         else reject(new Error('falha ao redimensionar'));
-      }, format === 'jpg' ? 'image/jpeg' : 'image/webp', Number($('resize-quality-range').value) / 100);
+      }, format === 'jpg' ? 'image/jpeg' : 'image/webp', Number(api.$('resize-quality-range').value) / 100);
     });
   }
 
@@ -313,7 +314,7 @@
   }
 
   function variantName(filename, breakpoint, format) {
-    return `${fileBaseName(filename)}-${variantSuffix(breakpoint)}.${format}`;
+    return `${api.fileBaseName(filename)}-${variantSuffix(breakpoint)}.${format}`;
   }
 
   function variantSuffix(breakpoint) {
@@ -365,23 +366,23 @@
   }
 
   function updateProgress(percent, label) {
-    $('resize-progress-fill').style.width = percent + '%';
-    $('resize-progress-label').textContent = `${percent}% ${label}`;
+    api.$('resize-progress-fill').style.width = percent + '%';
+    api.$('resize-progress-label').textContent = `${percent}% ${label}`;
   }
 
   function addLog(type, text) {
     const row = document.createElement('div');
     row.className = 'resize-log__row ' + (type === 'error' ? 'is-error' : 'is-ok');
     row.textContent = text;
-    $('resize-log').appendChild(row);
-    $('resize-log').scrollTop = $('resize-log').scrollHeight;
+    api.$('resize-log').appendChild(row);
+    api.$('resize-log').scrollTop = api.$('resize-log').scrollHeight;
   }
 
   function hideRunLog() {
-    $('resize-progress').classList.add('is-hidden');
-    $('resize-log').classList.add('is-hidden');
-    $('resize-log').innerHTML = '';
+    api.$('resize-progress').classList.add('is-hidden');
+    api.$('resize-log').classList.add('is-hidden');
+    api.$('resize-log').innerHTML = '';
   }
 
-  window.initResizer = initResizer;
+  api.initResizer = initResizer;
 })();

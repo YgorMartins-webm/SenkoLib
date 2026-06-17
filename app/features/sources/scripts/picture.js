@@ -1,4 +1,5 @@
 (function () {
+  const api = window.SenkoSources;
   // Marcadores usados apenas no modo Base.html para localizar o slot real de PDP.
   const SLOT_MARKER_PARTS = ['begin specialespot_content1_offers'];
   const INNER_BASE_MARKER_PARTS = ['codigo base', 'sempre copiar abaixo'];
@@ -6,64 +7,64 @@
 
   function initPictureTool() {
     // Entrada principal: atualiza o contador visual de imagens enquanto o usuario cola HTML.
-    $('html-input').addEventListener('input', updateHtmlHint);
+    api.$('html-input').addEventListener('input', updateHtmlHint);
 
-    $('source-multiplier').addEventListener('change', refreshAllCards);
-    $('skip-last-multiplier').addEventListener('change', refreshAllCards);
-    $('source-breakpoints').addEventListener('change', runAnalysis);
-    $('measurement-mode').addEventListener('change', () => {
+    api.$('source-multiplier').addEventListener('change', refreshAllCards);
+    api.$('skip-last-multiplier').addEventListener('change', refreshAllCards);
+    api.$('source-breakpoints').addEventListener('change', runAnalysis);
+    api.$('measurement-mode').addEventListener('change', () => {
       updateMeasurementModeUI();
       updateMeasureButtonState();
     });
-    $('base-html-input').addEventListener('change', handleBaseImport);
+    api.$('base-html-input').addEventListener('change', handleBaseImport);
 
-    $('btn-clear').addEventListener('click', () => {
-      $('html-input').value = '';
+    api.$('btn-clear').addEventListener('click', () => {
+      api.$('html-input').value = '';
       updateHtmlHint();
       resetPictureOutput();
     });
 
-    $('btn-run').addEventListener('click', runAnalysis);
-    $('btn-auto-measure').addEventListener('click', autoMeasure);
-    $('btn-select-all').addEventListener('click', selectAllCards);
-    $('btn-build-final').addEventListener('click', buildFinalContent);
-    $('btn-copy-final').addEventListener('click', copyFinalContent);
+    api.$('btn-run').addEventListener('click', runAnalysis);
+    api.$('btn-auto-measure').addEventListener('click', autoMeasure);
+    api.$('btn-select-all').addEventListener('click', selectAllCards);
+    api.$('btn-build-final').addEventListener('click', buildFinalContent);
+    api.$('btn-copy-final').addEventListener('click', copyFinalContent);
 
     // Garante que a interface comece no modo Padrao, escondendo o importador de Base.html.
     updateMeasurementModeUI();
   }
 
   function updateHtmlHint() {
-    const count = ($('html-input').value.match(/<img[\s>]/gi) || []).length;
-    $('hint').textContent = count + ' img' + (count !== 1 ? 's' : '');
+    const count = (api.$('html-input').value.match(/<img[\s>]/gi) || []).length;
+    api.$('hint').textContent = count + ' img' + (count !== 1 ? 's' : '');
   }
 
   function moveFinalOutputToEnd() {
-    $('output').appendChild($('final-output'));
+    api.$('output').appendChild(api.$('final-output'));
   }
 
   function resetPictureOutput() {
     // Limpa apenas o estado da aba Sources; o compressor e independente.
-    document.querySelectorAll('#output .card, #output .error').forEach(el => el.remove());
-    $('empty').style.display = 'flex';
-    $('final-output').classList.add('is-hidden');
-    $('final-code').textContent = '';
-    $('out-badge').textContent = '-';
+    api.queryAll('#output .card, #output .error').forEach(el => el.remove());
+    api.$('empty').style.display = 'flex';
+    api.$('final-output').classList.add('is-hidden');
+    api.$('final-code').textContent = '';
+    api.$('out-badge').textContent = '-';
     updateMeasureButtonState();
     updateFinalButtons();
-    setStatus('', 'aguardando');
+    api.setStatus('', 'aguardando');
   }
 
   function runAnalysis() {
-    const html = $('html-input').value.trim();
+    const html = api.$('html-input').value.trim();
     if (!html) return;
 
-    $('btn-run').disabled = true;
-    setStatus('busy', 'analisando...');
-    $('empty').style.display = 'none';
-    document.querySelectorAll('#output .card, #output .error').forEach(el => el.remove());
-    $('final-output').classList.add('is-hidden');
-    $('final-code').textContent = '';
+    api.$('btn-run').disabled = true;
+    api.setStatus('busy', 'analisando...');
+    api.$('empty').style.display = 'none';
+    api.queryAll('#output .card, #output .error').forEach(el => el.remove());
+    api.$('final-output').classList.add('is-hidden');
+    api.$('final-code').textContent = '';
 
     try {
       const tmp = document.createElement('div');
@@ -77,31 +78,31 @@
       }
 
       const config = getSourceConfig();
-      $('out-badge').textContent = imgs.length + ' img' + (imgs.length !== 1 ? 's' : '');
-      imgs.forEach((img, index) => $('output').appendChild(buildPictureCard(collectMeta(img), index, config)));
+      api.$('out-badge').textContent = imgs.length + ' img' + (imgs.length !== 1 ? 's' : '');
+      imgs.forEach((img, index) => api.$('output').appendChild(buildPictureCard(collectMeta(img), index, config)));
       moveFinalOutputToEnd();
       updateMeasureButtonState();
       updateFinalButtons();
-      setStatus('ok', imgs.length + ' imgs encontradas');
+      api.setStatus('ok', imgs.length + ' imgs encontradas');
     } catch (error) {
       showPictureError('Erro: ' + error.message);
       console.error(error);
     } finally {
-      $('btn-run').disabled = false;
+      api.$('btn-run').disabled = false;
     }
   }
 
   function getSourceConfig() {
     // Breakpoints digitados pelo usuario viram a base dos campos de cada card.
-    const breakpoints = parseBreakpoints($('source-breakpoints').value);
+    const breakpoints = parseBreakpoints(api.$('source-breakpoints').value);
     if (!breakpoints.length) {
       throw new Error('Informe ao menos um breakpoint para analisar.');
     }
 
     return {
       breakpoints,
-      multiplier: Number($('source-multiplier').value) || 1.9,
-      skipLastMultiplier: $('skip-last-multiplier').checked,
+      multiplier: Number(api.$('source-multiplier').value) || 1.9,
+      skipLastMultiplier: api.$('skip-last-multiplier').checked,
     };
   }
 
@@ -113,32 +114,32 @@
     reader.onload = () => {
       // O Base.html fica somente em memoria; nenhum arquivo e gravado pelo app.
       baseTemplate = String(reader.result || '');
-      $('base-file-name').textContent = file.name;
+      api.$('base-file-name').textContent = file.name;
       updateMeasureButtonState();
-      setStatus('ok', 'base importada');
+      api.setStatus('ok', 'base importada');
     };
     reader.onerror = () => {
       baseTemplate = '';
-      $('base-file-name').textContent = 'erro ao ler base';
+      api.$('base-file-name').textContent = 'erro ao ler base';
       updateMeasureButtonState();
-      setStatus('', 'erro na base');
+      api.setStatus('', 'erro na base');
     };
     reader.readAsText(file);
   }
 
   function updateMeasureButtonState() {
     // No modo Padrao basta ter cards. No modo Base.html tambem precisa da base importada.
-    const hasCards = Boolean(document.querySelector('#output .card'));
+    const hasCards = Boolean(api.query('#output .card'));
     const needsBase = getMeasurementMode() === 'base';
-    $('btn-auto-measure').disabled = !hasCards || (needsBase && !baseTemplate);
+    api.$('btn-auto-measure').disabled = !hasCards || (needsBase && !baseTemplate);
   }
 
   function updateMeasurementModeUI() {
-    $('base-file-group').classList.toggle('is-hidden', getMeasurementMode() !== 'base');
+    api.$('base-file-group').classList.toggle('is-hidden', getMeasurementMode() !== 'base');
   }
 
   function getMeasurementMode() {
-    return $('measurement-mode').value;
+    return api.$('measurement-mode').value;
   }
 
   function parseBreakpoints(value) {
@@ -256,8 +257,8 @@
       <input class="card__check" type="checkbox" aria-label="Selecionar IMG ${index + 1}" data-card-select>
       <div class="card__idx">IMG ${index + 1}${badge}</div>
       <div class="card__meta">
-        <div class="card__alt">${esc(meta.alt || '(sem alt)')}</div>
-        <div class="card__src">${esc((meta.src || '').substring(0, 90))}</div>
+        <div class="card__alt">${api.esc(meta.alt || '(sem alt)')}</div>
+        <div class="card__src">${api.esc((meta.src || '').substring(0, 90))}</div>
       </div>
       <svg class="card__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,6 8,10 12,6"/></svg>
     `;
@@ -278,7 +279,7 @@
 
     head.addEventListener('click', () => {
       const isOpen = card.classList.contains('open');
-      document.querySelectorAll('.card.open').forEach(openCard => openCard.classList.remove('open'));
+      api.queryAll('.card.open').forEach(openCard => openCard.classList.remove('open'));
       if (!isOpen) card.classList.add('open');
     });
     head.querySelector('[data-card-select]').addEventListener('click', event => {
@@ -360,11 +361,11 @@
   }
 
   function refreshAllCards() {
-    document.querySelectorAll('#output .card').forEach(updateCardOutput);
+    api.queryAll('#output .card').forEach(updateCardOutput);
   }
 
   function selectAllCards() {
-    document.querySelectorAll('#output .card').forEach(card => {
+    api.queryAll('#output .card').forEach(card => {
       const checkbox = card.querySelector('[data-card-select]');
       if (!checkbox) return;
 
@@ -375,7 +376,7 @@
   }
 
   async function autoMeasure() {
-    const html = $('html-input').value.trim();
+    const html = api.$('html-input').value.trim();
     if (!html) return;
     const measurementMode = getMeasurementMode();
     if (measurementMode === 'base' && !baseTemplate) {
@@ -383,7 +384,7 @@
       return;
     }
 
-    const cards = Array.from(document.querySelectorAll('#output .card'));
+    const cards = Array.from(api.queryAll('#output .card'));
     if (!cards.length) {
       showPictureError('Clique em Analisar antes de medir automaticamente.');
       return;
@@ -391,8 +392,8 @@
 
     let iframe;
     try {
-      $('btn-auto-measure').disabled = true;
-      setStatus('busy', 'medindo...');
+      api.$('btn-auto-measure').disabled = true;
+      api.setStatus('busy', 'medindo...');
 
       const config = getSourceConfig();
       // A anotacao permite mapear a mesma imagem entre HTML original, card e iframe.
@@ -407,7 +408,7 @@
       const measurementBreakpoints = collectVisibleMeasureBreakpoints(cards);
       const matrix = await measureImagesAtBreakpoints(iframe, measurementBreakpoints);
       applyMeasurementsToCards(cards, matrix);
-      setStatus('ok', 'medidas preenchidas');
+      api.setStatus('ok', 'medidas preenchidas');
     } catch (error) {
       showPictureError('Erro na medicao automatica: ' + error.message);
       console.error(error);
@@ -693,15 +694,15 @@ ${richHtml}
   }
 
   function updateFinalButtons() {
-    const cards = Array.from(document.querySelectorAll('#output .card'));
+    const cards = Array.from(api.queryAll('#output .card'));
     const selectedReady = getSelectedReadyCards();
-    $('btn-select-all').disabled = !cards.length;
-    $('btn-build-final').disabled = !selectedReady.length;
-    $('btn-copy-final').disabled = !$('final-code').textContent.trim();
+    api.$('btn-select-all').disabled = !cards.length;
+    api.$('btn-build-final').disabled = !selectedReady.length;
+    api.$('btn-copy-final').disabled = !api.$('final-code').textContent.trim();
   }
 
   function getSelectedReadyCards() {
-    return Array.from(document.querySelectorAll('#output .card'))
+    return Array.from(api.queryAll('#output .card'))
       .filter(card => {
         const checked = card.querySelector('[data-card-select]')?.checked;
         return checked && card._generatedPicture;
@@ -710,7 +711,7 @@ ${richHtml}
 
   function buildFinalContent() {
     // Consolida o HTML original substituindo somente os cards marcados no checkbox.
-    const html = $('html-input').value.trim();
+    const html = api.$('html-input').value.trim();
     const selectedCards = getSelectedReadyCards();
     if (!html || !selectedCards.length) return;
 
@@ -733,11 +734,11 @@ ${richHtml}
         });
 
       cleanupNestedPictures(tmp);
-      $('final-code').textContent = tmp.innerHTML.trim();
+      api.$('final-code').textContent = tmp.innerHTML.trim();
       moveFinalOutputToEnd();
-      $('final-output').classList.remove('is-hidden');
+      api.$('final-output').classList.remove('is-hidden');
       updateFinalButtons();
-      setStatus('ok', 'conteudo final gerado');
+      api.setStatus('ok', 'conteudo final gerado');
     } catch (error) {
       showPictureError('Erro ao gerar conteudo final: ' + error.message);
       console.error(error);
@@ -745,15 +746,15 @@ ${richHtml}
   }
 
   function copyFinalContent() {
-    const content = $('final-code').textContent;
+    const content = api.$('final-code').textContent;
     if (!content.trim()) return;
 
     navigator.clipboard.writeText(content).then(() => {
-      $('btn-copy-final').textContent = 'copiado';
-      $('btn-copy-final').classList.add('copied');
+      api.$('btn-copy-final').textContent = 'copiado';
+      api.$('btn-copy-final').classList.add('copied');
       setTimeout(() => {
-        $('btn-copy-final').textContent = 'copiar';
-        $('btn-copy-final').classList.remove('copied');
+        api.$('btn-copy-final').textContent = 'copiar';
+        api.$('btn-copy-final').classList.remove('copied');
       }, 1800);
     });
   }
@@ -816,13 +817,13 @@ ${richHtml}
     }
 
     html += '  <img\n';
-    if (meta.cls) html += `    class="${esc(meta.cls)}"\n`;
+    if (meta.cls) html += `    class="${api.esc(meta.cls)}"\n`;
     html += `    src="${imgSrc}"\n`;
-    html += `    alt="${esc(meta.alt) || '!!COLOQUE O ALT AQUI!!'}"\n`;
+    html += `    alt="${api.esc(meta.alt) || '!!COLOQUE O ALT AQUI!!'}"\n`;
     if (meta.width) html += `    width="${meta.width}"\n`;
     if (meta.height) html += `    height="${meta.height}"\n`;
     meta.attrs.forEach(attr => {
-      html += `    ${attr.name}="${esc(attr.value)}"\n`;
+      html += `    ${attr.name}="${api.esc(attr.value)}"\n`;
     });
     html += `    loading="${meta.loading}"\n`;
     html += '    decoding="async"\n';
@@ -835,11 +836,11 @@ ${richHtml}
     const el = document.createElement('div');
     el.className = 'error';
     el.textContent = message;
-    $('output').appendChild(el);
-    setStatus('', 'erro');
+    api.$('output').appendChild(el);
+    api.setStatus('', 'erro');
     updateFinalButtons();
-    $('btn-run').disabled = false;
+    api.$('btn-run').disabled = false;
   }
 
-  window.initPictureTool = initPictureTool;
+  api.initPictureTool = initPictureTool;
 })();
