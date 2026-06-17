@@ -25225,7 +25225,7 @@ ColLib.register({
       css:  ``,
     },
 
-    /*@@@@Col - variacao-22 */
+        /*@@@@Col - variacao-22 */
     {
       id:   'variacao-22',
       name: 'Variação 22',
@@ -25249,7 +25249,7 @@ ColLib.register({
             margin: 0;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
         rel="stylesheet">
     <title>PDP - eFácil</title>
     <!-- ---------------------------------------- ÁREA PARA COLOCAR STYLES ----------------------------------------------------------- -->
@@ -26213,6 +26213,7 @@ ColLib.register({
             object-fit: contain;
             filter: sepia(1) saturate(3.5) hue-rotate(4deg) brightness(0.68);
             transition: transform 0.35s ease;
+            margin: auto;
         }
 
         .section-composicao__card-title {
@@ -26381,9 +26382,24 @@ ColLib.register({
         <section class="product-header-2" aria-label="Cabeçalho do produto">
             <div class="product-header__banner-2">
                 <figure class="product-header__figure-2">
-                    <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp"
-                        alt="Banner editorial para o Whisky Ballantine’s 17 Anos 750ml"
-                        class="product-header__banner-img-2" width="1600" height="250" loading="eager">
+                    <picture>
+                        <source media="(max-width: 320px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp?ims=289x">
+                        <source media="(max-width: 375px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp?ims=344x">
+                        <source media="(max-width: 425px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp?ims=394x">
+                        <source media="(max-width: 768px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp?ims=737x">
+                        <source media="(max-width: 1024px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp?ims=992x">
+                        <source media="(max-width: 1440px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp?ims=1248x">
+                        <img class="product-header__banner-img-2"
+                            src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp"
+                            alt="Banner editorial para o Whisky Ballantine’s 17 Anos 750ml" width="1600" height="250"
+                            loading="eager" decoding="async">
+                    </picture>
                 </figure>
                 <div class="product-header__badge-2" role="img" aria-label="Logo da marca">
                     <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/logo-pernod.webp"
@@ -26402,13 +26418,25 @@ ColLib.register({
 
         <section class="section-6" aria-label="Destaque do produto com texto">
             <picture>
+                <source media="(max-width: 320px)"
+                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-cevada-ambientada-4500078-01-2.webp?ims=275x">
+                <source media="(max-width: 375px)"
+                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-cevada-ambientada-4500078-01-2.webp?ims=327x">
+                <source media="(max-width: 425px)"
+                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-cevada-ambientada-4500078-01-2.webp?ims=374x">
                 <source media="(max-width: 760px)"
-                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-cevada-ambientada-4500078-01-2.webp"
-                    width="780" height="400">
+                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-cevada-ambientada-4500078-01-2.webp?ims=729x">
+                <!-- troca de imagem -->
+                <source media="(max-width: 768px)"
+                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-banner-garrafa-cevada-lifestyle-4500078-01-1.webp?ims=737x">
+                <source media="(max-width: 1024px)"
+                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-banner-garrafa-cevada-lifestyle-4500078-01-1.webp?ims=992x">
+                <source media="(max-width: 1440px)"
+                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-banner-garrafa-cevada-lifestyle-4500078-01-1.webp?ims=1248x">
                 <img class="section-6__image"
                     src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-banner-garrafa-cevada-lifestyle-4500078-01-1.webp"
-                    alt="Whisky Ballantine’s 17 Anos 750ml em destaque" width="1600" height="650" loading="lazy"
-                    fetchpriority="high" decoding="async">
+                    alt="Whisky Ballantine’s 17 Anos 750ml em destaque" width="1600" height="650" fetchpriority="high"
+                    loading="lazy" decoding="async">
             </picture>
             <div class="section-6__content">
                 <h2 class="section-6__title">Mais tempo, mais profundidade</h2>
@@ -26422,7 +26450,7 @@ ColLib.register({
             <div class="section-composicao__divider"></div>
             <p class="section-composicao__subtitle">Da origem escocesa ao sabor complexo, cada detalhe reforça a
                 experiência premium do Ballantine’s 17 Anos.</p>
-            <input class="section-composicao__control" type="radio" name="sc-carousel" id="sc-slide-1" checked>
+            <input class="section-composicao__control" type="radio" name="sc-carousel" id="sc-slide-1" checked="">
             <input class="section-composicao__control" type="radio" name="sc-carousel" id="sc-slide-2">
             <input class="section-composicao__control" type="radio" name="sc-carousel" id="sc-slide-3">
             <input class="section-composicao__control" type="radio" name="sc-carousel" id="sc-slide-4">
@@ -26431,10 +26459,24 @@ ColLib.register({
                     <li class="section-composicao__item">
                         <figure class="section-composicao__card">
                             <div class="section-composicao__media">
-                                <img class="section-composicao__image"
-                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp"
-                                    alt="Ícone ilustrativo para maturação do Ballantine’s 17 Anos" width="128"
-                                    height="128" loading="lazy" decoding="async">
+                                <picture>
+                                    <source media="(max-width: 320px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp?ims=56x">
+                                    <source media="(max-width: 375px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp?ims=56x">
+                                    <source media="(max-width: 425px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp?ims=56x">
+                                    <source media="(max-width: 768px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp?ims=68x">
+                                    <source media="(max-width: 1024px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp?ims=68x">
+                                    <source media="(max-width: 1440px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp?ims=68x">
+                                    <img class="section-composicao__image"
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp"
+                                        alt="Ícone ilustrativo para maturação do Ballantine’s 17 Anos" width="128"
+                                        height="128" loading="lazy" decoding="async">
+                                </picture>
                             </div>
                             <figcaption>
                                 <h4 class="section-composicao__card-title">17 anos de maturação</h4>
@@ -26446,10 +26488,24 @@ ColLib.register({
                     <li class="section-composicao__item">
                         <figure class="section-composicao__card">
                             <div class="section-composicao__media">
-                                <img class="section-composicao__image"
-                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp"
-                                    alt="Ícone ilustrativo para notas de sabor do Ballantine’s 17 Anos" width="128"
-                                    height="128" loading="lazy" decoding="async">
+                                <picture>
+                                    <source media="(max-width: 320px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp?ims=56x">
+                                    <source media="(max-width: 375px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp?ims=56x">
+                                    <source media="(max-width: 425px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp?ims=56x">
+                                    <source media="(max-width: 768px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp?ims=68x">
+                                    <source media="(max-width: 1024px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp?ims=68x">
+                                    <source media="(max-width: 1440px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp?ims=68x">
+                                    <img class="section-composicao__image"
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp"
+                                        alt="Ícone ilustrativo para notas de sabor do Ballantine’s 17 Anos" width="128"
+                                        height="128" loading="lazy" decoding="async">
+                                </picture>
                             </div>
                             <figcaption>
                                 <h4 class="section-composicao__card-title">Mel, baunilha e madeira</h4>
@@ -26461,10 +26517,24 @@ ColLib.register({
                     <li class="section-composicao__item">
                         <figure class="section-composicao__card">
                             <div class="section-composicao__media">
-                                <img class="section-composicao__image"
-                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp"
-                                    alt="Ícone ilustrativo para toque de carvalho do Ballantine’s 17 Anos" width="128"
-                                    height="128" loading="lazy" decoding="async">
+                                <picture>
+                                    <source media="(max-width: 320px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp?ims=56x">
+                                    <source media="(max-width: 375px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp?ims=56x">
+                                    <source media="(max-width: 425px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp?ims=56x">
+                                    <source media="(max-width: 768px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp?ims=68x">
+                                    <source media="(max-width: 1024px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp?ims=68x">
+                                    <source media="(max-width: 1440px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp?ims=68x">
+                                    <img class="section-composicao__image"
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp"
+                                        alt="Ícone ilustrativo para toque de carvalho do Ballantine’s 17 Anos"
+                                        width="128" height="128" loading="lazy" decoding="async">
+                                </picture>
                             </div>
                             <figcaption>
                                 <h4 class="section-composicao__card-title">Carvalho suave</h4>
@@ -26476,10 +26546,24 @@ ColLib.register({
                     <li class="section-composicao__item">
                         <figure class="section-composicao__card">
                             <div class="section-composicao__media">
-                                <img class="section-composicao__image"
-                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp"
-                                    alt="Ícone ilustrativo para origem escocesa do Ballantine’s 17 Anos" width="128"
-                                    height="128" loading="lazy" decoding="async">
+                                <picture>
+                                    <source media="(max-width: 320px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp?ims=56x">
+                                    <source media="(max-width: 375px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp?ims=56x">
+                                    <source media="(max-width: 425px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp?ims=56x">
+                                    <source media="(max-width: 768px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp?ims=68x">
+                                    <source media="(max-width: 1024px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp?ims=68x">
+                                    <source media="(max-width: 1440px)"
+                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp?ims=68x">
+                                    <img class="section-composicao__image"
+                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp"
+                                        alt="Ícone ilustrativo para origem escocesa do Ballantine’s 17 Anos" width="128"
+                                        height="128" loading="lazy" decoding="async">
+                                </picture>
                             </div>
                             <figcaption>
                                 <h4 class="section-composicao__card-title">Origem escocesa</h4>
@@ -26503,10 +26587,24 @@ ColLib.register({
                 <div class="section-2__content">
                     <div class="section-2__image-block">
                         <figure>
-                            <img class="section-2__image"
-                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp"
-                                alt="Whisky Ballantine’s 17 Anos 750ml em composição ilustrativa" width="800"
-                                height="600" loading="lazy">
+                            <picture>
+                                <source media="(max-width: 320px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp?ims=257x">
+                                <source media="(max-width: 375px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp?ims=312x">
+                                <source media="(max-width: 425px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp?ims=362x">
+                                <source media="(max-width: 768px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp?ims=353x">
+                                <source media="(max-width: 1024px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp?ims=472x">
+                                <source media="(max-width: 1440px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp?ims=600x">
+                                <img class="section-2__image"
+                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp"
+                                    alt="Whisky Ballantine’s 17 Anos 750ml em composição ilustrativa" width="800"
+                                    height="600" loading="lazy" decoding="async">
+                            </picture>
                         </figure>
                     </div>
                     <div class="section-2__text-block">
@@ -26523,7 +26621,7 @@ ColLib.register({
 
         <section class="section-24" aria-labelledby="section-24-title">
             <input class="section-24__input" type="radio" name="section-24-view" id="section-24-view-1"
-                aria-label="Mostrar imagem de visão geral" checked>
+                aria-label="Mostrar imagem de visão geral" checked="">
             <input class="section-24__input" type="radio" name="section-24-view" id="section-24-view-2"
                 aria-label="Mostrar imagem de detalhe">
             <input class="section-24__input" type="radio" name="section-24-view" id="section-24-view-3"
@@ -26556,51 +26654,70 @@ ColLib.register({
                     <div class="section-24__frame">
                         <!-- IMG 1-->
                         <div class="section-24__panel section-24__panel--one">
-                            <img class="section-24__image"
-                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp"
-                                width="1200" height="900" loading="lazy"
-                                alt="Whisky Ballantine’s 17 Anos em visão geral ilustrativa" decoding="async">
+                            <picture>
+                                <source media="(max-width: 320px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp?ims=255x">
+                                <source media="(max-width: 375px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp?ims=309x">
+                                <source media="(max-width: 425px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp?ims=360x">
+                                <source media="(max-width: 768px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp?ims=703x">
+                                <source media="(max-width: 1024px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp?ims=386x">
+                                <source media="(max-width: 1440px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp?ims=495x">
+                                <img class="section-24__image"
+                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp"
+                                    alt="Whisky Ballantine’s 17 Anos em visão geral ilustrativa" width="1200"
+                                    height="900" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                         <!-- IMG 2-->
                         <div class="section-24__panel section-24__panel--two">
-                            <img class="section-24__image"
-                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp"
-                                width="1200" height="900" loading="lazy"
-                                alt="Detalhe ilustrativo do Whisky Ballantine’s 17 Anos" decoding="async">
+                            <picture>
+                                <source media="(max-width: 320px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp?ims=265x">
+                                <source media="(max-width: 375px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp?ims=322x">
+                                <source media="(max-width: 425px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp?ims=374x">
+                                <source media="(max-width: 768px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp?ims=731x">
+                                <source media="(max-width: 1024px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp?ims=401x">
+                                <source media="(max-width: 1440px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp?ims=514x">
+                                <img class="section-24__image"
+                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp"
+                                    alt="Detalhe ilustrativo do Whisky Ballantine’s 17 Anos" width="1200" height="900"
+                                    loading="lazy" decoding="async">
+                            </picture>
                         </div>
                         <!-- IMG 3-->
                         <div class="section-24__panel section-24__panel--three">
-                            <img class="section-24__image"
-                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp"
-                                width="1200" height="900" loading="lazy"
-                                alt="Whisky Ballantine’s 17 Anos em contexto de degustação" decoding="async">
+                            <picture>
+                                <source media="(max-width: 320px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp?ims=265x">
+                                <source media="(max-width: 375px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp?ims=322x">
+                                <source media="(max-width: 425px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp?ims=374x">
+                                <source media="(max-width: 768px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp?ims=731x">
+                                <source media="(max-width: 1024px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp?ims=401x">
+                                <source media="(max-width: 1440px)"
+                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp?ims=514x">
+                                <img class="section-24__image"
+                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp"
+                                    alt="Whisky Ballantine’s 17 Anos em contexto de degustação" width="1200"
+                                    height="900" loading="lazy" decoding="async">
+                            </picture>
                         </div>
                     </div>
 
                     <figcaption class="section-24__caption">
-                        O produto deve ser reproduzido exatamente como fornecido — mesma forma,
-
-                        design do rótulo, cor, acabamento e marca — sem nenhuma alteração no
-
-                        produto. A composição valoriza o produto como protagonista da imagem. O
-
-                        plano de fundo é inspirado no nome do produto ou elementos encontrados
-
-                        na embalagem do produto mas que tenha relação com o item
-
-
-
-                        descreva o ambiente temático correspondente ao nome, surgindo de forma
-
-                        gradual e harmoniosa a partir do fundo que combina com a ideia de pra
-
-                        quem é o produto. Estilo fotorrealista, capturado com Sony A7R V, lente
-
-                        macro 100mm, abertura f/8, ISO 100, luz de estúdio difusa e suave.
-
-                        Resolução 1600x650 pixels, proporção 16:9, altíssimo nível de detalhe,
-
-                        estética de fotografia comercial
                         <span class="section-24__message section-24__message--one">Um blended Scotch whisky de 17 anos,
                             reconhecido por sua elegância.</span>
                         <span class="section-24__message section-24__message--two">Sabor completo: mel, baunilha,
