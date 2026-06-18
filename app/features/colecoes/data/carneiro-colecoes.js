@@ -25225,12 +25225,12 @@ ColLib.register({
       css:  ``,
     },
 
-        /*@@@@Col - variacao-22 */
+            /*@@@@Col - variacao-22 */
     {
       id:   'variacao-22',
       name: 'Variação 22',
       html: `<div class="lp-container">
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <style>
         * {
             padding: 0;
@@ -25250,10 +25250,9 @@ ColLib.register({
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
     <title>PDP - eFácil</title>
     <!-- ---------------------------------------- ÁREA PARA COLOCAR STYLES ----------------------------------------------------------- -->
-
     <style>
         /*inicio-area-de-faq*/
         #faq-section {
@@ -25273,14 +25272,14 @@ ColLib.register({
         #faq-section__title {
             font-size: clamp(1.5rem, 3vw, 2rem);
             font-weight: bold;
-            color: #333;
+            color: #10251F;
             margin: 0 0 12px;
             line-height: 98%;
         }
 
         #faq-section__subtitle {
             font-size: 1rem;
-            color: #666;
+            color: #4F5B3A;
             margin: 0;
         }
 
@@ -25295,8 +25294,8 @@ ColLib.register({
         }
 
         #faq-section__item {
-            background: #fff;
-            border: 1px solid #e5e5e5;
+            background: #FFFFFF;
+            border: 1px solid #D8C99E;
             border-radius: 12px;
             overflow: hidden;
         }
@@ -25319,18 +25318,18 @@ ColLib.register({
         }
 
         #faq-section__item summary:hover {
-            background: #f9f9f9;
+            background: #F7EED3;
         }
 
         #faq-section__q-text {
             font-size: 1rem;
             font-weight: bold;
-            color: #333;
+            color: #10251F;
             flex: 1;
         }
 
         #faq-section__q-text:hover {
-            color: #ea5b0c;
+            color: #8A1F1F;
         }
 
         #faq-section__icon {
@@ -25344,7 +25343,7 @@ ColLib.register({
         #faq-section__icon::after {
             content: '';
             position: absolute;
-            background: #888;
+            background: #8A1F1F;
             border-radius: 2px;
             transition: transform 0.25s ease, opacity 0.25s ease;
         }
@@ -25370,12 +25369,12 @@ ColLib.register({
 
         #faq-section__a-inner {
             padding: 14px 20px 16px;
-            border-top: 1px solid #e5e5e5;
+            border-top: 1px solid #D8C99E;
         }
 
         #faq-section__a-text {
             font-size: 0.9rem;
-            color: #555;
+            color: #354735;
             line-height: 1.6;
             margin: 0;
         }
@@ -25388,7 +25387,6 @@ ColLib.register({
 
         /*final-area-de-faq*/
     </style>
-
     <style>
         * {
             margin: 0;
@@ -25440,7 +25438,7 @@ ColLib.register({
             bottom: calc(var(--badge-size) / -2);
             width: var(--badge-size);
             height: var(--badge-size);
-            background-color: #ff9900;
+            background-color: #8A1F1F;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -25464,7 +25462,7 @@ ColLib.register({
         }
 
         .product-header__brand-2 {
-            color: #ff9900;
+            color: #8A1F1F;
             font-size: 0.7rem;
             font-weight: 700;
             letter-spacing: 0.18em;
@@ -25478,7 +25476,7 @@ ColLib.register({
             font-weight: 300;
             max-width: 50rem;
             text-wrap: pretty;
-            color: #1a1a1a;
+            color: #10251F;
         }
 
         .product-header__title-2 strong {
@@ -25487,7 +25485,7 @@ ColLib.register({
         }
 
         .product-header__subtitle-2 {
-            color: #8a8a8a;
+            color: #4F5B3A;
             font-size: clamp(0.95rem, 2vw, 1.1rem);
             line-height: 1.65;
             margin-top: 1.25rem;
@@ -25508,19 +25506,18 @@ ColLib.register({
             }
         }
     </style>
-
     <style>
         /* ===== HERO SECTION — VARIÁVEIS ===== */
         .section-6 {
             --pos-y: 46%;
-            --pos-x: 44%;
-            --color-title: #ffe178;
-            --bg-box: rgba(0, 0, 0, 0.33);
+            --pos-x: 11%;
+            --color-title: #F0C75E;
+            --bg-box: rgba(1, 59, 42, 0.72);
             width: 100%;
             position: relative;
             padding: 1rem 0;
             overflow: hidden;
-            background-color: #163a70;
+            background-color: #013B2A;
         }
 
         /* ===== IMAGEM ===== */
@@ -25555,7 +25552,7 @@ ColLib.register({
 
         .section-6__description {
             font-size: clamp(0.95rem, 2vw, 1.4rem);
-            color: #fff;
+            color: #FFFFFF;
             margin: 0 0 24px;
             line-height: 1.5;
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.35);
@@ -25608,12 +25605,11 @@ ColLib.register({
             }
         }
     </style>
-
     <style>
         :root {
-            --s2-color-bg: #163a70;
-            --s2-color-text: #F5EFE6;
-            --s2-color-accent: #d4af37;
+            --s2-color-bg: #013B2A;
+            --s2-color-text: #F7EED3;
+            --s2-color-accent: #C89B3C;
         }
 
         .section-2 {
@@ -25716,7 +25712,6 @@ ColLib.register({
             }
         }
     </style>
-
     <style>
         * {
             margin: 0;
@@ -25724,14 +25719,14 @@ ColLib.register({
         }
 
         .section-24 {
-            --s24-color-brand: #666e05;
-            --s24-color-ink: #202124;
-            --s24-color-muted: #62666d;
-            --s24-color-soft: #f6f3e5;
-            --s24-color-surface: #ffffff;
-            --s24-color-line: #d9ddd3;
-            --s24-color-brand-soft: #fafde7;
-            --s24-color-brand-strong: #759411;
+            --s24-color-brand: #4F5B3Ae05;
+            --s24-color-ink: #10251F;
+            --s24-color-muted: #4F5B3A;
+            --s24-color-soft: #F7EED3;
+            --s24-color-surface: #FFFFFFfff;
+            --s24-color-line: #D8C99E;
+            --s24-color-brand-soft: #F3E7C4;
+            --s24-color-brand-strong: #006B46;
             width: 100%;
             margin: 0;
             padding: 2rem 1rem;
@@ -26055,7 +26050,6 @@ ColLib.register({
             }
         }
     </style>
-
     <style>
         * {
             margin: 0;
@@ -26068,13 +26062,13 @@ ColLib.register({
             overflow: hidden;
             position: relative;
             padding: 12px 16px 14px;
-            background: #F7F2E8;
+            background: #F7EED3;
             font-family: sans-serif;
         }
 
         .section-composicao__title {
             margin: 0 auto 8px;
-            color: #3A2008;
+            color: #10251F;
             font-family: Georgia, serif;
             font-size: 1.55rem;
             font-weight: 700;
@@ -26085,14 +26079,14 @@ ColLib.register({
         .section-composicao__divider {
             width: 48px;
             height: 2px;
-            background-color: #C49A3C;
+            background-color: #C89B3C;
             margin: 0 auto 14px;
             border-radius: 2px;
         }
 
         .section-composicao__subtitle {
             margin: 0 auto 14px;
-            color: #7A5230;
+            color: #4F5B3A;
             font-size: 0.9rem;
             line-height: 1.6;
             text-align: center;
@@ -26159,7 +26153,7 @@ ColLib.register({
             align-items: center;
             padding: 28px 20px 24px;
             text-align: center;
-            background: #ffffff;
+            background: #FFFFFFff;
             border-radius: 16px;
             border: 1px solid rgba(196, 154, 60, 0.22);
             position: relative;
@@ -26174,7 +26168,7 @@ ColLib.register({
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #F5E6C0, #C49A3C, #F5E6C0);
+            background: linear-gradient(90deg, #F3E7C4, #C89B3C, #F3E7C4);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -26193,7 +26187,7 @@ ColLib.register({
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            background-color: #F5E6C0;
+            background-color: #F3E7C4;
             margin: 0 auto 18px;
             display: flex;
             align-items: center;
@@ -26218,7 +26212,7 @@ ColLib.register({
 
         .section-composicao__card-title {
             margin: 0 0 8px;
-            color: #3A2008;
+            color: #10251F;
             font-family: Georgia, serif;
             font-size: 1rem;
             font-weight: 700;
@@ -26227,7 +26221,7 @@ ColLib.register({
 
         .section-composicao__card-text {
             margin: 0;
-            color: #7A5230;
+            color: #4F5B3A;
             font-size: 0.84rem;
             line-height: 1.6;
         }
@@ -26248,10 +26242,10 @@ ColLib.register({
             justify-content: center;
             width: 38px;
             height: 38px;
-            border: 2px solid #C49A3C;
+            border: 2px solid #C89B3C;
             border-radius: 999px;
             background: transparent;
-            color: #C49A3C;
+            color: #C89B3C;
             cursor: pointer;
             font-size: 0.85rem;
             font-weight: 700;
@@ -26262,8 +26256,8 @@ ColLib.register({
 
         .section-composicao__btn:hover {
             transform: scale(1.1);
-            background-color: #C49A3C;
-            color: #F7F2E8;
+            background-color: #C89B3C;
+            color: #F7EED3;
             box-shadow: 0 0 0 6px rgba(196, 154, 60, 0.2);
             animation: none;
         }
@@ -26288,9 +26282,9 @@ ColLib.register({
         #sc-slide-2:checked~.section-composicao__controls .section-composicao__btn--2,
         #sc-slide-3:checked~.section-composicao__controls .section-composicao__btn--3,
         #sc-slide-4:checked~.section-composicao__controls .section-composicao__btn--4 {
-            background-color: #C49A3C;
-            color: #F7F2E8;
-            border-color: #C49A3C;
+            background-color: #C89B3C;
+            color: #F7EED3;
+            border-color: #C89B3C;
             animation: none;
         }
 
@@ -26362,10 +26356,9 @@ ColLib.register({
             }
         }
     </style>
-
     <style>
         .pdp-note {
-            color: #8a8a8a;
+            color: #4F5B3A;
             font-family: sans-serif;
             font-size: clamp(1rem, 2vw, 1.2rem);
             text-wrap: pretty;
@@ -26374,368 +26367,215 @@ ColLib.register({
             margin: 0;
         }
     </style>
-
     <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-    <article class="pdp" id="pdp" aria-labelledby="product-main-title" style="background-color: #f7f2e8;">
+    <article aria-labelledby="product-main-title" class="pdp" id="pdp" style="background-color: #F7EED3;">
         <!-- HTML fica dentro dessa div PDP -->
-
-        <section class="product-header-2" aria-label="Cabeçalho do produto">
+        <section aria-label="Cabeçalho do produto" class="product-header-2">
             <div class="product-header__banner-2">
                 <figure class="product-header__figure-2">
-                    <picture>
-                        <source media="(max-width: 320px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp?ims=289x">
-                        <source media="(max-width: 375px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp?ims=344x">
-                        <source media="(max-width: 425px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp?ims=394x">
-                        <source media="(max-width: 768px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp?ims=737x">
-                        <source media="(max-width: 1024px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp?ims=992x">
-                        <source media="(max-width: 1440px)"
-                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp?ims=1248x">
-                        <img class="product-header__banner-img-2"
-                            src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp"
-                            alt="Banner editorial para o Whisky Ballantine’s 17 Anos 750ml" width="1600" height="250"
-                            loading="eager" decoding="async">
-                    </picture>
+                    <img alt="Banner editorial para o Whiskey Jameson 750ml" class="product-header__banner-img-2"
+                        decoding="async" height="250" loading="eager"
+                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-cevada-ingredientes-lifestyle-4500078-00.webp"
+                        width="1600" />
                 </figure>
-                <div class="product-header__badge-2" role="img" aria-label="Logo da marca">
-                    <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/logo-pernod.webp"
-                        alt="Ícone da marca Ballantine’s" class="product-header__badge-img-2" width="90" height="90"
-                        loading="lazy">
+                <div aria-label="Logo da marca" class="product-header__badge-2" role="img">
+                    <img alt="Ícone da marca Jameson" class="product-header__badge-img-2" height="90" loading="lazy"
+                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/logo-pernod.webp" width="90" />
                 </div>
             </div>
             <article class="product-header__body-2">
-                <small class="product-header__brand-2"> Ballantine’s </small>
-                <h2 class="product-header__title-2" id="product-main-title"><span>Whisky 750ml</span><strong>Um Scotch
-                        de 17 anos para brindar melhor</strong></h2>
-                <p class="product-header__subtitle-2">Primeiro e mais premiado blended Scotch whisky de 17 anos do
-                    mundo, com textura frutada e aveludada, toque sutil defumado e final suave de carvalho.</p>
+                <small class="product-header__brand-2"> Jameson </small>
+                <h2 class="product-header__title-2" id="product-main-title"><span>Whiskey Irlandês
+                        750ml</span><strong>Tripla destilação e sabor irlandês clássico</strong></h2>
+                <p class="product-header__subtitle-2">Whiskey irlandês produzido na Irlanda, com tripla destilação,
+                    aroma delicado, notas florais, toque frutado e final suave e persistente.</p>
             </article>
         </section>
-
-        <section class="section-6" aria-label="Destaque do produto com texto">
+        <section aria-label="Destaque do produto com texto" class="section-6">
             <picture>
-                <source media="(max-width: 320px)"
-                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-cevada-ambientada-4500078-01-2.webp?ims=275x">
-                <source media="(max-width: 375px)"
-                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-cevada-ambientada-4500078-01-2.webp?ims=327x">
-                <source media="(max-width: 425px)"
-                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-cevada-ambientada-4500078-01-2.webp?ims=374x">
                 <source media="(max-width: 760px)"
-                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-cevada-ambientada-4500078-01-2.webp?ims=729x">
+                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-cevada-ambientada-4500078-01-2.webp" />
                 <!-- troca de imagem -->
-                <source media="(max-width: 768px)"
-                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-banner-garrafa-cevada-lifestyle-4500078-01-1.webp?ims=737x">
-                <source media="(max-width: 1024px)"
-                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-banner-garrafa-cevada-lifestyle-4500078-01-1.webp?ims=992x">
-                <source media="(max-width: 1440px)"
-                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-banner-garrafa-cevada-lifestyle-4500078-01-1.webp?ims=1248x">
-                <img class="section-6__image"
+                <img alt="Whiskey Jameson 750ml em destaque" class="section-6__image" decoding="async"
+                    fetchpriority="high" height="650" loading="lazy"
                     src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-banner-garrafa-cevada-lifestyle-4500078-01-1.webp"
-                    alt="Whisky Ballantine’s 17 Anos 750ml em destaque" width="1600" height="650" fetchpriority="high"
-                    loading="lazy" decoding="async">
-            </picture>
-            <div class="section-6__content">
-                <h2 class="section-6__title">Mais tempo, mais profundidade</h2>
-                <p class="section-6__description">17 anos de maturação para um blend frutado, harmonioso e elegante.</p>
-            </div>
+                    width="1600" />
+                <div class="section-6__content">
+                    <h2 class="section-6__title">Direto dos campos da Irlanda</h2>
+                    <p class="section-6__description">Um whiskey irlandês clássico, suave e memorável, feito com
+                        tradição
+                        desde 1780.</p>
+                </div>
         </section>
-
-        <section class="section-composicao" aria-labelledby="sc-title">
-
-            <h3 class="section-composicao__title" id="sc-title">O que faz este whisky se destacar</h3>
+        <section aria-labelledby="sc-title" class="section-composicao">
+            <h3 class="section-composicao__title" id="sc-title">O que faz este whiskey se destacar</h3>
             <div class="section-composicao__divider"></div>
-            <p class="section-composicao__subtitle">Da origem escocesa ao sabor complexo, cada detalhe reforça a
-                experiência premium do Ballantine’s 17 Anos.</p>
-            <input class="section-composicao__control" type="radio" name="sc-carousel" id="sc-slide-1" checked="">
-            <input class="section-composicao__control" type="radio" name="sc-carousel" id="sc-slide-2">
-            <input class="section-composicao__control" type="radio" name="sc-carousel" id="sc-slide-3">
-            <input class="section-composicao__control" type="radio" name="sc-carousel" id="sc-slide-4">
+            <p class="section-composicao__subtitle">Da tripla destilação ao sabor suave, cada detalhe reforça a tradição
+                irlandesa do Jameson.</p>
+            <input checked="" class="section-composicao__control" id="sc-slide-1" name="sc-carousel" type="radio" />
+            <input class="section-composicao__control" id="sc-slide-2" name="sc-carousel" type="radio" />
+            <input class="section-composicao__control" id="sc-slide-3" name="sc-carousel" type="radio" />
+            <input class="section-composicao__control" id="sc-slide-4" name="sc-carousel" type="radio" />
             <div class="section-composicao__viewport">
                 <ul class="section-composicao__track">
                     <li class="section-composicao__item">
                         <figure class="section-composicao__card">
                             <div class="section-composicao__media">
-                                <picture>
-                                    <source media="(max-width: 320px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp?ims=56x">
-                                    <source media="(max-width: 375px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp?ims=56x">
-                                    <source media="(max-width: 425px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp?ims=56x">
-                                    <source media="(max-width: 768px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp?ims=68x">
-                                    <source media="(max-width: 1024px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp?ims=68x">
-                                    <source media="(max-width: 1440px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp?ims=68x">
-                                    <img class="section-composicao__image"
-                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp"
-                                        alt="Ícone ilustrativo para maturação do Ballantine’s 17 Anos" width="128"
-                                        height="128" loading="lazy" decoding="async">
-                                </picture>
+                                <img alt="Ícone ilustrativo para tripla destilação do Jameson"
+                                    class="section-composicao__image" decoding="async" height="128" loading="lazy"
+                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-barril-uva-4500078-02-1.webp"
+                                    width="128" />
                             </div>
                             <figcaption>
-                                <h4 class="section-composicao__card-title">17 anos de maturação</h4>
-                                <p class="section-composicao__card-text">Mais profundidade de sabores e mais caráter em
-                                    cada dose.</p>
+                                <h4 class="section-composicao__card-title">Tripla destilação</h4>
+                                <p class="section-composicao__card-text">Processo clássico que ajuda a entregar uma
+                                    bebida mais suave e equilibrada.</p>
                             </figcaption>
                         </figure>
                     </li>
                     <li class="section-composicao__item">
                         <figure class="section-composicao__card">
                             <div class="section-composicao__media">
-                                <picture>
-                                    <source media="(max-width: 320px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp?ims=56x">
-                                    <source media="(max-width: 375px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp?ims=56x">
-                                    <source media="(max-width: 425px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp?ims=56x">
-                                    <source media="(max-width: 768px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp?ims=68x">
-                                    <source media="(max-width: 1024px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp?ims=68x">
-                                    <source media="(max-width: 1440px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp?ims=68x">
-                                    <img class="section-composicao__image"
-                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp"
-                                        alt="Ícone ilustrativo para notas de sabor do Ballantine’s 17 Anos" width="128"
-                                        height="128" loading="lazy" decoding="async">
-                                </picture>
+                                <img alt="Ícone ilustrativo para notas de sabor do Jameson"
+                                    class="section-composicao__image" decoding="async" height="128" loading="lazy"
+                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-flor-baunilha-4500078-02-2.webp"
+                                    width="128" />
                             </div>
                             <figcaption>
-                                <h4 class="section-composicao__card-title">Mel, baunilha e madeira</h4>
-                                <p class="section-composicao__card-text">Perfil completo e complexo, com alcaçuz no
-                                    conjunto.</p>
+                                <h4 class="section-composicao__card-title">Baunilha, caramelo e especiarias</h4>
+                                <p class="section-composicao__card-text">Notas doces e levemente especiadas para uma
+                                    experiência sensorial marcante.</p>
                             </figcaption>
                         </figure>
                     </li>
                     <li class="section-composicao__item">
                         <figure class="section-composicao__card">
                             <div class="section-composicao__media">
-                                <picture>
-                                    <source media="(max-width: 320px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp?ims=56x">
-                                    <source media="(max-width: 375px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp?ims=56x">
-                                    <source media="(max-width: 425px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp?ims=56x">
-                                    <source media="(max-width: 768px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp?ims=68x">
-                                    <source media="(max-width: 1024px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp?ims=68x">
-                                    <source media="(max-width: 1440px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp?ims=68x">
-                                    <img class="section-composicao__image"
-                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp"
-                                        alt="Ícone ilustrativo para toque de carvalho do Ballantine’s 17 Anos"
-                                        width="128" height="128" loading="lazy" decoding="async">
-                                </picture>
+                                <img alt="Ícone ilustrativo para final suave do Jameson"
+                                    class="section-composicao__image" decoding="async" height="128" loading="lazy"
+                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-colmeia-mel-4500078-02-3.webp"
+                                    width="128" />
                             </div>
                             <figcaption>
-                                <h4 class="section-composicao__card-title">Carvalho suave</h4>
-                                <p class="section-composicao__card-text">Final harmonioso, frutado e aveludado, sem
-                                    perder elegância.</p>
+                                <h4 class="section-composicao__card-title">Final suave</h4>
+                                <p class="section-composicao__card-text">Final persistente e levemente adocicado, ideal
+                                    para degustar com calma.</p>
                             </figcaption>
                         </figure>
                     </li>
                     <li class="section-composicao__item">
                         <figure class="section-composicao__card">
                             <div class="section-composicao__media">
-                                <picture>
-                                    <source media="(max-width: 320px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp?ims=56x">
-                                    <source media="(max-width: 375px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp?ims=56x">
-                                    <source media="(max-width: 425px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp?ims=56x">
-                                    <source media="(max-width: 768px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp?ims=68x">
-                                    <source media="(max-width: 1024px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp?ims=68x">
-                                    <source media="(max-width: 1440px)"
-                                        srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp?ims=68x">
-                                    <img class="section-composicao__image"
-                                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp"
-                                        alt="Ícone ilustrativo para origem escocesa do Ballantine’s 17 Anos" width="128"
-                                        height="128" loading="lazy" decoding="async">
-                                </picture>
+                                <img alt="Ícone ilustrativo para origem irlandesa do Jameson"
+                                    class="section-composicao__image" decoding="async" height="128" loading="lazy"
+                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-icone-bandeira-escocia-4500078-02-4.webp"
+                                    width="128" />
                             </div>
                             <figcaption>
-                                <h4 class="section-composicao__card-title">Origem escocesa</h4>
-                                <p class="section-composicao__card-text">Produzido por George Ballantine and Son Ltd.,
-                                    em Dumbarton.</p>
+                                <h4 class="section-composicao__card-title">Origem irlandesa</h4>
+                                <p class="section-composicao__card-text">Produzido na Irlanda, com tradição associada à
+                                    destilaria de Midleton.</p>
                             </figcaption>
                         </figure>
                     </li>
                 </ul>
             </div>
-            <nav class="section-composicao__controls" aria-label="Navegação do carrossel">
+            <nav aria-label="Navegação do carrossel" class="section-composicao__controls">
                 <label class="section-composicao__btn section-composicao__btn--1" for="sc-slide-1">1</label>
                 <label class="section-composicao__btn section-composicao__btn--2" for="sc-slide-2">2</label>
                 <label class="section-composicao__btn section-composicao__btn--3" for="sc-slide-3">3</label>
                 <label class="section-composicao__btn section-composicao__btn--4" for="sc-slide-4">4</label>
             </nav>
         </section>
-
-        <section class="section-2" aria-label="Origem e tradição do Whisky Ballantine’s 17 Anos">
+        <section aria-label="Origem e tradição do Whiskey Jameson 750ml" class="section-2">
             <div class="section-2__container">
                 <div class="section-2__content">
                     <div class="section-2__image-block">
                         <figure>
-                            <picture>
-                                <source media="(max-width: 320px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp?ims=257x">
-                                <source media="(max-width: 375px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp?ims=312x">
-                                <source media="(max-width: 425px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp?ims=362x">
-                                <source media="(max-width: 768px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp?ims=353x">
-                                <source media="(max-width: 1024px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp?ims=472x">
-                                <source media="(max-width: 1440px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp?ims=600x">
-                                <img class="section-2__image"
-                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp"
-                                    alt="Whisky Ballantine’s 17 Anos 750ml em composição ilustrativa" width="800"
-                                    height="600" loading="lazy" decoding="async">
-                            </picture>
+                            <img alt="Whiskey Jameson 750ml em composição ilustrativa" class="section-2__image"
+                                decoding="async" height="600" loading="lazy"
+                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-diagonal-4500078-03.webp"
+                                width="800" />
                         </figure>
                     </div>
                     <div class="section-2__text-block">
-                        <h2 class="section-2__title">Um blend feito para ocasiões especiais</h2>
-                        <hr class="section-2__divider" aria-hidden="true">
-                        <p class="section-2__paragraph">Ballantine’s 17 Anos é uma escolha para quem busca um Scotch com
-                            presença, história e acabamento refinado.</p>
-                        <p class="section-2__paragraph">O sabor combina mel, baunilha, madeira e alcaçuz, enquanto o
-                            aroma profundo e balanceado deixa a degustação mais envolvente.</p>
+                        <h2 class="section-2__title">Um Irish Whiskey versátil para diferentes momentos</h2>
+                        <hr aria-hidden="true" class="section-2__divider" />
+                        <p class="section-2__paragraph">Jameson é uma escolha para quem busca um whiskey irlandês suave,
+                            clássico e fácil de apreciar.</p>
+                        <p class="section-2__paragraph">O sabor combina baunilha, caramelo, especiarias e frutos secos,
+                            com aroma floral delicado e toque frutado.</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section class="section-24" aria-labelledby="section-24-title">
-            <input class="section-24__input" type="radio" name="section-24-view" id="section-24-view-1"
-                aria-label="Mostrar imagem de visão geral" checked="">
-            <input class="section-24__input" type="radio" name="section-24-view" id="section-24-view-2"
-                aria-label="Mostrar imagem de detalhe">
-            <input class="section-24__input" type="radio" name="section-24-view" id="section-24-view-3"
-                aria-label="Mostrar imagem de uso">
-
+        <section aria-labelledby="section-24-title" class="section-24">
+            <input aria-label="Mostrar imagem de visão geral" checked="" class="section-24__input"
+                id="section-24-view-1" name="section-24-view" type="radio" />
+            <input aria-label="Mostrar imagem de detalhe" class="section-24__input" id="section-24-view-2"
+                name="section-24-view" type="radio" />
+            <input aria-label="Mostrar imagem de uso" class="section-24__input" id="section-24-view-3"
+                name="section-24-view" type="radio" />
             <article class="section-24__container">
-                <section class="section-24__content" aria-labelledby="section-24-title">
-                    <nav class="section-24__options" aria-label="Escolha a imagem exibida">
+                <section aria-labelledby="section-24-title" class="section-24__content">
+                    <nav aria-label="Escolha a imagem exibida" class="section-24__options">
                         <label class="section-24__button section-24__button--one" for="section-24-view-1">
-                            <span class="section-24__button-title">Escocês de verdade</span>
-                            <span class="section-24__button-text">País de origem: Escócia. Produzido por George
-                                Ballantine and Son Ltd., Dumbarton.</span>
+                            <span class="section-24__button-title">Irlandês clássico</span>
+                            <span class="section-24__button-text">Origem: Irlanda. Produzido com processos tradicionais
+                                e ingredientes selecionados.</span>
                         </label>
-
                         <label class="section-24__button section-24__button--two" for="section-24-view-2">
-                            <span class="section-24__button-title">43% de graduação</span>
-                            <span class="section-24__button-text">Corpo marcante para apreciar com calma, sempre com
-                                moderação.</span>
+                            <span class="section-24__button-title">40% de graduação</span>
+                            <span class="section-24__button-text">Teor equilibrado para apreciar puro, com gelo ou em
+                                coquetéis, sempre com moderação.</span>
                         </label>
-
                         <label class="section-24__button section-24__button--three" for="section-24-view-3">
                             <span class="section-24__button-title">Garrafa de 750ml</span>
-                            <span class="section-24__button-text">Volume ideal para presentear, receber convidados ou
-                                compor o bar.</span>
+                            <span class="section-24__button-text">Volume versátil para momentos de descontração,
+                                celebrações ou preparo de drinks.</span>
                         </label>
                     </nav>
                 </section>
-
-                <figure class="section-24__visual" aria-label="Imagens alternáveis do produto">
+                <figure aria-label="Imagens alternáveis do produto" class="section-24__visual">
                     <div class="section-24__frame">
                         <!-- IMG 1-->
                         <div class="section-24__panel section-24__panel--one">
-                            <picture>
-                                <source media="(max-width: 320px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp?ims=255x">
-                                <source media="(max-width: 375px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp?ims=309x">
-                                <source media="(max-width: 425px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp?ims=360x">
-                                <source media="(max-width: 768px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp?ims=703x">
-                                <source media="(max-width: 1024px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp?ims=386x">
-                                <source media="(max-width: 1440px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp?ims=495x">
-                                <img class="section-24__image"
-                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp"
-                                    alt="Whisky Ballantine’s 17 Anos em visão geral ilustrativa" width="1200"
-                                    height="900" loading="lazy" decoding="async">
-                            </picture>
+                            <img alt="Whiskey Jameson em visão geral ilustrativa" class="section-24__image"
+                                decoding="async" height="900" loading="lazy"
+                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-bandeira-escocia-origem-lifestyle-4500078-04-1.webp"
+                                width="1200" />
                         </div>
                         <!-- IMG 2-->
                         <div class="section-24__panel section-24__panel--two">
-                            <picture>
-                                <source media="(max-width: 320px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp?ims=265x">
-                                <source media="(max-width: 375px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp?ims=322x">
-                                <source media="(max-width: 425px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp?ims=374x">
-                                <source media="(max-width: 768px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp?ims=731x">
-                                <source media="(max-width: 1024px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp?ims=401x">
-                                <source media="(max-width: 1440px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp?ims=514x">
-                                <img class="section-24__image"
-                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp"
-                                    alt="Detalhe ilustrativo do Whisky Ballantine’s 17 Anos" width="1200" height="900"
-                                    loading="lazy" decoding="async">
-                            </picture>
+                            <img alt="Detalhe ilustrativo do Whiskey Jameson" class="section-24__image" decoding="async"
+                                height="900" loading="lazy"
+                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-copo-gelo-casca-limao-detalhe-4500078-04-2.webp"
+                                width="1200" />
                         </div>
                         <!-- IMG 3-->
                         <div class="section-24__panel section-24__panel--three">
-                            <picture>
-                                <source media="(max-width: 320px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp?ims=265x">
-                                <source media="(max-width: 375px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp?ims=322x">
-                                <source media="(max-width: 425px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp?ims=374x">
-                                <source media="(max-width: 768px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp?ims=731x">
-                                <source media="(max-width: 1024px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp?ims=401x">
-                                <source media="(max-width: 1440px)"
-                                    srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp?ims=514x">
-                                <img class="section-24__image"
-                                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp"
-                                    alt="Whisky Ballantine’s 17 Anos em contexto de degustação" width="1200"
-                                    height="900" loading="lazy" decoding="async">
-                            </picture>
+                            <img alt="Whiskey Jameson em contexto de degustação" class="section-24__image"
+                                decoding="async" height="900" loading="lazy"
+                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/whisky-escoces-ballantines-17-anos-750ml-garrafa-fundo-infinito-4500078-04-3.webp"
+                                width="1200" />
                         </div>
                     </div>
-
                     <figcaption class="section-24__caption">
-                        <span class="section-24__message section-24__message--one">Um blended Scotch whisky de 17 anos,
-                            reconhecido por sua elegância.</span>
-                        <span class="section-24__message section-24__message--two">Sabor completo: mel, baunilha,
-                            madeira e alcaçuz em equilíbrio.</span>
-                        <span class="section-24__message section-24__message--three">750ml, origem escocesa e graduação
-                            alcoólica de 43%.</span>
+                        <span class="section-24__message section-24__message--one">Um Irish Whiskey clássico,
+                            reconhecido pela suavidade da tripla destilação.</span>
+                        <span class="section-24__message section-24__message--two">Sabor com baunilha, caramelo,
+                            especiarias e frutos secos em equilíbrio.</span>
+                        <span class="section-24__message section-24__message--three">750ml, origem irlandesa e graduação
+                            alcoólica de 40%.</span>
                     </figcaption>
                 </figure>
             </article>
         </section>
-
-
         <p class="pdp-note">
             IMAGENS MERAMENTE ILUSTRATIVAS
         </p>
-
         <!-- Área de FAQ -->
-        <section id="faq-section" aria-labelledby="faq-section__title">
+        <section aria-labelledby="faq-section__title" id="faq-section">
             <div id="faq-section__header">
                 <h2 id="faq-section__title">Dúvidas Frequentes</h2>
             </div>
@@ -26744,152 +26584,133 @@ ColLib.register({
                 <li id="faq-section__item">
                     <details class="faq-section__details">
                         <summary class="faq-section__summary">
-                            <h3 id="faq-section__q-text"> O Whisky Ballantines 17 Anos é indicado para qual tipo de
-                                consumo? </h3>
-                            <span id="faq-section__icon" aria-hidden="true"></span>
+                            <h3 id="faq-section__q-text"> O Whiskey Jameson 750ml é indicado para qual tipo de consumo?
+                            </h3>
+                            <span aria-hidden="true" id="faq-section__icon"></span>
                         </summary>
                         <div id="faq-section__a-inner">
-                            <p id="faq-section__a-text"> O Whisky Ballantines 17 Anos é indicado para quem busca um
-                                blended Scotch whisky mais maduro, complexo e equilibrado. Ele combina notas frutadas,
-                                toque suave de carvalho e sensação sutilmente defumada, sendo uma boa escolha para
-                                degustar com calma. </p>
+                            <p id="faq-section__a-text"> O Whiskey Jameson 750ml é indicado para quem busca um whiskey
+                                irlandês suave, clássico e versátil. Pode ser apreciado puro, com gelo ou em coquetéis,
+                                sempre com moderação. </p>
                         </div>
                     </details>
                 </li>
                 <!-------------------------->
-
                 <!-- Cole aqui as perguntas e respostas -->
                 <li id="faq-section__item">
                     <details class="faq-section__details">
                         <summary class="faq-section__summary">
-                            <h3 id="faq-section__q-text"> O Ballantines 17 Anos pode ser tomado puro? </h3>
-                            <span id="faq-section__icon" aria-hidden="true"></span>
+                            <h3 id="faq-section__q-text"> O Jameson pode ser tomado puro? </h3>
+                            <span aria-hidden="true" id="faq-section__icon"></span>
                         </summary>
                         <div id="faq-section__a-inner">
-                            <p id="faq-section__a-text"> Sim. Por ter textura frutada e aveludada, o Ballantines 17 Anos
-                                pode ser apreciado puro, especialmente por quem prefere perceber melhor as notas de mel,
-                                baunilha, madeira e alcaçuz presentes no sabor. </p>
+                            <p id="faq-section__a-text"> Sim. O Jameson pode ser apreciado puro, especialmente por quem
+                                prefere perceber melhor as notas de baunilha, caramelo, especiarias e frutos secos. </p>
                         </div>
                     </details>
                 </li>
                 <!-------------------------->
-
                 <!-- Cole aqui as perguntas e respostas -->
                 <li id="faq-section__item">
                     <details class="faq-section__details">
                         <summary class="faq-section__summary">
-                            <h3 id="faq-section__q-text"> Qual é a graduação alcoólica do Whisky Ballantines 750ml 17
-                                Anos? </h3>
-                            <span id="faq-section__icon" aria-hidden="true"></span>
+                            <h3 id="faq-section__q-text"> Qual é a graduação alcoólica do Whiskey Jameson 750ml? </h3>
+                            <span aria-hidden="true" id="faq-section__icon"></span>
                         </summary>
                         <div id="faq-section__a-inner">
-                            <p id="faq-section__a-text"> A graduação alcoólica do Whisky Ballantines 750ml 17 Anos é de
-                                43%. Esse teor combina com a proposta de um Scotch whisky mais encorpado, completo e com
-                                maior profundidade de sabores. </p>
+                            <p id="faq-section__a-text"> A graduação alcoólica do Whiskey Jameson 750ml é de 40%. Esse
+                                teor combina com a proposta de um Irish Whiskey suave, equilibrado e versátil. </p>
                         </div>
                     </details>
                 </li>
                 <!-------------------------->
-
                 <!-- Cole aqui as perguntas e respostas -->
                 <li id="faq-section__item">
                     <details class="faq-section__details">
                         <summary class="faq-section__summary">
-                            <h3 id="faq-section__q-text"> O que diferencia o Ballantines 17 Anos de whiskies mais
-                                jovens? </h3>
-                            <span id="faq-section__icon" aria-hidden="true"></span>
+                            <h3 id="faq-section__q-text"> O que diferencia o Jameson de outros whiskeys? </h3>
+                            <span aria-hidden="true" id="faq-section__icon"></span>
                         </summary>
                         <div id="faq-section__a-inner">
-                            <p id="faq-section__a-text"> O maior tempo de maturação dá ao Ballantines 17 Anos mais
-                                profundidade de sabores e caráter ao blend. Na prática, isso entrega uma bebida mais
-                                complexa, harmoniosa e com presença mais elegante no paladar. </p>
+                            <p id="faq-section__a-text"> A tripla destilação ajuda a entregar a suavidade característica
+                                do Jameson. Na prática, isso cria um whiskey equilibrado, fácil de apreciar e com
+                                tradição irlandesa. </p>
                         </div>
                     </details>
                 </li>
                 <!-------------------------->
-
                 <!-- Cole aqui as perguntas e respostas -->
                 <li id="faq-section__item">
                     <details class="faq-section__details">
                         <summary class="faq-section__summary">
-                            <h3 id="faq-section__q-text"> Qual é o sabor do Whisky Ballantines 17 Anos? </h3>
-                            <span id="faq-section__icon" aria-hidden="true"></span>
+                            <h3 id="faq-section__q-text"> Qual é o sabor do Whiskey Jameson? </h3>
+                            <span aria-hidden="true" id="faq-section__icon"></span>
                         </summary>
                         <div id="faq-section__a-inner">
-                            <p id="faq-section__a-text"> O sabor é completo e complexo, com toques de mel, baunilha,
-                                madeira e alcaçuz. Ele também apresenta perfil frutado, harmonioso e um toque suave de
-                                carvalho, criando uma experiência mais refinada na degustação. </p>
+                            <p id="faq-section__a-text"> O sabor do Jameson combina baunilha, caramelo, especiarias e
+                                frutos secos, com final suave, levemente adocicado e persistente no paladar. </p>
                         </div>
                     </details>
                 </li>
                 <!-------------------------->
-
                 <!-- Cole aqui as perguntas e respostas -->
                 <li id="faq-section__item">
                     <details class="faq-section__details">
                         <summary class="faq-section__summary">
-                            <h3 id="faq-section__q-text"> O aroma do Ballantines 17 Anos é forte? </h3>
-                            <span id="faq-section__icon" aria-hidden="true"></span>
+                            <h3 id="faq-section__q-text"> O aroma do Jameson é intenso? </h3>
+                            <span aria-hidden="true" id="faq-section__icon"></span>
                         </summary>
                         <div id="faq-section__a-inner">
-                            <p id="faq-section__a-text"> O aroma do Ballantines 17 Anos é profundo, balanceado e
-                                elegante. Ele não depende de intensidade exagerada para se destacar, mas sim de
-                                equilíbrio entre maturação, notas frutadas e caráter do blend. </p>
+                            <p id="faq-section__a-text"> O aroma do Jameson é delicado e equilibrado, com fragrâncias
+                                florais, notas doces e toque sutil frutado. </p>
                         </div>
                     </details>
                 </li>
                 <!-------------------------->
-
                 <!-- Cole aqui as perguntas e respostas -->
                 <li id="faq-section__item">
                     <details class="faq-section__details">
                         <summary class="faq-section__summary">
-                            <h3 id="faq-section__q-text"> O Whisky Ballantines 17 Anos é de qual país? </h3>
-                            <span id="faq-section__icon" aria-hidden="true"></span>
+                            <h3 id="faq-section__q-text"> O Whiskey Jameson é de qual país? </h3>
+                            <span aria-hidden="true" id="faq-section__icon"></span>
                         </summary>
                         <div id="faq-section__a-inner">
-                            <p id="faq-section__a-text"> O Whisky Ballantines 17 Anos é da Escócia. Ele é produzido pela
-                                George Ballantine and Son Ltd., em Dumbarton, Scotland, mantendo a origem tradicional
-                                dos blended Scotch whiskies. </p>
+                            <p id="faq-section__a-text"> O Whiskey Jameson é da Irlanda. Seus processos de fabricação
+                                são feitos na Irlanda, mantendo a tradição da marca. </p>
                         </div>
                     </details>
                 </li>
                 <!-------------------------->
-
                 <!-- Cole aqui as perguntas e respostas -->
                 <li id="faq-section__item">
                     <details class="faq-section__details">
                         <summary class="faq-section__summary">
-                            <h3 id="faq-section__q-text"> Quais ingredientes fazem parte do Ballantines 17 Anos? </h3>
-                            <span id="faq-section__icon" aria-hidden="true"></span>
+                            <h3 id="faq-section__q-text"> Quais características fazem parte do Jameson? </h3>
+                            <span aria-hidden="true" id="faq-section__icon"></span>
                         </summary>
                         <div id="faq-section__a-inner">
-                            <p id="faq-section__a-text"> A composição do Ballantines 17 Anos inclui água, cevada, outros
-                                cereais e leveduras. Esses ingredientes fazem parte da base de produção do whisky e
-                                contribuem para o desenvolvimento do sabor durante a maturação. </p>
+                            <p id="faq-section__a-text"> Jameson é um blended whiskey feito com ingredientes
+                                selecionados e grãos cuidadosamente escolhidos para entregar sabor suave e único. </p>
                         </div>
                     </details>
                 </li>
                 <!-------------------------->
-
                 <!-- Cole aqui as perguntas e respostas -->
                 <li id="faq-section__item">
                     <details class="faq-section__details">
                         <summary class="faq-section__summary">
-                            <h3 id="faq-section__q-text"> O Ballantines 17 Anos tem perfil defumado? </h3>
-                            <span id="faq-section__icon" aria-hidden="true"></span>
+                            <h3 id="faq-section__q-text"> O Jameson combina com drinks? </h3>
+                            <span aria-hidden="true" id="faq-section__icon"></span>
                         </summary>
                         <div id="faq-section__a-inner">
-                            <p id="faq-section__a-text"> Sim. Ele possui uma sensação sutil de defumado, sem dominar o
-                                conjunto. Esse toque aparece de forma equilibrada, acompanhando as notas frutadas, a
-                                textura aveludada e o suave caráter de carvalho. </p>
+                            <p id="faq-section__a-text"> Sim. O Jameson é versátil e pode ser usado em coquetéis como
+                                Whisky Sour e Irish Coffee, além de ser apreciado puro ou com gelo. </p>
                         </div>
                     </details>
                 </li>
                 <!-------------------------->
             </ul>
         </section>
-
     </article>
 </div>`,
       css:  ``,
