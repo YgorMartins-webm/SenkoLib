@@ -10,7 +10,7 @@ window.SenkoColecoesManifest = {
         "Responsivo",
         "adaptativos"
       ],
-      "layoutCount": 23
+      "layoutCount": 24
     },
     {
       "file": "colecao-joel.js",
