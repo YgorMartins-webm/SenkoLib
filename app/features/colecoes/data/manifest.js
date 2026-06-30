@@ -20,7 +20,7 @@ window.SenkoColecoesManifest = {
       "tags": [
         "Responsivo"
       ],
-      "layoutCount": 2
+      "layoutCount": 3
     },
     {
       "file": "colecao-pedro.js",
