@@ -1096,7 +1096,7 @@ SenkoLib.register([
   },
 
   /*@@@@Senko - section-6 */
-  /* variantes: variants/section-6.js */
+  /* variantes: app/features/biblioteca/data/variants/section-6.js */
   {
     id: 'section-6',
     name: 'Section-6',
@@ -1179,7 +1179,7 @@ SenkoLib.register([
                 position: static;
                 transform: none;
                 max-width: 100%;
-                padding: 24px 20px 0 20px;
+                padding: 24px 20px 16px 20px;
                 background: transparent;
                 backdrop-filter: none;
                 text-align: center;
