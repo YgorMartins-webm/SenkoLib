@@ -14,6 +14,7 @@ window.SenkoBibliotecaManifest = {
     "variants/section-21.js",
     "variants/section-27.js",
     "variants/section-10.js",
-    "variants/section-6.js"
+    "variants/section-6.js",
+    "variants/section-33.js"
   ]
 };
