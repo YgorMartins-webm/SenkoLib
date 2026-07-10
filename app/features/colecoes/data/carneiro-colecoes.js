@@ -1,13 +1,13 @@
 // @ts-nocheck
 /* ═══════════════════════════════════════════════════════════════════════
-   colecoes/data/carneiro-colecoes.js — Coleção: Ygor Coleções
+   app/features/colecoes/data/carneiro-colecoes.js — Coleção: Carneiro Coleções
 
-   ATENÇÃO: Arquivo gerado pelo módulo GitHub do SenkoLib.
+   ATENÇÃO: Arquivo gerado pelo modulo GitHub de Colecoes.
    NÃO edite manualmente em produção.
 ═══════════════════════════════════════════════════════════════════════ */
 ColLib.register({
   slug:  'carneiro-colecoes',
-  name:  'Ygor Coleções',
+  name:  'Carneiro Coleções',
   group: 'ygor',
   tags:  ['Responsivo', 'adaptativos'],
   layouts: [
@@ -2080,7 +2080,7 @@ ColLib.register({
       css:  ``,
     },
 
-        /*@@@@Col - padrao-4 */
+    /*@@@@Col - padrao-4 */
     {
       id:   'padrao-4',
       name: 'Padrão 4',
@@ -4688,6 +4688,7 @@ ColLib.register({
 </div>`,
       css:  ``,
     },
+
     /*@@@@Col - padrao6 */
     {
       id:   'padrao6',
@@ -12278,7 +12279,7 @@ ColLib.register({
       css:  ``,
     },
 
-            /*@@@@Col - variacao-12 */
+    /*@@@@Col - variacao-12 */
     {
       id:   'variacao-12',
       name: 'Variação 12',
@@ -13081,7 +13082,7 @@ ColLib.register({
       css:  ``,
     },
 
-        /*@@@@Col - variacao-13 */
+    /*@@@@Col - variacao-13 */
     {
       id:   'variacao-13',
       name: 'Variação 13',
@@ -16915,7 +16916,7 @@ ColLib.register({
       css:  ``,
     },
 
-        /*@@@@Col - variacao-15 */
+    /*@@@@Col - variacao-15 */
     {
       id:   'variacao-15',
       name: 'Variação 15',
@@ -20053,7 +20054,7 @@ ColLib.register({
       css:  ``,
     },
 
-        /*@@@@Col - variacao-18 */
+    /*@@@@Col - variacao-18 */
     {
       id:   'variacao-18',
       name: 'Variação 18',
@@ -21190,7 +21191,7 @@ ColLib.register({
       css:  ``,
     },
 
-        /*@@@@Col - variacao-19 */
+    /*@@@@Col - variacao-19 */
     {
       id:   'variacao-19',
       name: 'Variação 19',
@@ -25225,7 +25226,7 @@ ColLib.register({
       css:  ``,
     },
 
-            /*@@@@Col - variacao-22 */
+    /*@@@@Col - variacao-22 */
     {
       id:   'variacao-22',
       name: 'Variação 22',
@@ -29580,6 +29581,5 @@ ColLib.register({
 </div>`,
       css:  ``,
     },
-
   ]
 });
