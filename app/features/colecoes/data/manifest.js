@@ -10,7 +10,7 @@ window.SenkoColecoesManifest = {
         "Responsivo",
         "adaptativos"
       ],
-      "layoutCount": 25,
+      "layoutCount": 26,
       "layouts": [
         {
           "file": "collections/carneiro-colecoes/layouts/padrao1.js",
@@ -136,6 +136,11 @@ window.SenkoColecoesManifest = {
           "file": "collections/carneiro-colecoes/layouts/variacao-25.js",
           "id": "variacao-25",
           "name": "Variação 25"
+        },
+        {
+          "file": "collections/carneiro-colecoes/layouts/variacao-26.js",
+          "id": "variacao-26",
+          "name": "Variaçao 26"
         }
       ]
     },
