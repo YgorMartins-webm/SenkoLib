@@ -649,13 +649,17 @@ function renderVariantBlocks(variants) {
   var grid = document.getElementById('variantsGrid');
   grid.innerHTML = '';
 
-  if (variants.length === 0) {
+  var sortedVariants = (Array.isArray(variants) ? variants : []).slice().sort(function (a, b) {
+    return naturalCompare((a && a.name) || '', (b && b.name) || '');
+  });
+
+  if (sortedVariants.length === 0) {
     /* Mesmo sem variantes, exibe o card de adicionar */
     grid.appendChild(_makeAddVariantCard());
     return;
   }
 
-  variants.forEach(function (v, i) {
+  sortedVariants.forEach(function (v, i) {
     var block = document.createElement('div');
     block.className = 'variant-block';
     block.dataset.variantName = v.name || '';
