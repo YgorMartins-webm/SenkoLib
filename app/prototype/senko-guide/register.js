@@ -253,31 +253,35 @@
         {
           title: 'Biblioteca',
           badge: 'layouts',
-          terms: 'biblioteca layout variacao variante senkolib register variants',
+          terms: 'biblioteca layout variacao variante senkolib register variants layout-editor editor oficial id manifest',
           paragraphs: [
             'A Biblioteca guarda layouts e variantes de layouts.',
-            'Os layouts ficam em data/layouts e as variantes ficam em data/variants.'
+            'Os layouts ficam em arquivos JS individuais dentro de data/layouts e as variantes ficam em arquivos JS individuais dentro de data/variants/[layoutId].'
           ],
           bullets: [
             'Motor: scripts/senkolib-core.js.',
             'UI: scripts/script.js.',
+            'Editor oficial: scripts/layout-editor.js.',
             'Dados: data/manifest.js, data/layouts, data/variants.',
+            'Estilos do editor: styles/layout-editor.css.',
             'GitHub: integrations/github/.'
-          ]
+          ],
+          note: 'O editor oficial nao fica mais em prototype. Ele pertence a Biblioteca e nao deve oferecer campo editavel para o ID tecnico.'
         },
         {
           title: 'Colecoes',
           badge: 'grupos',
-          terms: 'colecoes grupos layout colecao collib colgroups manifest',
+          terms: 'colecoes grupos layout colecao collib colgroups manifest collection layouts individuais',
           paragraphs: [
             'Colecoes organiza layouts dentro de colecoes e grupos.',
-            'Os grupos sao cadastro proprio e nao devem ser apagados so porque ficaram vazios.'
+            'Os grupos sao cadastro proprio e nao devem ser apagados so porque ficaram vazios.',
+            'Cada colecao tem um arquivo de metadados em data/collections/[slug]/collection.js e cada layout da colecao fica em data/collections/[slug]/layouts/[id].js.'
           ],
           bullets: [
             'Motor de colecoes: scripts/col-core.js.',
             'Motor de grupos: scripts/col-groups.js.',
             'Modais: scripts/col-modals.js.',
-            'Dados: data/manifest.js e data/col-groups-data.js.',
+            'Dados: data/manifest.js, data/col-groups-data.js e data/collections/.',
             'GitHub: integrations/github/colecoes-github.js.'
           ]
         },
@@ -314,10 +318,15 @@
         {
           title: 'Preview beta',
           badge: 'beta',
-          terms: 'preview beta prototype gamer teste prototipo',
+          terms: 'preview beta prototype gamer teste prototipo senko-guide guia',
           paragraphs: [
-            'O Preview fica em app/prototype porque ainda e uma area beta.',
+            'O Preview e o guia visual ficam em app/prototype porque ainda sao areas especiais fora das features principais.',
             'Tudo que ainda esta em teste deve comecar em prototype antes de virar feature final.'
+          ],
+          bullets: [
+            'Preview: app/prototype/gamer-preview/.',
+            'Guia interno aberto pelo botao do header: app/prototype/senko-guide/.',
+            'Editor de layout da Biblioteca nao e mais prototipo; ele fica em app/features/biblioteca/.'
           ]
         }
       ]
@@ -339,7 +348,8 @@
             'Imagens: feature independente, mas merece revisao cuidadosa quando houver reforma interna.',
             'Sources: feature independente, mas merece revisao cuidadosa quando houver reforma interna.',
             'Preview: prototipo beta em app/prototype.',
-            'Guia: prototipo global, mas com prioridade maxima de manutencao.'
+            'Guia: prototipo global, mas com prioridade maxima de manutencao.',
+            'Editor da Biblioteca: oficial, integrado em app/features/biblioteca/scripts/layout-editor.js.'
           ]
         },
         {
@@ -354,6 +364,7 @@
             'Garantir register.js, view.js, scripts, styles e dados separados.',
             'Remover dependencia escondida de outra feature.',
             'Registrar no index.html.',
+            'Remover a versao antiga de app/prototype quando o fluxo virar oficial.',
             'Atualizar este guia antes de considerar a migracao concluida.'
           ]
         }
@@ -452,16 +463,17 @@
         {
           title: 'Adicionar layout na Biblioteca',
           badge: 'biblioteca',
-          terms: 'adicionar layout biblioteca arquivo individual layouts001 manifest senkolib register registerLayout',
+          terms: 'adicionar layout biblioteca arquivo individual manifest senkolib register registerLayout sintaxe duplicado',
           paragraphs: [
             'Layouts manuais entram em data/layouts e precisam estar no manifest.',
             'Cada layout deve ficar em um arquivo proprio e registrar com SenkoLib.registerLayout({...}).'
           ],
           bullets: [
-            'Editar ou criar arquivo em app/features/biblioteca/data/layouts.',
+            'Criar arquivo em app/features/biblioteca/data/layouts/[id].js.',
             'Formato novo: registrar com SenkoLib.registerLayout({...}).',
             'O save GitHub valida o JS final antes de enviar e recusa erro de sintaxe.',
             'Atualizar app/features/biblioteca/data/manifest.js com o objeto do arquivo individual.',
+            'Nunca envolver SenkoLib.registerLayout(...) duas vezes no mesmo arquivo.',
             'Testar se aparece no grid.',
             'Testar abrir, copiar, editar e criar variante.'
           ]
@@ -476,10 +488,11 @@
           ],
           bullets: [
             'Conferir qual layout e dono da variante.',
-            'Criar ou editar o arquivo em app/features/biblioteca/data/variants.',
+            'Criar ou editar o arquivo em app/features/biblioteca/data/variants/[layoutId]/[id-da-variacao].js.',
             'Formato novo: registrar com SenkoLib.registerVariantFile(layoutId, {...}).',
             'Garantir que o manifest aponta para o arquivo individual da variante.',
             'Bloquear nome repetido ao criar e ao editar.',
+            'As variantes aparecem em ordem alfabetica/natural pelo nome, sem reordenar o manifest.',
             'Testar abrir o layout, selecionar variante, editar, salvar e recarregar.'
           ]
         },
@@ -509,11 +522,32 @@
           ],
           bullets: [
             'Editar apenas arquivos de app/features/colecoes.',
+            'Criar arquivo em app/features/colecoes/data/collections/[slug]/layouts/[id].js.',
             'Formato novo: registrar com ColLib.registerCollectionLayout(slug, {...}).',
+            'Atualizar a lista layouts da colecao dentro do manifest.',
             'Garantir nome unico dentro da colecao.',
+            'Os layouts aparecem em ordem alfabetica/natural pelo nome dentro da colecao, sem reordenar o manifest.',
             'Nao importar funcoes internas da Biblioteca.',
             'Testar criar, editar, excluir e recarregar a colecao.'
           ]
+        },
+        {
+          title: 'Editar layout ou variacao',
+          badge: 'editor',
+          terms: 'editar layout variacao editor oficial layout-editor id gerado tags preview salvar excluir',
+          paragraphs: [
+            'O editor oficial da Biblioteca fica dentro da propria feature e substitui os modais antigos.',
+            'Ele edita nome, tags, HTML, CSS e preview, mas nao deve editar o ID tecnico.'
+          ],
+          bullets: [
+            'Script: app/features/biblioteca/scripts/layout-editor.js.',
+            'CSS: app/features/biblioteca/styles/layout-editor.css.',
+            'Campo editavel: nome do layout ou nome da variacao.',
+            'Campo nao editavel: ID gerado.',
+            'Salvar layout regrava data/layouts/[id].js.',
+            'Salvar variacao regrava data/variants/[layoutId]/[id].js.'
+          ],
+          note: 'Se precisar mudar ID, trate como migracao: criar novo arquivo, atualizar manifest, mover referencias e remover o antigo.'
         },
         {
           title: 'Alterar estilos',
@@ -610,9 +644,70 @@
             'O arquivo pode existir na pasta, mas a feature so carrega o que esta no manifest.'
           ],
           bullets: [
-            'Biblioteca: verificar data/manifest.js.',
-            'Colecoes: verificar data/manifest.js.',
-            'Variantes: verificar lista variants no manifest da Biblioteca.'
+            'Layout da Biblioteca: verificar SenkoBibliotecaManifest.layouts.',
+            'Variante da Biblioteca: verificar SenkoBibliotecaManifest.variants.',
+            'Colecao: verificar SenkoColecoesManifest.collections.',
+            'Layout de colecao: verificar SenkoColecoesManifest.collections[].layouts.',
+            'Conferir se o caminho do manifest bate exatamente com a pasta real.'
+          ]
+        },
+        {
+          title: 'Mensagem: nao encontrado ao editar',
+          badge: '404 local',
+          terms: 'nao encontrado editar colecao layout de colecao manifest collection layoutId slug caminho',
+          paragraphs: [
+            'Quando uma colecao ou layout de colecao aparece no catalogo, mas falha ao editar, quase sempre o caminho do manifest nao leva ao arquivo completo.'
+          ],
+          bullets: [
+            'Conferir se collection.js existe em data/collections/[slug]/collection.js.',
+            'Conferir se o file da colecao no manifest aponta para collections/[slug]/collection.js.',
+            'Conferir se o layout esta listado em layouts no manifest da colecao.',
+            'Conferir se o arquivo existe em collections/[slug]/layouts/[id].js.',
+            'Conferir se o id do arquivo e igual ao id usado no manifest.'
+          ]
+        },
+        {
+          title: 'Layout novo nao aparece na Biblioteca',
+          badge: 'biblioteca',
+          terms: 'layout novo nao aparece biblioteca registerLayout manifest id duplicado sintaxe',
+          paragraphs: [
+            'Se o layout foi criado, mas nao aparece no grid, valide primeiro o arquivo individual e depois o manifest.'
+          ],
+          bullets: [
+            'O arquivo deve usar SenkoLib.registerLayout({...}).',
+            'Nao pode existir SenkoLib.registerLayout( duplicado no mesmo arquivo.',
+            'O arquivo deve estar em SenkoBibliotecaManifest.layouts.',
+            'O id do arquivo e o id do manifest precisam ser iguais.',
+            'Nao pode existir outro layout com nome visualmente equivalente.'
+          ]
+        },
+        {
+          title: 'Variante nova nao aparece',
+          badge: 'variante',
+          terms: 'variante variacao nova nao aparece registerVariantFile layoutId manifest',
+          paragraphs: [
+            'Variante so aparece quando o arquivo individual esta registrado no layout pai correto e listado no manifest.'
+          ],
+          bullets: [
+            'O arquivo deve usar SenkoLib.registerVariantFile(layoutId, {...}).',
+            'O layoutId deve ser o ID tecnico do layout pai.',
+            'O caminho deve seguir variants/[layoutId]/[id-da-variacao].js.',
+            'A entrada precisa estar em SenkoBibliotecaManifest.variants.',
+            'Nao pode existir outra variante com o mesmo nome dentro do layout.'
+          ]
+        },
+        {
+          title: 'Erro de sintaxe com registro duplicado',
+          badge: 'sintaxe',
+          terms: 'erro sintaxe duplicidade duplicado registerLayout duas vezes parenteses',
+          paragraphs: [
+            'O arquivo de layout ou variante deve chamar o registro apenas uma vez.'
+          ],
+          bullets: [
+            'Errado: SenkoLib.registerLayout(SenkoLib.registerLayout({...}););',
+            'Correto: SenkoLib.registerLayout({...});',
+            'A mesma regra vale para SenkoLib.registerVariantFile(...).',
+            'Se isso acontecer, corrigir o arquivo antes de atualizar o manifest.'
           ]
         },
         {
@@ -797,6 +892,10 @@
             'Token do GitHub nunca entra no codigo.',
             'Nao permitir nomes duplicados.',
             'Grupos de Colecoes nao devem ser apagados automaticamente.',
+            'Cada layout, variacao, colecao e layout de colecao novo deve ter seu proprio arquivo JS.',
+            'Todo arquivo de dados novo precisa de entrada no manifest da feature.',
+            'ID tecnico nao deve ser editado como campo comum.',
+            'Ordenacao alfabetica deve acontecer na renderizacao, sem reescrever manifest so para ordenar.',
             'Toda alteracao precisa ser testada em mais de uma aba.',
             'Toda alteracao relevante precisa atualizar este guia.'
           ]
@@ -815,6 +914,9 @@
             'Nao fazer o shell conhecer detalhes como layouts, variantes ou grupos.',
             'Nao salvar token do GitHub no codigo.',
             'Nao deixar duas colecoes, layouts, variantes ou layouts de colecao com o mesmo nome.',
+            'Nao voltar layout, variacao ou layout de colecao novo para arquivos grandes com arrays de objetos.',
+            'Nao editar ID gerado pelo editor como se fosse nome de exibicao.',
+            'Nao deixar tela oficial dentro de prototype depois que virou fluxo oficial.',
             'Nao finalizar mudanca sem atualizar o guia quando o comportamento documentado mudou.'
           ]
         },
