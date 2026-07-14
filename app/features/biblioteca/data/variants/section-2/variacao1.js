@@ -98,7 +98,7 @@ SenkoLib.registerVariantFile("section-2",
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: calc(var(--badge-size) / 2 + 1.8rem) 0.3rem 0.7rem;
+        padding: calc(var(--badge-size) / 2 + 1.8rem) 0.3rem 0.8rem;
         text-align: center;
     }
 
@@ -144,6 +144,8 @@ SenkoLib.registerVariantFile("section-2",
         .section-2-2__subtitle {
             text-align: justify;
             font-size: clamp(0.9rem, 2vw, 1.1rem);
+            max-width: 95%;
+            margin: 1.25rem auto 0;
         }
     }
 </style>`
