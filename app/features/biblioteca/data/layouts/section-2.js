@@ -1,10 +1,10 @@
 // @ts-nocheck
 SenkoLib.registerLayout(
 {
-  id: "section-2",
-  name: "Section-2 (Header Vídeo)",
-  tags: ["Section-2", "Section 2", "2", "vídeo", "header vídeo", "responsivo", "acessível"],
-  html: `<section class="video-header" aria-label="Cabeçalho do produto">
+    id: 'section-2',
+    name: 'Section-2 (Header Vídeo)',
+    tags: ['Section-2', 'Section 2', '2', 'vídeo', 'header vídeo', 'responsivo', 'acessível'],
+    html: `<section class="video-header" aria-label="Cabeçalho do produto">
     <header class="video-header__banner">
         <video class="video-header__banner-video"
             poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header_precon.webp" preload="none"
@@ -27,7 +27,7 @@ SenkoLib.registerLayout(
         </p>
     </section>
 </section>`,
-  css: `<style>
+    css: `<style>
 * {
   margin: 0;
   padding: 0;
@@ -93,7 +93,7 @@ SenkoLib.registerLayout(
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: calc(var(--badge-size) / 2 + 1.1rem) 0.3rem 2.5rem;
+  padding: calc(var(--badge-size) / 2 + 1.1rem) 0.3rem .8rem;
   text-align: center;
 }
 

@@ -1,10 +1,10 @@
 // @ts-nocheck
 SenkoLib.registerLayout(
 {
-  id: "section-1",
-  name: "Section-1 (Header Imagem)",
-  tags: ["header imagem", "section-1", "1", "section 1", "responsivo", "acessível"],
-  html: `<article style="width: 100%;" aria-labelledby="product-main-title"> <!-- fecha esse article lá no final do código, depois de todo conteúdo, e antes do fechamento da div.lp-container -->
+    id: 'section-1',
+    name: 'Section-1 (Header Imagem)',
+    tags: ['header imagem', 'section-1', '1', 'section 1', 'responsivo', 'acessível'],
+    html: `<article style="width: 100%;" aria-labelledby="product-main-title"> <!-- fecha esse article lá no final do código, depois de todo conteúdo, e antes do fechamento da div.lp-container -->
     <section class="product-header" aria-label="Cabeçalho do produto">
   <header class="product-header__banner">
     <picture style="width:100%; height:100%; margin:0;">
@@ -43,7 +43,7 @@ SenkoLib.registerLayout(
   </section>
 </section>
 `,
-  css: ` <style>
+    css: ` <style>
   *{
     margin: 0;
     padding: 0;
@@ -107,7 +107,7 @@ SenkoLib.registerLayout(
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: calc(var(--badge-size) / 2 + 1.1rem) 0.3rem 2.5rem;
+    padding: calc(var(--badge-size) / 2 + 1.1rem) 0.3rem 1.1rem;
     text-align: center;
   }
 
@@ -147,6 +147,8 @@ SenkoLib.registerLayout(
     .product-header__subtitle {
       text-align: justify;
       font-size: clamp(0.9rem, 2vw, 1.2rem);
+      max-width: 95%;
+      margin: 1.25rem auto 0;
     }
   }
 </style>`
