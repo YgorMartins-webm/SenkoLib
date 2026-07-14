@@ -107,7 +107,7 @@ SenkoLib.registerLayout(
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: calc(var(--badge-size) / 2 + 1.1rem) 0.3rem .8rem;
+    padding: calc(var(--badge-size) / 2 + 1.1rem) 0.3rem 1.1rem;
     text-align: center;
   }
 
