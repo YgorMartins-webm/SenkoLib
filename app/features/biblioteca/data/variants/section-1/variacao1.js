@@ -93,7 +93,7 @@ SenkoLib.registerVariantFile("section-1",
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: calc(var(--badge-size) / 2 + 1.8rem) 0.3rem 0.5rem;
+    padding: calc(var(--badge-size) / 2 + 1.8rem) 0.3rem 1.1rem;
     text-align: center;
   }
 
