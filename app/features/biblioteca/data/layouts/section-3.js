@@ -144,11 +144,6 @@ SenkoLib.registerLayout(
                 margin: 0;
                 transform: translateY(-50%);
             }
-
-            .section-3__frame {
-                outline: 8px solid #4a4d52;
-                border: 1px solid #8b9097;
-            }
         }
 
         @media (min-width: 992px) {
