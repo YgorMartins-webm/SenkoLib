@@ -7,7 +7,6 @@
   var api = window.SenkoBibliotecaCopyBase = window.SenkoBibliotecaCopyBase || {};
   var initialized = false;
   var htmlBasico = `<div class="lp-container">
-    <meta charset="UTF-8">
     <style>
         * {
             padding: 0;
@@ -15,9 +14,10 @@
         }
 
         .pdp {
+            width: 100%;
             display: flex;
             flex-direction: column;
-            font-family: Roboto, sans-serif
+            font-family: Roboto, sans-serif;
         }
 
         .pdp * {
@@ -25,9 +25,6 @@
             margin: 0;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
-    <title>PDP - eFácil</title>
     <!-- ---------------------------------------- ÁREA PARA COLOCAR STYLES ----------------------------------------------------------- -->
 
     <style>
@@ -163,17 +160,17 @@
     </style>
 
     <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-    <div class="pdp" id="pdp"> <!-- HTML fica dentro dessa div PDP -->
-
-
-
+    <article class="pdp" id="pdp" aria-labelledby="product-main"> <!-- HTML fica dentro dessa div PDP -->
+        
+        
+        
         <p style="color: #8a8a8a; font-family: sans-serif; font-size: clamp(1rem, 2vw, 1.2rem); text-wrap: pretty;
             text-align: center; padding: 30px 0;">
             IMAGENS MERAMENTE ILUSTRATIVAS
         </p>
 
         <!-- Área de FAQ -->
-        <section id="faq-section" aria-labelledby="faq-section-title">
+        <section id="faq-section" aria-labelledby="faq-section">
             <div id="faq-section__header">
                 <h2 id="faq-section__title" id="faq-section-title">Título Principal</h2>
                 <p id="faq-section__subtitle">Sub-título</p>
@@ -237,7 +234,7 @@
             </ul>
         </section>
 
-    </div>
+    </article>
 </div>`;
 
   function copyWithFallback(text) {
