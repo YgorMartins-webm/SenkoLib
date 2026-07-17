@@ -247,6 +247,15 @@ window.SenkoColecoesManifest = {
           "name": "padrão 2"
         }
       ]
+    },
+    {
+      "file": "collections/maicon-colecoes/collection.js",
+      "slug": "maicon-colecoes",
+      "name": "Maicon Coleções",
+      "group": "maicon",
+      "tags": [],
+      "layoutCount": 0,
+      "layouts": []
     }
   ]
 };
