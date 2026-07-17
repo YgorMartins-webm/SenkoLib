@@ -3,7 +3,7 @@ SenkoLib.registerLayout(
 {
     id: 'section-34',
     name: 'Section-34',
-    tags: ['responsivo', '34'],
+    tags: ['responsivo', '34', 'grid', 'carrossel'],
     html: `<input class="section-34__radio" type="radio" name="slide-34" id="s34-1" checked>
         <input class="section-34__radio" type="radio" name="slide-34" id="s34-2">
         <input class="section-34__radio" type="radio" name="slide-34" id="s34-3">
