@@ -17,14 +17,6 @@ SenkoLib.registerLayout(
                     </picture>
                 </figure>
                 <article class="section-3__callout">
-                    <span class="section-3__icon" aria-hidden="true">
-                        <svg class="section-3__icon-svg" viewBox="0 0 48 48" fill="none" focusable="false">
-                            <path d="M24 5.5 39 11v11.5c0 9.5-6.1 16.8-15 20-8.9-3.2-15-10.5-15-20V11l15-5.5Z"
-                                stroke="currentColor" stroke-width="3" stroke-linejoin="round" />
-                            <path d="m17 24 4.5 4.5L31.5 18" stroke="currentColor" stroke-width="3"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </span>
                     <div class="section-3__copy">
                         <h2 class="section-3__title">Atitude com acabamento metalizado</h2>
                         <p class="section-3__text">Inspirado em Camp Rock, o Metal We Rock traduz a nostalgia da Disney
@@ -86,24 +78,6 @@ SenkoLib.registerLayout(
             border-radius: 1.5rem;
             background: var(--s2-color-panel);
             box-shadow: 0 1rem 2rem rgba(74, 77, 82, 0.12);
-        }
-
-        .section-3__icon {
-            width: 3.5rem;
-            height: 3.5rem;
-            flex: 0 0 3.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 1rem;
-            color: var(--s2-color-brand);
-            background: #eceeef;
-        }
-
-        .section-3__icon-svg {
-            width: 2.5rem;
-            height: 2.5rem;
-            display: block;
         }
 
         .section-3__title {
