@@ -109,6 +109,13 @@
       </div>
       <div class="header-actions">
         <!-- Controles globais do shell: independem das views das features. -->
+        <button class="senko-global-create-trigger" id="senkoGlobalCreateBtn" title="Criar no SenkoLib"
+          aria-label="Abrir criação global" aria-haspopup="dialog" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M12 5v14" />
+            <path d="M5 12h14" />
+          </svg>
+        </button>
         <a href="https://maiconsantossilvah-dot.github.io/Criador-de-FAQ/" target="_blank"
           rel="noopener noreferrer">
           <button class="theme-toggle github-config-toggle" id="senkoForLayoutLab" title="Ir para o LayoutLab"
@@ -152,6 +159,7 @@
   <script>
     SenkoFreshAssets.writeScript('app/shell/scripts/senko-shell.js');
     SenkoFreshAssets.writeScript('app/prototype/senko-guide/register.js');
+    SenkoFreshAssets.writeScript('app/prototype/global-create/register.js');
     SenkoFreshAssets.writeScript('app/features/biblioteca/register.js');
     SenkoFreshAssets.writeScript('app/features/colecoes/register.js');
     SenkoFreshAssets.writeScript('app/features/imagens/scripts/register.js');

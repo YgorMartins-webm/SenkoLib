@@ -42,6 +42,10 @@ SenkoLib/
 |   |       |-- scripts/                 - comportamento e utilitarios exclusivos
 |   |       `-- styles/                  - estilos exclusivos da feature
 |   |
+|   |-- prototype/global-create/
+|   |   |-- register.js                  - injeta o botao global de criacao beta
+|   |   `-- styles.css                   - estilos do modal global de criacao
+|   |
 |   |-- prototype/gamer-preview/
 |   |   |-- register.js                  - registra o Preview beta no shell
 |   |   |-- view.js                      - estrutura HTML do Preview beta
