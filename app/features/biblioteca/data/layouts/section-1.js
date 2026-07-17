@@ -1,6 +1,6 @@
 // @ts-nocheck
 SenkoLib.registerLayout(
-{
+  {
     id: 'section-1',
     name: 'Section-1 (Header Imagem)',
     tags: ['header imagem', 'section-1', '1', 'section 1', 'responsivo', 'acessível'],
@@ -152,5 +152,5 @@ SenkoLib.registerLayout(
     }
   }
 </style>`
-}
+  }
 );
