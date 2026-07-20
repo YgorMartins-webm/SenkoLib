@@ -1,59 +1,70 @@
 // @ts-nocheck
 SenkoLib.registerLayout(
-{
-  id: "carrossel-com-nav",
-  name: "Section 17",
-  tags: ["Carrossel", "diversos", "nav", "32", "interativo"],
-  html: `<section class="c32-carousel" role="region" aria-roledescription="carousel" aria-label="Destaques Pedigree Barriguinha Saudável">
+  {
+    id: "carrossel-com-nav",
+    name: "Section 17",
+    tags: ["Carrossel", "diversos", "nav", "32", "interativo"],
+    html: `        <section class="c32-carousel" role="region" aria-roledescription="carousel"
+            aria-label="Destaques Pedigree Barriguinha Saudável">
 
-  <!-- Radios: Escondidos visualmente (sr-only) para permitir navegação via teclado (setas) -->
-  <input type="radio" name="c32" id="c32-s1" class="sr-only" checked>
-  <input type="radio" name="c32" id="c32-s2" class="sr-only">
+            <!-- Radios: Escondidos visualmente (sr-only) para permitir navegação via teclado (setas) -->
+            <input class="sr-only" id="c32-s1" type="radio" name="c32" aria-label="Selecionar slide Salmão" checked>
+            <input class="sr-only" id="c32-s2" type="radio" name="c32" aria-label="Selecionar slide Peru">
 
-  <!-- Navegação: Labels que funcionam como botões -->
-  <nav class="c32-nav" aria-label="Selecionar slide">
-    <label for="c32-s1" class="c32-nav__btn">Salmão</label>
-    <label for="c32-s2" class="c32-nav__btn">Peru</label>
-  </nav>
+            <!-- Navegação: Labels que funcionam como botões -->
+            <div class="c32-nav" role="navigation" aria-label="Selecionar slide">
+                <label class="c32-nav__btn" for="c32-s1">Salmão</label>
+                <label class="c32-nav__btn" for="c32-s2">Peru</label>
+            </div>
 
-  <!-- Slides -->
-  <div class="c32-slides" aria-live="polite">
+            <!-- Slides -->
+            <div class="c32-slides" aria-live="polite">
+                <div class="c32-slide" role="group" aria-roledescription="slide" aria-label="1 de 2">
+                    <picture class="section-32__groupimage-section">
+                        <source media="(max-width: 430px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_salmão_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-4.jpg?ims=430x">
+                        <source media="(max-width: 768px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_salmão_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-4.jpg?ims=768x">
+                        <source media="(max-width: 1024px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_salmão_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-4.jpg?ims=1024x">
+                        <source media="(max-width: 1238px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_salmão_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-4.jpg?ims=1238x">
+                        <source media="(max-width: 1440px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_salmão_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-4.jpg?ims=1440x">
+                        <source media="(min-width: 1441px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_salmão_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-4.jpg">
+                        <img style="border-radius: 0px 0px 0px 0px;" width="1600" height="865" loading="lazy"
+                            decoding="async" fetchpriority="low"
+                            src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_salmão_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-4.jpg"
+                            alt="Duas embalagens de ração Pedigree Barriguinha Saudável sabor Salmão (2,7kg e 900g) ao lado de um cão em fundo amarelo.">
+                    </picture>
+                </div>
 
-    <!-- SLIDE 1 -->
-    <div class="c32-slide" role="group" aria-roledescription="slide" aria-label="1 de 2">
-      <picture class="section-32__groupimage-section">
-        <source media="(max-width: 430px)"  srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_salmão_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-4.jpg?ims=430x">
-        <source media="(max-width: 768px)"  srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_salmão_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-4.jpg?ims=768x">
-        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_salmão_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-4.jpg?ims=1024x">
-        <source media="(max-width: 1238px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_salmão_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-4.jpg?ims=1238x">
-        <source media="(max-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_salmão_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-4.jpg?ims=1440x">
-        <source media="(min-width: 1441px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_salmão_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-4.jpg">
-        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_salmão_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-4.jpg"
-          alt="Duas embalagens de ração Pedigree Barriguinha Saudável sabor Salmão (2,7kg e 900g) ao lado de um cão em fundo amarelo."
-          style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
-          loading="lazy" decoding="async" fetchpriority="low">
-      </picture>
-    </div>
+                <!-- SLIDE 2 -->
+                <div class="c32-slide" role="group" aria-roledescription="slide" aria-label="2 de 2">
+                    <picture class="section-32__groupimage-section">
+                        <source media="(max-width: 430px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_peru_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-04.jpg?ims=430x">
+                        <source media="(max-width: 768px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_peru_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-04.jpg?ims=768x">
+                        <source media="(max-width: 1024px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_peru_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-04.jpg?ims=1024x">
+                        <source media="(max-width: 1238px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_peru_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-04.jpg?ims=1238x">
+                        <source media="(max-width: 1440px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_peru_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-04.jpg?ims=1440x">
+                        <source media="(min-width: 1441px)"
+                            srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_peru_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-04.jpg">
+                        <img style="border-radius: 0px 0px 0px 0px;" width="1600" height="865" loading="lazy"
+                            decoding="async" fetchpriority="low"
+                            src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_peru_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-04.jpg"
+                            alt="Duas embalagens de ração Pedigree Barriguinha Saudável sabor Peru (2,7kg e 900g) ao lado de um cão em fundo amarelo.">
+                    </picture>
+                </div>
 
-    <!-- SLIDE 2 -->
-    <div class="c32-slide" role="group" aria-roledescription="slide" aria-label="2 de 2">
-      <picture class="section-32__groupimage-section">
-        <source media="(max-width: 430px)"  srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_peru_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-04.jpg?ims=430x">
-        <source media="(max-width: 768px)"  srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_peru_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-04.jpg?ims=768x">
-        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_peru_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-04.jpg?ims=1024x">
-        <source media="(max-width: 1238px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_peru_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-04.jpg?ims=1238x">
-        <source media="(max-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_peru_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-04.jpg?ims=1440x">
-        <source media="(min-width: 1441px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_peru_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-04.jpg">
-        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/embalagens_pedigree_barriguinha_saudável_peru_2,7kg_e_900g_ao_lado_de_cão_fundo_amarelo-703206-04.jpg"
-          alt="Duas embalagens de ração Pedigree Barriguinha Saudável sabor Peru (2,7kg e 900g) ao lado de um cão em fundo amarelo."
-          style="border-radius: 0px 0px 0px 0px;" width="1600" height="865"
-          loading="lazy" decoding="async" fetchpriority="low">
-      </picture>
-    </div>
-
-  </div>
-</section>`,
-  css: `.sr-only {
+            </div>
+        </section>`,
+    css: `.sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -309,5 +320,5 @@ input[type="radio"]:focus + .c32-nav label[for="c32-s2"] {
         }
 
      }`
-}
+  }
 );

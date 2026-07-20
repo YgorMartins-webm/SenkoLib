@@ -1,69 +1,73 @@
 // @ts-nocheck
 SenkoLib.registerLayout(
-{
-  id: "section-15",
-  name: "Section-15",
-  tags: ["Split", "Section 15", "15"],
-  html: `<div class="section-15-container">
-    <div class="section-15">
-        <div class="section-15__content">
-            <!-- ══ TÍTULO + DESCRIÇÃO (apague este bloco se não quiser usar) ══ -->
-            <h2 class="section-15__title">
-                A garantia de que o que está por trás das paredes nunca será um problema
-            </h2>
-            <p class="section-15__desc">
-                Ao escolher um condutor que une a máxima segurança contra incêndios, a eficiência energética para seus
-                equipamentos de alta potência e a flexibilidade necessária para uma instalação ágil, você garante a
-                proteção do seu patrimônio e a tranquilidade de saber que sua estrutura elétrica foi feita para durar
-                uma vida inteira.
-            </p>
-            <!-- ══ FIM TÍTULO + DESCRIÇÃO ══ -->
-            <ul class="section-15__feature-list" aria-label="Benefícios do produto">
-                <li class="section-15__feature-item">
-                    <img class="section-15__feature-item-icon" loading="lazy" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2-1.png"
-                        alt="Ícone" />
-                    <div class="section-15__feature-item-body">
-                        <strong class="section-15__feature-item-title">Manhãs Sem Pausa</strong>
-                        <p class="section-15__feature-item-text">Prepare vitaminas nutritivas em segundos e use a função
-                            autolimpeza para sair de casa sem deixar bagunça na pia</p>
-                    </div>
-                </li>
-                <li class="section-15__feature-item">
-                    <img class="section-15__feature-item-icon" loading="lazy" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2-2.png"
-                        alt="Ícone" />
-                    <div class="section-15__feature-item-body">
-                        <strong class="section-15__feature-item-title">Receitas de uma Só Vez</strong>
-                        <p class="section-15__feature-item-text">A jarra de 2,1L permite cozinhar para a família inteira
-                            sem precisar bater os ingredientes em várias etapas</p>
-                    </div>
-                </li>
-                <li class="section-15__feature-item">
-                    <img class="section-15__feature-item-icon" loading="lazy" src="C:\\Users\\ygorqDownloads\\2222455_03-2-3.png"
-                        alt="Ícone" />
-                    <div class="section-15__feature-item-body">
-                        <strong class="section-15__feature-item-title">Cozinha Sempre Organizada</strong>
-                        <p class="section-15__feature-item-text">O sistema enrola-cabo e o design leve eliminam a briga
-                            com fios e facilitam o armazenamento após o uso</p>
-                    </div>
-                </li>
-                <li class="section-15__feature-item">
-                    <img class="section-15__feature-item-icon" loading="lazy" src="C:\\Users\\ygorq\\Downloads\\2222455_03-2-4.png"
-                        alt="Ícone" />
-                    <div class="section-15__feature-item-body">
-                        <strong class="section-15__feature-item-title">Cuidado com o Bolso</strong>
-                        <p class="section-15__feature-item-text">Durabilidade garantida por lâminas de aço inox e 1 ano
-                            de garantia, evitando gastos inesperados com trocas precoces</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="section-15__image-wrapper">
-            <img class="section-15__image" src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao4.jpg"
-                 alt="Eletricista com capacete branco e colete laranja em obra" />
-        </div>
-    </div>
-</div>`,
-  css: `<style>
+    {
+        id: "section-15",
+        name: "Section-15",
+        tags: ["Split", "Section 15", "15"],
+        html: `        <section class="section-15">
+            <div class="section-15__content">
+                <h2 class="section-15__title">
+                    A garantia de que o que está por trás das paredes nunca será um problema
+                </h2>
+                <p class="section-15__desc">
+                    Ao escolher um condutor que une a máxima segurança contra incêndios, a eficiência energética
+                    para seus
+                    equipamentos de alta potência e a flexibilidade necessária para uma instalação ágil, você
+                    garante a
+                    proteção do seu patrimônio e a tranquilidade de saber que sua estrutura elétrica foi feita para
+                    durar
+                    uma vida inteira.
+                </p>
+                <ul class="section-15__feature-list" aria-label="Benefícios do produto">
+                    <li class="section-15__feature-item">
+                        <img class="section-15__feature-item-icon" loading="lazy"
+                            src="C:UsersygorqDownloads2222455_03-2-1.png" alt="Ícone" />
+                        <div class="section-15__feature-item-body">
+                            <strong class="section-15__feature-item-title">Manhãs Sem Pausa</strong>
+                            <p class="section-15__feature-item-text">Prepare vitaminas nutritivas em segundos e use
+                                a função
+                                autolimpeza para sair de casa sem deixar bagunça na pia</p>
+                        </div>
+                    </li>
+                    <li class="section-15__feature-item">
+                        <img class="section-15__feature-item-icon" loading="lazy"
+                            src="C:UsersgorqDownloads222455_03-2-2.png" alt="Ícone" />
+                        <div class="section-15__feature-item-body">
+                            <strong class="section-15__feature-item-title">Receitas de uma Só Vez</strong>
+                            <p class="section-15__feature-item-text">A jarra de 2,1L permite cozinhar para a família
+                                inteira
+                                sem precisar bater os ingredientes em várias etapas</p>
+                        </div>
+                    </li>
+                    <li class="section-15__feature-item">
+                        <img class="section-15__feature-item-icon" loading="lazy"
+                            src="C:UsersygorqDownloads2222455_03-2-3.png" alt="Ícone" />
+                        <div class="section-15__feature-item-body">
+                            <strong class="section-15__feature-item-title">Cozinha Sempre Organizada</strong>
+                            <p class="section-15__feature-item-text">O sistema enrola-cabo e o design leve eliminam
+                                a briga
+                                com fios e facilitam o armazenamento após o uso</p>
+                        </div>
+                    </li>
+                    <li class="section-15__feature-item">
+                        <img class="section-15__feature-item-icon" loading="lazy"
+                            src="C:UsersygorqDownloads2222455_03-2-4.png" alt="Ícone" />
+                        <div class="section-15__feature-item-body">
+                            <strong class="section-15__feature-item-title">Cuidado com o Bolso</strong>
+                            <p class="section-15__feature-item-text">Durabilidade garantida por lâminas de aço inox
+                                e 1 ano
+                                de garantia, evitando gastos inesperados com trocas precoces</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="section-15__image-wrapper">
+                <img class="section-15__image"
+                    src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/EQUIPE_QUALIDADE_CONTEUDO/sessao4.jpg"
+                    alt="Eletricista com capacete branco e colete laranja em obra" />
+            </div>
+        </section>`,
+        css: `<style>
   .section-15-container {
       background-color: #f16425;
       padding: 1.5rem;
@@ -309,5 +313,5 @@ SenkoLib.registerLayout(
       }
   }
 </style>`
-}
+    }
 );

@@ -1,53 +1,53 @@
 // @ts-nocheck
 SenkoLib.registerLayout(
-{
-  id: "section-20",
-  name: "Section-20",
-  tags: ["bullet points"],
-  html: `<section class="section-10" aria-label="Principais características do adesivo">
-    <article class="section-10__intro">
-        <h2 class="section-10__title">Diferenciais para fixar com confiança</h2>
-        <p class="section-10__text">
-            Força de montagem, acabamento limpo e resistência para uso interno ou externo.
-            Um adesivo para resolver mais aplicações com menos ferramentas.
-        </p>
-    </article>
-    <div class="section-10__grid" aria-label="Lista de benefícios">
-        <article class="section-10__item">
-            <span class="section-10__marker" aria-hidden="true">✓</span>
-            <p class="section-10__label">Nanotecnologia</p>
-        </article>
-        <article class="section-10__item">
-            <span class="section-10__marker" aria-hidden="true">✓</span>
-            <p class="section-10__label">Flexível</p>
-        </article>
-        <article class="section-10__item">
-            <span class="section-10__marker" aria-hidden="true">✓</span>
-            <p class="section-10__label">Agarre imediato</p>
-        </article>
-        <article class="section-10__item">
-            <span class="section-10__marker" aria-hidden="true">✓</span>
-            <p class="section-10__label">Resistente aos raios UV</p>
-        </article>
-        <article class="section-10__item">
-            <span class="section-10__marker" aria-hidden="true">✓</span>
-            <p class="section-10__label">Substitui pregos e parafusos</p>
-        </article>
-        <article class="section-10__item">
-            <span class="section-10__marker" aria-hidden="true">✓</span>
-            <p class="section-10__label">Uso interno e externo</p>
-        </article>
-        <article class="section-10__item">
-            <span class="section-10__marker" aria-hidden="true">✓</span>
-            <p class="section-10__label">Não escorre</p>
-        </article>
-        <article class="section-10__item">
-            <span class="section-10__marker" aria-hidden="true">✓</span>
-            <p class="section-10__label">Aceita pintura</p>
-        </article>
-    </div>
-</section>`,
-  css: `<style>
+    {
+        id: "section-20",
+        name: "Section-20",
+        tags: ["bullet points"],
+        html: `        <section class="section-10" aria-label="Principais características do adesivo">
+            <div class="section-10__intro">
+                <h2 class="section-10__title">Diferenciais para fixar com confiança</h2>
+                <p class="section-10__text">
+                    Força de montagem, acabamento limpo e resistência para uso interno ou externo.
+                    Um adesivo para resolver mais aplicações com menos ferramentas.
+                </p>
+            </div>
+            <ul class="section-10__grid" aria-label="Lista de benefícios">
+                <li class="section-10__item">
+                    <span class="section-10__marker" aria-hidden="true">✓</span>
+                    <p class="section-10__label">Nanotecnologia</p>
+                </li>
+                <li class="section-10__item">
+                    <span class="section-10__marker" aria-hidden="true">✓</span>
+                    <p class="section-10__label">Flexível</p>
+                </li>
+                <li class="section-10__item">
+                    <span class="section-10__marker" aria-hidden="true">✓</span>
+                    <p class="section-10__label">Agarre imediato</p>
+                </li>
+                <li class="section-10__item">
+                    <span class="section-10__marker" aria-hidden="true">✓</span>
+                    <p class="section-10__label">Resistente aos raios UV</p>
+                </li>
+                <li class="section-10__item">
+                    <span class="section-10__marker" aria-hidden="true">✓</span>
+                    <p class="section-10__label">Substitui pregos e parafusos</p>
+                </li>
+                <li class="section-10__item">
+                    <span class="section-10__marker" aria-hidden="true">✓</span>
+                    <p class="section-10__label">Uso interno e externo</p>
+                </li>
+                <li class="section-10__item">
+                    <span class="section-10__marker" aria-hidden="true">✓</span>
+                    <p class="section-10__label">Não escorre</p>
+                </li>
+                <li class="section-10__item">
+                    <span class="section-10__marker" aria-hidden="true">✓</span>
+                    <p class="section-10__label">Aceita pintura</p>
+                </li>
+            </ul>
+        </section>`,
+        css: `<style>
     .section-10 {
         padding: 1.5rem;
         box-sizing: border-box;
@@ -176,5 +176,5 @@ SenkoLib.registerLayout(
         }
     }
 </style>`
-}
+    }
 );

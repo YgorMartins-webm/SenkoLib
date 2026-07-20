@@ -1,94 +1,84 @@
 // @ts-nocheck
 SenkoLib.registerLayout(
-{
-  id: "section-21",
-  name: "Section-18",
-  tags: ["cards", "clicavel", "interativo", "diversos"],
-  html: ` <section class="features-section">
-    <div class="section-header" aria-labelledby="main-title">
-        <h2 id="main-title">TUDO O QUE VOCÊ PROCURA</h2>
-    </div>
+    {
+        id: "section-21",
+        name: "Section-18",
+        tags: ["cards", "clicavel", "interativo", "diversos"],
+        html: `        <section class="features-section" aria-labelledby="main-title">
+            <div class="section-header">
+                <h2 id="main-title">TUDO O QUE VOCÊ PROCURA</h2>
+            </div>
 
-    <!-- Inputs de rádio agrupados para acessibilidade -->
-    <div role="radiogroup" aria-label="Escolha uma característica para visualizar">
-        <input type="radio" id="feat1" name="feature" class="sr-only" checked>
-        <input type="radio" id="feat2" name="feature" class="sr-only">
-        <input type="radio" id="feat3" name="feature" class="sr-only">
+            <!-- Inputs de rádio agrupados para acessibilidade -->
+            <div role="radiogroup" aria-label="Escolha uma característica para visualizar">
+                <input class="sr-only" id="feat1" type="radio" name="feature"
+                    aria-label="Selecionar característica resistência" checked>
+                <input class="sr-only" id="feat2" type="radio" name="feature"
+                    aria-label="Selecionar característica pegada segura">
+                <input class="sr-only" id="feat3" type="radio" name="feature"
+                    aria-label="Selecionar característica troca de disco">
 
-        <div class="grid-container">
-            <!-- Coluna Esquerda -->
-            <aside class="column" aria-label="Funcionalidade de resistência">
-                <label for="feat1" class="feature-card" role="radio" aria-checked="true" tabindex="0">
-                    <article>
-                        <h2>É RESISTENTE?</h2>
-                        <p>Sim! Possui caixa de engrenagem metálica para maior vida útil e interruptor selado que bloqueia a entrada de pó.</p>
-                    </article>
-                </label>
-            </aside>
+                <div class="grid-container">
+                    <!-- Coluna Esquerda -->
+                    <div class="column">
+                        <label class="feature-card" for="feat1" tabindex="0">
+                            <div>
+                                <h2>É RESISTENTE?</h2>
+                                <p>Sim! Possui caixa de engrenagem metálica para maior vida útil e interruptor selado
+                                    que bloqueia a entrada de pó.</p>
+                            </div>
+                        </label>
+                    </div>
 
-            <!-- Coluna Central: Imagens (Picture) e Card 2 -->
-            <section class="image-display" aria-label="Imagem ilustrativa da funcionalidade selecionada">
-                <div class="circle-frame" aria-live="polite" aria-label="Imagem da funcionalidade selecionada">
-                    
-                    <!-- IMAGEM 1 RESPONSIVA -->
-                    <picture class="img1">
-                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=492x">
-                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=301x">
-                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=318x">
-                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=318x">
-                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=400x">
-                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg?ims=400x">
-                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg" 
-                        alt="Operador com Esmerilhadeira Black & Decker realizando acabamento sobre solda">
-                    </picture>
+                    <!-- Coluna Central: Imagens (Picture) e Card 2 -->
+                    <div class="image-display" role="group"
+                        aria-label="Imagem ilustrativa da funcionalidade selecionada">
+                        <div class="circle-frame" role="img" aria-live="polite"
+                            aria-label="Imagem da funcionalidade selecionada">
 
-                    <!-- IMAGEM 2 RESPONSIVA -->
-                    <picture class="img2">
-                       <source media="(max-width: 320px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=492x">
-                        <source media="(max-width: 375px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=301x">
-                        <source media="(min-width: 400px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=318x">
-                        <source media="(max-width: 1024px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=318x">
-                        <source media="(max-width: 1280px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=400x">
-                        <source media="(min-width: 1440px)" srcset="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg?ims=400x">
-                        <img src="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg" 
-                        alt="Esmerilhadeira Black & Decker G720XB2 limpando superfície enferrujada">
-                    </picture>
+                            <!-- IMAGEM 1 RESPONSIVA -->
+                            <div class="img1">
+                                <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-acabamento-solda-metal-509478-03.jpg"
+                                    alt="Operador com Esmerilhadeira Black & Decker realizando acabamento sobre solda">
+                            </div>
 
-                    <!-- IMAGEM 3 RESPONSIVA -->
-                    <picture class="img3">
-                        <source media="(max-width: 320px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=492x">
-                        <source media="(max-width: 375px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=301x">
-                        <source media="(min-width: 400px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=318x">
-                        <source media="(max-width: 1024px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=318x">
-                        <source media="(max-width: 1280px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=400x">
-                        <source media="(min-width: 1440px)" srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg?ims=400x">
-                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg" 
-                        alt="Esmerilhadeira Black & Decker desbastando borda de peça metálica espessa">
-                    </picture>
+                            <!-- IMAGEM 2 RESPONSIVA -->
+                            <div class="img2">
+                                <img src="	https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-limpeza-superficie-enferrujada-509478-04.jpg"
+                                    alt="Esmerilhadeira Black & Decker G720XB2 limpando superfície enferrujada">
+                            </div>
 
+                            <!-- IMAGEM 3 RESPONSIVA -->
+                            <div class="img3">
+                                <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmerilhadeira-angular-black-decker-g720xb2-desbaste-borda-chapa-metal-509478-05.jpg"
+                                    alt="Esmerilhadeira Black & Decker desbastando borda de peça metálica espessa">
+                            </div>
+
+                        </div>
+
+                        <label class="feature-card" for="feat2" style="width: 90%;" tabindex="0">
+                            <div>
+                                <h2>A PEGADA É SEGURA?</h2>
+                                <p>Sua carcaça é emborrachada e conta com empunhadura ergonômica de 3 posições, dando
+                                    total controle.</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Coluna Direita -->
+                    <div class="column" role="group" aria-label="Funcionalidade de troca de disco">
+                        <label class="feature-card" for="feat3" tabindex="0">
+                            <div>
+                                <h2>É FÁCIL TROCAR DISCO?</h2>
+                                <p>A troca de disco é rápida graças ao botão de trava do eixo e o ajuste da guarda é
+                                    feito sem ferramentas.</p>
+                            </div>
+                        </label>
+                    </div>
                 </div>
-
-                <label for="feat2" class="feature-card" role="radio" style="width: 90%;" aria-checked="false" tabindex="0">
-                    <article>
-                        <h2>A PEGADA É SEGURA?</h2>
-                        <p>Sua carcaça é emborrachada e conta com empunhadura ergonômica de 3 posições, dando total controle.</p>
-                    </article>
-                </label>
-            </section>
-
-            <!-- Coluna Direita -->
-            <aside class="column" aria-label="Funcionalidade de troca de disco">
-                <label for="feat3" class="feature-card" role="radio" aria-checked="false" tabindex="0">
-                    <article>
-                        <h2>É FÁCIL TROCAR DISCO?</h2>
-                        <p>A troca de disco é rápida graças ao botão de trava do eixo e o ajuste da guarda é feito sem ferramentas.</p>
-                    </article>
-                </label>
-            </aside>
-        </div>
-    </div>
-</section>`,
-  css: `   .sr-only {
+            </div>
+        </section>`,
+        css: `   .sr-only {
             position: absolute;
             width: 1px;
             height: 1px;
@@ -258,5 +248,5 @@ SenkoLib.registerLayout(
 
 
 `
-}
+    }
 );

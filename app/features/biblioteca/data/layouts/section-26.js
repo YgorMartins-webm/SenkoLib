@@ -1,59 +1,63 @@
 // @ts-nocheck
 SenkoLib.registerLayout(
-{
-    id: 'section-26',
-    name: 'Section-26',
-    tags: ['Split', 'interativo', '21', 'animado'],
-    html: `<div class="section-26-container section-anchor" id="funcoes-3-em-1">
-    <input class="section-26__switcher-control" id="function-sandwich" type="radio" name="section-26__switcher" checked>
-    <input class="section-26__switcher-control" id="function-grill" type="radio" name="section-26__switcher">
-    <input class="section-26__switcher-control" id="function-plate" type="radio" name="section-26__switcher">
+    {
+        id: 'section-26',
+        name: 'Section-26',
+        tags: ['Split', 'interativo', '21', 'animado'],
+        html: `        <section class="section-26-container section-anchor" id="funcoes-3-em-1"
+            aria-label="Funções 3 em 1 do aparelho">
+            <input class="section-26__switcher-control" id="function-sandwich" type="radio" name="section-26__switcher"
+                aria-label="Selecionar função Sanduicheira" checked>
+            <input class="section-26__switcher-control" id="function-grill" type="radio" name="section-26__switcher"
+                aria-label="Selecionar função Grill">
+            <input class="section-26__switcher-control" id="function-plate" type="radio" name="section-26__switcher"
+                aria-label="Selecionar função Chapa">
 
-    <div class="section-26 is-reverse">
-        <div class="section-26__content">
-            <h2 class="section-26__title">Um aparelho, três funções</h2>
-            <p class="section-26__desc">Selecione uma função para conhecer as possibilidades do aparelho.</p>
+            <div class="section-26 is-reverse">
+                <div class="section-26__content">
+                    <h2 class="section-26__title">Um aparelho, três funções</h2>
+                    <p class="section-26__desc">Selecione uma função para conhecer as possibilidades do aparelho.</p>
 
-            <div class="section-26__switcher">
-                <div class="section-26__switcher-tabs" role="group" aria-label="Escolha uma função do aparelho">
-                    <label class="section-26__switcher-tab section-26__switcher-tab--sandwich"
-                        for="function-sandwich">Sanduicheira</label>
-                    <label class="section-26__switcher-tab section-26__switcher-tab--grill"
-                        for="function-grill">Grill</label>
-                    <label class="section-26__switcher-tab section-26__switcher-tab--plate"
-                        for="function-plate">Chapa</label>
+                    <div class="section-26__switcher">
+                        <div class="section-26__switcher-tabs" role="group" aria-label="Escolha uma função do aparelho">
+                            <label class="section-26__switcher-tab section-26__switcher-tab--sandwich"
+                                for="function-sandwich">Sanduicheira</label>
+                            <label class="section-26__switcher-tab section-26__switcher-tab--grill"
+                                for="function-grill">Grill</label>
+                            <label class="section-26__switcher-tab section-26__switcher-tab--plate"
+                                for="function-plate">Chapa</label>
+                        </div>
+
+                        <div class="section-26__switcher-panels">
+                            <div class="section-26__switcher-panel section-26__switcher-panel--sandwich">
+                                <h3 class="section-26__switcher-panel-title">Sanduíches para diferentes momentos</h3>
+                                <p class="section-26__switcher-panel-text">Permite preparar sanduíches e mistos com
+                                    contato entre as chapas.</p>
+                            </div>
+
+                            <div class="section-26__switcher-panel section-26__switcher-panel--grill">
+                                <h3 class="section-26__switcher-panel-title">Grelhados com mais possibilidades</h3>
+                                <p class="section-26__switcher-panel-text">Pode ser utilizado no preparo de
+                                    hambúrgueres, peixes e outros grelhados.</p>
+                            </div>
+
+                            <div class="section-26__switcher-panel section-26__switcher-panel--plate">
+                                <h3 class="section-26__switcher-panel-title">Chapa lisa para variar as receitas</h3>
+                                <p class="section-26__switcher-panel-text">A chapa lisa inferior permite preparar ovos,
+                                    omeletes, tapiocas e pão na chapa.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="section-26__switcher-panels">
-                    <article class="section-26__switcher-panel section-26__switcher-panel--sandwich">
-                        <h3 class="section-26__switcher-panel-title">Sanduíches para diferentes momentos</h3>
-                        <p class="section-26__switcher-panel-text">Permite preparar sanduíches e mistos com
-                            contato entre as chapas.</p>
-                    </article>
-
-                    <article class="section-26__switcher-panel section-26__switcher-panel--grill">
-                        <h3 class="section-26__switcher-panel-title">Grelhados com mais possibilidades</h3>
-                        <p class="section-26__switcher-panel-text">Pode ser utilizado no preparo de
-                            hambúrgueres, peixes e outros grelhados.</p>
-                    </article>
-
-                    <article class="section-26__switcher-panel section-26__switcher-panel--plate">
-                        <h3 class="section-26__switcher-panel-title">Chapa lisa para variar as receitas</h3>
-                        <p class="section-26__switcher-panel-text">A chapa lisa inferior permite preparar ovos,
-                            omeletes, tapiocas e pão na chapa.</p>
-                    </article>
+                <div class="section-26__image-wrapper">
+                    <img class="section-26__image"
+                        src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/press-grill-mondial-master-press-pg-01-cl-grelhando-carne-e-legumes-preto-inox-2224740-2224741-02.webp"
+                        alt="Imagem ilustrativa dos recursos práticos do Grill Mondial Master Press" />
                 </div>
             </div>
-        </div>
-
-        <div class="section-26__image-wrapper">
-            <img class="section-26__image"
-                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/press-grill-mondial-master-press-pg-01-cl-grelhando-carne-e-legumes-preto-inox-2224740-2224741-02.webp"
-                alt="Imagem ilustrativa dos recursos práticos do Grill Mondial Master Press" />
-        </div>
-    </div>
-</div>`,
-    css: `<style>
+        </section>`,
+        css: `<style>
     /* ============ COMPARTILHADO: .section-26 (usado em #funcoes-3-em-1 E #preparos) ============ */
     .section-26-container {
         background-color: #b8321f;
@@ -419,5 +423,5 @@ SenkoLib.registerLayout(
         }
     }
 </style>`
-}
+    }
 );

@@ -1,22 +1,21 @@
 // @ts-nocheck
 SenkoLib.registerLayout(
-{
-    id: 'section-3',
-    name: 'Section-3',
-    tags: ['full width', 'hero', '3', 'troca de imagem'],
-    html: `        <section class="section-3" aria-label="Características do Esmalte Impala Disney Channel Metal We Rock 7,5 ml">
-            <article class="section-3__frame">
-                <figure class="section-3__media">
+    {
+        id: 'section-3',
+        name: 'Section-3',
+        tags: ['full width', 'hero', '3', 'troca de imagem'],
+        html: `        <section class="section-3">
+            <div class="section-3__frame">
+                <div class="section-3__media">
                     <picture class="section-3__picture">
                         <source media="(max-width: 760px)"
                             srcset="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmalte-impala-disney-channel-camp-rock-ambientado-vertical-metalizado-prata-113631-01-2.webp">
-                        <img class="section-3__image"
+                        <img class="section-3__image" width="1600" height="650" loading="lazy" decoding="async"
                             src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/esmalte-impala-disney-channel-camp-rock-ambientado-horizontal-metalizado-prata-113631-01-1.webp"
-                            alt="Esmalte Impala Disney Channel Metal We Rock 7,5 ml em cenário inspirado em Camp Rock"
-                            width="1600" height="650" loading="lazy" decoding="async">
+                            alt="Esmalte Impala Disney Channel Metal We Rock 7,5 ml em cenário inspirado em Camp Rock">
                     </picture>
-                </figure>
-                <article class="section-3__callout">
+                </div>
+                <div class="section-3__callout">
                     <div class="section-3__copy">
                         <h2 class="section-3__title">Atitude com acabamento metalizado</h2>
                         <p class="section-3__text">Inspirado em Camp Rock, o Metal We Rock traduz a nostalgia da Disney
@@ -24,10 +23,10 @@ SenkoLib.registerLayout(
                             em um acabamento metalizado criado para brilhar.
                         </p>
                     </div>
-                </article>
-            </article>
+                </div>
+            </div>
         </section>`,
-    css: `    <style>
+        css: `    <style>
         .section-3 {
             --s2-color-brand: #4a4d52;
             --s2-color-ink: #202124;
@@ -143,5 +142,5 @@ SenkoLib.registerLayout(
             }
         }
     </style>`
-}
+    }
 );
