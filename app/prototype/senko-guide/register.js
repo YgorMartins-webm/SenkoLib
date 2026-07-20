@@ -46,6 +46,7 @@
             'Sources gera picture, source e ims.',
             'Preview e uma area beta para testes.',
             'Criador global e um prototipo de entrada unica para futuras criacoes em qualquer aba.',
+            'Notas da equipe e um prototipo para guardar prompts, regras, guias e padroes em arquivos proprios.',
             'No fluxo atual, Biblioteca cria layouts e variacoes; Colecoes cria colecoes e layouts dentro de uma colecao existente.'
           ]
         },
@@ -185,7 +186,7 @@
             'app/shell -> cria topo, abas, tema, botao GitHub e raiz neutra das features.',
             'app/shared -> fornece cores, fontes, componentes neutros e assets globais.',
             'app/features -> guarda features finais, cada uma com seus arquivos proprios.',
-            'app/prototype -> guarda ideias beta, como Preview, este Guia e o criador global.',
+            'app/prototype -> guarda ideias beta, como Preview, este Guia, o criador global e Notas da equipe.',
             'integrations/github -> fica dentro da feature dona daquela integracao.'
           ],
           note: 'Analogia: index e a porta de entrada, shell e a recepcao, shared e o almoxarifado, features sao as salas de trabalho.'
@@ -320,14 +321,16 @@
         {
           title: 'Preview beta',
           badge: 'beta',
-          terms: 'preview beta prototype gamer teste prototipo senko-guide guia criador global create modal',
+          terms: 'preview beta prototype gamer teste prototipo senko-guide guia criador global create modal notas equipe team notes',
           paragraphs: [
-            'O Preview, o guia visual e o criador global ficam em app/prototype porque ainda sao areas especiais fora das features principais.',
+            'O Preview, o guia visual, o criador global e Notas da equipe ficam em app/prototype porque ainda sao areas especiais fora das features principais.',
             'Tudo que ainda esta em teste deve comecar em prototype antes de virar feature final.'
           ],
           bullets: [
             'Criador global: app/prototype/global-create/.',
             'Ele injeta o botao laranja de + no header e chama contratos publicos da Biblioteca e de Colecoes para abrir os modais de criacao.',
+            'Notas da equipe: app/prototype/team-notes/.',
+            'Cada nota criada pelo Team Notes deve virar um arquivo proprio em app/prototype/team-notes/data/notes e entrar no manifest.js.',
             'Preview: app/prototype/gamer-preview/.',
             'Guia interno aberto pelo botao do header: app/prototype/senko-guide/.',
             'Editor de layout da Biblioteca nao e mais prototipo; ele fica em app/features/biblioteca/.'
@@ -352,6 +355,7 @@
             'Imagens: feature independente, mas merece revisao cuidadosa quando houver reforma interna.',
             'Sources: feature independente, mas merece revisao cuidadosa quando houver reforma interna.',
             'Criador global: prototipo beta aberto por botao laranja no header.',
+            'Notas da equipe: prototipo beta com arquivos individuais e salvamento via GitHub.',
             'Preview: prototipo beta em app/prototype.',
             'Guia: prototipo global, mas com prioridade maxima de manutencao.',
             'Editor da Biblioteca: oficial, integrado em app/features/biblioteca/scripts/layout-editor.js.'

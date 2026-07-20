@@ -46,6 +46,13 @@ SenkoLib/
 |   |   |-- register.js                  - injeta o botao global de criacao beta
 |   |   `-- styles.css                   - estilos do modal global de criacao
 |   |
+|   |-- prototype/team-notes/
+|   |   |-- register.js                  - injeta o botao de notas da equipe e salva notas no GitHub
+|   |   |-- styles.css                   - estilos do modal de notas da equipe
+|   |   `-- data/
+|   |       |-- manifest.js               - indice das notas carregadas pelo prototipo
+|   |       `-- notes/                    - um arquivo JS por nota criada
+|   |
 |   |-- prototype/gamer-preview/
 |   |   |-- register.js                  - registra o Preview beta no shell
 |   |   |-- view.js                      - estrutura HTML do Preview beta
