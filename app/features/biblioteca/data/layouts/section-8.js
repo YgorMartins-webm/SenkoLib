@@ -1,10 +1,10 @@
 // @ts-nocheck
 SenkoLib.registerLayout(
-    {
-        id: 'section-8',
-        name: 'Section-8',
-        tags: ['58', 'Split', 'Carrossel', 'interativo'],
-        html: `        <section class="section-8 section-8--interactive">
+{
+    id: 'section-8',
+    name: 'Section-8',
+    tags: ['58', 'Split', 'Carrossel', 'interativo'],
+    html: `        <section class="section-8 section-8--interactive">
             <div class="section-8__inner">
                 <div class="section-8__tabs" role="radiogroup" aria-label="Escolha o benefício exibido">
                     <label class="section-8__tab section-8__tab--protection">
@@ -143,7 +143,7 @@ SenkoLib.registerLayout(
                 </div>
             </div>
         </section>`,
-        css: `<style>
+    css: `<style>
     .section-8 {
         --s3-color-brand: #003da5;
         --s3-color-ink: #081844;
@@ -235,7 +235,7 @@ SenkoLib.registerLayout(
     .section-8__viewport {
         width: 100%;
         display: grid;
-        align-items: start;
+        align-items: center;
         overflow: hidden;
         order: -2;
         border-radius: 1.5rem;
@@ -424,5 +424,5 @@ SenkoLib.registerLayout(
         }
     }
 </style>`
-    }
+}
 );
