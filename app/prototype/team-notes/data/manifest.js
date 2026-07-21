@@ -2,6 +2,18 @@
 window.SenkoTeamNotesManifest = {
   "notes": [
     {
+      "id": "padronizacao-html-2",
+      "title": "PADRONIZAÇÃO HTML 2",
+      "type": "prompt",
+      "tags": [
+        "Semântico",
+        "responsivo",
+        "wai aria"
+      ],
+      "file": "notes/padronizacao-html-2.js",
+      "updatedAt": "2026-07-20T21:14:34.875Z"
+    },
+    {
       "id": "teste",
       "title": "Teste",
       "type": "prompt",
