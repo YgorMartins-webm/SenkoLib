@@ -1,9 +1,9 @@
 // @ts-nocheck
 SenkoLib.registerLayout(
-  {
-    id: "section-33",
-    name: "Section-33",
-    tags: ["Video", "full width", "33"],
+{
+    id: 'section-33',
+    name: 'Section-33',
+    tags: ['Video', 'full width', '33'],
     html: `        <section class="section-33__container" aria-label="Seção de vídeo do produto">
             <div class="section-33__video-section">
                 <div class="section-33__video-wrapper">
@@ -72,52 +72,55 @@ SenkoLib.registerLayout(
                 </div>
             </div>
         </section>`,
-    css: `<style>
-  .section-33__container {
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-  }
+    css: `    <style>
+        .section-33__container {
+            width: 92%;
+            border-radius: 26px;
+            max-width: 1600px;
+            margin: 0 auto;
+            background-color: #2F6F68;
+        }
 
-  .section-33__video-section {
-    position: relative;
-    width: 100%;
-    max-height: 865px;
-    overflow: hidden;
-    /* background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #e94560 100%); */
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 18px 0;
-  }
+        .section-33__video-section {
+            position: relative;
+            width: 95%;
+            margin: auto;
+            max-height: 865px;
+            overflow: hidden;
+            /* background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #e94560 100%); */
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 0;
+        }
 
-  .section-33__video-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 1280px;
-    max-height: 865px;
+        .section-33__video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1280px;
+            max-height: 865px;
 
-    /*
+            /*
      * PROPORÇÃO DO VÍDEO
      * 16:9 = padding-bottom: 56.25%
      * 4:3  = padding-bottom: 75%
      * 1:1  = padding-bottom: 100%
      */
-    padding-bottom: 56.25%;
+            padding-bottom: 56.25%;
 
-    margin: 0 auto;
-  }
+            margin: 0 auto;
+        }
 
-  .section-33__video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 18px;
-  }
-</style>`
-  }
+        .section-33__video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 18px;
+        }
+    </style>`
+}
 );
