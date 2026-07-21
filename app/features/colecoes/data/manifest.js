@@ -254,7 +254,7 @@ window.SenkoColecoesManifest = {
       "name": "Maicon Coleções",
       "group": "maicon",
       "tags": [],
-      "layoutCount": 2,
+      "layoutCount": 3,
       "layouts": [
         {
           "file": "collections/maicon-colecoes/layouts/padrao-1.js",
@@ -265,6 +265,11 @@ window.SenkoColecoesManifest = {
           "file": "collections/maicon-colecoes/layouts/padrao-2.js",
           "id": "padrao-2",
           "name": "padrão 2"
+        },
+        {
+          "file": "collections/maicon-colecoes/layouts/padrao-3.js",
+          "id": "padrao-3",
+          "name": "padrão 3"
         }
       ]
     }
