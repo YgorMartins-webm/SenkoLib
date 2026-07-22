@@ -3,35 +3,33 @@ SenkoLib.registerVariantFile("section-2",
 {
   id: "variacao1",
   name: "variacao1",
-  html: `<section class="section-2-2" aria-label="Cabeçalho do produto">
-    <header class="section-2-2__banner">
-        <div class="section-2-2__banner-container">
-            <video class="section-2-2__banner-video"
-                poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header_giovannababy.webp"
-                preload="none" autoplay muted loop playsinline aria-hidden="true">
-                <source
-                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header_giovannababy.webm">
-            </video>
+  html: `    <section class="section-2-2" aria-label="Cabeçalho do conteúdo">
+        <div class="section-2-2__banner">
+            <div class="section-2-2__banner-container">
+                <video class="section-2-2__banner-video"
+                    poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header_giovannababy.webp"
+                    preload="none" autoplay muted loop playsinline aria-hidden="true">
+                    <source src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header_giovannababy.webm">
+                </video>
+            </div>
+            <div class="section-2-2__badge" role="img" aria-label="Logo da marca">
+                <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/logo-cottonbaby2.png"
+                    alt="Logo da marca" class="section-2-2__badge-img">
+            </div>
         </div>
 
-        <div class="section-2-2__badge" role="img" aria-label="Logo da marca">
-            <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/cottonbaby/logo-cottonbaby2.png"
-                alt="Logo da marca" class="section-2-2__badge-img">
+        <div class="section-2-2__body">
+            <small class="section-2-2__brand"> Marca </small>
+            <h2 class="section-2-2__title">
+                TÍTULO DO PRODUTO GAMER <strong>Nome, Modelo e Diferencial</strong>
+            </h2>
+            <p class="section-2-2__subtitle">
+                Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
+                Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
+                Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
+            </p>
         </div>
-    </header>
-
-    <article class="section-2-2__body">
-        <small class="section-2-2__brand"> Marca </small>
-        <h2 class="section-2-2__title">
-            TÍTULO DO PRODUTO GAMER <strong>Nome, Modelo e Diferencial</strong>
-        </h2>
-        <p class="section-2-2__subtitle">
-            Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
-            Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
-            Isso é uma descrição. Isso é uma descrição. Isso é uma descrição.
-        </p>
-    </article>
-</section>`,
+    </section>`,
   css: `<style>
     * {
         margin: 0;
