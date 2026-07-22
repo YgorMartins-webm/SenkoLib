@@ -156,24 +156,30 @@ ColLib.registerCollectionLayout('maicon-colecoes',
     </style>
 
     <style>
-        .lp-container * {
+        * {
             margin: 0;
             padding: 0;
         }
 
-        .product-header {
+        .video-header,
+        .video-header * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .video-header {
             --badge-size: 8rem;
             --banner-height: 250px;
-
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
             position: relative;
+            font-family: sans-serif;
             container-type: inline-size;
         }
 
-        .product-header__banner {
+        .video-header__banner {
             width: 100%;
             height: var(--banner-height);
             position: relative;
@@ -181,20 +187,17 @@ ColLib.registerCollectionLayout('maicon-colecoes',
             justify-content: center;
         }
 
-        .product-header__banner figure {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-        }
-
-        .product-header__banner-img {
+        .video-header__banner-video {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
+            pointer-events: none;
         }
 
-        .product-header__badge {
+        .video-header__badge {
             position: absolute;
             bottom: calc(var(--badge-size) / -2);
             width: var(--badge-size);
@@ -208,30 +211,30 @@ ColLib.registerCollectionLayout('maicon-colecoes',
             z-index: 10;
         }
 
-        .product-header__badge-img {
+        .video-header__badge-img {
             max-width: 90px;
             max-height: 90px;
             object-fit: contain;
         }
 
-        .product-header__body {
+        .video-header__body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: calc(var(--badge-size) / 2 + 1.1rem) 0.3rem 1.1rem;
+            padding: calc(var(--badge-size) / 2 + 1.1rem) 0.3rem .8rem;
             text-align: center;
         }
 
-        .product-header__brand {
+        .video-header__brand {
             color: #ff9900;
             font-size: 0.75rem;
             font-weight: 700;
-            letter-spacing: 0.08em;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
         }
 
-        .product-header__title {
+        .video-header__title {
+            color: #000;
             font-size: clamp(1.4rem, 4vw, 2.4rem);
             line-height: clamp(1.6rem, 4vw, 3.1rem);
             font-weight: 600;
@@ -239,7 +242,7 @@ ColLib.registerCollectionLayout('maicon-colecoes',
             text-wrap: pretty;
         }
 
-        .product-header__subtitle {
+        .video-header__subtitle {
             color: #8a8a8a;
             font-size: clamp(1rem, 2vw, 1.2rem);
             line-height: 120%;
@@ -248,18 +251,27 @@ ColLib.registerCollectionLayout('maicon-colecoes',
             text-wrap: pretty;
         }
 
+        @media (prefers-contrast: more) {
+            .video-header__subtitle {
+                color: #000;
+            }
+
+            .video-header__brand {
+                color: #3a2301;
+            }
+        }
+
         @media (max-width: 768px) {
-            .product-header {
+            .video-header {
                 --banner-height: 180px;
             }
         }
 
         @media (max-width: 470px) {
-            .product-header__subtitle {
+            .video-header__subtitle {
                 text-align: justify;
-                font-size: clamp(0.9rem, 2vw, 1.2rem);
-                max-width: 95%;
-                margin: 1.25rem auto 0;
+                font-size: clamp(0.9rem, 2vw, 1.5rem);
+                font-weight: 550;
             }
         }
     </style>
@@ -1303,7 +1315,7 @@ ColLib.registerCollectionLayout('maicon-colecoes',
         .ll-carousel__viewport {
             aspect-ratio: 16 / 9;
             background: var(--ivory);
-            border: 1px solid rgba(216, 121, 95, 0.72);
+            border: 1px solid rgba(252, 251, 250, 0.72);
             border-radius: 20px;
             box-shadow: var(--ll-carousel-shadow);
             max-width: 1120px;
@@ -1314,7 +1326,7 @@ ColLib.registerCollectionLayout('maicon-colecoes',
         }
 
         .ll-carousel__caption {
-            background: rgba(65, 32, 29, 0.82) !important;
+            background: rgb(127 99 54 / 73%) !important;
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 16px;
             box-shadow: 0 16px 36px rgba(40, 20, 18, 0.2);
@@ -1587,7 +1599,7 @@ ColLib.registerCollectionLayout('maicon-colecoes',
             }
 
             .ll-carousel__caption {
-                background: #db567a !important;
+                background: #7c6d41 !important;
                 border: 0;
                 border-radius: 12px;
                 box-shadow: none;
@@ -1660,238 +1672,239 @@ ColLib.registerCollectionLayout('maicon-colecoes',
         }
     </style>
     <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-    <div class="pdp" id="pdp"> <!-- HTML fica dentro dessa div PDP -->
+    <div class="pdp" id="pdp" aria-label="product-main-title"> <!-- HTML fica dentro dessa div PDP -->
 
-        <section class="product-header">
-            <div class="product-header__banner">
-                <img class="product-header__banner-img" loading="eager"
-                    src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/textura-creme-rosa-seda-frutilly-fundo-113502-00-00.webp"
-                    alt="Textura cremosa rosa inspirada no Creme para Pentear Seda Frutilly com efeito fluido em close">
-                <div class="product-header__badge">
-                    <img class="product-header__badge-img"
-                        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/seda/logo-seda.png"
-                        alt="Logo da Seda">
+        <section class="video-header">
+            <div class="video-header__banner">
+                <video class="video-header__banner-video"
+                    poster="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header_dove.webp" preload="none"
+                    autoplay muted loop playsinline width="1200" height="250">
+                    <source src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/header-dove.webm">
+                </video>
+                <div class="video-header__badge">
+                    <img class="video-header__badge-img"
+                        src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/dove/logo-dove.png"
+                        alt="logo da dove">
                 </div>
             </div>
-            <div class="product-header__body">
-                <small class="product-header__brand">marca</small>
-                <h2 class="product-header__title">
-                    Creme para Pentear Frutilly 900g
+            <div class="video-header__body">
+                <small class="video-header__brand">dove</small>
+                <h2 class="video-header__title">
+                    Creme para Pentear Bond Repair Peptideo 240ml
                 </h2>
-                <p class="product-header__subtitle">
-                    Desenvolvido para cabelos cacheados e crespos, ajuda a hidratar, controlar o frizz, dar brilho e
-                    movimento, sem necessidade de enxágue. Possui proteção térmica de até 230 °C.
+                <p class="video-header__subtitle">
+                    Recupere a aparência dos fios com o Creme para Pentear Dove Bond Repair Peptídeo. Sua fórmula com 5%
+                    Peptídeo Complex ajuda a reparar danos extremos, controla o frizz e oferece proteção térmica.
                 </p>
             </div>
         </section>
 
-        <article style="width: 100%;" aria-labelledby="product-main-title">
-            <!-- fecha esse article lá no final do código, depois de todo conteúdo, e antes do fechamento da div.lp-container -->
+        <!-- fecha esse article lá no final do código, depois de todo conteúdo, e antes do fechamento da div.lp-container -->
 
-            <section class="ll-carousel"
-                aria-label="Diferenciais do Aparelho de Jantar e Chá Biona Donna Chá das 5 30 Peças">
-                <div class="ll-carousel__container">
-                    <div class="ll-carousel__intro">
-                        <p class="ll-carousel__eyebrow"></p>
-                        <h2 class="ll-carousel__title"></h2>
-                        <p class="ll-carousel__lead"></p>
-                    </div>
-
-                    <input class="ll-carousel__control ll-carousel__control--1" type="radio" name="ll-carousel-active"
-                        id="ll-carousel-slide-1" checked="">
-                    <input class="ll-carousel__control ll-carousel__control--2" type="radio" name="ll-carousel-active"
-                        id="ll-carousel-slide-2">
-
-                    <div class="ll-carousel__viewport">
-                        <div class="ll-carousel__indicators">
-                            <span class="ll-carousel__indicator ll-carousel__indicator--1"></span>
-                            <span class="ll-carousel__indicator ll-carousel__indicator--2"></span>
-                        </div>
-                        <label class="ll-carousel__side-hint ll-carousel__side-hint--prev ll-carousel__side-hint--1"
-                            for="ll-carousel-slide-2" role="button" aria-label="Voltar para o slide 2">Anterior</label>
-                        <label class="ll-carousel__side-hint ll-carousel__side-hint--next ll-carousel__side-hint--1"
-                            for="ll-carousel-slide-2" role="button" aria-label="Avançar para o slide 2">Próximo</label>
-                        <label class="ll-carousel__side-hint ll-carousel__side-hint--prev ll-carousel__side-hint--2"
-                            for="ll-carousel-slide-1" role="button" aria-label="Voltar para o slide 1">Anterior</label>
-                        <label class="ll-carousel__side-hint ll-carousel__side-hint--next ll-carousel__side-hint--2"
-                            for="ll-carousel-slide-1" role="button" aria-label="Avançar para o slide 1">Próximo</label>
-                        <div class="ll-carousel__track">
-                            <article class="ll-carousel__panel ll-carousel__panel--1" id="ll-carousel-panel-1"
-                                aria-label="Slide 1: Praticidade para servir">
-                                <section class="ll-carousel__layout ll-carousel__layout--media"
-                                    style="--ll-carousel-media-bg: #c82a57; background: #c82a57;"
-                                    aria-label="Praticidade para servir">
-                                    <figure class="ll-carousel__figure">
-                                        <picture class="ll-carousel__picture">
-                                            <img class="ll-carousel__image"
-                                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/creme-para-pentear-seda-frutilly-lifestyle-morango-113502-01-.webp"
-                                                alt="Creme para Pentear Seda Frutilly 900g apoiado sobre creme rosa com morangos em cenário lifesty"
-                                                width="1800" height="1600" loading="lazy" decoding="async"
-                                                style="object-position: 86% 50%;">
-                                        </picture>
-                                        <figcaption class="ll-carousel__caption"
-                                            style="--ll-carousel-caption-bg: rgba(0, 0, 0, 0.64); --ll-carousel-caption-text: #ffffff; --ll-carousel-caption-left: clamp(1.25rem, 5vw, 4.75rem); --ll-carousel-caption-right: auto; --ll-carousel-caption-translate-x: 0; --ll-carousel-caption-top: 50%; --ll-carousel-caption-bottom: auto; --ll-carousel-caption-translate-y: -50%;">
-                                            <h3>Cuidado para cabelos cacheados e crespos</h3>
-                                            <p>Ajuda a hidratar, condicionar, controlar o frizz, dar brilho e movimento
-                                                aos fios, facilitando a finalização dos cabelos cacheados e crespos.</p>
-                                        </figcaption>
-                                    </figure>
-                                </section>
-                            </article>
-
-                            <article class="ll-carousel__panel ll-carousel__panel--2" id="ll-carousel-panel-2"
-                                aria-label="Slide 2: Delicadeza em cada detalhe">
-                                <section class="ll-carousel__layout ll-carousel__layout--media"
-                                    style="--ll-carousel-media-bg: #c82a57; background: #c82a57;"
-                                    aria-label="Delicadeza em cada detalhe">
-                                    <figure class="ll-carousel__figure">
-                                        <picture class="ll-carousel__picture">
-                                            <img class="ll-carousel__image"
-                                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/creme-para-pentear-seda-frutilly-fundo-texturizado-113502-01-02.webp"
-                                                alt="Creme para Pentear Seda Frutilly 900g sobre fundo rosa texturizado destacando a embalagem"
-                                                width="1800" height="1600" loading="lazy" decoding="async"
-                                                style="object-position: 22% 50%;">
-                                        </picture>
-                                        <figcaption class="ll-carousel__caption"
-                                            style="--ll-carousel-caption-bg: rgba(0, 0, 0, 0.64); --ll-carousel-caption-text: #ffffff; --ll-carousel-caption-left: 56%;">
-                                            <h3>Delicadeza em cada detalhe</h3>
-                                            <p>Creme sem enxágue com proteção térmica de até 230 °C e proteção UV. Basta
-                                                aplicar nos cabelos úmidos, pentear e finalizar como de costume.</p>
-                                        </figcaption>
-                                    </figure>
-                                </section>
-                            </article>
-                        </div>
-                    </div>
-
-                    <nav class="ll-carousel__nav" style="grid-template-columns: repeat(2, minmax(0, 1fr));"
-                        aria-label="Selecionar slide do carrossel">
-                        <label class="ll-carousel__dot ll-carousel__dot--1" for="ll-carousel-slide-1" role="button"
-                            aria-controls="ll-carousel-panel-1">
-                            <span class="ll-carousel__dot-copy">
-                                <span class="ll-carousel__dot-number">01</span>
-                                <span class="ll-carousel__dot-text">Benefícios</span>
-                            </span>
-                            <span class="ll-carousel__dot-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                    class="size-5">
-                                    <path
-                                        d="M15.98 1.804a1 1 0 0 0-1.96 0l-.24 1.192a1 1 0 0 1-.784.785l-1.192.238a1 1 0 0 0 0 1.962l1.192.238a1 1 0 0 1 .785.785l.238 1.192a1 1 0 0 0 1.962 0l.238-1.192a1 1 0 0 1 .785-.785l1.192-.238a1 1 0 0 0 0-1.962l-1.192-.238a1 1 0 0 1-.785-.785l-.238-1.192ZM6.949 5.684a1 1 0 0 0-1.898 0l-.683 2.051a1 1 0 0 1-.633.633l-2.051.683a1 1 0 0 0 0 1.898l2.051.684a1 1 0 0 1 .633.632l.683 2.051a1 1 0 0 0 1.898 0l.683-2.051a1 1 0 0 1 .633-.633l2.051-.683a1 1 0 0 0 0-1.898l-2.051-.683a1 1 0 0 1-.633-.633L6.95 5.684ZM13.949 13.684a1 1 0 0 0-1.898 0l-.184.551a1 1 0 0 1-.632.633l-.551.183a1 1 0 0 0 0 1.898l.551.183a1 1 0 0 1 .633.633l.183.551a1 1 0 0 0 1.898 0l.184-.551a1 1 0 0 1 .632-.633l.551-.183a1 1 0 0 0 0-1.898l-.551-.184a1 1 0 0 1-.633-.632l-.183-.551Z" />
-                                </svg>
-
-                            </span>
-                        </label>
-
-                        <label class="ll-carousel__dot ll-carousel__dot--2" for="ll-carousel-slide-2" role="button"
-                            aria-controls="ll-carousel-panel-2">
-
-                            <span class="ll-carousel__dot-copy">
-                                <span class="ll-carousel__dot-number">02</span>
-                                <span class="ll-carousel__dot-text">Finalização</span>
-                            </span>
-
-                            <span class="ll-carousel__dot-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="lucide lucide-check-check-icon lucide-check-check">
-                                    <path d="M18 6 7 17l-5-5" />
-                                    <path d="m22 10-7.5 7.5L13 16" />
-                                </svg>
-                            </span>
-                        </label>
-                    </nav>
+        <section class="ll-carousel"
+            aria-label="Diferenciais do Aparelho de Jantar e Chá Biona Donna Chá das 5 30 Peças">
+            <div class="ll-carousel__container">
+                <div class="ll-carousel__intro">
+                    <p class="ll-carousel__eyebrow"></p>
+                    <h2 class="ll-carousel__title"></h2>
+                    <p class="ll-carousel__lead"></p>
                 </div>
-            </section>
 
-            <p style="color: #8a8a8a; font-size: clamp(1rem, 2vw, 1.2rem); text-wrap: pretty;
+                <input class="ll-carousel__control ll-carousel__control--1" type="radio" name="ll-carousel-active"
+                    id="ll-carousel-slide-1" checked="">
+                <input class="ll-carousel__control ll-carousel__control--2" type="radio" name="ll-carousel-active"
+                    id="ll-carousel-slide-2">
+
+                <div class="ll-carousel__viewport">
+                    <div class="ll-carousel__indicators">
+                        <span class="ll-carousel__indicator ll-carousel__indicator--1"></span>
+                        <span class="ll-carousel__indicator ll-carousel__indicator--2"></span>
+                    </div>
+                    <label class="ll-carousel__side-hint ll-carousel__side-hint--prev ll-carousel__side-hint--1"
+                        for="ll-carousel-slide-2" role="button" aria-label="Voltar para o slide 2">Anterior</label>
+                    <label class="ll-carousel__side-hint ll-carousel__side-hint--next ll-carousel__side-hint--1"
+                        for="ll-carousel-slide-2" role="button" aria-label="Avançar para o slide 2">Próximo</label>
+                    <label class="ll-carousel__side-hint ll-carousel__side-hint--prev ll-carousel__side-hint--2"
+                        for="ll-carousel-slide-1" role="button" aria-label="Voltar para o slide 1">Anterior</label>
+                    <label class="ll-carousel__side-hint ll-carousel__side-hint--next ll-carousel__side-hint--2"
+                        for="ll-carousel-slide-1" role="button" aria-label="Avançar para o slide 1">Próximo</label>
+                    <div class="ll-carousel__track">
+                        <div class="ll-carousel__panel ll-carousel__panel--1" id="ll-carousel-panel-1"
+                            aria-label="Slide 1: Praticidade para servir">
+                            <section class="ll-carousel__layout ll-carousel__layout--media"
+                                style="--ll-carousel-media-bg: #c82a57; background: #c82a57;"
+                                aria-label="Praticidade para servir">
+                                <figure class="ll-carousel__figure">
+                                    <div class="ll-carousel__picture">
+                                        <img class="ll-carousel__image"
+                                            src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/creme-para-pentear-dove-bond-repair-peptideo-240ml-embalagem-113523-01-01.webp"
+                                            alt="Creme para pentear Dove Bond Repair Peptídeo 240ml sobre bancada de mármore e fundo holográfico"
+                                            width="1800" height="1600" loading="lazy" decoding="async"
+                                            style="object-position: 86% 50%;">
+                                    </div>
+                                    <figcaption class="ll-carousel__caption"
+                                        style="--ll-carousel-caption-bg: rgba(0, 0, 0, 0.64); --ll-carousel-caption-text: #ffffff; --ll-carousel-caption-left: clamp(1.25rem, 5vw, 4.75rem); --ll-carousel-caption-right: auto; --ll-carousel-caption-translate-x: 0; --ll-carousel-caption-top: 50%; --ll-carousel-caption-bottom: auto; --ll-carousel-caption-translate-y: -50%;">
+                                        <h3>Cuidado durante a finalização</h3>
+                                        <p>Oferece proteção térmica, ajuda a prevenir pontas duplas e facilita o
+                                            pentear para uma rotina de cuidados completa.</p>
+                                    </figcaption>
+                                </figure>   
+                            </section>
+                        </div>
+
+                        <div class="ll-carousel__panel ll-carousel__panel--2" id="ll-carousel-panel-2"
+                            aria-label="Slide 2: Delicadeza em cada detalhe">
+                            <section class="ll-carousel__layout ll-carousel__layout--media"
+                                style="--ll-carousel-media-bg: #c82a57; background: #c82a57;"
+                                aria-label="Delicadeza em cada detalhe">
+                                <figure class="ll-carousel__figure">
+                                    <div class="ll-carousel__picture">
+                                        <img class="ll-carousel__image"
+                                            src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/creme-para-pentear-dove-bond-repair-peptideo-cabelos-lisos-lifestyle-113523-01-02.webp"
+                                            alt="Mulher de costas com cabelos castanhos lisos e sem frizz demonstrando Dove Bond Repair Peptídeo"
+                                            width="1800" height="1600" loading="lazy" decoding="async"
+                                            style="object-position: 22% 50%;">
+                                    </div>
+                                    <figcaption class="ll-carousel__caption"
+                                        style="--ll-carousel-caption-bg: rgba(0, 0, 0, 0.64); --ll-carousel-caption-text: #ffffff; --ll-carousel-caption-left: 56%;">
+                                        <h3>Repara danos extremos</h3>
+                                        <p>Com 5% Peptídeo Complex, ajuda na reparação dos danos extremos dos fios,
+                                            proporcionando cabelos mais macios e livres de frizz.</p>
+                                    </figcaption>
+                                </figure>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ll-carousel__nav" style="grid-template-columns: repeat(2, minmax(0, 1fr));"
+                    aria-label="Selecionar slide do carrossel">
+                    <label class="ll-carousel__dot ll-carousel__dot--1" for="ll-carousel-slide-1" role="button"
+                        aria-controls="ll-carousel-panel-1">
+                        <span class="ll-carousel__dot-copy">
+                            <span class="ll-carousel__dot-number">01</span>
+                            <span class="ll-carousel__dot-text">Proteção</span>
+                        </span>
+                        <span class="ll-carousel__dot-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-shield-icon lucide-shield">
+                                <path
+                                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                            </svg>
+
+                        </span>
+                    </label>
+
+                    <label class="ll-carousel__dot ll-carousel__dot--2" for="ll-carousel-slide-2" role="button"
+                        aria-controls="ll-carousel-panel-2">
+
+                        <span class="ll-carousel__dot-copy">
+                            <span class="ll-carousel__dot-number">02</span>
+                            <span class="ll-carousel__dot-text">Reparação</span>
+                        </span>
+
+                        <span class="ll-carousel__dot-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-refresh-ccw-icon lucide-refresh-ccw">
+                                <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                                <path d="M3 3v5h5" />
+                                <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
+                                <path d="M16 16h5v5" />
+                            </svg>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <p style="color: #8a8a8a; font-size: clamp(1rem, 2vw, 1.2rem); text-wrap: pretty;
             text-align: center; padding: 30px 0;">
-                IMAGENS MERAMENTE ILUSTRATIVAS
-            </p>
+            IMAGENS MERAMENTE ILUSTRATIVAS
+        </p>
 
-            <!-- Área de FAQ -->
-            <section id="faq-section" aria-labelledby="faq-section__title">
-                <div id="faq-section__header">
-                    <h2 id="faq-section__title">Dúvidas Frequentes</h2>
-                </div>
-                <ul id="faq-section__list" role="list"> <!-- Cole aqui as perguntas e respostas -->
-                    <li id="faq-section__item">
-                        <details id="faq-section__details">
-                            <summary id="faq-section__summary">
-                                <h3 id="faq-section__q-text"> O Creme para Pentear Seda Frutilly 900g é indicado para
-                                    quais tipos de cabelo? </h3>
-                                <span id="faq-section__icon" aria-hidden="true"></span>
-                            </summary>
-                            <div id="faq-section__a-inner">
-                                <p id="faq-section__a-text"> É indicado para cabelos cacheados e crespos, ajudando a
-                                    hidratar, desembaraçar e controlar o frizz durante a finalização. </p>
-                            </div>
-                        </details>
-                    </li>
-                    <!-------------------------->
+        <!-- Área de FAQ -->
+        <section id="faq-section" aria-labelledby="faq-section__title">
+            <div id="faq-section__header">
+                <h2 id="faq-section__title">Dúvidas Frequentes</h2>
+            </div>
+            <ul id="faq-section__list" role="list"> <!-- Cole aqui as perguntas e respostas -->
+                <li id="faq-section__item">
+                    <details id="faq-section__details">
+                        <summary id="faq-section__summary">
+                            <h3 id="faq-section__q-text"> Esse finalizador precisa de enxágue após a aplicação? </h3>
+                            <span id="faq-section__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div id="faq-section__a-inner">
+                            <p id="faq-section__a-text"> Não. O produto permanece nos fios após a aplicação, oferecendo
+                                praticidade durante o cuidado diário com o cabelo. </p>
+                        </div>
+                    </details>
+                </li>
+                <!-------------------------->
 
-                    <!-- Cole aqui as perguntas e respostas -->
-                    <li id="faq-section__item">
-                        <details id="faq-section__details">
-                            <summary id="faq-section__summary">
-                                <h3 id="faq-section__q-text"> Como esse creme para pentear deve ser aplicado? </h3>
-                                <span id="faq-section__icon" aria-hidden="true"></span>
-                            </summary>
-                            <div id="faq-section__a-inner">
-                                <p id="faq-section__a-text"> Aplicar nos cabelos úmidos, sem necessidade de enxágue.
-                                    Depois, basta pentear e finalizar como de costume para facilitar a rotina. </p>
-                            </div>
-                        </details>
-                    </li>
-                    <!-------------------------->
+                <!-- Cole aqui as perguntas e respostas -->
+                <li id="faq-section__item">
+                    <details id="faq-section__details">
+                        <summary id="faq-section__summary">
+                            <h3 id="faq-section__q-text"> O creme ajuda a controlar o frizz? </h3>
+                            <span id="faq-section__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div id="faq-section__a-inner">
+                            <p id="faq-section__a-text"> Sim. A fórmula foi desenvolvida para reparar danos extremos,
+                                combater o frizz e proporcionar cabelos mais macios no uso diário. </p>
+                        </div>
+                    </details>
+                </li>
+                <!-------------------------->
 
-                    <!-- Cole aqui as perguntas e respostas -->
-                    <li id="faq-section__item">
-                        <details id="faq-section__details">
-                            <summary id="faq-section__summary">
-                                <h3 id="faq-section__q-text"> O produto precisa ser enxaguado após o uso? </h3>
-                                <span id="faq-section__icon" aria-hidden="true"></span>
-                            </summary>
-                            <div id="faq-section__a-inner">
-                                <p id="faq-section__a-text"> Não. A fórmula permanece nos fios após a aplicação,
-                                    proporcionando praticidade durante a finalização dos cabelos. </p>
-                            </div>
-                        </details>
-                    </li>
-                    <!-------------------------->
+                <!-- Cole aqui as perguntas e respostas -->
+                <li id="faq-section__item">
+                    <details id="faq-section__details">
+                        <summary id="faq-section__summary">
+                            <h3 id="faq-section__q-text"> O finalizador oferece proteção térmica? </h3>
+                            <span id="faq-section__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div id="faq-section__a-inner">
+                            <p id="faq-section__a-text"> Sim. A fórmula conta com proteção térmica, ajudando a proteger
+                                os fios durante o uso de ferramentas de calor. </p>
+                        </div>
+                    </details>
+                </li>
+                <!-------------------------->
 
-                    <!-- Cole aqui as perguntas e respostas -->
-                    <li id="faq-section__item">
-                        <details id="faq-section__details">
-                            <summary id="faq-section__summary">
-                                <h3 id="faq-section__q-text"> Esse creme ajuda a controlar o frizz? </h3>
-                                <span id="faq-section__icon" aria-hidden="true"></span>
-                            </summary>
-                            <div id="faq-section__a-inner">
-                                <p id="faq-section__a-text"> Sim. A fórmula oferece ação antifrizz enquanto condiciona,
-                                    hidrata e proporciona mais brilho e movimento aos fios. </p>
-                            </div>
-                        </details>
-                    </li>
-                    <!-------------------------->
+                <!-- Cole aqui as perguntas e respostas -->
+                <li id="faq-section__item">
+                    <details id="faq-section__details">
+                        <summary id="faq-section__summary">
+                            <h3 id="faq-section__q-text"> Esse creme para pentear ajuda a prevenir pontas duplas? </h3>
+                            <span id="faq-section__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div id="faq-section__a-inner">
+                            <p id="faq-section__a-text"> Sim. Além de controlar o frizz, o produto ajuda a prevenir
+                                pontas duplas, contribuindo para fios com aparência mais saudável. </p>
+                        </div>
+                    </details>
+                </li>
+                <!-------------------------->
 
-                    <!-- Cole aqui as perguntas e respostas -->
-                    <li id="faq-section__item">
-                        <details id="faq-section__details">
-                            <summary id="faq-section__summary">
-                                <h3 id="faq-section__q-text"> Quais benefícios esse creme proporciona durante a
-                                    finalização? </h3>
-                                <span id="faq-section__icon" aria-hidden="true"></span>
-                            </summary>
-                            <div id="faq-section__a-inner">
-                                <p id="faq-section__a-text"> Ele hidrata, condiciona, facilita o pentear, trata os fios
-                                    e contribui para mais brilho, movimento e proteção no dia a dia. </p>
-                            </div>
-                        </details>
-                    </li>
-                    <!-------------------------->
-                </ul>
-            </section>
-        </article>
+                <!-- Cole aqui as perguntas e respostas -->
+                <li id="faq-section__item">
+                    <details id="faq-section__details">
+                        <summary id="faq-section__summary">
+                            <h3 id="faq-section__q-text"> Quais são os principais componentes da fórmula? </h3>
+                            <span id="faq-section__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div id="faq-section__a-inner">
+                            <p id="faq-section__a-text"> A composição contém 5% Peptídeo Complex, além de proteínas
+                                hidrolisadas de trigo, grão-de-bico, lentilha e extrato de quinoa. </p>
+                        </div>
+                    </details>
+                </li>
+                <!-------------------------->
+            </ul>
+        </section>
     </div>
 </div>`,
   css: ``
