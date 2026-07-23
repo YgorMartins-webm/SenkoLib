@@ -6,10 +6,12 @@ SenkoLib/
 |   |-- shell/
 |   |   |-- scripts/
 |   |   |   |-- senko-shell.js           - registra features, providers e monta as abas
-|   |   |   `-- senko-quick-create.js    - controla a criacao rapida oficial
+|   |   |   |-- senko-quick-create.js    - controla a criacao rapida oficial
+|   |   |   `-- senko-guide.js           - controla o guia oficial e seus atalhos
 |   |   `-- styles/
 |   |       |-- styles.css               - layout do shell: header, abas e raiz das features
-|   |       `-- senko-quick-create.css    - visual do botao e do modal de criacao
+|   |       |-- senko-quick-create.css    - visual do botao e do modal de criacao
+|   |       `-- senko-guide.css           - visual da janela oficial do guia
 |   |
 |   |-- features/
 |   |   |-- biblioteca/
@@ -75,6 +77,7 @@ SenkoLib/
 
 - `shell` controla o aplicativo como um todo: aba ativa, registro de features e layout da casca.
 - A criacao rapida e uma ferramenta oficial do shell e descobre opcoes por `registerCreateProvider`.
+- O Senko Guide e uma ferramenta oficial do shell, aberta pelo header e exposta pela API `SenkoGuide.open()`/`close()`.
 - Cada feature registrada como provider continua dona de seu carregamento, modal, validacao e persistencia.
 - Cada aba com comportamento proprio fica em `app/features/[nome]`.
 - Integracoes externas ficam dentro da feature que elas salvam; por isso cada GitHub continua independente.

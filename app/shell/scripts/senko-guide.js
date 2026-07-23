@@ -1,9 +1,10 @@
 (function () {
   /*
-   * Senko Guide - prototipo de guia interno do projeto.
+   * Senko Guide - guia oficial e global do projeto.
    *
-   * Este modulo nao registra uma feature no shell porque ele nao e uma aba.
-   * Ele e uma janela global de ajuda aberta pelo botao de caderno no header.
+   * Este modulo pertence ao shell porque nao representa uma aba nem uma regra
+   * de negocio de uma feature. Ele controla a janela de ajuda aberta pelo
+   * botao de livro no header e apenas usa APIs publicas para criar atalhos.
    *
    * REGRA DE MANUTENCAO:
    * - Este guia e prioridade maxima. Toda alteracao em arquitetura, feature,
@@ -12,11 +13,6 @@
    * - Se uma IA estiver alterando o projeto, ela deve considerar este arquivo
    *   parte obrigatoria da mudanca sempre que o comportamento documentado mudar.
    */
-  var currentScript = document.currentScript;
-  var baseUrl = currentScript && currentScript.src
-    ? new URL('./', currentScript.src).href
-    : new URL('app/prototype/senko-guide/', document.baseURI).href;
-
   var activeCategory = 'overview';
   var overlay;
   var searchInput;
@@ -183,10 +179,10 @@
           ],
           bullets: [
             'index.html -> carrega tokens, componentes, shell e register.js das areas disponiveis.',
-            'app/shell -> cria topo, abas, tema, botoes globais, criacao rapida e raiz neutra das features.',
+            'app/shell -> cria topo, abas, tema, botoes globais, criacao rapida, Senko Guide e raiz neutra das features.',
             'app/shared -> fornece cores, fontes, componentes neutros e assets globais.',
             'app/features -> guarda features finais, cada uma com seus arquivos proprios.',
-            'app/prototype -> guarda ideias beta, como Preview, este Guia e Notas da equipe.',
+            'app/prototype -> guarda somente ideias beta, como Preview e Notas da equipe.',
             'integrations/github -> fica dentro da feature dona daquela integracao.'
           ],
           note: 'Analogia: index e a porta de entrada, shell e a recepcao, shared e o almoxarifado, features sao as salas de trabalho.'
@@ -341,18 +337,36 @@
           note: 'O modal global escolhe o destino; o formulario final continua sendo o modal oficial da feature.'
         },
         {
-          title: 'Preview beta',
-          badge: 'beta',
-          terms: 'preview beta prototype gamer teste prototipo senko-guide guia modal notas equipe team notes',
+          title: 'Senko Guide',
+          badge: 'oficial',
+          terms: 'senko guide guia oficial shell ajuda documentacao modal busca categorias',
           paragraphs: [
-            'O Preview, o guia visual e Notas da equipe ficam em app/prototype porque ainda sao areas especiais fora das features principais.',
+            'O Senko Guide e a documentacao oficial e pesquisavel do projeto.',
+            'Ele pertence ao shell porque pode ser aberto em qualquer aba e nao controla dados de nenhuma feature.'
+          ],
+          bullets: [
+            'Controlador: app/shell/scripts/senko-guide.js.',
+            'Estilos: app/shell/styles/senko-guide.css.',
+            'Botao global: #senkoGuideBtn no header do index.html.',
+            'API publica: SenkoGuide.open() e SenkoGuide.close().',
+            'Atalhos para features usam somente SenkoShell.switchFeature().',
+            'Toda mudanca relevante no projeto precisa revisar este guia.'
+          ],
+          note: 'Ser oficial nao transforma o Guide em feature: ele continua sendo uma ferramenta global do shell.'
+        },
+        {
+          title: 'Areas beta',
+          badge: 'beta',
+          terms: 'preview beta prototype gamer teste prototipo notas equipe team notes',
+          paragraphs: [
+            'O Preview e Notas da equipe ficam em app/prototype porque ainda sao areas especiais fora das features principais.',
             'Tudo que ainda esta em teste deve comecar em prototype antes de virar feature final.'
           ],
           bullets: [
             'Notas da equipe: app/prototype/team-notes/.',
             'Cada nota criada pelo Team Notes deve virar um arquivo proprio em app/prototype/team-notes/data/notes e entrar no manifest.js.',
             'Preview: app/prototype/gamer-preview/.',
-            'Guia interno aberto pelo botao do header: app/prototype/senko-guide/.',
+            'Senko Guide nao e mais prototipo; ele fica em app/shell/.',
             'Editor de layout da Biblioteca nao e mais prototipo; ele fica em app/features/biblioteca/.'
           ]
         }
@@ -377,7 +391,7 @@
             'Criacao rapida: ferramenta oficial do shell com providers registrados pelas features.',
             'Notas da equipe: prototipo beta com arquivos individuais e salvamento via GitHub.',
             'Preview: prototipo beta em app/prototype.',
-            'Guia: prototipo global, mas com prioridade maxima de manutencao.',
+            'Senko Guide: ferramenta oficial do shell e prioridade maxima de manutencao.',
             'Editor da Biblioteca: oficial, integrado em app/features/biblioteca/scripts/layout-editor.js.',
             'Editor do HTML Basico: oficial, integrado em app/features/biblioteca/scripts/copy-base-editor.js.'
           ]
@@ -989,22 +1003,6 @@
     }
   ];
 
-  function guideUrl(path) {
-    var absoluteUrl = new URL(path, baseUrl).href;
-    return window.SenkoFreshAssets ? window.SenkoFreshAssets.url(absoluteUrl) : absoluteUrl;
-  }
-
-  function loadStyle() {
-    var href = guideUrl('styles.css');
-    if (document.querySelector('link[data-senko-guide-style="' + href + '"]')) return;
-
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = href;
-    link.dataset.senkoGuideStyle = href;
-    document.head.appendChild(link);
-  }
-
   function escapeHtml(value) {
     return String(value == null ? '' : value)
       .replace(/&/g, '&amp;')
@@ -1220,11 +1218,13 @@
       '<section class="senko-guide-modal" role="dialog" aria-modal="true" aria-labelledby="senkoGuideTitle">' +
       '  <header class="senko-guide-head">' +
       '    <div class="senko-guide-title">' +
-      '      <div class="senko-guide-kicker">Guia interno</div>' +
+      '      <div class="senko-guide-kicker">Guia oficial</div>' +
       '      <h2 id="senkoGuideTitle">Documentacao do SenkoLib</h2>' +
       '      <p>Arquitetura, guias rapidos, regras e erros comuns do projeto.</p>' +
       '    </div>' +
-      '    <button class="senko-modal-close modal-close senko-guide-close" id="senkoGuideCloseBtn" type="button" title="Fechar" aria-label="Fechar">x</button>' +
+      '    <button class="senko-modal-close modal-close senko-guide-close" id="senkoGuideCloseBtn" type="button" title="Fechar" aria-label="Fechar">' +
+      '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
+      '    </button>' +
       '  </header>' +
       '  <div class="senko-guide-searchbar">' +
       '    <label class="senko-guide-search-wrap">' +
@@ -1260,7 +1260,14 @@
 
   function openGuide() {
     createModal();
-    previousBodyOverflow = document.body.style.overflow;
+    /*
+     * A API publica pode ser chamada mais de uma vez. Guardamos o overflow
+     * original somente na transicao de fechado para aberto para nao perder o
+     * estado real da pagina.
+     */
+    if (overlay.hidden) {
+      previousBodyOverflow = document.body.style.overflow;
+    }
     overlay.hidden = false;
     document.body.style.overflow = 'hidden';
     var button = document.getElementById('senkoGuideBtn');
@@ -1288,12 +1295,19 @@
   }
 
   function initGuide() {
-    loadStyle();
     bindButton();
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape' && overlay && !overlay.hidden) closeGuide();
     });
   }
+
+  /*
+   * A API oficial permite que outras ferramentas globais abram ou fechem o
+   * guia sem conhecer sua estrutura HTML. O conteudo interno permanece privado.
+   */
+  window.SenkoGuide = window.SenkoGuide || {};
+  window.SenkoGuide.open = openGuide;
+  window.SenkoGuide.close = closeGuide;
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initGuide);

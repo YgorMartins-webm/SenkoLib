@@ -37,6 +37,12 @@
   position: fixed;
   inset: 0;
   z-index: 9998;
+  /*
+   * O overlay continua em flex durante a animação de fechamento. Se `display`
+   * existisse apenas em `.is-open`, o modal voltaria por um instante ao fluxo
+   * normal e apareceria no canto superior esquerdo antes de ficar invisível.
+   */
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem;
@@ -48,7 +54,6 @@
 }
 
 .senko-global-create-overlay.is-open {
-  display: flex;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;

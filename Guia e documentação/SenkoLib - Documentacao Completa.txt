@@ -186,7 +186,11 @@ Arquivos principais:
 
 ```text
 app/shell/scripts/senko-shell.js
+app/shell/scripts/senko-quick-create.js
+app/shell/scripts/senko-guide.js
 app/shell/styles/styles.css
+app/shell/styles/senko-quick-create.css
+app/shell/styles/senko-guide.css
 ```
 
 O shell controla:
@@ -195,10 +199,16 @@ O shell controla:
 - troca de abas;
 - aba ativa;
 - botão global de GitHub;
+- criação rápida oficial;
+- Senko Guide oficial;
 - logo que volta para a primeira feature;
 - estado vazio, caso nenhuma feature carregue.
 
 O shell não deve importar código interno de uma feature.
+
+O Senko Guide é uma ferramenta global do shell, não uma aba. Ele pode ser
+aberto em qualquer feature pelo botão do cabeçalho e expõe apenas
+`SenkoGuide.open()` e `SenkoGuide.close()` como API pública.
 
 
 ### app/shared/
@@ -273,10 +283,17 @@ Atualmente existe:
 
 ```text
 app/prototype/gamer-preview/
-app/prototype/senko-guide/
+app/prototype/team-notes/
 ```
 
-O Preview e o guia visual ainda são áreas experimentais, por isso ficam em `prototype`.
+O Preview e Notas da equipe ainda são áreas experimentais, por isso ficam em `prototype`.
+
+O Senko Guide já é oficial e fica em:
+
+```text
+app/shell/scripts/senko-guide.js
+app/shell/styles/senko-guide.css
+```
 
 Importante:
 
@@ -1224,20 +1241,23 @@ Protótipos atuais:
 
 ```text
 app/prototype/gamer-preview/
-app/prototype/senko-guide/
+app/prototype/team-notes/
 ```
 
 Regra:
 
 Quando um protótipo vira parte oficial do sistema, ele deve sair de `prototype` e ser integrado na feature responsável.
 
-Foi isso que aconteceu com o editor de layouts e variações da Biblioteca.
+Foi isso que aconteceu com o editor de layouts e variações da Biblioteca e
+com o Senko Guide.
 
 Ele saiu da ideia de protótipo e passou a morar em:
 
 ```text
 app/features/biblioteca/scripts/layout-editor.js
 app/features/biblioteca/styles/layout-editor.css
+app/shell/scripts/senko-guide.js
+app/shell/styles/senko-guide.css
 ```
 
 

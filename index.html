@@ -4,8 +4,8 @@
 
   REGRA DE MANUTENCAO DO GUIA:
   - Toda alteracao de arquitetura, feature, fluxo, erro conhecido, GitHub,
-    estilos globais ou regra de dados deve atualizar tambem o guia interno em
-    app/prototype/senko-guide.
+    estilos globais ou regra de dados deve atualizar tambem o guia oficial em
+    app/shell/scripts/senko-guide.js.
   - O guia e prioridade maxima para manutencao: se o codigo mudou e o guia
     ficou desatualizado, a mudanca ainda nao esta completa.
 
@@ -90,6 +90,7 @@
     SenkoFreshAssets.writeStyle('app/shared/styles/senko-components.css');
     SenkoFreshAssets.writeStyle('app/shell/styles/styles.css');
     SenkoFreshAssets.writeStyle('app/shell/styles/senko-quick-create.css');
+    SenkoFreshAssets.writeStyle('app/shell/styles/senko-guide.css');
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -169,7 +170,7 @@
   <script>
     SenkoFreshAssets.writeScript('app/shell/scripts/senko-shell.js');
     SenkoFreshAssets.writeScript('app/shell/scripts/senko-quick-create.js');
-    SenkoFreshAssets.writeScript('app/prototype/senko-guide/register.js');
+    SenkoFreshAssets.writeScript('app/shell/scripts/senko-guide.js');
     SenkoFreshAssets.writeScript('app/prototype/team-notes/register.js');
     SenkoFreshAssets.writeScript('app/features/biblioteca/register.js');
     SenkoFreshAssets.writeScript('app/features/colecoes/register.js');
