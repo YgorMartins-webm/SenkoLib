@@ -163,6 +163,9 @@
     <article class="pdp" id="pdp" aria-label="Conteúdo rico do produto"> <!-- HTML fica dentro dessa div PDP -->
 
 
+    
+        <p style="color: #8a8a8a; font-family: sans-serif; font-size: clamp(1rem, 2vw, 1.2rem); text-wrap: pretty;
+            text-align: center; padding: 30px 0;">IMAGENS MERAMENTE ILUSTRATIVAS</p>
 
         <!-- Área de FAQ -->
         <section id="faq-section" aria-label="Perguntas frequentes">
