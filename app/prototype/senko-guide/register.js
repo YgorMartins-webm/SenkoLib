@@ -45,7 +45,7 @@
             'Imagens comprime e redimensiona arquivos.',
             'Sources gera picture, source e ims.',
             'Preview e uma area beta para testes.',
-            'Criador global e um prototipo de entrada unica para futuras criacoes em qualquer aba.',
+            'Criacao rapida e a entrada oficial para iniciar criacoes em qualquer aba.',
             'Notas da equipe e um prototipo para guardar prompts, regras, guias e padroes em arquivos proprios.',
             'No fluxo atual, Biblioteca cria layouts e variacoes; Colecoes cria colecoes e layouts dentro de uma colecao existente.'
           ]
@@ -183,10 +183,10 @@
           ],
           bullets: [
             'index.html -> carrega tokens, componentes, shell e register.js das areas disponiveis.',
-            'app/shell -> cria topo, abas, tema, botao GitHub e raiz neutra das features.',
+            'app/shell -> cria topo, abas, tema, botoes globais, criacao rapida e raiz neutra das features.',
             'app/shared -> fornece cores, fontes, componentes neutros e assets globais.',
             'app/features -> guarda features finais, cada uma com seus arquivos proprios.',
-            'app/prototype -> guarda ideias beta, como Preview, este Guia, o criador global, Notas da equipe e o editor do HTML Basico.',
+            'app/prototype -> guarda ideias beta, como Preview, este Guia e Notas da equipe.',
             'integrations/github -> fica dentro da feature dona daquela integracao.'
           ],
           note: 'Analogia: index e a porta de entrada, shell e a recepcao, shared e o almoxarifado, features sao as salas de trabalho.'
@@ -199,7 +199,7 @@
             'Antes de alterar qualquer coisa, descubra quem e o dono do comportamento.'
           ],
           bullets: [
-            'Shell: navegacao, tema, header, raiz das features e ponte para providers de GitHub.',
+            'Shell: navegacao, tema, header, raiz das features e registros de providers de GitHub e criacao.',
             'Shared: tokens, componentes neutros e assets realmente globais.',
             'Biblioteca: layouts, variantes, preview de layouts e GitHub da Biblioteca.',
             'Colecoes: colecoes, grupos, layouts dentro de colecoes e GitHub de Colecoes.',
@@ -256,7 +256,7 @@
         {
           title: 'Biblioteca',
           badge: 'layouts',
-          terms: 'biblioteca layout variacao variante senkolib register variants layout-editor editor oficial id manifest',
+          terms: 'biblioteca layout variacao variante senkolib register variants layout-editor editor oficial id manifest html basico copy base',
           paragraphs: [
             'A Biblioteca guarda layouts e variantes de layouts.',
             'Os layouts ficam em arquivos JS individuais dentro de data/layouts e as variantes ficam em arquivos JS individuais dentro de data/variants/[layoutId].'
@@ -265,8 +265,11 @@
             'Motor: scripts/senkolib-core.js.',
             'UI: scripts/script.js.',
             'Editor oficial: scripts/layout-editor.js.',
+            'Editor do HTML Basico: scripts/copy-base-editor.js.',
+            'Template do HTML Basico: scripts/copy-base-template.js.',
             'Dados: data/manifest.js, data/layouts, data/variants.',
             'Estilos do editor: styles/layout-editor.css.',
+            'Estilos do editor do HTML Basico: styles/copy-base-editor.css.',
             'GitHub: integrations/github/.'
           ],
           note: 'O editor oficial nao fica mais em prototype. Ele pertence a Biblioteca e nao deve oferecer campo editavel para o ID tecnico.'
@@ -319,20 +322,35 @@
           ]
         },
         {
+          title: 'Criacao rapida',
+          badge: 'oficial',
+          terms: 'criacao rapida quick create provider registerCreateProvider shell layout variacao colecao',
+          paragraphs: [
+            'A criacao rapida e uma ferramenta oficial do shell aberta pelo botao laranja de mais.',
+            'Ela apresenta providers registrados pelas features sem conhecer seus dados ou modais internos.'
+          ],
+          bullets: [
+            'Controlador: app/shell/scripts/senko-quick-create.js.',
+            'Estilos: app/shell/styles/senko-quick-create.css.',
+            'Registro neutro: SenkoShell.registerCreateProvider().',
+            'Biblioteca registra Layout e Variacao em app/features/biblioteca/register.js.',
+            'Colecoes registra Colecao e Layout em app/features/colecoes/register.js.',
+            'A feature e ativada antes de abrir seu modal para evitar uma janela presa em painel suspenso.',
+            'Validacao e GitHub continuam pertencendo a feature que cria o item.'
+          ],
+          note: 'O modal global escolhe o destino; o formulario final continua sendo o modal oficial da feature.'
+        },
+        {
           title: 'Preview beta',
           badge: 'beta',
-          terms: 'preview beta prototype gamer teste prototipo senko-guide guia criador global create modal notas equipe team notes html basico copy base editor',
+          terms: 'preview beta prototype gamer teste prototipo senko-guide guia modal notas equipe team notes',
           paragraphs: [
-            'O Preview, o guia visual, o criador global, Notas da equipe e o editor do HTML Basico ficam em app/prototype porque ainda sao areas especiais fora das features principais.',
+            'O Preview, o guia visual e Notas da equipe ficam em app/prototype porque ainda sao areas especiais fora das features principais.',
             'Tudo que ainda esta em teste deve comecar em prototype antes de virar feature final.'
           ],
           bullets: [
-            'Criador global: app/prototype/global-create/.',
-            'Ele injeta o botao laranja de + no header e chama contratos publicos da Biblioteca e de Colecoes para abrir os modais de criacao.',
             'Notas da equipe: app/prototype/team-notes/.',
             'Cada nota criada pelo Team Notes deve virar um arquivo proprio em app/prototype/team-notes/data/notes e entrar no manifest.js.',
-            'Editor do HTML Basico: app/prototype/copy-base-editor/.',
-            'O editor grava app/features/biblioteca/scripts/copy-base-template.js usando a integracao GitHub da Biblioteca.',
             'Preview: app/prototype/gamer-preview/.',
             'Guia interno aberto pelo botao do header: app/prototype/senko-guide/.',
             'Editor de layout da Biblioteca nao e mais prototipo; ele fica em app/features/biblioteca/.'
@@ -356,11 +374,12 @@
             'Colecoes: feature principal, deve permanecer estavel e independente.',
             'Imagens: feature independente, mas merece revisao cuidadosa quando houver reforma interna.',
             'Sources: feature independente, mas merece revisao cuidadosa quando houver reforma interna.',
-            'Criador global: prototipo beta aberto por botao laranja no header.',
+            'Criacao rapida: ferramenta oficial do shell com providers registrados pelas features.',
             'Notas da equipe: prototipo beta com arquivos individuais e salvamento via GitHub.',
             'Preview: prototipo beta em app/prototype.',
             'Guia: prototipo global, mas com prioridade maxima de manutencao.',
-            'Editor da Biblioteca: oficial, integrado em app/features/biblioteca/scripts/layout-editor.js.'
+            'Editor da Biblioteca: oficial, integrado em app/features/biblioteca/scripts/layout-editor.js.',
+            'Editor do HTML Basico: oficial, integrado em app/features/biblioteca/scripts/copy-base-editor.js.'
           ]
         },
         {
@@ -402,14 +421,14 @@
           ]
         },
         {
-          title: 'Botao global, logica separada',
+          title: 'Botoes globais, logica separada',
           badge: 'shell',
-          terms: 'botao global github provider registerGithubProvider independencia',
+          terms: 'botao global github criacao rapida provider registerGithubProvider registerCreateProvider independencia',
           paragraphs: [
-            'O botao de GitHub fica no shell porque e um controle global.',
-            'Mesmo assim, cada feature registra seu proprio provider e usa sua propria logica.'
+            'Os botoes de GitHub e criacao rapida ficam no shell porque sao controles globais.',
+            'Mesmo assim, cada feature registra seus providers e continua dona de sua propria logica.'
           ],
-          note: 'Analogia: o botao global e uma tomada. Biblioteca e Colecoes usam a tomada, mas cada uma tem seu proprio motor.'
+          note: 'Analogia: o shell oferece as tomadas. Biblioteca e Colecoes conectam seus proprios motores por contratos publicos.'
         },
         {
           title: 'Como salvar no GitHub',
@@ -559,6 +578,23 @@
             'Salvar variacao regrava data/variants/[layoutId]/[id].js.'
           ],
           note: 'Se precisar mudar ID, trate como migracao: criar novo arquivo, atualizar manifest, mover referencias e remover o antigo.'
+        },
+        {
+          title: 'Editar o HTML Basico',
+          badge: 'biblioteca',
+          terms: 'editar html basico copy base template github botao lapis',
+          paragraphs: [
+            'O editor do HTML Basico e uma ferramenta oficial da Biblioteca.',
+            'Ele altera o conteudo copiado pelo botao HTML Basico e persiste a nova versao no GitHub.'
+          ],
+          bullets: [
+            'Botao e modal: app/features/biblioteca/view.js.',
+            'Comportamento: app/features/biblioteca/scripts/copy-base-editor.js.',
+            'Template persistido: app/features/biblioteca/scripts/copy-base-template.js.',
+            'Estilos: app/features/biblioteca/styles/copy-base-editor.css.',
+            'Persistencia: app/features/biblioteca/integrations/github/senko-github-v2.js.',
+            'Apos salvar, copy-base.js recebe o novo HTML em memoria sem exigir recarga.'
+          ]
         },
         {
           title: 'Alterar estilos',

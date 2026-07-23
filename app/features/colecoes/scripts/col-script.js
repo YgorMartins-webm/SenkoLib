@@ -414,13 +414,19 @@ colFeatureApi.isReady = function isColecoesReady() {
     && typeof colOpenAddLayoutModal === 'function';
 };
 
-colFeatureApi.openCreateCollection = function openCreateCollectionFromGlobal() {
+/*
+ * API pública de criação.
+ *
+ * Coleções mantém a responsabilidade por validar, carregar e abrir seus
+ * próprios modais. O shell recebe apenas estes métodos por meio do provider.
+ */
+colFeatureApi.openCreateCollection = function openCreateCollectionFromProvider() {
   if (typeof colOpenCreateModal !== 'function') return false;
   colOpenCreateModal();
   return true;
 };
 
-colFeatureApi.listCollectionsForGlobalCreate = function listCollectionsForGlobalCreate() {
+colFeatureApi.listCollectionsForCreation = function listCollectionsForCreation() {
   if (typeof ColLib === 'undefined') return [];
 
   return ColLib.getAll().slice().sort(function (left, right) {
@@ -446,7 +452,7 @@ colFeatureApi.listCollectionsForGlobalCreate = function listCollectionsForGlobal
   });
 };
 
-colFeatureApi.openCreateLayoutForCollection = function openCreateLayoutForCollectionFromGlobal(slug) {
+colFeatureApi.openCreateLayoutForCollection = function openCreateLayoutForCollectionFromProvider(slug) {
   if (typeof ColLib === 'undefined' || typeof colOpenAddLayoutModal !== 'function') return Promise.resolve(false);
 
   var collection = ColLib.getBySlug(slug);

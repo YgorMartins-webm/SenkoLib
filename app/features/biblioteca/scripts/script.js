@@ -1282,12 +1282,19 @@ bibliotecaApi.isReady = function isBibliotecaReady() {
   return _bibliotecaReady;
 };
 
-bibliotecaApi.openCreateLayout = function openCreateLayoutFromGlobal() {
+/*
+ * API pública de criação.
+ *
+ * O register.js da Biblioteca adapta estes métodos ao contrato neutro do
+ * shell. A ferramenta de criação rápida nunca chama funções locais como
+ * openAddModal() ou acessa o estado interno diretamente.
+ */
+bibliotecaApi.openCreateLayout = function openCreateLayoutFromProvider() {
   openAddModal();
   return true;
 };
 
-bibliotecaApi.listLayoutsForGlobalCreate = function listLayoutsForGlobalCreate() {
+bibliotecaApi.listLayoutsForCreation = function listLayoutsForCreation() {
   return SenkoLib.getAll().slice().sort(function (left, right) {
     return String(left.name || left.id || '').localeCompare(String(right.name || right.id || ''), 'pt-BR', {
       numeric: true,
