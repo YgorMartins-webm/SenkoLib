@@ -53,6 +53,10 @@ SenkoLib/
 |   |       |-- manifest.js               - indice das notas carregadas pelo prototipo
 |   |       `-- notes/                    - um arquivo JS por nota criada
 |   |
+|   |-- prototype/copy-base-editor/
+|   |   |-- register.js                  - injeta o editor beta do HTML Basico da Biblioteca
+|   |   `-- styles.css                   - estilos do botao e do modal de edicao
+|   |
 |   |-- prototype/gamer-preview/
 |   |   |-- register.js                  - registra o Preview beta no shell
 |   |   |-- view.js                      - estrutura HTML do Preview beta
@@ -78,6 +82,7 @@ SenkoLib/
 - Features registradas pelo shell renderizam no `index.html` principal. Cada uma monta seu proprio painel direto e isolado.
 - Nas features com montagem sob demanda, `register.js` integra com o shell, `view.js` fornece o HTML e o script principal cuida do comportamento.
 - Biblioteca e Colecoes carregam motores, dados e GitHub apenas quando suas abas sao abertas.
+- O editor beta do HTML Basico salva `app/features/biblioteca/scripts/copy-base-template.js` pela integracao GitHub da Biblioteca.
 - Seus manifestos de dados sao atualizados pelas integracoes GitHub sem alterar o `index.html`.
 - Colecoes renderiza os cards pelo catalogo e so executa o arquivo completo quando o usuario abre ou edita uma colecao.
 - O painel principal nao busca nem recorta o `index.html` standalone de uma feature.

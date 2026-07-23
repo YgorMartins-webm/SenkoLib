@@ -6,7 +6,7 @@
 
   var api = window.SenkoBibliotecaCopyBase = window.SenkoBibliotecaCopyBase || {};
   var initialized = false;
-  var htmlBasico = `<div class="lp-container">
+  var htmlBasico = window.SenkoCopyBaseDefaultHtml || `<div class="lp-container">
     <style>
         * {
             padding: 0;
@@ -163,9 +163,6 @@
     <article class="pdp" id="pdp" aria-label="Conteúdo rico do produto"> <!-- HTML fica dentro dessa div PDP -->
 
 
-    
-        <p style="color: #8a8a8a; font-family: sans-serif; font-size: clamp(1rem, 2vw, 1.2rem); text-wrap: pretty;
-            text-align: center; padding: 30px 0;">IMAGENS MERAMENTE ILUSTRATIVAS</p>
 
         <!-- Área de FAQ -->
         <section id="faq-section" aria-label="Perguntas frequentes">
@@ -265,5 +262,16 @@
     var copyButton = document.getElementById('copyAllBtn');
     if (!copyButton) return;
     copyButton.addEventListener('click', copyBaseHtml);
+  };
+
+  api.getHtml = function getCopyBaseHtml() {
+    return htmlBasico;
+  };
+
+  api.setHtml = function setCopyBaseHtml(nextHtml) {
+    if (typeof nextHtml !== 'string' || !nextHtml.trim()) return false;
+    htmlBasico = nextHtml;
+    window.SenkoCopyBaseDefaultHtml = nextHtml;
+    return true;
   };
 })();

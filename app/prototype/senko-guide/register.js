@@ -186,7 +186,7 @@
             'app/shell -> cria topo, abas, tema, botao GitHub e raiz neutra das features.',
             'app/shared -> fornece cores, fontes, componentes neutros e assets globais.',
             'app/features -> guarda features finais, cada uma com seus arquivos proprios.',
-            'app/prototype -> guarda ideias beta, como Preview, este Guia, o criador global e Notas da equipe.',
+            'app/prototype -> guarda ideias beta, como Preview, este Guia, o criador global, Notas da equipe e o editor do HTML Basico.',
             'integrations/github -> fica dentro da feature dona daquela integracao.'
           ],
           note: 'Analogia: index e a porta de entrada, shell e a recepcao, shared e o almoxarifado, features sao as salas de trabalho.'
@@ -321,9 +321,9 @@
         {
           title: 'Preview beta',
           badge: 'beta',
-          terms: 'preview beta prototype gamer teste prototipo senko-guide guia criador global create modal notas equipe team notes',
+          terms: 'preview beta prototype gamer teste prototipo senko-guide guia criador global create modal notas equipe team notes html basico copy base editor',
           paragraphs: [
-            'O Preview, o guia visual, o criador global e Notas da equipe ficam em app/prototype porque ainda sao areas especiais fora das features principais.',
+            'O Preview, o guia visual, o criador global, Notas da equipe e o editor do HTML Basico ficam em app/prototype porque ainda sao areas especiais fora das features principais.',
             'Tudo que ainda esta em teste deve comecar em prototype antes de virar feature final.'
           ],
           bullets: [
@@ -331,6 +331,8 @@
             'Ele injeta o botao laranja de + no header e chama contratos publicos da Biblioteca e de Colecoes para abrir os modais de criacao.',
             'Notas da equipe: app/prototype/team-notes/.',
             'Cada nota criada pelo Team Notes deve virar um arquivo proprio em app/prototype/team-notes/data/notes e entrar no manifest.js.',
+            'Editor do HTML Basico: app/prototype/copy-base-editor/.',
+            'O editor grava app/features/biblioteca/scripts/copy-base-template.js usando a integracao GitHub da Biblioteca.',
             'Preview: app/prototype/gamer-preview/.',
             'Guia interno aberto pelo botao do header: app/prototype/senko-guide/.',
             'Editor de layout da Biblioteca nao e mais prototipo; ele fica em app/features/biblioteca/.'

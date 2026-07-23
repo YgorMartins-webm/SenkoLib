@@ -167,7 +167,9 @@
         })),
         loadScript('scripts/layout-editor.js?v=20260613-official-editor'),
         loadScript('scripts/script.js?v=20260613-eager-previews'),
-        loadScript('scripts/copy-base.js?v=20260613-fast-load-2')
+        loadScript('scripts/copy-base-template.js?v=20260723-copy-base-editor').then(function () {
+          return loadScript('scripts/copy-base.js?v=20260723-copy-base-editor');
+        })
       ]);
 
       if (!window.SenkoBiblioteca || typeof window.SenkoBiblioteca.init !== 'function') {

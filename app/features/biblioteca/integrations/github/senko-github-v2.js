@@ -40,6 +40,7 @@
 var GH_CONFIG_KEY = 'senkolib_github_config';
 var GH_LAYOUTS_DIR = 'app/features/biblioteca/data/layouts';
 var GH_BIBLIOTECA_MANIFEST_PATH = 'app/features/biblioteca/data/manifest.js';
+var GH_COPY_BASE_TEMPLATE_PATH = 'app/features/biblioteca/scripts/copy-base-template.js';
 
 var GITHUB_CONFIG = (function () {
   var hostname = window.location.hostname;
@@ -1480,5 +1481,20 @@ window.SenkoBibliotecaGithubV2 = {
   },
   openConfig: function () {
     if (ghOpenConfigModalHandler) ghOpenConfigModalHandler();
+  },
+  saveCopyBaseTemplate: function (content) {
+    if (!ghEnsureToken()) return Promise.resolve(false);
+
+    return githubGetFile(GH_COPY_BASE_TEMPLATE_PATH).then(function (fileInfo) {
+      return githubPutFile(
+        GH_COPY_BASE_TEMPLATE_PATH,
+        content,
+        fileInfo.sha,
+        '[Biblioteca] update basic HTML template'
+      );
+    }).then(function (result) {
+      ghStartDeployWatch(GH_COPY_BASE_TEMPLATE_PATH);
+      return result;
+    });
   }
 };
