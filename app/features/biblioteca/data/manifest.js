@@ -160,6 +160,11 @@ window.SenkoBibliotecaManifest = {
       "file": "layouts/section-28.js",
       "id": "section-28",
       "name": "Section-28"
+    },
+    {
+      "file": "layouts/section-34.js",
+      "id": "section-34",
+      "name": "Section-34"
     }
   ],
   "variants": [
