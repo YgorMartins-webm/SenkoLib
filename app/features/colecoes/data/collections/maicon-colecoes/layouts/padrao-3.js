@@ -1207,31 +1207,31 @@ ColLib.registerCollectionLayout('maicon-colecoes',
     </style>
 
     <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-    <article class="pdp" id="pdp" aria-labelledby="product-main"> <!-- HTML fica dentro dessa div PDP -->
+    <div class="pdp" id="pdp" aria-labelledby="product-main"> <!-- HTML fica dentro dessa div PDP -->
 
-        <article style="width: 100%;" aria-labelledby="product-main-title">
+        <div style="width: 100%;" aria-labelledby="product-main-title">
             <!-- fecha esse article lá no final do código, depois de todo conteúdo, e antes do fechamento da div.lp-container -->
             <section class="product-header" aria-label="Cabeçalho do produto">
                 <header class="product-header__banner">
-                    
-                        <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/creme-para-pentear-seda-cachos-definidos-fios-folhas-113501-00-00.webp"
-                            alt="Cabelos cacheados definidos e folhas verdes em fundo aquático representando hidratação Seda"
-                            class="product-header__banner-img" loading="eager">
-                    
+
+                    <img src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/ingredientes-sabonete-palmolive-naturals-graos-cafe-gotas-oleo-amendoa-208359-00-00.webp"
+                        alt="Grãos de café e gotas de óleo flutuando em fundo verde escuro para Palmolive Naturals"
+                        class="product-header__banner-img" loading="eager">
+
                     <div class="product-header__badge" role="img"
-                        aria-label="Logo da marca consul dentro de um círculo laranja">
-                        <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/seda/logo-seda.png"
-                            alt="" class="product-header__badge-img">
+                        aria-label="Logo da marca palmolive dentro de um círculo laranja">
+                        <img src="https://static1.efacil.com.br/wcsstore//AuroraStorefrontAssetStore/PDP/palmolive/logo-palmolive.png"
+                            alt="Logo da marca palmolive dentro de um círculo laranja" class="product-header__badge-img">
                     </div>
                 </header>
                 <section class="product-header__body" aria-label="Título e descrição do produto">
-                    <small class="product-header__brand">seda</small>
+                    <small class="product-header__brand">palmolive</small>
                     <h2 class="product-header__title" id="product-main-title">
-                        Creme para Pentear Cachos Definidos 900g
+                        Sabonete Naturals Café e Óleo de Amêndoas 85g
                     </h2>
                     <p class="product-header__subtitle">
-                        Creme para pentear para cabelos cacheados que ajuda a definir, hidratar, nutrir, controlar o
-                        frizz e proporcionar maciez sem enxágue.
+                        Com extrato de café e óleo de amêndoa, a fórmula une limpeza suave, sensação hidratante e uma
+                        fragrância envolvente para a rotina de cuidados com a pele.
                     </p>
                 </section>
             </section>
@@ -1272,96 +1272,98 @@ ColLib.registerCollectionLayout('maicon-colecoes',
                         <div class="ll-carousel__track">
 
 
-                            <article class="ll-carousel__panel ll-carousel__panel--1" id="ll-carousel-panel-1"
+                            <div class="ll-carousel__panel ll-carousel__panel--1" id="ll-carousel-panel-1"
                                 aria-label="Slide 1: Hidratação e nutrição">
                                 <section class="ll-carousel__layout ll-carousel__layout--media"
-                                    style="--ll-carousel-media-bg: #c82a57; background: #a0d2d4;"
+                                    style="--ll-carousel-media-bg: #c82a57; background: #6d5c0f;"
                                     aria-label="Hidratação e nutrição">
                                     <figure class="ll-carousel__figure">
-                                        <picture class="ll-carousel__picture">
+                                        <div class="ll-carousel__picture">
                                             <img class="ll-carousel__image"
-                                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/creme-para-pentear-seda-cachos-definidos-900g-coco-113501-01-01.webp"
-                                                alt="Creme Seda Cachos Definidos 900g visto de cima com coco, folhas e fios cacheados em fundo verde"
+                                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/sabonete-barra-palmolive-naturals-esfoliacao-diaria-cafe-oleo-amendoas-caixa-208359-01-01.webp"
+                                                alt="Caixa Sabonete Palmolive Naturals Esfoliação Diária Café e Óleo de Amêndoa 85g"
                                                 width="1800" height="1600" loading="lazy" decoding="async"
                                                 style="object-position: 86% 50%;">
-                                        </picture>
+                                        </div>
                                         <figcaption class="ll-carousel__caption"
-                                            style="--ll-carousel-caption-bg: rgba(0, 0, 0, 0.64); --ll-carousel-caption-text: #ffffff; --ll-carousel-caption-left: clamp(1.25rem, 5vw, 4.75rem); --ll-carousel-caption-right: auto; --ll-carousel-caption-translate-x: 0; --ll-carousel-caption-top: 38%; --ll-carousel-caption-bottom: auto; --ll-carousel-caption-translate-y: -50%;">
-                                            <h3>Hidratação e nutrição</h3>
-                                            <p>Ajuda a hidratar e nutrir os cabelos cacheados durante a finalização.</p>
+                                            style="--ll-carousel-caption-bg: rgba(0, 0, 0, 0.64); --ll-carousel-caption-text: #ffffff; --ll-carousel-caption-left: clamp(1.25rem, 5vw, 4.75rem); --ll-carousel-caption-right: auto; --ll-carousel-caption-translate-x: 0; --ll-carousel-caption-top: 18%; --ll-carousel-caption-bottom: auto; --ll-carousel-caption-translate-y: -50%;">
+                                            <h3>Ingredientes de origem 100% natural</h3>
+                                            <p>Sua fórmula conta com ingredientes de origem 100% natural que ajudam a
+                                                manter a hidratação natural da pele.</p>
                                         </figcaption>
                                     </figure>
                                 </section>
-                            </article>
+                            </div>
 
-                            <article class="ll-carousel__panel ll-carousel__panel--2" id="ll-carousel-panel-2"
+                            <div class="ll-carousel__panel ll-carousel__panel--2" id="ll-carousel-panel-2"
                                 aria-label="Slide 2: Definição dos cachos">
                                 <section class="ll-carousel__layout ll-carousel__layout--media"
-                                    style="--ll-carousel-media-bg: #c82a57; background: #a0d2d4;"
+                                    style="--ll-carousel-media-bg: #c82a57; background: #6d5c0f;"
                                     aria-label="Definição dos cachos">
                                     <figure class="ll-carousel__figure">
-                                        <picture class="ll-carousel__picture">
+                                        <div class="ll-carousel__picture">
                                             <img class="ll-carousel__image"
-                                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/seda-cachos-definidos-modelo-cabelos-brilhantes-113501-01-02.webp"
-                                                alt="Mulher de costas com cabelos longos e brilhantes após uso de Seda Cachos Definidos"
+                                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/sabonete-palmolive-naturals-cafe-barra-flutuando-explosao-graos-208359-01-02.webp"
+                                                alt="Barra sabonete Palmolive Naturals flutuando com explosão de pó e grãos de café ao fundo"
                                                 width="1800" height="1600" loading="lazy" decoding="async"
                                                 style="object-position: 22% 50%;">
-                                        </picture>
+                                        </div>
                                         <figcaption class="ll-carousel__caption"
-                                            style="--ll-carousel-caption-bg: rgba(0, 0, 0, 0.64); --ll-carousel-caption-text: #ffffff; --ll-carousel-caption-left: 54%; margin-top: -15%;">
-                                            <h3>Definição dos cachos</h3>
-                                            <p>Contribui para definição, flexibilidade e maciez dos fios.</p>
+                                            style="--ll-carousel-caption-bg: rgba(0, 0, 0, 0.64); --ll-carousel-caption-text: #ffffff; --ll-carousel-caption-left: 55%; --ll-carousel-caption-top: 18%;">
+                                            <h3>Um banho ainda mais agradável</h3>
+                                            <p>A fragrância de café transforma a rotina de cuidados em uma experiência
+                                                envolvente todos os dias.</p>
                                         </figcaption>
                                     </figure>
                                 </section>
-                            </article>
+                            </div>
 
-                            <article class="ll-carousel__panel ll-carousel__panel--3" id="ll-carousel-panel-3"
+                            <div class="ll-carousel__panel ll-carousel__panel--3" id="ll-carousel-panel-3"
                                 aria-label="Slide 3: Definição dos cachos">
                                 <section class="ll-carousel__layout ll-carousel__layout--media"
-                                    style="--ll-carousel-media-bg: #c82a57; background: #a0d2d4;"
+                                    style="--ll-carousel-media-bg: #c82a57; background: #6d5c0f;"
                                     aria-label="Definição dos cachos">
                                     <figure class="ll-carousel__figure">
-                                        <picture class="ll-carousel__picture">
+                                        <div class="ll-carousel__picture">
                                             <img class="ll-carousel__image"
-                                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/creme-para-pentear-seda-cachos-definidos-900g-splash-oleo-113501-01-03.webp"
-                                                alt="Creme Seda Cachos Definidos 900g em splash de óleo dourado detalhando ativos coco, elastina e B5"
+                                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/sabonete-palmolive-naturals-cafe-gota-oleo-amendoa-caindo-barra-208359-01-03.webp"
+                                                alt="Gota de óleo de amêndoa caindo na barra de sabonete Palmolive Naturals com grãos de café"
                                                 width="1800" height="1600" loading="lazy" decoding="async"
                                                 style="object-position: 22% 50%;">
-                                        </picture>
+                                        </div>
                                         <figcaption class="ll-carousel__caption"
-                                            style="--ll-carousel-caption-bg: rgba(0, 0, 0, 0.64); --ll-carousel-caption-text: #ffffff; --ll-carousel-caption-left: 3%; --ll-carousel-caption-right: auto;">
-                                            <h3>Óleo de coco, pró-vitamina B5 e elastina</h3>
-                                            <p>Se unem para nutrir, hidratar e fortalecer os fios, ajudando a
-                                                proporcionar cachos mais macios, flexíveis, definidos e com menos frizz.
+                                            style="--ll-carousel-caption-bg: rgba(0, 0, 0, 0.64); --ll-carousel-caption-text: #ffffff; --ll-carousel-caption-left: 3%; --ll-carousel-caption-top: 22%;">
+                                            <h3>Café e óleo de amêndoas</h3>
+                                            <p>A fórmula combina extrato de café, óleo de amêndoa e ingredientes de
+                                                origem 100% natural para um cuidado diário com fragrância envolvente.
                                             </p>
                                         </figcaption>
                                     </figure>
                                 </section>
-                            </article>
+                            </div>
 
-                            <article class="ll-carousel__panel ll-carousel__panel--4" id="ll-carousel-panel-4"
+                            <div class="ll-carousel__panel ll-carousel__panel--4" id="ll-carousel-panel-4"
                                 aria-label="Slide 4: Definição dos cachos">
                                 <section class="ll-carousel__layout ll-carousel__layout--media"
-                                    style="--ll-carousel-media-bg: #c82a57; background: #a0d2d4;"
+                                    style="--ll-carousel-media-bg: #c82a57; background: #6d5c0f;"
                                     aria-label="Definição dos cachos">
                                     <figure class="ll-carousel__figure">
-                                        <picture class="ll-carousel__picture">
+                                        <div class="ll-carousel__picture">
                                             <img class="ll-carousel__image"
-                                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/creme-para-pentear-seda-cachos-definidos-900g-antes-depois-113501-01-04.webp"
-                                                alt="Antes e depois Creme Seda Cachos Definidos 900g — cabelo com frizz transformado em fios alinhados e definidos"
+                                                src="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/sabonete-palmolive-naturals-cafe-amendoa-uso-banho-esfoliando-braco-208359-01-04.webp"
+                                                alt="Pessoa esfoliando braço no banho com sabonete Palmolive Naturals Café e Amêndoa"
                                                 width="1800" height="1600" loading="lazy" decoding="async"
                                                 style="object-position: 22% 50%; ">
-                                        </picture>
+                                        </div>
                                         <figcaption class="ll-carousel__caption"
-                                            style="--ll-carousel-caption-bg: rgba(0, 0, 0, 0.64); --ll-carousel-caption-text: #ffffff; --ll-carousel-caption-left: 29%; margin-top: -19%;">
-                                            <h3>Menos frizz, mais beleza</h3>
-                                            <p>Ajuda a controlar o frizz enquanto proporciona maciez e flexibilidade aos
-                                                cabelos cacheados.</p>
+                                            style="--ll-carousel-caption-bg: rgba(0, 0, 0, 0.64); --ll-carousel-caption-text: #ffffff; --ll-carousel-caption-left: 55%; --ll-carousel-caption-top: 18%;">
+                                            <h3>Limpeza que renova a pele</h3>
+                                            <p>Com extrato de café, ajuda a limpar e esfoliar suavemente a pele,
+                                                deixando uma agradável sensação de maciez e hidratação.</p>
                                         </figcaption>
                                     </figure>
                                 </section>
-                            </article>
+                            </div>
                         </div>
                     </div>
 
@@ -1373,10 +1375,11 @@ ColLib.registerCollectionLayout('maicon-colecoes',
                                 <span class="ll-carousel__dot-text">Hidratação</span>
                             </span>
                             <span class="ll-carousel__dot-icon">
-                                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
-                                    <path d="M12 3C9.5 6.5 7 9.2 7 13a5 5 0 0 0 10 0c0-3.8-2.5-6.5-5-10Z"></path>
-                                    <path d="M10 14a2 2 0 0 0 4 0"></path>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-droplet-icon lucide-droplet">
+                                    <path
+                                        d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
                                 </svg>
                             </span>
                         </label>
@@ -1386,16 +1389,17 @@ ColLib.registerCollectionLayout('maicon-colecoes',
 
                             <span class="ll-carousel__dot-copy">
                                 <span class="ll-carousel__dot-number">02</span>
-                                <span class="ll-carousel__dot-text">Definição dos cachos</span>
+                                <span class="ll-carousel__dot-text">Aroma</span>
                             </span>
 
                             <span class="ll-carousel__dot-icon">
-                                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
-                                    <path d="M12 3
-             C8 3 8 8 12 8
-             C16 8 16 13 12 13
-             C8 13 8 18 12 21" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-waves-vertical-icon lucide-waves-vertical">
+                                    <path d="M12 2q2 2.5 0 5t0 5 0 5 0 5" />
+                                    <path d="M19 2q2 2.5 0 5t0 5 0 5 0 5" />
+                                    <path d="M5 2q2 2.5 0 5t0 5 0 5 0 5" />
                                 </svg>
                             </span>
                         </label>
@@ -1405,15 +1409,16 @@ ColLib.registerCollectionLayout('maicon-colecoes',
 
                             <span class="ll-carousel__dot-copy">
                                 <span class="ll-carousel__dot-number">03</span>
-                                <span class="ll-carousel__dot-text">Nutrição</span>
+                                <span class="ll-carousel__dot-text">Ingredientes</span>
                             </span>
 
                             <span class="ll-carousel__dot-icon">
-                                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
-                                    <path d="M12 20C7 17 6 11 12 4c6 7 5 13 0 16Z"></path>
-                                    <path d="M12 6v11"></path>
-                                    <path d="M9 11c1 .8 2 1.3 3 1.3s2-.5 3-1.3"></path>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-leaf-icon lucide-leaf">
+                                    <path
+                                        d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
                                 </svg>
                             </span>
                         </label>
@@ -1423,17 +1428,18 @@ ColLib.registerCollectionLayout('maicon-colecoes',
 
                             <span class="ll-carousel__dot-copy">
                                 <span class="ll-carousel__dot-number">04</span>
-                                <span class="ll-carousel__dot-text">Controle do Frizz</span>
+                                <span class="ll-carousel__dot-text">Esfoliação</span>
                             </span>
 
                             <span class="ll-carousel__dot-icon">
-                                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
-                                    <path d="M12 3V21" />
-                                    <path d="M12 7c-1-.7-2-.7-3 0" />
-                                    <path d="M12 11c1-.7 2-.7 3 0" />
-                                    <path d="M12 15c-.8-.6-1.6-.6-2.4 0" />
-                                    <path d="M12 19c.8-.6 1.6-.6 2.4 0" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-sparkles-icon lucide-sparkles">
+                                    <path
+                                        d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+                                    <path d="M20 2v4" />
+                                    <path d="M22 4h-4" />
+                                    <circle cx="4" cy="20" r="2" />
                                 </svg>
                             </span>
                         </label>
@@ -1456,13 +1462,14 @@ ColLib.registerCollectionLayout('maicon-colecoes',
                     <li id="faq-section__item">
                         <details id="faq-section__details">
                             <summary id="faq-section__summary">
-                                <h3 id="faq-section__q-text"> Como usar esse creme para pentear corretamente? </h3>
+                                <h3 id="faq-section__q-text"> Para que serve o Sabonete Palmolive Naturals Café e Óleo
+                                    de Amêndoa 85g? </h3>
                                 <span id="faq-section__icon" aria-hidden="true"></span>
                             </summary>
                             <div id="faq-section__a-inner">
-                                <p id="faq-section__a-text"> Aplicar nos cabelos úmidos, sem enxágue, distribuindo de 5
-                                    g a 20 g conforme o comprimento dos fios. Depois, basta pentear e finalizar
-                                    normalmente. </p>
+                                <p id="faq-section__a-text"> Limpa e esfolia suavemente a pele enquanto ajuda a manter a
+                                    hidratação natural, proporcionando maciez e uma agradável sensação de cuidado
+                                    diário. </p>
                             </div>
                         </details>
                     </li>
@@ -1472,14 +1479,13 @@ ColLib.registerCollectionLayout('maicon-colecoes',
                     <li id="faq-section__item">
                         <details id="faq-section__details">
                             <summary id="faq-section__summary">
-                                <h3 id="faq-section__q-text"> Esse creme para cachos precisa de enxágue após a
-                                    aplicação? </h3>
+                                <h3 id="faq-section__q-text"> O sabonete Palmolive Naturals ajuda a manter a pele
+                                    hidratada? </h3>
                                 <span id="faq-section__icon" aria-hidden="true"></span>
                             </summary>
                             <div id="faq-section__a-inner">
-                                <p id="faq-section__a-text"> Não. O produto permanece nos fios após a aplicação,
-                                    facilitando a finalização e contribuindo para a definição e hidratação dos cabelos
-                                    cacheados. </p>
+                                <p id="faq-section__a-text"> Sim. Sua fórmula ajuda a manter a hidratação natural da
+                                    pele, proporcionando toque macio e sensação hidratante após o uso. </p>
                             </div>
                         </details>
                     </li>
@@ -1489,14 +1495,14 @@ ColLib.registerCollectionLayout('maicon-colecoes',
                     <li id="faq-section__item">
                         <details id="faq-section__details">
                             <summary id="faq-section__summary">
-                                <h3 id="faq-section__q-text"> Quais benefícios esse finalizador oferece para os cachos?
+                                <h3 id="faq-section__q-text"> Quais são os principais ingredientes presentes na fórmula?
                                 </h3>
                                 <span id="faq-section__icon" aria-hidden="true"></span>
                             </summary>
                             <div id="faq-section__a-inner">
-                                <p id="faq-section__a-text"> O creme auxilia na definição, hidratação, nutrição, maciez,
-                                    controle do frizz, fortalecimento, flexibilidade e resistência dos fios durante o
-                                    uso. </p>
+                                <p id="faq-section__a-text"> O sabonete combina extrato de café e óleo de amêndoa em uma
+                                    fórmula com ingredientes de origem 100% natural, unindo limpeza e cuidado com a
+                                    pele. </p>
                             </div>
                         </details>
                     </li>
@@ -1506,31 +1512,29 @@ ColLib.registerCollectionLayout('maicon-colecoes',
                     <li id="faq-section__item">
                         <details id="faq-section__details">
                             <summary id="faq-section__summary">
-                                <h3 id="faq-section__q-text"> O creme ajuda a controlar o frizz dos cabelos cacheados?
+                                <h3 id="faq-section__q-text"> Esse sabonete pode ser usado todos os dias? </h3>
+                                <span id="faq-section__icon" aria-hidden="true"></span>
+                            </summary>
+                            <div id="faq-section__a-inner">
+                                <p id="faq-section__a-text"> Sim. Foi desenvolvido para integrar a rotina diária de
+                                    cuidados, promovendo limpeza suave, esfoliação e sensação de pele macia. </p>
+                            </div>
+                        </details>
+                    </li>
+                    <!-------------------------->
+
+                    <!-- Cole aqui as perguntas e respostas -->
+                    <li id="faq-section__item">
+                        <details id="faq-section__details">
+                            <summary id="faq-section__summary">
+                                <h3 id="faq-section__q-text"> Quais benefícios o uso contínuo desse sabonete oferece?
                                 </h3>
                                 <span id="faq-section__icon" aria-hidden="true"></span>
                             </summary>
                             <div id="faq-section__a-inner">
-                                <p id="faq-section__a-text"> Sim. A fórmula oferece ação antifrizz, ajudando a manter os
-                                    cachos mais alinhados e com aparência mais disciplinada ao longo da finalização.
+                                <p id="faq-section__a-text"> O uso diário ajuda a limpar, esfoliar suavemente e manter a
+                                    hidratação natural da pele, contribuindo para uma sensação prolongada de maciez.
                                 </p>
-                            </div>
-                        </details>
-                    </li>
-                    <!-------------------------->
-
-                    <!-- Cole aqui as perguntas e respostas -->
-                    <li id="faq-section__item">
-                        <details id="faq-section__details">
-                            <summary id="faq-section__summary">
-                                <h3 id="faq-section__q-text"> Quais ingredientes se destacam na composição do produto?
-                                </h3>
-                                <span id="faq-section__icon" aria-hidden="true"></span>
-                            </summary>
-                            <div id="faq-section__a-inner">
-                                <p id="faq-section__a-text"> A fórmula combina óleo de coco, elastina hidrolisada,
-                                    pantenol, glicerina, biotina, niacinamida e vitamina E para complementar os cuidados
-                                    com os fios. </p>
                             </div>
                         </details>
                     </li>
@@ -1538,7 +1542,8 @@ ColLib.registerCollectionLayout('maicon-colecoes',
                 </ul>
             </section>
 
-        </article>
+        </div>
+    </div>
 </div>`,
   css: ``
 }
