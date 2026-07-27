@@ -450,6 +450,12 @@ SenkoLib.registerLayout(
       transition: none;
     }
   }
+
+        @media(min-width: 760px) {
+            .is-reverse {
+                flex-direction: row-reverse;
+            }
+        }
 </style>
 `
 }
