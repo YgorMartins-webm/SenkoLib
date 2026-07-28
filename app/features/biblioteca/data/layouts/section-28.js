@@ -219,7 +219,6 @@ SenkoLib.registerLayout(
             .section-28__figure {
                 width: 100%;
                 margin: 0;
-                aspect-ratio: 16 / 9;
                 overflow: hidden;
                 border-radius: 1.5rem 1.5rem 0 0;
                 background: var(--s8-color-soft);
@@ -357,7 +356,6 @@ SenkoLib.registerLayout(
                 }
 
                 .section-28__figure {
-                    aspect-ratio: 32 / 13;
                     border-radius: 1.5rem;
                 }
 
