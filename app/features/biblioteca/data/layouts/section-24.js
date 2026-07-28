@@ -1,10 +1,10 @@
 // @ts-nocheck
 SenkoLib.registerLayout(
-    {
-        id: "section-24",
-        name: "Section-24",
-        tags: ["split", "adaptativo", "24"],
-        html: `        <section class="section-24" aria-label="Destaques visuais alternáveis do produto">
+{
+    id: 'section-24',
+    name: 'Section-24',
+    tags: ['split', 'adaptativo', '24'],
+    html: `        <section class="section-24" aria-label="Destaques visuais alternáveis do produto">
             <input class="section-24__input" id="section-24-view-1" type="radio" name="section-24-view"
                 aria-label="Mostrar imagem de visão geral" checked>
             <input class="section-24__input" id="section-24-view-2" type="radio" name="section-24-view"
@@ -71,7 +71,7 @@ SenkoLib.registerLayout(
                 </figure>
             </div>
         </section>`,
-        css: `<style>
+    css: `<style>
     * {
         margin: 0;
         padding: 0;
@@ -361,7 +361,7 @@ SenkoLib.registerLayout(
     @media (min-width: 992px) {
 
         .section-24__container {
-            grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
             gap: 3rem;
         }
 
@@ -409,5 +409,5 @@ SenkoLib.registerLayout(
         }
     }
 </style>`
-    }
+}
 );
