@@ -137,7 +137,6 @@ SenkoLib.registerVariantFile("section-1",
 
   @media (max-width: 470px) {
     .product-header__subtitle-2 {
-      text-align: justify;
       font-size: clamp(0.9rem, 2vw, 1.1rem);
       max-width: 95%;
       margin: 1.25rem auto 0;

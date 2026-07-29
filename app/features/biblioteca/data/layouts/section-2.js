@@ -143,7 +143,7 @@ SenkoLib.registerLayout(
 
 @media (max-width: 470px) {
   .video-header__subtitle {
-    text-align: justify;
+
     font-size: clamp(0.9rem, 2vw, 1.5rem);
     font-weight: 550;
   }
