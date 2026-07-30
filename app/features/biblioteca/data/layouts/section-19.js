@@ -1,8 +1,8 @@
 // @ts-nocheck
 SenkoLib.registerLayout(
     {
-        id: "section-19-carrossel-grid",
-        name: "Section-19 (Carrossel Grid)",
+        id: "section-19",
+        name: "Section-19",
         tags: ["carrossel", "grid", "section 19", "19"],
         html: `        <section class="section-19" aria-label="Carrossel de aplicações do produto">
             <input class="section-19__radio" id="s19-1" type="radio" name="slide-19" aria-label="Mostrar aplicação 1"

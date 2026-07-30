@@ -82,14 +82,19 @@ window.SenkoBibliotecaManifest = {
       "name": "Section-16"
     },
     {
+      "file": "layouts/section-17.js",
+      "id": "section-17",
+      "name": "Section-17"
+    },
+    {
       "file": "layouts/section-21.js",
       "id": "section-21",
       "name": "Section-18"
     },
     {
-      "file": "layouts/section-19-carrossel-grid.js",
-      "id": "section-19-carrossel-grid",
-      "name": "Section-19 (Carrossel Grid)"
+      "file": "layouts/section-19.js",
+      "id": "section-19",
+      "name": "Section-19"
     },
     {
       "file": "layouts/section-20.js",
