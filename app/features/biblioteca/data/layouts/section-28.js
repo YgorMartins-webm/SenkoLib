@@ -220,6 +220,7 @@ SenkoLib.registerLayout(
                 width: 100%;
                 margin: 0;
                 overflow: hidden;
+                aspect-ratio: 36/18;
                 border-radius: 1.5rem 1.5rem 0 0;
                 background: var(--s8-color-soft);
             }
@@ -357,6 +358,7 @@ SenkoLib.registerLayout(
 
                 .section-28__figure {
                     border-radius: 1.5rem;
+                    aspect-ratio: 36/18;
                 }
 
                 /* DESKTOP: caixa totalmente contida dentro da imagem */
