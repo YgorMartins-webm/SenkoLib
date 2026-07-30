@@ -430,6 +430,8 @@
             'Config: senkolib_github_config.',
             'Token: senkolib_github_token.',
             'Em GitHub Pages, owner e repo detectados pela URL devem ter prioridade sobre configuracao antiga do navegador.',
+            'Em localhost, Live Server ou file://, os botoes de salvar continuam visiveis e owner/repo sao informados pelo botao global de GitHub.',
+            'Sem repositorio ou token validos, a interface abre a configuracao e nao envia alteracoes.',
             'Token classic precisa de escopo repo.',
             'Token fine-grained precisa de Contents read/write.'
           ]
@@ -769,6 +771,21 @@
             'Correto: SenkoLib.registerLayout({...});',
             'A mesma regra vale para SenkoLib.registerVariantFile(...).',
             'Se isso acontecer, corrigir o arquivo antes de atualizar o manifest.'
+          ]
+        },
+        {
+          title: 'Botao de salvar nao aparece',
+          badge: 'interface',
+          terms: 'botao salvar nao aparece github localhost live server file modal layout variacao colecao',
+          paragraphs: [
+            'Os controles de salvar devem aparecer no GitHub Pages, localhost, Live Server e file://.',
+            'A ausencia de credenciais deve abrir a configuracao quando necessario, nunca remover o botao da interface.'
+          ],
+          bullets: [
+            'Conferir se a integracao GitHub da feature foi carregada e inicializada.',
+            'Conferir se o modal manteve a ancora usada para injetar o controle.',
+            'Um arquivo opcional de variante ausente deve gerar erro no console sem bloquear editores ou integracoes.',
+            'Conferir se todos os caminhos listados no manifest existem na pasta de dados.'
           ]
         },
         {

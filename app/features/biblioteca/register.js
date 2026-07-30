@@ -101,21 +101,34 @@
       var run = function () {
         var variants = getManifestFiles(manifest.variants);
         var variantLoads = variants.map(function (path) {
-          return loadScript('data/' + path);
+          /*
+           * Um arquivo de dado ausente nao pode impedir que editores e
+           * integracoes sejam carregados. A falha fica identificada no
+           * console e as demais variantes continuam disponiveis.
+           */
+          return loadScript('data/' + path).catch(function (error) {
+            console.error('[Biblioteca] Variante ignorada (' + path + '):', error);
+            return null;
+          });
         });
 
-        Promise.all(variantLoads).then(function () {
+        var variantsReady = Promise.all(variantLoads).then(function () {
           if (window.SenkoBiblioteca) window.SenkoBiblioteca.render(true);
+        });
 
-          return loadScript('integrations/github/senko-github-v2.js?v=20260614-token-feedback');
-        }).then(function () {
+        /*
+         * GitHub carrega em paralelo aos dados opcionais. Assim, criar,
+         * editar, salvar e excluir continuam acessiveis mesmo quando uma
+         * variante catalogada estiver temporariamente indisponivel.
+         */
+        var githubReady = loadScript('integrations/github/senko-github-v2.js?v=20260730-local-controls').then(function () {
           if (window.SenkoBibliotecaGithubV2) {
             window.SenkoBibliotecaGithubV2.init();
           }
 
           return Promise.all([
-            loadScript('integrations/github/senko-github-variants.js?v=20260614-token-feedback'),
-            loadScript('integrations/github/senko-github-delete.js?v=20260614-token-feedback')
+            loadScript('integrations/github/senko-github-variants.js?v=20260730-local-controls'),
+            loadScript('integrations/github/senko-github-delete.js?v=20260730-local-controls')
           ]);
         }).then(function () {
           if (window.SenkoBibliotecaGithubVariants) {
@@ -124,6 +137,9 @@
           if (window.SenkoBibliotecaGithubDelete) {
             window.SenkoBibliotecaGithubDelete.init();
           }
+        });
+
+        Promise.all([variantsReady, githubReady]).then(function () {
           resolve();
         }).catch(function (error) {
           /*

@@ -164,12 +164,6 @@ window.SenkoBibliotecaManifest = {
   ],
   "variants": [
     {
-      "file": "variants/carrossel-com-nav/navemcolumn.js",
-      "layoutId": "carrossel-com-nav",
-      "id": "navemcolumn",
-      "name": "navemcolumn"
-    },
-    {
       "file": "variants/section-1/variacao1.js",
       "layoutId": "section-1",
       "id": "variacao1",
