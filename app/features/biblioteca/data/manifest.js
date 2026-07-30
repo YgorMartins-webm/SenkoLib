@@ -82,11 +82,6 @@ window.SenkoBibliotecaManifest = {
       "name": "Section-16"
     },
     {
-      "file": "layouts/carrossel-com-nav.js",
-      "id": "carrossel-com-nav",
-      "name": "Section 17"
-    },
-    {
       "file": "layouts/section-21.js",
       "id": "section-21",
       "name": "Section-18"
