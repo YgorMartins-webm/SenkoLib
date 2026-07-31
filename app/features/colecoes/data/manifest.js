@@ -165,7 +165,7 @@ window.SenkoColecoesManifest = {
         {
           "file": "collections/carneiro-colecoes/layouts/section-31.js",
           "id": "section-31",
-          "name": "Section-31"
+          "name": "Variação 31"
         }
       ]
     },
