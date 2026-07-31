@@ -2,7 +2,7 @@
 ColLib.registerCollectionLayout('carneiro-colecoes',
 {
   id: 'section-31',
-  name: 'Section-31',
+  name: 'Variação 31',
   html: `<div class="lp-container">
     <!-- ---------------------------------------- ÁREA PARA COLOCAR STYLES ----------------------------------------------------------- -->
     <link rel="stylesheet" href="https://imgprd.martinsatacado.com.br/catalogoimg/catalogo/style-faq-padrao.css">
