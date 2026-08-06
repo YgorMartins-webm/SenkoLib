@@ -176,12 +176,6 @@ window.SenkoBibliotecaManifest = {
       "name": "variao-1-animado"
     },
     {
-      "file": "variants/section-15/varicao-1.js",
-      "layoutId": "section-15",
-      "id": "varicao-1",
-      "name": "varicao-1"
-    },
-    {
       "file": "variants/section-2/variacao1.js",
       "layoutId": "section-2",
       "id": "variacao1",
